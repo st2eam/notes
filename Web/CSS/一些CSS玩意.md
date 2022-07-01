@@ -1,5 +1,6 @@
 ## 画一个三角形
 
+```
 <div style="    
     width: 0;
     height: 0;
@@ -8,6 +9,7 @@
     border-right: 50px solid #74f9ff;
     border-bottom: 50px solid #e8ffe8;">
 </div>
+```
 
 隐藏就用<code>transparent</code>
 
