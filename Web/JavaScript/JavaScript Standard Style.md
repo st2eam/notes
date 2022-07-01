@@ -192,7 +192,7 @@
   // ✗ avoid
   var value = 'hello world'
   ```
-
+  
   console.log(value)
 
 ```
@@ -1390,5 +1390,3 @@ var location = env.development ?
 [1]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [2]: http://inimino.org/~inimino/blog/javascript_semicolons
 [3]: https://www.youtube.com/watch?v=gsfbh17Ax9I
-
-
