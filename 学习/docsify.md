@@ -11,3 +11,5 @@ docsify 可以快速帮你生成文档网站。不同于 GitBook、Hexo 的地�
 ```bash
 docsify serve
 ```
+
+[docsify 建立目录树脚本](https://github.com/stream12138/notes/blob/main/script.js)
