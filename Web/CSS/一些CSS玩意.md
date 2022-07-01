@@ -1,4 +1,5 @@
 ## 画一个三角形
+
 <div style="    
     width: 0;
     height: 0;
@@ -20,6 +21,7 @@
     border-bottom: 50px solid #e8ffe8;">
 </div>
 ```
+
 隐藏就用<code>transparent</code>
 
 ## 丝滑跳转
@@ -29,5 +31,3 @@ html{
   scroll-behavior: smooth;
 }
 ```
-
-

@@ -62,7 +62,9 @@ element.addEventListener(event, function, useCapture);
 ```
 
 - 第一个参数是事件的类型（比如 "click" 或 "mousedown"）。
+
 - 第二个参数是当事件发生时我们需要调用的函数。
+
 - 第三个参数是布尔值，指定使用事件冒泡还是事件捕获。默认值是 false，将使用冒泡传播，如果该值设置为 true，则事件使用捕获传播。
   
   ### 查找 HTML 对象
