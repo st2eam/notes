@@ -15,8 +15,8 @@
 - 项目的整体技术架构为:  react + webpack + es6 + eslint
 
 - 使用脚手架开发的项目的特点: 模块化, 组件化, 工程化
-  
-  ### 创建项目并启动
+
+### 创建项目并启动
 
 - 第一步，全局安装：`npm i -g create-react-app`
 
@@ -25,6 +25,26 @@
 - 第三步，进入项目文件夹：`cd hello-react`
 
 - 第四步，启动项目：`npm start`
+
+#### Creating a TypeScript app[​](https://create-react-app.dev/docs/getting-started#creating-a-typescript-app "Direct link to heading")
+
+You can start a new TypeScript app using templates. To use our provided TypeScript template, append `--template typescript` to the creation command.
+
+```bash
+npx create-react-app my-app --template typescript
+```
+
+If you already have a project and would like to add TypeScript, see our [Adding TypeScript](https://create-react-app.dev/docs/adding-typescript) documentation.
+
+#### 添加代理
+
+`create-react-app` 默认支持的代理功能比较简单，只需要在 `package.json` 中添加一个属性
+
+```json
+"proxy": "http://localhost:3000"
+```
+
+这样本地开发环境无法被响应的请求就会被代理到proxy的地址，用于访问我们后端的API接口。
 
 ### react脚手架项目结构
 
