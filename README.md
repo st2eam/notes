@@ -1,3 +1,5 @@
 # notes
 
-<img src="https://github-readme-stats.vercel.app/api?username=stream12138&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
+<img title="data-align=" src="https://github.githubassets.com/images/modules/profile/profile-first-issue.svg" alt="" data-align="center">
+
+[主页内容及排版持续优化中，欢迎访问](https://github.com/stream12138/notes)
