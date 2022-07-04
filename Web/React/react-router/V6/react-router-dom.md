@@ -1,6 +1,6 @@
 # react-router-dom Tutorial
 
-version 6.3
+- [Doc for version 6.3](https://reactrouter.com/docs/en/v6)
 
 ## Introduction
 
@@ -13,70 +13,7 @@ React路由可以运行在任何React运行的地方：
 
 React Router兼容 React >= 16.8.
 
-在此之后，您可以深入研究其他文档以获得更深入的理解。
-
-在构建一个小的记账应用程序时，我们将涉及:
-
-- 配置路由
-- 导航与链接
-- 创建具有活动样式的链接
-- 使用嵌套路由进行布局
-- 以编程方式导航
-- 使用URL参数进行数据加载
-- 使用URL搜索参数
-- 通过组合创造你自己的行为
-- 服务器渲染
-
-## Installation
-
-### Using a bundler
-
-Feel free to use your bundler of choice like [Create React App] or [Vite].
-
-```sh
-# create react app
-npx create-react-app router-tutorial
-# vite
-npm init vite@latest router-tutorial --template react
-```
-
-Then install React Router dependencies:
-
-```sh
-cd router-tutorial
-npm install react-router-dom@6
-```
-
-Finally, start your app:
-
-```sh
-# probably this
-npm start
-# or this
-npm run dev
-```
-
-## Connect the URL
-
-首先，我们想要把你的应用连接到浏览器的URL:导入`BrowserRouter`并在你的整个应用中渲染它。
-
-```tsx
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-const root = ReactDOM.createRoot(
-  document.getElementById("root")
-);
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
-```
-
-你的应用程序中没有任何变化，但现在我们准备好修改URL了。
-
-## Add Some Links
+## 配置导航
 
 打开' `src/App.js` '，导入' `Link` '并添加一些全局导航。
 
@@ -104,31 +41,7 @@ React Router现在可以控制URL!
 
 当URL改变时，我们还没有任何呈现的路由，但是Link改变了URL而没有导致整个页面重新加载。
 
-## Add Some Routes
-
-添加两个新文件
-
-```tsx
-export default function Expenses() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Expenses</h2>
-    </main>
-  );
-}
-```
-
-```tsx
-export default function Invoices() {
-  return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Invoices</h2>
-    </main>
-  );
-}
-```
-
-最后，让我们教React Router如何通过在' `main.jsx` '或'`index.js`'中创建第一个"`Route Config`"来在不同的url中渲染我们的应用。
+## 配置路由
 
 ```tsx
 import ReactDOM from "react-dom/client";
@@ -148,161 +61,96 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="expenses" element={<Expenses />} />
-      <Route path="invoices" element={<Invoices />} />
-    </Routes>
-  </BrowserRouter>
-);
-```
-
-注意在 `"/"` 它渲染的是 `<App>`. 在 `"/invoices"` 它渲染的是 `<Invoices>`. Nice work!
-
-## Nested Routes
-
-你可能已经注意到，当点击链接时，“App”中的布局消失了。重复共享布局是件令人头疼的事。我们已经了解到，大多数UI都是一系列嵌套的布局，几乎总是映射到URL的片段，所以这个想法被嵌入到React Router中。
-
-让我们通过做两件事来实现一些自动的、持久的布局处理:
-
-1. 将路由嵌套到App路由中
-
-2. 呈现一个出口
-
-首先让我们嵌套路由。`Expenses`是`Invoices`的兄弟，他们都是`app`路由的子组件
-
-```jsx
-import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import App from "./App";
-import Expenses from "./routes/expenses";
-import Invoices from "./routes/invoices";
-const root = ReactDOM.createRoot(
-  document.getElementById("root")
-);
-root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="expenses" element={<Expenses />} />
-        <Route path="invoices" element={<Invoices />} />
+      <Route path="invoices" element={<Invoices />}>
+        <Route path=":invoiceId" element={<Invoice />} />
+        <Route path="sent" element={<SentInvoices />} />
       </Route>
     </Routes>
   </BrowserRouter>
 );
 ```
 
-当路由有子路径时，它会做两件事:
+注意在 `"/"` 它渲染的是 `<App>`. 在 `"/invoices"` 它渲染的是 `<Invoices>`。
 
-1. 它嵌入了url (' "/" + "expenses" '和' "/" + "invoice " ')
+## 嵌套路由
 
-2. 当子路由匹配时，它会为共享布局嵌套UI组件:
-
-然而，在(2)生效之前，我们需要在`App.jsx` "parent" route中渲染一个"`Outlet.jsx`"
+这是React Router最强大的功能之一，因此您不必弄乱复杂的布局代码。您的绝大多数布局都与URL的片段相关联，React Router完全接受了这一点。
 
 ```jsx
-import { Outlet, Link } from "react-router-dom";
-export default function App() {
+function App() {
+  return (
+    <Routes>
+      <Route path="invoices" element={<Invoices />}>
+        <Route path=":invoiceId" element={<Invoice />} />
+        <Route path="sent" element={<SentInvoices />} />
+      </Route>
+    </Routes>
+  );
+}
+```
+
+此路由配置定义了三个路由路径：
+
+- `"/invoices"`
+- `"/invoices/sent"`
+- `"/invoices/:invoiceId"`
+
+When the URL is the component tree will be:`"/invoices/sent"`
+
+```jsx
+<App>
+  <Invoices>
+    <SentInvoices />
+  </Invoices>
+</App>
+```
+
+When the URL is , the component tree will be:`"/invoices/123"`
+
+```jsx
+<App>
+  <Invoices>
+    <Invoice />
+  </Invoices>
+</App>
+```
+
+请注意,内部组件随 URL （ and ） 更改。父路由（）负责确保匹配的子路由是用`<Outlet>`渲染的。
+
+**完整例子**
+
+```jsx
+import { Routes, Route, Outlet } from "react-router-dom";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="invoices" element={<Invoices />}>
+        <Route path=":invoiceId" element={<Invoice />} />
+        <Route path="sent" element={<SentInvoices />} />
+      </Route>
+    </Routes>
+  );
+}
+
+function Invoices() {
   return (
     <div>
-      <h1>Bookkeeper</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
-      </nav>
+      <h1>Invoices</h1>
       <Outlet />
     </div>
   );
 }
-```
 
-现在再点击一下。 当两个子路由(`<Invoices>` and `<Expenses>`)交换时，父路由(`App.js`)仍然存在! !
+function Invoice() {
+  let { invoiceId } = useParams();
+  return <h1>Invoice {invoiceId}</h1>;
+}
 
-正如我们稍后将看到的，这在路由层次的任何级别都可以工作，而且非常强大。
-
-## Listing the Invoices
-
-通常情况下，你会从某个服务器获取数据，但在本教程中，让我们编写一些伪代码，这样我们就可以专注于路由。
-
-在' src/data.js '创建一个文件，并复制/粘贴到那里:
-
-```js
-let invoices = [
-  {
-    name: "Santa Monica",
-    number: 1995,
-    amount: "$10,800",
-    due: "12/05/1995",
-  },
-  {
-    name: "Stankonia",
-    number: 2000,
-    amount: "$8,000",
-    due: "10/31/2000",
-  },
-  {
-    name: "Ocean Avenue",
-    number: 2003,
-    amount: "$9,500",
-    due: "07/22/2003",
-  },
-  {
-    name: "Tubthumper",
-    number: 1997,
-    amount: "$14,000",
-    due: "09/01/1997",
-  },
-  {
-    name: "Wide Open Spaces",
-    number: 1998,
-    amount: "$4,600",
-    due: "01/27/1998",
-  },
-];
-export function getInvoices() {
-  return invoices;
+function SentInvoices() {
+  return <h1>Sent Invoices</h1>;
 }
 ```
-
-现在我们可以在`invoice`路由中使用它。让我们也添加一些样式来获得侧边栏导航布局。随意复制粘贴它们，但是要特别注意`<Link>`的`to`参数：
-
-```js
-import { Link } from "react-router-dom";
-import { getInvoices } from "../data";
-export default function Invoices() {
-  let invoices = getInvoices();
-  return (
-    <div style={{ display: "flex" }}>
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          padding: "1rem",
-        }}
-      >
-        {invoices.map((invoice) => (
-          <Link
-            style={{ display: "block", margin: "1rem 0" }}
-            to={`/invoices/${invoice.number}`}
-            key={invoice.number}
-          >
-            {invoice.name}
-          </Link>
-        ))}
-      </nav>
-    </div>
-  );
-}
-```
-
-Cool! Now click an invoice link and see what happens.
-
-😨😨😨
 
 ## Adding a "No Match" Route（404）
 
@@ -331,165 +179,89 @@ The `"*"` has special meaning here. It will match only when no other routes do.
 
 ## Reading URL Params
 
-Alright, back to the individual invoice URLs. Let's add a route for a specific invoice. We just visited some URLs like `"/invoices/1998"` and `"/invoices/2005"`, let's make a new component at `src/routes/invoice.jsx` to render at those URLs:
+```jsx
+import { Routes, Route, useParams } from "react-router-dom";
 
-```js
-export default function Invoice() {
-  return <h2>Invoice #???</h2>;
+function App() {
+  return (
+    <Routes>
+      <Route
+        path="invoices/:invoiceId"
+        element={<Invoice />}
+      />
+    </Routes>
+  );
+}
+
+function Invoice() {
+  let params = useParams();
+  return <h1>Invoice {params.invoiceId}</h1>;
 }
 ```
 
-We'd like to render the invoice number instead of `"???"`. Normally in React you'd pass this as a prop: `<Invoice invoiceId="123" />`, but you don't control that information because it comes from the URL.
+请注意，路径段和参数的键匹配。`:invoiceId`=>`params.invoiceId`  
 
-Let's define a route that will match these kinds of URLs and enable us to get the invoice number from it.
+一个非常常见的用例是在组件呈现时获取数据：
 
-Create a new `<Route>` _inside_ of the "invoices" route like this:
-
-```js
-<Routes>
-  <Route path="/" element={<App />}>
-    <Route path="expenses" element={<Expenses />} />
-    <Route path="invoices" element={<Invoices />}>
-      <Route path=":invoiceId" element={<Invoice />} />
-    </Route>
-    <Route
-      path="*"
-      element={
-        <main style={{ padding: "1rem" }}>
-          <p>There's nothing here!</p>
-        </main>
-      }
-    />
-  </Route>
-</Routes>
+```jsx
+function Invoice() {
+  let { invoiceId } = useParams();
+  let invoice = useFakeFetch(`/api/invoices/${invoiceId}`);
+  return invoice ? (
+    <div>
+      <h1>{invoice.customerName}</h1>
+    </div>
+  ) : (
+    <Loading />
+  );
+}
 ```
 
-A couple things to note:
+## Index Routes
 
-- We just created a route that matches urls like "/invoices/2005" and "/invoices/1998". The `:invoiceId` part of the path is a "URL param", meaning it can match any value as long as the pattern is the same.
-- The `<Route>` adds a second layer of route nesting when it matches: `<App><Invoices><Invoice /></Invoices></App>`. Because the `<Route>` is nested the UI will be nested too.
+可以将索引路由视为“默认子路由”。当父路由具有多个子路由，但 URL 位于父路由的路径处时，您可能希望将某些内容呈现到`<Outlet>`中。
 
-Alright, 现在点击一个`invoice` 的链接, 注意URL改变了，但是新的`invoice` 组件还没有显示出来. Do you know why?
-
-Alright!我们需要添加一个outlet到父布局路由
-
-```tsx
-import { Link, Outlet } from "react-router-dom";
-import { getInvoices } from "../data";
-export default function Invoices() {
-  let invoices = getInvoices();
+```jsx
+function App() {
   return (
-    <div style={{ display: "flex" }}>
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          padding: "1rem",
-        }}
-      >
-        {invoices.map((invoice) => (
-          <Link
-            style={{ display: "block", margin: "1rem 0" }}
-            to={`/invoices/${invoice.number}`}
-            key={invoice.number}
-          >
-            {invoice.name}
-          </Link>
-        ))}
-      </nav>
-      <Outlet />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="invoices" element={<Invoices />} />
+        <Route path="activity" element={<Activity />} />
+      </Route>
+    </Routes>
+  );
+}
+
+function Layout() {
+  return (
+    <div>
+      <GlobalNav />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
 ```
 
-okey 至此结束。 再次打开`invoice`组件 and 让我们从URL中获取`:invoiceId`参数:
-
-```ts
-import { useParams } from "react-router-dom";
-export default function Invoice() {
-  let params = useParams();
-  return <h2>Invoice: {params.invoiceId}</h2>;
-}
-```
-
-Note that the key of the param on the `params` object is the same as the dynamic segment in the route path:
-
-```
-:invoiceId -> params.invoiceId
-```
-
-让我们使用这些信息来构建一个更有趣的invoice页面。打开`src/data.js`，添加一个新函数来按number查找invoices:
-
-```js
-// ...
-export function getInvoices() {
-  return invoices;
-}
-export function getInvoice(number) {
-  return invoices.find(
-    (invoice) => invoice.number === number
-  );
-}
-```
-
-现在回到 `invoice.jsx` 我们使用参数来查找一张invoice以展示更多的信息:
-
-```js
-import { useParams } from "react-router-dom";
-import { getInvoice } from "../data";
-export default function Invoice() {
-  let params = useParams();
-  let invoice = getInvoice(parseInt(params.invoiceId, 10));
-  return (
-    <main style={{ padding: "1rem" }}>
-      <h2>Total Due: {invoice.amount}</h2>
-      <p>
-        {invoice.name}: {invoice.number}
-      </p>
-      <p>Due Date: {invoice.due}</p>
-    </main>
-  );
-}
-```
-
-Note that we used `parseInt` around the param. It's very common for your data lookups to use a `number` type, but URL params are always `string`.
-
-## Index Routes
-
-Index routes are possibly the most difficult concept in React Router for people to understand. So if you've struggled before, we hope this can clarify it for you.
-
-现在你可能正在看其中一张发票。点击应用全局导航中的“Invoices”链接。注意，主内容区域变成空白!我们可以用“index”路由来解决这个问题。
+在“/”处它只是一个空白页面，因为那里没有要呈现的子路由。为此，我们可以添加一个索引路由：`<main>`
 
 ```jsx
-<Routes>
-  <Route path="/" element={<App />}>
-    <Route path="expenses" element={<Expenses />} />
-    <Route path="invoices" element={<Invoices />}>
-      <Route
-        index
-        element={
-          <main style={{ padding: "1rem" }}>
-            <p>Select an invoice</p>
-          </main>
-        }
-      />
-      <Route path=":invoiceId" element={<Invoice />} />
-    </Route>
-    <Route
-      path="*"
-      element={
-        <main style={{ padding: "1rem" }}>
-          <p>There's nothing here!</p>
-        </main>
-      }
-    />
-  </Route>
-</Routes>
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Activity />} />
+        <Route path="invoices" element={<Invoices />} />
+        <Route path="activity" element={<Activity />} />
+      </Route>
+    </Routes>
+  );
+}
 ```
 
-Sweet! 现在 Index 路由填补了空白!
-
-Notice it has the `index` prop instead of a `path`. That's because the index route shares the path of the parent. That's the whole point--it doesn't have a path.
+您可以在路由层次结构的任何级别拥有索引路由，该路由将在父级匹配时呈现，但其他子级都不匹配。
 
 Maybe you're still scratching your head. There are a few ways we try to answer the question "what is an index route?". Hopefully one of these sticks for you:
 
