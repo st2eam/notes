@@ -5,10 +5,11 @@ src\components\RouterGuard
 ```tsx
 import { Navigate } from "react-router-dom";
 interface Props {
+  guard: boolean;
   element: JSX.Element;
 }
 export default function RouterGuard(props: Props) {
-  const authed = false;
+  const authed = props.guard;
   return (
     authed ? props.element : < Navigate to="/login" replace />
   )
@@ -29,7 +30,7 @@ export default function RouterView() {
   return (
     <div className="router-view">
       <Routes>
-        <Route path="/" element={<RouterGuard element={<Home />} />} />
+        <Route path="/" element={<RouterGuard guard={false} element={<Home />} />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
