@@ -43,6 +43,7 @@
     - [BOM](Web\JavaScript\BOM.md)
     - [DOM](Web\JavaScript\DOM.md)
     - [JavaScript Standard Style](Web\JavaScript\JavaScript%20Standard%20Style.md)
+    - [JS Decorator](Web\JavaScript\JS%20Decorator.md)
     - [JS Let和Const](Web\JavaScript\JS%20Let和Const.md)
     - [JS Map](Web\JavaScript\JS%20Map.md)
     - [JS Math](Web\JavaScript\JS%20Math.md)
@@ -79,7 +80,10 @@
       - **V5**
         - [路由](Web\React\react-router\V5\路由.md)
       - **V6**
+        - [Components](Web\React\react-router\V6\Components.md)
+        - [Hooks](Web\React\react-router\V6\Hooks.md)
         - [react-router-dom](Web\React\react-router\V6\react-router-dom.md)
+        - [Router Auth](Web\React\react-router\V6\Router%20Auth.md)
     - **基础**
       - [MobX](Web\React\基础\MobX.md)
       - [React哲学](Web\React\基础\React哲学.md)
