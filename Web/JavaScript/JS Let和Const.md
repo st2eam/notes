@@ -1,3 +1,18 @@
+## let和const
+
+默认使用 const，只有当确实需要改变变量的值的时候才使用 let。这是因为大部分的变量的值在初始化后不应再改变，而预料之外的变量的修改是很多 bug 的源头。
+
+```js
+// bad
+var foo = 'bar';
+
+// good
+let foo = 'bar';
+
+// better
+const foo = 'bar';
+```
+
 ## 块作用域
 
 - 通过 var 关键词声明的变量没有块作用域。
