@@ -214,6 +214,57 @@ function Component() {
 5、在子组件中用 `useContext `获取全局变量；  
 6、在子组件中用 `xxContext.dispatch` 去抛出修改xx的事件，携带修改事件类型和参数；
 
+global-context.ts
+
+```jsx
+import React from "react";
+const GlobalContext = React.createContext({ age: 0, dispatch: () => { } });
+export default GlobalContext
+```
+
+AppComponent.tsx
+
+```jsx
+//定义好“事件处理函数” reducer
+function reducer(state, action) {
+  switch (action) {
+    case "add":
+      return state + 1;
+    case "sub":
+      return state - 1;
+    default:
+      return 0;
+  }
+}
+
+function AppComponent() {
+  const [count, dispatch] = useReducer(reducer, 22);
+  //如果不添加value，那么子组件获取到的共享数据value值是React.createContext(defaultValues)中的默认值defaultValues
+  return <div>
+    <GlobalContext.Provider value={{ count, dispatch }}>
+      <ComponentA />
+      <ComponentB />
+      <ComponentC />
+    </GlobalContext.Provider>
+  </div >
+}
+```
+
+ComponentA.tsx
+
+```jsx
+import { useContext } from 'react';
+import GlobalContext from '../global-context.ts';
+export default function ComponentA() {
+  const countContext = useContext(GlobalContext);
+  return <div>
+    <h1>ComponentA - count={countContext.count}</h1
+    <button onClick={() => { countContext.dispatch("add") }}>add</button>
+    <button onClick={() => { countContext.dispatch("sub") }}>sub</button>
+  </div>
+}
+```
+
 ### 为什么不使用Redux？
 
 这个问题以前提出过，现在可以明确回答：因为我自己使用 useReducer + useContext 自己可以轻松实现，干嘛还要用Redux。  再见 Redux。
