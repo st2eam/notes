@@ -27,7 +27,7 @@ function Component() {
 
   useEffect(() => {
     //inputRef.current就是挂载到网页后的那个输入框，一个真实DOM，因此可以调用html中的方法focus()
-    inputRef.current.focus();
+    inputRef.current?.focus();
   },[]);
 
   return <div>

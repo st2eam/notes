@@ -1,52 +1,6 @@
 ## Context
 
-在一个典型的 React 应用中，数据是通过 props 属性自上而下（由父及子）进行传递的，但此种用法对于某些类型的属性而言是极其繁琐的（例如：地区偏好，UI 主题），这些属性是应用程序中许多组件都需要的。Context 提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递 props。
-
-## useContext函数源码：
-
-回到`useContext`的学习中，首先看一下React源码中的[ReactHooks.js](https://github.com/facebook/react/blob/master/packages/react/src/ReactHooks.js)。
-
-```ts
-export function useContext<T>(
-  Context: ReactContext<T>,
-  unstable_observedBits: number | boolean | void,): T {
-  const dispatcher = resolveDispatcher();
-  if (__DEV__) {
-    if (unstable_observedBits !== undefined) {
-      console.error(
-        'useContext() second argument is reserved for future ' +
-        'use in React. Passing it is not supported. ' +
-        'You passed: %s.%s',
-        unstable_observedBits,
-        typeof unstable_observedBits === 'number' && Array.isArray(arguments[2])
-        ? '\n\nDid you call array.map(useContext)? ' +
-          'Calling Hooks inside a loop is not supported. ' +
-          'Learn more at https://fb.me/rules-of-hooks'
-        : '',
-      );
-  }
-
-  // TODO: add a more generic warning for invalid values.
-  if ((Context: any)._context !== undefined) {
-    const realContext = (Context: any)._context;
-    // Don't deduplicate because this legitimately causes bugs
-    // and nobody should be using this in existing code.
-    if (realContext.Consumer === Context) {
-      console.error(
-        'Calling useContext(Context.Consumer) is not supported, may cause bugs, and will be ' +
-          'removed in a future major release. Did you mean to call useContext(Context) instead?',
-      );
-    } else if (realContext.Provider === Context) {
-      console.error(
-        'Calling useContext(Context.Provider) is not supported. ' +
-          'Did you mean to call useContext(Context) instead?',
-      );
-    }
-  }
-}
-  return dispatcher.useContext(Context, unstable_observedBits);
-}
-```
+在一个典型的 React 应用中，数据是通过 props 属性自上而下（由父及子）进行传递的，但此种用法对于某些类型的属性而言是极其繁琐的（例如：地区偏好，UI 主题），这些属性是应用程序中许多组件都需要的。Context 提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递 props。自定义Hook在不同的组件之间共享逻辑，`Context` 在不同的组件之间共享状态。
 
 ## useContext基本用法
 

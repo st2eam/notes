@@ -533,7 +533,9 @@ TypeScript原生支持JSX，可以自动帮我们把JSX表达式转换成原生J
 
 ### 创建工程
 
-首先创建一个空目录，作为我们项目的根目录，例如 `react-ts`，我们已经创好了一个模板工程 `template`，可以直接将该目录的文件拷贝到新创建的目录进行开发，**注意，开发之前记得先在工程根目录执行命令 `npm i`，用来安装所需的TS类型提示文件**
+```shell
+npx create-react-app my-app --template typescript
+```
 
 ### 编写代码
 
@@ -594,6 +596,10 @@ ReactDOM.render(<App />, document.getElementById('app'))
 ```
 
 `React.Component` 可以传入两个类型变量，第一个是 `props` 的类型， 第二个是 `state` 的类型
+
+## 函数式组件
+
+每次组件的更新其实都是函数的重新执行。
 
 ## 设计哲学
 
