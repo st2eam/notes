@@ -108,17 +108,18 @@ export default Component;
 1. 通过额外定义一个变量initCount=0，作为count的默认值；
 
 2. 任何时候想恢复默认值，直接将initCount赋值给count；
-   
-   ### 解决数据异步
-   
-   ```js
-   for(let i=0; i<3; i++){
+
+### 解决数据异步
+
+```js
+for(let i=0; i<3; i++){
    setCount(count+1);
-   }
-   ```
-   
-   通过for循环，执行了3次setCount(count+1)，那么你觉得count会 +3 吗？
-   答案是：肯定不会
+}
+```
+
+通过for循环，执行了3次setCount(count+1)，那么你觉得count会 +3 吗？
+
+答案是：肯定不会
 
 无论for循环执行几次，最终实际结果都将是仅仅执行一次 +1。
 
@@ -147,8 +148,10 @@ for(let i=0; i<3; i++){
 
 ### 数据类型为Objcet的修改方法
 
+`useState`更新状态不会把新的state和旧的state合并，而是会直接覆盖整个状态，如果state中保存的是一个对象，在更新的时候需要注意使用解构赋值来确保修改state的完整性，另外通过`useState` 来修改状态的时候如果状态值是对象或数组，React会进行浅比较，如果浅比较没有发生变化则不会引发组件的刷新
+
 ```js
-const [person, setPerson] = useState({name:'puxiao',age:34});
+const [person, setPerson] = useState({name:'stream',age:20});
 ```
 
 若想将age的值修改为18，该怎么写？
