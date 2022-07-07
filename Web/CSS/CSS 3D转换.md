@@ -18,5 +18,3 @@ rotateX()
 rotateY()
 rotateZ()
 ```
-
-
