@@ -6,6 +6,26 @@ koa 是由 Express 原班人马打造的，致力于成为一个更小、更富�
 npm i koa
 ```
 
+## Babel异步函数
+
+在node < 7.6的版本中使用`async` 函数, 我们推荐使用[babel's require hook](http://babeljs.io/docs/usage/require/).
+
+```
+require('babel-core/register');
+// require the rest of the app that needs to be transpiled after the hook
+const app = require('./app');
+```
+
+为了解析和转译异步函数，你应该至少有[transform-async-to-generator](http://babeljs.io/docs/plugins/transform-async-to-generator/) or [transform-async-to-module-method](http://babeljs.io/docs/plugins/transform-async-to-module-method/)这2个插件。例如，在你的`.babelrc`文件中，应该有如下代码
+
+```
+{
+  "plugins": ["transform-async-to-generator"]
+}
+```
+
+也可以使用[env preset](http://babeljs.io/docs/plugins/preset-env/)并设置`"node": "current"`来替代.
+
 ## 应用
 
 Koa 应用是一个包含一系列中间件 generator 函数的对象。 这些中间件函数基于 request 请求以一个类似于栈的结构组成并依次执行。 Koa 类似于其他中间件系统（比如 Ruby's Rack 、Connect 等）， 然而 Koa 的核心设计思路是为中间件层提供高级语法糖封装，以增强其互用性和健壮性，并使得编写中间件变得相当有趣。
@@ -66,7 +86,7 @@ app.listen(3000);
 
 - `app.env` 默认为 **NODE_ENV** or "development"
 - `app.proxy` 如果为 true，则解析 "Host" 的 header 域，并支持 X-Forwarded-Host
-- `app.subdomainOffset` 默认为2，表示 `.subdomains` 所忽略的字符偏移量。
+- `app.subdomainOffset` 默认为2，表示 `.subdomains` 所忽略的字符偏移量。 
 
 ### app.listen(...)
 
@@ -99,3 +119,67 @@ const app = new Koa();
 http.createServer(app.callback()).listen(3000);
 https.createServer(app.callback()).listen(3001);
 ```
+
+## app.callback()
+
+返回一个适合 `http.createServer()` 方法的回调函数用来处理请求。 您也可以使用这个回调函数将您的app挂载在 Connect/Express 应用上。
+
+## app.use(function)
+
+为应用添加指定的中间件，详情请看 [Middleware](https://github.com/koajs/koa/wiki#middleware)
+
+## app.keys=
+
+设置签名cookie密钥。
+
+该密钥会被传递给[KeyGrip](https://github.com/jed/keygrip), 当然，您也可以自己生成 `KeyGrip`. 例如:
+
+```js
+app.keys = ['im a newer secret', 'i like turtle'];
+app.keys = new KeyGrip(['im a newer secret', 'i like turtle'], 'sha256');
+```
+
+在进行cookie签名时，只有设置 `signed` 为 `true` 的时候，才会使用密钥进行加密：
+
+```js
+ctx.cookies.set('name', 'tobi', { signed: true });
+```
+
+## app.context
+
+`app.context`是从中创建`ctx`的原型。 可以通过编辑`app.context`向`ctx`添加其他属性。当需要将`ctx`添加到整个应用程序中使用的属性或方法时，这将会非常有用。这可能会更加有效（不需要中间件）和/或更简单（更少的`require()`），而不必担心更多的依赖于ctx，这可以被看作是一种反向模式。
+
+例如，从`ctx`中添加对数据库的引用：
+
+```js
+app.context.db = db();
+
+app.use(async ctx => {
+  console.log(ctx.db);
+});
+```
+
+注:
+
+- `ctx`上的很多属性是被限制的，在`app.context`只能通过使用`Object.defineProperty()`来编辑这些属性（不推荐）。可以在 [https://github.com/koajs/koa/issues/652](https://github.com/koajs/koa/issues/652)上查阅
+- 已安装的APP沿用父级的`ctx`和配置。因此，安装的应用程序只是一组中间件。
+
+## 错误处理
+
+默认情况下Koa会将所有错误信息输出到 stderr， 除非 `app.silent` 是 `true`.当`err.status`是`404`或者`err.expose`时，默认错误处理程序也不会输出错误。要执行自定义错误处理逻辑，如集中式日志记录，您可以添加一个"错误"事件侦听器：
+
+```js
+app.on('error', err => {
+  log.error('server error', err)
+});
+```
+
+如果错误发生在 请求/响应 环节，并且其不能够响应客户端时，`Contenxt` 实例也会被传递到 `error` 事件监听器的回调函数里。
+
+```js
+app.on('error', (err, ctx) => {
+  log.error('server error', err, ctx)
+});
+```
+
+当发生错误但仍能够响应客户端时（比如没有数据写到socket中），Koa会返回一个500错误(Internal Server Error)。 无论哪种情况，Koa都会生成一个应用级别的错误信息，以便实现日志记录等目的。
