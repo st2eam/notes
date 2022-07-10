@@ -13,6 +13,16 @@
   - [C++虚函数](C++\C++虚函数.md)
   - [C++运算符重载](C++\C++运算符重载.md)
   - [C++预处理](C++\C++预处理.md)
+  - **QT**
+    - [QT 信号与槽](C++\QT\QT%20信号与槽.md)
+    - [QT 国际化](C++\QT\QT%20国际化.md)
+    - [QT 常用数据结构以及函数](C++\QT\QT%20常用数据结构以及函数.md)
+    - [QT 文件操作](C++\QT\QT%20文件操作.md)
+    - [QT 样式表](C++\QT\QT%20样式表.md)
+    - [QT 线程同步](C++\QT\QT%20线程同步.md)
+    - [QT 网络编程](C++\QT\QT%20网络编程.md)
+    - [QT](C++\QT\QT.md)
+    - [元对象系统](C++\QT\元对象系统.md)
 - **Design**
   - [动效设计](Design\动效设计.md)
   - [多尔蒂门槛](Design\多尔蒂门槛.md)
@@ -125,10 +135,18 @@
       - [代码分割](Web\React\高级\代码分割.md)
       - [深入JSX](Web\React\高级\深入JSX.md)
       - [高阶组件](Web\React\高级\高阶组件.md)
+  - **Vue**
+    - **Vue2**
+      - [Vue](Web\Vue\Vue2\Vue.md)
+    - **Vue3**
+      - [script setup](Web\Vue\Vue3\script%20setup.md)
+  - **微信小程序**
+    - [微信小程序-简介](Web\微信小程序\微信小程序-简介.md)
 - **学习**
   - [docsify](学习\docsify.md)
   - [Git](学习\Git.md)
   - [Java](学习\Java.md)
+  - [排序算法](学习\排序算法.md)
   - [汇编语言](学习\汇编语言.md)
   - [短路求值](学习\短路求值.md)
   - [语法糖](学习\语法糖.md)
