@@ -10,7 +10,7 @@ npm i koa
 
 在node < 7.6的版本中使用`async` 函数, 我们推荐使用[babel's require hook](http://babeljs.io/docs/usage/require/).
 
-```
+```js
 require('babel-core/register');
 // require the rest of the app that needs to be transpiled after the hook
 const app = require('./app');
@@ -18,7 +18,7 @@ const app = require('./app');
 
 为了解析和转译异步函数，你应该至少有[transform-async-to-generator](http://babeljs.io/docs/plugins/transform-async-to-generator/) or [transform-async-to-module-method](http://babeljs.io/docs/plugins/transform-async-to-module-method/)这2个插件。例如，在你的`.babelrc`文件中，应该有如下代码
 
-```
+```js
 {
   "plugins": ["transform-async-to-generator"]
 }
