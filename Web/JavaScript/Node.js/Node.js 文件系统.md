@@ -85,7 +85,37 @@ console.log(data)
 
 通过 `path.join` 将 `__dirname` 和目标文件的相对路径连接起来就可以得到目标文件的绝对路径了，同样的道理，其他的文件操作API也需要用这种方式
 
-## 打开文件
+### 示例
+
+```ts
+function readFile() {
+  fs.readFile(__filename, 'utf-8', (err, data) => {
+    if (err) {
+      console.error('文件读取失败')
+    } else {
+      console.log(data)
+    }
+  })
+}
+
+function readFileSync() {
+  try {
+    const data = fs.readFileSync(__filename, 'utf-8')
+    console.log(data)
+  } catch (err) {
+    console.error('文件读取失败')
+  }
+}
+
+async function readFilePromise() {
+  try {
+    const data = await fs.promises.readFile(__filename, 'utf-8')
+    console.log(data)
+  } catch (err) {
+    console.error('文件读取失败')
+  }
+}
+```
 
 ### 语法
 
