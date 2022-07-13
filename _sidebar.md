@@ -80,6 +80,8 @@
       - [JS 类和对象](Web\JavaScript\JS%20基础\JS%20类和对象.md)
       - [JS 类型](Web\JavaScript\JS%20基础\JS%20类型.md)
     - **Node.js**
+      - **Chalk**
+        - [Chalk](Web\JavaScript\Node.js\Chalk\Chalk.md)
       - **Express**
         - [Express](Web\JavaScript\Node.js\Express\Express.md)
       - **koa**
@@ -96,6 +98,8 @@
       - [Node.js 回调函数](Web\JavaScript\Node.js\Node.js%20回调函数.md)
       - [Node.js 文件系统](Web\JavaScript\Node.js\Node.js%20文件系统.md)
       - [Node.js](Web\JavaScript\Node.js\Node.js.md)
+      - **ora**
+        - [ora](Web\JavaScript\Node.js\ora\ora.md)
       - [使用 NPM 管理软件包](Web\JavaScript\Node.js\使用%20NPM%20管理软件包.md)
     - [前端手写代码](Web\JavaScript\前端手写代码.md)
   - **Network**
@@ -147,6 +151,7 @@
   - [Git](学习\Git.md)
   - [Java](学习\Java.md)
   - [排序算法](学习\排序算法.md)
+  - [正则表达式](学习\正则表达式.md)
   - [汇编语言](学习\汇编语言.md)
   - [短路求值](学习\短路求值.md)
   - [语法糖](学习\语法糖.md)
