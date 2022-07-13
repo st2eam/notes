@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/chalk/chalk/HEAD/media/logo.svg" title="" alt="Chalk" data-align="center"> 
+
 ## Install
 
 ```shell
