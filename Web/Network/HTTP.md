@@ -58,7 +58,7 @@ HTTP 是一个 client-server 协议：请求通过一个实体被发出，实体
 
 每一个发送到服务器的请求，都会被服务器处理并返回一个消息，也就是*response*。在这个请求与响应之间，还有许许多多的被称为 [proxies](https://developer.mozilla.org/zh-CN/docs/Glossary/Proxy_server) 的实体，他们的作用与表现各不相同，比如有些是网关，还有些是[caches](https://developer.mozilla.org/zh-CN/docs/Glossary/Cache)等。
 
-![](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/client-server-chain.png)
+![img](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/client-server-chain.png)
 
 实际上，在一个浏览器和处理请求的服务器之间，还有路由器、调制解调器等许多计算机。由于 Web 的层次设计，那些在网络层和传输层的细节都被隐藏起来了。HTTP 位于最上层的应用层。虽然底层对于分析网络问题非常重要，但是大多都跟对 HTTP 的描述不相干。
 
