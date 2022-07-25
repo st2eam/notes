@@ -10,10 +10,22 @@ npm install chalk
 
 ## [Usage](https://www.npmjs.com/package/chalk#usage)
 
-```js
-import chalk from 'chalk';
+```ts
+  let temp = /\x1B.*?m/g  //正则匹配其前后缀规则
+  
+  let str = '中123文'
 
-console.log(chalk.blue('Hello world!'));
+  console.log(str.length) //5
+
+  console.log(chalk.cyan(str).length) //15
+
+  console.log(chalk.cyan(str).replace(temp, '').length) //5
+
+  console.log(chalk.cyan(chalk.white(str)).split("'"))
+  //[ '\x1B[36m\x1B[37m中123文\x1B[39m\x1B[36m\x1B[39m' ]
+
+  console.log(chalk.bgBlue(str).split("'"))
+  //[ '\x1B[44m中123文\x1B[49m' ]
 ```
 
 Chalk comes with an easy to use composable API where you just chain and nest the styles you want.
