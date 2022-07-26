@@ -1,4 +1,22 @@
-# Quick Start
+## Next.js
+
+为了解决 SEO 的问题，顺带首屏渲染的问题,Vue 的 Nuxt.js，React 的 Next.js 等 SSR 框架应运而生。
+
+服务端渲染（SSR），服务端直接返回了 HTML，浏览器显示即可，无需等待 JavaScript 完成下载且执行才显示内容，不仅渲染速度大大加快，更利于搜索引擎的爬取，右键查看源码可以看到密密麻麻的 HTML 标签。
+
+快速刷新（Fast Refresh）是 Next.js 的一项功能，当你编辑 React 组件时，可以为你提供即时的反馈。 默认情况下，快速刷新（Fast Refresh）功能在所有 Next.js **9.4 或更新版本** 的应用程序中是开启的。启用 Next.js 的快速刷新（Fast Refresh）后， 大多数编辑器应该在一秒钟内就可以感知到了，**并且不会丢失组件的 状态**。
+
+#### 优点
+
+- 更快的首屏加载速度
+- 更友好的 SEO
+
+#### 缺点
+
+- 增加了维护成本
+- 项目部署比单页面应用复杂
+
+## Quick Start
 
 使用 TypeScript 开发项目，可以通过 `--typescript` 参数创建 TypeScript 项目：
 
@@ -15,13 +33,18 @@ yarn create next-app --typescript
 - [`./pages/`](https://www.nextjs.cn/docs/basic-features/pages) 中的 [静态生成和服务器端渲染](https://www.nextjs.cn/docs/basic-features/data-fetching)
 - [静态文件服务](https://www.nextjs.cn/docs/basic-features/static-file-serving)。`./public/` 被映射到 `/`
 
-# 页面（Pages）
+## 页面（Pages）
 
 在 Next.js 中，无需配置路由，默认是采用文件系统映射的路由模式，一个 **page（页面）** 就是一个从 `.js`、`jsx`、`.ts` 或 `.tsx` 文件导出（export）的 React 组件 ，这些文件存放在 `pages` 目录下。每个 page（页面）都使用其文件名作为路由（route）。
 
 ### 具有动态路由的页面
 
 Next.js 支持具有动态路由的 pages（页面）。例如，如果你创建了一个命名为 `pages/posts/[id].js` 的文件，那么就可以通过 `posts/1`、`posts/2` 等类似的路径进行访问。
+
+预定义的 API 路由优先于动态 API 路由
+
+- pages/post/create.js， 将匹配 /post/create
+- pages/post/[pid].js`，将匹配 /post/1,但不匹配 /post/create
 
 ## 预渲染
 
@@ -183,3 +206,63 @@ export default Blog
 如你所见，`getServerSideProps` 类似于 `getStaticProps`，但两者的区别在于 `getServerSideProps` 在每次页面请求时都会运行，而在构建时不运行。
 
 要了解有关 `getServerSideProps` 的工作原理的更多信息，请查看我们的 [获取数据文档](https://www.nextjs.cn/docs/basic-features/data-fetching#getserversideprops-server-side-rendering)
+
+## 路由跳转与传参
+
+next 提供了两种方式，分别是导航式路由 next/link 和 编程式 next/router
+
+1. Link
+   
+   href 为必须属性，可传递对象
+   
+   ```js
+   <Link href="/about?name=jackylin">
+   
+   <Link href={{ pathname: '/article', query: { type: active } }}>
+   复制代码
+   ```
+
+2. 编程式导航 next/router
+   
+   和 react hooks 中的 useHistory 用法一样
+   
+   ```js
+   import { useRouter } from 'next/router'
+   const router = useRouter()
+   //: 1
+   router.push(`/article/${c.queueId}`)
+   //: 2
+   router.push({
+   pathname: '/publish',
+      query: {
+        contentId: c.contentId,
+        status: active
+      }
+   })
+   ```
+
+#### 路由参数获取
+
+Next.js 只能通过 query 来传递参数，不能使用 params。
+useRouter 或 getServerSideProps 方法内都可以拿到 query 参数
+
+```js
+import { useRouter } from 'next/router'
+const { query } = useRouter()
+query.cid //: 获取 cid 参数
+
+这种动态路由的参数通过 query 可以获取到，在 getServerSideProps 方法内也可以通过 params 获取
+router.push(`/article/${c.queueId}`)
+```
+
+## css
+
+Next.js 支持 Css Module 和 Css-in-JS 这两种方式，二者自带样式隔离。
+
+### 动态导入
+
+Next.js 同样支持和 React 客户端一样的 ES2020 import() 语法来实现导入，在 React 单页面项目里面，Webpack 解析到该语法时会自动进行代码分割。在 Next.js 里面， 还可以使用`next/dynamic` 来动态导入组件，它们将在客户端懒加载。通过动态导入，对于一些不需要在服务端渲染的组件可以使用 dynamic 来处理。
+
+```js
+const BreadCrumb = dynamic(() => import('@/components/ui/BreadCrumb'))
+```
