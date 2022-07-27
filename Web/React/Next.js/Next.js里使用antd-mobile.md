@@ -25,5 +25,3 @@ const nextConfig = {
 
 module.exports = withTM(nextConfig)
 ```
-
-
