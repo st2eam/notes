@@ -181,26 +181,22 @@ export default Post
 例如，假设你的某个页面需要预渲染频繁更新的数据（从外部 API 获取）。你就可以编写 `getServerSideProps` 获取该数据并将其传递给 `Page` ，如下所示:
 
 ```jsx
-function Blog({ posts }) {
-  // Render posts...
-}
-
-// 此函数在构建时被调用
-export async function getServerSideProps() {
-  // 调用外部 API 获取博文列表
-  const res = await fetch('https://.../posts')
-  const posts = await res.json()
-
-  // 通过返回 { props: { posts } } 对象，Blog 组件
-  // 在构建时将接收到 `posts` 参数
-  return {
-    props: {
-      posts,
-    },
+export const getServerSideProps: GetServerSideProps = async ctx => {
+  const headers = ctx.req.headers.cookie
+    ? ({ cookie: ctx.req.headers.cookie } as AxiosRequestHeaders)
+    : undefined
+  const _id = ctx.query._id as string
+  const props = await ssrService.DetailProps(_id, headers)
+  if (props.props.error === 20002) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false
+      }
+    }
   }
+  return props
 }
-
-export default Blog
 ```
 
 如你所见，`getServerSideProps` 类似于 `getStaticProps`，但两者的区别在于 `getServerSideProps` 在每次页面请求时都会运行，而在构建时不运行。
