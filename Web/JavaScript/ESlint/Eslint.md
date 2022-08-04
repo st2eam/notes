@@ -21,5 +21,3 @@ eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-e
 √ Would you like to install them now? · No / Yes
 √ Which package manager do you want to use? · npm
 ```
-
-

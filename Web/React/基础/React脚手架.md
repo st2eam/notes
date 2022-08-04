@@ -30,7 +30,7 @@
 
 You can start a new TypeScript app using templates. To use our provided TypeScript template, append `--template typescript` to the creation command.
 
-```bash
+```shell
 npx create-react-app my-app --template typescript
 ```
 
