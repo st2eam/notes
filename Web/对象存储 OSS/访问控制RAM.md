@@ -181,6 +181,29 @@ const getToken = async () => {
   console.log(url);
   ```
 
+上传时需要将`headers`中的`Content-Type`设置为`blob`，否则很容易会出现上传失败的情况。
+
+前端
+
+```ts
+const data = new Blob([file], { type: file.type })
+await axios.put(url, data, {
+  headers: {
+    'Content-Type': 'blob'
+  }
+})
+```
+
+后端
+
+```ts
+  const url = client.signatureUrl(filename, {
+    'Content-Type': 'blob',
+    expires: 3600,
+    method: 'PUT'
+  })
+```
+
 - 生成带图片处理参数的签名URL
   
   以下代码用于生成带图片处理参数的签名URL。
