@@ -149,11 +149,12 @@
       - [状态提升](Web\React\基础\状态提升.md)
       - [组合 vs 继承](Web\React\基础\组合%20vs%20继承.md)
       - [表单数据绑定](Web\React\基础\表单数据绑定.md)
-    - [如何拆分组件](Web\React\如何拆分组件.md)
-    - [构建面向未来的前端架构](Web\React\构建面向未来的前端架构.md)
     - **高级**
       - [代码分割](Web\React\高级\代码分割.md)
+      - [如何拆分组件](Web\React\高级\如何拆分组件.md)
+      - [构建面向未来的前端架构](Web\React\高级\构建面向未来的前端架构.md)
       - [深入JSX](Web\React\高级\深入JSX.md)
+      - [类型检查](Web\React\高级\类型检查.md)
       - [高阶组件](Web\React\高级\高阶组件.md)
   - **Vue**
     - **Vue2**

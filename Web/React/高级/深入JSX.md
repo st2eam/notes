@@ -268,5 +268,3 @@ function ListOfTenThings() {
 ```
 
 或使用 `toString()`
-
-
