@@ -97,3 +97,40 @@ const foo = null ?? 'my school';
 const baz = 0 ?? 42;
 // 输出: 0
 ```
+
+## 如何避免使用过多的if else 甚至 switch case
+
+可以使用对象的方式来代替if else语句，这样可以更好的管理代码。
+
+```js
+  enum EType {
+    TOP = 1,
+    BOTTOM,
+    LEFT,
+    RIGHT
+  }
+
+  const LinkToWhere = {
+    [EType.TOP]: '/top',
+    [EType.BOTTOM]: '/bottom',
+    [EType.LEFT]: '/left',
+    [EType.RIGHT]: '/right'
+  }
+
+  console.log(LinkToWhere[type])
+```
+
+但是有个问题就是，如果对象的属性不是常量，那么它会每个属性都执行一次。
+
+不过也有解决的办法，就是使用箭头函数：
+
+```ts
+  // 定义
+  const searchByType = {
+      [ESearchType.POST]: (params: ISearch) => searchPost(params),
+      [ESearchType.IMAGE_POST]: (params: ISearch) => searchImgPost(params),
+      [ESearchType.USER]: (params: ISearch) => searchUser(params)
+    }
+  // 调用
+  searchByType[type](params)
+```
