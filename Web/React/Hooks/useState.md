@@ -77,6 +77,37 @@ const \[state, setState\] = useState(() => {
 
 需要注意的是，React 可能仍需要在跳过渲染前渲染该组件。不过由于 React 不会对组件树的“深层”节点进行不必要的渲染，所以大可不必担心。如果你在渲染期间执行了高开销的计算，则可以使用 `useMemo` 来进行优化。
 
+## 为什么 useState 要使用数组而不是对象
+
+这里用到了解构赋值，所以先来看一下ES6 的解构赋值：
+
+##### 数组的解构赋值
+
+```js
+const foo = [1, 2, 3];
+const [one, two, three] = foo;
+console.log(one);	// 1
+console.log(two);	// 2
+console.log(three);	// 3
+```
+
+##### 对象的解构赋值
+
+```js
+const user = {
+  id: 666,
+  name: "hello"
+};
+const { id, name } = user;
+console.log(id);	// 666
+console.log(name);	// "hello"
+```
+
+看完这两个例子，答案应该就出来了：
+
+- 如果 useState 返回的是数组，那么使用者可以对数组中的元素命名，代码看起来也比较干净
+- 如果 useState 返回的是对象，在解构对象的时候必须要和 useState 内部实现返回的对象同名，想要使用多次的话，必须得设置别名才能使用返回值
+
 ## useState高级用法
 
 ### 恢复默认值
@@ -117,7 +148,7 @@ for(let i=0; i<3; i++){
 }
 ```
 
-通过for循环，执行了3次setCount(count+1)，那么你觉得count会 +3 吗？
+通过for循环，执行了3次`setCount(count+1)`，那么你觉得count会 +3 吗？
 
 答案是：肯定不会
 
@@ -140,7 +171,7 @@ for(let i=0; i<3; i++){
 **代码分析：**
 
 1. prevData为我们定义的一个形参，指当前count应该的值；
-2. {return prevData+1} 中，将 prevData+1，并将运算结果return出去。
+2. `{return prevData+1} `中，将 `prevData+1`，并将运算结果`return`出去。
 3. 最终将prevData赋值给count；
 
 **补充说明：**
@@ -174,7 +205,7 @@ setPerson({...person,age:18}); //解构赋值
 
 代码分析：
 
-1. 先通过...person，将原有person做一次解构，得到一份复制品(浅拷贝)；
+1. 先通过...person，将原有person做一次解构，得到一份深拷贝；
 2. 修改age的值；
 3. 将修改过后的新数据，通过setPerson赋值给person；
 
