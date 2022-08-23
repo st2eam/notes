@@ -66,8 +66,8 @@
 
 - C++新增形式:类型名(表达式):int(var)
   
-  #### 内存申请
-  
+#### 内存申请
+
   | 高地址 | 栈区(向下增长)↓ |
   |:---:|:---------:|
   | ↑   | 堆区(向上增长)↑ |
@@ -159,7 +159,7 @@ void passParamByRef(std::string& param)
   
   - 应仅用来修饰简单函数
     
-    ## 函数重载
+## 函数重载
 
 - 函数起名字存在痛点
 
@@ -171,7 +171,7 @@ void passParamByRef(std::string& param)
   
   - 支持const修饰区分
     
-    ## 函数模板
+## 函数模板
 
 - 语法
   
@@ -179,11 +179,11 @@ void passParamByRef(std::string& param)
   template<typename T>
   T max(T a, T b)
   {
-    return a > b ? a : b;
+  return a > b ? a : b;
   }
   ```
   
-  ## 函数默认参数
+## 函数默认参数
 
 - 语法
   
