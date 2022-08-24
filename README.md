@@ -1,6 +1,6 @@
 # notes
 
-[个人主页](https://github.com/stream12138) 最近实在是太忙了，没啥时间写这玩意。😶‍🌫️
+[个人主页](https://github.com/stream12138)
 
 <img title="data-align=" src="https://github.githubassets.com/images/modules/profile/profile-first-issue.svg" alt="" data-align="center">
 
