@@ -404,8 +404,8 @@ render() {
 render() {
   return (
     <div>
-      <span>内地</span>
-      <span>港台</span>
+      <span>国产</span>
+      <span>日韩</span>
       <span>欧美</span>
     </div>
   )
@@ -418,8 +418,8 @@ render() {
 render() {
   return (
     <React.Fragment>
-      <span>内地</span>
-      <span>港台</span>
+      <span>国产</span>
+      <span>日韩</span>
       <span>欧美</span>
     </React.Fragment>
   )
@@ -432,8 +432,8 @@ render() {
 render() {
   return (
     <>
-      <span>内地</span>
-      <span>港台</span>
+      <span>国产</span>
+      <span>日韩</span>
       <span>欧美</span>
     </>
   )

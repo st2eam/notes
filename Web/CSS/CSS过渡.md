@@ -54,7 +54,7 @@ transition-delay 属性规定过渡效果的延迟（以秒计）。
 
 下例在启动之前有 1 秒的延迟：
 
-```
+```css
 div {
   transition-delay: 1s;
 }

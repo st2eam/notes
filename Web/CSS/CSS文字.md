@@ -59,34 +59,50 @@ p {
 ### 文字样式
 
 - **font-style**：用来打开和关闭文本 italic (斜体)，一般只会用到下面的值
-  
+
   - `italic`：如果当前字体的斜体版本可用，那么文本设置为斜体版本。
 
 - **font-weight**：置文字的粗体大小
-  
+
   - `normal`：普通
   - `bold`：加粗
 
 - **text-decoration**：设置/取消字体上的文本装饰
-  
+
   - `none`：取消已经存在的任何文本装饰
   - `underline`：文本下划线
   - `overline`：本上划线
   - `line-through`：穿过文本的线
+  - `text-fill-color`: 设置文字内部填充颜色
+  - `text-stroke-color`: 设置文字边界填充颜色
+  - `text-stroke-width`: 设置文字边界宽度
 
 - **text-align**：用来控制文本如何和它所在的内容盒子对齐。可用值如下，并且在与常规文字处理器应用程序中的工作方式几乎相同：
-  
+
   - `left`：左对齐文本
   - `right`：右对齐文本
   - `center`：居中文字
 
 - **line-height**：设置文本每行之间的高，可以接受大多数单位，不过也可以设置一个无单位的值，作为乘数，通常这种是比较好的做法。无单位的值乘以 `font-size` 来获得 `line-height`。当行与行之间拉开空间，正文文本通常看起来更好更容易阅读。推荐的行高大约是 1.5–2 (双倍间距) 所以要把我们的文本行高设置为字体高度的1.5倍，你可以使用这个:
-  
+
   ```css
   p {
     line-height: 1.5;
   }
   ```
+
+- **word-wrap**：语法：`word-wrap: normal|break-word`
+
+  - normal：使用浏览器默认的换行
+
+  - break-all：允许在单词内换行
+
+- **text-overflow**：`text-overflow`设置或检索当当前行超过指定容器的边界时如何显示，属性有两个值选择：
+
+  - clip：修剪文本
+  - ellipsis：显示省略符号来代表被修剪的文本
+
+- **text-shadow**：`text-shadow`可向文本应用阴影。能够规定水平阴影、垂直阴影、模糊距离，以及阴影的颜色
 
 ### 使用自定字体
 
