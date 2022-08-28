@@ -103,17 +103,21 @@ function asyncArea(length) {
 
 ```js
 // 正常调用
-asyncArea(1).then(result => {
-  console.log(result)
-}).catch(error => {
-  console.trace(error)
-})
+asyncArea(1)
+  .then(result => {
+    console.log(result)
+  })
+  .catch(error => {
+    console.trace(error)
+  })
 // 触发异常
-asyncArea(-1).then(result => {
-  console.log(result)
-}).catch(error => {
-  console.trace(error)
-})
+asyncArea(-1)
+  .then(result => {
+    console.log(result)
+  })
+  .catch(error => {
+    console.trace(error)
+  })
 // 链式调用
 let start = Date.now()
 asyncArea(1)
@@ -127,6 +131,7 @@ asyncArea(1)
     // 耗时是三个请求的累加
     console.log(`cost ${Date.now() - start}ms`)
   })
+
 ```
 
 通过上面的例子我们可以看到，前面回调嵌套的问题，通过 `Promise` 的链式调用写法得到很大的缓解。
