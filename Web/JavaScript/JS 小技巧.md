@@ -134,3 +134,15 @@ const baz = 0 ?? 42;
   // 调用
   searchByType[type](params)
 ```
+
+## 生成打乱的1-10数组
+
+```javascript
+new Array(10)
+.fill(0)
+.map((_, index) => index + 1)
+.sort(() => {
+return 0.5 - Math.random()
+})
+```
+
