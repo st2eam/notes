@@ -28,6 +28,7 @@
   - [多尔蒂门槛](Design\多尔蒂门槛.md)
 - **Web**
   - **CSS**
+    - [BFC](Web\CSS\BFC.md)
     - [CSS Flex布局](Web\CSS\CSS%20Flex布局.md)
     - [CSS Grid布局](Web\CSS\CSS%20Grid布局.md)
     - [CSS](Web\CSS\CSS.md)
@@ -60,6 +61,8 @@
       - [Eslint](Web\JavaScript\ESlint\Eslint.md)
     - **Express**
       - [Express](Web\JavaScript\Express\Express.md)
+    - **Jest**
+      - [Jest](Web\JavaScript\Jest\Jest.md)
     - **Joi**
       - [Joi](Web\JavaScript\Joi\Joi.md)
     - **JS 基础**
