@@ -27,6 +27,8 @@
   - [动效设计](Design\动效设计.md)
   - [多尔蒂门槛](Design\多尔蒂门槛.md)
 - **Web**
+  - **Canvas**
+    - [Canvas](Web\Canvas\Canvas.md)
   - **CSS**
     - [BFC](Web\CSS\BFC.md)
     - [CSS Flex布局](Web\CSS\CSS%20Flex布局.md)
