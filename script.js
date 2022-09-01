@@ -1,5 +1,6 @@
 let sidebarTxt = '- [**Home**](/README.md)\n'
 let path = require('path')
+let fs = require('fs')
 let curPath = path.resolve('./')
 let baseDirArr = []
 
@@ -57,9 +58,6 @@ walkSync(curPath, function (filePath, stat) {
     }
   }
 })
-
-let path = require('path')
-let fs = require('fs')
 
 console.log(sidebarTxt)
 fs.writeFile(path.resolve('./') + '/_sidebar.md', sidebarTxt, function (err) {
