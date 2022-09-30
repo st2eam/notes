@@ -172,7 +172,11 @@
     - **Vue2**
       - [Vue](Web\Vue\Vue2\Vue.md)
     - **Vue3**
-      - [script setup](Web\Vue\Vue3\script%20setup.md)
+      - **基础**
+        - [script setup](Web\Vue\Vue3\基础\script%20setup.md)
+        - [Vue3](Web\Vue\Vue3\基础\Vue3.md)
+        - [创建Vue应用](Web\Vue\Vue3\基础\创建Vue应用.md)
+        - [组件式API和选项式API](Web\Vue\Vue3\基础\组件式API和选项式API.md)
   - **对象存储 OSS**
     - [Node.js SDK](Web\对象存储%20OSS\Node.js%20SDK.md)
     - [Quick Start](Web\对象存储%20OSS\Quick%20Start.md)
