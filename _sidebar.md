@@ -60,6 +60,7 @@
   - [汇编语言](Study\汇编语言.md)
   - [短路求值](Study\短路求值.md)
   - [语法糖](Study\语法糖.md)
+  - [配置Hosts以及更改DNS](Study\配置Hosts以及更改DNS.md)
 - **Web**
   - **Canvas**
     - [Canvas](Web\Canvas\Canvas.md)
