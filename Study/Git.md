@@ -1,5 +1,4 @@
-Git 常用命令
---------
+## Git 常用命令
 
 ### 仓库
 
@@ -17,15 +16,25 @@ $ git clone [url]
 ### 配置
 
 ```shell
-# 显示当前的Git配置
-$ git config --list
+# 查看系统config配置
+$ git config --system --list
+
+# 查看当前用户（global）配置
+$ git config --global --list
+
+# 查看当前仓库配置信息
+$ git config --local --list
 
 # 编辑Git配置文件
 $ git config -e [--global]
 
-# 设置提交代码时的用户信息
-$ git config [--global] user.name "[name]"
-$ git config [--global] user.email "[email address]"
+# 设置提交代码时的全局用户信息
+$ git config --global user.name "[name]"
+$ git config --global user.email "[email address]"
+
+# 设置提交代码时的当前仓库用户信息
+$ git config user.name "[name]"
+$ git config user.email "[email address]"
 ```
 
 ### 增加 / 删除文件
@@ -279,7 +288,7 @@ $ git reset --keep [commit]
 # 后者的所有变化都将被前者抵消，并且应用到当前分支
 $ git revert [commit]
 
-暂时将未提交的变化移除，稍后再移入
+# 暂时将未提交的变化移除，稍后再移入
 $ git stash
 $ git stash pop
 ```
