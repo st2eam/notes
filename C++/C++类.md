@@ -68,8 +68,9 @@ classname (const classname &obj) {
 1. classname A(B);
 
 2. classnaem A=B;
-   
-   #### 析构函数（Destructor）
+
+#### 析构函数（Destructor）
+
 - 声明
   
   - ~类名（）
@@ -83,7 +84,7 @@ classname (const classname &obj) {
 
 - Can destructors be virtual in C++
   
-  #### 构造和析构函数链
+#### 构造和析构函数链
 
 - 构造函数链
   

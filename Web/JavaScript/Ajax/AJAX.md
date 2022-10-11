@@ -17,7 +17,7 @@ AJAX 仅仅组合了：
 - 由 JavaScript 读取响应
 - 由 JavaScript 执行正确的动作（比如更新页面）
 
-### Ajax 的核心是 XMLHttpRequest 对象。
+### Ajax 的核心是 XMLHttpRequest 对象
 
 `XMLHttpRequest` 对象用于同幕后服务器交换数据。这意味着可以更新网页的部分，而不需要重新加载整个页面。
 

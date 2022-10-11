@@ -20,7 +20,7 @@ Node.js 使用事件驱动模型，当web server接收到请求，就把它关�
 
 ![](https://www.runoob.com/wp-content/uploads/2015/09/event_loop.jpg)
 
-整个事件驱动的流程就是这么实现的，非常简洁。有点类似于观察者模式，事件相当于一个主题(Subject)，而所有注册到这个事件上的处理函数相当于观察者(Observer)。   
+整个事件驱动的流程就是这么实现的，非常简洁。有点类似于观察者模式，事件相当于一个主题(Subject)，而所有注册到这个事件上的处理函数相当于观察者(Observer)。
 
 Node.js 有多个内置的事件，我们可以通过引入 events 模块，并通过实例化 EventEmitter 类来绑定和监听事件，如下实例：
 

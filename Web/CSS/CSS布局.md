@@ -11,7 +11,7 @@ display 属性规定是否/如何显示元素。
 这个 ```<div>``` 元素属于块级元素。
 块级元素的一些例子：
 
-```
+```html
 <div>
 <h1> - <h6>
 <p>
@@ -87,13 +87,13 @@ position: relative; 的元素相对于其正常位置进行定位。
 
 设置相对定位的元素的 top、right、bottom 和 left 属性将导致其偏离其正常位置进行调整。不会对其余内容进行调整来适应元素留下的任何空间。
 
-#### position: fixed;
+#### position: fixed
 
 position: fixed; 的元素是相对于视口定位的，这意味着即使滚动页面，它也始终位于同一位置。 top、right、bottom 和 left 属性用于定位此元素。
 
 固定定位的元素不会在页面中通常应放置的位置上留出空隙。
 
-#### position: absolute;
+#### position: absolute
 
 position: absolute; 的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）。
 
@@ -101,7 +101,7 @@ position: absolute; 的元素相对于最近的定位祖先元素进行定位（
 
 注意：“被定位的”元素是其位置除 static 以外的任何元素。
 
-#### position: sticky;
+#### position: sticky
 
 position: sticky; 的元素根据用户的滚动位置进行定位。
 

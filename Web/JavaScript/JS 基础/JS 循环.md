@@ -26,5 +26,3 @@ for...of 循环可以使用的范围包括：
 4. 类数组对象，如 arguments 对象、DOM NodeList 对象
 5. Generator 对象
 6. 字符串
-
-

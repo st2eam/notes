@@ -1341,50 +1341,50 @@ var location = env.development ?
 
 ## 拓展阅读
 
-- [An Open Letter to JavaScript Leaders Regarding Semicolons][1]
-- [JavaScript Semicolon Insertion – Everything you need to know][2]
+* [An Open Letter to JavaScript Leaders Regarding Semicolons][1]
+* [JavaScript Semicolon Insertion – Everything you need to know][2]
 
-##### 一个值得观看的视频：
+##### 一个值得观看的视频
 
-- [JavaScript 中的分号多余吗？- YouTube][3]
+* [JavaScript 中的分号多余吗？- YouTube][3]
 
 当前主流的代码压缩方案都是基于词法（AST-based）进行的，所以在处理无分号的代码时完全没有压力（何况 JavaScript 中分号本来就不是强制的）。
 
-##### 一段摘抄自 *["An Open Letter to JavaScript Leaders Regarding Semicolons"][1]* 这篇文章的内容：
+##### 一段摘抄自 *["An Open Letter to JavaScript Leaders Regarding Semicolons"][1]* 这篇文章的内容
 
 > [自动化插入分号的做法]是安全可依赖的，而且其产出的代码能够在所有浏览器里很好地运行。 Closure compiler, yuicompressor, packer 还有 jsmin 都能正确地对这样的代码进行压缩处理。并没有任何性能相关的问题。
-> 
+>
 > 不得不说，Javascript 社区里的大牛们一直是错误的，并不能教给你最佳实践。真是让人忧伤啊。 我建议先弄清楚 JS 是怎样断句的（还有就是哪些地方看起来断了其实并没有），明白了这个后就可以随心写出漂亮的代码了。
-> 
+>
 > 一般来说， `\n` 表示语句结束，除非：
-> 
+>
 > 1. 该语句有未闭合的括号， 数组字面量， 对象字面量 或者其他不能正常结束一条语句的情况（譬如，以 `.` 或 `,` 结尾）
 > 2. 该语句是 `--` 或者 `++` （它会将后面的内容进行自增或减）
 > 3. 该语句是 `for()`，`while()`，`do`，`if()` 或者 `else` 并且没有 `{`
 > 4. 下一行以 `[`，`(`，`+`，`*`，`/`，`-`，`,`，`.` 或者其他只会单独出现在两块内容间的二元操作符。
-> 
+>
 > 第一条很容易理解。即使在 JSLint 中，也允许 JSON，构造器的括号中，以及使用 `var` 配合 `,` 结尾来声明多个变量等这些情中包含 `\n`。
-> 
+>
 > 第二条有点奇葩。 我还想不出谁会（除了这里用作讨论外）写出 `i\n++\nj` 这样的代码来，不过，顺便说一下，这种写法最后解析的结果是 `i; ++j`，而不是 `i++; j`。
-> 
+>
 > 第三条也容易理解。 `if (x)\ny()` 等价于 `if (x) { y() }`。解释器会向下寻找到代码块或一条语句为止。
-> 
+>
 > `;` 是条合法的 JavaScript 语句。所以 `if(x);` 等价于 `if(x){}`，表示 “如果 x 为真，什么也不做。” 这种写法在循环里面可以看到，就是当条件判断与条件更新是同一个方法的时候。 不常见，但也不至于没听说过吧。
-> 
+>
 > 第四条就是常见的 “看，说过要加分号！” 的情形。但这些情况可以通过在语句前面加上分号来解决，如果你确定该语句跟前面的没关系的话。举个例子，假如你想这样：
-> 
+>
 > ```js
 > foo();
 > [1,2,3].forEach(bar);
 > ```
-> 
+>
 > 那么完全可以这样来写：
-> 
+>
 > ```js
 > foo()
 > ;[1,2,3].forEach(bar)
 > ```
-> 
+>
 > 后者的好处是分号比较瞩目，一旦习惯后便再也不会看到以 `(` 和 `[` 开头又不带分号的语句了。
 
 [1]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding

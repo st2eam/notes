@@ -8,7 +8,7 @@ translate() 方法从其当前位置移动元素（根据为 X 轴和 Y 轴指�
 ![image](https://www.w3school.com.cn/i/css/transform_translate.gif)
 下面的例子把```<div>``` 元素从其当前位置向右移动 50 个像素，并向下移动 100 个像素：
 
-```
+```css
 div {
   transform: translate(50px, 100px);
 }
@@ -19,9 +19,9 @@ div {
 rotate() 方法根据给定的角度顺时针或逆时针旋转元素。
 ![image](https://www.w3school.com.cn/i/css/transform_rotate.gif)
 
-下面的例子把``` <div>``` 元素顺时针旋转 20 度：
+下面的例子把```<div>``` 元素顺时针旋转 20 度：
 
-```
+```css
 div {
   transform: rotate(20deg);
 }
@@ -33,17 +33,17 @@ scale() 方法增加或减少元素的大小（根据给定的宽度和高度参
 
 ![image](https://www.w3school.com.cn/i/css/transform_scale.gif)
 
-下面的例子把``` <div>``` 元素增大为其原始宽度的两倍和其原始高度的三倍：
+下面的例子把```<div>``` 元素增大为其原始宽度的两倍和其原始高度的三倍：
 
-```
+```css
 div {
   transform: scale(2, 3);
 }
 ```
 
-下面的例子把``` <div>``` 元素减小为其原始宽度和高度的一半：
+下面的例子把```<div>``` 元素减小为其原始宽度和高度的一半：
 
-```
+```css
 div {
   transform: scale(0.5, 0.5);
 }
@@ -53,9 +53,9 @@ div {
 
 skewX() 方法使元素沿 X 轴倾斜给定角度。
 
-下例把``` <div>``` 元素沿X轴倾斜 20 度：
+下例把```<div>``` 元素沿X轴倾斜 20 度：
 
-```
+```css
 div {
   transform: skewX(20deg);
 }
@@ -65,9 +65,9 @@ div {
 
 skewY() 方法使元素沿 Y 轴倾斜给定角度。
 
-下例把``` <div>``` 元素沿 Y 轴倾斜 20 度：
+下例把```<div>``` 元素沿 Y 轴倾斜 20 度：
 
-```
+```css
 div {
   transform: skewY(20deg);
 }
@@ -89,7 +89,7 @@ matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
 
 实例
 
-```
+```css
 div {
   transform: matrix(1, -0.3, 0, 1, 0, 0);
 }
@@ -115,4 +115,3 @@ rotateX()
 rotateY()
 rotateZ()
 ```
-

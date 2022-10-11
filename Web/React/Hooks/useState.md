@@ -25,7 +25,7 @@ setState(newState);
 在后续的重新渲染中，`useState` 返回的第一个值将始终是更新后最新的 state。
 
 > 注意
-> 
+>
 > React 会确保 `setState` 函数的标识是稳定的，并且不会在组件重新渲染时发生变化。这就是为什么可以安全地从 `useEffect` 或 `useCallback` 的依赖列表中省略 `setState`。
 
 #### [函数式更新](https://react.docschina.org/docs/hooks-reference.html#functional-updates)
@@ -50,15 +50,15 @@ function Counter({initialCount}) {
 如果你的更新函数返回值与当前 state 完全相同，则随后的重渲染会被完全跳过。
 
 > 注意
-> 
+>
 > 与 class 组件中的 `setState` 方法不同，`useState` 不会自动合并更新对象。你可以用函数式的 `setState` 结合展开运算符来达到合并更新对象的效果。
-> 
+>
 > ```
 > setState(prevState => {
 >   // 也可以使用 Object.assign
 >   return {...prevState, ...updatedValues};});
 > ```
-> 
+>
 > `useReducer` 是另一种可选方案，它更适合用于管理包含多个子值的 state 对象。
 
 #### [惰性初始 state](https://react.docschina.org/docs/hooks-reference.html#lazy-initial-state)
@@ -86,9 +86,9 @@ const \[state, setState\] = useState(() => {
 ```js
 const foo = [1, 2, 3];
 const [one, two, three] = foo;
-console.log(one);	// 1
-console.log(two);	// 2
-console.log(three);	// 3
+console.log(one); // 1
+console.log(two); // 2
+console.log(three); // 3
 ```
 
 ##### 对象的解构赋值
@@ -99,16 +99,14 @@ const user = {
   name: "hello"
 };
 const { id, name } = user;
-console.log(id);	// 666
-console.log(name);	// "hello"
+console.log(id); // 666
+console.log(name); // "hello"
 ```
 
 看完这两个例子，答案应该就出来了：
 
 - 如果 useState 返回的是数组，那么使用者可以对数组中的元素命名，代码看起来也比较干净
 - 如果 useState 返回的是对象，在解构对象的时候必须要和 useState 内部实现返回的对象同名，想要使用多次的话，必须得设置别名才能使用返回值
-
-
 
 ## useState高级用法
 
@@ -173,7 +171,7 @@ for(let i=0; i<3; i++){
 **代码分析：**
 
 1. prevData为我们定义的一个形参，指当前count应该的值；
-2. `{return prevData+1} `中，将 `prevData+1`，并将运算结果`return`出去。
+2. `{return prevData+1}`中，将 `prevData+1`，并将运算结果`return`出去。
 3. 最终将prevData赋值给count；
 
 **补充说明：**

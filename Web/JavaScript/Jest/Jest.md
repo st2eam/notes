@@ -90,8 +90,6 @@ describe('Scoped / Nested block', () => {
 // 1 - afterAll
 ```
 
-
-
 ## describe 和 test 块的执行顺序
 
 Jest 会在所有真正的测试开始**之前**执行测试文件里所有的 describe 处理程序（handlers）。 这是在 `before*` 和 `after*` 处理程序里面 （而不是在 describe 块中）进行准备工作和整理工作的另一个原因。 当 describe  块运行完后,，默认情况下，Jest 会按照 test 出现的顺序（译者注：原文是in the order they were  encountered in the collection phase）依次运行所有测试，等待每一个测试完成并整理好，然后才继续往下走。
@@ -339,7 +337,7 @@ myMockFn((err, val) => console.log(val));
 // > false
 ```
 
-当 `mockImplementationOne`定义的实现逐个调用完毕时， 如果定义了`jest.fn `，它将使用 `jest.fn `。
+当 `mockImplementationOne`定义的实现逐个调用完毕时， 如果定义了`jest.fn`，它将使用 `jest.fn`。
 
 ```javascript
 const myMockFn = jest
@@ -422,4 +420,4 @@ expect(mockFunc.mock.calls).toEqual([[arg1, arg2]]);
 expect(mockFunc.getMockName()).toBe('a mock name');
 ```
 
-匹配器的完整列表，请查阅 [ 参考文档](https://jestjs.io/zh-Hans/docs/expect)。
+匹配器的完整列表，请查阅 [参考文档](https://jestjs.io/zh-Hans/docs/expect)。

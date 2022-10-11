@@ -33,7 +33,7 @@ export function useReducer<S, I, A>(
 
 如果你了解事件驱动，使用过EventEmitter，或者你使用过Redux，那么你会很容易理解useReducer的用法。
 
-#### 代码形式：
+#### 代码形式
 
 ```jsx
 import React, { useReducer } from 'react'; //引入useReducer
@@ -66,7 +66,7 @@ function Component(){
 
 例如 action 可以是 {type:'xx',param:xxx}
 
-#### 拆解说明：
+#### 拆解说明
 
 1. 具体讲解已在上面示例代码中做了多项注释，此处不再重复；
 
@@ -210,8 +210,8 @@ function Component() {
 1、用`React.createContext()`定义一个全局数据对象；  
 2、在父组件中用 `useReducer` 定义全局变量xx和负责抛出修改事件的`dispatch`；  
 3、在父组件之外，定义负责具体修改全局变量的处理函数`reducer`，根据修改xx事件类型和参数，执行修改xx的值；  
-4、在父组件中用` <XxxContext.Provider value={{xx,dispath}}> `标签把 全局共享数据和负责抛出修改xx的dispatch 暴露给子组件；  
-5、在子组件中用 `useContext `获取全局变量；  
+4、在父组件中用`<XxxContext.Provider value={{xx,dispath}}>`标签把 全局共享数据和负责抛出修改xx的dispatch 暴露给子组件；  
+5、在子组件中用 `useContext`获取全局变量；  
 6、在子组件中用 `xxContext.dispatch` 去抛出修改xx的事件，携带修改事件类型和参数；
 
 global-context.ts

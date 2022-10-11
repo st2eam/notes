@@ -14,6 +14,7 @@ Flex 布局的主要思想是使父容器能够调节子元素的宽度/高度�
 
 1. 要么按照 main axis(主轴)（从 main-start 到 main-end ）排布
 2. 要么按照cross axis(交叉轴) (从 cross-start 到cross-end)排布。
+
 - **main axis**: flex 容器的主轴，flex 项沿着主轴排布，注意主轴不一定是水平的，主轴是水平还是垂直取决于 flex-direction 属性（见下文）。
 - **main-start|main-end**: 分别表示主轴的开始位置和结束位置，flex 项在容器中会从 main-start 到 main-end 排布。
 - **main size**: flex 项占据主轴的宽度或高度。flex 项的 main size 属性是要么是“宽度”，要么是“高度”，这取决于主轴方向。
@@ -43,7 +44,7 @@ CSS 代码:
 
 ![image](https://www.html.cn/newimg88/2018/12/flex-direction.svg)
 
-flex-direction 属性确立了主轴，从而定义了 flex 项在 flex 容器中的排布方向。 
+flex-direction 属性确立了主轴，从而定义了 flex 项在 flex 容器中的排布方向。
 Flexbox 是单向布局，有些时候我们也称作一维布局。 可以将 flex 项视为主要沿着水平行或垂直列排布。
 
 ```css
@@ -71,7 +72,7 @@ Flexbox 是单向布局，有些时候我们也称作一维布局。 可以将 f
 
 ![image](https://www.html.cn/newimg88/2018/12/justify-content.svg)
 
-`justify-content `属性定义了flex 项沿主轴方向的对齐方式。
+`justify-content`属性定义了flex 项沿主轴方向的对齐方式。
 当一行中的所有 flex 项都是固定大小，或者是灵活大小但已经达到最大 main size 时，它可以帮助分配主轴上的剩余空间。当 flex 项溢出主轴的时候，它还可以用来控制flex 项的对齐方式。
 
 ```css
@@ -154,12 +155,12 @@ Flexbox 是单向布局，有些时候我们也称作一维布局。 可以将 f
 ```
 
 > 注，举个例子帮助你理解：
-> 
+>
 > 比如我们得 flex 容器中有 6 个 flex 项，每个 flex 项的 flex-grow 初始值都是 1。如果我们将每个 flex 项的 flex-grow 相加起来，总和为 6。因此 flex 容器的总宽度被平均分成了 6 份。每个 flex 项增长到填充容器可用空间的1/6。
-> 
+>
 > 当我们将第 3 个 flex 项的 flex-grow 设置为 2 时，flex 容器现在被分成了 7 等份，因为所有 flex-grow 属性是：1 + 1 + 2 + 1 + 1 + 1。第 3 个 flex 项占了整个容器空间的 2/7，其他的占了 1/7。
-> 
-> 具体可以查看 [【Flex布局教程】更多关于Flexbox布局如何工作的 – 用大彩图和GIF动画解释 ](https://www.html.cn/archives/7236)中的 “属性 #2: Flex Grow（拉伸）”
+>
+> 具体可以查看 [【Flex布局教程】更多关于Flexbox布局如何工作的 – 用大彩图和GIF动画解释](https://www.html.cn/archives/7236)中的 “属性 #2: Flex Grow（拉伸）”
 
 #### flex-shrink
 

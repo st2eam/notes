@@ -46,11 +46,11 @@ html += `</ul>`;
 - javascript
 - es6
   
-  ### length
+### length
   
   `length` 属性返回字符串的长度：
   
-  ### indexOf()/lastIndexOf()
+### indexOf()/lastIndexOf()
   
   `indexOf()` 方法返回字符串中指定文本首次出现的索引（位置）
 
@@ -64,7 +64,7 @@ html += `</ul>`;
 
 ### slice()
 
-`slice() `提取字符串的某个部分并在新字符串中返回被提取的部分。
+`slice()`提取字符串的某个部分并在新字符串中返回被提取的部分。
 
 - 该方法设置两个参数：起始索引（开始位置），终止索引（结束位置）。
 

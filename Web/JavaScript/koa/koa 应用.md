@@ -96,7 +96,7 @@ app.listen(3000);
 
 - `app.env` 默认为 **NODE_ENV** or "development"
 - `app.proxy` 如果为 true，则解析 "Host" 的 header 域，并支持 X-Forwarded-Host
-- `app.subdomainOffset` 默认为2，表示 `.subdomains` 所忽略的字符偏移量。 
+- `app.subdomainOffset` 默认为2，表示 `.subdomains` 所忽略的字符偏移量。
 
 ### app.listen(...)
 

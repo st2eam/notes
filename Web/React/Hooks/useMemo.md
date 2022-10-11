@@ -14,7 +14,7 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 你可以把 `useMemo` 作为**性能优化**的手段，但不要把它当成语义上的保证。将来，React 可能会选择“遗忘”以前的一些 memoized 值，并在下次渲染时重新计算它们，比如为离屏组件释放内存。先编写在没有 `useMemo` 的情况下也可以执行的代码 —— 之后再在你的代码中添加 `useMemo`，以达到优化性能的目的。
 
-##### 代码形式：
+##### 代码形式
 
 ```js
 const xxxValue = useMemo(() => {
@@ -24,7 +24,7 @@ const xxxValue = useMemo(() => {
 }, [xx]);
 ```
 
-##### 拆解说明：
+##### 拆解说明
 
 1. 使用`useMemo()`将计算函数包裹住，将计算函数中使用到的数据变量作为作为第2个参数。  
 
@@ -42,7 +42,7 @@ const xxxValue = useMemo(() => {
 
 `useMemo`返回的是一个函数的值
 
-## useMemo使用示例：
+## useMemo使用示例
 
 **举例：** 若某React组件内部有2个number类型的变量num，random，有2个button，点击之后分别可以修改num，random的值。 与此同时，该组件中还要求显示出num范围内的所有质数个数总和。
 

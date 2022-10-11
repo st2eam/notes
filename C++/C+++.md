@@ -158,7 +158,7 @@ void passParamByRef(std::string& param)
 - 提示
   
   - 应仅用来修饰简单函数
-    
+
 ## 函数重载
 
 - 函数起名字存在痛点
@@ -170,7 +170,7 @@ void passParamByRef(std::string& param)
   - 不支持以返回值区分函数
   
   - 支持const修饰区分
-    
+
 ## 函数模板
 
 - 语法
@@ -209,7 +209,7 @@ void passParamByRef(std::string& param)
 
 - 用户主动添加的具有名字的最外层作用域
   
-  #### 函数的作用域
+#### 函数的作用域
 
 - 可以是类，也可以是名字空间
 
@@ -335,15 +335,15 @@ printf("%.2lf", π);//不会影响之后输出
 - #### 面向对象编程(c++)
   
   - 重用性
-    
+
     > 代码可复用，维护成本低
   
   - 灵活性
-    
+
     > 基于可复用的模块进行重新组装、重构，以达到实现不同的功能
   
   - 扩展性
-    
+
     > 对新增需求友好，模块可扩展
 
 - 函数式编程(js)
@@ -869,4 +869,4 @@ int main()
 <hr></hr>
 版权声明：本文为stream的原创文章，遵循CC 4.0 BY - SA版权协议，转载请附上原文出处链接及本声明。
 
-原文链接：http://note.youdao.com/noteshare?id=4c54753e7c3a8ccda0e023eb97a7cbc3
+原文链接：<http://note.youdao.com/noteshare?id=4c54753e7c3a8ccda0e023eb97a7cbc3>

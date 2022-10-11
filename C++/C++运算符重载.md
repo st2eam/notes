@@ -5,6 +5,7 @@
 - **成员函数重载**是指函数名相同，参数不同（数量、类型、次序）
 
 - **成员函数隐藏**（重定义）
+
 1. 不在同一个作用域内（分别位于基类与继承类中）
 
 2. 函数名字相同
@@ -14,20 +15,20 @@
 4. 参数不同。此时，无论有无```virtual```关键字，基类的函数将被隐藏
 
 5. 参数相同，但是基类函数没有```virtual```关键字。此时，基类的函数被隐藏
-   
-   ## 运算符重载
-   
+
+## 运算符重载
+
    一般格式如下
-   
+
    ```cpp
    <返回类型说明符> operator <运算符符号> (<参数表>)
    {
     <函数体>
    }
    ```
-   
+
    不可重载：
-   
+
    | Operator       |          |
    |:--------------:| -------- |
    | ```.```        | 类属关系运算符  |
@@ -36,6 +37,7 @@
    | ```#```        | 编译预处理符号  |
    | ```?:```       | 三目条件运算符  |
    | ```sizeof()``` | 取数据类型的长度 |
+
 - 重载运算符限制在c++语言中已有的运算符范围内的允许重载的运算符之中，**不能创建新的运算符**
 - 运算符重载的实质是函数重载，遵循函数重载的选择原则
 - 重载之后**不能改变运算符的优先级和结合性**，也不能够改变运算符操作数的个数及语法结构
@@ -46,13 +48,13 @@
 
 | <div style="width:60px">表达式</div> | 作为成员函数                     | 作为非成员函数          | 示例                                                                               |
 |:---------------------------------:| -------------------------- | ---------------- | -------------------------------------------------------------------------------- |
-| @a                                | ```(a).operator@ ()```     | operator@ (a)    | ```    !std::cin ```调用``` std::cin.operator!()```                                |
-| a@b                               | ```(a).operator@ (b)```    | operator@ (a, b) | ```    std::cout << 42 ```调用``` std::cout.operator<<(42)```                      |
-| a=b                               | ```(a).operator= (b)```    | 不能是非成员           | ```    std::string s; s = "abc"; ```调用``` s.operator=("abc")```                  |
-| a(b...)                           | ```(a).operator()(b...)``` | 不能是非成员           | ```    std::random_device r; auto n = r(); ```调用``` r.operator()()```            |
-| a[b]                              | ```(a).operator[](b)```    | 不能是非成员           | ```    std::map<int, int> m; m[1] = 2; ```调用``` m.operator[](1)```               |
-| a->                               | ```(a).operator->()```     | 不能是非成员           | ```    auto p = std::make_unique<S>(); p->bar() ```调用``` p.operator->()```       |
-| a@                                | ```(a).operator@ (0)```    | operator@ (a, 0) | ```    std::vector<int>::iterator i = v.begin(); i++ ```调用``` i.operator++(0)``` |
+| @a                                | ```(a).operator@ ()```     | operator@ (a)    | ```!std::cin```调用```std::cin.operator!()```                                |
+| a@b                               | ```(a).operator@ (b)```    | operator@ (a, b) | ```std::cout << 42```调用```std::cout.operator<<(42)```                      |
+| a=b                               | ```(a).operator= (b)```    | 不能是非成员           | ```std::string s; s = "abc";```调用```s.operator=("abc")```                  |
+| a(b...)                           | ```(a).operator()(b...)``` | 不能是非成员           | ```std::random_device r; auto n = r();```调用```r.operator()()```            |
+| a[b]                              | ```(a).operator[](b)```    | 不能是非成员           | ```std::map<int, int> m; m[1] = 2;```调用```m.operator[](1)```               |
+| a->                               | ```(a).operator->()```     | 不能是非成员           | ```auto p = std::make_unique<S>(); p->bar()```调用```p.operator->()```       |
+| a@                                | ```(a).operator@ (0)```    | operator@ (a, 0) | ```std::vector<int>::iterator i = v.begin(); i++```调用```i.operator++(0)``` |
 
 此表中，@ 是表示所有匹配运算符的占位符：@a 为所有前缀运算符，a@ 为除 -> 以外的所有后缀运算符，a@b 为除 = 以外的所有其他运算符
 

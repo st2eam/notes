@@ -70,7 +70,7 @@ Hook 在设计阶段就考虑了静态类型的问题。因为它们是函数，
 在 React 看来，一个使用了 Hook 的组件只不过是一个常规组件。如果你的测试方案不依赖于 React 的内部实现，测试带 Hook 的组件应该和你通常测试组件的方式没什么差别。
 
 > 注意
-> 
+>
 > [测试技巧](https://react.docschina.org/docs/testing-recipes.html) 中包含了许多可以拷贝粘贴的示例。
 
 举个例子，比如我们有这么个计数器组件：
@@ -302,7 +302,7 @@ function Example() {
 最后，你看到陈旧的 props 和 state 的另一个可能的原因，是你使用了「依赖数组」优化但没有正确地指定所有的依赖。举个例子，如果一个 effect 指定了 `[*]` 作为第二个参数，但在内部读取了 `someProp`，它会一直「看到」 `someProp` 的初始值。解决办法是要么移除依赖数组，要么修正它。 这里介绍了 [你该如何处理函数](https://react.docschina.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies)，而这里介绍了关于如何减少 effect 的运行而不必错误的跳过依赖的 [一些常见策略](https://react.docschina.org/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often)。
 
 > 注意
-> 
+>
 > 我们提供了一个 [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) ESLint 规则作为 [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) 包的一部分。它会在依赖被错误指定时发出警告，并给出修复建议。
 
 ### [*](https://react.docschina.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops)我该如何实现 `getDerivedStateFromProps`？
@@ -429,7 +429,7 @@ useEffect(() => {
 根据你的用例，下面列举了一些其他的办法。
 
 > 注意
-> 
+>
 > 我们提供了一个 [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) ESLint 规则作为 [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) 包的一部分。它会帮助你找出无法一致地处理更新的组件。
 
 让我们来看看这有什么关系。
@@ -473,7 +473,7 @@ function ProductPage({ productId }) {
 我们把这个函数移动到 effect 内部，这样它就不用出现在它的依赖列表中了。
 
 > 提示
-> 
+>
 > 看看 [这个小 demo](https://codesandbox.io/s/jvvkoo8pq3) 和 [这篇文章](https://www.robinwieruch.de/react-hooks-fetch-data/) 来了解更多关于如何用 Hook 进行数据获取。
 
 如果处于某些原因你 _无法_ 把一个函数移动到 effect 内部，还有一些其他办法：
@@ -695,9 +695,9 @@ function DeepChild(props) {  // 如果我们想要执行一个 action，�
 ### [*](https://react.docschina.org/docs/hooks-faq.html#how-to-read-an-often-changing-value-from-usecallback)如何从 `useCallback` 读取一个经常变化的值？
 
 > 注意
-> 
+>
 > 我们推荐 [在 context 中向下传递 `dispatch`](https://react.docschina.org/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down) 而非在 props 中使用独立的回调。下面的方法仅仅出于文档完整性考虑，以及作为一条出路在此提及。
-> 
+>
 > 同时也请注意这种模式在 [并行模式](https://react.docschina.org/blog/2018/03/27/update-on-async-rendering.html) 下可能会导致一些问题。我们计划在未来提供一个更加合理的替代方案，但当下最安全的解决方案是，如果回调所依赖的值变化了，总是让回调失效。
 
 在某些罕见场景中，你可能会需要用 [`useCallback`](https://react.docschina.org/docs/hooks-reference.html#usecallback) 记住一个回调，但由于内部函数必须经常重新创建，记忆效果不是很好。如果你想要记住的函数是一个事件处理器并且在渲染期间没有被用到，你可以 [把 ref 当做实例变量](https://react.docschina.org/docs/hooks-faq.html#is-there-something-like-instance-variables) 来用，并手动把最后提交的值保存在它当中：
