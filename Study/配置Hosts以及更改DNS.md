@@ -19,6 +19,11 @@ github.global.ssl.fastly.net
 151.101.193.194 github.global.ssl.fastly.net
 ```
 
+点击 Close idle sockets 和 Flush socket pools 两项即可清除 DNS 缓存
+
+[edge://net-internals/#sockets](edge://net-internals/#sockets)  
+[chrome://net-internals/#sockets](chrome://net-internals/#sockets)  
+
 ## [阿里云公共DNS](https://alidns.com/)
 
 ```shell
