@@ -207,6 +207,7 @@
     - **Vue2**
       - [index](Web\Vue\Vue2\index.md)
     - **Vue3**
+      - [Vue3 与 TSX](Web\Vue\Vue3\Vue3%20与%20TSX.md)
   - **对象存储 OSS**
     - [Node.js SDK](Web\对象存储%20OSS\Node.js%20SDK.md)
     - [Quick Start](Web\对象存储%20OSS\Quick%20Start.md)
