@@ -247,7 +247,7 @@ buf.copy(targetBuffer[, targetStart[, sourceStart[, sourceEnd]]])
 
 ### 参数
 
-参数描述如下：          
+参数描述如下：
 
 - **targetBuffer** - 要拷贝的 Buffer 对象。
 

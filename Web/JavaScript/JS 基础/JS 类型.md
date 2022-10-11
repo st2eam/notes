@@ -182,7 +182,7 @@ JavaScript 类型转换表
       <td>null</td>
       <td>0</td>
       <td>"null"</td>
-      <td>false</td>    
+      <td>false</td>
     </tr>
     <tr>
       <td>undefined</td>

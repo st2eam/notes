@@ -2,13 +2,13 @@
 
 path模块提供了用来处理文件路径的实用工具，因为不同操作系统的路径规则不同，比如Windows上面路径采用 `\\` 分隔，通常路径是这种格式：
 
-```
+```bash
 D:\\www\\task\\index.html
 ```
 
 但Linux采用 `/` 分隔，如：
 
-```
+```bash
 /root/www/task/index.html
 ```
 

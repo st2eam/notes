@@ -6,7 +6,7 @@
 
 `useContext(context)`函数可以传入1个参数，该参数为共享数据对象的实例，`useContext`函数会返回该共享对象实例的value值。
 
-#### 代码形式：
+#### 代码形式
 
 ```jsx
 import GlobalContext from './global-context'; //引入共享数据对象
@@ -21,7 +21,7 @@ function Component(){
 }
 ```
 
-#### 拆解说明：
+#### 拆解说明
 
 1. 子组件(函数组件)需要先引入共享数据对象GlobalContext；  
 

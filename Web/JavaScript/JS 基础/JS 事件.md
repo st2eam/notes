@@ -12,5 +12,3 @@
 | onload      | 浏览器已经完成页面加载       |
 
 更完整的列表：[W3School JavaScript 参考手册 HTML DOM 事件。](https://www.w3school.com.cn/jsref/dom_obj_event.asp)
-
-

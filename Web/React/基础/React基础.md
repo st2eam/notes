@@ -522,7 +522,7 @@ ReactDOM.render(<App />, document.getElementById('app'))
 - `Welcome` 组件将 `<div>Hello Tom</div>` 元素作为返回值
 
 > **注意：JSX中引用其他组件的时候组件名必须以大写字母开头**
-> 
+>
 > React会将小写字母开头的组件视为原生DOM标签，例如 `<div />` 代表HTML的div标签，而 `<Welcome />` 则代表一个组件，并且需要在作用域内使用 `Welcome`
 
 关于 `props` 有一些重要的概念需要注意，子组件永远不要直接修改父组件传递过来的 `props`，需要保持只读的状态，`props` 只能由父组件进行修改，这样做的目的是为了保持数据流的单向性，也就是说状态数据应该只能从父组件往子组件流动，而不应该反过来，这样容易造成混乱。比如上面的例子，子组件 `Welcome` 接收父组件 `App` 传递过来的 `this.props.name` ，在父组件 `App` 中，这个 `name` 对应的是自己内部的状态 `this.state.name` ，如果我们要改变 `Welcome` 中接收到的 `name`，需要在 `App` 中通过 `setState` 来对 `name` 进行修改，这样来引起子组件中 `props` 的变化

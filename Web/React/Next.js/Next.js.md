@@ -208,9 +208,9 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
 next 提供了两种方式，分别是导航式路由 next/link 和 编程式 next/router
 
 1. Link
-   
+
    href 为必须属性，可传递对象
-   
+
    ```js
    <Link href="/about?name=jackylin">
    
@@ -219,9 +219,9 @@ next 提供了两种方式，分别是导航式路由 next/link 和 编程式 ne
    ```
 
 2. 编程式导航 next/router
-   
+
    和 react hooks 中的 useHistory 用法一样
-   
+
    ```js
    import { useRouter } from 'next/router'
    const router = useRouter()

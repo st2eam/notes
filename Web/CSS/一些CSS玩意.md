@@ -1,6 +1,6 @@
 ## 画一个三角形
 
-<div style="    
+<div style="
     width: 0;
     height: 0;
     border-top: 50px solid #00e0ff;

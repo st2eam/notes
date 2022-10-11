@@ -67,7 +67,7 @@ element.addEventListener(event, function, useCapture);
 
 - 第三个参数是布尔值，指定使用事件冒泡还是事件捕获。默认值是 false，将使用冒泡传播，如果该值设置为 true，则事件使用捕获传播。
   
-  ### 查找 HTML 对象
+### 查找 HTML 对象
   
   ```js
   document.anchors                //返回拥有 name 属性的所有 <a> 元素。    1

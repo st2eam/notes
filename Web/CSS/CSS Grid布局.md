@@ -346,7 +346,7 @@ none：不定义网格区域
 
 ### grid
 
-在一个声明中设置所有以下属性的简写： 
+在一个声明中设置所有以下属性的简写：
 
 - grid-template-rows
 - grid-template-columns

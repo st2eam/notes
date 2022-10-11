@@ -6,9 +6,9 @@
 
 - 数组是特殊类型的对象，具有数字索引。
   
-  ## 解构数组
+## 解构数组
   
-  ### 基本语法如下
+### 基本语法如下
 
 左侧的变量名和右侧数组中的元素一一对应
 
@@ -164,7 +164,7 @@ reduce 将报错。
 和currentValue的取值有两种情况：如果调用reduce()时提供了initialValue，accumulator取值为initialValue，currentValue取数组中的第一个值；如果没有提供
 initialValue，那么accumulator取数组中的第一个值，currentValue取数组中的第二个值。
 
-#### 为了理解透举个栗子：
+#### 为了理解透举个栗子
 
 1\. 无初始值
 
@@ -220,7 +220,7 @@ return accumulator + currentValue; }, 10 );// 提供初始值为 10
 
 ### findIndex()
 
-`findIndex() `方法返回通过测试函数的第一个数组元素的索引。
+`findIndex()`方法返回通过测试函数的第一个数组元素的索引。
 
 ### push()
 
@@ -284,7 +284,7 @@ String.slice(start,end);
 
 ### reverse()
 
-`reverse() `方法反转数组中的元素。
+`reverse()`方法反转数组中的元素。
 
 ## sort()
 

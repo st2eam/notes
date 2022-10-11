@@ -2,7 +2,7 @@
 
 npm（Node 包管理工具）是一个命令行工具，用于安装、创建和分享为 Node.js 编写的 JavaScript 代码包。在 npm 上有许多开放源码软件包，所以在项目启动之前，需要一些时间来探索，这样你就不会最后重新创建轮子来处理像日期或从 API 获取数据这样的事项。
 
-### npm 有很多功能。
+### npm 有很多功能
 
 [Yarn](https://yarnpkg.com/en/) 是 npm 的一个替代选择。
 
@@ -32,7 +32,7 @@ npm install <package-name>
 
 通常会在此命令中看到更多标志：
 
-- `--save `安装并添加条目到 package.json 文件的 dependencies。
+- `--save`安装并添加条目到 package.json 文件的 dependencies。
 - `--save-dev` 安装并添加条目到 package.json 文件的 devDependencies。
 
 区别主要是，devDependencies 通常是开发的工具（例如测试的库），而 dependencies 则是与生产环境中的应用程序相关。

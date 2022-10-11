@@ -6,7 +6,7 @@ Node.js 里面的许多对象都会分发事件：一个 net.Server 对象会在
 
 ## EventEmitter 类
 
-events 模块只提供了一个对象： `events.EventEmitter`。`EventEmitter `的核心就是事件触发与事件监听器功能的封装。
+events 模块只提供了一个对象： `events.EventEmitter`。`EventEmitter`的核心就是事件触发与事件监听器功能的封装。
 
 你可以通过`require("events");`来访问该模块
 

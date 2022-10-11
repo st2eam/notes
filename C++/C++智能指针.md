@@ -1,16 +1,17 @@
 ## 智能指针
 
-#### 指针的痛点
+### 指针的痛点
 
 - 忘记delete，内存泄漏
 - 野指针访问，行为未定义（内存访问异常）
 - 多次delete，行为未定义
 
-#### [unique_ptr](http://c.biancheng.net/view/7909.html)
+### [unique_ptr](http://c.biancheng.net/view/7909.html)
 
 - 同一时刻只能有一个 unique_ptr 指向给对象
 - unique_ptr 指针的生命周期从创建时开始，直到离开作用域。离开作用域时，若其指向对象，则其所指对象销毁
 - unique_ptr 的使用能够包括：
+
 1. 为动态申请的内存提供异常安全
 2. 将动态申请内存的所有权传递给某个函数
 3. 从某个函数返回动态申请内存的所有权
@@ -33,7 +34,7 @@ int main() {
 }
 ```
 
-#### [shared_ptr](http://c.biancheng.net/view/7898.html)
+### [shared_ptr](http://c.biancheng.net/view/7898.html)
 
 - shared_ptr (共享资源的只能指针)被用来表示共享的拥有权。也就是说两段代码都需要访问一些数据，而他们又都没有独占该数据的所有权(从某种意义上来说就是该段代码负责销毁该对象)
 - shared_ptr 是一种计数指针。当引用计数变为0时，shared_ptr所指向的对象就会被删除。
@@ -63,7 +64,7 @@ int main() {
 }
 ```
 
-#### [weak-ptr](http://c.biancheng.net/view/7918.html)
+### [weak-ptr](http://c.biancheng.net/view/7918.html)
 
 - 弱指针(weak pointer) ，指向一个已经用shared_ptr进行管理的对象
 - 只有当对象存在的时候，才需要对其进行访问
@@ -92,7 +93,7 @@ int main() {
 }
 ```
 
-#### 智能指针的痛点
+### 智能指针的痛点
 
 - 使用场景复杂
 - 原生指针、智能指针混用的坑
@@ -102,7 +103,7 @@ int main() {
 - 其他原因
 - 总结：没有在语言级别解决问题
 
-#### 指针使用
+### 指针使用
 
 ```cpp
     //unique_ptr ---管理独占对象
@@ -186,7 +187,7 @@ foo6.lock()             00000000
 foo6.use_count():       0
 ```
 
-#### 手写shared_ptr
+### 手写shared_ptr
 
 可能有些不完善
 

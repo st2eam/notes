@@ -42,7 +42,7 @@
 - p-i：返回 p 前面第 i 个元素的迭代器。
 - p[i]：返回 p 后面第 i 个元素的引用。
 
-### C++ 11 标准中不同容器指定使用的迭代器类型。
+### C++ 11 标准中不同容器指定使用的迭代器类型
 
 | 容器                                                                              | 对应的迭代器类型 | 应用                                                         |
 | ------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------- |
@@ -213,7 +213,7 @@ cout << q.top();
 output:66.66
 ```
 
-### //遍历 vector 容器。
+### //遍历 vector 容器
 
 ```cpp
 #include <iostream>
@@ -389,11 +389,11 @@ inline wchar_t *copy(wchar_t *first, wchar_t *last, wchar_t *result){
 
 ### 内存拷贝函数memcpy
 
-原型：void\*memcpy(void\*dest, const void*src,unsigned int count); 
+原型：void\*memcpy(void\*dest, const void*src,unsigned int count);
 
 功能：由src所指内存区域复制count个字节到dest所指内存区域。  
 
-说明：src和dest所指内存区域不能重叠，函数返回指向dest的指针。    
+说明：src和dest所指内存区域不能重叠，函数返回指向dest的指针。
 
 ## [参考STL源码](https://github.com/zouxiaohang/TinySTL.git)
 
