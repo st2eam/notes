@@ -60,8 +60,6 @@ walkSync(curPath, function (filePath, stat) {
 })
 
 console.log(sidebarTxt)
-fs.writeFile(path.resolve('./') + '/_sidebar.md', sidebarTxt, function (err) {
-  if (err) {
-    console.error(err)
-  }
+fs.writeFile(path.resolve('./') + '/_sidebar.md', sidebarTxt, err => {
+  err && console.error(err)
 })
