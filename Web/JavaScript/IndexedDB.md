@@ -82,7 +82,7 @@ IndexedDB支持事务，即对数据库进行操作时，只要失败了，都�
 代码如下：
 
 ```ts
-  openDB(dbName: string, version = 1) {
+  openDB(dbName: string, version：number = 1) {
     new Promise((resolve, reject) => {
       // 打开数据库，若没有则会创建
       const request = indexedDB.open(dbName, version)
