@@ -84,6 +84,20 @@ export default StudyView
 
 与 vue 不一样的是 `ref` 的值需要使用 `.value` 来获取
 
+### Watch 与 TSX
+
+```tsx
+  const state = reactive({
+    bar: '1',
+  })
+  watch(
+    () => state.bar,
+    (newValue, oldValue) => {
+      console.log(`watch 已触发\noldValue: ${oldValue} newValue: ${newValue}`)
+    }
+  )
+```
+
 ### Render 与 TSX
 
 官方文档给出的示例中，可以用以下方式来书写代码
@@ -121,4 +135,4 @@ export default HomeView
 ```
 
 > 以上就是近几天在开发过程中遇到的全部问题了，但是肯定远远不止这些。
-> 本文旨在于记录Vue3与TSX开发的探索，因为官方文档里基本啥也没写，（也许是我没有找到）不过实际上Vue开发中应该不会用到太多,那么就先告一段落了。
+> 本文旨在于记录Vue3与TSX开发的探索，因为官方文档里基本啥也没写，（也许是我没有找到），值得一提的是，现在可以似乎完全可以用React的开发模式开发Vue了，也可以写一些自定义Hooks啥的，把逻辑代码与组件代码分离，不过实际上Vue开发中应该不会用到太多,那么就先告一段落了。
