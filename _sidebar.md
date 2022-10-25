@@ -100,6 +100,8 @@
     - [BOM](Web\JavaScript\BOM.md)
     - **Chalk**
       - [Chalk](Web\JavaScript\Chalk\Chalk.md)
+    - **Dexie**
+      - [Dexie](Web\JavaScript\Dexie\Dexie.md)
     - [DOM](Web\JavaScript\DOM.md)
     - [IndexedDB](Web\JavaScript\IndexedDB.md)
     - [JavaScript Standard Style](Web\JavaScript\JavaScript%20Standard%20Style.md)
