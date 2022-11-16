@@ -210,6 +210,7 @@
       - [index](Web\Vue\Vue2\index.md)
     - **Vue3**
       - [Vue3 与 TSX](Web\Vue\Vue3\Vue3%20与%20TSX.md)
+      - [对比 React Hooks 和 Vue Composition API](Web\Vue\Vue3\对比%20React%20Hooks%20和%20Vue%20Composition%20API.md)
   - **Webpack**
     - **概念**
       - [configuration](Web\Webpack\概念\configuration.md)
