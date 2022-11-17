@@ -24,7 +24,7 @@ const refContainer = useRef(initialValue);
 
 ```jsx
 function TextInputWithFocusButton() {
-  const inputEl = useRef(null);
+  const inputEl = useRef<HTMLInputElement>(null);
   const onButtonClick = () => {
     // `current` 指向已挂载到 DOM 上的文本输入元素
     inputEl.current.focus();
