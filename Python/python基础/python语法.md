@@ -10,11 +10,45 @@ Python 使用缩进来指示代码块。空格数取决于程序员，但至少�
 
 在 Python 中，Python 没有声明变量的命令，变量是在为其赋值时创建的：
 
-Python 中的变量：
+Python 中的变量不需要使用任何特定类型声明，甚至可以在设置后更改其类型。
 
 ```python
 x = 6
-y = "Hello, World!"
+x = "Hello, World!" #字符串变量可以使用单引号或双引号进行声明
+```
+
+Python 允许您在一行中为多个变量赋值：
+
+```python
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+```
+
+您也可以在一行中为多个变量分配相同的值：
+
+```python
+x = y = z = "Orange"
+print(x)
+print(y)
+print(z)
+```
+
+### global 关键字
+
+通常，在函数内部创建变量时，该变量是局部变量，只能在该函数内部使用。
+
+要在函数内部创建全局变量，您可以使用 global 关键字。
+
+```python
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+
+print("Python is " + x)
 ```
 
 ## Python 注释
