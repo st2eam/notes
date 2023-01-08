@@ -15,6 +15,24 @@
 | 布尔类型：   | `bool`                             |
 | 二进制类型： | `bytes`, `bytearray`, `memoryview` |
 
+- 浮点数也可以是带有“e”的科学数字，表示 10 的幂。
+
+```python
+x = 27e4
+y = 15E2
+z = -49.8e100
+```
+
+- 复数用 "j" 作为虚部编写：
+
+```python
+x = 2+3j
+y = 7j
+z = -7j
+```
+
+- **布尔表示两值之一：True 或 False。**
+
 ## 获取数据类型
 
 您可以使用 type() 函数获取任何对象的数据类型：
@@ -44,3 +62,4 @@ print(type(x))# <class 'int'>
 | x = bytes(5)                                 | bytes      |
 | x = bytearray(5)                             | bytearray  |
 | x = memoryview(bytes(5))                     | memoryview |
+
