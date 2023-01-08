@@ -50,6 +50,17 @@
   - [迭代器模式](Design%20Patterns\迭代器模式.md)
   - [适配器模式](Design%20Patterns\适配器模式.md)
   - [面向对象原则](Design%20Patterns\面向对象原则.md)
+- **Python**
+  - **flask**
+    - [快速上手](Python\flask\快速上手.md)
+    - [简单应用](Python\flask\简单应用.md)
+  - **python基础**
+    - [python字符串](Python\python基础\python字符串.md)
+    - [python数据类型](Python\python基础\python数据类型.md)
+    - [python简介](Python\python基础\python简介.md)
+    - [python语法](Python\python基础\python语法.md)
+    - [python运算符](Python\python基础\python运算符.md)
+    - [python集合](Python\python基础\python集合.md)
 - **Study**
   - [docsify](Study\docsify.md)
   - [Git](Study\Git.md)
