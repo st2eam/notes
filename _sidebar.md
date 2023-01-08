@@ -55,6 +55,7 @@
     - [快速上手](Python\flask\快速上手.md)
     - [简单应用](Python\flask\简单应用.md)
   - **python基础**
+    - [python函数](Python\python基础\python函数.md)
     - [python字符串](Python\python基础\python字符串.md)
     - [python循环](Python\python基础\python循环.md)
     - [python数据类型](Python\python基础\python数据类型.md)
