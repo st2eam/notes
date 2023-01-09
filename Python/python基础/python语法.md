@@ -89,3 +89,17 @@ print("Hello, World!")
 ```
 
 只要字符串未分配给变量，Python 就会读取代码，然后忽略它，这样您就已经完成了多行注释。
+
+## Python 输入输出
+
+**输入**
+
+```python
+x = input()
+```
+
+**输出**
+
+```python
+print("Hello ", x)
+```
