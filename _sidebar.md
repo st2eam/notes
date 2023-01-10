@@ -54,6 +54,10 @@
   - **flask**
     - [快速上手](Python\flask\快速上手.md)
     - [简单应用](Python\flask\简单应用.md)
+  - **NumPy**
+    - [index](Python\NumPy\index.md)
+    - [NumPy数据类型](Python\NumPy\NumPy数据类型.md)
+    - [快速开始](Python\NumPy\快速开始.md)
   - **python基础**
     - [pythonJSON](Python\python基础\pythonJSON.md)
     - [pythonOS模块](Python\python基础\pythonOS模块.md)
