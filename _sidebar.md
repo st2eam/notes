@@ -58,11 +58,18 @@
     - [index](Python\NumPy\index.md)
     - [NumPy数据类型](Python\NumPy\NumPy数据类型.md)
     - [快速开始](Python\NumPy\快速开始.md)
+  - **PyMongo**
+    - [index](Python\PyMongo\index.md)
+    - [MongoDB Delete](Python\PyMongo\MongoDB%20Delete.md)
+    - [MongoDB Insert](Python\PyMongo\MongoDB%20Insert.md)
+    - [MongoDB Query](Python\PyMongo\MongoDB%20Query.md)
+    - [MongoDB Update](Python\PyMongo\MongoDB%20Update.md)
   - **python基础**
     - [pythonJSON](Python\python基础\pythonJSON.md)
     - [pythonOS模块](Python\python基础\pythonOS模块.md)
     - [pythonPIP](Python\python基础\pythonPIP.md)
     - [pythonRegEx](Python\python基础\pythonRegEx.md)
+    - [python内建函数](Python\python基础\python内建函数.md)
     - [python函数](Python\python基础\python函数.md)
     - [python字符串](Python\python基础\python字符串.md)
     - [python异常处理](Python\python基础\python异常处理.md)
