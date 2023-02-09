@@ -52,8 +52,13 @@
   - [面向对象原则](Design%20Patterns\面向对象原则.md)
 - **Python**
   - **flask**
+    - [应用设置](Python\flask\应用设置.md)
     - [快速上手](Python\flask\快速上手.md)
+    - [测试覆盖](Python\flask\测试覆盖.md)
     - [简单应用](Python\flask\简单应用.md)
+    - [蓝图视图](Python\flask\蓝图视图.md)
+    - [项目可安装化](Python\flask\项目可安装化.md)
+    - [项目布局](Python\flask\项目布局.md)
   - **NumPy**
     - [index](Python\NumPy\index.md)
     - [NumPy数据类型](Python\NumPy\NumPy数据类型.md)
