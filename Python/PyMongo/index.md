@@ -37,7 +37,7 @@ if "mydatabase" in dblist:
 如果它不存在，MongoDB 会创建该集合。
 
 ```python
-mycol = mydb["mydatabase"]
+mycol = mydb["customers"]
 ```
 
 检查 "customers" 集合是否存在：
