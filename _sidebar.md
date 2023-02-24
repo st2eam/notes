@@ -59,6 +59,10 @@
     - [蓝图视图](Python\flask\蓝图视图.md)
     - [项目可安装化](Python\flask\项目可安装化.md)
     - [项目布局](Python\flask\项目布局.md)
+  - **NLP**
+    - **BERT**
+      - [快速入门](Python\NLP\BERT\快速入门.md)
+    - **PyTorch**
   - **NumPy**
     - [index](Python\NumPy\index.md)
     - [NumPy数据类型](Python\NumPy\NumPy数据类型.md)
