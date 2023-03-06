@@ -63,6 +63,8 @@
     - **BERT**
       - [快速入门](Python\NLP\BERT\快速入门.md)
     - **PyTorch**
+    - **推荐系统**
+      - [用户行为数据](Python\NLP\推荐系统\用户行为数据.md)
   - **NumPy**
     - [index](Python\NumPy\index.md)
     - [NumPy数据类型](Python\NumPy\NumPy数据类型.md)
