@@ -63,6 +63,7 @@
     - **BERT**
       - [快速入门](Python\NLP\BERT\快速入门.md)
     - **PyTorch**
+    - [word2vec](Python\NLP\word2vec.md)
     - **推荐系统**
       - [用户行为数据](Python\NLP\推荐系统\用户行为数据.md)
   - **NumPy**
