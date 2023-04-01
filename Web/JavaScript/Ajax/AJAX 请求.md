@@ -131,3 +131,25 @@ xhttp.open("GET", "ajax_info.txt", false);
 xhttp.send();
 document.getElementById("demo").innerHTML = xhttp.responseText;
 ```
+
+### 拦截请求
+
+```js
+    const originOpen = XMLHttpRequest.prototype.open;
+
+    XMLHttpRequest.prototype.open = function (_, url) {
+        if (url === "https://ynuf.aliapp.org/service/um.json") {
+            this.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    const res = {"result":{"code":100,"msg":"success","success":true},"success":true};
+                    // 当前 xhr 对象上定义 responseText
+                    Object.defineProperty(this, "responseText", {
+                        writable: true,
+                    });
+                    this.responseText = res;
+                }
+            });
+        }
+        originOpen.apply(this, arguments);
+    };
+```
