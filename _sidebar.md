@@ -265,7 +265,11 @@
       - **components**
         - [Props](Web\Vue\Vue3\components\Props.md)
         - [事件](Web\Vue\Vue3\components\事件.md)
+        - [依赖注入](Web\Vue\Vue3\components\依赖注入.md)
+        - [异步组件](Web\Vue\Vue3\components\异步组件.md)
+        - [插槽](Web\Vue\Vue3\components\插槽.md)
         - [组件基础](Web\Vue\Vue3\components\组件基础.md)
+        - [透传Attributes](Web\Vue\Vue3\components\透传Attributes.md)
       - [v-model](Web\Vue\Vue3\v-model.md)
       - [Vue3 与 TSX](Web\Vue\Vue3\Vue3%20与%20TSX.md)
       - [watch](Web\Vue\Vue3\watch.md)
@@ -278,6 +282,9 @@
       - [模板语法](Web\Vue\Vue3\模板语法.md)
       - [生命周期](Web\Vue\Vue3\生命周期.md)
       - [计算属性](Web\Vue\Vue3\计算属性.md)
+      - **逻辑复用**
+        - [组合式函数](Web\Vue\Vue3\逻辑复用\组合式函数.md)
+        - [自定义指令](Web\Vue\Vue3\逻辑复用\自定义指令.md)
   - **Webpack**
     - **概念**
       - [configuration](Web\Webpack\概念\configuration.md)
