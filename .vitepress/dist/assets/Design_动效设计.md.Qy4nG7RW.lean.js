@@ -1,1 +1,0 @@
-import{_ as l,c as i,o as p,a4 as u}from"./chunks/framework.BtCE5x9j.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Design/动效设计.md","filePath":"Design/动效设计.md"}'),a={name:"Design/动效设计.md"},t=u("",1),e=[t];function m(c,d,o,s,g,b){return p(),i("div",null,e)}const n=l(a,[["render",m]]);export{_ as __pageData,n as default};

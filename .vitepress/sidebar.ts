@@ -1120,6 +1120,10 @@ export default [
                             {
                                 "text": "index",
                                 "link": "/Web/Vue/Vue2/index.md"
+                            },
+                            {
+                                "text": "深入响应式原理",
+                                "link": "/Web/Vue/Vue2/深入响应式原理.md"
                             }
                         ]
                     },

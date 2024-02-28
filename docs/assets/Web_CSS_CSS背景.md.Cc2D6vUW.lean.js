@@ -1,0 +1,1 @@
+import{_ as a,c as i,o as s,a4 as n}from"./chunks/framework.BtaI5osv.js";const E=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Web/CSS/CSS背景.md","filePath":"Web/CSS/CSS背景.md"}'),e={name:"Web/CSS/CSS背景.md"},t=n("",37),l=[t];function h(r,p,k,o,d,c){return s(),i("div",null,l)}const u=a(e,[["render",h]]);export{E as __pageData,u as default};
