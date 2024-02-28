@@ -11,15 +11,15 @@ hero:
       text: GET STARTED
       link: /markdown-examples
     - theme: alt
-      text: GO MY PAGE
-      link: /api-examples
+      text: View on GitHub
+      link: https://github.com/st2eam/notes
 
 features:
   - title: Feature A
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: Another cool feature
   - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: Another cool feature
 ---
 
