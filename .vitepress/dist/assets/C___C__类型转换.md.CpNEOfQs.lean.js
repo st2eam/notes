@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.BtCE5x9j.js";const E=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"C++/C++类型转换.md","filePath":"C++/C++类型转换.md"}'),l={name:"C++/C++类型转换.md"},t=n("",35),p=[t];function h(e,k,d,c,r,g){return a(),i("div",null,p)}const y=s(l,[["render",h]]);export{E as __pageData,y as default};

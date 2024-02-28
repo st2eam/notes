@@ -2,8 +2,9 @@ import { defineConfig } from 'vitepress'
 import sidebar from './sidebar'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/notebook/',
+  base: '/notes/',
   title: "My Awesome Notes",
+  outDir:'docs',
   description: "A VitePress Site for Notes",
   ignoreDeadLinks: true,
   themeConfig: {
