@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import sidebar from './sidebar'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/notebook/',
   title: "My Awesome Notes",
   description: "A VitePress Site for Notes",
   ignoreDeadLinks: true,
@@ -12,6 +13,10 @@ export default defineConfig({
       { text: 'Examples', link: '/markdown-examples' },
       { text: 'API', link: '/api-examples' }
     ],
+    
+    search: {
+      provider: 'local'
+    },
 
     sidebar,
 
