@@ -31,7 +31,7 @@ function walkDir(dir) {
                     });
                 }
             } else {
-                if (['api-examples.md', 'index.md', 'markdown-examples.md'].some(item => file.replace('./', '').includes(item))) return
+                if (['/api-examples.md', '/index.md', '/markdown-examples.md'].some(item => file.replace('./', '') === item)) return
                 if (path.extname(file) === '.md') {
                     results.push({
                         text: path.basename(file, '.md'),

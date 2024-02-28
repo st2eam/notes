@@ -294,6 +294,10 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
+                        "text": "index",
+                        "link": "/Python/NumPy/index.md"
+                    },
+                    {
                         "text": "NumPy数据类型",
                         "link": "/Python/NumPy/NumPy数据类型.md"
                     },
@@ -307,6 +311,10 @@ export default [
                 "text": "PyMongo",
                 "collapsed": true,
                 "items": [
+                    {
+                        "text": "index",
+                        "link": "/Python/PyMongo/index.md"
+                    },
                     {
                         "text": "MongoDB Delete",
                         "link": "/Python/PyMongo/MongoDB Delete.md"
@@ -1106,6 +1114,16 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
+                        "text": "Vue2",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "index",
+                                "link": "/Web/Vue/Vue2/index.md"
+                            }
+                        ]
+                    },
+                    {
                         "text": "Vue3",
                         "collapsed": true,
                         "items": [
@@ -1264,6 +1282,16 @@ export default [
                                 "link": "/Web/Webpack/起步/开始.md"
                             }
                         ]
+                    }
+                ]
+            },
+            {
+                "text": "WebSocket",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "index",
+                        "link": "/Web/WebSocket/index.md"
                     }
                 ]
             },
