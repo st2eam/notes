@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as l}from"./chunks/framework.BtCE5x9j.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Web/CSS/CSS文字.md","filePath":"Web/CSS/CSS文字.md"}'),n={name:"Web/CSS/CSS文字.md"},t=l("",28),e=[t];function p(h,k,o,d,r,c){return a(),i("div",null,e)}const y=s(n,[["render",p]]);export{g as __pageData,y as default};

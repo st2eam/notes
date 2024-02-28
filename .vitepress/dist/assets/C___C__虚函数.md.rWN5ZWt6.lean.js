@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.BtCE5x9j.js";const F=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"C++/C++虚函数.md","filePath":"C++/C++虚函数.md"}'),l={name:"C++/C++虚函数.md"},h=n("",22),k=[h];function p(t,e,E,r,d,g){return a(),i("div",null,k)}const c=s(l,[["render",p]]);export{F as __pageData,c as default};

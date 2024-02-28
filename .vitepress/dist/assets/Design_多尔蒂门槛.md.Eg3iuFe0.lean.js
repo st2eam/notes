@@ -1,0 +1,1 @@
+import{_ as i,c as l,o as p,a4 as a}from"./chunks/framework.BtCE5x9j.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Design/多尔蒂门槛.md","filePath":"Design/多尔蒂门槛.md"}'),e={name:"Design/多尔蒂门槛.md"},t=a("",2),m=[t];function c(u,s,o,d,r,_){return p(),l("div",null,m)}const b=i(e,[["render",c]]);export{g as __pageData,b as default};
