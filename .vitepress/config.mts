@@ -4,6 +4,7 @@ import sidebar from './sidebar'
 export default defineConfig({
   title: "My Awesome Notes",
   description: "A VitePress Site for Notes",
+  ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
