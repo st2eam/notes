@@ -13,7 +13,7 @@ export default defineConfig({
       { text: 'Examples', link: '/markdown-examples' },
       { text: 'API', link: '/api-examples' }
     ],
-    
+
     search: {
       provider: 'local'
     },
@@ -21,7 +21,7 @@ export default defineConfig({
     sidebar,
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/st2eam' }
     ]
   }
 })
