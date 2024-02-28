@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.BtCE5x9j.js";const o=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Study/Java.md","filePath":"Study/Java.md"}'),t={name:"Study/Java.md"},h=n("",9),p=[h];function l(k,e,r,d,E,g){return a(),i("div",null,p)}const y=s(t,[["render",l]]);export{o as __pageData,y as default};

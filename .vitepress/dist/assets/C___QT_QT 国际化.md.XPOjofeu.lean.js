@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a4 as p}from"./chunks/framework.BtCE5x9j.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"C++/QT/QT 国际化.md","filePath":"C++/QT/QT 国际化.md"}'),t={name:"C++/QT/QT 国际化.md"},e=p("",24),i=[e];function l(o,c,r,d,g,u){return n(),a("div",null,i)}const T=s(t,[["render",l]]);export{_ as __pageData,T as default};

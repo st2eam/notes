@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.BtCE5x9j.js";const F=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"C++/C++模板.md","filePath":"C++/C++模板.md"}'),h={name:"C++/C++模板.md"},l=n("",35),k=[l];function t(p,e,E,r,d,g){return a(),i("div",null,k)}const c=s(h,[["render",t]]);export{F as __pageData,c as default};
