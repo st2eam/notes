@@ -27,20 +27,20 @@
 ## QApplication类
 
 - QApplication类管理GUI程序的控制流和主要设置，是基于QWidget的，为此特化了QGuiApplication的一些功能，处理QWidget特有的初始化和结束收尾工作.  
-- 对于使用了Qt的任何GUI程序来说，不管何时何地有多少个Window，但只有一个QApplication对象，如果不是基于QWidget的程序，相应的则使用QGuiApplication，后者不依赖于Widget特有的库。   
+- 对于使用了Qt的任何GUI程序来说，不管何时何地有多少个Window，但只有一个QApplication对象，如果不是基于QWidget的程序，相应的则使用QGuiApplication，后者不依赖于Widget特有的库。
 - 有些程序是不使用GUI的，通过命令行参数执行不同的任务而不用手动设置，这时使用QCoreApplication就够了，避免初始化不必要的GUI资源。
 
 #### QApplication的主要职责 (可以参考QAssitant帮助)
 
-1. 使用用户的桌面设置进行初始化，这些设置如palette()、font()、doubleClickInterval()，然后跟踪这些属性的变化，如用户通过某种配置面板修改了全局桌面设置。 
-2. 处理事件，从窗口系统接收事件并派发到相应的Widget，使用sendEvent()和postEvent()函数可以派发事件。 
-3. 处理命令行参数，设置内部状态。 
-4. 定义GUI外观，外观由QStyle对象包装，运行时通过setStyle()函数进行设置。 
-5. 设置颜色分配规则，对应的函数为setColorSpec()。 
-6. 本地化字符串，函数为translate()。 
-7. 提供了一些有用的对象，如desktop()、clipboard()函数。 
-8. 知道Widget及Window，相应的函数为widgetAt()、topLevelWidgets()、closeAllWindows()。 
-9. 管理鼠标光标，函数为setOverrideCursor()。 
+1. 使用用户的桌面设置进行初始化，这些设置如palette()、font()、doubleClickInterval()，然后跟踪这些属性的变化，如用户通过某种配置面板修改了全局桌面设置。
+2. 处理事件，从窗口系统接收事件并派发到相应的Widget，使用sendEvent()和postEvent()函数可以派发事件。
+3. 处理命令行参数，设置内部状态。
+4. 定义GUI外观，外观由QStyle对象包装，运行时通过setStyle()函数进行设置。
+5. 设置颜色分配规则，对应的函数为setColorSpec()。
+6. 本地化字符串，函数为translate()。
+7. 提供了一些有用的对象，如desktop()、clipboard()函数。
+8. 知道Widget及Window，相应的函数为widgetAt()、topLevelWidgets()、closeAllWindows()。
+9. 管理鼠标光标，函数为setOverrideCursor()。
 
 从上面可以看出，QApplication作了许多初始化工作，因此在任何其它的UI对象创建之前必须先创建QApplication对象，而且还可以通过命令行参数设置一些内部状态。
 
@@ -95,7 +95,7 @@ QObject是所有Qt对象的基类，是Qt Object Model（对象模型）的核�
 ------
 
 - 在构造对象的时候指定父对象  
-  ```QObject(QObject *parent = 0) ```
+  ```QObject(QObject *parent = 0)```
 - QObject可以修改它所属的父对象  
   ```void QObject::setParent(QObject * parent)```
 - 得到子对象  
@@ -111,7 +111,7 @@ QObject是所有Qt对象的基类，是Qt Object Model（对象模型）的核�
 
 ------
 
-#### 总结：
+#### 总结
 
 - 所有从QObject继承出来的子对象的内存管理都转移给了父对象
   - 使用new在堆上分配内存
@@ -186,7 +186,7 @@ Qt提供的默认基类只有QWidget、QMainWindow和QDialog三种
 - QWidget 继承自 QObject 类和 QPaintDevice 类，其中QObject 类是所有支持 Qt 对象模型（Qt Object Model)的基类，QPaimDevice类是所有可以绘制的对象的基类。
   ![image](https://note.youdao.com/yws/res/6464/3FE07C5C91294019B25B3592A799A58F)
   
-  #### QWidget
+#### QWidget
   
   基础窗口部件主要用于自定义窗口。  
   ```QWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);```
@@ -435,10 +435,12 @@ QScrollArea类提供了一个可以滚动的视口和两个滚动条，使用方
 
 - 向导有四种风格：ClassicStyle，ModernStyle，MacStyle，AeroStyle。(setWizardStyle设置)
 - 枚举类WizardPixmap有四个值：
+
 1. QWizard::WatermarkPixmap：ClassicStyle，ModernStyle页面的左侧设置图片
 2. QWizard::LogoPixmap：ClassicStyle，ModernStyle 右侧设置图片
 3. QWizard::BannerPixmap：ModernStyle设置的背景图片
 4. QWizard::BackgroundPixmap：MacStyle设置背景图
+
 - 在很多向导中，页的内容会被一些默认的值或者用户设置的值影响，QWizard提供一个叫“field”(叫它域吧)的机制。
 - 它允许在向导页上注册一个域（例如一个QLineEdit），并可以在任何其他页中存取它的值。可以通过QWizardPage：：registerField()调用域。这个域也可以是托管的（mandatory）域（带星号“*”），托管的域必须填充才能进入到下一个页。
 
@@ -459,17 +461,17 @@ QString className=field("className").toString();域的内容是作为QVariant返
 QMainWindow类提供了一个典型应用程序的主窗口框架，应用程序中的主窗口是与用户进行
 长时间交互的顶层窗口
 
-- QMainWindow内部封装了菜单栏、工具栏、中心组件、停靠组件、状态栏等。       
+- QMainWindow内部封装了菜单栏、工具栏、中心组件、停靠组件、状态栏等。
 
 - QMainWindow常常被继承，因为这使的封装中央部件、菜单和工具以及窗口状态条变得容易，当用户点击菜单项或工具条按钮时，槽会被调用。基于主窗口的应用程序，默认已经有了自己的布局管理器
   
-  #### 主窗口菜单
+#### 主窗口菜单
   
   主窗口菜单可以通过UI工具绘制出来，也可以通过QMenuBar和QMenu来定制。
   QMenu用于定制菜单的菜单项、下拉菜单及弹出菜单项，等等。可以有图标、文字信息、热键及提示信息。通过QMenu完全可以实现菜单的个性化定制。
   横向菜单栏QMenuBar，使用用于管理一组菜单。通过addMenu()向菜单栏添加菜单。
   
-  #### 主窗口工具栏
+#### 主窗口工具栏
   
   工具栏是应用程序中集成各种功能使用快捷方式的区域，不是应用程序必须存在的组件，工具栏的元素可以是各种窗口组件，但通常以图标按钮的方式存在。
   QT中提供了预定义的工具栏相关组件，工具栏QToolBar和快捷项QAction。
@@ -598,11 +600,11 @@ setModelData(): 根据editor 的数据更新model的数据。
 
 #### (1)QTreeView
 
-| Header       | #include<QTreeView> |
+| `Header`       | `#include<QTreeView>` |
 | ------------ | ------------------- |
-| qmake        | QT+=widgets         |
-| Inherits     | QAbstractItemView   |
-| Inherited By | QTreeWidget         |
+| `qmake`        | `QT+=widgets`        |
+| `Inherits`     | `QAbstractItemView`   |
+| `Inherited By` | `QTreeWidget`         |
 
 ```
 QFileSystemModel *model = new QFileSystemModel;

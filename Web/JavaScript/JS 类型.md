@@ -44,151 +44,27 @@ JavaScript 类型转换表
 
 下表中列出了将不同 JavaScript 值转换为数字、字符串和布尔的结果：
 
-<table>
-  <tbody>
-    <tr>
-      <th>原始值</th>
-      <th>转换为数字</th>
-      <th>转换为字符串</th>
-      <th>转换为逻辑</th>
-    </tr>
-    <tr>
-      <td>false</td>
-      <td>0</td>
-      <td>"false"</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>true</td>
-      <td>1</td>
-      <td>"true"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>"0"</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>"1"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>"0"</td>
-      <td>0</td>
-      <td>"0"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>"000"</td>
-      <td>0</td>
-      <td>"000"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>"1"</td>
-      <td>1</td>
-      <td>"1"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>"NaN"</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>Infinity</td>
-      <td>Infinity</td>
-      <td>"Infinity"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>-Infinity</td>
-      <td>-Infinity</td>
-      <td>"-Infinity"</td>
-      <td>true</td>
-      </td>
-    </tr>
-    <tr>
-      <td>""</td>
-      <td>0</td>
-      <td>""</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>"20"</td>
-      <td>20</td>
-      <td>"20"</td>
-      <td>true</td>
-      </td>
-    </tr>
-    <tr>
-      <td>"twenty"</td>
-      <td>NaN</td>
-      <td>"twenty"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>[ ]</td>
-      <td>0</td>
-      <td>""</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>[20]</td>
-      <td>20</td>
-      <td>"20"</td>
-      <td>true</td>
-      </td>
-    </tr>
-    <tr>
-      <td>[10,20]</td>
-      <td>NaN</td>
-      <td>"10,20"</td>
-      <td>true</td>
-      </td>
-    </tr>
-    <tr>
-      <td>["twenty"]</td>
-      <td>NaN</td>
-      <td>"twenty"</td>
-      <td>true</td>
-      </td>
-    </tr>
-    <tr>
-      <td>["ten","twenty"]</td>
-      <td>NaN</td>
-      <td>"ten,twenty"</td>
-      <td>true</td>
-      </td>
-    </tr>
-    <tr>
-      <td>function(){}</td>
-      <td>NaN</td>
-      <td>"function(){}"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>{ }</td>
-      <td>NaN</td>
-      <td>"[object Object]"</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>null</td>
-      <td>0</td>
-      <td>"null"</td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>undefined</td>
-      <td>NaN</td>
-      <td>"undefined"</td>
-      <td>false</td>
-    </tr>
-  </tbody>
-</table>
+|原始值| 转换为数字 |转换为字符串| 转换为逻辑|
+|---|---|---|---|
+|false |0 |"false" |false|
+|true |1 |"true" |true|
+|0| 0 |"0" |false|
+|1 |1 |"1" |true|
+|"0" |0 |"0" |true|
+|"000" |0 |"000" |true|
+|"1"| 1 |"1" |true|
+|NaN| NaN |"NaN" |false|
+|Infinity| Infinity |"Infinity" |true|
+|-Infinity| -Infinity |"-Infinity" |true|
+|"" |0 |"" |false|
+|"20" |20 |"20" |true|
+|"twenty"| NaN |"twenty" |true|
+|[ ] |0 |"" |true|
+|[20] |20 |"20" |true|
+|[10,20] |NaN |"10,20" |true|
+|["twenty"]| NaN |"twenty" |true|
+|["ten","twenty"]| NaN |"ten,twenty" |true|
+|`function(){}`| NaN |"`function(){}`" |true|
+|{ }| NaN |"[object Object]" |true|
+|null| 0 |"null" |false|
+|undefined| NaN |"undefined" |false|

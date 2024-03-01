@@ -1,6 +1,6 @@
 ## 信号与槽
 
-> ##### 信号与槽机制是Qt的一个主要特征，是Qt与其它工具包最不相同的部分。通过反馈的方式动态地或松散地将事件和状态变化联系起来。
+> 信号与槽机制是Qt的一个主要特征，是Qt与其它工具包最不相同的部分。通过反馈的方式动态地或松散地将事件和状态变化联系起来。
 
 Qt工作的原理:事件驱动，信号槽机制。
 
@@ -32,7 +32,7 @@ Qt工作的原理:事件驱动，信号槽机制。
 
 - 信号的声明不在.cpp文件中，而在头文件中
 
-```qml
+```cpp
   Q_OBJECT
   ......
   signals:
@@ -59,7 +59,7 @@ Qt工作的原理:事件驱动，信号槽机制。
 
 - 头文件中中声明
 
-```qml
+```cpp
   Q_OBJECT
   ......
   public slots:
@@ -72,13 +72,13 @@ Qt工作的原理:事件驱动，信号槽机制。
 
 原型：
 
-```qml
+```cpp
 QMetaObject::Connection QObject::connect(const QObject * sender, const char * signal, const QObject * receiver, const char * method, Qt::ConnectionType type = Qt::AutoConnection); 
 ```
 
 槽函数执行方式分为：自动、直接、队列、阻塞队列等等。
 
-```qml
+```cpp
 Qt::AutoConnection：
 
 Qt::DirectConnection
@@ -96,19 +96,19 @@ Qt::UniqueConnection
 
 信号与槽关联
 
-```qml
+```cpp
 QObject::connect( sender, SIGNAL(signal),receiver, SLOT(method) );
 ```
 
 信号与信号相连
 
-```qml
+```cpp
 QObject::connect( sender, SIGNAL(signal), receiver, SIGNAL(signal) );
 ```
 
 同一个信号连接到多个槽
 
-```qml
+```cpp
 QObject::connect( sender, SIGNAL(signal),receiver, SLOT(method1) );
 QObject::connect( sender, SIGNAL(signal),receiver, SLOT(method2) );
 ......
@@ -116,7 +116,7 @@ QObject::connect( sender, SIGNAL(signal),receiver, SLOT(method2) );
 
 多个信号连接到同一个槽
 
-```qml
+```cpp
 QObject::connect( sender, SIGNAL(signal1),receiver, SLOT(method) );
 QObject::connect( sender, SIGNAL(signal2),receiver, SLOT(method) );
 ......
@@ -124,7 +124,7 @@ QObject::connect( sender, SIGNAL(signal2),receiver, SLOT(method) );
 
 Qt5: 新语法：
 
-```qml
+```cpp
 connect(sender,  &Sender::valueChanged,  receiver,  &Receiver::updateValue);
 ```
 
@@ -132,7 +132,7 @@ connect(sender,  &Sender::valueChanged,  receiver,  &Receiver::updateValue);
 
 mainwindow.h
 
-```qml
+```cpp
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QLabel>
@@ -170,7 +170,7 @@ private:
 
 mainwindow.cpp
 
-```qml
+```cpp
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -218,7 +218,7 @@ void MainWindow::ToCalculate()
 
 - 函数原型（有多个版本，函数重载）：
 
-```qml
+```cpp
   bool QObject::disconnect(const QObject * sender, const char * signal, const QObject *receiver,const char * method);
 ```
 
@@ -230,7 +230,7 @@ void MainWindow::ToCalculate()
 
 - moc 只处理头文件中的标记了Q_OBJECT的类声明
 
-```qml
+```cpp
   #define Q_OBJECT \ 
     public: \ 
         Q_OBJECT_CHECK \ 

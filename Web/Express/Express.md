@@ -160,9 +160,9 @@ app.get(
 
 在构建 API 时，要让用户告诉我们他们想从服务中获取什么。 举个例子，如果客户请求数据库中存储的用户信息，他们需要一种方法让我们知道他们对哪个用户感兴趣， 使用路由参数可以实现这个需求。 路由参数是由斜杠（/）分隔的 URL 命名段， 每一小段能捕获与其位置匹配的 URL 部分的值， 捕获的值能够在 `req.params` 对象中找到。
 
-> 路由地址：'/user/:userId/book/:bookId'  
-> 实际请求 URL：'/user/546/book/6754'  
-> req.params：{userId: '546', bookId: '6754'}
+> 路由地址：`'/user/:userId/book/:bookId'`  
+> 实际请求 `URL：'/user/546/book/6754'`  
+> `req.params：{userId: '546', bookId: '6754'}`
 
 在路由 `GET /:word/echo` 中构建一个响应服务， 响应一个采用 `{echo: word}` 结构的 JSON 对象。 可以在 `req.params.word` 中找到要重复的单词， 可以在浏览器的地址栏测试你的路由，访问一些匹配的路由，比如：`your-app-rootpath/freecodecamp/echo`。
 
@@ -179,9 +179,9 @@ app.get("/:word/echo", (req, res) => {
 
 从客户端获取输入的另一种常见方式是使用查询字符串对路由路径中的数据进行编码， 查询字符串使用标记（?）分隔，并且包含键值对 field=value， 每对键值使用连字号（&）分隔。 Express 能够从查询字符串中解析这些数据，并且把它放到 `req.query` 对象中。 有些字符（如百分号（%））不能在出现在 URL 中，它们在发送前必须以不同的格式进行编码。 如果使用 JavaScript 的 API，可以用特定的方法来编码/解码这些字符。
 
-> 路由地址：'/library'  
-> 实际请求 URL：'/library?userId=546&bookId=6754'  
-> req.query：{userId: '546', bookId: '6754'}
+> 路由地址：`'/library'`  
+> 实际请求 `URL：'/library?userId=546&bookId=6754'  `
+> `req.query：{userId: '546', bookId: '6754'}`
 
 构建一个 API 接口，使用路由挂载在 `GET /name` 上， 使用一个 JSON 文件来响应，它的结构是这样的：`{ name: 'firstname lastname'}`， 名字（first name）和姓氏（last name）参数应该编码在查询参数中，例如：`?first=firstname&last=lastname`。
 
@@ -199,9 +199,9 @@ app.get("/name", (req, res) => {
 
 在路径 `/name` 挂载一个 POST 处理方法， 和前面一样， 我们已经在 html 首页准备了一份表单， 它将提交与练习 10 相同的数据（查询字符串）， 如果 body-parser 正确配置好了，那么就可以在 `req.body` 对象中找到请求的参数。 来看看一个常规的例子：
 
-> 路由：POST '/library'  
-> URL 编码的请求正文：userId=546&bookId=6754  
-> req.body：{userId: '546', bookId: '6754'}
+> 路由：`POST '/library'`  
+> `URL编码的请求正文：userId=546&bookId=6754`  
+> `req.body：{userId: '546', bookId: '6754'}`
 
 响应和前面一样的 JSON 对象 `{name: 'firstname lastname'}`。 你可以使用首页应用提供的 html 表单，来测试你的 API 是否正常工作。
 
@@ -213,7 +213,7 @@ app.get("/name", (req, res) => {
 
 - PUT 或者 PATCH（有时候是 POST）- 发送数据，以更新资源；
 
-- DELETE => 删除一个资源。
+- DELETE `=>` 删除一个资源。
 
 还有其他两种方法常用于与服务进行交互。 除了 GET 之外，上面列出的所有方法都可以负载数据（即数据都能放到消息正文中）， 这些方法也可以使用 body-parser 中间件。
 

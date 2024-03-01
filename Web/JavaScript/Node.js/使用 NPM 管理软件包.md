@@ -93,7 +93,7 @@ npm run prod
 
 > ——所有 Node.js 项目或 npm 包的核心
 
-`package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， 和 HTML 文档中的 <head> 区域用来描述网页的配置信息（元数据）一样，它存储项目的相关信息。 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， 且至少包含两个必填字段：“name”和“version”——但是最好提供有关项目的其他信息，这将对用户或者维护者有所帮助。
+`package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， 和 HTML 文档中的 `<head>` 区域用来描述网页的配置信息（元数据）一样，它存储项目的相关信息。 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， 且至少包含两个必填字段：“name”和“version”——但是最好提供有关项目的其他信息，这将对用户或者维护者有所帮助。
 
 [package.json](http://nodejs.cn/learn/the-package-json-guide) 文件是项目的清单。 它可以做很多完全互不相关的事情。 例如，它是用于工具的配置中心。 它也是 npm 和 yarn 存储所有已安装软件包的名称和版本的地方。  
 
