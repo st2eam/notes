@@ -14,7 +14,7 @@ export default defineConfig({
       { text: 'Examples', link: '/markdown-examples' },
       { text: 'API', link: '/api-examples' }
     ],
-
+    logo: '/logo.svg',
     search: {
       provider: 'local'
     },
