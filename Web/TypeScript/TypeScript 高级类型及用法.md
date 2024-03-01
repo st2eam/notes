@@ -1,6 +1,7 @@
 # TypeScript 高级类型及用法
 
 原文链接：[TypeScript: Documentation - Utility Types (typescriptlang.org)](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+
 ## 一、高级类型
 
 ### 交叉类型(&)
@@ -15,21 +16,21 @@
 
 ```ts
 interface IPerson {
-	id: string;
+ id: string;
   age: number;
 }
 
 interface IWorker {
-	companyId: string;
+ companyId: string;
 }
 
 type IStaff = IPerson & IWorker;
 
 // 少了任何一个属性都会报错
 const staff: IStaff = {
-	id: '1213',
-	age: 23,
-	companyId: '10086',
+ id: '1213',
+ age: 23,
+ companyId: '10086',
 };
 ```
 
@@ -63,29 +64,30 @@ const q: YX = { c: 'c', d: 'd', e: 'e' };
 
 ```ts
 interface X {
-	x: { a: boolean };
+ x: { a: boolean };
 }
 
 interface Y {
-	x: { b: string };
+ x: { b: string };
 }
 
 interface Z {
-	x: { c: number };
+ x: { c: number };
 }
 
 type XYZ = X & Y & Z;
 
 const p: XYZ = {
-	x: {
-		// 少了任何一个属性都会报错
-		a: true,
-		b: 'str',
-		c: 666,
-	},
+ x: {
+  // 少了任何一个属性都会报错
+  a: true,
+  b: 'str',
+  c: 666,
+ },
 };
 
 ```
+
 以上代码是可以编译通过的，由此可知在混入多个类型时，若存在相同的成员，且成员类型为非基本数据类型，那么是可以成功合并。
 
 ### 联合类型(|)
@@ -107,35 +109,35 @@ str = ''
 
 ```ts
 class Bird {
-	fly() {
-		console.log('Bird flying');
-	}
-	layEggs() {
-		console.log('Bird layEggs');
-	}
+ fly() {
+  console.log('Bird flying');
+ }
+ layEggs() {
+  console.log('Bird layEggs');
+ }
 }
 
 class Chicken {
-	playBasketball() {
-		console.log('Chicken playBasketball');
-	}
-	layEggs() {
-		console.log('Chicken layEggs');
-	}
+ playBasketball() {
+  console.log('Chicken playBasketball');
+ }
+ layEggs() {
+  console.log('Chicken layEggs');
+ }
 }
 
 const bird = new Bird();
 const chicken = new Chicken();
 
 function start(pet: Bird | Chicken) {
-	// 调用 layEggs 没问题，因为 Bird 或者 Chicken 都有 layEggs 方法
-	pet.layEggs();
+ // 调用 layEggs 没问题，因为 Bird 或者 Chicken 都有 layEggs 方法
+ pet.layEggs();
 
-	// 会报错：Property 'fly' does not exist on type 'Bird | Chicken'
-	// pet.fly();
+ // 会报错：Property 'fly' does not exist on type 'Bird | Chicken'
+ // pet.fly();
 
-	// 会报错：Property 'playBasketball' does not exist on type 'Bird | Chicken'
-	// pet.playBasketball();
+ // 会报错：Property 'playBasketball' does not exist on type 'Bird | Chicken'
+ // pet.playBasketball();
 }
 
 start(bird);
@@ -172,6 +174,7 @@ const userAge: UserInformation<Age> = 100;
 const userName: UserInformation<Name> = 'admin';
 
 ```
+
 单独使用条件类型可能用处不是很大，但是结合泛型使用时就非常有用，可以在泛型中对传入的类型进行约束。一个常见的用例就是使用带有 never 类型的条件类型来修剪类型中的值。
 
 1. 定义一个名为 `NoNull` 的类型别名：
@@ -224,7 +227,7 @@ type NonNullable<T> = T extends null | undefined ? never : T;
 type Animal = 'pig' | 'cat' | 'dog';
 
 type Animals = {
-	[key in Animal]: string;
+ [key in Animal]: string;
 };
 
 // type Animals = {
@@ -235,7 +238,7 @@ type Animals = {
 
 // 将 T 的所有属性转换为只读类型
 type ReadOnlyType<T> = {
-	readonly [P in keyof T]: string;
+ readonly [P in keyof T]: string;
 };
 
 type ReadOnlyAnimals = ReadOnlyType<Animals>;
@@ -247,13 +250,12 @@ type ReadOnlyAnimals = ReadOnlyType<Animals>;
 // }
 
 const animals: ReadOnlyAnimals = {
-	pig: 'peppa',
-	cat: 'candy',
-	dog: 'danny',
+ pig: 'peppa',
+ cat: 'candy',
+ dog: 'danny',
 };
 
 ```
-
 
 ### 类型谓词(is)
 
@@ -267,22 +269,22 @@ const animals: ReadOnlyAnimals = {
 
 ```ts
 function isBird(pet: Bird | Chicken): boolean {
-	return pet instanceof Bird;
+ return pet instanceof Bird;
 }
 
 function isChicken(pet: Bird | Chicken): boolean {
-	return pet instanceof Chicken;
+ return pet instanceof Chicken;
 }
 
 function start(pet: Bird | Chicken) {
-	// 调用 layEggs 没问题，因为 Bird 或者 Chicken 都有 layEggs 方法
-	pet.layEggs();
+ // 调用 layEggs 没问题，因为 Bird 或者 Chicken 都有 layEggs 方法
+ pet.layEggs();
 
-	if (isBird(pet)) {
-		(pet as Bird).fly();
-	} else if (isChicken(pet)) {
-		(pet as Chicken).playBasketball();
-	}
+ if (isBird(pet)) {
+  (pet as Bird).fly();
+ } else if (isChicken(pet)) {
+  (pet as Chicken).playBasketball();
+ }
 }
 
 ```
@@ -293,22 +295,22 @@ OK，肯定是有的，类型谓词 `is` 就派上用场了
 
 ```ts
 function isBird(pet: Bird | Chicken): pet is Bird {
-	return pet instanceof Bird;
+ return pet instanceof Bird;
 }
 
 function isChicken(pet: Bird | Chicken): pet is Chicken {
-	return pet instanceof Chicken;
+ return pet instanceof Chicken;
 }
 
 function start(pet: Bird | Chicken) {
-	// 调用 layEggs 没问题，因为 Bird 或者 Chicken 都有 layEggs 方法
-	pet.layEggs();
+ // 调用 layEggs 没问题，因为 Bird 或者 Chicken 都有 layEggs 方法
+ pet.layEggs();
 
-	if (isBird(pet)) {
-		pet.fly();
-	} else {
-		pet.playBasketball();
-	}
+ if (isBird(pet)) {
+  pet.fly();
+ } else {
+  pet.playBasketball();
+ }
 }
 ```
 
@@ -352,7 +354,7 @@ type OtherReturn = ReturnValueType<number>;   // type OtherReturn = number
 
 ### 原始类型保护(typeof)
 
-语法：`typeof T === "typename" `或 `typeof T !== "typename"`
+语法：`typeof T === "typename"`或 `typeof T !== "typename"`
 
 `typeof` 类型保护用于确定变量的类型，它只能识别以下类型：
 
@@ -364,7 +366,7 @@ type OtherReturn = ReturnValueType<number>;   // type OtherReturn = number
 - function
 - number
 
-对于这个列表之外的任何内容，`typeof `类型保护只会返回 `object`。
+对于这个列表之外的任何内容，`typeof`类型保护只会返回 `object`。
 
 `typename` 只能是`number`、`string`、`boolean`和`symbol`四种类型，在 TS 中，只会把这四种类型的 `typeof` 比较识别为类型保护。
 
@@ -393,11 +395,11 @@ function direction(param: string | number) {
 
 ```ts
 function isBird(pet: Bird | Chicken): boolean {
-	return pet instanceof Bird;
+ return pet instanceof Bird;
 }
 
 function isChicken(pet: Bird | Chicken): boolean {
-	return pet instanceof Chicken;
+ return pet instanceof Chicken;
 }
 ```
 
@@ -409,9 +411,9 @@ function isChicken(pet: Bird | Chicken): boolean {
 
 ```ts
 class Animal {
-	height: number;
-	weight: number;
-	private speed: string;
+ height: number;
+ weight: number;
+ private speed: string;
 }
 
 type AnimalProps = keyof Animal; // "height" | "weight"
@@ -422,14 +424,14 @@ type AnimalProps = keyof Animal; // "height" | "weight"
 
 ```ts
 const animal = {
-	height: 2,
-	weight: 10,
+ height: 2,
+ weight: 10,
 };
 
 function getAnimalValue<T extends keyof typeof animal>(
-	fieldName: keyof typeof animal
+ fieldName: keyof typeof animal
 ) {
-	return animal[fieldName];
+ return animal[fieldName];
 }
 
 const heightValue = getAnimalValue('height');
@@ -440,23 +442,23 @@ const weightValue = getAnimalValue('weight');
 
 ```
 
-### 索引访问操作符(T[P])
+### 索引访问操作符(`T[P]`)
 
 类似于 js 中使用对象索引的方式，只不过 js 中是返回对象属性的值，而在 ts 中返回的是 T 对应属性 P 的类型
 
 ```ts
 type User = {
-	id: number;
-	name: string;
-	address: {
-		city: string;
-		country: string;
-	};
+ id: number;
+ name: string;
+ address: {
+  city: string;
+  country: string;
+ };
 };
 
 type Params = {
-	id: User['id']; // number
-	address: User['address'];
+ id: User['id']; // number
+ address: User['address'];
 };
 
 ```
@@ -507,8 +509,8 @@ const person: Readonly<Person> = {
 
 ```ts
 const person = {
-	name: 'Lucy',
-	age: 22,
+ name: 'Lucy',
+ age: 22,
 } as const;
 
 // 相当于
@@ -560,7 +562,7 @@ interface ReadonlyArray<T> {
 
 ```ts
 interface Person {
-	name: string;
+ name: string;
 }
 
 const personList: ReadonlyArray<Person> = [{ name: 'Jack' }, { name: 'Rose' }];
@@ -588,8 +590,8 @@ type Partial<T> = {
 
 ```ts
 interface Person {
-	name: string;
-	age: number;
+ name: string;
+ age: number;
 }
 
 let person: Partial<Person> = {};
@@ -620,8 +622,8 @@ type Required<T> = {
 
 ```ts
 interface Person {
-	name?: string;
-	age?: number;
+ name?: string;
+ age?: number;
 }
 // 报错：类型“{}”缺少类型“Required<Person>”中的以下属性: name, agets(2739)
 let person: Required<Person> = {};
@@ -676,18 +678,18 @@ type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 ```ts
 interface User {
-	id: number;
-	name: string;
-	age: number;
-	sex: 0 | 1;
-	tel: number;
+ id: number;
+ name: string;
+ age: number;
+ sex: 0 | 1;
+ tel: number;
 }
 
 type EditUser = Omit<User, 'tel'>; // 就是在 User 的基础上，去掉 id 属性
 
 ```
 
-### Awaited<Type>
+### `Awaited<Type>`
 
 该类型旨在模拟异步函数中的 `await` 或 `Promise` 上的 `.then()` 方法等操作，特别是它们递归解除 `Promise` 的方式。
 
@@ -725,15 +727,15 @@ type T1 = Extract<string | number | (() => void), Function>;
 // 相当于 type T1 = () => void
 
 type Shape =
-	| { kind: 'circle'; radius: number }
-	| { kind: 'square'; x: number }
-	| { kind: 'triangle'; x: number; y: number };
+ | { kind: 'circle'; radius: number }
+ | { kind: 'square'; x: number }
+ | { kind: 'triangle'; x: number; y: number };
 
 type T2 = Extract<Shape, { kind: 'circle' }>;
 // 相当于：
 // type T2 = {
-// 	kind: 'circle';
-// 	radius: number;
+//  kind: 'circle';
+//  radius: number;
 // };
 
 ```
@@ -762,9 +764,9 @@ type T2 = Exclude<string | number | (() => void), Function>;
 // 相当于 type T2 = string | number
 
 type Shape =
-	| { kind: 'circle'; radius: number }
-	| { kind: 'square'; x: number }
-	| { kind: 'triangle'; x: number; y: number };
+ | { kind: 'circle'; radius: number }
+ | { kind: 'square'; x: number }
+ | { kind: 'triangle'; x: number; y: number };
 
 type T3 = Exclude<Shape, { kind: 'circle' }>;
 // 相当于：
@@ -795,16 +797,16 @@ type Record<Keys extends string | number | symbol, Type> = {
 
 ```ts
 interface CatInfo {
-	age: number;
-	breed: string;
+ age: number;
+ breed: string;
 }
 
 type CatName = 'miffy' | 'boris' | 'mordred';
 
 const cats: Record<CatName, CatInfo> = {
-	miffy: { age: 10, breed: 'Persian' },
-	boris: { age: 5, breed: 'Maine Coon' },
-	mordred: { age: 16, breed: 'British Shorthair' },
+ miffy: { age: 10, breed: 'Persian' },
+ boris: { age: 5, breed: 'Maine Coon' },
+ mordred: { age: 16, breed: 'British Shorthair' },
 };
 
 cats.boris;
@@ -815,7 +817,7 @@ cats.boris;
 
 ```ts
 function doSomething(obj: Record<string, any>) {
-	// do something
+ // do something
 }
 ```
 
@@ -832,6 +834,7 @@ type T0 = NonNullable<string | number | undefined>;
 type T1 = NonNullable<string[] | null | undefined>;
 // 相当于 type T1 = string[]
 ```
+
 ### 构造函数参数类型(`ConstructorParameters<typeof T>`)
 
 返回 `class` 中构造函数参数类型组成的元组类型
@@ -840,7 +843,7 @@ type T1 = NonNullable<string[] | null | undefined>;
 
 ```ts
 type ConstructorParameters<T extends new (...args: any) => any> =
-	T extends new (...args: infer P) => any ? P : never;
+ T extends new (...args: infer P) => any ? P : never;
 ```
 
 Example
@@ -856,7 +859,7 @@ type T2 = ConstructorParameters<RegExpConstructor>;
 // 相当于 type T2 = [pattern: string | RegExp, flags?: string | undefined];
 
 class C {
-	constructor(a: number, b: string) {}
+ constructor(a: number, b: string) {}
 }
 type T3 = ConstructorParameters<typeof C>;
 // 相当于 type T3 = [a: number, b: string];
@@ -865,6 +868,7 @@ type T4 = ConstructorParameters<any>;
 // 相当于 type T4 = unknown[];
 
 ```
+
 ### 实例类型(`InstanceType<T>`)
 
 获取 class 构造函数的返回类型
@@ -879,8 +883,8 @@ type InstanceType<T extends new (...args: any) => any> = T extends new (...args:
 
 ```ts
 class C {
-	x = 0;
-	y = 0;
+ x = 0;
+ y = 0;
 }
 
 type T0 = InstanceType<typeof C>;
@@ -924,10 +928,10 @@ declare function f1(arg: { a: number; b: string }): void;
 type T3 = Parameters<typeof f1>;
 // 相当于
 // type T3 = [
-// 	arg: {
-// 		a: number;
-// 		b: string;
-// 	}
+//  arg: {
+//   a: number;
+//   b: string;
+//  }
 // ];
 
 type T4 = Parameters<any>;
@@ -941,11 +945,13 @@ type T6 = Parameters<string>;
 // 相当于 type T6 = never
 
 ```
+
 ### 函数返回值类型(`ReturnType<T>`)
 
 获取函数的返回值类型
 
 定义：
+
 ```ts
 type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
 ```
@@ -1005,11 +1011,11 @@ type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any ? U
 
 ```ts
 function toHex(this: Number) {
-	return this.toString(16);
+ return this.toString(16);
 }
 
 function numberToString(n: ThisParameterType<typeof toHex>) {
-	return toHex.apply(n);
+ return toHex.apply(n);
 }
 ```
 
@@ -1065,6 +1071,7 @@ obj.x = 10;
 obj.y = 20;
 obj.moveBy(5, 5);
 ```
+
 在上面的示例中，`makeObject` 的参数中的方法对象的上下文类型包括 `ThisType<D & M>`，因此方法对象中方法的 `this` 类型是 `{ x: number, y: number } & { moveBy(dx: number, dy: number): void }`。请注意，`methods` 属性的类型同时是方法中 `this` 类型的推理目标和来源。
 
 `ThisType<T>` 标记接口只是 `lib.d.ts` 中声明的一个空接口。除了在对象字面的上下文类型中被识别外，该接口的行为与任何空接口一样。

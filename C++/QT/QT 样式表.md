@@ -21,46 +21,56 @@ QT样式表可以让你自定义任何一个QT控件的样式包括颜色、边�
 
  \*  匹配所有的控件  
 
-**4.2  类型选择器**  
-类名 { 属性: 值; }  
-QPushBuutton{ }
+**4.2  类型选择器**
+
+`类名 { 属性: 值; }`
+
+`QPushBuutton{ }`
 
 **4.3 属性选择器**
 
-   QPushButton[flat="false"]
+`QPushButton[flat="false"]`
 
-   匹配所有flat属性是false的QPushButton实例，注意该属性可以是自定义的属性，不一定非要是类本身具有的属性  
+匹配所有flat属性是false的QPushButton实例，注意该属性可以是自定义的属性，不一定非要是类本身具有的属性  
+
 **4.4  类选择器**
-格式
-.类名 { 属性: 值; }
 
-.QPushButton 
+格式
+`.类名 { 属性: 值; }`
+
+`.QPushButton`
+
 匹配所有QPushButton的实例，但是并不匹配其子类。这是与CSS中的类选择器不一样的地方，注意前面有一个点号
-.RedButton { background: magenta; }  
+
+`.RedButton { background: magenta; }`
+
 **4.5  ID 选择器**  
+
 格式
-#id{ 属性: 值; }
+`#id{ 属性: 值; }`
 
-这里的 id 指的是 objectName, 每个 QObject 类及其派生类都有的一个属性, “#” + objectName
+这里的 id 指的是 objectName, 每个 QObject 类及其派生类都有的一个属性, `“#” + objectName`
 
- #myButton
- 匹配所有id为myButton的控件实例，这里的id实际上就是objectName指定的值
-#openButton, #closeButton { background: magenta; }
+`#myButton`
+
+匹配所有id为myButton的控件实例，这里的id实际上就是objectName指定的值
+
+`#openButton, #closeButton { background: magenta; }`
 
 **4.6  后代选择器**  
-选择器 1 选择器 2{ 属性: 值; }  
-这个选择器表示: 在选择器 1 匹配的所有对象中, 找到选择器 2 所匹配的所有后代对象, 并 给它们设置样式. 
+`选择器 1 选择器 2{ 属性: 值; }`
+这个选择器表示: 在选择器 1 匹配的所有对象中, 找到选择器 2 所匹配的所有后代对象, 并 给它们设置样式.
 
 **4.7 子选择器**
 
-选择器 1 >选择器 2 { 属性: 值; }  
+`选择器 1 >选择器 2 { 属性: 值; }`
 子元素选择器表示找到指定选择器所匹配的对象中的所有特定直接子元素然后设置属性,
 即找到选择器 1 匹配到的对象中的被选择器 2 匹配到的直接子元素然后设置属性  
 
-QFrame> QPushButton
+`QFrame> QPushButton`
 所有QFrame容器下面的QPushButton，其中要求QPushButton的直接父容器是QFrame,注意和后代选择器的区别
 
-```
+```css
 QFrame {background: gray;}
     QFrame > QPushButton {
         border: 2px solid magenta;
@@ -76,7 +86,7 @@ QFrame {background: gray;}
 选择器:状态  
 作为选择器，支持 ! 操作符，表示 非。  
 
-```
+```css
 QPushButton:hover { color: white }
 QCheckBox:checked { color: white }
 QCheckBox:!checked { color: red }
@@ -84,7 +94,7 @@ QCheckBox:!checked { color: red }
 
 ##### QSS伪状态与子控件伪状态列表
 
-```
+```css
 :checked                        /*button部件被选中*/ 
 :unchecked                      /*button部件未被选中*/ 
 :disabled                       /*部件被禁用*/ 
@@ -99,7 +109,7 @@ QCheckBox:!checked { color: red }
 
 ##### 子部件列表
 
-```
+```css
 ::down-arrow         /*combo box或spin box的下拉箭头*/ 
 ::drop-down          /*combo box的下拉箭头*/ 
 
@@ -120,14 +130,14 @@ QCheckBox:!checked { color: red }
 2. 添加完前缀，同样在添加里选中添加文件，然后选中准备好的文件(图片、.qss文件等资源)  
 
 3. 构建后，在代码处读取.qss文件，就可以给ui加皮肤了
-   
-   ```
-   void MainWindow::setQtStyleSheet()
-   {
-    QFile file(":/Calculator.qss");
-    file.open(QFile::ReadOnly);
-    QString styleSheet = QLatin1String(file.readAll());
-    QMainWindow::setStyleSheet(styleSheet);
-    file.close();
-   }
-   ```
+
+```cpp
+void MainWindow::setQtStyleSheet()
+{
+   QFile file(":/Calculator.qss");
+   file.open(QFile::ReadOnly);
+   QString styleSheet = QLatin1String(file.readAll());
+   QMainWindow::setStyleSheet(styleSheet);
+   file.close();
+}
+```

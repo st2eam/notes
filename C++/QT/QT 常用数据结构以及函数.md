@@ -20,7 +20,7 @@
 
 QString 是qt中关于String的封装类，用于处理字符串。
 
-```qml
+```cpp
 void testQString(){
    QString str1="hello";
    qDebug()<<str1;
@@ -73,7 +73,7 @@ void testQString(){
 
 QVariant 是万能变量，可以存取各种变量。
 
-```qml
+```cpp
 void testQVariant(){
    QVariant var;
    var.setValue(QString("hello word"));
@@ -97,7 +97,7 @@ void testQVariant(){
 
 QStringList 是存储QString类型的列表。
 
-```qml
+```cpp
 void testQStringList(){
    QStringList stL;
    stL<<"str1"<<"str2"<<"str3"<<"str4";
@@ -127,7 +127,7 @@ void testQStringList(){
 
 QVector 数组的模板类，本质是动态数组，存储方式是一片连续的内存空间。
 
-```qml
+```cpp
 void testQVector(){
    QVector<QString> tV;
    tV.append("Str1");
@@ -163,7 +163,7 @@ void testQVector(){
 
 QStack为qt中的栈模板类，继承于QVector，具有后进先出的特性。
 
-```qml
+```cpp
 void testQStack(){
    QStack<QString> stack;
    stack.push("str1");
@@ -189,7 +189,7 @@ void testQStack(){
 
 QQueue 是qt中的队列的模板类，同样继承自QVector,具有先进先出的特性。
 
-```qml
+```cpp
 '''
 void testQueue()
 {
@@ -215,7 +215,7 @@ void testQueue()
 
 QList是qt中的链表的实现，同时可以按位置索引和快速插入删除数据。
 
-```qml
+```cpp
 void testList(){
    QList<QString> ql;
    ql.append("str");
@@ -245,7 +245,7 @@ void testList(){
 
 QMap 是qt中映射的模板类。就是字典。
 
-```qml
+```cpp
 void testMap()
 {
    QMap<QString,int> map;

@@ -64,7 +64,7 @@ function Component(){
 
 请注意，上述代码中的action只是最基础的字符串形式，事实上action可以是多属性的object，这样可以自定义更多属性和更多参数值
 
-例如 action 可以是 {type:'xx',param:xxx}
+例如 action 可以是 `{type:'xx',param:xxx}`
 
 #### 拆解说明
 
@@ -74,7 +74,7 @@ function Component(){
 
 1. reducer英文单词本身意思是“减速器、还原剂”，但是本文中一直把reducer称呼为“事件处理函数”，但事实上reducer确实扮演一个事件处理函数。  
 
-2. 千万不要把useReducer中的 reducer 和 原生JS中的Array.prototype.reduce()弄混淆，他们两个只是刚好都使用了这个reduce单词而已，两者本身没有任何内在关联。
+2. 千万不要把useReducer中的 reducer 和 原生JS中的Array.prototype.reduce()``弄混淆，他们两个只是刚好都使用了这个reduce单词而已，两者本身没有任何内在关联。
 
 **'xxx'补充说明**
 
@@ -82,7 +82,7 @@ function Component(){
 
 **'dispatch'补充说明**
 
-再次强调，dispacth并不是真正的Event.dispatch，但是你完全可以把它当成Event.dispatch来理解，只不过useReducer中的dispacth(xxx)函数抛出内容不是event，而是一个包含修改信息的对象，该对象不仅可以是字符串，还可以是复杂对象。
+再次强调，dispacth并不是真正的`Event.dispatch`，但是你完全可以把它当成`Event.dispatch`来理解，只不过useReducer中的dispacth(xxx)函数抛出内容不是event，而是一个包含修改信息的对象，该对象不仅可以是字符串，还可以是复杂对象。
 
 **'initialValue'补充说明**
 

@@ -1,7 +1,7 @@
 ### 对过渡的浏览器支持
 
 表格中的数字注明了完全支持该属性的首个浏览器版本。
-![image.png](https://note.youdao.com/yws/public/resource/c99ad8ee8977e056429a6768b07877cb/WEB998c28b0c3a66578b0bf0cb93f3ee811/WEBRESOURCE12c08b35243363422d1da581b9bfd966?ynotemdtimestamp=1656685941051)
+![image](https://note.youdao.com/yws/public/resource/c99ad8ee8977e056429a6768b07877cb/WEB998c28b0c3a66578b0bf0cb93f3ee811/WEBRESOURCE12c08b35243363422d1da581b9bfd966?ynotemdtimestamp=1656685941051)
 CSS 过渡允许您在给定的时间内平滑地改变属性值。
 
 ### 如何使用 CSS 过渡？
