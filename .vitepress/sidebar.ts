@@ -216,40 +216,6 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "flask",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "应用设置",
-                        "link": "/Python/flask/应用设置.md"
-                    },
-                    {
-                        "text": "快速上手",
-                        "link": "/Python/flask/快速上手.md"
-                    },
-                    {
-                        "text": "测试覆盖",
-                        "link": "/Python/flask/测试覆盖.md"
-                    },
-                    {
-                        "text": "简单应用",
-                        "link": "/Python/flask/简单应用.md"
-                    },
-                    {
-                        "text": "蓝图视图",
-                        "link": "/Python/flask/蓝图视图.md"
-                    },
-                    {
-                        "text": "项目可安装化",
-                        "link": "/Python/flask/项目可安装化.md"
-                    },
-                    {
-                        "text": "项目布局",
-                        "link": "/Python/flask/项目布局.md"
-                    }
-                ]
-            },
-            {
                 "text": "NLP",
                 "collapsed": true,
                 "items": [
@@ -294,12 +260,12 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/Python/NumPy/index.md"
-                    },
-                    {
                         "text": "NumPy数据类型",
                         "link": "/Python/NumPy/NumPy数据类型.md"
+                    },
+                    {
+                        "text": "index",
+                        "link": "/Python/NumPy/index.md"
                     },
                     {
                         "text": "快速开始",
@@ -311,10 +277,6 @@ export default [
                 "text": "PyMongo",
                 "collapsed": true,
                 "items": [
-                    {
-                        "text": "index",
-                        "link": "/Python/PyMongo/index.md"
-                    },
                     {
                         "text": "MongoDB Delete",
                         "link": "/Python/PyMongo/MongoDB Delete.md"
@@ -330,6 +292,44 @@ export default [
                     {
                         "text": "MongoDB Update",
                         "link": "/Python/PyMongo/MongoDB Update.md"
+                    },
+                    {
+                        "text": "index",
+                        "link": "/Python/PyMongo/index.md"
+                    }
+                ]
+            },
+            {
+                "text": "flask",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "应用设置",
+                        "link": "/Python/flask/应用设置.md"
+                    },
+                    {
+                        "text": "快速上手",
+                        "link": "/Python/flask/快速上手.md"
+                    },
+                    {
+                        "text": "测试覆盖",
+                        "link": "/Python/flask/测试覆盖.md"
+                    },
+                    {
+                        "text": "简单应用",
+                        "link": "/Python/flask/简单应用.md"
+                    },
+                    {
+                        "text": "蓝图视图",
+                        "link": "/Python/flask/蓝图视图.md"
+                    },
+                    {
+                        "text": "项目可安装化",
+                        "link": "/Python/flask/项目可安装化.md"
+                    },
+                    {
+                        "text": "项目布局",
+                        "link": "/Python/flask/项目布局.md"
                     }
                 ]
             },
@@ -602,7 +602,7 @@ export default [
                 ]
             },
             {
-                "text": "JavaScript",
+                "text": "JS Lib",
                 "collapsed": true,
                 "items": [
                     {
@@ -611,25 +611,21 @@ export default [
                         "items": [
                             {
                                 "text": "AJAX 响应",
-                                "link": "/Web/JavaScript/Ajax/AJAX 响应.md"
+                                "link": "/Web/JS Lib/Ajax/AJAX 响应.md"
                             },
                             {
                                 "text": "AJAX 请求",
-                                "link": "/Web/JavaScript/Ajax/AJAX 请求.md"
+                                "link": "/Web/JS Lib/Ajax/AJAX 请求.md"
                             },
                             {
                                 "text": "AJAX",
-                                "link": "/Web/JavaScript/Ajax/AJAX.md"
+                                "link": "/Web/JS Lib/Ajax/AJAX.md"
                             },
                             {
                                 "text": "axios",
-                                "link": "/Web/JavaScript/Ajax/axios.md"
+                                "link": "/Web/JS Lib/Ajax/axios.md"
                             }
                         ]
-                    },
-                    {
-                        "text": "BOM",
-                        "link": "/Web/JavaScript/BOM.md"
                     },
                     {
                         "text": "Chalk",
@@ -637,7 +633,7 @@ export default [
                         "items": [
                             {
                                 "text": "Chalk",
-                                "link": "/Web/JavaScript/Chalk/Chalk.md"
+                                "link": "/Web/JS Lib/Chalk/Chalk.md"
                             }
                         ]
                     },
@@ -647,21 +643,19 @@ export default [
                         "items": [
                             {
                                 "text": "Dexie",
-                                "link": "/Web/JavaScript/Dexie/Dexie.md"
+                                "link": "/Web/JS Lib/Dexie/Dexie.md"
                             }
                         ]
                     },
                     {
-                        "text": "DOM",
-                        "link": "/Web/JavaScript/DOM.md"
-                    },
-                    {
-                        "text": "IndexedDB",
-                        "link": "/Web/JavaScript/IndexedDB.md"
-                    },
-                    {
-                        "text": "JavaScript Standard Style",
-                        "link": "/Web/JavaScript/JavaScript Standard Style.md"
+                        "text": "Jest",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "Jest",
+                                "link": "/Web/JS Lib/Jest/Jest.md"
+                            }
+                        ]
                     },
                     {
                         "text": "Joi",
@@ -669,9 +663,139 @@ export default [
                         "items": [
                             {
                                 "text": "Joi",
-                                "link": "/Web/JavaScript/Joi/Joi.md"
+                                "link": "/Web/JS Lib/Joi/Joi.md"
                             }
                         ]
+                    },
+                    {
+                        "text": "Node.js",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "Node.js Buffer",
+                                "link": "/Web/JS Lib/Node.js/Node.js Buffer.md"
+                            },
+                            {
+                                "text": "Node.js EventEmitter",
+                                "link": "/Web/JS Lib/Node.js/Node.js EventEmitter.md"
+                            },
+                            {
+                                "text": "Node.js Path",
+                                "link": "/Web/JS Lib/Node.js/Node.js Path.md"
+                            },
+                            {
+                                "text": "Node.js Stream",
+                                "link": "/Web/JS Lib/Node.js/Node.js Stream.md"
+                            },
+                            {
+                                "text": "Node.js Web 模块",
+                                "link": "/Web/JS Lib/Node.js/Node.js Web 模块.md"
+                            },
+                            {
+                                "text": "Node.js 事件循环",
+                                "link": "/Web/JS Lib/Node.js/Node.js 事件循环.md"
+                            },
+                            {
+                                "text": "Node.js 回调函数",
+                                "link": "/Web/JS Lib/Node.js/Node.js 回调函数.md"
+                            },
+                            {
+                                "text": "Node.js 文件系统",
+                                "link": "/Web/JS Lib/Node.js/Node.js 文件系统.md"
+                            },
+                            {
+                                "text": "Node.js",
+                                "link": "/Web/JS Lib/Node.js/Node.js.md"
+                            },
+                            {
+                                "text": "使用 NPM 管理软件包",
+                                "link": "/Web/JS Lib/Node.js/使用 NPM 管理软件包.md"
+                            },
+                            {
+                                "text": "配置文件",
+                                "link": "/Web/JS Lib/Node.js/配置文件.md"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "koa",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "koa 上下文",
+                                "link": "/Web/JS Lib/koa/koa 上下文.md"
+                            },
+                            {
+                                "text": "koa 响应",
+                                "link": "/Web/JS Lib/koa/koa 响应.md"
+                            },
+                            {
+                                "text": "koa 应用",
+                                "link": "/Web/JS Lib/koa/koa 应用.md"
+                            },
+                            {
+                                "text": "koa 请求",
+                                "link": "/Web/JS Lib/koa/koa 请求.md"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "ora",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "ora",
+                                "link": "/Web/JS Lib/ora/ora.md"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "text": "JavaScript",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "BOM",
+                        "link": "/Web/JavaScript/BOM.md"
+                    },
+                    {
+                        "text": "DOM",
+                        "link": "/Web/JavaScript/DOM.md"
+                    },
+                    {
+                        "text": "Function",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "Function.prototype.apply()",
+                                "link": "/Web/JavaScript/Function/Function.prototype.apply().md"
+                            },
+                            {
+                                "text": "Function.prototype.bind()",
+                                "link": "/Web/JavaScript/Function/Function.prototype.bind().md"
+                            },
+                            {
+                                "text": "Function.prototype.call()",
+                                "link": "/Web/JavaScript/Function/Function.prototype.call().md"
+                            },
+                            {
+                                "text": "Function.prototype.toString()",
+                                "link": "/Web/JavaScript/Function/Function.prototype.toString().md"
+                            },
+                            {
+                                "text": "JS 函数",
+                                "link": "/Web/JavaScript/Function/JS 函数.md"
+                            },
+                            {
+                                "text": "JS 箭头函数",
+                                "link": "/Web/JavaScript/Function/JS 箭头函数.md"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "IndexedDB",
+                        "link": "/Web/JavaScript/IndexedDB.md"
                     },
                     {
                         "text": "JS Decorator",
@@ -714,10 +838,6 @@ export default [
                         "link": "/Web/JavaScript/JS 位运算.md"
                     },
                     {
-                        "text": "JS 函数",
-                        "link": "/Web/JavaScript/JS 函数.md"
-                    },
-                    {
                         "text": "JS 原型链",
                         "link": "/Web/JavaScript/JS 原型链.md"
                     },
@@ -746,10 +866,6 @@ export default [
                         "link": "/Web/JavaScript/JS 正则表达式.md"
                     },
                     {
-                        "text": "JS 箭头函数",
-                        "link": "/Web/JavaScript/JS 箭头函数.md"
-                    },
-                    {
                         "text": "JS 类和对象",
                         "link": "/Web/JavaScript/JS 类和对象.md"
                     },
@@ -758,100 +874,36 @@ export default [
                         "link": "/Web/JavaScript/JS 类型.md"
                     },
                     {
-                        "text": "Node.js",
+                        "text": "JavaScript Standard Style",
+                        "link": "/Web/JavaScript/JavaScript Standard Style.md"
+                    },
+                    {
+                        "text": "Network",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "Node.js Buffer",
-                                "link": "/Web/JavaScript/Node.js/Node.js Buffer.md"
+                                "text": "HTTP Cookie",
+                                "link": "/Web/JavaScript/Network/HTTP Cookie.md"
                             },
                             {
-                                "text": "Node.js EventEmitter",
-                                "link": "/Web/JavaScript/Node.js/Node.js EventEmitter.md"
-                            },
-                            {
-                                "text": "Node.js Path",
-                                "link": "/Web/JavaScript/Node.js/Node.js Path.md"
-                            },
-                            {
-                                "text": "Node.js Stream",
-                                "link": "/Web/JavaScript/Node.js/Node.js Stream.md"
-                            },
-                            {
-                                "text": "Node.js Web 模块",
-                                "link": "/Web/JavaScript/Node.js/Node.js Web 模块.md"
-                            },
-                            {
-                                "text": "Node.js 事件循环",
-                                "link": "/Web/JavaScript/Node.js/Node.js 事件循环.md"
-                            },
-                            {
-                                "text": "Node.js 回调函数",
-                                "link": "/Web/JavaScript/Node.js/Node.js 回调函数.md"
-                            },
-                            {
-                                "text": "Node.js 文件系统",
-                                "link": "/Web/JavaScript/Node.js/Node.js 文件系统.md"
-                            },
-                            {
-                                "text": "Node.js",
-                                "link": "/Web/JavaScript/Node.js/Node.js.md"
-                            },
-                            {
-                                "text": "使用 NPM 管理软件包",
-                                "link": "/Web/JavaScript/Node.js/使用 NPM 管理软件包.md"
-                            },
-                            {
-                                "text": "配置文件",
-                                "link": "/Web/JavaScript/Node.js/配置文件.md"
+                                "text": "HTTP",
+                                "link": "/Web/JavaScript/Network/HTTP.md"
                             }
                         ]
                     },
                     {
-                        "text": "ora",
+                        "text": "WebSocket",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "ora",
-                                "link": "/Web/JavaScript/ora/ora.md"
+                                "text": "index",
+                                "link": "/Web/JavaScript/WebSocket/index.md"
                             }
                         ]
                     },
                     {
                         "text": "前端手写代码",
                         "link": "/Web/JavaScript/前端手写代码.md"
-                    }
-                ]
-            },
-            {
-                "text": "Jest",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "Jest",
-                        "link": "/Web/Jest/Jest.md"
-                    }
-                ]
-            },
-            {
-                "text": "koa",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "koa 上下文",
-                        "link": "/Web/koa/koa 上下文.md"
-                    },
-                    {
-                        "text": "koa 响应",
-                        "link": "/Web/koa/koa 响应.md"
-                    },
-                    {
-                        "text": "koa 应用",
-                        "link": "/Web/koa/koa 应用.md"
-                    },
-                    {
-                        "text": "koa 请求",
-                        "link": "/Web/koa/koa 请求.md"
                     }
                 ]
             },
@@ -866,20 +918,6 @@ export default [
                     {
                         "text": "NoSQL",
                         "link": "/Web/MongoDB/NoSQL.md"
-                    }
-                ]
-            },
-            {
-                "text": "Network",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "HTTP Cookie",
-                        "link": "/Web/Network/HTTP Cookie.md"
-                    },
-                    {
-                        "text": "HTTP",
-                        "link": "/Web/Network/HTTP.md"
                     }
                 ]
             },
@@ -986,12 +1024,12 @@ export default [
                                         "link": "/Web/React/react-router/V6/Hooks.md"
                                     },
                                     {
-                                        "text": "react-router-dom",
-                                        "link": "/Web/React/react-router/V6/react-router-dom.md"
-                                    },
-                                    {
                                         "text": "Router Auth",
                                         "link": "/Web/React/react-router/V6/Router Auth.md"
+                                    },
+                                    {
+                                        "text": "react-router-dom",
+                                        "link": "/Web/React/react-router/V6/react-router-dom.md"
                                     }
                                 ]
                             }
@@ -1136,6 +1174,10 @@ export default [
                                 "link": "/Web/Vue/Vue3/Class 与 Style 绑定.md"
                             },
                             {
+                                "text": "Vue3 与 TSX",
+                                "link": "/Web/Vue/Vue3/Vue3 与 TSX.md"
+                            },
+                            {
                                 "text": "components",
                                 "collapsed": true,
                                 "items": [
@@ -1172,10 +1214,6 @@ export default [
                             {
                                 "text": "v-model",
                                 "link": "/Web/Vue/Vue3/v-model.md"
-                            },
-                            {
-                                "text": "Vue3 与 TSX",
-                                "link": "/Web/Vue/Vue3/Vue3 与 TSX.md"
                             },
                             {
                                 "text": "watch",
@@ -1286,16 +1324,6 @@ export default [
                                 "link": "/Web/Webpack/起步/开始.md"
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "text": "WebSocket",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "index",
-                        "link": "/Web/WebSocket/index.md"
                     }
                 ]
             },

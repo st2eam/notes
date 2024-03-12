@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.COET-Ywn.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"C++/QT/QT 样式表.md","filePath":"C++/QT/QT 样式表.md"}'),t={name:"C++/QT/QT 样式表.md"},h=n("",40),p=[h];function l(k,e,E,d,r,o){return a(),i("div",null,p)}const y=s(t,[["render",l]]);export{c as __pageData,y as default};
