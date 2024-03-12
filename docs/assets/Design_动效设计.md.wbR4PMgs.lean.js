@@ -1,1 +1,0 @@
-import{_ as l,c as i,o as p,a4 as u}from"./chunks/framework.COET-Ywn.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Design/动效设计.md","filePath":"Design/动效设计.md"}'),a={name:"Design/动效设计.md"},e=u("",1),m=[e];function t(c,g,d,o,s,b){return p(),i("div",null,m)}const n=l(a,[["render",t]]);export{_ as __pageData,n as default};
