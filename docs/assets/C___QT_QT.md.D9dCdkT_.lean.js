@@ -1,0 +1,1 @@
+import{_ as a,c as n,o as e,a4 as s}from"./chunks/framework.B-C7vMfR.js";const Q=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"C++/QT/QT.md","filePath":"C++/QT/QT.md"}'),l={name:"C++/QT/QT.md"},t=s("",154),i=[t];function p(o,d,r,c,u,h){return e(),n("div",null,i)}const b=a(l,[["render",p]]);export{Q as __pageData,b as default};

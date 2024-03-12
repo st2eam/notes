@@ -1,1 +1,0 @@
-import{_ as t,c as e,o,a4 as r}from"./chunks/framework.COET-Ywn.js";const p=JSON.parse('{"title":"格式化上下文简介","description":"","frontmatter":{},"headers":[],"relativePath":"Web/CSS/BFC.md","filePath":"Web/CSS/BFC.md"}'),a={name:"Web/CSS/BFC.md"},l=r("",11),n=[l];function d(i,s,c,h,f,_){return o(),e("div",null,n)}const b=t(a,[["render",d]]);export{p as __pageData,b as default};
