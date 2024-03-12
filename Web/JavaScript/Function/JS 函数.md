@@ -157,6 +157,40 @@ console.log(add()) // 计数器目前是 3
 
 - **闭包缺点**：会导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏
 
+### Function：length
+
+Function 实例的 length 数据属性表示函数期望的参数数量。
+
+```js
+function func1() {}
+
+function func2(a, b) {}
+
+console.log(func1.length);
+// Expected output: 0
+
+console.log(func2.length);
+// Expected output: 2
+
+```
+
+箭头函数
+
+```js
+console.log(Function.length); // 1
+
+console.log((() => {}).length); // 0
+console.log(((a) => {}).length); // 1
+console.log(((a, b) => {}).length); // 2，依此类推
+
+console.log(((...args) => {}).length);
+// 0，剩余参数不计算在内
+
+console.log(((a, b = 1, c) => {}).length);
+// 1，只计算第一个具有默认值的参数之前的参数
+
+```
+
 ### 参数通过值传递
 
 函数调用中的参数（parameter）是函数的参数（argument）。
