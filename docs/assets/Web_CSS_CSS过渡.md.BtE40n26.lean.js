@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.B-C7vMfR.js";const o=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Web/CSS/CSS过渡.md","filePath":"Web/CSS/CSS过渡.md"}'),h={name:"Web/CSS/CSS过渡.md"},t=n("",15),l=[t];function p(k,e,E,d,r,g){return a(),i("div",null,l)}const y=s(h,[["render",p]]);export{o as __pageData,y as default};
