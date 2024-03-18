@@ -1,38 +1,3 @@
-## Rest & Spread 运算符
-
-```javascript
-function myFun(a,  b, ...manyMoreArgs) 
-   return arguments.length;
-}
-myFun("one", "two", "three", "four", "five", "six");
-
-// 输出: 6
-```
-
-&&
-
-```javascript
-const parts = ['shoulders', 'knees']; 
-const lyrics = ['head', ...parts, 'and', 'toes']; 
-
-lyrics;
-// 输出: 
-(5) ["head", "shoulders", "knees", "and", "toes"]
-```
-
-&&
-
-```javascript
-const arr = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6 }
-const { two, ...rest } = arr
-console.log(rest)
-//{ one: 1, three: 3, four: 4, five: 5, six: 6 }
-
-const arr2 = ['one', 'two', 'three', 'four', 'five', 'six']
-const [three, ...rest2] = arr2
-console.log(rest2)
-//[ 'two', 'three', 'four', 'five', 'six' ]
-```
 
 ## 使用解构简单交换两值
 
@@ -84,18 +49,6 @@ const array = [3, 0, 6, 7, '', false];
 array.filter(Boolean);
 // 输出
 (3) [3, 6, 7]
-```
-
-## 空合并算子
-
-空合并运算符 (??) 是一个逻辑运算符，当其左侧操作数为空或未定义时返回其右侧操作数，否则返回其左侧操作数。
-
-```ini
-const foo = null ?? 'my school';
-// 输出: "my school"
-
-const baz = 0 ?? 42;
-// 输出: 0
 ```
 
 ## 如何避免使用过多的if else 甚至 switch case
