@@ -606,6 +606,10 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
+                        "text": "AbortController",
+                        "link": "/Web/JavaScript/AbortController.md"
+                    },
+                    {
                         "text": "BOM",
                         "link": "/Web/JavaScript/BOM.md"
                     },
@@ -670,6 +674,10 @@ export default [
                     {
                         "text": "JS Modules",
                         "link": "/Web/JavaScript/JS Modules.md"
+                    },
+                    {
+                        "text": "JS Operator",
+                        "link": "/Web/JavaScript/JS Operator.md"
                     },
                     {
                         "text": "JS Set",
@@ -1158,6 +1166,10 @@ export default [
                             {
                                 "text": "index",
                                 "link": "/Web/Vue/Vue2/index.md"
+                            },
+                            {
+                                "text": "vue-property-decorator使用指南",
+                                "link": "/Web/Vue/Vue2/vue-property-decorator使用指南.md"
                             },
                             {
                                 "text": "深入响应式原理",
