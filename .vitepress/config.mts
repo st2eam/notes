@@ -17,6 +17,11 @@ export default defineConfig({
         rel: 'stylesheet',
       },
     ],
+    [
+      'script',
+      {},
+      `(function(){try{var e=new URLSearchParams(window.location.search).get('embed')==='true';var f=window.self!==window.top;if(e||f){document.documentElement.classList.add('embed-mode')}}catch(x){}})()`,
+    ],
   ],
   themeConfig: {
     nav: [
