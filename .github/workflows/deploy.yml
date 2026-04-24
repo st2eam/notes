@@ -29,10 +29,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Generate sidebar
-        run: node .vitepress/script.js
-
-      - name: Build VitePress
+      - name: Build
         run: npm run docs:build
 
       - uses: actions/configure-pages@v4

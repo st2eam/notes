@@ -1,3 +1,12 @@
+html.embed-mode {
+  --vp-nav-height: 0px;
+  --vp-layout-top-height: 0px;
+}
+
+html.embed-mode body {
+  background: transparent;
+}
+
 html.embed-mode .VPNav,
 html.embed-mode .VPNavBar {
   display: none !important;
@@ -5,6 +14,10 @@ html.embed-mode .VPNavBar {
 
 html.embed-mode .VPFooter {
   display: none !important;
+}
+
+html.embed-mode .VPHome {
+  padding-top: 0 !important;
 }
 
 html.embed-mode .VPHome .VPHero {
@@ -17,10 +30,12 @@ html.embed-mode .VPHome .VPFeatures {
 
 html.embed-mode .VPContent {
   padding-top: 0 !important;
+  min-height: 100vh !important;
 }
 
 html.embed-mode .VPDoc {
   padding-top: 16px !important;
+  min-height: 100vh !important;
 }
 
 html.embed-mode .VPSidebar {
@@ -31,13 +46,4 @@ html.embed-mode .VPSidebar {
 
 html.embed-mode .VPLocalNav {
   top: 0 !important;
-}
-
-html.embed-mode body {
-  background: transparent;
-}
-
-html.embed-mode {
-  --vp-nav-height: 0px;
-  --vp-layout-top-height: 0px;
 }
