@@ -1,0 +1,43 @@
+html.embed-mode .VPNav,
+html.embed-mode .VPNavBar {
+  display: none !important;
+}
+
+html.embed-mode .VPFooter {
+  display: none !important;
+}
+
+html.embed-mode .VPHome .VPHero {
+  display: none !important;
+}
+
+html.embed-mode .VPHome .VPFeatures {
+  display: none !important;
+}
+
+html.embed-mode .VPContent {
+  padding-top: 0 !important;
+}
+
+html.embed-mode .VPDoc {
+  padding-top: 16px !important;
+}
+
+html.embed-mode .VPSidebar {
+  top: 0 !important;
+  padding-top: 16px !important;
+  height: 100vh !important;
+}
+
+html.embed-mode .VPLocalNav {
+  top: 0 !important;
+}
+
+html.embed-mode body {
+  background: transparent;
+}
+
+html.embed-mode {
+  --vp-nav-height: 0px;
+  --vp-layout-top-height: 0px;
+}

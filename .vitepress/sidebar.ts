@@ -1,5 +1,19 @@
 export default [
     {
+        "text": "AI",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "Embedding与向量数据库",
+                "link": "/AI/Embedding与向量数据库.md"
+            },
+            {
+                "text": "大语言模型基础",
+                "link": "/AI/大语言模型基础.md"
+            }
+        ]
+    },
+    {
         "text": "C++",
         "collapsed": true,
         "items": [
@@ -208,6 +222,20 @@ export default [
             {
                 "text": "面向对象原则",
                 "link": "/Design Patterns/面向对象原则.md"
+            }
+        ]
+    },
+    {
+        "text": "Photography",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "后期处理",
+                "link": "/Photography/后期处理.md"
+            },
+            {
+                "text": "摄影基础",
+                "link": "/Photography/摄影基础.md"
             }
         ]
     },
@@ -600,6 +628,10 @@ export default [
                         "link": "/Web/HTML/网站与网页.md"
                     }
                 ]
+            },
+            {
+                "text": "index",
+                "link": "/Web/index.md"
             },
             {
                 "text": "JavaScript",
