@@ -4,8 +4,24 @@ export default [
         "collapsed": true,
         "items": [
             {
+                "text": "agentic-engineering-patterns",
+                "link": "/AI/agentic-engineering-patterns.md"
+            },
+            {
+                "text": "AI应用开发",
+                "link": "/AI/AI应用开发.md"
+            },
+            {
                 "text": "Embedding与向量数据库",
                 "link": "/AI/Embedding与向量数据库.md"
+            },
+            {
+                "text": "LLM演进路线",
+                "link": "/AI/LLM演进路线.md"
+            },
+            {
+                "text": "Prompt Engineering",
+                "link": "/AI/Prompt Engineering.md"
             },
             {
                 "text": "大语言模型基础",
@@ -124,6 +140,18 @@ export default [
             {
                 "text": "多尔蒂门槛",
                 "link": "/Design/多尔蒂门槛.md"
+            },
+            {
+                "text": "排版设计",
+                "link": "/Design/排版设计.md"
+            },
+            {
+                "text": "色彩理论",
+                "link": "/Design/色彩理论.md"
+            },
+            {
+                "text": "设计原则",
+                "link": "/Design/设计原则.md"
             }
         ]
     },
@@ -184,6 +212,10 @@ export default [
                 "link": "/Design Patterns/模式联用.md"
             },
             {
+                "text": "模板方法模式",
+                "link": "/Design Patterns/模板方法模式.md"
+            },
+            {
                 "text": "状态模式",
                 "link": "/Design Patterns/状态模式.md"
             },
@@ -200,10 +232,6 @@ export default [
                 "link": "/Design Patterns/组合模式.md"
             },
             {
-                "text": "职责链模式",
-                "link": "/Design Patterns/职责链模式.md"
-            },
-            {
                 "text": "装饰模式",
                 "link": "/Design Patterns/装饰模式.md"
             },
@@ -212,16 +240,38 @@ export default [
                 "link": "/Design Patterns/观察者模式.md"
             },
             {
+                "text": "解释器模式",
+                "link": "/Design Patterns/解释器模式.md"
+            },
+            {
+                "text": "设计模式概述",
+                "link": "/Design Patterns/设计模式概述.md"
+            },
+            {
+                "text": "访问者模式",
+                "link": "/Design Patterns/访问者模式.md"
+            },
+            {
+                "text": "责任链模式",
+                "link": "/Design Patterns/责任链模式.md"
+            },
+            {
                 "text": "迭代器模式",
                 "link": "/Design Patterns/迭代器模式.md"
             },
             {
                 "text": "适配器模式",
                 "link": "/Design Patterns/适配器模式.md"
-            },
+            }
+        ]
+    },
+    {
+        "text": "Language",
+        "collapsed": true,
+        "items": [
             {
-                "text": "面向对象原则",
-                "link": "/Design Patterns/面向对象原则.md"
+                "text": "Japanese",
+                "link": "/Language/Japanese.md"
             }
         ]
     },
@@ -236,6 +286,14 @@ export default [
             {
                 "text": "摄影基础",
                 "link": "/Photography/摄影基础.md"
+            },
+            {
+                "text": "视频剪辑基础",
+                "link": "/Photography/视频剪辑基础.md"
+            },
+            {
+                "text": "视频调色",
+                "link": "/Photography/视频调色.md"
             }
         ]
     },
@@ -1393,6 +1451,10 @@ export default [
                 "text": "微信小程序",
                 "collapsed": true,
                 "items": [
+                    {
+                        "text": "产品开发流程",
+                        "link": "/Web/微信小程序/产品开发流程.md"
+                    },
                     {
                         "text": "微信小程序-简介",
                         "link": "/Web/微信小程序/微信小程序-简介.md"

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="margin:0;padding:0;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品开发流程 · From Zero to One</title>
+  <style>
+    :root {
+      --flow-bg: #f8f6f2;
+      --flow-bg-soft: #f3efe9;
+      --flow-card: #ffffff;
+      --flow-text-1: #1a1a1a;
+      --flow-text-2: #6e6e73;
+      --flow-text-3: #a1a1a6;
+      --flow-border: rgba(0, 0, 0, 0.08);
+      --flow-border-strong: rgba(0, 0, 0, 0.14);
+
+      --flow-brand-1: #b09472;
+      --flow-brand-2: #c8ae8e;
+      --flow-brand-3: #8a7458;
+      --flow-brand-soft: rgba(176, 148, 114, 0.14);
+
+      --flow-done: #8a9a5b;
+      --flow-done-soft: rgba(138, 154, 91, 0.16);
+    }
+    html.dark {
+      --flow-bg: #1a1918;
+      --flow-bg-soft: #242220;
+      --flow-card: #242220;
+      --flow-text-1: rgba(255, 250, 243, 0.92);
+      --flow-text-2: rgba(255, 250, 243, 0.65);
+      --flow-text-3: rgba(255, 250, 243, 0.4);
+      --flow-border: rgba(255, 250, 243, 0.1);
+      --flow-border-strong: rgba(255, 250, 243, 0.18);
+
+      --flow-brand-1: #d4b896;
+      --flow-brand-2: #c8ae8e;
+      --flow-brand-3: #e8d5be;
+      --flow-brand-soft: rgba(212, 184, 150, 0.12);
+
+      --flow-done: #a8b88a;
+      --flow-done-soft: rgba(168, 184, 138, 0.16);
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background:var(--flow-bg);">
+<div id="flow-root" style="width:100%;box-sizing:border-box;font-family:'DM Sans','SF Pro Display','Inter','PingFang SC','Microsoft YaHei',system-ui,sans-serif;background:var(--flow-bg);color:var(--flow-text-1);padding:0;position:relative;overflow-x:hidden;">
+
+  <!-- 顶部 -->
+  <header style="position:relative;z-index:1;padding:40px 32px 28px 32px;max-width:1100px;margin:0 auto;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px;">
+      <h1 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0;color:var(--flow-text-1);">产品开发流程</h1>
+      <span style="font-size:13px;color:var(--flow-text-3);font-weight:500;letter-spacing:0.04em;">FROM ZERO TO ONE</span>
+    </div>
+    <p style="font-size:14px;color:var(--flow-text-2);margin:0 0 24px 0;max-width:560px;line-height:1.6;">八个阶段，从需求到运维。点击节点查看详情，标记完成追踪进度。</p>
+
+    <!-- 工具栏 -->
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <div style="position:relative;flex:1;min-width:200px;max-width:340px;">
+        <input id="f-search" type="text" placeholder="搜索阶段或步骤…" style="width:100%;box-sizing:border-box;background:var(--flow-card);border:1px solid var(--flow-border);border-radius:8px;padding:9px 12px 9px 34px;color:var(--flow-text-1);font-size:13px;outline:none;transition:border-color 0.15s,box-shadow 0.15s;" onfocus="this.style.borderColor='var(--flow-brand-1)';this.style.boxShadow='0 0 0 3px var(--flow-brand-soft)'" onblur="this.style.borderColor='var(--flow-border)';this.style.boxShadow='none'" oninput="onSearch(this.value)">
+        <svg style="position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:0.4;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--flow-text-2)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </div>
+      <button id="f-guide" onclick="startGuide()" style="background:var(--flow-brand-1);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.01em;transition:background 0.15s;" onmouseover="this.style.background='var(--flow-brand-3)'" onmouseout="this.style.background='var(--flow-brand-1)'">引导播放</button>
+      <button onclick="resetAll()" style="background:var(--flow-card);color:var(--flow-text-2);border:1px solid var(--flow-border);border-radius:8px;padding:9px 14px;font-size:13px;cursor:pointer;transition:border-color 0.15s,color 0.15s;" onmouseover="this.style.borderColor='var(--flow-border-strong)';this.style.color='var(--flow-text-1)'" onmouseout="this.style.borderColor='var(--flow-border)';this.style.color='var(--flow-text-2)'">重置</button>
+    </div>
+
+    <!-- 进度条 -->
+    <div style="margin-top:22px;display:flex;align-items:center;gap:12px;">
+      <span id="f-progress-text" style="font-size:12px;color:var(--flow-text-3);font-weight:500;letter-spacing:0.03em;">0 / 8 完成</span>
+      <div style="flex:1;max-width:400px;height:3px;background:var(--flow-border);border-radius:2px;overflow:hidden;">
+        <div id="f-progress-bar" style="height:100%;width:0%;background:linear-gradient(90deg,var(--flow-brand-3),var(--flow-brand-1),var(--flow-brand-2));border-radius:2px;transition:width 0.4s cubic-bezier(0.4,0,0.2,1);"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主画布 -->
+  <main style="position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 32px 48px 32px;">
+
+    <!-- 时间线 -->
+    <div id="f-timeline" style="display:flex;align-items:flex-start;gap:0;position:relative;padding:20px 0 8px 0;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--flow-border) transparent;"></div>
+
+    <!-- 详情 -->
+    <section id="f-detail" style="margin-top:28px;display:none;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--flow-border);">
+        <div id="f-d-num" style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0;letter-spacing:-0.02em;"></div>
+        <div style="flex:1;min-width:0;">
+          <h2 id="f-d-title" style="font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:0;"></h2>
+          <p id="f-d-sub" style="font-size:13px;color:var(--flow-text-3);margin:3px 0 0 0;"></p>
+        </div>
+        <button id="f-d-complete" onclick="toggleComplete()" style="background:transparent;color:var(--flow-text-3);border:1px solid var(--flow-border);border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer;font-weight:600;transition:all 0.15s;flex-shrink:0;" onmouseover="this.style.borderColor='var(--flow-brand-1)';this.style.color='var(--flow-brand-1)'" onmouseout="this.style.borderColor='var(--flow-border)';this.style.color='var(--flow-text-3)'">标记完成</button>
+      </div>
+
+      <div style="display:flex;gap:40px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:300px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:var(--flow-text-3);text-transform:uppercase;margin-bottom:14px;">关键步骤</div>
+          <ol id="f-d-steps" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;"></ol>
+        </div>
+        <div style="flex:0 0 280px;min-width:240px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:var(--flow-text-3);text-transform:uppercase;margin-bottom:10px;">产出物</div>
+          <p id="f-d-outputs" style="font-size:13px;color:var(--flow-text-2);line-height:1.7;margin:0 0 24px 0;"></p>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:var(--flow-text-3);text-transform:uppercase;margin-bottom:10px;">阶段门禁</div>
+          <p id="f-d-gate" style="font-size:13px;color:var(--flow-text-2);line-height:1.7;margin:0 0 24px 0;"></p>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:var(--flow-text-3);text-transform:uppercase;margin-bottom:10px;">预计周期</div>
+          <p id="f-d-time" style="font-size:13px;color:var(--flow-text-2);margin:0;"></p>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--flow-border);display:flex;justify-content:space-between;gap:12px;">
+        <button onclick="prevPhase()" style="background:transparent;color:var(--flow-text-3);border:1px solid var(--flow-border);border-radius:8px;padding:8px 18px;font-size:13px;cursor:pointer;transition:all 0.15s;" onmouseover="this.style.color='var(--flow-text-1)';this.style.borderColor='var(--flow-border-strong)'" onmouseout="this.style.color='var(--flow-text-3)';this.style.borderColor='var(--flow-border)'">← 上一阶段</button>
+        <button onclick="nextPhase()" style="background:var(--flow-brand-soft);color:var(--flow-brand-3);border:1px solid var(--flow-brand-1);border-radius:8px;padding:8px 18px;font-size:13px;cursor:pointer;font-weight:600;transition:all 0.15s;" onmouseover="this.style.background='var(--flow-brand-1)';this.style.color='#fff'" onmouseout="this.style.background='var(--flow-brand-soft)';this.style.color='var(--flow-brand-3)'">下一阶段 →</button>
+      </div>
+    </section>
+
+    <!-- 空状态 -->
+    <div id="f-empty" style="margin-top:32px;text-align:center;padding:48px 20px;">
+      <div style="width:56px;height:56px;border-radius:16px;background:var(--flow-card);border:1px solid var(--flow-border);display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--flow-brand-1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      </div>
+      <p style="font-size:14px;color:var(--flow-text-3);margin:0;line-height:1.6;">点击上方任意阶段节点查看详细步骤<br>或点击「引导播放」自动逐步讲解</p>
+    </div>
+
+  </main>
+
+  <!-- 底部 -->
+  <footer style="position:relative;z-index:1;border-top:1px solid var(--flow-border);padding:20px 32px;max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;background:var(--flow-card);">
+    <div id="f-legend" style="display:flex;gap:16px;flex-wrap:wrap;"></div>
+    <span style="margin-left:auto;font-size:11px;color:var(--flow-text-3);">通用流程 · 适用于小程序 / Web / App / 后端服务</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  try {
+    var phases = [
+      {id:1,title:"需求规划",en:"Discovery",color:"#b09472",colorBg:"rgba(176,148,114,0.14)",time:"1~2 周",
+       steps:["定义目标与成功指标（OKR/KPI）","用户研究与痛点分析","竞品调研与差异化定位","界定 MVP 范围并排定优先级","可行性评估（技术 / 成本 / 合规）","项目排期与资源分配"],
+       outputs:"PRD 文档、用户故事、优先级矩阵、项目计划",gate:"需求评审通过，范围与排期获得干系人确认"},
+      {id:2,title:"设计架构",en:"Design",color:"#8a7458",colorBg:"rgba(138,116,88,0.14)",time:"3~5 天",
+       steps:["产品原型与交互设计","UI 视觉设计与设计规范","技术选型（框架 / 语言 / 数据库）","系统架构设计（模块 / 数据流）","API 接口契约定义","数据库表结构设计","记录架构决策（ADR）"],
+       outputs:"设计稿、架构图、API 文档、数据库设计、ADR",gate:"设计评审通过，技术方案无重大风险"},
+      {id:3,title:"环境准备",en:"Setup",color:"#c8ae8e",colorBg:"rgba(200,174,142,0.18)",time:"2~3 天",
+       steps:["代码仓库初始化与分支策略","开发环境搭建（IDE / 依赖 / 运行时）","云服务器采购与安全配置","域名购买、DNS 解析与备案","数据库 / 缓存 / 对象存储配置","CI/CD 流水线配置","环境变量与密钥管理"],
+       outputs:"可运行的开发环境、CI 流水线、基础设施即代码",gate:"本地可正常启动项目，CI 可自动构建测试"},
+      {id:4,title:"开发实现",en:"Build",color:"#c9975e",colorBg:"rgba(201,151,94,0.14)",time:"2~6 周",
+       steps:["前端页面开发与组件封装","后端 API 开发与业务逻辑","数据库迁移与种子数据","前后端联调集成","第三方服务对接（登录 / 支付 / 短信）","代码审查（Code Review）","小步提交，保持主分支可发布"],
+       outputs:"可运行的功能代码、合并到主分支的 PR",gate:"核心功能完成，代码审查通过，无 P0/P1 Bug"},
+      {id:5,title:"测试验证",en:"Test",color:"#a67c52",colorBg:"rgba(166,124,82,0.14)",time:"3~7 天",
+       steps:["L1 静态检查（Lint / 类型 / 规范）","L2 单元测试（函数 / 组件级）","L3 集成测试（API 联调 / 端到端）","L4 测试环境功能走查","L5 真机 / 多机型适配测试","L6 性能与安全测试","Bug 修复与回归验证"],
+       outputs:"测试报告、覆盖率数据、Bug 清单",gate:"P0/P1 Bug 全部修复，核心流程测试通过"},
+      {id:6,title:"预发布",en:"Staging",color:"#96684a",colorBg:"rgba(150,104,74,0.14)",time:"2~3 天",
+       steps:["部署到 Staging 预发布环境","UAT 用户验收测试","合规与隐私审查","敏感信息扫描（密钥 / 硬编码）","回滚预案制定与演练","发布清单核对","灰度发布策略制定"],
+       outputs:"UAT 确认、发布清单、回滚预案",gate:"UAT 通过，发布清单全部勾选，回滚就绪"},
+      {id:7,title:"发布上线",en:"Release",color:"#7d5a3c",colorBg:"rgba(125,90,60,0.14)",time:"1 天~1 周",
+       steps:["打 Tag 并构建生产版本","部署到生产环境","灰度发布（10% → 观察 → 放量）","实时监控（错误率 / 响应时间）","异常告警与快速响应","全量发布确认","发布公告与文档更新"],
+       outputs:"生产环境新版本、发布记录、监控看板",gate:"灰度期间无重大异常，全量后指标稳定"},
+      {id:8,title:"运维迭代",en:"Operate",color:"#7a8460",colorBg:"rgba(122,132,96,0.14)",time:"持续",
+       steps:["服务器与应用监控","日志收集与错误分析","数据备份与灾难恢复演练","用户反馈收集与分析","性能优化与成本优化","安全补丁与依赖更新","版本迭代规划（回到阶段 1）"],
+       outputs:"监控报表、运维日志、迭代 Backlog",gate:"SLA 达标，迭代需求进入下一轮循环"}
+    ];
+
+    var current = -1;
+    var done = {};
+    var guideTimer = null;
+
+    // 同步父页面（VitePress）深浅色模式
+    function syncTheme() {
+      var isDark = false;
+      try {
+        if (window.parent && window.parent.document) {
+          isDark = window.parent.document.documentElement.classList.contains('dark');
+        }
+      } catch(e) {}
+      document.documentElement.classList.toggle('dark', isDark);
+    }
+    syncTheme();
+    try {
+      if (window.parent && window.parent.document) {
+        new MutationObserver(syncTheme).observe(
+          window.parent.document.documentElement,
+          { attributes: true, attributeFilter: ['class'] }
+        );
+      }
+    } catch(e) {}
+
+    function renderLegend() {
+      var legend = document.getElementById('f-legend');
+      if (!legend) return;
+      var groups = [
+        {label:"规划", color:"#b09472"},
+        {label:"搭建", color:"#c8ae8e"},
+        {label:"开发", color:"#c9975e"},
+        {label:"验证", color:"#a67c52"},
+        {label:"发布", color:"#7d5a3c"},
+        {label:"已完成", color:"var(--flow-done)", round:true}
+      ];
+      legend.innerHTML = groups.map(function(g){
+        var dot = g.round
+          ? '<span style="width:8px;height:8px;border-radius:50%;background:'+g.color+';"></span>'
+          : '<span style="width:8px;height:8px;border-radius:2px;background:'+g.color+';"></span>';
+        return '<span style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--flow-text-3);">'+dot+g.label+'</span>';
+      }).join('');
+    }
+
+    function renderTimeline(filter) {
+      var tl = document.getElementById('f-timeline');
+      if (!tl) return;
+      tl.innerHTML = '';
+      var kw = (filter || '').toLowerCase().trim();
+
+      phases.forEach(function(p, i) {
+        var matched = !kw || p.title.toLowerCase().indexOf(kw) >= 0 || p.en.toLowerCase().indexOf(kw) >= 0 ||
+          p.steps.some(function(s){ return s.toLowerCase().indexOf(kw) >= 0; });
+        var isActive = current === p.id;
+        var isDone = done[p.id];
+
+        var node = document.createElement('div');
+        node.style.cssText = 'flex:0 0 auto;display:flex;flex-direction:column;align-items:center;cursor:pointer;padding:0 6px;opacity:' + (kw && !matched ? '0.25' : '1') + ';transition:opacity 0.2s;';
+        node.onclick = function() { selectPhase(p.id); };
+
+        var dot = document.createElement('div');
+        var dotStyle = 'width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;transition:all 0.2s cubic-bezier(0.4,0,0.2,1);margin-bottom:10px;letter-spacing:-0.02em;';
+        if (isDone) {
+          dotStyle += 'background:var(--flow-done);color:#fff;box-shadow:0 0 0 4px var(--flow-done-soft);';
+        } else if (isActive) {
+          dotStyle += 'background:' + p.color + ';color:#fff;box-shadow:0 0 0 4px ' + p.colorBg + ',0 4px 12px rgba(176,148,114,0.25);transform:scale(1.08);';
+        } else {
+          dotStyle += 'background:var(--flow-card);color:' + p.color + ';border:1.5px solid var(--flow-border);';
+        }
+        dot.style.cssText = dotStyle;
+        dot.textContent = isDone ? '✓' : p.id;
+        node.appendChild(dot);
+
+        var label = document.createElement('div');
+        label.style.cssText = 'font-size:13px;font-weight:600;color:' + (isActive ? p.color : 'var(--flow-text-1)') + ';text-align:center;white-space:nowrap;transition:color 0.2s;';
+        label.textContent = p.title;
+        node.appendChild(label);
+
+        var en = document.createElement('div');
+        en.style.cssText = 'font-size:10px;color:var(--flow-text-3);letter-spacing:0.06em;margin-top:2px;text-transform:uppercase;';
+        en.textContent = p.en;
+        node.appendChild(en);
+
+        tl.appendChild(node);
+
+        if (i < phases.length - 1) {
+          var line = document.createElement('div');
+          line.style.cssText = 'flex:0 0 32px;display:flex;align-items:center;justify-content:center;padding-top:18px;';
+          var lineInner = document.createElement('div');
+          lineInner.style.cssText = 'width:100%;height:1.5px;background:linear-gradient(90deg,' + p.color + '55,' + phases[i+1].color + '55);border-radius:1px;position:relative;overflow:hidden;';
+          var flow = document.createElement('div');
+          flow.style.cssText = 'position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,' + p.color + '88,transparent);animation:flowLine 2.5s linear infinite;';
+          lineInner.appendChild(flow);
+          line.appendChild(lineInner);
+          tl.appendChild(line);
+        }
+      });
+    }
+
+    window.selectPhase = function(id) {
+      current = id;
+      var p = phases.find(function(x){ return x.id === id; });
+      if (!p) return;
+      renderTimeline(document.getElementById('f-search') ? document.getElementById('f-search').value : '');
+
+      var det = document.getElementById('f-detail');
+      var empty = document.getElementById('f-empty');
+      if (det) det.style.display = 'block';
+      if (empty) empty.style.display = 'none';
+
+      var num = document.getElementById('f-d-num');
+      if (num) {
+        num.style.background = done[id] ? 'var(--flow-done-soft)' : p.colorBg;
+        num.style.color = done[id] ? 'var(--flow-done)' : p.color;
+        num.textContent = done[id] ? '✓' : p.id;
+      }
+      var t = document.getElementById('f-d-title');
+      if (t) { t.textContent = p.title; t.style.color = p.color; }
+      var s = document.getElementById('f-d-sub');
+      if (s) s.textContent = p.en.toUpperCase();
+
+      var ol = document.getElementById('f-d-steps');
+      if (ol) {
+        ol.innerHTML = p.steps.map(function(step, idx) {
+          return '<li style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--flow-border);">' +
+            '<span style="flex-shrink:0;width:22px;height:22px;border-radius:6px;background:' + p.colorBg + ';color:' + p.color + ';display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px;">' + (idx+1) + '</span>' +
+            '<span style="font-size:13.5px;color:var(--flow-text-1);line-height:1.6;">' + step + '</span></li>';
+        }).join('');
+      }
+
+      var out = document.getElementById('f-d-outputs');
+      if (out) out.textContent = p.outputs;
+      var gate = document.getElementById('f-d-gate');
+      if (gate) gate.textContent = p.gate;
+      var time = document.getElementById('f-d-time');
+      if (time) time.textContent = p.time;
+
+      var btn = document.getElementById('f-d-complete');
+      if (btn) {
+        if (done[id]) {
+          btn.textContent = '已完成';
+          btn.style.color = 'var(--flow-done)';
+          btn.style.borderColor = 'var(--flow-done)';
+          btn.style.background = 'var(--flow-done-soft)';
+        } else {
+          btn.textContent = '标记完成';
+          btn.style.color = 'var(--flow-text-3)';
+          btn.style.borderColor = 'var(--flow-border)';
+          btn.style.background = 'transparent';
+        }
+      }
+      updateProgress();
+    };
+
+    window.toggleComplete = function() { if (current < 0) return; done[current] = !done[current]; selectPhase(current); };
+    window.prevPhase = function() { if (current > 1) selectPhase(current - 1); };
+    window.nextPhase = function() { if (current < phases.length) selectPhase(current + 1); };
+    window.onSearch = function(v) { renderTimeline(v); };
+
+    function updateProgress() {
+      var n = Object.keys(done).filter(function(k){ return done[k]; }).length;
+      var bar = document.getElementById('f-progress-bar');
+      var txt = document.getElementById('f-progress-text');
+      if (bar) bar.style.width = (n / phases.length * 100) + '%';
+      if (txt) txt.textContent = n + ' / ' + phases.length + ' 完成';
+    }
+
+    window.startGuide = function() {
+      if (guideTimer) { clearInterval(guideTimer); guideTimer = null; }
+      var idx = 0;
+      var btn = document.getElementById('f-guide');
+      if (btn) btn.textContent = '播放中…';
+      selectPhase(phases[0].id);
+      guideTimer = setInterval(function() {
+        idx++;
+        if (idx >= phases.length) {
+          clearInterval(guideTimer); guideTimer = null;
+          if (btn) btn.textContent = '引导播放';
+          return;
+        }
+        selectPhase(phases[idx].id);
+      }, 2800);
+    };
+
+    window.resetAll = function() {
+      if (guideTimer) { clearInterval(guideTimer); guideTimer = null; }
+      var btn = document.getElementById('f-guide');
+      if (btn) btn.textContent = '引导播放';
+      current = -1; done = {};
+      var inp = document.getElementById('f-search');
+      if (inp) inp.value = '';
+      renderTimeline('');
+      var det = document.getElementById('f-detail');
+      if (det) det.style.display = 'none';
+      var empty = document.getElementById('f-empty');
+      if (empty) empty.style.display = 'block';
+      updateProgress();
+    };
+
+    var style = document.createElement('style');
+    style.textContent =
+      '@keyframes flowLine { 0%{left:-100%;} 100%{left:100%;} }' +
+      '#f-timeline::-webkit-scrollbar{height:5px;}' +
+      '#f-timeline::-webkit-scrollbar-track{background:transparent;}' +
+      '#f-timeline::-webkit-scrollbar-thumb{background:var(--flow-border-strong);border-radius:3px;}' +
+      '#f-timeline::-webkit-scrollbar-thumb:hover{background:var(--flow-text-3);}' +
+      '::selection{background:var(--flow-brand-soft);color:var(--flow-text-1);}' +
+      'input::placeholder{color:var(--flow-text-3);}';
+    document.head.appendChild(style);
+
+    renderLegend();
+    renderTimeline('');
+    updateProgress();
+  } catch(e) {
+    var r = document.getElementById('flow-root');
+    if (r) r.innerHTML = '<div style="padding:60px 32px;text-align:center;color:var(--flow-text-3);font-size:14px;">加载失败：' + e.message + '</div>';
+  }
+})();
+</script>
+</body>
+</html>
