@@ -8,6 +8,7 @@ export default defineConfig({
   description: 'A personal knowledge base',
   ignoreDeadLinks: true,
   head: [
+    ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     [
