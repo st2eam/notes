@@ -1,5 +1,5 @@
 ---
-title: LLM Wiki 可视化教程
+title: LLM Wiki
 aside: false
 ---
 
@@ -23,7 +23,7 @@ onBeforeUnmount(() => window.removeEventListener('message', resizeEmbeddedPage))
 <iframe
   id="llm-wiki-frame"
   src="/notes/embeds/llm-wiki-tutorial.html?embed=true"
-  title="LLM Wiki 可视化教程"
+  title="LLM Wiki"
   loading="lazy"
   style="display:block;width:100%;height:900px;border:0;border-radius:16px;background:transparent"
 ></iframe>

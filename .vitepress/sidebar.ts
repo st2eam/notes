@@ -16,7 +16,7 @@ export default [
                 "link": "/AI/Embedding与向量数据库.md"
             },
             {
-                "text": "LLM Wiki 可视化教程",
+                "text": "LLM Wiki",
                 "link": "/AI/LLM Wiki 可视化教程.md"
             },
             {

@@ -34,7 +34,7 @@ function walkDir(dir) {
                 if (['/api-examples.md', '/index.md', '/markdown-examples.md'].some(item => file.replace('./', '') === item)) return
                 if (path.extname(file) === '.md') {
                     results.push({
-                        text: path.basename(file, '.md'),
+                        text: path.basename(file, '.md') === 'LLM Wiki 可视化教程' ? 'LLM Wiki' : path.basename(file, '.md'),
                         link: file.replace('./', '')
                     });
                 }
