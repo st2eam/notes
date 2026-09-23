@@ -1,0 +1,357 @@
+<html style="margin:0;padding:0;">
+<title>LLM Wiki 可视化教程 · AI 知识库</title>
+<div style="background:var(--page-bg);font-family:'PingFang SC','Microsoft YaHei','Segoe UI',Arial,sans-serif;color:var(--text);padding:0 0 40px;">
+
+<style>
+  :root{color-scheme:light;--page-bg:#f8f6f2;--surface:#fff;--soft:#f3efe9;--accent-soft:#f3efe9;--text:#1a1a1a;--muted:#6e6e73;--border:rgba(0,0,0,.08);--accent:#b09472;--accent-strong:#8a7458;--on-accent:#fff;--positive-bg:#effaf4;--positive-border:#c9e8d5;--positive:#1e7a44;--negative-bg:#fff7f6;--negative-border:#f2d4d0;--negative:#c2453b;--warning-bg:#fff8ef;--warning-border:#f0ddc0;}
+  html.dark{color-scheme:dark;--page-bg:#1a1918;--surface:#242220;--soft:#242220;--accent-soft:rgba(212,184,150,.09);--text:rgba(255,250,243,.92);--muted:rgba(255,250,243,.65);--border:rgba(255,250,243,.12);--accent:#d4b896;--accent-strong:#e8d5be;--on-accent:#1a1918;--positive-bg:#1c2a21;--positive-border:#344c3b;--positive:#9bd2ad;--negative-bg:#30201f;--negative-border:#583735;--negative:#f0a29a;--warning-bg:#30291f;--warning-border:#584a35;}
+  html.embed-mode .nav{display:none;}
+  html.embed-mode .hero{padding-top:24px;}
+  *{box-sizing:border-box;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin:24px 0;}
+  .section-title{font-size:22px;font-weight:700;margin:0 0 6px;}
+  .section-sub{font-size:14px;color:var(--muted);margin:0 0 20px;}
+  .chip{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:20px;padding:4px 12px;font-size:13px;font-weight:500;}
+  .tag{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600;}
+  .btn{cursor:pointer;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:600;transition:all .15s;}
+  .btn:active{transform:scale(.96);}
+  .btn-blue{background:var(--accent);color:var(--on-accent);}
+  .btn-blue:hover{background:var(--accent-strong);}
+  .btn-ghost{background:var(--surface);border:1px solid var(--border);color:var(--muted);}
+  .btn-ghost:hover{background:var(--accent-soft);}
+  .btn:focus-visible{outline:3px solid rgba(176,148,114,.4);outline-offset:2px;}
+  .nav{position:sticky;top:0;background:var(--surface);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50;}
+  .nav-inner{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .nav-logo{font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;}
+  .nav-dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-strong));}
+  .nav-links{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto;}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;padding:6px 10px;border-radius:8px;}
+  .nav-links a:hover{background:var(--accent-soft);color:var(--accent);}
+  .hero{text-align:center;padding:48px 20px 28px;}
+  .hero h1{font-size:34px;font-weight:800;margin:16px 0 10px;line-height:1.2;}
+  .hero p{color:var(--muted);font-size:16px;max-width:640px;margin:0 auto;}
+  .hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+  .pill{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:8px 16px;font-size:13px;color:var(--text);}
+  .pill b{color:var(--accent);}
+  .arch-layers{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+  .arch-row{border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;background:var(--surface);transition:all .18s;display:flex;align-items:flex-start;gap:12px;}
+  .arch-row:hover{border-color:var(--accent);}
+  .arch-row.active{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px rgba(176,148,114,.12);}
+  .arch-ico{width:44px;height:44px;flex:0 0 44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .arch-row h4{margin:0 0 3px;font-size:16px;}
+  .arch-row p{margin:0;font-size:13px;color:var(--muted);}
+  .arch-detail{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:12px;font-size:14px;line-height:1.7;}
+  .arch-detail.hidden{display:none;}
+  .flow-wrap{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;}
+  .flow-step{flex:1 1 150px;background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:14px;cursor:pointer;position:relative;transition:all .18s;}
+  .flow-step:hover{border-color:var(--accent-strong);}
+  .flow-step.active{border-color:var(--accent-strong);background:var(--accent-soft);box-shadow:0 0 0 3px rgba(176,148,114,.15);}
+  .flow-arrow{flex:0 0 20px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px;font-weight:700;}
+  .flow-step .fnum{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+  .flow-step h4{margin:0 0 4px;font-size:14px;}
+  .flow-step p{margin:0;font-size:12px;color:var(--muted);line-height:1.5;}
+  .flow-panel{background:var(--accent-soft);border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:12px;font-size:14px;line-height:1.7;}
+  .flow-panel.hidden{display:none;}
+  .ctl{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap;}
+  .stage{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-left:auto;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:4px 12px;}
+  .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:700px){.vs-grid{grid-template-columns:1fr;}}
+  .vs-col{border-radius:12px;padding:16px;}
+  .vs-col.r{background:var(--negative-bg);border:1px solid var(--negative-border);}
+  .vs-col.w{background:var(--positive-bg);border:1px solid var(--positive-border);}
+  .vs-col h4{margin:0 0 12px;font-size:16px;display:flex;align-items:center;gap:8px;}
+  .vs-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed var(--border);gap:10px;}
+  .vs-row:last-child{border-bottom:none;}
+  .vs-key{font-size:13px;color:var(--muted);flex:0 0 78px;}
+  .vs-val{font-size:13px;font-weight:500;text-align:right;flex:1;}
+  .vs-col.r .vs-val{color:var(--negative);}
+  .vs-col.w .vs-val{color:var(--positive);}
+  .toggle-seg{display:flex;background:var(--accent-soft);border-radius:12px;padding:4px;gap:4px;max-width:fit-content;margin:0 auto 16px;}
+  .seg-btn{border:none;background:transparent;border-radius:9px;padding:9px 18px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;}
+  .seg-btn.active{background:var(--surface);color:var(--accent);box-shadow:0 1px 4px rgba(0,0,0,.08);}
+  .pros{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:700px){.pros{grid-template-columns:1fr;}}
+  .pro-list{border-radius:12px;padding:16px;}
+  .pro-list.g{background:var(--positive-bg);border:1px solid var(--positive-border);}
+  .pro-list.o{background:var(--warning-bg);border:1px solid var(--warning-border);}
+  .pro-list h4{margin:0 0 10px;font-size:15px;}
+  .pro-list ul{margin:0;padding-left:18px;font-size:13px;line-height:1.8;color:var(--text);}
+  .steps{display:flex;flex-direction:column;gap:12px;}
+  .step-item{display:flex;gap:14px;align-items:flex-start;}
+  .step-num{width:34px;height:34px;flex:0 0 34px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;}
+  .step-item h4{margin:0 0 3px;font-size:15px;}
+  .step-item p{margin:0;font-size:13px;color:var(--muted);line-height:1.6;}
+  .foot{text-align:center;color:var(--muted);font-size:12px;padding:20px;}
+  .sum-box{background:linear-gradient(135deg,var(--accent),var(--accent-strong));color:var(--on-accent);border-radius:16px;padding:22px;margin-top:8px;}
+  .sum-box h3{margin:0 0 8px;font-size:18px;}
+  .sum-box p{margin:0;font-size:14px;line-height:1.7;opacity:.95;}
+  a.anchor{scroll-margin-top:80px;}
+</style>
+
+<div class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><span class="nav-dot"></span> LLM Wiki 教程</div>
+    <div class="nav-links">
+      <a href="#s1">是什么</a>
+      <a href="#s2">架构</a>
+      <a href="#s3">流程</a>
+      <a href="#s4">对比</a>
+      <a href="#s5">优劣</a>
+      <a href="#s6">上手</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="chip">一种 AI 维护知识库的思路</span>
+  <h1>LLM Wiki 可视化教程</h1>
+  <p>把「提问时检索相关资料并生成答案」变成「提前用 AI 把素材编译成一套结构化的维基百科」。滚动浏览，点击交互模块深入理解。</p>
+  <div class="hero-badges">
+    <div class="pill"><b>录入时编译</b> · 知识提前沉淀</div>
+    <div class="pill"><b>结构化网络</b> · 页面互相链接</div>
+    <div class="pill"><b>人机共用</b> · 人可阅读审核，AI 按规则维护</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 章节 1：是什么 -->
+<div class="card" id="s1" class="anchor">
+  <div class="section-title">① 一句话理解</div>
+  <div class="section-sub">LLM Wiki 相当于一个「知识编译器」</div>
+  <div class="sum-box">
+    <h3>导入原始素材，AI 按规则整理知识页面</h3>
+    <p>论文、笔记、网页等素材导入后，LLM 可按规则提炼要点、整理页面并建立关联。生成内容应保留来源线索，方便回到原文核验；效果取决于素材质量、模型能力和维护流程。</p>
+  </div>
+</div>
+
+<!-- 章节 2：架构 -->
+<div class="card" id="s2" class="anchor">
+  <div class="section-title">② 一种常见的三层设计</div>
+  <div class="section-sub">点击每一层查看详细职责</div>
+  <div class="arch-layers" id="archLayers">
+    <div class="arch-row" data-i="0" data-active="1">
+      <div class="arch-ico" style="background:var(--positive-bg);">📂</div>
+      <div style="flex:1;">
+        <h4>第一层 · 原始素材层（Raw Sources）</h4>
+        <p>保留原始输入，供生成内容引用和核验；具体权限由工具配置决定</p>
+      </div>
+      <span class="tag" style="background:var(--positive-bg);color:var(--positive);">只读</span>
+    </div>
+    <div class="arch-row" data-i="1">
+      <div class="arch-ico" style="background:var(--accent-soft);">🌐</div>
+      <div style="flex:1;">
+        <h4>第二层 · Wiki 生成层（核心）</h4>
+        <p>由 LLM 辅助生成和维护的结构化知识页面及其关联</p>
+      </div>
+      <span class="tag" style="background:var(--accent-soft);color:var(--accent-strong);">核心</span>
+    </div>
+    <div class="arch-row" data-i="2">
+      <div class="arch-ico" style="background:var(--accent-soft);">📐</div>
+      <div style="flex:1;">
+        <h4>第三层 · 模式约定层（Schema）</h4>
+        <p>说明页面结构、引用方式和维护流程的规则</p>
+      </div>
+      <span class="tag" style="background:var(--accent-soft);color:var(--accent);">规范</span>
+    </div>
+  </div>
+  <div class="arch-detail" id="archDetail">第一层是知识库的输入端：PDF、论文、网页剪藏、会议录音转写、随手笔记都在这里。建议将原始素材与生成页面分开保存，并保留来源引用，便于核验；是否只读及引用粒度取决于工具配置。来源可供核验，但不代表来源内容本身必然正确。</div>
+</div>
+
+<!-- 章节 3：流程 -->
+<div class="card" id="s3" class="anchor">
+  <div class="section-title">③ 完整工作流程</div>
+  <div class="section-sub">点击步骤查看细节，或用下方按钮逐步播放</div>
+  <div class="flow-wrap" id="flowWrap">
+    <div class="flow-step active" data-i="0">
+      <div class="fnum">1</div>
+      <h4>素材录入</h4>
+      <p>投喂新文档到素材库</p>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" data-i="1">
+      <div class="fnum">2</div>
+      <h4>LLM 编译</h4>
+      <p>通读并提取概念、观点</p>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" data-i="2">
+      <div class="fnum">3</div>
+      <h4>更新维基</h4>
+      <p>新建/补充/标注冲突</p>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" data-i="3">
+      <div class="fnum">4</div>
+      <h4>关联查询</h4>
+      <p>沿链接跨页推理取答</p>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" data-i="4">
+      <div class="fnum">5</div>
+      <h4>定期维护</h4>
+      <p>运行检查，发现断链与重复项</p>
+    </div>
+  </div>
+  <div class="flow-panel" id="flowPanel">素材录入：将 PDF、论文、网页剪藏或笔记加入素材库。可手动上传或使用插件同步；扫描件、录音等素材可能还需 OCR 或转写，导入前也应检查格式与隐私要求。</div>
+  <div class="ctl">
+    <button class="btn btn-ghost" id="flowPrev">◀ 上一步</button>
+    <button class="btn btn-blue" id="flowNext">下一步 ▶</button>
+    <span class="stage" id="flowStage">步骤 1 / 5</span>
+  </div>
+</div>
+
+<!-- 章节 4：对比 -->
+<div class="card" id="s4" class="anchor">
+  <div class="section-title">④ 基础切块检索式 RAG vs LLM Wiki</div>
+  <div class="section-sub">切换视图对比两种知识库的完整路径</div>
+  <div class="toggle-seg" id="modeSeg">
+    <button class="seg-btn active" data-mode="v">按「工作模式」对比</button>
+    <button class="seg-btn" data-mode="t">按「关键维度」对比</button>
+  </div>
+  <div id="viewVs">
+    <div class="vs-grid">
+      <div class="vs-col r">
+        <h4>🟥 基础切块检索式 RAG</h4>
+        <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">提问时检索相关资料并生成答案</div>
+        <div class="vs-row"><span class="vs-key">文档处理</span><span class="vs-val">切块并建立检索索引（可含向量）</span></div>
+        <div class="vs-row"><span class="vs-key">计算时机</span><span class="vs-val">提问时临时检索</span></div>
+        <div class="vs-row"><span class="vs-key">知识形态</span><span class="vs-val">检索索引与原文片段</span></div>
+        <div class="vs-row"><span class="vs-key">知识关联</span><span class="vs-val">关联能力取决于系统设计</span></div>
+        <div class="vs-row"><span class="vs-key">积累效应</span><span class="vs-val">通常不会自动沉淀为主题综述</span></div>
+        <div class="vs-row"><span class="vs-key">推理能力</span><span class="vs-val">检索相关片段后生成回答</span></div>
+      </div>
+      <div class="vs-col w">
+        <h4>🟩 LLM Wiki 知识库</h4>
+        <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">录入后整理为结构化知识页面</div>
+        <div class="vs-row"><span class="vs-key">文档处理</span><span class="vs-val">LLM 按规则生成或更新页面</span></div>
+        <div class="vs-row"><span class="vs-key">计算时机</span><span class="vs-val">录入后处理并更新页面</span></div>
+        <div class="vs-row"><span class="vs-key">知识形态</span><span class="vs-val">结构化维基网络</span></div>
+        <div class="vs-row"><span class="vs-key">知识关联</span><span class="vs-val">可按规则建立页面关联</span></div>
+        <div class="vs-row"><span class="vs-key">积累效应</span><span class="vs-val">有机会逐步沉淀可复用知识</span></div>
+        <div class="vs-row"><span class="vs-key">推理能力</span><span class="vs-val">可跨页检索与整合，效果取决于实现</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 章节 5：优劣 -->
+<div class="card" id="s5" class="anchor">
+  <div class="section-title">⑤ 优势与局限</div>
+  <div class="section-sub">判断你的场景是否适合</div>
+  <div class="pros">
+    <div class="pro-list g">
+      <h4>✅ 优势</h4>
+      <ul>
+        <li>有机会逐步沉淀可复用的知识，效果取决于维护质量</li>
+        <li>人机共用，人可直接阅读校验</li>
+        <li>有助于跨页检索和整合复杂问题所需信息</li>
+        <li>可减少整理工作；分类、链接和更新仍需检查</li>
+      </ul>
+    </div>
+    <div class="pro-list o">
+      <h4>⚠️ 局限</h4>
+      <ul>
+        <li>录入与维护会增加模型调用成本，具体取决于语料、模型和流程</li>
+        <li>模型能力不足或来源质量差时，生成页面可能误导</li>
+        <li>超大规模语料的编译、更新与核验成本可能较高</li>
+        <li>AI 编译可能有偏差，需人工审核</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 章节 6：上手 -->
+<div class="card" id="s6" class="anchor">
+  <div class="section-title">⑥ 极简上手指南</div>
+  <div class="section-sub">从零体验 LLM Wiki 的五步路径</div>
+  <div class="steps">
+    <div class="step-item"><div class="step-num">1</div><div><h4>小批量试水</h4><p>先用 10~20 篇优质领域文档测试，不要一上来投喂海量文件，便于观察 AI 生成的页面质量。</p></div></div>
+    <div class="step-item"><div class="step-num">2</div><div><h4>选对场景</h4><p>适合需要长期沉淀和跨资料综合的场景，如个人研究或团队知识整理；临时查询也可按成本和效果选择检索式 RAG。</p></div></div>
+    <div class="step-item"><div class="step-num">3</div><div><h4>选好工具</h4><p>开源工具示例：atomicstrata/llm-wiki-compiler（命令行、MCP、Obsidian 兼容 Markdown）；lucasastorian/llmwiki（网页应用、MCP，面向个人知识库场景）。功能和维护状态会变化，选用前请查看项目文档。</p></div></div>
+    <div class="step-item"><div class="step-num">4</div><div><h4>定期校验</h4><p>定期检查来源引用、断链、重复页面和过时信息；对重要结论回到原文核验后再修改。</p></div></div>
+    <div class="step-item"><div class="step-num">5</div><div><h4>小样本验证</h4><p>用一组可核对的问题测试回答准确性、引用是否能定位到原文，以及新增素材后相关页面是否正确更新，再决定是否扩大使用范围。</p></div></div>
+  </div>
+</div>
+
+<div class="foot">LLM Wiki 可视化教程 · 图示为概念示意；不同工具的功能和流程有所差异，请以对应项目文档为准</div>
+</div>
+
+<script>
+(function(){
+  try{
+    var embedded=new URLSearchParams(location.search).get('embed')==='true';
+    if(embedded)document.documentElement.classList.add('embed-mode');
+    function syncParentTheme(){try{if(window.parent!==window)document.documentElement.classList.toggle('dark',window.parent.document.documentElement.classList.contains('dark'));}catch(e){}}
+    function reportEmbedHeight(){if(window.parent!==window)window.parent.postMessage({type:'llmwiki-embed-height',height:document.documentElement.scrollHeight},location.origin);}
+    syncParentTheme();
+    if(window.parent!==window){try{new MutationObserver(syncParentTheme).observe(window.parent.document.documentElement,{attributes:true,attributeFilter:['class']});}catch(e){}new ResizeObserver(reportEmbedHeight).observe(document.body);window.addEventListener('load',reportEmbedHeight);}
+    // ---- 架构交互 ----
+    var layers=document.querySelectorAll('#archLayers .arch-row');
+    var detail=document.getElementById('archDetail');
+    var archInfo=[
+      '第一层是知识库的输入端：PDF、论文、网页剪藏、会议录音转写、随手笔记都在这里。建议将原始素材与生成页面分开保存，并保留来源引用，便于核验；是否只读及引用粒度取决于工具配置。来源可供核验，但不代表来源内容本身必然正确。',
+      '这是 LLM Wiki 的核心产物：系统可按规则为核心概念、实体或主题生成页面，并建立页面关联、目录和索引。是否支持双向链接及细粒度引用，取决于具体工具；生成内容仍需抽查来源与准确性。',
+      '相当于知识库的「编辑规范」，通过配置文件定义规则：页面结构模板、分类体系、命名规则；遇到新概念是否新建页面、信息冲突如何标注；引用格式、更新频率、校验规则。它约束 LLM 生成行为，保证维基库长期一致、可维护。'
+    ];
+    layers.forEach(function(r){
+      r.addEventListener('click',function(){
+        layers.forEach(function(x){x.classList.remove('active');});
+        r.classList.add('active');
+        var i=parseInt(r.getAttribute('data-i'),10);
+        detail.innerHTML=archInfo[i];
+      });
+    });
+    // ---- 流程交互 ----
+    var steps=document.querySelectorAll('#flowWrap .flow-step');
+    var fpanel=document.getElementById('flowPanel');
+    var stage=document.getElementById('flowStage');
+    var cur=0;
+    var flowInfo=[
+      '素材录入：将 PDF、论文、网页剪藏或笔记加入素材库。可手动上传或使用插件同步；扫描件、录音等素材可能还需 OCR 或转写，导入前也应检查格式与隐私要求。',
+      'LLM 编译：模型读取可处理的素材，提取重要概念、实体和观点，并与现有页面比对。处理长文或多模态内容时，可能需要分段、OCR 或人工补充。',
+      '更新维基：可根据比对结果新建页面或补充已有页面；发现冲突时，应保留来源并标记差异，核验后再更新。一篇素材可能影响多个关联页面，数量取决于内容与已有知识库。',
+      '关联查询：查询时，系统可先定位相关页面，再按需沿页面关联检索和整合信息。多页推理效果取决于检索、页面质量和模型能力；复杂回答仍需检查引用。',
+      '定期维护：定期运行 Lint 等检查，发现断链、重复页面、引用缺失或过时线索，再由模型或人工处理。经过核验的高价值问答也可整理为新页面。检查能帮助发现问题，但不保证自动判断正确。'
+    ];
+    function renderFlow(){
+      steps.forEach(function(s,i){s.classList.toggle('active',i===cur);});
+      fpanel.innerHTML='<strong>第 '+(cur+1)+' 步：</strong>'+flowInfo[cur];
+      stage.textContent='步骤 '+(cur+1)+' / 5';
+      fpanel.classList.remove('hidden');
+    }
+    steps.forEach(function(s,i){
+      s.addEventListener('click',function(){cur=i;renderFlow();});
+    });
+    document.getElementById('flowPrev').addEventListener('click',function(){
+      cur=cur>0?cur-1:4;renderFlow();
+    });
+    document.getElementById('flowNext').addEventListener('click',function(){
+      cur=cur<4?cur+1:0;renderFlow();
+    });
+    renderFlow();
+    // ---- 对比切换 ----
+    var seg=document.getElementById('modeSeg');
+    var viewVs=document.getElementById('viewVs');
+    var segInfo={
+      'v': '<div class="vs-grid"><div class="vs-col r"><h4>🟥 基础切块检索式 RAG</h4><div style="font-size:13px;color:var(--muted);margin-bottom:6px;">提问时检索相关资料并生成答案</div><div class="vs-row"><span class="vs-key">文档处理</span><span class="vs-val">切块并建立检索索引（可含向量）</span></div><div class="vs-row"><span class="vs-key">计算时机</span><span class="vs-val">提问时临时检索</span></div><div class="vs-row"><span class="vs-key">知识形态</span><span class="vs-val">检索索引与原文片段</span></div><div class="vs-row"><span class="vs-key">知识关联</span><span class="vs-val">关联能力取决于系统设计</span></div><div class="vs-row"><span class="vs-key">积累效应</span><span class="vs-val">通常不会自动沉淀为主题综述</span></div><div class="vs-row"><span class="vs-key">推理能力</span><span class="vs-val">检索相关片段后生成回答</span></div></div><div class="vs-col w"><h4>🟩 LLM Wiki 知识库</h4><div style="font-size:13px;color:var(--muted);margin-bottom:6px;">录入后整理为结构化知识页面</div><div class="vs-row"><span class="vs-key">文档处理</span><span class="vs-val">LLM 按规则生成或更新页面</span></div><div class="vs-row"><span class="vs-key">计算时机</span><span class="vs-val">录入后处理并更新页面</span></div><div class="vs-row"><span class="vs-key">知识形态</span><span class="vs-val">结构化维基网络</span></div><div class="vs-row"><span class="vs-key">知识关联</span><span class="vs-val">可按规则建立页面关联</span></div><div class="vs-row"><span class="vs-key">积累效应</span><span class="vs-val">有机会逐步沉淀可复用知识</span></div><div class="vs-row"><span class="vs-key">推理能力</span><span class="vs-val">可跨页检索与整合，效果取决于实现</span></div></div></div>',
+      't': '<div class="vs-grid"><div class="vs-col r"><h4>🟥 基础切块检索式 RAG</h4><div style="font-size:13px;color:var(--muted);margin-bottom:6px;">常用于海量文档检索与问答</div><div class="vs-row"><span class="vs-key">构建成本</span><span class="vs-val">通常较低，但仍需解析、切分和建索引</span></div><div class="vs-row"><span class="vs-key">更新速度</span><span class="vs-val">新增内容需入索引，生效速度取决于流程</span></div><div class="vs-row"><span class="vs-key">幻觉率</span><span class="vs-val">取决于检索与生成质量，仍可能出错</span></div><div class="vs-row"><span class="vs-key">人工可读</span><span class="vs-val">原文可读，索引可读性取决于实现</span></div><div class="vs-row"><span class="vs-key">冲突处理</span><span class="vs-val">需额外设计冲突检测与处理</span></div><div class="vs-row"><span class="vs-key">推荐场景</span><span class="vs-val">客服库/海量检索</span></div></div><div class="vs-col w"><h4>🟩 LLM Wiki</h4><div style="font-size:13px;color:var(--muted);margin-bottom:6px;">适合深度研究长期沉淀</div><div class="vs-row"><span class="vs-key">构建成本</span><span class="vs-val">通常较高，需生成并维护知识页面</span></div><div class="vs-row"><span class="vs-key">更新速度</span><span class="vs-val">需处理受影响页面，速度取决于素材与流程</span></div><div class="vs-row"><span class="vs-key">幻觉率</span><span class="vs-val">仍可能出错，建议核验来源与结论</span></div><div class="vs-row"><span class="vs-key">人工可读</span><span class="vs-val">常见为可阅读的 Markdown，依工具而异</span></div><div class="vs-row"><span class="vs-key">冲突处理</span><span class="vs-val">可设计为标注不同来源的观点，仍需核验</span></div><div class="vs-row"><span class="vs-key">推荐场景</span><span class="vs-val">第二大脑/组织记忆</span></div></div></div>'
+    };
+    var segBtns=seg.querySelectorAll('.seg-btn');
+    segBtns.forEach(function(b){
+      b.addEventListener('click',function(){
+        segBtns.forEach(function(x){x.classList.remove('active');});
+        b.classList.add('active');
+        viewVs.innerHTML=segInfo[b.getAttribute('data-mode')];
+      });
+    });
+  }catch(e){
+    document.getElementById('archDetail').textContent='交互模块初始化失败，请刷新页面重试。';
+    document.getElementById('flowPanel').textContent='交互模块初始化失败，请刷新页面重试。';
+  }
+})();
+</script>
+</div>
+</html>
+<!-- （注：内容由AI生成） -->
