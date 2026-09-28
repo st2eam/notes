@@ -1,0 +1,154 @@
+.photo-lab {
+  --photo-panel: var(--vp-c-bg-elv);
+  --photo-border: var(--vp-c-divider);
+  --photo-muted: var(--vp-c-text-2);
+}
+
+.photo-lab__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.photo-lab__header p,
+.photo-lab__hint,
+.photo-lab__credit {
+  margin: 0.3rem 0 0;
+  color: var(--photo-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.photo-lab__credit {
+  margin-top: 0.65rem;
+  font-size: 0.75rem;
+}
+
+.photo-lab__controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0;
+}
+
+.photo-lab__field {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.photo-lab__field output {
+  float: right;
+  color: var(--photo-muted);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.photo-lab__field input[type='range'] {
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  accent-color: var(--vp-c-brand-1);
+}
+
+.photo-lab__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+
+.photo-lab button {
+  min-height: 38px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--photo-border);
+  border-radius: 9px;
+  background: var(--photo-panel);
+  color: var(--vp-c-text-1);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.photo-lab button[aria-pressed='true'] {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+.photo-lab :is(button, input):focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+}
+
+.photo-lab__stage {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  border-radius: 12px;
+  background: #242321;
+}
+
+.photo-lab__photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.photo-lab__photo--wide {
+  aspect-ratio: 3 / 2;
+}
+
+.photo-lab__photo img,
+.photo-lab__photo .photo-lab__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-lab__readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.85rem 0 0;
+}
+
+.photo-lab__readout span {
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--photo-border);
+  border-radius: 6px;
+  background: var(--photo-panel);
+  color: var(--vp-c-text-1);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.photo-lab__note {
+  margin: 0.75rem 0 0;
+  color: var(--photo-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .photo-lab__controls {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .photo-lab__photo {
+    aspect-ratio: 1 / 1;
+  }
+
+  .photo-lab__photo--wide {
+    aspect-ratio: 4 / 3;
+  }
+}
