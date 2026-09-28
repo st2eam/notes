@@ -7,6 +7,9 @@ export default defineConfig({
   outDir: 'docs',
   description: 'A personal knowledge base',
   ignoreDeadLinks: true,
+  markdown: {
+    math: true,
+  },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' }],
     ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png', sizes: '128x128' }],
