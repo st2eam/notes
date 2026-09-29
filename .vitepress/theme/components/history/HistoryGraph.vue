@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch, nextTick } from 'vue'
 import { withBase } from 'vitepress'
 import { nodes, periods } from './history-data.mjs'
 import { themes, readingLenses, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from './history-network.mjs'
+import { layoutAtlas, edgePath, fitView, labelLines } from './history-scene.mjs'
+
+const MIN_ZOOM = 0.25
+const MAX_ZOOM = 2.4
 
 const activePeriod = ref('classical')
 const activeNodeId = ref('han')
@@ -12,11 +16,12 @@ const query = ref('')
 const pathFrom = ref('han')
 const pathTo = ref('rome')
 const pathRequested = ref(false)
-const graphElement = ref<HTMLElement | null>(null)
-let cy: any = null
-let resizeObserver: ResizeObserver | null = null
-let themeObserver: MutationObserver | null = null
+const sceneRef = ref<SVGSVGElement | null>(null)
+const viewport = ref({ width: 900, height: 570 })
+const panning = ref(false)
+const userMoved = ref(false)
 
+const positions = layoutAtlas(graphNodes, graphRelations)
 const byId = new Map(graphNodes.map((node) => [node.id, node]))
 const byRelationId = new Map(graphRelations.map((edge) => [edge.id, edge]))
 const activeNode = computed(() => byId.get(activeNodeId.value) ?? nodes[0])
@@ -49,16 +54,184 @@ const visibleIds = computed(() => {
 })
 const visibleNodes = computed(() => nodes.filter((node) => visibleIds.value.has(node.id)).sort((a, b) => a.year - b.year))
 const visibleListNodes = computed(() => [...visibleNodes.value, ...themes.filter((theme) => visibleIds.value.has(theme.id))])
-const visibleEdges = computed(() => graphRelations.filter((edge) => visibleIds.value.has(edge.from) && visibleIds.value.has(edge.to) && (showComparisons.value || edge.type !== 'comparison')))
+const visibleEdgeIds = computed(() => new Set(graphRelations.filter((edge) => visibleIds.value.has(edge.from) && visibleIds.value.has(edge.to) && (showComparisons.value || edge.type !== 'comparison')).map((edge) => edge.id)))
+const focusIds = computed(() => {
+  const ids = new Set([activeNodeId.value])
+  for (const edge of graphRelations) {
+    if (edge.from === activeNodeId.value) ids.add(edge.to)
+    if (edge.to === activeNodeId.value) ids.add(edge.from)
+  }
+  if (activeRelation.value) {
+    ids.add(activeRelation.value.from)
+    ids.add(activeRelation.value.to)
+  }
+  if (pathRequested.value) {
+    ids.add(pathFrom.value)
+    ids.add(pathTo.value)
+    for (const edge of path.value) {
+      ids.add(edge.from)
+      ids.add(edge.to)
+    }
+  }
+  return ids
+})
+const pathIndex = computed(() => new Map(path.value.map((edge, index) => [edge.id, index])))
+const drawKey = computed(() => pathRequested.value ? `path:${path.value.map((edge) => edge.id).join('.')}` : activeRelationId.value ? `edge:${activeRelationId.value}` : `node:${activeNodeId.value}`)
+const sceneEdges = computed(() => {
+  const groups = new Map()
+  for (const edge of graphRelations) {
+    const key = [edge.from, edge.to].sort().join('|')
+    const list = groups.get(key) ?? []
+    list.push(edge)
+    groups.set(key, list)
+  }
+  const bends = new Map()
+  for (const list of groups.values()) {
+    list.forEach((edge, index) => {
+      const offset = index - (list.length - 1) / 2
+      bends.set(edge.id, list.length === 1 ? 18 : offset * 28)
+    })
+  }
+  return graphRelations.map((edge) => {
+    const bend = bends.get(edge.id) ?? 18
+    const incident = edge.from === activeNodeId.value || edge.to === activeNodeId.value
+    const onPath = pathIndex.value.has(edge.id)
+    const selected = edge.id === activeRelationId.value
+    const visible = visibleEdgeIds.value.has(edge.id)
+    return {
+      edge,
+      d: edgePath(positions[edge.from], positions[edge.to], bend),
+      arrow: edge.type !== 'theme' && edge.type !== 'comparison',
+      visible,
+      lit: visible && (incident || onPath || selected),
+      draw: visible && (pathRequested.value ? onPath : incident || selected),
+      step: pathIndex.value.get(edge.id) ?? 0,
+    }
+  })
+})
+const orderedNodes = computed(() => [...graphNodes].sort((a, b) => nodeRank(a) - nodeRank(b)))
+const view = ref(fitView(placed(visibleIds.value), viewport.value, 42))
 
+let resizeObserver: ResizeObserver | null = null
+let motion = 0
+let skipPeriodFrame = false
+let pathCamera = false
+const pointers = new Map<number, { x: number, y: number }>()
+let pan: { x: number, y: number, vx: number, vy: number, pinch: boolean, dist: number } | null = null
+
+function placed(ids: Iterable<string>) {
+  const subset: Record<string, { x: number, y: number, width: number, height: number }> = {}
+  for (const id of ids) if (positions[id]) subset[id] = positions[id]
+  return subset
+}
+function clampZoom(value: number) {
+  return Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value))
+}
+function currentViewport() {
+  const element = sceneRef.value
+  if (!element) return viewport.value
+  const rect = element.getBoundingClientRect()
+  if (rect.width < 2 || rect.height < 2) return viewport.value
+  viewport.value = { width: rect.width, height: rect.height }
+  return viewport.value
+}
+function easeCamera(amount: number) {
+  const x1 = 0.16
+  const y1 = 1
+  const x2 = 0.3
+  const y2 = 1
+  let u = amount
+  for (let i = 0; i < 6; i += 1) {
+    const x = 3 * (1 - u) * (1 - u) * u * x1 + 3 * (1 - u) * u * u * x2 + u * u * u
+    const slope = 3 * (1 - u) * (1 - u) * x1 + 6 * (1 - u) * u * (x2 - x1) + 3 * u * u * (1 - x2)
+    if (Math.abs(slope) < 1e-4) break
+    u = Math.min(1, Math.max(0, u - (x - amount) / slope))
+  }
+  return 3 * (1 - u) * (1 - u) * u * y1 + 3 * (1 - u) * u * u * y2 + u * u * u
+}
+function writeView(next: { x: number, y: number, k: number }, animated: boolean) {
+  const token = ++motion
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (!animated || reduce) {
+    view.value = next
+    return
+  }
+  const from = { ...view.value }
+  const start = performance.now()
+  const step = (now: number) => {
+    if (token !== motion) return
+    const progress = Math.min(1, (now - start) / 420)
+    const eased = easeCamera(progress)
+    view.value = {
+      x: from.x + (next.x - from.x) * eased,
+      y: from.y + (next.y - from.y) * eased,
+      k: from.k + (next.k - from.k) * eased,
+    }
+    if (progress < 1) requestAnimationFrame(step)
+  }
+  requestAnimationFrame(step)
+}
+function frameIds(ids: Iterable<string>) {
+  userMoved.value = false
+  writeView(fitView(placed(ids), currentViewport(), 42), true)
+}
+function framePath() {
+  const ids = new Set([pathFrom.value, pathTo.value])
+  for (const edge of path.value) {
+    ids.add(edge.from)
+    ids.add(edge.to)
+  }
+  frameIds(ids)
+}
+function centerOn(id: string, zoom = view.value.k) {
+  const point = positions[id]
+  if (!point) return
+  const size = currentViewport()
+  const k = clampZoom(zoom)
+  writeView({ k, x: size.width / 2 - point.x * k, y: size.height / 2 - point.y * k }, true)
+}
+function nodeRank(node: { id: string }) {
+  if (!visibleIds.value.has(node.id)) return 0
+  if (node.id === activeNodeId.value) return 3
+  if (focusIds.value.has(node.id)) return 2
+  return 1
+}
+function nodeClass(node: { id: string, track: string, kind: string }) {
+  return {
+    'is-china': node.track === 'china',
+    'is-world': node.track === 'world',
+    'is-theme': node.kind === 'theme',
+    'is-hidden': !visibleIds.value.has(node.id),
+    'is-dim': visibleIds.value.has(node.id) && !focusIds.value.has(node.id),
+    'is-selected': node.id === activeNodeId.value,
+  }
+}
+function shapeOf(node: { kind: string }) {
+  if (node.kind === 'theme') return 'diamond'
+  if (node.kind === 'event') return 'round'
+  if (node.kind === 'polity') return 'rect'
+  return 'ellipse'
+}
+function linesOf(node: { title: string, kind: string }) {
+  return labelLines(node.title, node.kind)
+}
+function lineOffset(count: number, index: number) {
+  return (index - (count - 1) / 2) * 17
+}
 function selectNode(id: string) {
   if (!byId.has(id)) return
-  if (!visibleIds.value.has(id)) activePeriod.value = 'all'
+  const reveal = !visibleIds.value.has(id)
+  if (reveal) skipPeriodFrame = true
+  if (reveal) activePeriod.value = 'all'
   activeNodeId.value = id
   activeRelationId.value = null
   query.value = ''
-  cy?.$id(id).select()
-  if (cy?.$id(id).length) cy.animate({ center: { eles: cy.$id(id) }, duration: 250 })
+  const focus = () => {
+    skipPeriodFrame = false
+    centerOn(id, reveal ? Math.max(view.value.k, 1) : view.value.k)
+  }
+  if (reveal) nextTick(focus)
+  else focus()
 }
 function selectPeriod(id: string) {
   activePeriod.value = id
@@ -70,102 +243,111 @@ function selectPeriod(id: string) {
 function selectRelation(id: string) {
   const edge = byRelationId.get(id)
   if (!edge) return
-  if (!visibleIds.value.has(edge.from) || !visibleIds.value.has(edge.to)) activePeriod.value = 'all'
+  const reveal = !visibleIds.value.has(edge.from) || !visibleIds.value.has(edge.to)
+  if (reveal) skipPeriodFrame = true
+  if (reveal) activePeriod.value = 'all'
   activeRelationId.value = id
   activeNodeId.value = edge.from
-  cy?.$id(id).select()
+  const focus = () => {
+    skipPeriodFrame = false
+    frameIds([edge.from, edge.to])
+  }
+  if (reveal) nextTick(focus)
+  else focus()
 }
-function otherTitle(edge: any) {
+function otherTitle(edge: { from: string, to: string }) {
   return byId.get(edge.from === activeNodeId.value ? edge.to : edge.from)?.title ?? ''
 }
-function cssVar(name: string) {
-  return getComputedStyle(graphElement.value!).getPropertyValue(name).trim()
+function fitGraph() {
+  if (pathRequested.value) framePath()
+  else frameIds(visibleIds.value)
 }
-function graphStyle() {
-  const ink = cssVar('--history-ink')
-  const paper = cssVar('--history-paper')
-  const china = cssVar('--history-china')
-  const world = cssVar('--history-world')
-  const muted = cssVar('--history-muted')
-  const theme = cssVar('--history-theme')
-  return [
-    { selector: 'node', style: { label: 'data(label)', 'font-family': 'system-ui, sans-serif', 'font-size': 11, 'font-weight': 600, color: ink, 'text-wrap': 'wrap', 'text-max-width': 85, 'text-valign': 'center', 'text-halign': 'center', 'background-color': paper, 'border-width': 2, width: 96, height: 48, 'overlay-opacity': 0 } },
-    { selector: 'node[track = "china"]', style: { 'border-color': china, 'background-color': paper } },
-    { selector: 'node[track = "world"]', style: { 'border-color': world, 'background-color': paper } },
-    { selector: 'node[track = "theme"]', style: { shape: 'diamond', width: 125, height: 80, 'border-color': theme, 'background-color': theme, color: paper, 'font-size': 12 } },
-    { selector: 'node[kind = "person"]', style: { shape: 'ellipse' } },
-    { selector: 'node[kind = "event"]', style: { shape: 'round-rectangle' } },
-    { selector: 'node[kind = "polity"]', style: { shape: 'rectangle' } },
-    { selector: 'edge', style: { width: 2, 'curve-style': 'bezier', 'line-color': muted, 'target-arrow-color': muted, 'target-arrow-shape': 'triangle', 'arrow-scale': .7, opacity: .55 } },
-    { selector: 'edge[type = "theme"]', style: { 'line-style': 'dotted', 'line-color': theme, 'target-arrow-shape': 'none', opacity: .38, width: 1.2 } },
-    { selector: 'edge[type = "comparison"]', style: { 'line-style': 'dashed', 'line-color': china, 'target-arrow-shape': 'none', opacity: .75 } },
-    { selector: 'edge:selected', style: { width: 4, opacity: 1, 'line-color': theme, 'target-arrow-color': theme, 'z-index': 20 } },
-    { selector: 'node:selected', style: { 'border-width': 5, 'border-color': theme, 'z-index': 30 } },
-    { selector: '.dim', style: { opacity: .3 } },
-    { selector: '.path', style: { opacity: 1, 'line-color': theme, 'target-arrow-color': theme, width: 4, 'z-index': 18 } },
-  ]
-}
-function highlight() {
-  if (!cy) return
-  cy.elements().removeClass('dim path')
-  const id = activeNodeId.value
-  const selected = cy.$id(id)
-  if (selected.length) {
-    cy.elements().addClass('dim')
-    selected.removeClass('dim')
-    selected.connectedEdges().removeClass('dim')
-    selected.neighborhood('node').removeClass('dim')
-    cy.elements(':selected').unselect()
-    selected.select()
-  }
-  if (activeRelationId.value) {
-    const edge = cy.$id(activeRelationId.value)
-    edge.removeClass('dim').select()
-    edge.connectedNodes().removeClass('dim')
-  }
-  if (pathRequested.value) {
-    for (const edge of path.value) {
-      cy.$id(edge.id).removeClass('dim').addClass('path')
-      cy.$id(edge.from).removeClass('dim')
-      cy.$id(edge.to).removeClass('dim')
-    }
-  }
-}
-function renderGraph() {
-  if (!cy) return
-  const elements = [
-    ...graphNodes.filter((node) => visibleIds.value.has(node.id)).map((node) => ({ data: { id: node.id, label: node.title, track: node.track, kind: node.kind } })),
-    ...visibleEdges.value.map((edge) => ({ data: { id: edge.id, source: edge.from, target: edge.to, type: edge.type } })),
-  ]
-  cy.elements().remove()
-  cy.add(elements)
-  cy.layout({ name: 'cose', randomize: false, animate: false, fit: true, padding: 42, nodeRepulsion: () => 11000, idealEdgeLength: () => 125, edgeElasticity: () => 80, gravity: .35, numIter: 700 }).run()
-  highlight()
-}
-function fitGraph() { cy?.fit(cy.elements(), 35) }
 function calculatePath() {
   pathRequested.value = true
   activeRelationId.value = null
+  pathCamera = true
   if (activePeriod.value !== 'all') activePeriod.value = 'all'
-  else highlight()
+  else framePath()
 }
-function clearPath() { pathRequested.value = false; highlight() }
+function clearPath() {
+  pathRequested.value = false
+}
+function onPointerDown(event: PointerEvent) {
+  if (event.button !== 0 && event.pointerType === 'mouse') return
+  sceneRef.value?.setPointerCapture(event.pointerId)
+  pointers.set(event.pointerId, { x: event.clientX, y: event.clientY })
+  motion += 1
+  panning.value = true
+  if (pointers.size >= 2) {
+    const [a, b] = [...pointers.values()]
+    pan = { x: 0, y: 0, vx: view.value.x, vy: view.value.y, pinch: true, dist: Math.hypot(a.x - b.x, a.y - b.y) || 1 }
+  } else {
+    pan = { x: event.clientX, y: event.clientY, vx: view.value.x, vy: view.value.y, pinch: false, dist: 0 }
+  }
+}
+function onPointerMove(event: PointerEvent) {
+  if (!pointers.has(event.pointerId) || !pan || !sceneRef.value) return
+  pointers.set(event.pointerId, { x: event.clientX, y: event.clientY })
+  if (pointers.size >= 2) {
+    const [a, b] = [...pointers.values()]
+    const dist = Math.hypot(a.x - b.x, a.y - b.y) || 1
+    const rect = sceneRef.value.getBoundingClientRect()
+    const next = clampZoom(view.value.k * (dist / (pan.dist || dist)))
+    const mx = (a.x + b.x) / 2 - rect.left
+    const my = (a.y + b.y) / 2 - rect.top
+    const ratio = next / view.value.k
+    view.value = { k: next, x: mx - (mx - view.value.x) * ratio, y: my - (my - view.value.y) * ratio }
+    pan.dist = dist
+    userMoved.value = true
+    return
+  }
+  if (pan.pinch) return
+  const dx = event.clientX - pan.x
+  const dy = event.clientY - pan.y
+  if (Math.hypot(dx, dy) > 3) userMoved.value = true
+  view.value = { ...view.value, x: pan.vx + dx, y: pan.vy + dy }
+}
+function onPointerUp(event: PointerEvent) {
+  pointers.delete(event.pointerId)
+  if (pointers.size === 0) {
+    pan = null
+    panning.value = false
+    return
+  }
+  const [point] = [...pointers.values()]
+  pan = { x: point.x, y: point.y, vx: view.value.x, vy: view.value.y, pinch: false, dist: 0 }
+}
+function onWheel(event: WheelEvent) {
+  if (!sceneRef.value) return
+  const rect = sceneRef.value.getBoundingClientRect()
+  const px = event.clientX - rect.left
+  const py = event.clientY - rect.top
+  const next = clampZoom(view.value.k * (event.deltaY < 0 ? 1.08 : 1 / 1.08))
+  const ratio = next / view.value.k
+  motion += 1
+  userMoved.value = true
+  view.value = { k: next, x: px - (px - view.value.x) * ratio, y: py - (py - view.value.y) * ratio }
+}
 
-onMounted(async () => {
-  if (!graphElement.value) return
-  const cytoscape = (await import('cytoscape')).default
-  cy = cytoscape({ container: graphElement.value, elements: [], style: graphStyle(), minZoom: .25, maxZoom: 2.4, boxSelectionEnabled: false })
-  cy.on('tap', 'node', (event: any) => selectNode(event.target.id()))
-  cy.on('tap', 'edge', (event: any) => selectRelation(event.target.id()))
-  resizeObserver = new ResizeObserver(() => cy?.resize())
-  resizeObserver.observe(graphElement.value)
-  renderGraph()
-  themeObserver = new MutationObserver(() => { cy?.style(graphStyle()); highlight() })
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+onMounted(() => {
+  frameIds(visibleIds.value)
+  if (!sceneRef.value) return
+  resizeObserver = new ResizeObserver(() => {
+    currentViewport()
+    if (!userMoved.value) frameIds(visibleIds.value)
+  })
+  resizeObserver.observe(sceneRef.value)
 })
-onBeforeUnmount(() => { resizeObserver?.disconnect(); themeObserver?.disconnect(); cy?.destroy(); cy = null })
-watch([activePeriod, showComparisons], renderGraph)
-watch([activeNodeId, activeRelationId], highlight)
+onBeforeUnmount(() => resizeObserver?.disconnect())
+watch([activePeriod, showComparisons], () => {
+  if (skipPeriodFrame) return
+  if (pathCamera) {
+    pathCamera = false
+    framePath()
+    return
+  }
+  frameIds(visibleIds.value)
+})
 </script>
 
 <template>
@@ -186,7 +368,56 @@ watch([activeNodeId, activeRelationId], highlight)
     <div class="history-graph__workbench">
       <div class="history-graph__network">
         <div class="history-graph__network-top"><span>关系网络 · 拖动画布 / 滚轮缩放</span><button type="button" @click="fitGraph">适合屏幕</button></div>
-        <div ref="graphElement" class="history-graph__canvas" role="img" aria-label="可拖动缩放的历史关系网络；下方列表提供相同节点和关系的键盘操作"></div>
+        <svg
+          ref="sceneRef"
+          class="history-graph__canvas"
+          :class="{ 'is-panning': panning }"
+          aria-hidden="true"
+          :viewBox="`0 0 ${viewport.width} ${viewport.height}`"
+          @pointerdown="onPointerDown"
+          @pointermove="onPointerMove"
+          @pointerup="onPointerUp"
+          @pointercancel="onPointerUp"
+          @wheel.prevent="onWheel"
+        >
+          <defs>
+            <filter id="history-node-shadow" x="-40%" y="-50%" width="180%" height="200%">
+              <feDropShadow class="history-graph__shadow" dx="0" dy="5" stdDeviation="5" flood-opacity="0.22" />
+            </filter>
+            <marker id="history-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 1.2 L 9 5 L 0 8.8 Z" fill="context-stroke" />
+            </marker>
+          </defs>
+          <g class="history-graph__scene" :transform="`translate(${view.x} ${view.y}) scale(${view.k})`">
+            <g
+              v-for="item in sceneEdges"
+              :key="`${item.edge.id}:${item.draw ? drawKey : 'still'}`"
+              class="history-graph__edge"
+              :class="[`is-${item.edge.type}`, { 'is-hidden': !item.visible, 'is-dim': item.visible && !item.lit, 'is-lit': item.lit, 'is-selected': item.edge.id === activeRelationId, 'is-path': pathIndex.has(item.edge.id), 'is-draw': item.draw }]"
+              :style="{ '--step': item.step }"
+              @pointerdown.stop
+              @click.stop="selectRelation(item.edge.id)"
+            >
+              <path class="history-graph__edge-hit" :d="item.d" />
+              <path class="history-graph__edge-line" :d="item.d" pathLength="1" :marker-end="item.arrow ? 'url(#history-arrow)' : undefined" />
+            </g>
+            <g
+              v-for="node in orderedNodes"
+              :key="node.id"
+              class="history-graph__node"
+              :class="nodeClass(node)"
+              :transform="`translate(${positions[node.id].x} ${positions[node.id].y})`"
+              @pointerdown.stop
+              @click.stop="selectNode(node.id)"
+            >
+              <ellipse v-if="shapeOf(node) === 'ellipse'" class="history-graph__shape" cx="0" cy="0" rx="48" ry="24" />
+              <rect v-else-if="shapeOf(node) === 'round'" class="history-graph__shape" x="-48" y="-24" width="96" height="48" rx="12" />
+              <rect v-else-if="shapeOf(node) === 'rect'" class="history-graph__shape" x="-48" y="-24" width="96" height="48" rx="2" />
+              <polygon v-else class="history-graph__shape" points="0,-40 62.5,0 0,40 -62.5,0" />
+              <text v-for="(line, index) in linesOf(node)" :key="index" text-anchor="middle" dominant-baseline="central" :y="lineOffset(linesOf(node).length, index)">{{ line }}</text>
+            </g>
+          </g>
+        </svg>
       </div>
       <div class="history-graph__inspector" aria-live="polite">
         <p class="history-graph__eyebrow">{{ activeNode.kind === 'theme' ? 'STUDY THEME' : 'SELECTED NODE' }}</p>
