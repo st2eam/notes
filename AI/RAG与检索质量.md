@@ -38,4 +38,4 @@ assert ranked[0]["title"] == "认证"
 
 检索结果必须携带稳定的源 ID 或链接。答案里的每一条关键事实要能映射回具体片段；找不到证据时应说明资料不足。可用“期望来源是否进入前 K 条”评测检索召回，用人工或规则检查引用是否真的支持结论。生成质量和检索质量分开测，才能知道该改哪一步。
 
-下一步：[应用评测](./应用评测.md)、[笔记问答实战](./笔记问答实战.md)。参考：[OpenAI Retrieval 指南](https://developers.openai.com/api/docs/guides/retrieval)、[Anthropic Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)。不同产品的索引能力与参数会变化，实验指标应以自己的数据集为准。
+下一步：[应用评测](./应用评测.md)。参考：[OpenAI Retrieval 指南](https://developers.openai.com/api/docs/guides/retrieval)、[Anthropic Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)。不同产品的索引能力与参数会变化，评测指标应以自己的数据集为准。

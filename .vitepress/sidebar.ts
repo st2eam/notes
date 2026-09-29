@@ -50,10 +50,6 @@ export default [
             {
                 "text": "机器学习数学基础",
                 "link": "/AI/机器学习数学基础.md"
-            },
-            {
-                "text": "笔记问答实战",
-                "link": "/AI/笔记问答实战.md"
             }
         ]
     },
