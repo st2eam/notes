@@ -57,14 +57,4 @@ return result
 
 用固定任务集比较方案，记录正确性、引用支持度、时延、错误率和费用。流式输出改善感知等待，但不等于总耗时降低。更小的模型、更短的证据和缓存可能降低成本，但需要确认质量没有下降。模型与接口版本经常变化，选型以当前官方文档和本应用评测为准。
 
-### 练习
-
-模型返回了合法 JSON，但 source_ids 包含一篇本次没有检索到的文档。应在哪一步拒绝？如果流式响应已经发出部分文字，界面还需做什么？
-
-<details><summary>参考答案</summary>
-
-在应用侧的业务校验中拒绝该来源，不能仅凭 JSON 格式正确就展示为已核验。流式界面应区分“生成中”和“已验证”，失败时撤回或标注未确认内容，并给出可重试的错误提示。
-
-</details>
-
 继续读[RAG 与检索质量](./RAG与检索质量.md)、[应用评测](./应用评测.md)、[Agent 工具与安全](./Agent工具与安全.md)。参考：[Anthropic 构建有效 Agent](https://www.anthropic.com/engineering/building-effective-agents)、[OpenAI Agents 指南](https://developers.openai.com/api/docs/guides/agents)。

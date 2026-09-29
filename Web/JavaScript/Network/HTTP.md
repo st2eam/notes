@@ -175,14 +175,3 @@ HTTP 响应的一个例子：
 基于 HTTP 的最常用 API 是[`XMLHttpRequest`](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest) API，可用于在[user agent](https://developer.mozilla.org/zh-CN/docs/Glossary/User_agent)和服务器之间交换数据。 现代[`Fetch API`](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API)提供相同的功能，具有更强大和灵活的功能集。  
 
 另一种 API，即服务器发送的事件，是一种单向服务，允许服务器使用 HTTP 作为传输机制向客户端发送事件。 使用[`EventSource`](https://developer.mozilla.org/zh-CN/docs/Web/API/EventSource)接口，客户端打开连接并建立事件句柄。 客户端浏览器自动将到达 HTTP 流的消息转换为适当的[`Event`](https://developer.mozilla.org/zh-CN/docs/Web/API/Event)对象，并将它们传递给专门处理这类[`type`](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/type "type")事件的句柄，如果有这么个句柄的话。但如果相应的事件处理句柄根本没有建立，那就交给[`onmessage` (en-US)](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/message_event "Currently only available in English (US)")事件处理程序处理
-
-
-## 学习练习：请求与身份边界
-
-浏览器带 Cookie 请求一个私有笔记接口。说明 HTTP、Cookie、服务端会话和资源权限分别负责什么；再解释为什么 CORS 不能替代服务端鉴权。
-
-<details><summary>参考答案</summary>
-
-HTTP 传递请求与响应；Cookie 携带会话标识；服务端验证会话对应的身份；资源权限检查该身份能否读取笔记。CORS 约束浏览器读取跨源响应，不阻止其他客户端直接调用接口。
-
-</details>

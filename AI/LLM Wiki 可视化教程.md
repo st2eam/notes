@@ -34,14 +34,4 @@ onBeforeUnmount(() => window.removeEventListener('message', resizeEmbeddedPage))
   style="display:block;width:100%;height:900px;border:0;border-radius:16px;background:transparent"
 ></iframe>
 
-## 动手练习
-
-选择一篇原始笔记，列出将它整理成 Wiki 页面时必须保留的来源、更新日期和未确认结论。再与[笔记问答实战](./笔记问答实战.md)的“提问时检索”流程比较维护成本。
-
-<details><summary>参考答案</summary>
-
-至少保留原文位置、版本或时间、生成页面到原文的引用关系，以及需要人工复核的断言。提前整理可以提高浏览便利性，但源文更新时也必须同步维护生成页面。
-
-</details>
-
 参考：[Anthropic Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)、[OpenAI Retrieval 指南](https://developers.openai.com/api/docs/guides/retrieval)。
