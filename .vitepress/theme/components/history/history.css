@@ -44,3 +44,4 @@
 .history-graph__edge.is-path.is-draw .history-graph__edge-line{animation-delay:min(calc(var(--step) * 90ms),700ms)}
 @keyframes history-ink{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .history-graph__lens{margin-top:17px;padding:13px 14px;border-left:3px solid var(--history-china);background:color-mix(in srgb,var(--history-china) 7%,var(--history-panel))}.history-graph__lens strong{font-size:.75rem}.history-graph__lens p{margin:6px 0!important;font-size:.8rem;line-height:1.7}.history-graph__lens small{display:block;color:var(--history-muted);font-size:.68rem;line-height:1.6}
+.history-graph__path-nav{display:flex;gap:8px;margin-top:8px}.history-graph__path-nav button{border:1px solid var(--history-line);background:transparent;color:inherit;font-size:.75rem;padding:4px 8px;cursor:pointer}.history-graph__path-nav button:disabled{opacity:.35;cursor:default}

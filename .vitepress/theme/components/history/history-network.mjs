@@ -37,6 +37,42 @@ export const readingLenses = {
   globalization: { chapters: '第 9、13、19 章', question: '联系更密切是否等于生活更相似或更幸福？分别观察网络、地方选择和分配结果。' },
 }
 
+const lensStep = (node) => ({ node, cite: readingLenses[node].chapters, point: readingLenses[node].question })
+
+// 新书只加一条路径：停在已有节点上，不新增节点或关系类型。
+export const readingPaths = [
+  {
+    id: 'qianmu',
+    title: '中国历代政治得失',
+    author: '钱穆',
+    steps: [
+      { node: 'han', cite: '第一讲', point: '他把皇室与政府分开、丞相主政、察举和很轻的田赋看成得：制度还配得上当时的社会。兵役与徭役绑在一起。后来外戚和宦官把政府拖离这套分寸，是这一讲里的失。' },
+      { node: 'tang', cite: '第二讲', point: '三省把相权拆开、科举取代门第，是他眼中的得。账籍一乱，租庸调就守不住，只好改两税。府兵落到节度使手里，地方军权是这一讲的失。' },
+      { node: 'song', cite: '第三讲', point: '他称宋在制度上建树最少。相权再被拆开，君权更直接，科举扩大却变成冗官。养兵为了把武力留在中央，边防因此变弱，这是他指出的失。' },
+      { node: 'ming', cite: '第四讲', point: '丞相废除之后，内阁只是秘书而不是宰相，他看成相权进一步失落。八股把考试收窄，卫所后来养不住兵，省、督抚和胥吏把地方压在中央下面。' },
+      { node: 'qing', cite: '第五讲、总论', point: '总论里，钱穆不同意用「专制」两个字抹掉这两千年。他看到的趋势是君权上升、相权下降，社会趋于平铺。清代又把沿用的制度收成部族政权下的法术。这是他的看法，制度以后仍要改。' },
+    ],
+  },
+  {
+    id: 'sapiens-agriculture',
+    title: '人类简史 · 农业革命',
+    author: '尤瓦尔·赫拉利',
+    steps: ['yangshao', 'liangzhu', 'egypt', 'sumer', 'shang', 'indus'].map(lensStep),
+  },
+  {
+    id: 'sapiens-unity',
+    title: '人类简史 · 人类的融合',
+    author: '尤瓦尔·赫拉利',
+    steps: ['han', 'mali', 'ming-silver', 'galleon', 'maurya', 'rome', 'mongol', 'xuanzang', 'decolonization', 'globalization'].map(lensStep),
+  },
+  {
+    id: 'sapiens-science',
+    title: '人类简史 · 科学革命',
+    author: '尤瓦尔·赫拉利',
+    steps: ['industrial', 'africa-partition', 'reform', 'atlantic-slavery', 'galleon', 'globalization'].map(lensStep),
+  },
+]
+
 const fact = (id, from, to, type, note, reference) => ({ id, from, to, type, note, reference })
 const wiki = (title, path) => ({ title, url: `https://en.wikipedia.org/wiki/${path}` })
 
@@ -80,18 +116,13 @@ const themeFor = {
   'theme-welfare': ['yangshao', 'atlantic-slavery', 'industrial', 'africa-partition', 'reform', 'globalization'],
 }
 
-export const themeRelations = Object.entries(themeFor).flatMap(([themeId, members]) => members.map((id) => {
-  const lens = ['theme-ecology', 'theme-welfare'].includes(themeId) ? readingLenses[id] : null
-  return {
-    id: `t-${themeId}-${id}`,
-    from: id,
-    to: themeId,
-    type: 'theme',
-    note: lens
-      ? `参考赫拉利《人类简史》${lens.chapters}：${lens.question} 这是学习问题，不表示两个节点之间存在史实因果。`
-      : `本站将“${nodes.find((node) => node.id === id).title}”列为“${themes.find((theme) => theme.id === themeId).title}”的学习案例；这是编排分类，不表示历史因果。`,
-  }
-}))
+export const themeRelations = Object.entries(themeFor).flatMap(([themeId, members]) => members.map((id) => ({
+  id: `t-${themeId}-${id}`,
+  from: id,
+  to: themeId,
+  type: 'theme',
+  note: `本站将“${nodes.find((node) => node.id === id).title}”列为“${themes.find((theme) => theme.id === themeId).title}”的学习案例；这是编排分类，不表示历史因果。`,
+})))
 
 export const graphNodes = [...nodes, ...themes]
 export const graphRelations = [...relations, ...factualRelations, ...themeRelations]

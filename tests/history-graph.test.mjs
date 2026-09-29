@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { nodes, periods } from '../.vitepress/theme/components/history/history-data.mjs'
-import { themes, readingLenses, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from '../.vitepress/theme/components/history/history-network.mjs'
+import { themes, readingLenses, readingPaths, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from '../.vitepress/theme/components/history/history-network.mjs'
 import { layoutAtlas, edgePath, fitView } from '../.vitepress/theme/components/history/history-scene.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -78,6 +78,35 @@ test('Han through Qing compare institutions without replacing regime changes', (
   assert.match(nodes.find((node) => node.id === 'han').summary, /丞相/)
   assert.match(nodes.find((node) => node.id === 'qing').summary, /部族/)
   assert.ok(graphRelations.some((edge) => edge.id === 'f12' && edge.type === 'succession'))
+})
+
+test('reading paths stay on existing nodes and keep the two books in order', () => {
+  const ids = new Set(nodes.map((node) => node.id))
+  assert.equal(themes.length, 6)
+  assert.deepEqual(themes.map((theme) => theme.title), ['权力与制度', '交流与贸易', '知识与传播', '冲突与变革', '农业与生态', '增长与福祉'])
+  assert.ok(graphRelations.filter((edge) => edge.type === 'theme').every((edge) => !edge.note.includes('赫拉利')))
+  for (const book of readingPaths) {
+    assert.ok(book.id && book.title && book.author)
+    assert.ok(book.steps.length >= 2, book.id)
+    book.steps.forEach((step, index) => {
+      assert.ok(ids.has(step.node), `${book.id} ${step.node}`)
+      assert.ok(step.cite.length > 0 && step.point.length >= 15)
+      if (index > 0) assert.notEqual(step.node, book.steps[index - 1].node)
+    })
+  }
+  const qianmu = readingPaths.find((book) => book.id === 'qianmu')
+  assert.deepEqual(qianmu.steps.map((step) => step.node), ['han', 'tang', 'song', 'ming', 'qing'])
+  assert.match(qianmu.steps.at(-1).point, /总论/)
+  const sapiens = readingPaths.filter((book) => book.id.startsWith('sapiens-'))
+  assert.deepEqual(sapiens.map((book) => book.id), ['sapiens-agriculture', 'sapiens-unity', 'sapiens-science'])
+  for (const book of sapiens) {
+    for (const step of book.steps) {
+      assert.equal(step.point, readingLenses[step.node].question)
+      assert.equal(step.cite, readingLenses[step.node].chapters)
+      const chapters = [...step.cite.matchAll(/第\s*(\d+)/g)].map((match) => Number(match[1]))
+      assert.ok(chapters.every((chapter) => ![1, 2, 3, 20].includes(chapter)), step.cite)
+    }
+  }
 })
 
 test('book perspectives stay attached to sourced historical nodes', () => {
