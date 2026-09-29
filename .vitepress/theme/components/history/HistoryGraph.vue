@@ -45,7 +45,8 @@ const searchMatches = computed(() => {
   if (!term) return []
   return graphNodes.filter((node) => {
     const books = readingPaths.flatMap((book) => book.steps.filter((step) => step.node === node.id).map((step) => `${book.title}${step.cite}${step.point}`)).join('')
-    return `${node.title}${node.place ?? ''}${node.summary}${readingLenses[node.id as keyof typeof readingLenses]?.question ?? ''}${books}`.includes(term)
+    const events = (node.events ?? []).map((event) => `${event.date}${event.place ?? ''}${event.title}${event.note}`).join('')
+    return `${node.title}${node.place ?? ''}${node.summary}${events}${readingLenses[node.id as keyof typeof readingLenses]?.question ?? ''}${books}`.includes(term)
   }).slice(0, 8)
 })
 const visibleIds = computed(() => {
@@ -459,6 +460,8 @@ watch([activePeriod, showComparisons], () => {
         <h3>{{ activeNode.title }}</h3>
         <p v-if="activeNode.kind !== 'theme'" class="history-graph__meta">{{ activeNode.date }} · {{ activeNode.place }} · {{ activeNode.track === 'china' ? '中国' : '世界' }}</p>
         <p class="history-graph__summary">{{ activeNode.summary }}</p>
+        <h4 v-if="activeNode.events?.length">发生的事件 <small>{{ activeNode.events.length }}</small></h4>
+        <ul v-if="activeNode.events?.length" class="history-graph__events"><li v-for="(item, index) in activeNode.events" :key="index"><button v-if="item.node" type="button" @click="selectNode(item.node)"><small>{{ item.date }}<template v-if="item.place"> · {{ item.place }}</template></small><strong>{{ item.title }}</strong><p>{{ item.note }}</p></button><div v-else><small>{{ item.date }}<template v-if="item.place"> · {{ item.place }}</template></small><strong>{{ item.title }}</strong><p>{{ item.note }}</p></div></li></ul>
         <div v-if="activeRelation && activeRelation.type !== 'theme'" class="history-graph__relation-note"><small>{{ graphLabels[activeRelation.type] }}</small><strong>{{ byId.get(activeRelation.from)?.title }} → {{ byId.get(activeRelation.to)?.title }}</strong><p>{{ activeRelation.note }}</p><a v-for="(source, index) in graphRelationSources(activeRelation).filter((item) => !isWiki(item.url))" :key="index" :href="source.url" target="_blank" rel="noopener noreferrer">关系依据 {{ index + 1 }} ↗</a></div>
         <h4 v-if="historyRelations.length">史实关系 <small>{{ historyRelations.length }}</small></h4>
         <ul v-if="historyRelations.length" class="history-graph__relations"><li v-for="edge in historyRelations" :key="edge.id"><button type="button" @click="selectRelation(edge.id)"><small>{{ graphLabels[edge.type] }}</small><strong>{{ otherTitle(edge) }}</strong><span>查看关系 ↗</span></button></li></ul>

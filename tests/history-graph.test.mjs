@@ -20,6 +20,24 @@ test('six periods cover China and multiple world regions', () => {
   }
 })
 
+test('every node lists dated events without adding graph nodes', () => {
+  assert.equal(nodes.length, 42)
+  const ids = new Set(nodes.map((node) => node.id))
+  for (const node of nodes) {
+    assert.ok(node.events.length >= 3, `${node.id} needs events`)
+    for (const event of node.events) {
+      assert.ok(event.date && event.title, `${node.id} event missing date or title`)
+      assert.ok(event.note.length >= 80, `${node.id} ${event.title}`)
+      if (event.node) {
+        assert.ok(ids.has(event.node), `${node.id} points at missing ${event.node}`)
+        assert.notEqual(event.node, node.id)
+      }
+    }
+  }
+  const han = nodes.find((node) => node.id === 'han')
+  assert.ok(han.events.some((event) => event.node === 'zhang-qian' && event.title.includes('张骞')))
+})
+
 test('every historical node has an article anchor and source', () => {
   const ids = new Set()
   for (const node of nodes) {
