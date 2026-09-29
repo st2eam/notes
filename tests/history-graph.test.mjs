@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { nodes, periods } from '../.vitepress/theme/components/history/history-data.mjs'
-import { themes, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from '../.vitepress/theme/components/history/history-network.mjs'
+import { themes, readingLenses, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from '../.vitepress/theme/components/history/history-network.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -35,7 +35,7 @@ test('every historical node has an article anchor and source', () => {
 
 test('typed relations have endpoints, explanation, and evidence', () => {
   const byId = new Map(graphNodes.map((node) => [node.id, node]))
-  assert.equal(themes.length, 4)
+  assert.equal(themes.length, 6)
   assert.ok(graphRelations.length >= 100)
   assert.ok(graphRelations.some((edge) => byId.get(edge.from)?.period !== byId.get(edge.to)?.period && edge.type !== 'theme'))
   const ids = new Set()
@@ -48,6 +48,21 @@ test('typed relations have endpoints, explanation, and evidence', () => {
     assert.ok(edge.note.length >= 15, `missing explanation ${edge.id}`)
     assert.ok(graphRelationSources(edge).length > 0, `missing source ${edge.id}`)
     assert.ok(graphRelationSources(edge).every((item) => item.url.startsWith('https://')))
+  }
+})
+
+test('book perspectives stay attached to sourced historical nodes', () => {
+  const byId = new Map(nodes.map((node) => [node.id, node]))
+  for (const [id, lens] of Object.entries(readingLenses)) {
+    assert.ok(byId.has(id), `unknown node ${id}`)
+    assert.match(lens.chapters, /^第 .+ 章$/)
+    assert.ok(lens.question.length >= 25, `thin perspective ${id}`)
+    assert.ok(byId.get(id).source.url.startsWith('https://'))
+  }
+  for (const themeId of ['theme-ecology', 'theme-welfare']) {
+    const edges = graphRelations.filter((edge) => edge.to === themeId)
+    assert.ok(edges.length >= 5)
+    assert.ok(edges.every((edge) => readingLenses[edge.from]))
   }
 })
 

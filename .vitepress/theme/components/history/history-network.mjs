@@ -4,11 +4,38 @@ import { nodes, relations, relationSources } from './history-data.mjs'
 
 // 主题节点是本站的阅读分类，不是历史实体，也不代表史实因果。
 export const themes = [
-  { id: 'theme-power', title: '权力与制度', kind: 'theme', track: 'theme', summary: '观察国家、统治与制度变迁。' },
-  { id: 'theme-exchange', title: '交流与贸易', kind: 'theme', track: 'theme', summary: '观察商品、人员和观念如何流动。' },
-  { id: 'theme-knowledge', title: '知识与传播', kind: 'theme', track: 'theme', summary: '观察文字、宗教、技术与思想传播。' },
-  { id: 'theme-conflict', title: '冲突与变革', kind: 'theme', track: 'theme', summary: '观察战争、殖民与社会运动。' },
+  { id: 'theme-power', title: '权力与制度', kind: 'theme', track: 'theme', summary: '观察共同规则、行政记录与统治如何支持大规模合作，也追问谁能制定规则。' },
+  { id: 'theme-exchange', title: '交流与贸易', kind: 'theme', track: 'theme', summary: '观察货币信任、商路与人员流动，并区分交易、征服和强制迁移。' },
+  { id: 'theme-knowledge', title: '知识与传播', kind: 'theme', track: 'theme', summary: '观察文字、宗教、科学与技术如何传播，以及谁保存和使用知识。' },
+  { id: 'theme-conflict', title: '冲突与变革', kind: 'theme', track: 'theme', summary: '观察战争、殖民与社会运动如何重分配权力及其代价。' },
+  { id: 'theme-ecology', title: '农业与生态', kind: 'theme', track: 'theme', summary: '比较定居、粮食生产与工业化对人口、劳动和其他物种的影响。' },
+  { id: 'theme-welfare', title: '增长与福祉', kind: 'theme', track: 'theme', summary: '把产量、财富和技术能力与健康、自由、分配及主观感受分开衡量。' },
 ]
+
+// 赫拉利《人类简史》的分析问题嵌入相关史实节点；章节是观点出处，节点来源仍用于核对史实。
+export const readingLenses = {
+  yangshao: { chapters: '第 5 章', question: '农业能供养更多人口，是否也让每个家庭更省力、更安全？从作物、居址与健康证据分别回答。' },
+  liangzhu: { chapters: '第 6 章', question: '大型水利工程显示组织能力；若要进一步推断共同规则和权力结构，还需要哪些证据？' },
+  egypt: { chapters: '第 6 章', question: '大型工程与王权叙事怎样组织劳动？从遗址和文字寻找证据，避免只用自然环境解释统一。' },
+  sumer: { chapters: '第 7 章', question: '早期账簿保存了哪些行政信息？只从留下的文字看城市，会漏掉哪些人的生活？' },
+  shang: { chapters: '第 7 章', question: '甲骨文让哪些王室事务变得可见？普通人的经历还需借助哪些非文字材料？' },
+  indus: { chapters: '第 7 章', question: '当文字尚未可靠释读，城市规划和器物能回答什么，政治制度又有哪些仍无法确认？' },
+  qin: { chapters: '第 2、6 章', question: '统一后的法令、行政与共同秩序如何协调陌生人？制度的延续不能只由秦朝的短暂统治推断。' },
+  maurya: { chapters: '第 11 章', question: '帝国的公开敕令怎样说明统治理想？地方社会的实践是否与宣示一致，仍需分别查证。' },
+  han: { chapters: '第 10—11 章', question: '跨地区交换需要哪些信任、制度与中间商？商品流动不等于两个帝国直接交易。' },
+  rome: { chapters: '第 11 章', question: '道路、城市和法律如何维系统治？同时考察被统治者的选择、抵抗与地方差异。' },
+  xuanzang: { chapters: '第 12 章', question: '宗教网络如何促成旅行、翻译和知识传递？把沿途的商人、译者及地方政权也纳入视野。' },
+  mali: { chapters: '第 10 章', question: '远距离贸易如何建立信任？跨撒哈拉网络还依赖哪些城市、统治者和地方参与者？' },
+  mongol: { chapters: '第 11 章', question: '帝国扩张可能重组商路，也造成战争破坏；两种后果在何时、何地发生？' },
+  'ming-silver': { chapters: '第 10 章', question: '白银为什么能跨洋被接受？追踪参与者与制度，别把货币流动误写成平等交易。' },
+  galleon: { chapters: '第 10、16 章', question: '信用、投资与白银贸易怎样连接跨洋生产？谁提供劳动，谁得到收益？' },
+  'atlantic-slavery': { chapters: '第 8、16、19 章', question: '经济增长由谁获得，又由谁承受强制劳动的代价？总产值不能替代被奴役者的经历。' },
+  industrial: { chapters: '第 4、17、19 章', question: '把工业时代的生态压力与更早的人类扩张对读；能源与机械化提高产量后，劳动和生活感受是否同步改善？' },
+  'africa-partition': { chapters: '第 14—16 章', question: '测绘、科学调查、资本与殖民权力如何结合？当地知识与抵抗是否出现在材料中？' },
+  reform: { chapters: '第 16、18—19 章', question: '经济增长与对外开放带来哪些收益？比较地区、行业和群体，避免只看平均值。' },
+  decolonization: { chapters: '第 11 章', question: '政治独立后，哪些帝国时代的制度和经济关系仍在延续，哪些由新国家主动改变？' },
+  globalization: { chapters: '第 9、13、19 章', question: '联系更密切是否等于生活更相似或更幸福？分别观察网络、地方选择和分配结果。' },
+}
 
 const fact = (id, from, to, type, note, reference) => ({ id, from, to, type, note, reference })
 const wiki = (title, path) => ({ title, url: `https://en.wikipedia.org/wiki/${path}` })
@@ -45,15 +72,22 @@ const themeFor = {
   'theme-exchange': ['sumer', 'indus', 'han', 'zhang-qian', 'tang', 'xuanzang', 'song', 'mali', 'mongol', 'ming-silver', 'galleon', 'canton', 'atlantic-slavery', 'industrial', 'reform', 'globalization'],
   'theme-knowledge': ['yangshao', 'liangzhu', 'shang', 'sumer', 'indus', 'zhou', 'ashoka', 'zhang-qian', 'tang', 'xuanzang', 'song', 'abbasid', 'mali', 'industrial', 'may-fourth'],
   'theme-conflict': ['qin', 'rome', 'mongol', 'yuan', 'ming', 'qing', 'atlantic-slavery', 'opium', 'taiping', 'xinhai', 'industrial', 'meiji', 'africa-partition', 'wwi', 'may-fourth', 'wwii', 'decolonization', 'prc'],
+  'theme-ecology': ['yangshao', 'liangzhu', 'sumer', 'egypt', 'indus', 'industrial'],
+  'theme-welfare': ['yangshao', 'atlantic-slavery', 'industrial', 'africa-partition', 'reform', 'globalization'],
 }
 
-export const themeRelations = Object.entries(themeFor).flatMap(([themeId, members]) => members.map((id) => ({
-  id: `t-${themeId}-${id}`,
-  from: id,
-  to: themeId,
-  type: 'theme',
-  note: `本站将“${nodes.find((node) => node.id === id).title}”列为“${themes.find((theme) => theme.id === themeId).title}”的学习案例；这是编排分类，不表示历史因果。`,
-})))
+export const themeRelations = Object.entries(themeFor).flatMap(([themeId, members]) => members.map((id) => {
+  const lens = ['theme-ecology', 'theme-welfare'].includes(themeId) ? readingLenses[id] : null
+  return {
+    id: `t-${themeId}-${id}`,
+    from: id,
+    to: themeId,
+    type: 'theme',
+    note: lens
+      ? `参考赫拉利《人类简史》${lens.chapters}：${lens.question} 这是学习问题，不表示两个节点之间存在史实因果。`
+      : `本站将“${nodes.find((node) => node.id === id).title}”列为“${themes.find((theme) => theme.id === themeId).title}”的学习案例；这是编排分类，不表示历史因果。`,
+  }
+}))
 
 export const graphNodes = [...nodes, ...themes]
 export const graphRelations = [...relations, ...factualRelations, ...themeRelations]
