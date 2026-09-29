@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch, nextTick } from 'vue'
-import { withBase } from 'vitepress'
 import { nodes, periods } from './history-data.mjs'
 import { themes, readingLenses, readingPaths, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from './history-network.mjs'
 import { layoutAtlas, edgePath, fitView, labelLines } from './history-scene.mjs'
@@ -17,6 +16,7 @@ const pathFrom = ref('han')
 const pathTo = ref('rome')
 const pathRequested = ref(false)
 const sceneRef = ref<SVGSVGElement | null>(null)
+const pageFullscreen = ref(false)
 const viewport = ref({ width: 900, height: 570 })
 const panning = ref(false)
 const userMoved = ref(false)
@@ -274,12 +274,21 @@ function selectRelation(id: string) {
   if (reveal) nextTick(focus)
   else focus()
 }
+function isWiki(url: string) {
+  return /wikipedia\.org\//i.test(url)
+}
 function otherTitle(edge: { from: string, to: string }) {
   return byId.get(edge.from === activeNodeId.value ? edge.to : edge.from)?.title ?? ''
 }
 function fitGraph() {
   if (pathRequested.value) framePath()
   else frameIds(visibleIds.value)
+}
+function togglePageFullscreen() {
+  pageFullscreen.value = !pageFullscreen.value
+}
+function onFullscreenKey(event: KeyboardEvent) {
+  if (event.key === 'Escape' && pageFullscreen.value) pageFullscreen.value = false
 }
 function calculatePath() {
   pathRequested.value = true
@@ -350,6 +359,7 @@ function onWheel(event: WheelEvent) {
 
 onMounted(() => {
   frameIds(visibleIds.value)
+  window.addEventListener('keydown', onFullscreenKey)
   if (!sceneRef.value) return
   resizeObserver = new ResizeObserver(() => {
     currentViewport()
@@ -357,7 +367,14 @@ onMounted(() => {
   })
   resizeObserver.observe(sceneRef.value)
 })
-onBeforeUnmount(() => resizeObserver?.disconnect())
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', onFullscreenKey)
+  document.documentElement.classList.remove('history-page-locked')
+  resizeObserver?.disconnect()
+})
+watch(pageFullscreen, (on) => {
+  document.documentElement.classList.toggle('history-page-locked', on)
+})
 watch([activePeriod, showComparisons], () => {
   if (skipPeriodFrame) return
   if (pathCamera) {
@@ -370,13 +387,12 @@ watch([activePeriod, showComparisons], () => {
 </script>
 
 <template>
-  <section class="history-graph" aria-label="历史知识图谱">
+  <section class="history-graph" :class="{ 'is-page-fullscreen': pageFullscreen }" aria-label="历史知识图谱">
     <div class="history-graph__topline"><span>HISTORY / RELATION ATLAS</span><span>{{ nodes.length }} 个史实节点 · {{ themes.length }} 个学习主题 · {{ graphRelations.length }} 条关系</span></div>
     <div class="history-graph__heading">
       <div><p class="history-graph__eyebrow">EXPLORE THE CONNECTIONS</p><h2>从一个节点出发，<br><em>读懂历史的关联。</em></h2></div>
       <p>人物、事件、政权与过程连接成网络。选择一个时期，再沿实线、虚线或主题线探索跨地区、跨时期的联系。</p>
     </div>
-    <div class="history-graph__legend" aria-label="图例"><span><i class="china-dot"></i>中国</span><span><i class="world-dot"></i>世界</span><span><i class="theme-dot"></i>学习主题</span><span><i class="solid-line"></i>史实关系</span><span><i class="dashed-line"></i>对照阅读</span><span><i class="dotted-line"></i>主题分类</span></div>
     <div class="history-graph__controls">
       <div class="history-graph__periods" role="group" aria-label="按时期筛选">
         <button type="button" :aria-pressed="activePeriod === 'all'" @click="selectPeriod('all')">全部时期</button>
@@ -386,7 +402,7 @@ watch([activePeriod, showComparisons], () => {
     </div>
     <div class="history-graph__workbench">
       <div class="history-graph__network">
-        <div class="history-graph__network-top"><span>关系网络 · 拖动画布 / 滚轮缩放</span><button type="button" @click="fitGraph">适合屏幕</button></div>
+        <div class="history-graph__network-top"><span>关系网络 · 拖动画布 / 滚轮缩放</span><div class="history-graph__network-actions"><button type="button" @click="fitGraph">适合屏幕</button><button type="button" :aria-pressed="pageFullscreen" @click="togglePageFullscreen">{{ pageFullscreen ? '退出全屏' : '网页全屏' }}</button></div></div>
         <svg
           ref="sceneRef"
           class="history-graph__canvas"
@@ -443,8 +459,7 @@ watch([activePeriod, showComparisons], () => {
         <h3>{{ activeNode.title }}</h3>
         <p v-if="activeNode.kind !== 'theme'" class="history-graph__meta">{{ activeNode.date }} · {{ activeNode.place }} · {{ activeNode.track === 'china' ? '中国' : '世界' }}</p>
         <p class="history-graph__summary">{{ activeNode.summary }}</p>
-        <div v-if="activeNode.kind !== 'theme'" class="history-graph__actions"><a :href="withBase(activeNode.link)">阅读分期笔记 ↗</a><a :href="activeNode.source.url" target="_blank" rel="noopener noreferrer">核对节点来源 ↗</a></div>
-        <div v-if="activeRelation && activeRelation.type !== 'theme'" class="history-graph__relation-note"><small>{{ graphLabels[activeRelation.type] }}</small><strong>{{ byId.get(activeRelation.from)?.title }} → {{ byId.get(activeRelation.to)?.title }}</strong><p>{{ activeRelation.note }}</p><a v-for="(source, index) in graphRelationSources(activeRelation)" :key="index" :href="source.url" target="_blank" rel="noopener noreferrer">关系依据 {{ index + 1 }} ↗</a></div>
+        <div v-if="activeRelation && activeRelation.type !== 'theme'" class="history-graph__relation-note"><small>{{ graphLabels[activeRelation.type] }}</small><strong>{{ byId.get(activeRelation.from)?.title }} → {{ byId.get(activeRelation.to)?.title }}</strong><p>{{ activeRelation.note }}</p><a v-for="(source, index) in graphRelationSources(activeRelation).filter((item) => !isWiki(item.url))" :key="index" :href="source.url" target="_blank" rel="noopener noreferrer">关系依据 {{ index + 1 }} ↗</a></div>
         <h4 v-if="historyRelations.length">史实关系 <small>{{ historyRelations.length }}</small></h4>
         <ul v-if="historyRelations.length" class="history-graph__relations"><li v-for="edge in historyRelations" :key="edge.id"><button type="button" @click="selectRelation(edge.id)"><small>{{ graphLabels[edge.type] }}</small><strong>{{ otherTitle(edge) }}</strong><span>查看关系 ↗</span></button></li></ul>
         <h4>学习主题 <small>{{ activeNode.kind === 'theme' ? nodeRelations.length : studyThemes.length }}</small></h4>
@@ -454,6 +469,7 @@ watch([activePeriod, showComparisons], () => {
         <div v-for="stop in bookStops" :key="stop.book.id" class="history-graph__lens"><strong>{{ stop.book.title }}</strong><small>{{ stop.book.author }} · {{ stop.step.cite }}</small><p>{{ stop.step.point }}</p><div class="history-graph__path-nav"><button type="button" :disabled="!stop.prev" @click="stop.prev && followBook(stop.prev.node, stop.step.node)">上一步</button><button type="button" :disabled="!stop.next" @click="stop.next && followBook(stop.next.node, stop.step.node)">下一步</button></div></div>
       </div>
     </div>
+    <div class="history-graph__legend" aria-label="图例"><span><i class="china-dot"></i>中国</span><span><i class="world-dot"></i>世界</span><span><i class="theme-dot"></i>学习主题</span><span><i class="solid-line"></i>史实关系</span><span><i class="dashed-line"></i>对照阅读</span><span><i class="dotted-line"></i>主题分类</span></div>
     <div class="history-graph__explore">
       <div><p class="history-graph__eyebrow">TRACE A PATH</p><h3>寻找两个节点之间的路径</h3><p>路径是学习线索，可能经过主题或对照关系；它不表示连续因果。</p></div>
       <div class="history-graph__path-inputs"><label>起点<select v-model="pathFrom" @change="clearPath"><option v-for="node in nodes" :key="node.id" :value="node.id">{{ node.title }}</option></select></label><label>终点<select v-model="pathTo" @change="clearPath"><option v-for="node in nodes" :key="node.id" :value="node.id">{{ node.title }}</option></select></label><button type="button" @click="calculatePath">显示路径</button></div>
