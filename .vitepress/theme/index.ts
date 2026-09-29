@@ -23,6 +23,8 @@ import AttentionLab from './components/ai/AttentionLab.vue'
 import RetrievalLab from './components/ai/RetrievalLab.vue'
 import ToolSafetyLab from './components/ai/ToolSafetyLab.vue'
 import './components/ai/ai-lab.css'
+import HistoryGraph from './components/history/HistoryGraph.vue'
+import './components/history/history.css'
 
 import type { Theme } from 'vitepress'
 
@@ -48,5 +50,6 @@ export default {
     app.component('AttentionLab', AttentionLab)
     app.component('RetrievalLab', RetrievalLab)
     app.component('ToolSafetyLab', ToolSafetyLab)
+    app.component('HistoryGraph', HistoryGraph)
   },
 } satisfies Theme

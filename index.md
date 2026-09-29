@@ -12,12 +12,17 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/st2eam/notes
+    - theme: alt
+      text: History 图谱
+      link: /History/
 
 features:
   - title: Web 开发
     details: JavaScript、React、Vue、CSS 等前端技术笔记
   - title: AI
     details: 大语言模型、Embedding、RAG、Agent 等 AI 技术笔记
+  - title: History
+    details: 从人物、事件与主题组成的关系网络，探索中国与世界历史
   - title: 摄影
     details: 曝光三要素、构图法则、后期处理等摄影知识
   - title: 编程语言

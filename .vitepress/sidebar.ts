@@ -286,6 +286,40 @@ export default [
         ]
     },
     {
+        "text": "History",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "历史图谱",
+                "link": "/History/"
+            },
+            {
+                "text": "文明起源",
+                "link": "/History/文明起源.md"
+            },
+            {
+                "text": "古典时期",
+                "link": "/History/古典时期.md"
+            },
+            {
+                "text": "后古典时期",
+                "link": "/History/后古典时期.md"
+            },
+            {
+                "text": "早期近代",
+                "link": "/History/早期近代.md"
+            },
+            {
+                "text": "近现代",
+                "link": "/History/近现代.md"
+            },
+            {
+                "text": "当代",
+                "link": "/History/当代.md"
+            }
+        ]
+    },
+    {
         "text": "Language",
         "collapsed": true,
         "items": [
