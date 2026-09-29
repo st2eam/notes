@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { nodes, periods } from '../.vitepress/theme/components/history/history-data.mjs'
 import { themes, readingLenses, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from '../.vitepress/theme/components/history/history-network.mjs'
+import { layoutAtlas, edgePath, fitView } from '../.vitepress/theme/components/history/history-scene.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -64,6 +65,55 @@ test('book perspectives stay attached to sourced historical nodes', () => {
     assert.ok(edges.length >= 5)
     assert.ok(edges.every((edge) => readingLenses[edge.from]))
   }
+})
+
+test('atlas layout is finite, stable, and separated', () => {
+  const first = layoutAtlas(graphNodes, graphRelations)
+  const second = layoutAtlas(graphNodes, graphRelations)
+  const ids = graphNodes.map((node) => node.id)
+  for (const id of ids) {
+    assert.ok(Number.isFinite(first[id].x) && Number.isFinite(first[id].y), id)
+    assert.equal(first[id].x, second[id].x)
+    assert.equal(first[id].y, second[id].y)
+  }
+  for (let i = 0; i < ids.length; i += 1) {
+    for (let j = i + 1; j < ids.length; j += 1) {
+      const distance = Math.hypot(first[ids[i]].x - first[ids[j]].x, first[ids[i]].y - first[ids[j]].y)
+      assert.ok(distance > 40, `${ids[i]} overlaps ${ids[j]}`)
+    }
+  }
+})
+
+test('fitView places node boxes inside the padded viewport', () => {
+  const positions = {
+    a: { x: 0, y: 0, width: 96, height: 48 },
+    b: { x: 400, y: 200, width: 96, height: 48 },
+  }
+  const viewport = { width: 800, height: 600 }
+  const padding = 36
+  const view = fitView(positions, viewport, padding)
+  assert.ok(view.k >= 0.25 && view.k <= 2.4)
+  for (const item of Object.values(positions)) {
+    const left = view.x + (item.x - item.width / 2) * view.k
+    const right = view.x + (item.x + item.width / 2) * view.k
+    const top = view.y + (item.y - item.height / 2) * view.k
+    const bottom = view.y + (item.y + item.height / 2) * view.k
+    assert.ok(left >= padding - 0.5)
+    assert.ok(top >= padding - 0.5)
+    assert.ok(right <= viewport.width - padding + 0.5)
+    assert.ok(bottom <= viewport.height - padding + 0.5)
+  }
+})
+
+test('edge curves clear the node center', () => {
+  const path = edgePath(
+    { x: 0, y: 0, width: 96, height: 48 },
+    { x: 240, y: 0, width: 96, height: 48 },
+    18,
+  )
+  const start = path.match(/^M ([0-9.-]+) ([0-9.-]+)/)
+  assert.ok(start)
+  assert.ok(Number(start[1]) > 40)
 })
 
 test('every node connects to the graph and paths can cross periods', () => {
