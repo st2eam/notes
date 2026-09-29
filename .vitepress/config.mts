@@ -33,6 +33,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
+      { text: 'History', link: '/History/' },
     ],
     logo: '/logo.svg',
     search: {
