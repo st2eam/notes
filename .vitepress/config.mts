@@ -33,7 +33,6 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: 'AI 学习路线', link: '/AI/学习路线' },
     ],
     logo: '/logo.svg',
     search: {

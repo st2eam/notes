@@ -4,10 +4,6 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "学习路线",
-                "link": "/AI/学习路线.md"
-            },
-            {
                 "text": "agentic-engineering-patterns",
                 "link": "/AI/agentic-engineering-patterns.md"
             },
