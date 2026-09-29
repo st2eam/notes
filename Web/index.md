@@ -5,7 +5,7 @@
 - [HTML](./HTML/HTML.md)
 - [CSS](./CSS/CSS.md)
 - [JavaScript](./JavaScript/JS%20类型.md)
-- [TypeScript](./TypeScript/TypeScript%20高级类型及用法.md)
+- [TypeScript](./语言/TypeScript.md)
 
 ## 前端框架
 
@@ -15,18 +15,18 @@
 ## 工程化
 
 - [Webpack](./Webpack/概念/概念.md)
-- [ESLint](./ESlint/Eslint.md)
+- [ESLint](./工程化/ESLint.md)
 - [Less](./CSS/Less.md)
 - [TailwindCSS](./CSS/TailwindCSS.md)
 
 ## 后端 & 数据库
 
-- [Node.js](./JS%20Lib/Node.js/Node.js.md)
-- [Express](./Express/Express.md)
-- [Koa](./JS%20Lib/koa/koa%20应用.md)
-- [MongoDB](./MongoDB/MongoDB.md)
+- [Node.js](./服务端/Node.js/Node.js.md)
+- [Express](./服务端/Express.md)
+- [Koa](./服务端/Koa/koa%20应用.md)
+- [MongoDB](./数据/MongoDB/MongoDB.md)
 
 ## 其他
 
-- [对象存储 OSS](./对象存储%20OSS/Quick%20Start.md)
+- [对象存储 OSS](./数据/对象存储/Quick%20Start.md)
 - [微信小程序](./微信小程序/)

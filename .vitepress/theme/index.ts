@@ -26,12 +26,27 @@ import './components/ai/ai-lab.css'
 import HistoryGraph from './components/history/HistoryGraph.vue'
 import './components/history/history.css'
 
-import type { Theme } from 'vitepress'
+import { withBase, type Theme } from 'vitepress'
+import { redirectTarget } from '../redirects.mjs'
+
+function installRedirects(router: { go: (to?: string) => Promise<void>, route: { path: string }, onBeforeRouteChange?: (to: string) => void | false | Promise<void | false> }) {
+  if (typeof window === 'undefined') return
+  const send = (to: string) => {
+    const next = redirectTarget(to)
+    if (!next) return
+    router.go(withBase(next))
+    return false as const
+  }
+  router.onBeforeRouteChange = (to) => send(to)
+  const next = redirectTarget(router.route?.path) ?? redirectTarget(window.location.pathname)
+  if (next) router.go(withBase(next))
+}
 
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
+    installRedirects(router)
     app.component('MotionLab', MotionLab)
     app.component('DohertyLab', DohertyLab)
     app.component('TypeLab', TypeLab)
