@@ -1,8 +1,10 @@
 import { defineConfig } from 'vitepress'
 import sidebar from './sidebar'
 
+const base = '/notes/'
+
 export default defineConfig({
-  base: '/notes/',
+  base,
   title: "Steam's Notes",
   outDir: 'docs',
   description: 'A personal knowledge base',
@@ -11,8 +13,8 @@ export default defineConfig({
     math: true,
   },
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' }],
-    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png', sizes: '128x128' }],
+    ['link', { rel: 'icon', href: `${base}favicon.ico`, type: 'image/x-icon' }],
+    ['link', { rel: 'icon', href: `${base}favicon.png`, type: 'image/png', sizes: '128x128' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     [
