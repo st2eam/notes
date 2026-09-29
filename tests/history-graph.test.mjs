@@ -52,6 +52,34 @@ test('typed relations have endpoints, explanation, and evidence', () => {
   }
 })
 
+test('Han through Qing compare institutions without replacing regime changes', () => {
+  const chain = [
+    ['han', 'tang', /第一讲/, /第二讲/],
+    ['tang', 'song', /第二讲/, /第三讲/],
+    ['song', 'ming', /第三讲/, /第四讲/],
+    ['ming', 'qing', /第四讲/, /第五讲/],
+  ]
+  const edges = graphRelations.filter((edge) => edge.type === 'institution')
+  assert.equal(edges.length, 4)
+  assert.equal(graphLabels.institution, '制度演变')
+  assert.equal(nodes.length, 42)
+  assert.equal(periods.length, 6)
+  for (const [from, to, earlier, later] of chain) {
+    const edge = edges.find((item) => item.from === from && item.to === to)
+    assert.ok(edge, `${from} → ${to}`)
+    assert.match(edge.note, /钱穆/)
+    assert.match(edge.note, earlier)
+    assert.match(edge.note, later)
+    const sources = graphRelationSources(edge)
+    assert.equal(sources.length, 2)
+    assert.ok(sources.every((item) => item.url.startsWith('https://')))
+  }
+  assert.match(edges.find((edge) => edge.id === 'f26').note, /元朝/)
+  assert.match(nodes.find((node) => node.id === 'han').summary, /丞相/)
+  assert.match(nodes.find((node) => node.id === 'qing').summary, /部族/)
+  assert.ok(graphRelations.some((edge) => edge.id === 'f12' && edge.type === 'succession'))
+})
+
 test('book perspectives stay attached to sourced historical nodes', () => {
   const byId = new Map(nodes.map((node) => [node.id, node]))
   for (const [id, lens] of Object.entries(readingLenses)) {

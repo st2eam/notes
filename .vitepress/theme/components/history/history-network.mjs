@@ -1,6 +1,6 @@
 import { nodes, relations, relationSources } from './history-data.mjs'
 
-/** @typedef {'comparison' | 'exchange' | 'context' | 'part-of' | 'succession' | 'ended' | 'participated' | 'ruled' | 'theme'} GraphRelationType */
+/** @typedef {'comparison' | 'exchange' | 'context' | 'part-of' | 'succession' | 'ended' | 'participated' | 'ruled' | 'institution' | 'theme'} GraphRelationType */
 
 // 主题节点是本站的阅读分类，不是历史实体，也不代表史实因果。
 export const themes = [
@@ -65,6 +65,10 @@ export const factualRelations = [
   fact('f21', 'wwii', 'decolonization', 'context', '第二次世界大战削弱多个殖民帝国；战后独立运动还有各地自身原因。', wiki('去殖民化', 'Decolonization')),
   fact('f22', 'africa-partition', 'decolonization', 'context', '非洲去殖民化回应此前殖民统治形成的政治秩序，不能视为单一线性过程。', wiki('非洲去殖民化', 'Decolonisation_of_Africa')),
   fact('f23', 'reform', 'prc', 'part-of', '改革开放是中华人民共和国自 1978 年起逐步推行的政策转向。', wiki('改革开放', 'Chinese_economic_reform')),
+  fact('f24', 'han', 'tang', 'institution', '钱穆《中国历代政治得失》第一讲、第二讲以汉、唐对读：丞相主持的政府变成中书、门下、尚书三省和政事堂；察举变成科举；划一的轻税变成租庸调，后来又改为两税；人人服役的兵役变成府兵，再落到节度使。这是制度比较，不是两朝直接交接。'),
+  fact('f25', 'tang', 'song', 'institution', '钱穆《中国历代政治得失》第二讲、第三讲认为宋大体沿袭唐制，再把相权拆开：中书单独取旨，军事归枢密院，财政归三司。科举扩大而官多，两税继续征收而负担加重，府兵式的义务兵变成长期养兵，边防转弱。'),
+  fact('f26', 'song', 'ming', 'institution', '宋、明之间还有元朝。钱穆《中国历代政治得失》第三讲、第四讲只比较制度：明太祖废除丞相，内阁只是皇帝的秘书；考试收成八股；地方变成布政、按察与都指挥，再加督抚和胥吏；卫所模仿府兵，后来一样败坏。'),
+  fact('f27', 'ming', 'qing', 'institution', '钱穆《中国历代政治得失》第四讲、第五讲把清看成部族政权：废宰相和内阁沿自明，雍正又设军机处，科举、赋税和兵权都加上满洲统治集团的控制。他用这个解释后来的变法。这是一家之言，不是政权更替本身。'),
 ]
 
 const themeFor = {
@@ -93,7 +97,7 @@ export const graphNodes = [...nodes, ...themes]
 export const graphRelations = [...relations, ...factualRelations, ...themeRelations]
 export const graphLabels = {
   comparison: '对照阅读', exchange: '交流', context: '历史背景', 'part-of': '属于',
-  succession: '政权更替', ended: '结束', participated: '参与', ruled: '统治', theme: '学习主题',
+  succession: '政权更替', ended: '结束', participated: '参与', ruled: '统治', institution: '制度演变', theme: '学习主题',
 }
 export const graphRelationSources = (relation) => relation.type === 'theme'
   ? [nodes.find((node) => node.id === relation.from)?.source].filter(Boolean)
