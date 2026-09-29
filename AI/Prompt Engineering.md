@@ -41,14 +41,4 @@ assert set(answer.sources) <= {item.id for item in evidence}
 
 改动任务说明后，用相同的问题集比较正确性、引用、拒答、时延和成本。不要把隐藏的推理文字当作唯一验证依据；检查最终结果与可观察的工具轨迹即可。先用简单流程，只有实测收益明确时才增加复杂的多步编排。
 
-### 练习
-
-把“你是一位优秀助手，请回答问题”改写为一个能够回答本站笔记问题的任务说明，必须包含证据来源、资料不足时的行为与输出格式。
-
-<details><summary>参考答案</summary>
-
-“根据提供的本站笔记片段回答问题。每条事实附片段编号；不得使用未提供的私有资料；片段不足时回答‘资料不足’并说明缺什么。输出答案、引用编号和不确定点。”
-
-</details>
-
 继续读[RAG 与检索质量](./RAG与检索质量.md)、[应用评测](./应用评测.md)。参考：[Anthropic Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)、[OpenAI Prompt 指南](https://developers.openai.com/api/docs/guides/prompt-engineering)。

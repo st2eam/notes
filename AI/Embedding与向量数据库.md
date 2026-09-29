@@ -34,14 +34,4 @@ assert cosine([2, 0], [1, 0]) == 1.0
 
 专有名词、代码符号和文件路径往往需要关键词检索；语义相近的长问法适合向量召回。两者可并行取候选、去重并重排。检索是否有效，要在真实问题集上看“期望来源进入前 K 条”的比例，而不能只看相似度分数。
 
-### 练习
-
-一个检索结果与问题的余弦相似度很高，但来自另一位用户的私有笔记。能否把它交给模型？应该在哪一步排除？
-
-<details><summary>参考答案</summary>
-
-不能。权限是硬约束，必须在检索候选进入模型上下文之前由服务端过滤；相似度不构成访问授权。
-
-</details>
-
 下一步：[RAG 与检索质量](./RAG与检索质量.md)、[AI 应用开发](./AI应用开发.md)。参考：[OpenAI Retrieval 指南](https://developers.openai.com/api/docs/guides/retrieval)、[Anthropic Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)。

@@ -48,14 +48,4 @@ print(rows)
 
 一次“创建笔记并写入检索元数据”要么全部成功，要么全部回滚，这就是事务的原子性。提交前不要把部分成功当作完成。常按 user_id 查笔记时，可考虑在该列建索引；索引提高某些读取速度，但增加空间和写入成本。用 EXPLAIN 或 EXPLAIN QUERY PLAN 观察执行计划，再根据真实查询和数据量决定是否建索引。
 
-### 练习
-
-把实验台切到 LEFT JOIN：为什么结果是四行而不是三行？订单 103 在哪里？若业务要求订单必须对应用户，应加什么约束？
-
-<details><summary>参考答案</summary>
-
-用户 1 匹配两笔订单，因此占两行；用户 2、3 各保留一行且订单字段为 NULL。订单 103 没有匹配左表用户，因此不会出现。生产中为 orders.user_id 增加指向 users.id 的外键，并启用约束检查。
-
-</details>
-
 延伸：[MongoDB 与文档数据](../MongoDB/MongoDB.md)、[RAG 与检索质量](../../AI/RAG与检索质量.md)。参考：[PostgreSQL 官方教程](https://www.postgresql.org/docs/current/tutorial.html)、[Python sqlite3 文档](https://docs.python.org/3/library/sqlite3.html)。

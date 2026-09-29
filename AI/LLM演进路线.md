@@ -33,16 +33,6 @@ MoE（混合专家）让每个输入只激活部分参数，可能改善特定�
 
 继续读：[AI 应用开发](./AI应用开发.md)、[Agent 工具与安全](./Agent工具与安全.md)、[Agentic 工程模式](./agentic-engineering-patterns.md)。
 
-### 练习
-
-要做“从本站笔记找出一句原文并附来源”的功能，应先选更大的模型、训练新模型，还是先建立检索与引用链路？解释原因。
-
-<details><summary>参考答案</summary>
-
-先建立检索、权限和引用链路，再用任务集评测。问题核心是找到正确证据并能回到原文；换更大模型或重新训练不能代替来源追踪。
-
-</details>
-
 ## 一手资料
 
 - [Transformer 原论文](https://arxiv.org/abs/1706.03762)、[BERT 原论文](https://arxiv.org/abs/1810.04805)、[GPT-3 原论文](https://arxiv.org/abs/2005.14165)
