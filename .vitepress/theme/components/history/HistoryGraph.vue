@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch, nextTick } from 'vue'
 import { withBase } from 'vitepress'
 import { nodes, periods } from './history-data.mjs'
-import { themes, readingLenses, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from './history-network.mjs'
+import { themes, readingLenses, readingPaths, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from './history-network.mjs'
 import { layoutAtlas, edgePath, fitView, labelLines } from './history-scene.mjs'
 
 const MIN_ZOOM = 0.25
@@ -25,9 +25,11 @@ const positions = layoutAtlas(graphNodes, graphRelations)
 const byId = new Map(graphNodes.map((node) => [node.id, node]))
 const byRelationId = new Map(graphRelations.map((edge) => [edge.id, edge]))
 const activeNode = computed(() => byId.get(activeNodeId.value) ?? nodes[0])
-const activeLens = computed(() => readingLenses[activeNodeId.value as keyof typeof readingLenses])
 const activeRelation = computed(() => activeRelationId.value ? byRelationId.get(activeRelationId.value) : null)
 const nodeRelations = computed(() => graphRelations.filter((edge) => edge.from === activeNodeId.value || edge.to === activeNodeId.value))
+const historyRelations = computed(() => nodeRelations.value.filter((edge) => edge.type !== 'theme'))
+const studyThemes = computed(() => themes.filter((theme) => nodeRelations.value.some((edge) => edge.type === 'theme' && edge.to === theme.id)))
+const bookStops = computed(() => readingPaths.flatMap((book) => book.steps.flatMap((step, index) => step.node === activeNodeId.value ? [{ book, step, prev: book.steps[index - 1] ?? null, next: book.steps[index + 1] ?? null }] : [])))
 const path = computed(() => pathRequested.value ? findPath(pathFrom.value, pathTo.value) : [])
 const pathSteps = computed(() => {
   let current = pathFrom.value
@@ -38,7 +40,14 @@ const pathSteps = computed(() => {
     return step
   })
 })
-const searchMatches = computed(() => query.value.trim() ? graphNodes.filter((node) => `${node.title}${node.place ?? ''}${node.summary}${readingLenses[node.id as keyof typeof readingLenses]?.question ?? ''}`.includes(query.value.trim())).slice(0, 8) : [])
+const searchMatches = computed(() => {
+  const term = query.value.trim()
+  if (!term) return []
+  return graphNodes.filter((node) => {
+    const books = readingPaths.flatMap((book) => book.steps.filter((step) => step.node === node.id).map((step) => `${book.title}${step.cite}${step.point}`)).join('')
+    return `${node.title}${node.place ?? ''}${node.summary}${readingLenses[node.id as keyof typeof readingLenses]?.question ?? ''}${books}`.includes(term)
+  }).slice(0, 8)
+})
 const visibleIds = computed(() => {
   if (activePeriod.value === 'all') return new Set(graphNodes.map((node) => node.id))
   const coreIds = new Set(nodes.filter((node) => node.period === activePeriod.value).map((node) => node.id))
@@ -240,6 +249,16 @@ function selectPeriod(id: string) {
     activeRelationId.value = null
   }
 }
+function edgeBetween(from: string, to: string) {
+  const matches = graphRelations.filter((edge) => edge.type !== 'theme' && edge.type !== 'comparison' && ((edge.from === from && edge.to === to) || (edge.from === to && edge.to === from)))
+  return matches.find((edge) => edge.type === 'institution') ?? matches[0] ?? null
+}
+function followBook(nodeId: string, neighborId: string | null) {
+  selectNode(nodeId)
+  if (!neighborId) return
+  const edge = edgeBetween(nodeId, neighborId)
+  if (edge) activeRelationId.value = edge.id
+}
 function selectRelation(id: string) {
   const edge = byRelationId.get(id)
   if (!edge) return
@@ -420,15 +439,19 @@ watch([activePeriod, showComparisons], () => {
         </svg>
       </div>
       <div class="history-graph__inspector" aria-live="polite">
-        <p class="history-graph__eyebrow">{{ activeNode.kind === 'theme' ? 'STUDY THEME' : 'SELECTED NODE' }}</p>
+        <p class="history-graph__eyebrow">史实</p>
         <h3>{{ activeNode.title }}</h3>
         <p v-if="activeNode.kind !== 'theme'" class="history-graph__meta">{{ activeNode.date }} · {{ activeNode.place }} · {{ activeNode.track === 'china' ? '中国' : '世界' }}</p>
         <p class="history-graph__summary">{{ activeNode.summary }}</p>
-        <div v-if="activeLens" class="history-graph__lens"><strong>可追问</strong><p>{{ activeLens.question }}</p><small>分析线索：赫拉利《人类简史》{{ activeLens.chapters }}。这是提问角度，史实请核对节点来源。</small></div>
         <div v-if="activeNode.kind !== 'theme'" class="history-graph__actions"><a :href="withBase(activeNode.link)">阅读分期笔记 ↗</a><a :href="activeNode.source.url" target="_blank" rel="noopener noreferrer">核对节点来源 ↗</a></div>
-        <div v-if="activeRelation" class="history-graph__relation-note"><small>{{ graphLabels[activeRelation.type] }}</small><strong>{{ byId.get(activeRelation.from)?.title }} → {{ byId.get(activeRelation.to)?.title }}</strong><p>{{ activeRelation.note }}</p><a v-for="(source, index) in graphRelationSources(activeRelation)" :key="index" :href="source.url" target="_blank" rel="noopener noreferrer">关系依据 {{ index + 1 }} ↗</a></div>
-        <h4>相连的节点 <small>{{ nodeRelations.length }}</small></h4>
-        <ul class="history-graph__relations"><li v-for="edge in nodeRelations" :key="edge.id"><button type="button" @click="selectRelation(edge.id)"><small>{{ graphLabels[edge.type] }}</small><strong>{{ otherTitle(edge) }}</strong><span>查看关系 ↗</span></button></li></ul>
+        <div v-if="activeRelation && activeRelation.type !== 'theme'" class="history-graph__relation-note"><small>{{ graphLabels[activeRelation.type] }}</small><strong>{{ byId.get(activeRelation.from)?.title }} → {{ byId.get(activeRelation.to)?.title }}</strong><p>{{ activeRelation.note }}</p><a v-for="(source, index) in graphRelationSources(activeRelation)" :key="index" :href="source.url" target="_blank" rel="noopener noreferrer">关系依据 {{ index + 1 }} ↗</a></div>
+        <h4 v-if="historyRelations.length">史实关系 <small>{{ historyRelations.length }}</small></h4>
+        <ul v-if="historyRelations.length" class="history-graph__relations"><li v-for="edge in historyRelations" :key="edge.id"><button type="button" @click="selectRelation(edge.id)"><small>{{ graphLabels[edge.type] }}</small><strong>{{ otherTitle(edge) }}</strong><span>查看关系 ↗</span></button></li></ul>
+        <h4>学习主题 <small>{{ activeNode.kind === 'theme' ? nodeRelations.length : studyThemes.length }}</small></h4>
+        <ul v-if="activeNode.kind !== 'theme'" class="history-graph__relations"><li v-for="theme in studyThemes" :key="theme.id"><button type="button" @click="selectNode(theme.id)"><small>学习主题</small><strong>{{ theme.title }}</strong><span>打开主题 ↗</span></button></li><li v-if="!studyThemes.length">这一节点还没有归入学习主题。</li></ul>
+        <ul v-else class="history-graph__relations"><li v-for="edge in nodeRelations" :key="edge.id"><button type="button" @click="selectNode(edge.from)"><small>案例</small><strong>{{ byId.get(edge.from)?.title }}</strong><span>打开节点 ↗</span></button></li></ul>
+        <h4 v-if="bookStops.length">阅读路径 <small>{{ bookStops.length }}</small></h4>
+        <div v-for="stop in bookStops" :key="stop.book.id" class="history-graph__lens"><strong>{{ stop.book.title }}</strong><small>{{ stop.book.author }} · {{ stop.step.cite }}</small><p>{{ stop.step.point }}</p><div class="history-graph__path-nav"><button type="button" :disabled="!stop.prev" @click="stop.prev && followBook(stop.prev.node, stop.step.node)">上一步</button><button type="button" :disabled="!stop.next" @click="stop.next && followBook(stop.next.node, stop.step.node)">下一步</button></div></div>
       </div>
     </div>
     <div class="history-graph__explore">
