@@ -38,4 +38,4 @@ CI（持续集成）在每次提交或合并请求中自动运行构建和测试
 
 Agent 改代码时，先记录可观察的失败，再改动并运行相同检查。测试通过后仍要审查需求、权限和真实界面；测试只能证明它覆盖到的行为。
 
-参见[前端测试总结](./前端测试总结.md)、[Flask 测试覆盖](../Python/flask/测试覆盖.md)和[AI 应用评测](../AI/应用评测.md)。参考：[Python unittest 文档](https://docs.python.org/3/library/unittest.html)、[GitHub Actions 文档](https://docs.github.com/en/actions)。
+参见[前端测试总结](../Web/工程化/前端测试.md)、[Flask 测试覆盖](../Python/Flask/测试覆盖.md)和[AI 应用评测](../AI/应用评测.md)。参考：[Python unittest 文档](https://docs.python.org/3/library/unittest.html)、[GitHub Actions 文档](https://docs.github.com/en/actions)。
