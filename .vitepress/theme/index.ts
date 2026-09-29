@@ -17,6 +17,12 @@ import CompositionLab from './components/photography/CompositionLab.vue'
 import WhiteBalanceLab from './components/photography/WhiteBalanceLab.vue'
 import RawJpegLab from './components/photography/RawJpegLab.vue'
 import './components/photography/photo.css'
+import SqlJoinLab from './components/ai/SqlJoinLab.vue'
+import EvalMatrixLab from './components/ai/EvalMatrixLab.vue'
+import AttentionLab from './components/ai/AttentionLab.vue'
+import RetrievalLab from './components/ai/RetrievalLab.vue'
+import ToolSafetyLab from './components/ai/ToolSafetyLab.vue'
+import './components/ai/ai-lab.css'
 
 import type { Theme } from 'vitepress'
 
@@ -37,5 +43,10 @@ export default {
     app.component('CompositionLab', CompositionLab)
     app.component('WhiteBalanceLab', WhiteBalanceLab)
     app.component('RawJpegLab', RawJpegLab)
+    app.component('SqlJoinLab', SqlJoinLab)
+    app.component('EvalMatrixLab', EvalMatrixLab)
+    app.component('AttentionLab', AttentionLab)
+    app.component('RetrievalLab', RetrievalLab)
+    app.component('ToolSafetyLab', ToolSafetyLab)
   },
 } satisfies Theme

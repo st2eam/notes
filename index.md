@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/st2eam/notes
+    - theme: alt
+      text: AI 学习路线
+      link: /AI/学习路线
 
 features:
   - title: Web 开发
@@ -25,4 +28,3 @@ features:
   - title: 设计模式
     details: 常用设计模式与架构思想总结
 ---
-

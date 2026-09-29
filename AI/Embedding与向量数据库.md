@@ -1,73 +1,47 @@
 # Embedding 与向量数据库
 
-## 什么是 Embedding
+> 前置：[机器学习数学基础](./机器学习数学基础.md)中的向量与相似度。目标：解释向量表示、余弦相似度、向量索引及元数据过滤。最后核对：2026-09-29。
 
-Embedding 是将离散数据（文本、图片等）映射到连续向量空间的过程。语义相近的内容在向量空间中距离更近。
+Embedding 把文本等对象映射成数值向量，使应用能按向量距离寻找候选内容。相似度表示“在该模型的向量空间里接近”，不能证明内容真实、可访问或适合回答当前问题。
 
-```
-"猫" → [0.12, -0.34, 0.56, ...]
-"狗" → [0.15, -0.31, 0.52, ...]   // 与"猫"距离近
-"汽车" → [-0.67, 0.89, -0.12, ...]  // 与"猫"距离远
-```
+## 余弦相似度
 
-## 常用 Embedding 模型
+余弦相似度把两个向量的点积除以各自长度的乘积，比较它们的方向；零向量没有可定义的方向，下面的教学函数约定返回 0。分数高只表示当前向量表示接近，仍要检查来源与权限。
 
-| 模型 | 维度 | 特点 |
-|------|------|------|
-| OpenAI text-embedding-3-small | 1536 | 性价比高 |
-| OpenAI text-embedding-3-large | 3072 | 精度更高 |
-| BGE-M3 | 1024 | 开源，多语言支持好 |
-| Cohere embed-v3 | 1024 | 多语言，支持多种搜索类型 |
+~~~python
+from math import sqrt
 
-## 相似度计算
+def cosine(a, b):
+    if len(a) != len(b):
+        raise ValueError("向量维度不一致")
+    dot = sum(x * y for x, y in zip(a, b))
+    size = sqrt(sum(x * x for x in a) * sum(y * y for y in b))
+    return dot / size if size else 0.0
 
-### 余弦相似度
+assert cosine([1, 0], [0, 1]) == 0.0
+assert cosine([2, 0], [1, 0]) == 1.0
+~~~
 
-$$
-\cos(\theta) = \frac{A \cdot B}{\|A\| \|B\|}
-$$
+这是**可运行 Python 3 示例**。实际检索会对大量向量建索引，以减少逐条计算成本；索引算法通常在速度、内存和召回率之间取舍。
 
-值域 `[-1, 1]`，越接近 1 表示越相似。
+## 建索引时保存什么
 
-### 欧几里得距离
+每个片段除了向量，还应保存文档 ID、来源路径、版本、标题、位置和访问权限。入库、更新、删除要同步处理，避免返回过期资料。检索时必须先执行权限过滤，不能把所有候选传给模型后才让模型“忽略”私有内容。
 
-$$
-d(A, B) = \sqrt{\sum_{i=1}^{n}(a_i - b_i)^2}
-$$
+常见向量存储形态包括数据库扩展、专用向量数据库和托管服务。选型看现有数据库、数据量、过滤能力、更新频率和运维成本；维度与价格属于特定模型的版本信息，使用时查看官方文档。
 
-值越小表示越相似。
+## 向量检索的边界
 
-## 向量数据库
+专有名词、代码符号和文件路径往往需要关键词检索；语义相近的长问法适合向量召回。两者可并行取候选、去重并重排。检索是否有效，要在真实问题集上看“期望来源进入前 K 条”的比例，而不能只看相似度分数。
 
-专门存储和检索高维向量的数据库：
+### 练习
 
-| 数据库 | 类型 | 特点 |
-|--------|------|------|
-| Pinecone | 云服务 | 全托管，开箱即用 |
-| Milvus | 开源 | 高性能，支持大规模数据 |
-| Chroma | 开源 | 轻量，适合原型开发 |
-| Qdrant | 开源 | Rust 实现，性能优秀 |
-| pgvector | 扩展 | PostgreSQL 扩展，无需额外服务 |
+一个检索结果与问题的余弦相似度很高，但来自另一位用户的私有笔记。能否把它交给模型？应该在哪一步排除？
 
-## 基本使用流程
+<details><summary>参考答案</summary>
 
-```python
-from openai import OpenAI
-import chromadb
+不能。权限是硬约束，必须在检索候选进入模型上下文之前由服务端过滤；相似度不构成访问授权。
 
-client = OpenAI()
-chroma = chromadb.Client()
-collection = chroma.create_collection("notes")
+</details>
 
-def embed(text: str) -> list[float]:
-    resp = client.embeddings.create(input=text, model="text-embedding-3-small")
-    return resp.data[0].embedding
-
-collection.add(
-    documents=["React 是一个 UI 库", "Vue 是渐进式框架"],
-    ids=["doc1", "doc2"],
-    embeddings=[embed("React 是一个 UI 库"), embed("Vue 是渐进式框架")],
-)
-
-results = collection.query(query_embeddings=[embed("前端框架")], n_results=2)
-```
+下一步：[RAG 与检索质量](./RAG与检索质量.md)、[AI 应用开发](./AI应用开发.md)。参考：[OpenAI Retrieval 指南](https://developers.openai.com/api/docs/guides/retrieval)、[Anthropic Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)。

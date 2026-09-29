@@ -1,182 +1,70 @@
-# AI 应用开发
+# AI 应用开发：从模型调用到可靠流程
 
-## 技术栈概览
+> 前置：[大语言模型基础](./大语言模型基础.md)、[HTTP、认证与授权](../Web/JavaScript/Network/认证与授权.md)。目标：设计一次完整请求的数据流，并说明结构化输出、流式响应、工具与错误处理。最后核对：2026-09-29。
 
-| 层级 | 工具/框架 | 用途 |
-|------|----------|------|
-| 模型 API | OpenAI、Anthropic、Google | 底层大模型能力 |
-| 开发框架 | LangChain、LlamaIndex、Vercel AI SDK | 封装和编排 |
-| 向量数据库 | Pinecone、Chroma、Qdrant、pgvector | 语义检索 |
-| 部署 | Vercel、AWS Lambda、Docker | 服务托管 |
-| 监控 | LangSmith、Helicone、Datadog | 可观测性 |
+一项 AI 功能包含的环节通常比“调用模型”多：验证身份、读取获准资料、组织任务、调用模型或工具、校验结果、记录质量。模型提供候选内容，应用负责边界与最终交付。
 
-## LLM API 调用
+## 一条请求的数据流
 
-### 基本调用（Python）
+~~~text
+用户请求 → 身份与输入校验 → 检索有权限的资料 → 构造任务
+        → 模型/工具循环 → 输出结构校验 → 引用核验 → 返回结果
+                                      ↘ 记录耗时、费用、错误类型
+~~~
 
-```python
-from openai import OpenAI
+先用简单流程验证任务能否成功。只有在固定任务集上看到收益，才增加多步 Agent 或额外框架。
 
-client = OpenAI()
+## 结构化输出与流式响应
 
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "解释什么是 RESTful API"},
-    ],
-    temperature=0.7,
-    max_tokens=1000,
+结构化输出将答案约束为字段，例如 answer、source_ids、uncertainty。模式检查只保证形状，业务还要检查引用编号确实来自本次检索。流式输出让用户较早看到内容，但结束前仍需处理最终校验、取消、断线、超时和不完整结果。
+
+下面是**可运行 Python 3 示例**，演示应用侧的引用白名单校验：
+
+~~~python
+def validate_sources(candidate: dict, allowed_ids: set[str]) -> dict:
+    if not isinstance(candidate.get("answer"), str):
+        raise ValueError("答案字段缺失")
+    sources = candidate.get("source_ids")
+    if not isinstance(sources, list) or not all(isinstance(x, str) for x in sources):
+        raise ValueError("来源字段无效")
+    if not set(sources).issubset(allowed_ids):
+        raise PermissionError("引用了未提供的来源")
+    return candidate
+
+assert validate_sources(
+    {"answer": "见笔记", "source_ids": ["doc-1"]}, {"doc-1"}
+)["answer"] == "见笔记"
+~~~
+
+模型请求部分使用**厂商无关伪代码，不能直接运行**：
+
+~~~python
+evidence = retrieve(question, allowed_for=user)
+draft = model.generate(
+    input=question,
+    evidence=evidence,
+    output_schema={"answer": "string", "source_ids": "list[string]"},
 )
+result = validate_sources(draft, {item.id for item in evidence})
+return result
+~~~
 
-print(response.choices[0].message.content)
-```
+## 工具、检索与失败处理
 
-### 流式输出
+工具调用由模型提出、应用执行。执行前验证工具名、参数、用户权限和副作用；将结果作为数据返回给模型。RAG 要分别检查召回和最终回答，引用必须指向真实片段。常见失败包括空检索、格式不合法、超时、限流、重复调用和权限拒绝；为每种失败提供可理解的反馈，写入操作考虑幂等与人工确认。
 
-```python
-stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True,
-)
+## 质量与成本
 
-for chunk in stream:
-    content = chunk.choices[0].delta.content
-    if content:
-        print(content, end="", flush=True)
-```
+用固定任务集比较方案，记录正确性、引用支持度、时延、错误率和费用。流式输出改善感知等待，但不等于总耗时降低。更小的模型、更短的证据和缓存可能降低成本，但需要确认质量没有下降。模型与接口版本经常变化，选型以当前官方文档和本应用评测为准。
 
-### Structured Output（结构化输出）
+### 练习
 
-```python
-from pydantic import BaseModel
+模型返回了合法 JSON，但 source_ids 包含一篇本次没有检索到的文档。应在哪一步拒绝？如果流式响应已经发出部分文字，界面还需做什么？
 
-class MovieReview(BaseModel):
-    title: str
-    rating: float
-    summary: str
-    pros: list[str]
-    cons: list[str]
+<details><summary>参考答案</summary>
 
-response = client.beta.chat.completions.parse(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "评价电影《星际穿越》"}],
-    response_format=MovieReview,
-)
+在应用侧的业务校验中拒绝该来源，不能仅凭 JSON 格式正确就展示为已核验。流式界面应区分“生成中”和“已验证”，失败时撤回或标注未确认内容，并给出可重试的错误提示。
 
-review = response.choices[0].message.parsed
-```
+</details>
 
-## Function Calling（工具调用）
-
-让 LLM 决定何时调用外部函数：
-
-```python
-tools = [
-    {
-        "type": "function",
-        "function": {
-            "name": "get_weather",
-            "description": "获取指定城市的天气",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "city": {"type": "string", "description": "城市名称"},
-                },
-                "required": ["city"],
-            },
-        },
-    }
-]
-
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "北京今天天气怎么样？"}],
-    tools=tools,
-)
-```
-
-## RAG 实现流程
-
-### 1. 文档处理
-
-```python
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-splitter = RecursiveCharacterTextSplitter(
-    chunk_size=500,
-    chunk_overlap=50,
-    separators=["\n\n", "\n", "。", "，", " "],
-)
-
-chunks = splitter.split_text(document_text)
-```
-
-### 2. 向量化存储
-
-```python
-import chromadb
-from openai import OpenAI
-
-client = OpenAI()
-chroma = chromadb.PersistentClient(path="./chroma_db")
-collection = chroma.get_or_create_collection("docs")
-
-for i, chunk in enumerate(chunks):
-    embedding = client.embeddings.create(
-        input=chunk, model="text-embedding-3-small"
-    ).data[0].embedding
-
-    collection.add(
-        ids=[f"chunk_{i}"],
-        documents=[chunk],
-        embeddings=[embedding],
-    )
-```
-
-### 3. 检索生成
-
-```python
-def ask(question: str) -> str:
-    q_embedding = client.embeddings.create(
-        input=question, model="text-embedding-3-small"
-    ).data[0].embedding
-
-    results = collection.query(query_embeddings=[q_embedding], n_results=3)
-    context = "\n\n".join(results["documents"][0])
-
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[
-            {"role": "system", "content": f"根据以下资料回答问题：\n\n{context}"},
-            {"role": "user", "content": question},
-        ],
-    )
-    return response.choices[0].message.content
-```
-
-## 常见问题与优化
-
-### 幻觉（Hallucination）
-
-模型生成不存在的信息。应对方式：
-
-- 使用 RAG 提供事实依据
-- 要求模型标注信息来源
-- 设置 `temperature=0` 减少随机性
-- 增加 "如果不确定请说不知道" 指令
-
-### Token 优化
-
-- 精简 system prompt，去掉冗余描述
-- 对长文档做摘要后再输入
-- 使用更小的模型处理简单任务
-- 缓存常用查询的结果
-
-### 延迟优化
-
-- 使用流式输出提升感知速度
-- 并行调用多个独立的 LLM 请求
-- 选择适合任务复杂度的模型（简单任务用小模型）
-- 部署在离用户近的区域
+继续读[RAG 与检索质量](./RAG与检索质量.md)、[应用评测](./应用评测.md)、[Agent 工具与安全](./Agent工具与安全.md)。参考：[Anthropic 构建有效 Agent](https://www.anthropic.com/engineering/building-effective-agents)、[OpenAI Agents 指南](https://developers.openai.com/api/docs/guides/agents)。

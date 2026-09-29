@@ -1,18 +1,20 @@
+> 本文包含早期 HTTP 教程摘录。关于 HTTP/3、身份认证与应用授权，建议继续读[MDN HTTP 指南](https://developer.mozilla.org/en-US/docs/Web/HTTP)和[认证与授权](./认证与授权.md)。最后核对：2026-09-29。
+
 ## HTTP协议
 
 [HTTP | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP)
 
 **超文本传输协议（HTTP）** 也就是HyperText Transfer Protocol。是一个用于传输超媒体文档（例如 HTML）的**应用层**协议。它是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。
 
-HTTP 遵循经典的**C/S模型**，客户端打开一个连接以发出请求，然后等待直到收到服务器端响应。HTTP使用了面向连接的TCP作为运输层协议，保证了数据的可靠传输。HTTP不必考虑数据在传输过程中被丢弃后又怎样被重传。
+HTTP 遵循经典的**C/S模型**，客户端打开一个连接以发出请求，然后等待直到收到服务器端响应。HTTP 依赖底层传输提供可靠的数据交换：HTTP/1.1 和 HTTP/2 通常运行在 TCP 上，HTTP/3 使用基于 UDP 的 QUIC。应用还需处理超时、连接中断和重试。
 
-HTTP 是**无状态协议**，这意味着通信的双方在交换HTTP报文之前不需要先建立HTTP连接，服务器不会在两个请求之间保留任何数据（状态）。
+HTTP 请求语义本身不要求服务器记住前一次请求；应用仍可通过 Cookie、会话存储或令牌维持用户状态。“无状态”不等于底层无需建立连接。
 
 ### HTTP的基本性质
 
 #### HTTP 是简单的
 
-虽然下一代 HTTP/2 协议将 HTTP 消息封装到了帧（frames）中，HTTP 大体上还是被设计得简单易读。HTTP 报文能够被人读懂，还允许简单测试，降低了门槛，对新人很友好。
+HTTP/2 将消息封装到二进制帧中，HTTP/3 又改用 QUIC 传输；方法、状态码等核心语义仍然延续。HTTP 报文能够被人读懂，还允许简单测试，降低了门槛，对新人很友好。
 
 #### HTTP 是可扩展的
 
@@ -28,7 +30,7 @@ HTTP 是无状态的：在同一个连接中，两个执行成功的请求之间
 
 一个连接是由传输层来控制的，这从根本上不属于 HTTP 的范围。HTTP 并不需要其底层的传输层协议是面向连接的，只需要它是可靠的，或不丢失消息的（至少返回错误）。
 
-在互联网中，有两个最常用的传输层协议：TCP 是可靠的，而 UDP 不是。因此，HTTP 依赖于面向连接的 TCP 进行消息传递，但连接并不是必须的。
+在互联网中，有两个最常用的传输层协议：TCP 是可靠的，而 UDP 不是。不同 HTTP 版本可以使用不同传输机制，不能把 HTTP 的请求语义等同于 TCP 连接本身。
 
 在客户端（通常指浏览器）与服务器能够交互（客户端发起请求，服务器返回响应）之前，必须在这两者间建立一个 TCP 链接，打开一个 TCP 连接需要多次往返交换消息（因此耗时）。HTTP/1.0 默认为每一对 HTTP 请求/响应都打开一个单独的 TCP 连接。当需要连续发起多个请求时，这种模式比多个请求共享同一个 TCP 链接更低效。
 
@@ -173,3 +175,14 @@ HTTP 响应的一个例子：
 基于 HTTP 的最常用 API 是[`XMLHttpRequest`](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest) API，可用于在[user agent](https://developer.mozilla.org/zh-CN/docs/Glossary/User_agent)和服务器之间交换数据。 现代[`Fetch API`](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API)提供相同的功能，具有更强大和灵活的功能集。  
 
 另一种 API，即服务器发送的事件，是一种单向服务，允许服务器使用 HTTP 作为传输机制向客户端发送事件。 使用[`EventSource`](https://developer.mozilla.org/zh-CN/docs/Web/API/EventSource)接口，客户端打开连接并建立事件句柄。 客户端浏览器自动将到达 HTTP 流的消息转换为适当的[`Event`](https://developer.mozilla.org/zh-CN/docs/Web/API/Event)对象，并将它们传递给专门处理这类[`type`](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/type "type")事件的句柄，如果有这么个句柄的话。但如果相应的事件处理句柄根本没有建立，那就交给[`onmessage` (en-US)](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/message_event "Currently only available in English (US)")事件处理程序处理
+
+
+## 学习练习：请求与身份边界
+
+浏览器带 Cookie 请求一个私有笔记接口。说明 HTTP、Cookie、服务端会话和资源权限分别负责什么；再解释为什么 CORS 不能替代服务端鉴权。
+
+<details><summary>参考答案</summary>
+
+HTTP 传递请求与响应；Cookie 携带会话标识；服务端验证会话对应的身份；资源权限检查该身份能否读取笔记。CORS 约束浏览器读取跨源响应，不阻止其他客户端直接调用接口。
+
+</details>
