@@ -1,3 +1,5 @@
+> 学习目标：能解释事件循环、Promise 与 async/await，并处理超时、取消及并发请求。最后核对：2026-09-29。AI 应用的流式输出和工具调用也依赖这些基础，见[AI 应用开发](../../AI/AI应用开发.md)。
+
 ## 异步编程
 
 异步编程模型是JavaScript的精髓，分我们来简单了解一下它的基本原理。[V2.0](#异步编程)  [V1.0](#v1)
@@ -474,3 +476,16 @@ async function getFile() {
   document.getElementById("demo").innerHTML = await myPromise;
 }
 ```
+
+
+## 延伸练习：AI 请求取消
+
+用户离开页面时，一个流式回答仍在返回。请用 AbortController 设计取消流程：前端停止读取，服务端如何知道请求中断，已执行的写入工具是否能撤回？
+
+<details><summary>参考答案</summary>
+
+前端向 fetch 传入 AbortController.signal，在离开时调用 abort()；服务端需要监听连接中断或取消信号并停止可中断任务。已提交的外部写入不能依靠取消请求自动撤销，应另设幂等、补偿或明确确认流程。
+
+</details>
+
+参考：[MDN AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)。

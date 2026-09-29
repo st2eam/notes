@@ -4,8 +4,16 @@ export default [
         "collapsed": true,
         "items": [
             {
+                "text": "学习路线",
+                "link": "/AI/学习路线.md"
+            },
+            {
                 "text": "agentic-engineering-patterns",
                 "link": "/AI/agentic-engineering-patterns.md"
+            },
+            {
+                "text": "Agent工具与安全",
+                "link": "/AI/Agent工具与安全.md"
             },
             {
                 "text": "AI应用开发",
@@ -28,8 +36,24 @@ export default [
                 "link": "/AI/Prompt Engineering.md"
             },
             {
+                "text": "RAG与检索质量",
+                "link": "/AI/RAG与检索质量.md"
+            },
+            {
                 "text": "大语言模型基础",
                 "link": "/AI/大语言模型基础.md"
+            },
+            {
+                "text": "应用评测",
+                "link": "/AI/应用评测.md"
+            },
+            {
+                "text": "机器学习数学基础",
+                "link": "/AI/机器学习数学基础.md"
+            },
+            {
+                "text": "笔记问答实战",
+                "link": "/AI/笔记问答实战.md"
             }
         ]
     },
@@ -38,12 +62,12 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "C+++",
-                "link": "/C++/C+++.md"
-            },
-            {
                 "text": "C++",
                 "link": "/C++/C++.md"
+            },
+            {
+                "text": "C+++",
+                "link": "/C++/C+++.md"
             },
             {
                 "text": "C++Lambda表达式",
@@ -536,12 +560,20 @@ export default [
                 "link": "/Study/排序算法.md"
             },
             {
+                "text": "概率统计与实验",
+                "link": "/Study/概率统计与实验.md"
+            },
+            {
                 "text": "正则表达式",
                 "link": "/Study/正则表达式.md"
             },
             {
                 "text": "汇编语言",
                 "link": "/Study/汇编语言.md"
+            },
+            {
+                "text": "测试与CI",
+                "link": "/Study/测试与CI.md"
             },
             {
                 "text": "短路求值",
@@ -840,6 +872,10 @@ export default [
                             {
                                 "text": "HTTP",
                                 "link": "/Web/JavaScript/Network/HTTP.md"
+                            },
+                            {
+                                "text": "认证与授权",
+                                "link": "/Web/JavaScript/Network/认证与授权.md"
                             }
                         ]
                     },
@@ -1462,6 +1498,16 @@ export default [
                     {
                         "text": "微信小程序-简介",
                         "link": "/Web/微信小程序/微信小程序-简介.md"
+                    }
+                ]
+            },
+            {
+                "text": "数据库",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "SQL与数据建模",
+                        "link": "/Web/数据库/SQL与数据建模.md"
                     }
                 ]
             }

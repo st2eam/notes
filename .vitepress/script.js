@@ -11,7 +11,14 @@ const gitignore = fs.readFileSync('.gitignore', 'utf-8').split('\n')
 
 function walkDir(dir) {
     let results = [];
-    const list = fs.readdirSync(dir);
+    // Keep navigation stable across macOS and Linux directory enumeration.
+    const list = fs.readdirSync(dir).sort((a, b) => {
+        if (path.resolve(dir) === path.resolve('./AI')) {
+            if (a === '学习路线.md') return -1;
+            if (b === '学习路线.md') return 1;
+        }
+        return a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' });
+    });
     list.forEach(function (file) {
         file = dir + '/' + file;
         const absolutePath = path.resolve(file);
