@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { withBase } from 'vitepress'
 import { nodes, periods } from './history-data.mjs'
-import { themes, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from './history-network.mjs'
+import { themes, readingLenses, graphNodes, graphRelations, graphLabels, graphRelationSources, findPath } from './history-network.mjs'
 
 const activePeriod = ref('classical')
 const activeNodeId = ref('han')
@@ -20,6 +20,7 @@ let themeObserver: MutationObserver | null = null
 const byId = new Map(graphNodes.map((node) => [node.id, node]))
 const byRelationId = new Map(graphRelations.map((edge) => [edge.id, edge]))
 const activeNode = computed(() => byId.get(activeNodeId.value) ?? nodes[0])
+const activeLens = computed(() => readingLenses[activeNodeId.value as keyof typeof readingLenses])
 const activeRelation = computed(() => activeRelationId.value ? byRelationId.get(activeRelationId.value) : null)
 const nodeRelations = computed(() => graphRelations.filter((edge) => edge.from === activeNodeId.value || edge.to === activeNodeId.value))
 const path = computed(() => pathRequested.value ? findPath(pathFrom.value, pathTo.value) : [])
@@ -32,7 +33,7 @@ const pathSteps = computed(() => {
     return step
   })
 })
-const searchMatches = computed(() => query.value.trim() ? graphNodes.filter((node) => `${node.title}${node.place ?? ''}${node.summary}`.includes(query.value.trim())).slice(0, 8) : [])
+const searchMatches = computed(() => query.value.trim() ? graphNodes.filter((node) => `${node.title}${node.place ?? ''}${node.summary}${readingLenses[node.id as keyof typeof readingLenses]?.question ?? ''}`.includes(query.value.trim())).slice(0, 8) : [])
 const visibleIds = computed(() => {
   if (activePeriod.value === 'all') return new Set(graphNodes.map((node) => node.id))
   const coreIds = new Set(nodes.filter((node) => node.period === activePeriod.value).map((node) => node.id))
@@ -192,6 +193,7 @@ watch([activeNodeId, activeRelationId], highlight)
         <h3>{{ activeNode.title }}</h3>
         <p v-if="activeNode.kind !== 'theme'" class="history-graph__meta">{{ activeNode.date }} · {{ activeNode.place }} · {{ activeNode.track === 'china' ? '中国' : '世界' }}</p>
         <p class="history-graph__summary">{{ activeNode.summary }}</p>
+        <div v-if="activeLens" class="history-graph__lens"><strong>可追问</strong><p>{{ activeLens.question }}</p><small>分析线索：赫拉利《人类简史》{{ activeLens.chapters }}。这是提问角度，史实请核对节点来源。</small></div>
         <div v-if="activeNode.kind !== 'theme'" class="history-graph__actions"><a :href="withBase(activeNode.link)">阅读分期笔记 ↗</a><a :href="activeNode.source.url" target="_blank" rel="noopener noreferrer">核对节点来源 ↗</a></div>
         <div v-if="activeRelation" class="history-graph__relation-note"><small>{{ graphLabels[activeRelation.type] }}</small><strong>{{ byId.get(activeRelation.from)?.title }} → {{ byId.get(activeRelation.to)?.title }}</strong><p>{{ activeRelation.note }}</p><a v-for="(source, index) in graphRelationSources(activeRelation)" :key="index" :href="source.url" target="_blank" rel="noopener noreferrer">关系依据 {{ index + 1 }} ↗</a></div>
         <h4>相连的节点 <small>{{ nodeRelations.length }}</small></h4>
@@ -203,7 +205,7 @@ watch([activeNodeId, activeRelationId], highlight)
       <div class="history-graph__path-inputs"><label>起点<select v-model="pathFrom" @change="clearPath"><option v-for="node in nodes" :key="node.id" :value="node.id">{{ node.title }}</option></select></label><label>终点<select v-model="pathTo" @change="clearPath"><option v-for="node in nodes" :key="node.id" :value="node.id">{{ node.title }}</option></select></label><button type="button" @click="calculatePath">显示路径</button></div>
       <ol v-if="pathRequested" class="history-graph__path-result"><li v-for="(step, index) in pathSteps" :key="step.edge.id"><button type="button" @click="selectRelation(step.edge.id)">{{ index + 1 }}. {{ byId.get(step.from)?.title }} <span>{{ graphLabels[step.edge.type] }}</span> {{ byId.get(step.to)?.title }}</button></li><li v-if="!path.length">{{ pathFrom === pathTo ? '请选择两个不同的节点。' : '未找到路径。' }}</li></ol>
     </div>
-    <div class="history-graph__index"><div class="history-graph__index-head"><div><p class="history-graph__eyebrow">KEYBOARD & MOBILE INDEX</p><h3>节点索引</h3><p>列表与图上节点对应，可用键盘逐一选择。</p></div><label>搜索节点<input v-model="query" type="search" placeholder="输入人物、事件或地区"></label></div><div v-if="query" class="history-graph__node-list"><button v-for="node in searchMatches" :key="node.id" type="button" @click="selectNode(node.id)"><small>{{ node.kind === 'theme' ? '学习主题' : node.date }}</small><strong>{{ node.title }}</strong><span>{{ node.kind === 'theme' ? node.summary : node.place }}</span></button><p v-if="!searchMatches.length">没有匹配的节点。</p></div><div v-else class="history-graph__node-list"><button v-for="node in visibleListNodes" :key="node.id" type="button" :aria-pressed="activeNodeId === node.id" @click="selectNode(node.id)"><small>{{ node.kind === 'theme' ? '学习主题' : node.date }}</small><strong>{{ node.title }}</strong><span>{{ node.kind === 'theme' ? node.summary : node.place }}</span></button></div></div>
+    <div class="history-graph__index"><div class="history-graph__index-head"><div><p class="history-graph__eyebrow">KEYBOARD & MOBILE INDEX</p><h3>节点索引</h3><p>列表与图上节点对应，可用键盘逐一选择。</p></div><label>搜索节点<input v-model="query" type="search" placeholder="输入人物、事件、地区或主题"></label></div><div v-if="query" class="history-graph__node-list"><button v-for="node in searchMatches" :key="node.id" type="button" @click="selectNode(node.id)"><small>{{ node.kind === 'theme' ? '学习主题' : node.date }}</small><strong>{{ node.title }}</strong><span>{{ node.kind === 'theme' ? node.summary : node.place }}</span></button><p v-if="!searchMatches.length">没有匹配的节点。</p></div><div v-else class="history-graph__node-list"><button v-for="node in visibleListNodes" :key="node.id" type="button" :aria-pressed="activeNodeId === node.id" @click="selectNode(node.id)"><small>{{ node.kind === 'theme' ? '学习主题' : node.date }}</small><strong>{{ node.title }}</strong><span>{{ node.kind === 'theme' ? node.summary : node.place }}</span></button></div></div>
     <p class="history-graph__footnote">实线的箭头表示关系描述的方向，不必然表示因果。虚线“对照阅读”和点线“学习主题”是本站的编排；节点与关系均可打开来源核查。</p>
   </section>
 </template>
