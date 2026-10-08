@@ -1273,3 +1273,11 @@ body,
 .embed-mode .vault-note-content :is(h1, h2, h3, h4, h5, h6) {
   scroll-margin-top: 58px;
 }
+
+/* A dark root color-scheme can make the browser paint an opaque iframe canvas. */
+html.embed-mode[data-embed-background="transparent"] {
+  color-scheme: normal;
+}
+html.embed-mode.dark[data-embed-background="transparent"] .vault-shell {
+  color-scheme: dark;
+}
