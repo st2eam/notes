@@ -22,6 +22,7 @@ import {
   readStorage,
   migrateGraphStorage,
 } from "../../../vault/workspace.mjs";
+import { embedHref } from "../../../vault/embed.mjs";
 import { migrateQuery } from "../../../vault/migration.mjs";
 import { searchNotes } from "../../../vault/search.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
@@ -269,7 +270,11 @@ function syncRoute() {
 async function navigate(tab: Tab) {
   rememberScroll();
   active.value = tab.key;
-  await router.go(withBase(tab.href));
+  await router.go(
+    withBase(
+      isEmbedded.value ? embedHref(tab.href, window.location.search) : tab.href,
+    ),
+  );
   syncRoute();
 }
 async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
@@ -293,7 +298,10 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
       : tab,
   );
   if (anchor) document.getElementById(decode(anchor))?.scrollIntoView();
-  if (typeof window !== "undefined" && window.innerWidth <= 760) {
+  if (
+    typeof window !== "undefined" &&
+    (isEmbedded.value || window.innerWidth <= 760)
+  ) {
     leftOpen.value = false;
     rightOpen.value = false;
   }
@@ -316,7 +324,10 @@ function openGraph(filter = "") {
   };
   if (!tabs.value.some((t) => t.key === tab.key)) tabs.value.push(tab);
   navigate(tab);
-  if (typeof window !== "undefined" && window.innerWidth <= 760) {
+  if (
+    typeof window !== "undefined" &&
+    (isEmbedded.value || window.innerWidth <= 760)
+  ) {
     leftOpen.value = false;
     rightOpen.value = false;
   }
@@ -426,16 +437,15 @@ function modalKey(e: KeyboardEvent) {
   }
 }
 function shortcut(e: KeyboardEvent) {
-  if (isEmbedded.value) return;
   if (e.key === "Escape") {
     modal.value = null;
     preview.value = null;
-    if (window.innerWidth <= 760) {
+    if (isEmbedded.value || window.innerWidth <= 760) {
       leftOpen.value = false;
       rightOpen.value = false;
     }
   }
-  if (!(e.metaKey || e.ctrlKey) || e.altKey) return;
+  if (isEmbedded.value || !(e.metaKey || e.ctrlKey) || e.altKey) return;
   if (e.key.toLowerCase() === "o") {
     e.preventDefault();
     showModal("quick");
@@ -536,7 +546,20 @@ function contentClick(e: MouseEvent) {
     document
       .getElementById(decode(hit.url.hash.slice(1)))
       ?.scrollIntoView({ behavior: "smooth" });
-    history.replaceState(history.state, "", hit.url.href);
+    history.replaceState(
+      history.state,
+      "",
+      isEmbedded.value
+        ? withBase(
+            embedHref(
+              hit.url.pathname.replace(/^\/notes/, "") +
+                hit.url.search +
+                hit.url.hash,
+              window.location.search,
+            ),
+          )
+        : hit.url.href,
+    );
     return;
   }
   openNote(hit.note, e, decode(hit.url.hash.slice(1)));
@@ -574,7 +597,7 @@ function relationTitle(link: VaultLink, incoming = false) {
 }
 function jumpHeading(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  if (window.innerWidth <= 760) rightOpen.value = false;
+  if (isEmbedded.value || window.innerWidth <= 760) rightOpen.value = false;
 }
 watch(
   [
@@ -592,6 +615,9 @@ watch(
   save,
   { deep: true },
 );
+watch(vpIsDark, (value) => {
+  isDark.value = value;
+});
 watch(modalQuery, () => (modalIndex.value = 0));
 watch(query, loadSearch);
 // SSR always includes the current note. Browser state is restored after hydration.
@@ -611,6 +637,14 @@ onMounted(() => {
   if (isEmbedded.value) {
     leftOpen.value = false;
     rightOpen.value = false;
+    isDark.value = vpIsDark.value;
+    oldAfter = router.onAfterRouteChanged;
+    router.onAfterRouteChanged = async (to) => {
+      await oldAfter?.(to);
+      syncRoute();
+    };
+    window.addEventListener("keydown", shortcut);
+    window.addEventListener("popstate", syncRoute);
     return;
   }
   migrateGraphStorage();
@@ -665,6 +699,39 @@ onBeforeUnmount(() => {
       '--right-width': rightWidth + 'px',
     }"
   >
+    <nav
+      v-if="isEmbedded"
+      class="vault-embed-toolbar"
+      aria-label="嵌入阅读工具"
+    >
+      <button
+        :aria-expanded="leftOpen"
+        @click="
+          leftOpen = !leftOpen;
+          rightOpen = false;
+          if (leftOpen) reveal();
+        "
+      >
+        <Icon name="folder" />笔记
+      </button>
+      <button
+        :aria-expanded="rightOpen"
+        @click="
+          rightOpen = !rightOpen;
+          leftOpen = false;
+          rightTab = 'outline';
+        "
+      >
+        <Icon name="list" />目录
+      </button>
+      <span>{{ current?.title }}</span>
+      <button
+        :aria-label="isDark ? '切换浅色主题' : '切换深色主题'"
+        @click="toggleTheme"
+      >
+        <Icon :name="isDark ? 'sun' : 'moon'" />
+      </button>
+    </nav>
     <a class="vault-skip" href="#vault-document">跳到正文</a>
     <nav class="vault-ribbon" aria-label="工具栏">
       <button
@@ -1030,7 +1097,9 @@ onBeforeUnmount(() => {
       </div>
       <div class="vault-right-scroll">
         <section
-          v-if="current?.categories.length"
+          v-if="
+            current?.categories.length && (!isEmbedded || rightTab === 'links')
+          "
           class="vault-classifications"
         >
           <h2>
@@ -1128,7 +1197,7 @@ onBeforeUnmount(() => {
             <p v-if="!outlinks.length" class="empty-hint">当前笔记没有出链</p>
           </section></template
         >
-        <section class="vault-local">
+        <section v-if="!isEmbedded" class="vault-local">
           <h2>
             <button @click="localOpen = !localOpen" :aria-expanded="localOpen">
               <Icon

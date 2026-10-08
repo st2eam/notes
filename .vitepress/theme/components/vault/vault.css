@@ -977,8 +977,6 @@ body,
   overflow: visible;
 }
 .embed-mode .vault-shell .vault-ribbon,
-.embed-mode .vault-shell .vault-left,
-.embed-mode .vault-shell .vault-right,
 .embed-mode .vault-shell .vault-resizer,
 .embed-mode .vault-shell .vault-tabs,
 .embed-mode .vault-shell .vault-document-toolbar,
@@ -1141,7 +1139,69 @@ body,
 }
 
 .embed-mode .vault-shell .vault-drawer-backdrop {
-  display: none !important;
+  display: block !important;
+  position: fixed;
+  inset: 42px 0 0;
+  z-index: 30;
+  background: #0005;
+}
+.vault-embed-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: var(--vault-side);
+  border-bottom: 1px solid var(--vault-border);
+}
+.vault-embed-toolbar > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+}
+.vault-embed-toolbar > button:hover {
+  background: var(--vault-hover);
+}
+.vault-embed-toolbar > span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--vault-muted);
+}
+.embed-mode .vault-shell .vault-left,
+.embed-mode .vault-shell .vault-right {
+  display: flex;
+  position: fixed;
+  top: 42px;
+  bottom: 0;
+  width: min(320px, calc(100vw - 32px));
+  z-index: 35;
+  box-shadow: 0 8px 24px #0004;
+}
+.embed-mode .vault-left {
+  left: 0;
+}
+.embed-mode .vault-right {
+  right: 0;
+}
+.embed-mode .vault-shell .mobile-only {
+  display: inline-flex !important;
+}
+.embed-mode[data-embed-background="transparent"],
+.embed-mode[data-embed-background="transparent"] body,
+.embed-mode[data-embed-background="transparent"] #app,
+.embed-mode[data-embed-background="transparent"] .vault-shell,
+.embed-mode[data-embed-background="transparent"] .vault-center,
+.embed-mode[data-embed-background="transparent"] .vault-reading {
+  background: transparent;
+}
+.embed-mode[data-embed-background="theme"] body {
+  background: var(--vault-bg);
 }
 
 .vault-classifications {
@@ -1208,4 +1268,8 @@ body,
   font-size: 10px;
   color: var(--vault-muted);
   padding-right: 6px;
+}
+
+.embed-mode .vault-note-content :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 58px;
 }

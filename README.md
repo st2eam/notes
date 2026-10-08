@@ -42,7 +42,30 @@ History 包含 42 篇实体笔记、6 篇主题笔记、6 篇分期文章和 4 �
 - 内部链接悬停或键盘聚焦时显示预览；修饰键点击在新标签页打开。
 - 左右分隔条可拖动，也可以用方向键调整。窄屏侧栏使用抽屉。
 - 标签页、主题、侧栏宽度、目录展开状态、局部图深度和图谱设置保存在此浏览器。
-- `?embed=true` 或 iframe 中仅显示正文及互动演示。
+- `?embed=true` 或 iframe 中使用紧凑阅读布局，保留“笔记”文件切换、“目录”小节跳转及主题按钮；切换笔记会保留嵌入参数。
+- 嵌入背景默认透明；`background=theme` 使用当前主题底色。`theme=light` / `theme=dark` 指定配色，默认 `theme=auto` 同步同源父页面的 `dark` 类、`data-theme` / `data-color-mode` 或 `color-scheme`；无法读取父页面时跟随系统主题。
+- 跨域 iframe 无法直接读取父页面的样式。父页面可在地址中传主题参数，或使用下方消息协议动态同步；通过 `parentOrigin` 指定父页面来源（省略时使用 Referrer，Referrer 不可用时仅信任站点同源）。
+
+```html
+<iframe id="notes" src="https://st2eam.github.io/notes/历史/政权与制度/汉王朝.html?embed=true&background=transparent&parentOrigin=https%3A%2F%2Fyour-site.example"></iframe>
+```
+
+```js
+const frame = document.querySelector('#notes');
+const notesOrigin = 'https://st2eam.github.io';
+function syncNotesTheme() {
+  frame.contentWindow.postMessage({
+    type: 'notes:embed-config',
+    theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+    background: 'transparent', // 改成 'theme' 可使用笔记主题底色
+  }, notesOrigin);
+}
+window.addEventListener('message', (event) => {
+  if (event.source === frame.contentWindow && event.origin === notesOrigin && event.data?.type === 'notes:embed-ready') syncNotesTheme();
+});
+// 父页面切换主题后再次调用 syncNotesTheme()。
+```
+
 
 ## 图谱
 
