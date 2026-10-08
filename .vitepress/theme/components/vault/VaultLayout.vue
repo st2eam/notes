@@ -706,6 +706,8 @@ onBeforeUnmount(() => {
     >
       <button
         :aria-expanded="leftOpen"
+        aria-controls="vault-note-browser"
+        :class="{ selected: leftOpen }"
         @click="
           leftOpen = !leftOpen;
           rightOpen = false;
@@ -716,6 +718,8 @@ onBeforeUnmount(() => {
       </button>
       <button
         :aria-expanded="rightOpen"
+        aria-controls="vault-note-details"
+        :class="{ selected: rightOpen }"
         @click="
           rightOpen = !rightOpen;
           leftOpen = false;
@@ -724,7 +728,7 @@ onBeforeUnmount(() => {
       >
         <Icon name="list" />目录
       </button>
-      <span>{{ current?.title }}</span>
+      <span :title="current?.title">{{ current?.title }}</span>
       <button
         :aria-label="isDark ? '切换浅色主题' : '切换深色主题'"
         @click="toggleTheme"
@@ -801,7 +805,12 @@ onBeforeUnmount(() => {
         rightOpen = false;
       "
     />
-    <aside v-show="leftOpen" class="vault-left" aria-label="文件与搜索">
+    <aside
+      id="vault-note-browser"
+      v-show="leftOpen"
+      class="vault-left"
+      aria-label="文件与搜索"
+    >
       <div class="sidebar-tabbar">
         <button
           :class="['icon-button', { selected: pane === 'files' }]"
@@ -1071,7 +1080,12 @@ onBeforeUnmount(() => {
       @pointerdown="resize('right', $event)"
       @keydown="resizeKey('right', $event)"
     />
-    <aside v-show="rightOpen" class="vault-right" aria-label="笔记辅助面板">
+    <aside
+      id="vault-note-details"
+      v-show="rightOpen"
+      class="vault-right"
+      aria-label="笔记辅助面板"
+    >
       <div class="sidebar-tabbar">
         <button
           :class="['icon-button', { selected: rightTab === 'outline' }]"

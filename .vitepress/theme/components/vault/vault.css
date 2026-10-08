@@ -1149,29 +1149,64 @@ body,
   position: sticky;
   top: 0;
   z-index: 40;
-  height: 42px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 4px 12px;
-  background: var(--vault-side);
+  gap: clamp(4px, 1vw, 8px);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 4px clamp(4px, 2vw, 12px);
+  box-sizing: border-box;
+  color: var(--vault-text);
+  background: var(--vault-bg);
   border-bottom: 1px solid var(--vault-border);
 }
+.embed-mode[data-embed-background="transparent"] .vault-embed-toolbar {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 .vault-embed-toolbar > button {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: 5px 8px;
+  height: 34px;
+  padding: 5px clamp(4px, 1vw, 8px);
+  white-space: nowrap;
+  transition:
+    background-color 120ms,
+    color 120ms;
 }
 .vault-embed-toolbar > button:hover {
   background: var(--vault-hover);
 }
+.vault-embed-toolbar > button.selected {
+  color: var(--vault-accent);
+  background: var(--vault-accent-bg);
+}
+.vault-embed-toolbar > button:focus-visible {
+  outline: 2px solid var(--vault-accent);
+  outline-offset: -2px;
+}
+.vault-embed-toolbar > button svg {
+  flex-shrink: 0;
+}
 .vault-embed-toolbar > span {
-  flex: 1;
+  flex: 1 1 0%;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--vault-muted);
+}
+.embed-mode .vault-shell,
+.embed-mode .vault-center {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 .embed-mode .vault-shell .vault-left,
 .embed-mode .vault-shell .vault-right {
@@ -1187,7 +1222,10 @@ body,
   left: 0;
 }
 .embed-mode .vault-right {
-  right: 0;
+  left: 0;
+  right: auto;
+  border-left: 0;
+  border-right: 1px solid var(--vault-border);
 }
 .embed-mode .vault-shell .mobile-only {
   display: inline-flex !important;
@@ -1280,4 +1318,12 @@ html.embed-mode[data-embed-background="transparent"] {
 }
 html.embed-mode.dark[data-embed-background="transparent"] .vault-shell {
   color-scheme: dark;
+}
+
+/* VitePress defaults body to 320px; embedded containers can be narrower. */
+html.embed-mode body,
+html.embed-mode #app {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
