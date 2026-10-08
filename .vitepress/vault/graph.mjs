@@ -1,6 +1,9 @@
 import { matchesQuery, neighborhood } from "./model.mjs";
 export const defaultGraphSettings = () => ({
   query: "",
+  category: "",
+  relationTypes: ["citation", "similar", "subordinate", "causal"],
+  relationStatus: "all",
   orphans: true,
   tags: false,
   attachments: false,
@@ -14,21 +17,46 @@ export const defaultGraphSettings = () => ({
   distance: 70,
   groups: [],
 });
+export function selectRelations(links, settings) {
+  return links.filter(
+    (l) =>
+      l.kind !== "note" ||
+      ((
+        settings.relationTypes || [
+          "citation",
+          "similar",
+          "subordinate",
+          "causal",
+        ]
+      ).includes(l.relationType || "citation") &&
+        (settings.relationStatus === "all" ||
+          !settings.relationStatus ||
+          (l.status || "confirmed") === settings.relationStatus)),
+  );
+}
 export function graphData(index, settings, current, depth = 1, documents = []) {
+  const relationships = selectRelations(index.links, settings);
   const texts = new Map(documents.map((d) => [d.id, d.text]));
-  let notes = index.notes.filter((n) =>
-    matchesQuery(n, settings.query, texts.get(n.id) || ""),
+  let notes = index.notes.filter(
+    (n) =>
+      matchesQuery(n, settings.query, texts.get(n.id) || "") &&
+      (!settings.category ||
+        (n.categories || []).some(
+          (c) =>
+            c.path === settings.category ||
+            c.path.startsWith(settings.category + "/"),
+        )),
   );
   if (current) {
     const ids = neighborhood(
       current,
-      index.links.filter((l) => l.kind === "note"),
+      relationships.filter((l) => l.kind === "note"),
       depth,
     );
     notes = notes.filter((n) => ids.has(n.id));
   }
   const ids = new Set(notes.map((n) => n.id));
-  let edges = index.links
+  let edges = relationships
     .filter(
       (l) =>
         l.target &&
@@ -36,7 +64,12 @@ export function graphData(index, settings, current, depth = 1, documents = []) {
         ids.has(l.source) &&
         ids.has(l.target),
     )
-    .map((l) => ({ source: l.source, target: l.target }));
+    .map((l) => ({
+      source: l.source,
+      target: l.target,
+      directed: l.directed !== false,
+      relations: [l],
+    }));
   let nodes = notes.map((n) => ({
     id: n.id,
     title: n.title,
@@ -71,8 +104,19 @@ export function graphData(index, settings, current, depth = 1, documents = []) {
     const key = [edge.source, edge.target].sort().join("\0");
     const previous = unique.get(key);
     if (previous) {
-      if (previous.source !== edge.source) previous.bidirectional = true;
-    } else unique.set(key, edge);
+      previous.relations.push(...(edge.relations || []));
+      if (edge.directed !== false) {
+        if (previous.source !== edge.source) previous.backward = true;
+        else previous.forward = true;
+      }
+      previous.bidirectional = !!(previous.forward && previous.backward);
+    } else
+      unique.set(key, {
+        ...edge,
+        relations: edge.relations || [],
+        forward: edge.directed !== false,
+        backward: false,
+      });
   }
   edges = [...unique.values()];
   const degree = new Map();

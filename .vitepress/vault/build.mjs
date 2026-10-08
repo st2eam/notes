@@ -180,10 +180,20 @@ export function parseNote(id, raw) {
       folder: id.split("/").slice(0, -1).join("/"),
       excerpt,
       headings,
+      originalPath: data.originalPath,
+      primaryCategory: data.primaryCategory || null,
+      categories: Array.isArray(data.categories)
+        ? data.categories.filter(
+            (c) => typeof c?.path === "string" && typeof c?.reason === "string",
+          )
+        : [],
+      classificationStatus: data.classificationStatus || "unclassified",
+      categoryOverview: data.categoryOverview || null,
       ...(data.historyId ? { historyId: data.historyId } : {}),
       ...(data.historyTheme ? { historyTheme: data.historyTheme } : {}),
     },
     references,
+    relations: Array.isArray(data.relations) ? data.relations : [],
     text,
   };
 }
@@ -192,6 +202,49 @@ export function buildVault(entries, root) {
   const notes = parsed.map((p) => p.note);
   const links = [];
   const attachments = [];
+  const categoryNotes = new Map(
+    notes.filter((n) => n.categoryOverview).map((n) => [n.categoryOverview, n]),
+  );
+  const relationTypes = new Set([
+    "citation",
+    "similar",
+    "subordinate",
+    "causal",
+  ]);
+  const pushRelation = (source, relation) => {
+    if (
+      !relationTypes.has(relation.type) ||
+      !["confirmed", "inferred"].includes(relation.status) ||
+      !relation.reason ||
+      !relation.evidence
+    )
+      throw new Error("Invalid relation metadata: " + source);
+    if (
+      relation.type === "causal" &&
+      (relation.status !== "confirmed" ||
+        !/https?:\/\//.test(relation.evidence))
+    )
+      throw new Error("Causal relation requires a verified source: " + source);
+    const resolved = resolveLink(notes, source, relation.target, true);
+    if (!resolved?.target || resolved.reason)
+      throw new Error(
+        "Unresolved structured relation: " + source + " → " + relation.target,
+      );
+    if (source === resolved.target) return;
+    links.push({
+      source,
+      ...resolved,
+      kind: "note",
+      relationType: relation.type,
+      label: relation.label || relation.type,
+      status: relation.status,
+      explanation: relation.reason,
+      evidence: relation.evidence,
+      context: relation.reason,
+      directed: relation.type !== "similar",
+      structured: true,
+    });
+  };
   for (const p of parsed) {
     for (const ref of p.references) {
       if (!ref.reference || /^(?:[a-z][\w+.-]*:|\/\/|\?)/i.test(ref.reference))
@@ -249,12 +302,70 @@ export function buildVault(entries, root) {
           ...r,
           context: ref.context,
           kind: "note",
+          relationType: "citation",
+          label: "引用",
+          status: "confirmed",
+          explanation: "正文明确链接到该笔记。",
+          evidence: ref.context,
+          directed: true,
         });
     }
   }
+  // Markdown metadata adds semantic relationships without maintaining a second graph dataset.
+  for (const p of parsed) {
+    for (const relation of p.relations) pushRelation(p.note.id, relation);
+    for (const category of p.note.categories) {
+      const parent =
+        p.note.categoryOverview === category.path
+          ? category.path.split("/").slice(0, -1).join("/")
+          : category.path;
+      const target = categoryNotes.get(parent);
+      if (target && target.id !== p.note.id)
+        pushRelation(p.note.id, {
+          target: target.id,
+          type: "subordinate",
+          label: "分类归属",
+          status: "confirmed",
+          reason: category.reason,
+          evidence: "Markdown 分类声明：" + category.path,
+        });
+    }
+  }
+  const semantic = new Set(
+    links.filter((l) => l.structured).map((l) => l.source + "\0" + l.target),
+  );
+  const merged = links.filter(
+    (l) =>
+      l.structured ||
+      l.kind !== "note" ||
+      !semantic.has(l.source + "\0" + l.target) ||
+      l.anchor,
+  );
+  const unique = [
+    ...new Map(
+      merged.map((l) => [
+        [
+          l.source,
+          l.target || l.reference,
+          l.relationType,
+          l.label,
+          l.anchor,
+          l.structured ? "" : l.reference,
+          l.structured ? "" : l.context,
+        ].join("\0"),
+        l,
+      ]),
+    ).values(),
+  ];
   return {
+    categories: [...categoryNotes].map(([id, n]) => ({
+      id,
+      title: id.split("/").at(-1),
+      parent: id.includes("/") ? id.slice(0, id.lastIndexOf("/")) : null,
+      noteId: n.id,
+    })),
     notes,
-    links,
+    links: unique,
     attachments: [...new Map(attachments.map((a) => [a.id, a])).values()],
     search: parsed.map((p) => ({ id: p.note.id, text: p.text })),
   };

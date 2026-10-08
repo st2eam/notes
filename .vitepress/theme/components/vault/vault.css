@@ -1143,3 +1143,69 @@ body,
 .embed-mode .vault-shell .vault-drawer-backdrop {
   display: none !important;
 }
+
+.vault-classifications {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--vault-border);
+}
+.vault-classifications h2 {
+  font-size: 12px;
+  margin: 8px 0;
+}
+.vault-classifications button {
+  text-align: left;
+  font-size: 12px;
+  color: var(--vault-accent);
+  line-height: 1.6;
+}
+.vault-classifications small {
+  color: var(--vault-muted);
+}
+.vault-classifications details {
+  font-size: 11px;
+  margin: 4px 0 10px;
+}
+.vault-classifications details p {
+  line-height: 1.6;
+  margin: 5px 0;
+}
+.category-browser-filter {
+  display: block;
+  padding: 12px;
+  font-size: 12px;
+}
+.category-browser-filter select {
+  width: 100%;
+  margin-top: 6px;
+}
+.relation-evidence {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  opacity: 0.7;
+  overflow-wrap: anywhere;
+}
+.graph-relation-types {
+  border: 0;
+  padding: 4px 0;
+  font-size: 11px;
+}
+.graph-relation-types legend {
+  padding: 0;
+  color: var(--vault-muted);
+}
+.graph-relation-types label {
+  display: flex;
+  gap: 8px;
+}
+.graph-settings select {
+  width: 100%;
+  max-width: 100%;
+  font-size: 11px;
+}
+
+.category-cross-label {
+  font-size: 10px;
+  color: var(--vault-muted);
+  padding-right: 6px;
+}

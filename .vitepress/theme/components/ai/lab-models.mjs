@@ -67,17 +67,17 @@ export const retrievalQueries = [
   {
     label: '认证与权限',
     docs: [
-      { title: '认证与授权', path: '/Web/JavaScript/Network/认证与授权', keyword: 0.98, semantic: 0.70 },
-      { title: 'HTTP Cookie', path: '/Web/JavaScript/Network/HTTP Cookie', keyword: 0.72, semantic: 0.66 },
-      { title: 'Agent 工具与安全', path: '/AI/Agent工具与安全', keyword: 0.20, semantic: 0.88 },
+      { title: '认证与授权', path: '/计算机与软件/基础/网络/认证与授权', keyword: 0.98, semantic: 0.70 },
+      { title: 'HTTP Cookie', path: '/计算机与软件/基础/网络/HTTP Cookie', keyword: 0.72, semantic: 0.66 },
+      { title: 'Agent 工具与安全', path: '/人工智能/应用与评测/智能体/Agent工具与安全', keyword: 0.20, semantic: 0.88 },
     ],
   },
   {
     label: '向量检索',
     docs: [
-      { title: 'Embedding 与向量数据库', path: '/AI/Embedding与向量数据库', keyword: 0.90, semantic: 0.96 },
-      { title: 'RAG 与检索质量', path: '/AI/RAG与检索质量', keyword: 0.62, semantic: 0.94 },
-      { title: 'AI 应用开发', path: '/AI/AI应用开发', keyword: 0.38, semantic: 0.50 },
+      { title: 'Embedding 与向量数据库', path: '/人工智能/应用与评测/知识检索/Embedding与向量数据库', keyword: 0.90, semantic: 0.96 },
+      { title: 'RAG 与检索质量', path: '/人工智能/应用与评测/知识检索/RAG与检索质量', keyword: 0.62, semantic: 0.94 },
+      { title: 'AI 应用开发', path: '/人工智能/应用与评测/应用开发/AI应用开发', keyword: 0.38, semantic: 0.50 },
     ],
   },
 ]

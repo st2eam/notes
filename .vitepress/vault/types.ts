@@ -13,6 +13,12 @@ export interface VaultNote {
   folder: string;
   excerpt: string;
   headings: VaultHeading[];
+  originalPath?: string;
+  primaryCategory: string | null;
+  categories: { path: string; reason: string }[];
+  classificationStatus: "confirmed" | "provisional" | "unclassified";
+  categoryOverview?: string;
+  categoryContext?: string;
   historyId?: string;
   historyTheme?: string;
 }
@@ -23,16 +29,32 @@ export interface VaultLink {
   reference: string;
   context: string;
   kind: "note" | "attachment";
+  relationType?: "citation" | "similar" | "subordinate" | "causal";
+  label?: string;
+  status?: "confirmed" | "inferred";
+  explanation?: string;
+  evidence?: string;
+  directed?: boolean;
+  structured?: boolean;
   reason?: string | null;
   href?: string;
 }
 export interface VaultIndex {
+  categories: {
+    id: string;
+    title: string;
+    parent: string | null;
+    noteId: string;
+  }[];
   notes: VaultNote[];
   links: VaultLink[];
   attachments: { id: string; title: string; route: string }[];
 }
 export interface GraphSettings {
   query: string;
+  category: string;
+  relationTypes: string[];
+  relationStatus: "all" | "confirmed" | "inferred";
   orphans: boolean;
   tags: boolean;
   attachments: boolean;

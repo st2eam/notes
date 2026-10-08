@@ -1,3 +1,4 @@
+import { migrateNoteId } from "./migration.mjs";
 // Shared browser-safe identity, resolution and graph rules.
 export const slugify = (text) =>
   text
@@ -51,8 +52,15 @@ export function resolveLink(notes, source, reference, wiki = false) {
         path.replace(/\.html$/i, ".md"),
     );
     const candidates = (v) =>
-      v ? [v, v + ".md", v.replace(/\/$/, "") + "/index.md"] : ["index.md"];
-    const exact = (values) => notes.find((n) => values.includes(n.id));
+      path.endsWith("/")
+        ? [v ? v.replace(/\/$/, "") + "/index.md" : "index.md"]
+        : v
+          ? [v, v + ".md", v.replace(/\/$/, "") + "/index.md"]
+          : ["index.md"];
+    const exact = (values) =>
+      values
+        .map((v) => notes.find((n) => n.id === v || migrateNoteId(v) === n.id))
+        .find(Boolean);
     found = wiki
       ? path.includes("/")
         ? exact(candidates(rootPath)) || exact(candidates(local))
@@ -109,7 +117,8 @@ export function neighborhood(id, links, depth = 1) {
   return seen;
 }
 export function matchesQuery(note, query = "", text = "") {
-  const words = query.match(/-?(?:path:|tag:)?"[^"]+"|\S+/g) || [];
+  const words =
+    query.match(/-?(?:path:|tag:|category:|origin:)?"[^"]+"|\S+/g) || [];
   return words.every((word) => {
     const negative = word.startsWith("-");
     if (negative) word = word.slice(1);
@@ -117,24 +126,36 @@ export function matchesQuery(note, query = "", text = "") {
       ? "path"
       : word.startsWith("tag:")
         ? "tag"
-        : "text";
+        : word.startsWith("category:")
+          ? "category"
+          : word.startsWith("origin:")
+            ? "origin"
+            : "text";
     const value = word
-      .replace(/^(path:|tag:)/, "")
+      .replace(/^(path:|tag:|category:|origin:)/, "")
       .replace(/^"|"$/g, "")
       .toLowerCase();
     const hit =
       type === "path"
         ? note.id.toLowerCase().includes(value)
-        : type === "tag"
-          ? note.tags.some(
-              (t) =>
-                t.toLowerCase() === value.replace(/^#/, "") ||
-                t.toLowerCase().startsWith(value.replace(/^#/, "") + "/"),
-            )
-          : [note.title, note.id, ...note.aliases, text]
-              .join(" ")
-              .toLowerCase()
-              .includes(value);
+        : type === "origin"
+          ? (note.originalPath || "").toLowerCase().includes(value)
+          : type === "category"
+            ? (note.categories || []).some(
+                (c) =>
+                  c.path.toLowerCase() === value ||
+                  c.path.toLowerCase().startsWith(value + "/"),
+              )
+            : type === "tag"
+              ? note.tags.some(
+                  (t) =>
+                    t.toLowerCase() === value.replace(/^#/, "") ||
+                    t.toLowerCase().startsWith(value.replace(/^#/, "") + "/"),
+                )
+              : [note.title, note.id, ...note.aliases, text]
+                  .join(" ")
+                  .toLowerCase()
+                  .includes(value);
     return negative ? !hit : hit;
   });
 }
@@ -157,4 +178,27 @@ export function buildTree(notes) {
     branch.notes.push(note);
   }
   return root;
+}
+
+export function buildCategoryTree(notes, category = "") {
+  const virtual = notes.flatMap((note) =>
+    (note.categories || [])
+      .filter(
+        (c) =>
+          !category || c.path === category || c.path.startsWith(category + "/"),
+      )
+      .map((c) => ({
+        ...note,
+        id: c.path + "/" + note.id.split("/").at(-1),
+        vaultId: note.id,
+        categoryContext: c.path,
+      })),
+  );
+  const tree = buildTree(virtual);
+  const restore = (branch) => {
+    branch.notes = branch.notes.map((n) => ({ ...n, id: n.vaultId }));
+    for (const child of branch.folders) restore(child);
+  };
+  restore(tree);
+  return tree;
 }

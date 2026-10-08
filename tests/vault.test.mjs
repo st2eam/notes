@@ -300,7 +300,7 @@ test("History migration retains 42 entities, 171 events, 6 themes, reading paths
     const periodLink = index.links.find(
       (l) =>
         l.source === note.id &&
-        /^History\/(文明起源|古典时期|后古典时期|早期近代|近现代|当代)\.md$/.test(
+        /^历史\/分期\/(文明起源|古典时期|后古典时期|早期近代|近现代|当代)\.md$/.test(
           l.target || "",
         ),
     );
@@ -313,24 +313,27 @@ test("History migration retains 42 entities, 171 events, 6 themes, reading paths
   }
   assert.equal(events, 171);
   assert.equal(
-    index.notes.filter((n) => n.folder === "History/阅读").length,
+    index.notes.filter(
+      (n) => n.folder === "历史/史学阅读" && !n.categoryOverview,
+    ).length,
     4,
   );
   assert.ok(
     fs
-      .readFileSync("History/阅读/中国历代政治得失.md", "utf8")
+      .readFileSync("历史/史学阅读/中国历代政治得失.md", "utf8")
       .includes("第五讲、总论"),
   );
   assert.ok(
-    !index.links.some((l) => l.source.startsWith("History/") && !l.target),
+    !index.links.some((l) => l.source.startsWith("历史/") && !l.target),
   );
   assert.ok(
     !fs.existsSync(".vitepress/theme/components/history/history-data.mjs"),
   );
   const related = index.links.filter(
-    (l) => l.source.startsWith("History/笔记/") && l.context.includes("来源："),
+    (l) =>
+      l.source.startsWith("历史/") && l.structured && l.label !== "分类归属",
   );
-  assert.ok(related.length >= 130);
+  assert.equal(related.length, 129); // one duplicate WWI → May Fourth explanation is merged; both original paragraphs remain.
 });
 test("all published links resolve and retain VitePress heading slug conventions", () => {
   const index = readVault(process.cwd());

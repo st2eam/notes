@@ -1,5 +1,6 @@
+import { migrationPaths } from "./vault/migration-paths.mjs";
 /** Old site path -> new site path, without the /notes base or a file extension. */
-export const redirects = {
+const legacyRedirects = {
   "/C++/C++": "/C++/语言/C++",
   "/C++/C+++": "/C++/语言/C+++",
   "/C++/C++Lambda表达式": "/C++/语言/C++Lambda表达式",
@@ -69,14 +70,20 @@ export const redirects = {
   "/Web/JS Lib/koa/koa 请求": "/Web/服务端/Koa/koa 请求",
   "/Web/JS Lib/Node.js/Node.js": "/Web/服务端/Node.js/Node.js",
   "/Web/JS Lib/Node.js/Node.js Buffer": "/Web/服务端/Node.js/Node.js Buffer",
-  "/Web/JS Lib/Node.js/Node.js EventEmitter": "/Web/服务端/Node.js/Node.js EventEmitter",
+  "/Web/JS Lib/Node.js/Node.js EventEmitter":
+    "/Web/服务端/Node.js/Node.js EventEmitter",
   "/Web/JS Lib/Node.js/Node.js Path": "/Web/服务端/Node.js/Node.js Path",
   "/Web/JS Lib/Node.js/Node.js Stream": "/Web/服务端/Node.js/Node.js Stream",
-  "/Web/JS Lib/Node.js/Node.js Web 模块": "/Web/服务端/Node.js/Node.js Web 模块",
-  "/Web/JS Lib/Node.js/Node.js 事件循环": "/Web/服务端/Node.js/Node.js 事件循环",
-  "/Web/JS Lib/Node.js/Node.js 回调函数": "/Web/服务端/Node.js/Node.js 回调函数",
-  "/Web/JS Lib/Node.js/Node.js 文件系统": "/Web/服务端/Node.js/Node.js 文件系统",
-  "/Web/JS Lib/Node.js/使用 NPM 管理软件包": "/Web/服务端/Node.js/使用 NPM 管理软件包",
+  "/Web/JS Lib/Node.js/Node.js Web 模块":
+    "/Web/服务端/Node.js/Node.js Web 模块",
+  "/Web/JS Lib/Node.js/Node.js 事件循环":
+    "/Web/服务端/Node.js/Node.js 事件循环",
+  "/Web/JS Lib/Node.js/Node.js 回调函数":
+    "/Web/服务端/Node.js/Node.js 回调函数",
+  "/Web/JS Lib/Node.js/Node.js 文件系统":
+    "/Web/服务端/Node.js/Node.js 文件系统",
+  "/Web/JS Lib/Node.js/使用 NPM 管理软件包":
+    "/Web/服务端/Node.js/使用 NPM 管理软件包",
   "/Web/JS Lib/Node.js/配置文件": "/Web/服务端/Node.js/配置文件",
   "/Web/JS Lib/ora/ora": "/Web/库/ora",
   "/Web/MongoDB/MongoDB": "/Web/数据/MongoDB/MongoDB",
@@ -86,21 +93,43 @@ export const redirects = {
   "/Web/对象存储 OSS/Quick Start": "/Web/数据/对象存储/Quick Start",
   "/Web/对象存储 OSS/访问控制RAM": "/Web/数据/对象存储/访问控制RAM",
   "/Web/数据库/SQL与数据建模": "/Web/数据/SQL与数据建模",
-}
+};
+
+const stem = (id) => "/" + id.replace(/\.md$/, "");
+const moves = Object.fromEntries(
+  Object.entries(migrationPaths)
+    .filter(([old, next]) => old !== next)
+    .flatMap(([old, next]) => {
+      const pairs = [[stem(old), stem(next)]];
+      if (old.endsWith("/index.md"))
+        pairs.push([stem(old).replace(/\/index$/, ""), stem(next)]);
+      return pairs;
+    }),
+);
+export const redirects = Object.fromEntries(
+  Object.entries({ ...legacyRedirects, ...moves }).map(([from, to]) => [
+    from,
+    moves[to] || to,
+  ]),
+);
 
 export function normalizePath(input) {
-  if (!input) return ''
-  let path = String(input)
-  try { path = decodeURIComponent(path) } catch { /* keep the raw path */ }
-  path = path.split('?')[0].split('#')[0]
-  if (path.startsWith('/notes/')) path = path.slice('/notes'.length)
-  else if (path === '/notes') path = '/'
-  path = path.replace(/\.html$/, '').replace(/\.md$/, '')
-  if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1)
-  if (!path.startsWith('/')) path = '/' + path
-  return path
+  if (!input) return "";
+  let path = String(input);
+  try {
+    path = decodeURIComponent(path);
+  } catch {
+    /* keep the raw path */
+  }
+  path = path.split("?")[0].split("#")[0];
+  if (path.startsWith("/notes/")) path = path.slice("/notes".length);
+  else if (path === "/notes") path = "/";
+  path = path.replace(/\.html$/, "").replace(/\.md$/, "");
+  if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+  if (!path.startsWith("/")) path = "/" + path;
+  return path;
 }
 
 export function redirectTarget(input) {
-  return redirects[normalizePath(input)] ?? null
+  return redirects[normalizePath(input)] ?? null;
 }

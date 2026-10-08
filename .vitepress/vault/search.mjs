@@ -1,7 +1,11 @@
+import { matchesQuery } from './model.mjs';
 export function searchNotes(notes, documents, query, quick = false) {
-  const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const tokens = query.match(/-?(?:path:|tag:|category:|origin:)?"[^"]+"|\S+/g) || [];
+  const structured = tokens.filter(t=>/^-?(path:|tag:|category:|origin:)/.test(t)).join(' ');
+  const terms = tokens.filter(t=>!/^(-?path:|-?tag:|-?category:|-?origin:)/.test(t)).map(t=>t.replace(/^"|"$/g,'').toLowerCase());
   const texts = new Map(documents.map((d) => [d.id, d.text]));
   return notes
+    .filter(note=>matchesQuery(note,structured))
     .map((note) => {
       const title = [note.title, ...note.aliases, note.id]
         .join(" ")

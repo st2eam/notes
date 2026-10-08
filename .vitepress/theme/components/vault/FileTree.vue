@@ -35,8 +35,20 @@ const emit = defineEmits(["toggle", "open"]);
         @click="emit('open', note, $event)"
       >
         <Icon name="file" :size="14" /><span>{{
-          note.id.endsWith("/index.md") ? "总览" : note.title
-        }}</span>
+          note.id.endsWith("/index.md") &&
+          (!note.categoryContext ||
+            note.categoryOverview === note.categoryContext)
+            ? "总览"
+            : note.title
+        }}</span
+        ><small
+          v-if="
+            note.categoryContext &&
+            note.categoryContext !== note.primaryCategory
+          "
+          class="category-cross-label"
+          >交叉</small
+        >
       </button>
     </li>
   </ul>

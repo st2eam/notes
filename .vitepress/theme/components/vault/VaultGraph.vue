@@ -64,8 +64,8 @@ async function loadFilterText() {
   if (
     documents.value.length ||
     !queries.some((q) =>
-      (q.match(/-?(?:path:|tag:)?"[^"]+"|\S+/g) || []).some(
-        (w) => !/^(-?path:|-?tag:)/.test(w),
+      (q.match(/-?(?:path:|tag:|category:|origin:)?"[^"]+"|\S+/g) || []).some(
+        (w) => !/^(-?path:|-?tag:|-?category:|-?origin:)/.test(w),
       ),
     )
   )
@@ -159,8 +159,8 @@ function draw() {
     ctx.lineTo(e.target.x, e.target.y);
     ctx.stroke();
     if (settings.value.arrows) {
-      arrow(ctx, e.source, e.target);
-      if (e.bidirectional) arrow(ctx, e.target, e.source);
+      if (e.forward) arrow(ctx, e.source, e.target);
+      if (e.backward) arrow(ctx, e.target, e.source);
     }
   }
   for (const n of nodes) {
@@ -595,9 +595,49 @@ onBeforeUnmount(() => {
       <details open>
         <summary>过滤</summary>
         <label
+          >分类<select v-model="settings.category" aria-label="图谱分类">
+            <option value="">全部分类</option>
+            <option
+              v-for="category in index.categories || []"
+              :key="category.id"
+              :value="category.id"
+            >
+              {{ category.id }}
+            </option>
+          </select></label
+        >
+        <label
+          >关系状态<select
+            v-model="settings.relationStatus"
+            aria-label="图谱关系状态"
+          >
+            <option value="all">全部关系</option>
+            <option value="confirmed">已确认</option>
+            <option value="inferred">推断</option>
+          </select></label
+        >
+        <fieldset class="graph-relation-types">
+          <legend>关系类型</legend>
+          <label
+            v-for="type in [
+              { id: 'citation', name: '引用' },
+              { id: 'similar', name: '相似主题' },
+              { id: 'subordinate', name: '从属' },
+              { id: 'causal', name: '因果' },
+            ]"
+            :key="type.id"
+          >
+            <input
+              v-model="settings.relationTypes"
+              type="checkbox"
+              :value="type.id"
+            />{{ type.name }}
+          </label>
+        </fieldset>
+        <label
           >搜索<input
             v-model="settings.query"
-            placeholder="搜索笔记、path:History/、tag:历史"
+            placeholder="搜索笔记、path:历史/、tag:历史"
             aria-label="图谱过滤" /></label
         ><label
           v-for="[key, title] of [
@@ -616,7 +656,7 @@ onBeforeUnmount(() => {
         <div v-for="(group, i) in settings.groups" :key="i" class="color-group">
           <input
             v-model="group.query"
-            placeholder="path:History/"
+            placeholder="path:历史/"
             aria-label="分组筛选"
           /><input
             v-model="group.color"

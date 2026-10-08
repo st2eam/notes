@@ -65,7 +65,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
-      { text: "History", link: "/History/" },
+      { text: "历史", link: "/历史/" },
     ],
     logo: "/logo.svg",
     sidebar,

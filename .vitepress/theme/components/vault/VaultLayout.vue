@@ -10,8 +10,19 @@ import {
 } from "vue";
 import { useData, useRouter, withBase } from "vitepress";
 import { data as index } from "../../../vault/vault.data";
-import { buildTree, decode, neighborhood } from "../../../vault/model.mjs";
-import { restoreWorkspace, readStorage } from "../../../vault/workspace.mjs";
+import {
+  buildTree,
+  buildCategoryTree,
+  decode,
+  neighborhood,
+  matchesQuery,
+} from "../../../vault/model.mjs";
+import {
+  restoreWorkspace,
+  readStorage,
+  migrateGraphStorage,
+} from "../../../vault/workspace.mjs";
+import { migrateQuery } from "../../../vault/migration.mjs";
 import { searchNotes } from "../../../vault/search.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
@@ -25,6 +36,29 @@ const { isEmbedded } = useEmbedMode();
 const notes = index.notes as VaultNote[],
   links = index.links as VaultLink[];
 const tree = buildTree(notes);
+const categoryFilter = ref("");
+const categoryTree = computed(() =>
+  buildCategoryTree(notes, categoryFilter.value),
+);
+function browseCategory(category: string) {
+  pane.value = "categories";
+  categoryFilter.value = category;
+  leftOpen.value = true;
+  expanded.value = category.split("/").map((_, i) =>
+    category
+      .split("/")
+      .slice(0, i + 1)
+      .join("/"),
+  );
+}
+const relationName = (l: VaultLink) =>
+  l.label ||
+  {
+    citation: "引用",
+    similar: "相似主题",
+    subordinate: "从属",
+    causal: "因果",
+  }[l.relationType || "citation"];
 type Tab = {
   key: string;
   title: string;
@@ -38,7 +72,7 @@ const leftOpen = ref(true),
   rightOpen = ref(true);
 const leftWidth = ref(250),
   rightWidth = ref(280);
-const expanded = ref<string[]>(["History"]);
+const expanded = ref<string[]>(["历史"]);
 const pane = ref("files");
 const query = ref("");
 const documents = ref<{ id: string; text: string }[]>([]);
@@ -105,15 +139,28 @@ const outlinks = computed(() =>
   ),
 );
 function dedupe(items: VaultLink[], key: "source" | "target") {
-  return [...new Map(items.map((l) => [l[key] || l.reference, l])).values()];
+  return [
+    ...new Map(
+      items.map((l) => [
+        (l[key] || l.reference) +
+          "\0" +
+          (l.relationType || "citation") +
+          "\0" +
+          (l.label || "") +
+          "\0" +
+          l.anchor,
+        l,
+      ]),
+    ).values(),
+  ];
 }
 const commands = computed(() =>
   [
     { title: "打开全局图谱", icon: "graph", action: () => openGraph() },
     {
-      title: "打开 History 图谱",
+      title: "打开历史图谱",
       icon: "graph",
-      action: () => openGraph("path:History/"),
+      action: () => openGraph("path:历史/"),
     },
     { title: "快速切换笔记", icon: "file", action: () => showModal("quick") },
     { title: "全文搜索", icon: "search", action: () => showSearch() },
@@ -174,12 +221,12 @@ function routeTab(): Tab {
       : new URL(window.location.href);
   const graph = url.searchParams.get("view") === "graph";
   if (graph) {
-    const filter = url.searchParams.get("filter") || "";
+    const filter = migrateQuery(url.searchParams.get("filter") || "");
     return {
       key: "graph:" + filter,
       noteId: current.value?.id,
-      title: filter.startsWith("path:History")
-        ? "History 图谱"
+      title: /^(path:历史|path:"历史)/.test(filter)
+        ? "历史图谱"
         : filter
           ? "筛选图谱"
           : "全局图谱",
@@ -252,11 +299,12 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
   }
 }
 function openGraph(filter = "") {
+  filter = migrateQuery(filter);
   const tab = {
     key: "graph:" + filter,
     noteId: current.value?.id,
-    title: filter.startsWith("path:History")
-      ? "History 图谱"
+    title: /^(path:历史|path:"历史)/.test(filter)
+      ? "历史图谱"
       : filter
         ? "筛选图谱"
         : "全局图谱",
@@ -565,6 +613,7 @@ onMounted(() => {
     rightOpen.value = false;
     return;
   }
+  migrateGraphStorage();
   const state = restoreWorkspace(readStorage(storage), notes);
   tabs.value = state.tabs;
   leftWidth.value = state.leftWidth;
@@ -701,6 +750,13 @@ onBeforeUnmount(() => {
           @click="showSearch"
         >
           <Icon name="search" /></button
+        ><button
+          :class="['icon-button', { selected: pane === 'categories' }]"
+          aria-label="分类浏览"
+          title="分类浏览"
+          @click="pane = 'categories'"
+        >
+          <Icon name="list" /></button
         ><span /><button
           class="icon-button mobile-only"
           aria-label="关闭文件侧栏"
@@ -731,6 +787,29 @@ onBeforeUnmount(() => {
       <div v-if="pane === 'files'" class="file-tree-scroll">
         <FileTree
           :branch="tree"
+          :current="current?.id || ''"
+          :expanded="expanded"
+          @toggle="toggleFolder"
+          @open="openNote"
+        />
+      </div>
+      <div v-else-if="pane === 'categories'" class="file-tree-scroll">
+        <label class="category-browser-filter"
+          >分类
+          <select v-model="categoryFilter" aria-label="浏览分类">
+            <option value="">全部分类</option>
+            <option
+              v-for="category in index.categories"
+              :key="category.id"
+              :value="category.id"
+            >
+              {{ category.id }}
+            </option>
+          </select>
+        </label>
+        <p class="empty-hint">同一笔记可出现在多个分类中，文件只保存一份。</p>
+        <FileTree
+          :branch="categoryTree"
           :current="current?.id || ''"
           :expanded="expanded"
           @toggle="toggleFolder"
@@ -950,6 +1029,31 @@ onBeforeUnmount(() => {
         </button>
       </div>
       <div class="vault-right-scroll">
+        <section
+          v-if="current?.categories.length"
+          class="vault-classifications"
+        >
+          <h2>
+            分类
+            <small v-if="current.classificationStatus === 'provisional'"
+              >待补充正文</small
+            >
+          </h2>
+          <div v-for="category in current.categories" :key="category.path">
+            <button @click="browseCategory(category.path)">
+              {{ category.path }}
+              <small>{{
+                category.path === current.primaryCategory
+                  ? "主分类"
+                  : "交叉分类"
+              }}</small>
+            </button>
+            <details>
+              <summary>分类理由</summary>
+              <p>{{ category.reason }}</p>
+            </details>
+          </div>
+        </section>
         <section v-if="rightTab === 'outline'" class="vault-outline">
           <h2>目录</h2>
           <button
@@ -974,11 +1078,18 @@ onBeforeUnmount(() => {
             </h2>
             <button
               v-for="link in backlinks"
-              :key="link.source"
+              :key="link.source + link.relationType + link.label + link.anchor"
               @click="openRelation(link, true, $event)"
             >
               <strong>{{ relationTitle(link, true) }}</strong>
-              <p>{{ link.context }}</p>
+              <small
+                >{{ relationName(link) }} ·
+                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
+              >
+              <p>{{ link.explanation || link.context }}</p>
+              <span class="relation-evidence"
+                >证据：{{ link.evidence || link.context }}</span
+              >
             </button>
             <p v-if="!backlinks.length" class="empty-hint">
               没有笔记链接到此处
@@ -990,7 +1101,12 @@ onBeforeUnmount(() => {
             </h2>
             <button
               v-for="link in outlinks"
-              :key="link.target || link.reference"
+              :key="
+                (link.target || link.reference) +
+                link.relationType +
+                link.label +
+                link.anchor
+              "
               :disabled="!link.target"
               @click="openRelation(link, false, $event)"
             >
@@ -1000,7 +1116,14 @@ onBeforeUnmount(() => {
                   · {{ !link.target ? "未解析" : "标题未找到" }}</small
                 ></strong
               >
-              <p>{{ link.context }}</p>
+              <small
+                >{{ relationName(link) }} ·
+                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
+              >
+              <p>{{ link.explanation || link.context }}</p>
+              <span class="relation-evidence"
+                >证据：{{ link.evidence || link.context }}</span
+              >
             </button>
             <p v-if="!outlinks.length" class="empty-hint">当前笔记没有出链</p>
           </section></template

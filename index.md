@@ -1,20 +1,38 @@
+---
+originalPath: index.md
+primaryCategory: 计算机与软件
+categories:
+  - path: 计算机与软件
+    reason: 全站知识库入口，目录身份保留在站点根路径；以计算机与软件作为主分类，并提供七个领域的交叉导航。
+  - path: 人工智能
+    reason: 本站首页提供该领域的阅读与图谱入口。
+  - path: 数学与统计
+    reason: 本站首页提供该领域的阅读与图谱入口。
+  - path: 设计
+    reason: 本站首页提供该领域的阅读与图谱入口。
+  - path: 影像
+    reason: 本站首页提供该领域的阅读与图谱入口。
+  - path: 历史
+    reason: 本站首页提供该领域的阅读与图谱入口。
+  - path: 人文语言
+    reason: 本站首页提供该领域的阅读与图谱入口。
+classificationStatus: confirmed
+relations: []
+tags: []
+---
 # Steam's Notes
 
 这是我的网页知识库。选择左侧笔记开始阅读，或打开[全局图谱](?view=graph)探索笔记之间的链接。
 
 ## 知识模块
 
-- [[AI/index|AI]]
-- [[C++/index|C++]]
-- [[Design/index|Design]]
-- [[Design Patterns/index|Design Patterns]]
-- [[Fundamentals/index|Fundamentals]]
-- [[History/index|History]]
-- [[Language/index|Language]]
-- [[Photography/index|Photography]]
-- [[Python/index|Python]]
-- [[Tools/index|Tools]]
-- [[Web/index|Web]]
+- [[计算机与软件/index|计算机与软件]]
+- [[人工智能/index|人工智能]]
+- [[数学与统计/index|数学与统计]]
+- [[设计/index|设计]]
+- [[影像/index|影像]]
+- [[历史/index|历史]]
+- [[人文语言/index|人文语言]]
 
 ## 使用方式
 
