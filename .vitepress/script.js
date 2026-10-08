@@ -41,7 +41,7 @@ function walkDir(dir) {
                     });
                 }
             } else {
-                if (['/api-examples.md', '/index.md', '/markdown-examples.md'].some(item => file.replace('./', '') === item)) return
+                if (['/api-examples.md', '/index.md', '/markdown-examples.md', '/README.md', '/AGENTS.md'].some(item => file.replace('./', '') === item)) return
                 if (path.extname(file) === '.md') {
                     results.push({
                         text: path.normalize(file) === 'History/index.md' ? '历史图谱' : path.basename(file, '.md') === 'LLM Wiki 可视化教程' ? 'LLM Wiki' : path.basename(file, '.md'),

@@ -5,12 +5,14 @@
   },
   "scripts": {
     "docs:dev": "node .vitepress/script.js && vitepress dev",
-    "docs:build": "node .vitepress/script.js && vitepress build && node .vitepress/write-redirects.mjs",
-    "docs:preview": "vitepress preview",
+    "docs:build": "node .vitepress/script.js && vitepress build && node .vitepress/write-redirects.mjs && node .vitepress/write-vault-assets.mjs",
+    "docs:preview": "node .vitepress/preview.mjs",
     "docs:sidebar": "node .vitepress/script.js",
     "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
-    "cytoscape": "^3.34.3"
+    "d3-force": "^3.0.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^15.0.2"
   }
 }

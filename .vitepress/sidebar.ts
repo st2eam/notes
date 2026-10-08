@@ -20,6 +20,10 @@ export default [
                 "link": "/AI/Embedding与向量数据库.md"
             },
             {
+                "text": "index",
+                "link": "/AI/index.md"
+            },
+            {
                 "text": "LLM Wiki",
                 "link": "/AI/LLM Wiki 可视化教程.md"
             },
@@ -53,6 +57,10 @@ export default [
         "text": "C++",
         "collapsed": true,
         "items": [
+            {
+                "text": "index",
+                "link": "/C++/index.md"
+            },
             {
                 "text": "QT",
                 "collapsed": true,
@@ -160,6 +168,10 @@ export default [
         "collapsed": true,
         "items": [
             {
+                "text": "index",
+                "link": "/Design/index.md"
+            },
+            {
                 "text": "动效设计",
                 "link": "/Design/动效设计.md"
             },
@@ -185,6 +197,10 @@ export default [
         "text": "Design Patterns",
         "collapsed": true,
         "items": [
+            {
+                "text": "index",
+                "link": "/Design Patterns/index.md"
+            },
             {
                 "text": "中介者模式",
                 "link": "/Design Patterns/中介者模式.md"
@@ -296,6 +312,10 @@ export default [
         "collapsed": true,
         "items": [
             {
+                "text": "index",
+                "link": "/Fundamentals/index.md"
+            },
+            {
                 "text": "Java",
                 "link": "/Fundamentals/Java.md"
             },
@@ -356,6 +376,232 @@ export default [
             {
                 "text": "当代",
                 "link": "/History/当代.md"
+            },
+            {
+                "text": "主题",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "交流与贸易",
+                        "link": "/History/主题/交流与贸易.md"
+                    },
+                    {
+                        "text": "农业与生态",
+                        "link": "/History/主题/农业与生态.md"
+                    },
+                    {
+                        "text": "冲突与变革",
+                        "link": "/History/主题/冲突与变革.md"
+                    },
+                    {
+                        "text": "增长与福祉",
+                        "link": "/History/主题/增长与福祉.md"
+                    },
+                    {
+                        "text": "权力与制度",
+                        "link": "/History/主题/权力与制度.md"
+                    },
+                    {
+                        "text": "知识与传播",
+                        "link": "/History/主题/知识与传播.md"
+                    }
+                ]
+            },
+            {
+                "text": "笔记",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "东周与诸子",
+                        "link": "/History/笔记/东周与诸子.md"
+                    },
+                    {
+                        "text": "中华人民共和国成立",
+                        "link": "/History/笔记/中华人民共和国成立.md"
+                    },
+                    {
+                        "text": "五四运动",
+                        "link": "/History/笔记/五四运动.md"
+                    },
+                    {
+                        "text": "亚非去殖民化",
+                        "link": "/History/笔记/亚非去殖民化.md"
+                    },
+                    {
+                        "text": "仰韶文化",
+                        "link": "/History/笔记/仰韶文化.md"
+                    },
+                    {
+                        "text": "元王朝",
+                        "link": "/History/笔记/元王朝.md"
+                    },
+                    {
+                        "text": "全球化加速",
+                        "link": "/History/笔记/全球化加速.md"
+                    },
+                    {
+                        "text": "印度河文明",
+                        "link": "/History/笔记/印度河文明.md"
+                    },
+                    {
+                        "text": "古埃及早王朝",
+                        "link": "/History/笔记/古埃及早王朝.md"
+                    },
+                    {
+                        "text": "唐王朝",
+                        "link": "/History/笔记/唐王朝.md"
+                    },
+                    {
+                        "text": "商王朝",
+                        "link": "/History/笔记/商王朝.md"
+                    },
+                    {
+                        "text": "太平天国运动",
+                        "link": "/History/笔记/太平天国运动.md"
+                    },
+                    {
+                        "text": "孔雀王朝",
+                        "link": "/History/笔记/孔雀王朝.md"
+                    },
+                    {
+                        "text": "孙中山",
+                        "link": "/History/笔记/孙中山.md"
+                    },
+                    {
+                        "text": "宋代商业与技术",
+                        "link": "/History/笔记/宋代商业与技术.md"
+                    },
+                    {
+                        "text": "工业革命",
+                        "link": "/History/笔记/工业革命.md"
+                    },
+                    {
+                        "text": "广州贸易体系",
+                        "link": "/History/笔记/广州贸易体系.md"
+                    },
+                    {
+                        "text": "张骞",
+                        "link": "/History/笔记/张骞.md"
+                    },
+                    {
+                        "text": "改革开放",
+                        "link": "/History/笔记/改革开放.md"
+                    },
+                    {
+                        "text": "明治维新",
+                        "link": "/History/笔记/明治维新.md"
+                    },
+                    {
+                        "text": "明王朝",
+                        "link": "/History/笔记/明王朝.md"
+                    },
+                    {
+                        "text": "晚明白银贸易",
+                        "link": "/History/笔记/晚明白银贸易.md"
+                    },
+                    {
+                        "text": "汉王朝",
+                        "link": "/History/笔记/汉王朝.md"
+                    },
+                    {
+                        "text": "清前期",
+                        "link": "/History/笔记/清前期.md"
+                    },
+                    {
+                        "text": "玄奘",
+                        "link": "/History/笔记/玄奘.md"
+                    },
+                    {
+                        "text": "瓜分非洲",
+                        "link": "/History/笔记/瓜分非洲.md"
+                    },
+                    {
+                        "text": "秦统一",
+                        "link": "/History/笔记/秦统一.md"
+                    },
+                    {
+                        "text": "第一次世界大战",
+                        "link": "/History/笔记/第一次世界大战.md"
+                    },
+                    {
+                        "text": "第二次世界大战",
+                        "link": "/History/笔记/第二次世界大战.md"
+                    },
+                    {
+                        "text": "罗马帝国",
+                        "link": "/History/笔记/罗马帝国.md"
+                    },
+                    {
+                        "text": "良渚古城",
+                        "link": "/History/笔记/良渚古城.md"
+                    },
+                    {
+                        "text": "苏美尔城邦",
+                        "link": "/History/笔记/苏美尔城邦.md"
+                    },
+                    {
+                        "text": "莫卧儿帝国",
+                        "link": "/History/笔记/莫卧儿帝国.md"
+                    },
+                    {
+                        "text": "蒙古帝国",
+                        "link": "/History/笔记/蒙古帝国.md"
+                    },
+                    {
+                        "text": "跨大西洋奴隶贸易",
+                        "link": "/History/笔记/跨大西洋奴隶贸易.md"
+                    },
+                    {
+                        "text": "辛亥革命",
+                        "link": "/History/笔记/辛亥革命.md"
+                    },
+                    {
+                        "text": "阿契美尼德帝国",
+                        "link": "/History/笔记/阿契美尼德帝国.md"
+                    },
+                    {
+                        "text": "阿拔斯王朝",
+                        "link": "/History/笔记/阿拔斯王朝.md"
+                    },
+                    {
+                        "text": "阿育王",
+                        "link": "/History/笔记/阿育王.md"
+                    },
+                    {
+                        "text": "马尼拉大帆船贸易",
+                        "link": "/History/笔记/马尼拉大帆船贸易.md"
+                    },
+                    {
+                        "text": "马里帝国",
+                        "link": "/History/笔记/马里帝国.md"
+                    },
+                    {
+                        "text": "鸦片战争",
+                        "link": "/History/笔记/鸦片战争.md"
+                    }
+                ]
+            },
+            {
+                "text": "阅读",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "中国历代政治得失",
+                        "link": "/History/阅读/中国历代政治得失.md"
+                    },
+                    {
+                        "text": "人类简史 · 人类的融合",
+                        "link": "/History/阅读/人类简史 · 人类的融合.md"
+                    },
+                    {
+                        "text": "人类简史 · 农业革命",
+                        "link": "/History/阅读/人类简史 · 农业革命.md"
+                    },
+                    {
+                        "text": "人类简史 · 科学革命",
+                        "link": "/History/阅读/人类简史 · 科学革命.md"
+                    }
+                ]
             }
         ]
     },
@@ -363,6 +609,10 @@ export default [
         "text": "Language",
         "collapsed": true,
         "items": [
+            {
+                "text": "index",
+                "link": "/Language/index.md"
+            },
             {
                 "text": "日语",
                 "link": "/Language/日语.md"
@@ -373,6 +623,10 @@ export default [
         "text": "Photography",
         "collapsed": true,
         "items": [
+            {
+                "text": "index",
+                "link": "/Photography/index.md"
+            },
             {
                 "text": "后期处理",
                 "link": "/Photography/后期处理.md"
@@ -428,6 +682,10 @@ export default [
                         "link": "/Python/Flask/项目布局.md"
                     }
                 ]
+            },
+            {
+                "text": "index",
+                "link": "/Python/index.md"
             },
             {
                 "text": "NLP",
@@ -616,6 +874,10 @@ export default [
             {
                 "text": "Hosts与DNS",
                 "link": "/Tools/Hosts与DNS.md"
+            },
+            {
+                "text": "index",
+                "link": "/Tools/index.md"
             },
             {
                 "text": "测试与CI",
@@ -1375,6 +1637,10 @@ export default [
                 "text": "微信小程序",
                 "collapsed": true,
                 "items": [
+                    {
+                        "text": "index",
+                        "link": "/Web/微信小程序/index.md"
+                    },
                     {
                         "text": "产品开发流程",
                         "link": "/Web/微信小程序/产品开发流程.md"

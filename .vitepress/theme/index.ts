@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
-import './style.css'
+import './components/vault/vault.css'
 import './embed.css'
 import './components/design/demo.css'
 import MotionLab from './components/design/MotionLab.vue'
@@ -23,8 +23,6 @@ import AttentionLab from './components/ai/AttentionLab.vue'
 import RetrievalLab from './components/ai/RetrievalLab.vue'
 import ToolSafetyLab from './components/ai/ToolSafetyLab.vue'
 import './components/ai/ai-lab.css'
-import HistoryGraph from './components/history/HistoryGraph.vue'
-import './components/history/history.css'
 
 import { withBase, type Theme } from 'vitepress'
 import { redirectTarget } from '../redirects.mjs'
@@ -65,6 +63,5 @@ export default {
     app.component('AttentionLab', AttentionLab)
     app.component('RetrievalLab', RetrievalLab)
     app.component('ToolSafetyLab', ToolSafetyLab)
-    app.component('HistoryGraph', HistoryGraph)
   },
 } satisfies Theme

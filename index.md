@@ -1,32 +1,26 @@
----
-layout: home
+# Steam's Notes
 
-hero:
-  name: "Steam's Notes"
-  text: "个人知识库"
-  tagline: 记录学习与思考的点滴
-  actions:
-    - theme: brand
-      text: 开始阅读
-      link: /Web/
-    - theme: alt
-      text: GitHub
-      link: https://github.com/st2eam/notes
-    - theme: alt
-      text: History 图谱
-      link: /History/
+这是我的网页知识库。选择左侧笔记开始阅读，或打开[全局图谱](?view=graph)探索笔记之间的链接。
 
-features:
-  - title: Web 开发
-    details: JavaScript、React、Vue、CSS 等前端技术笔记
-  - title: AI
-    details: 大语言模型、Embedding、RAG、Agent 等 AI 技术笔记
-  - title: History
-    details: 从人物、事件与主题组成的关系网络，探索中国与世界历史
-  - title: 摄影
-    details: 曝光三要素、构图法则、后期处理等摄影知识
-  - title: 编程语言
-    details: C++、Python 等编程语言学习记录
-  - title: 设计模式
-    details: 常用设计模式与架构思想总结
----
+## 知识模块
+
+- [[AI/index|AI]]
+- [[C++/index|C++]]
+- [[Design/index|Design]]
+- [[Design Patterns/index|Design Patterns]]
+- [[Fundamentals/index|Fundamentals]]
+- [[History/index|History]]
+- [[Language/index|Language]]
+- [[Photography/index|Photography]]
+- [[Python/index|Python]]
+- [[Tools/index|Tools]]
+- [[Web/index|Web]]
+
+## 使用方式
+
+- **快速切换**：按 Ctrl / ⌘ + O，输入笔记名称。
+- **全文搜索**：点击左侧搜索，在正文与标题中查找。
+- **命令面板**：按 Ctrl / ⌘ + P，切换主题、侧栏与图谱。
+- **链接探索**：悬停预览，点击打开，Ctrl / ⌘ 点击在新标签页打开。
+
+笔记在本地维护，通过 Git 发布。标签页与阅读设置保存在此浏览器。

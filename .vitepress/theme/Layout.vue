@@ -1,11 +1,4 @@
 <script setup lang="ts">
-import DefaultTheme from 'vitepress/theme'
-import { useEmbedMode } from './composables/useEmbedMode'
-
-const { Layout } = DefaultTheme
-const { isEmbedded } = useEmbedMode()
+import VaultLayout from "./components/vault/VaultLayout.vue";
 </script>
-
-<template>
-  <Layout />
-</template>
+<template><VaultLayout /></template>
