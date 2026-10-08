@@ -1327,3 +1327,21 @@ html.embed-mode #app {
   width: 100%;
   max-width: 100%;
 }
+
+/* Desktop embeds reserve space for a persistent outline instead of overlaying it. */
+.embed-mode .vault-shell.embed-desktop {
+  --embed-outline-width: 240px;
+}
+.embed-mode .vault-shell.embed-desktop .vault-center {
+  margin-left: var(--embed-outline-width);
+  width: calc(100% - var(--embed-outline-width));
+  min-height: calc(100dvh - 42px);
+}
+.embed-mode .vault-shell.embed-desktop .vault-right {
+  width: var(--embed-outline-width);
+  z-index: 20;
+  box-shadow: none;
+}
+.embed-mode .vault-shell.embed-desktop .vault-right .mobile-only {
+  display: none !important;
+}

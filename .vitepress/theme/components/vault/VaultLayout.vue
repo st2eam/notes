@@ -34,6 +34,19 @@ const router = useRouter();
 const { page, isDark: vpIsDark, site } = useData();
 const isDark = ref(false);
 const { isEmbedded } = useEmbedMode();
+const embedDesktop = ref(false);
+let embedMedia: MediaQueryList | undefined;
+function updateEmbedLayout() {
+  embedDesktop.value = Boolean(isEmbedded.value && embedMedia?.matches);
+  leftOpen.value = false;
+  rightOpen.value = embedDesktop.value;
+  rightTab.value = "outline";
+}
+function toggleEmbedOutline() {
+  leftOpen.value = false;
+  rightTab.value = "outline";
+  rightOpen.value = embedDesktop.value || !rightOpen.value;
+}
 const notes = index.notes as VaultNote[],
   links = index.links as VaultLink[];
 const tree = buildTree(notes);
@@ -303,7 +316,7 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
     (isEmbedded.value || window.innerWidth <= 760)
   ) {
     leftOpen.value = false;
-    rightOpen.value = false;
+    rightOpen.value = embedDesktop.value;
   }
 }
 function openGraph(filter = "") {
@@ -329,7 +342,7 @@ function openGraph(filter = "") {
     (isEmbedded.value || window.innerWidth <= 760)
   ) {
     leftOpen.value = false;
-    rightOpen.value = false;
+    rightOpen.value = embedDesktop.value;
   }
 }
 function closeTab(key: string) {
@@ -442,7 +455,7 @@ function shortcut(e: KeyboardEvent) {
     preview.value = null;
     if (isEmbedded.value || window.innerWidth <= 760) {
       leftOpen.value = false;
-      rightOpen.value = false;
+      rightOpen.value = embedDesktop.value;
     }
   }
   if (isEmbedded.value || !(e.metaKey || e.ctrlKey) || e.altKey) return;
@@ -597,7 +610,8 @@ function relationTitle(link: VaultLink, incoming = false) {
 }
 function jumpHeading(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  if (isEmbedded.value || window.innerWidth <= 760) rightOpen.value = false;
+  if (!embedDesktop.value && (isEmbedded.value || window.innerWidth <= 760))
+    rightOpen.value = false;
 }
 watch(
   [
@@ -635,8 +649,9 @@ if (initialNote) {
 }
 onMounted(() => {
   if (isEmbedded.value) {
-    leftOpen.value = false;
-    rightOpen.value = false;
+    embedMedia = window.matchMedia("(min-width: 761px)");
+    updateEmbedLayout();
+    embedMedia.addEventListener("change", updateEmbedLayout);
     isDark.value = vpIsDark.value;
     oldAfter = router.onAfterRouteChanged;
     router.onAfterRouteChanged = async (to) => {
@@ -684,6 +699,7 @@ onMounted(() => {
   window.addEventListener("popstate", syncRoute);
 });
 onBeforeUnmount(() => {
+  embedMedia?.removeEventListener("change", updateEmbedLayout);
   window.removeEventListener("keydown", shortcut);
   window.removeEventListener("popstate", syncRoute);
   router.onAfterRouteChanged = oldAfter;
@@ -694,6 +710,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     class="vault-shell"
+    :class="{ 'embed-desktop': embedDesktop }"
     :style="{
       '--left-width': leftWidth + 'px',
       '--right-width': rightWidth + 'px',
@@ -717,14 +734,10 @@ onBeforeUnmount(() => {
         <Icon name="folder" />笔记
       </button>
       <button
-        :aria-expanded="rightOpen"
+        :aria-expanded="rightOpen || embedDesktop"
         aria-controls="vault-note-details"
-        :class="{ selected: rightOpen }"
-        @click="
-          rightOpen = !rightOpen;
-          leftOpen = false;
-          rightTab = 'outline';
-        "
+        :class="{ selected: rightOpen || embedDesktop }"
+        @click="toggleEmbedOutline"
       >
         <Icon name="list" />目录
       </button>
@@ -797,7 +810,7 @@ onBeforeUnmount(() => {
       </button>
     </nav>
     <button
-      v-if="leftOpen || rightOpen"
+      v-if="leftOpen || (rightOpen && !embedDesktop)"
       class="vault-drawer-backdrop"
       aria-label="关闭侧栏"
       @click="
@@ -1082,7 +1095,7 @@ onBeforeUnmount(() => {
     />
     <aside
       id="vault-note-details"
-      v-show="rightOpen"
+      v-show="rightOpen || embedDesktop"
       class="vault-right"
       aria-label="笔记辅助面板"
     >
@@ -1096,6 +1109,7 @@ onBeforeUnmount(() => {
           <Icon name="list" /></button
         ><button
           :class="['icon-button', { selected: rightTab === 'links' }]"
+          v-if="!embedDesktop"
           aria-label="双向链接"
           title="反向链接与出链"
           @click="rightTab = 'links'"
