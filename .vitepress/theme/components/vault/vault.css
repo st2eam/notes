@@ -1345,3 +1345,20 @@ html.embed-mode #app {
 .embed-mode .vault-shell.embed-desktop .vault-right .mobile-only {
   display: none !important;
 }
+
+/* Embedded reading uses the host's semantic colors, including the left outline.
+   The standalone Obsidian palette remains unchanged. */
+html.embed-mode[data-embed-palette="parent"] {
+  --vault-bg: var(--embed-background);
+  --vault-text: var(--embed-text);
+  --vault-side: color-mix(in srgb, var(--embed-background) 97%, var(--embed-text));
+  --vault-ribbon: var(--vault-side);
+  --vault-tab: var(--vault-side);
+  --vault-muted: color-mix(in srgb, var(--embed-text) 75%, var(--embed-background));
+  --vault-faint: var(--vault-muted);
+  --vault-border: color-mix(in srgb, var(--embed-text) 18%, var(--embed-background));
+  --vault-hover: color-mix(in srgb, var(--embed-text) 8%, var(--embed-background));
+  --vault-selected: color-mix(in srgb, var(--embed-accent) 14%, var(--embed-background));
+  --vault-accent: var(--embed-accent);
+  --vault-accent-bg: var(--vault-selected);
+}

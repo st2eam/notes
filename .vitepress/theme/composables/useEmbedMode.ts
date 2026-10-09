@@ -1,4 +1,4 @@
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, watch, onMounted, onBeforeUnmount } from "vue";
 import { useData } from "vitepress";
 import { embedOptions, validEmbedMessage } from "../../vault/embed.mjs";
 
@@ -25,6 +25,16 @@ export function useEmbedMode() {
     } catch {
       /* Cross-origin parents configure the frame via messages. */
     }
+    const paletteKeys = ["background", "text", "accent"];
+    const clearPalette = () => {
+      delete document.documentElement.dataset.embedPalette;
+      for (const key of paletteKeys)
+        document.documentElement.style.removeProperty(`--embed-${key}`);
+    };
+    let parentDark = media.matches;
+    const stopThemeWatch = watch(isDark, (value) => {
+      if (value !== parentDark) clearPalette();
+    });
     const apply = () => {
       let dark = media.matches;
       if (parentRoot) {
@@ -37,9 +47,25 @@ export function useEmbedMode() {
           parentRoot.classList.contains("dark") ||
           (theme !== "light" && scheme === "dark");
       }
+      parentDark = dark;
       isDark.value = options.theme === "auto" ? dark : options.theme === "dark";
       document.documentElement.classList.toggle("dark", isDark.value);
       document.documentElement.dataset.embedBackground = options.background;
+      clearPalette();
+      // Inherit the host palette only while following its theme. Explicit theme
+      // overrides retain the corresponding standalone palette.
+      if (parentRoot && (options.theme === "auto" || isDark.value === dark)) {
+        const host = window.parent.document;
+        const style = window.parent.getComputedStyle(host.body || parentRoot);
+        const background = style.backgroundColor;
+        if (background !== "transparent" && background !== "rgba(0, 0, 0, 0)") {
+          const link = host.querySelector("main a, article a, a");
+          const accent = link ? window.parent.getComputedStyle(link).color : style.color;
+          for (const [key, value] of Object.entries({ background, text: style.color, accent }))
+            document.documentElement.style.setProperty(`--embed-${key}`, value);
+          document.documentElement.dataset.embedPalette = "parent";
+        }
+      }
     };
     const receive = (event: MessageEvent) => {
       if (!validEmbedMessage(event, window.parent, options.parentOrigin))
@@ -54,6 +80,11 @@ export function useEmbedMode() {
         attributes: true,
         attributeFilter: ["class", "data-theme", "data-color-mode", "style"],
       });
+    if (parentRoot?.ownerDocument.body)
+      observer.observe(parentRoot.ownerDocument.body, {
+        attributes: true,
+        attributeFilter: ["class", "data-theme", "data-color-mode", "style"],
+      });
     media.addEventListener("change", apply);
     window.addEventListener("message", receive);
     apply();
@@ -63,6 +94,8 @@ export function useEmbedMode() {
         options.parentOrigin,
       );
     cleanup = () => {
+      stopThemeWatch();
+      clearPalette();
       observer.disconnect();
       media.removeEventListener("change", apply);
       window.removeEventListener("message", receive);
