@@ -65,6 +65,7 @@ body,
   height: 100vh;
   height: 100dvh;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   background: var(--vault-bg);
   color: var(--vault-text);
@@ -1361,4 +1362,55 @@ html.embed-mode[data-embed-palette="parent"] {
   --vault-selected: color-mix(in srgb, var(--embed-accent) 14%, var(--embed-background));
   --vault-accent: var(--embed-accent);
   --vault-accent-bg: var(--vault-selected);
+}
+
+/* The tab bar controls two peer sidebars in the workspace below it. */
+.vault-workspace {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  position: relative;
+}
+.vault-panel-toggles {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-left: 6px;
+  border-left: 1px solid var(--vault-border);
+}
+.vault-shell .vault-panel-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 10px;
+  color: var(--vault-muted);
+  white-space: nowrap;
+}
+.vault-shell .vault-panel-toggle:hover {
+  background: var(--vault-hover);
+  color: var(--vault-text);
+}
+.vault-shell .vault-panel-toggle.selected {
+  background: var(--vault-accent-bg);
+  color: var(--vault-accent);
+}
+.tab-scroll {
+  min-width: 0;
+}
+.embed-mode .vault-workspace {
+  display: contents;
+}
+@media (max-width: 760px) {
+  .vault-tabs {
+    position: relative;
+    z-index: 40;
+  }
+  .vault-shell .vault-panel-toggle {
+    min-height: 36px;
+    padding: 0 8px;
+    gap: 4px;
+  }
 }

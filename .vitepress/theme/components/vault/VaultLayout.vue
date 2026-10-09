@@ -178,7 +178,6 @@ const commands = computed(() =>
     },
     { title: "快速切换笔记", icon: "file", action: () => showModal("quick") },
     { title: "全文搜索", icon: "search", action: () => showSearch() },
-    { title: "切换浅色 / 深色主题", icon: "sun", action: () => toggleTheme() },
     {
       title: "切换左侧栏",
       icon: "left",
@@ -411,12 +410,6 @@ function openQuickResult(note: VaultNote, e: MouseEvent) {
     metaKey: e.metaKey,
     shiftKey: e.shiftKey,
   } as MouseEvent);
-}
-function toggleTheme() {
-  isDark.value = !isDark.value;
-  vpIsDark.value = isDark.value;
-  document.documentElement.classList.toggle("dark", isDark.value);
-  save();
 }
 function modalKey(e: KeyboardEvent) {
   const items = modal.value === "quick" ? quickResults.value : commands.value;
@@ -742,543 +735,525 @@ onBeforeUnmount(() => {
         <Icon name="list" />目录
       </button>
       <span :title="current?.title">{{ current?.title }}</span>
-      <button
-        :aria-label="isDark ? '切换浅色主题' : '切换深色主题'"
-        @click="toggleTheme"
-      >
-        <Icon :name="isDark ? 'sun' : 'moon'" />
-      </button>
     </nav>
-    <a class="vault-skip" href="#vault-document">跳到正文</a>
-    <nav class="vault-ribbon" aria-label="工具栏">
-      <button
-        class="icon-button ribbon-toggle"
-        aria-label="切换文件侧栏"
-        title="文件侧栏"
-        @click="leftOpen = !leftOpen"
-      >
-        <Icon name="left" />
-      </button>
-      <button
-        class="icon-button"
-        aria-label="全文搜索"
-        title="全文搜索"
-        @click="showSearch"
-      >
-        <Icon name="search" />
-      </button>
-      <button
-        class="icon-button"
-        aria-label="打开全局图谱"
-        title="全局图谱"
-        @click="openGraph()"
-      >
-        <Icon name="graph" />
-      </button>
-      <button
-        class="icon-button"
-        aria-label="快速切换笔记"
-        title="快速切换 · Ctrl/⌘ O"
-        @click="showModal('quick')"
-      >
-        <Icon name="file" />
-      </button>
-      <button
-        class="icon-button"
-        aria-label="命令面板"
-        title="命令面板 · Ctrl/⌘ P"
-        @click="showModal('commands')"
-      >
-        <Icon name="command" />
-      </button>
-      <div class="ribbon-spacer" />
-      <button
-        class="icon-button"
-        :aria-label="isDark ? '切换浅色主题' : '切换深色主题'"
-        title="切换主题"
-        @click="toggleTheme"
-      >
-        <Icon :name="isDark ? 'sun' : 'moon'" />
-      </button>
-      <button
-        class="icon-button"
-        aria-label="工作台命令"
-        title="工作台命令"
-        @click="showModal('commands')"
-      >
-        <Icon name="settings" />
-      </button>
-    </nav>
-    <button
-      v-if="leftOpen || (rightOpen && !embedDesktop)"
-      class="vault-drawer-backdrop"
-      aria-label="关闭侧栏"
-      @click="
-        leftOpen = false;
-        rightOpen = false;
-      "
-    />
-    <aside
-      id="vault-note-browser"
-      v-show="leftOpen"
-      class="vault-left"
-      aria-label="文件与搜索"
-    >
-      <div class="sidebar-tabbar">
-        <button
-          :class="['icon-button', { selected: pane === 'files' }]"
-          aria-label="文件列表"
-          title="文件列表"
-          @click="pane = 'files'"
+    <div v-if="!isEmbedded" class="vault-tabs" aria-label="阅读标签与侧栏">
+      <div class="tab-scroll" role="tablist" aria-label="已打开笔记">
+        <div
+          v-for="tab in tabs"
+          :key="tab.key"
+          :class="['vault-tab', { active: tab.key === active }]"
         >
-          <Icon name="folder" /></button
-        ><button
-          :class="['icon-button', { selected: pane === 'search' }]"
-          aria-label="搜索面板"
-          title="搜索面板"
+          <button
+            role="tab"
+            :aria-selected="tab.key === active"
+            :tabindex="tab.key === active ? 0 : -1"
+            @click="navigate(tab)"
+            @keydown.right.prevent="
+              navigate(tabs[(tabs.indexOf(tab) + 1) % tabs.length])
+            "
+            @keydown.left.prevent="
+              navigate(
+                tabs[(tabs.indexOf(tab) - 1 + tabs.length) % tabs.length],
+              )
+            "
+          >
+            <Icon
+              :name="tab.key.startsWith('graph:') ? 'graph' : 'file'"
+              :size="15"
+            /><span>{{ tab.title }}</span></button
+          ><button
+            class="tab-close"
+            :aria-label="'关闭 ' + tab.title"
+            @click="closeTab(tab.key)"
+          >
+            <Icon name="close" :size="13" />
+          </button>
+        </div>
+      </div>
+      <button
+        class="icon-button"
+        title="新标签页 · 快速切换"
+        aria-label="打开新笔记标签"
+        @click="showModal('quick', true)"
+      >
+        <Icon name="plus" />
+      </button>
+      <div class="vault-panel-toggles" role="group" aria-label="常驻侧栏">
+        <button
+          class="vault-panel-toggle"
+          :class="{ selected: leftOpen }"
+          :aria-pressed="leftOpen"
+          aria-controls="vault-note-browser"
+          title="显示或隐藏笔记侧栏"
+          @click="leftOpen = !leftOpen"
+        ><Icon name="folder" :size="16" />笔记</button>
+        <button
+          class="vault-panel-toggle"
+          :class="{ selected: rightOpen }"
+          :aria-pressed="rightOpen"
+          aria-controls="vault-note-details"
+          title="显示或隐藏目录侧栏"
+          @click="rightOpen = !rightOpen; if (rightOpen) rightTab = 'outline'"
+        ><Icon name="list" :size="16" />目录</button>
+      </div>
+    </div>
+    <div class="vault-workspace">
+      <a class="vault-skip" href="#vault-document">跳到正文</a>
+      <nav class="vault-ribbon" aria-label="工具栏">
+        <button
+          class="icon-button"
+          aria-label="全文搜索"
+          title="全文搜索"
           @click="showSearch"
         >
-          <Icon name="search" /></button
-        ><button
-          :class="['icon-button', { selected: pane === 'categories' }]"
-          aria-label="分类浏览"
-          title="分类浏览"
-          @click="pane = 'categories'"
-        >
-          <Icon name="list" /></button
-        ><span /><button
-          class="icon-button mobile-only"
-          aria-label="关闭文件侧栏"
-          @click="leftOpen = false"
-        >
-          <Icon name="close" /></button
-        ><button
-          v-if="pane === 'files'"
-          class="icon-button"
-          title="定位当前笔记"
-          aria-label="定位当前笔记"
-          @click="reveal"
-        >
-          <Icon name="file" :size="16" />
-        </button>
-      </div>
-      <div v-if="pane === 'files'" class="file-actions">
-        <span>文件</span
-        ><button
-          class="icon-button"
-          title="折叠所有文件夹"
-          aria-label="折叠所有文件夹"
-          @click="expanded = []"
-        >
-          <Icon name="list" :size="15" />
-        </button>
-      </div>
-      <div v-if="pane === 'files'" class="file-tree-scroll">
-        <FileTree
-          :branch="tree"
-          :current="current?.id || ''"
-          :expanded="expanded"
-          @toggle="toggleFolder"
-          @open="openNote"
-        />
-      </div>
-      <div v-else-if="pane === 'categories'" class="file-tree-scroll">
-        <label class="category-browser-filter"
-          >分类
-          <select v-model="categoryFilter" aria-label="浏览分类">
-            <option value="">全部分类</option>
-            <option
-              v-for="category in index.categories"
-              :key="category.id"
-              :value="category.id"
-            >
-              {{ category.id }}
-            </option>
-          </select>
-        </label>
-        <p class="empty-hint">同一笔记可出现在多个分类中，文件只保存一份。</p>
-        <FileTree
-          :branch="categoryTree"
-          :current="current?.id || ''"
-          :expanded="expanded"
-          @toggle="toggleFolder"
-          @open="openNote"
-        />
-      </div>
-      <div v-else class="vault-search">
-        <input
-          v-model="query"
-          class="vault-search-input"
-          placeholder="搜索全部笔记…"
-          aria-label="搜索全部笔记"
-        />
-        <p class="search-count">
-          {{ searchReady ? results.length + " 个结果" : "正在加载搜索…" }}
-        </p>
-        <div class="search-results">
-          <button
-            v-for="result in results"
-            :key="result.note.id"
-            @click="openNote(result.note, $event)"
-          >
-            <strong>{{ result.note.title }}</strong
-            ><small>{{ result.note.folder }}</small>
-            <p>{{ result.context }}</p>
-          </button>
-          <p v-if="searchReady && !results.length" class="empty-hint">
-            没有找到匹配的笔记
-          </p>
-        </div>
-      </div>
-      <div class="vault-name">
-        <Icon name="folder" :size="15" /><span>{{ site.title }}</span
-        ><small>{{ notes.length }}</small>
-      </div>
-    </aside>
-    <div
-      v-show="leftOpen"
-      class="vault-resizer"
-      role="separator"
-      aria-label="调整文件侧栏宽度"
-      aria-orientation="vertical"
-      :aria-valuenow="leftWidth"
-      aria-valuemin="190"
-      aria-valuemax="420"
-      tabindex="0"
-      @pointerdown="resize('left', $event)"
-      @keydown="resizeKey('left', $event)"
-    />
-    <section class="vault-center" aria-label="阅读工作区">
-      <div class="vault-tabs" role="tablist" aria-label="已打开笔记">
-        <button
-          v-if="!leftOpen"
-          class="icon-button"
-          aria-label="打开文件侧栏"
-          @click="leftOpen = true"
-        >
-          <Icon name="left" />
-        </button>
-        <div class="tab-scroll">
-          <div
-            v-for="tab in tabs"
-            :key="tab.key"
-            :class="['vault-tab', { active: tab.key === active }]"
-          >
-            <button
-              role="tab"
-              :aria-selected="tab.key === active"
-              :tabindex="tab.key === active ? 0 : -1"
-              @click="navigate(tab)"
-              @keydown.right.prevent="
-                navigate(tabs[(tabs.indexOf(tab) + 1) % tabs.length])
-              "
-              @keydown.left.prevent="
-                navigate(
-                  tabs[(tabs.indexOf(tab) - 1 + tabs.length) % tabs.length],
-                )
-              "
-            >
-              <Icon
-                :name="tab.key.startsWith('graph:') ? 'graph' : 'file'"
-                :size="15"
-              /><span>{{ tab.title }}</span></button
-            ><button
-              class="tab-close"
-              :aria-label="'关闭 ' + tab.title"
-              @click="closeTab(tab.key)"
-            >
-              <Icon name="close" :size="13" />
-            </button>
-          </div>
-        </div>
-        <button
-          class="icon-button"
-          title="新标签页 · 快速切换"
-          aria-label="打开新笔记标签"
-          @click="showModal('quick', true)"
-        >
-          <Icon name="plus" />
+          <Icon name="search" />
         </button>
         <button
           class="icon-button"
-          aria-label="切换辅助侧栏"
-          title="辅助侧栏"
-          @click="rightOpen = !rightOpen"
+          aria-label="打开全局图谱"
+          title="全局图谱"
+          @click="openGraph()"
         >
-          <Icon name="right" />
+          <Icon name="graph" />
         </button>
-      </div>
-      <div class="vault-document-toolbar">
         <button
           class="icon-button"
-          aria-label="后退"
-          title="后退"
-          @click="goBack"
+          aria-label="快速切换笔记"
+          title="快速切换 · Ctrl/⌘ O"
+          @click="showModal('quick')"
         >
-          <Icon name="back" :size="16" /></button
-        ><button
-          class="icon-button"
-          aria-label="前进"
-          title="前进"
-          @click="goForward"
-        >
-          <Icon name="forward" :size="16" />
+          <Icon name="file" />
         </button>
-        <div class="vault-breadcrumb">
-          {{
-            graphActive
-              ? "图谱视图"
-              : current?.folder.replaceAll("/", " / ") || site.title
-          }}<span v-if="!graphActive && current?.folder">
-            / {{ current.title }}</span
-          >
-        </div>
-        <span class="reading-mode">{{
-          graphActive ? "关系探索" : "阅读视图"
-        }}</span>
-      </div>
-      <div v-if="graphActive" class="vault-graph-workspace" role="tabpanel">
-        <ClientOnly
-          ><VaultGraph
-            :index="index"
-            :active-note="current?.id"
-            :filter="graphFilter"
-            @open="openNote"
-        /></ClientOnly>
-      </div>
-      <article
-        v-show="!graphActive"
-        id="vault-document"
-        ref="article"
-        class="vault-reading"
-        role="tabpanel"
-        tabindex="-1"
-        @click="contentClick"
-        @mouseover="hover"
-        @mouseout="leave"
-        @focusin="hover"
-        @focusout="leave"
+        <button
+          class="icon-button"
+          aria-label="命令面板"
+          title="命令面板 · Ctrl/⌘ P"
+          @click="showModal('commands')"
+        >
+          <Icon name="command" />
+        </button>
+        <div class="ribbon-spacer" />
+        <button
+          class="icon-button"
+          aria-label="工作台命令"
+          title="工作台命令"
+          @click="showModal('commands')"
+        >
+          <Icon name="settings" />
+        </button>
+      </nav>
+      <button
+        v-if="leftOpen || (rightOpen && !embedDesktop)"
+        class="vault-drawer-backdrop"
+        aria-label="关闭侧栏"
+        @click="
+          leftOpen = false;
+          rightOpen = false;
+        "
+      />
+      <aside
+        id="vault-note-browser"
+        v-show="leftOpen"
+        class="vault-left"
+        aria-label="文件与搜索"
       >
-        <div v-if="page.isNotFound" class="vault-note-content vp-doc">
-          <h1>找不到这篇笔记</h1>
-          <p>请从文件树或搜索中选择笔记。</p>
-          <a :href="withBase('/')">返回知识库</a>
-        </div>
-        <div v-else class="vault-note-content vp-doc"><Content /></div>
-      </article>
-      <div class="vault-status">
-        <span>{{
-          graphActive ? "图谱" : current?.tags.map((t) => "#" + t).join("  ")
-        }}</span
-        ><span
-          >{{
-            graphActive
-              ? notes.length + " 篇笔记"
-              : backlinks.length + " 个反向链接"
-          }}
-          <span class="status-dot">·</span> 本地发布</span
-        >
-      </div>
-    </section>
-    <div
-      v-show="rightOpen"
-      class="vault-resizer"
-      role="separator"
-      aria-label="调整辅助侧栏宽度"
-      aria-orientation="vertical"
-      :aria-valuenow="rightWidth"
-      aria-valuemin="190"
-      aria-valuemax="420"
-      tabindex="0"
-      @pointerdown="resize('right', $event)"
-      @keydown="resizeKey('right', $event)"
-    />
-    <aside
-      id="vault-note-details"
-      v-show="rightOpen || embedDesktop"
-      class="vault-right"
-      aria-label="笔记辅助面板"
-    >
-      <div class="sidebar-tabbar">
-        <button
-          :class="['icon-button', { selected: rightTab === 'outline' }]"
-          aria-label="笔记目录"
-          title="目录"
-          @click="rightTab = 'outline'"
-        >
-          <Icon name="list" /></button
-        ><button
-          :class="['icon-button', { selected: rightTab === 'links' }]"
-          v-if="!embedDesktop"
-          aria-label="双向链接"
-          title="反向链接与出链"
-          @click="rightTab = 'links'"
-        >
-          <Icon name="link" /></button
-        ><span /><button
-          class="icon-button mobile-only"
-          aria-label="关闭辅助侧栏"
-          @click="rightOpen = false"
-        >
-          <Icon name="close" />
-        </button>
-      </div>
-      <div class="vault-right-scroll">
-        <section
-          v-if="
-            current?.categories.length && (!isEmbedded || rightTab === 'links')
-          "
-          class="vault-classifications"
-        >
-          <h2>
-            分类
-            <small v-if="current.classificationStatus === 'provisional'"
-              >待补充正文</small
-            >
-          </h2>
-          <div v-for="category in current.categories" :key="category.path">
-            <button @click="browseCategory(category.path)">
-              {{ category.path }}
-              <small>{{
-                category.path === current.primaryCategory
-                  ? "主分类"
-                  : "交叉分类"
-              }}</small>
-            </button>
-            <details>
-              <summary>分类理由</summary>
-              <p>{{ category.reason }}</p>
-            </details>
-          </div>
-        </section>
-        <section v-if="rightTab === 'outline'" class="vault-outline">
-          <h2>目录</h2>
+        <div class="sidebar-tabbar">
           <button
-            v-for="h in current?.headings.filter((h) => h.level > 1)"
-            :key="h.id"
-            :style="{ paddingLeft: (h.level - 2) * 12 + 12 + 'px' }"
-            @click="jumpHeading(h.id)"
+            :class="['icon-button', { selected: pane === 'files' }]"
+            aria-label="文件列表"
+            title="文件列表"
+            @click="pane = 'files'"
           >
-            {{ h.title }}
+            <Icon name="folder" /></button
+          ><button
+            :class="['icon-button', { selected: pane === 'search' }]"
+            aria-label="搜索面板"
+            title="搜索面板"
+            @click="showSearch"
+          >
+            <Icon name="search" /></button
+          ><button
+            :class="['icon-button', { selected: pane === 'categories' }]"
+            aria-label="分类浏览"
+            title="分类浏览"
+            @click="pane = 'categories'"
+          >
+            <Icon name="list" /></button
+          ><span /><button
+            class="icon-button mobile-only"
+            aria-label="关闭文件侧栏"
+            @click="leftOpen = false"
+          >
+            <Icon name="close" /></button
+          ><button
+            v-if="pane === 'files'"
+            class="icon-button"
+            title="定位当前笔记"
+            aria-label="定位当前笔记"
+            @click="reveal"
+          >
+            <Icon name="file" :size="16" />
           </button>
-          <p
-            v-if="!current?.headings.some((h) => h.level > 1)"
-            class="empty-hint"
+        </div>
+        <div v-if="pane === 'files'" class="file-actions">
+          <span>文件</span
+          ><button
+            class="icon-button"
+            title="折叠所有文件夹"
+            aria-label="折叠所有文件夹"
+            @click="expanded = []"
           >
-            当前笔记没有小节
+            <Icon name="list" :size="15" />
+          </button>
+        </div>
+        <div v-if="pane === 'files'" class="file-tree-scroll">
+          <FileTree
+            :branch="tree"
+            :current="current?.id || ''"
+            :expanded="expanded"
+            @toggle="toggleFolder"
+            @open="openNote"
+          />
+        </div>
+        <div v-else-if="pane === 'categories'" class="file-tree-scroll">
+          <label class="category-browser-filter"
+            >分类
+            <select v-model="categoryFilter" aria-label="浏览分类">
+              <option value="">全部分类</option>
+              <option
+                v-for="category in index.categories"
+                :key="category.id"
+                :value="category.id"
+              >
+                {{ category.id }}
+              </option>
+            </select>
+          </label>
+          <p class="empty-hint">同一笔记可出现在多个分类中，文件只保存一份。</p>
+          <FileTree
+            :branch="categoryTree"
+            :current="current?.id || ''"
+            :expanded="expanded"
+            @toggle="toggleFolder"
+            @open="openNote"
+          />
+        </div>
+        <div v-else class="vault-search">
+          <input
+            v-model="query"
+            class="vault-search-input"
+            placeholder="搜索全部笔记…"
+            aria-label="搜索全部笔记"
+          />
+          <p class="search-count">
+            {{ searchReady ? results.length + " 个结果" : "正在加载搜索…" }}
           </p>
-        </section>
-        <template v-else
-          ><section class="vault-relations">
-            <h2>
-              反向链接 <small>{{ backlinks.length }}</small>
-            </h2>
+          <div class="search-results">
             <button
-              v-for="link in backlinks"
-              :key="link.source + link.relationType + link.label + link.anchor"
-              @click="openRelation(link, true, $event)"
+              v-for="result in results"
+              :key="result.note.id"
+              @click="openNote(result.note, $event)"
             >
-              <strong>{{ relationTitle(link, true) }}</strong>
-              <small
-                >{{ relationName(link) }} ·
-                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
-              >
-              <p>{{ link.explanation || link.context }}</p>
-              <span class="relation-evidence"
-                >证据：{{ link.evidence || link.context }}</span
-              >
+              <strong>{{ result.note.title }}</strong
+              ><small>{{ result.note.folder }}</small>
+              <p>{{ result.context }}</p>
             </button>
-            <p v-if="!backlinks.length" class="empty-hint">
-              没有笔记链接到此处
+            <p v-if="searchReady && !results.length" class="empty-hint">
+              没有找到匹配的笔记
+            </p>
+          </div>
+        </div>
+        <div class="vault-name">
+          <Icon name="folder" :size="15" /><span>{{ site.title }}</span
+          ><small>{{ notes.length }}</small>
+        </div>
+      </aside>
+      <div
+        v-show="leftOpen"
+        class="vault-resizer"
+        role="separator"
+        aria-label="调整文件侧栏宽度"
+        aria-orientation="vertical"
+        :aria-valuenow="leftWidth"
+        aria-valuemin="190"
+        aria-valuemax="420"
+        tabindex="0"
+        @pointerdown="resize('left', $event)"
+        @keydown="resizeKey('left', $event)"
+      />
+      <section class="vault-center" aria-label="阅读工作区">
+        <div class="vault-document-toolbar">
+          <button
+            class="icon-button"
+            aria-label="后退"
+            title="后退"
+            @click="goBack"
+          >
+            <Icon name="back" :size="16" /></button
+          ><button
+            class="icon-button"
+            aria-label="前进"
+            title="前进"
+            @click="goForward"
+          >
+            <Icon name="forward" :size="16" />
+          </button>
+          <div class="vault-breadcrumb">
+            {{
+              graphActive
+                ? "图谱视图"
+                : current?.folder.replaceAll("/", " / ") || site.title
+            }}<span v-if="!graphActive && current?.folder">
+              / {{ current.title }}</span
+            >
+          </div>
+          <span class="reading-mode">{{
+            graphActive ? "关系探索" : "阅读视图"
+          }}</span>
+        </div>
+        <div v-if="graphActive" class="vault-graph-workspace" role="tabpanel">
+          <ClientOnly
+            ><VaultGraph
+              :index="index"
+              :active-note="current?.id"
+              :filter="graphFilter"
+              @open="openNote"
+          /></ClientOnly>
+        </div>
+        <article
+          v-show="!graphActive"
+          id="vault-document"
+          ref="article"
+          class="vault-reading"
+          role="tabpanel"
+          tabindex="-1"
+          @click="contentClick"
+          @mouseover="hover"
+          @mouseout="leave"
+          @focusin="hover"
+          @focusout="leave"
+        >
+          <div v-if="page.isNotFound" class="vault-note-content vp-doc">
+            <h1>找不到这篇笔记</h1>
+            <p>请从文件树或搜索中选择笔记。</p>
+            <a :href="withBase('/')">返回知识库</a>
+          </div>
+          <div v-else class="vault-note-content vp-doc"><Content /></div>
+        </article>
+        <div class="vault-status">
+          <span>{{
+            graphActive ? "图谱" : current?.tags.map((t) => "#" + t).join("  ")
+          }}</span
+          ><span
+            >{{
+              graphActive
+                ? notes.length + " 篇笔记"
+                : backlinks.length + " 个反向链接"
+            }}
+            <span class="status-dot">·</span> 本地发布</span
+          >
+        </div>
+      </section>
+      <div
+        v-show="rightOpen"
+        class="vault-resizer"
+        role="separator"
+        aria-label="调整辅助侧栏宽度"
+        aria-orientation="vertical"
+        :aria-valuenow="rightWidth"
+        aria-valuemin="190"
+        aria-valuemax="420"
+        tabindex="0"
+        @pointerdown="resize('right', $event)"
+        @keydown="resizeKey('right', $event)"
+      />
+      <aside
+        id="vault-note-details"
+        v-show="rightOpen || embedDesktop"
+        class="vault-right"
+        aria-label="笔记辅助面板"
+      >
+        <div class="sidebar-tabbar">
+          <button
+            :class="['icon-button', { selected: rightTab === 'outline' }]"
+            aria-label="笔记目录"
+            title="目录"
+            @click="rightTab = 'outline'"
+          >
+            <Icon name="list" /></button
+          ><button
+            :class="['icon-button', { selected: rightTab === 'links' }]"
+            v-if="!embedDesktop"
+            aria-label="双向链接"
+            title="反向链接与出链"
+            @click="rightTab = 'links'"
+          >
+            <Icon name="link" /></button
+          ><span /><button
+            class="icon-button mobile-only"
+            aria-label="关闭辅助侧栏"
+            @click="rightOpen = false"
+          >
+            <Icon name="close" />
+          </button>
+        </div>
+        <div class="vault-right-scroll">
+          <section
+            v-if="
+              current?.categories.length && (!isEmbedded || rightTab === 'links')
+            "
+            class="vault-classifications"
+          >
+            <h2>
+              分类
+              <small v-if="current.classificationStatus === 'provisional'"
+                >待补充正文</small
+              >
+            </h2>
+            <div v-for="category in current.categories" :key="category.path">
+              <button @click="browseCategory(category.path)">
+                {{ category.path }}
+                <small>{{
+                  category.path === current.primaryCategory
+                    ? "主分类"
+                    : "交叉分类"
+                }}</small>
+              </button>
+              <details>
+                <summary>分类理由</summary>
+                <p>{{ category.reason }}</p>
+              </details>
+            </div>
+          </section>
+          <section v-if="rightTab === 'outline'" class="vault-outline">
+            <h2>目录</h2>
+            <button
+              v-for="h in current?.headings.filter((h) => h.level > 1)"
+              :key="h.id"
+              :style="{ paddingLeft: (h.level - 2) * 12 + 12 + 'px' }"
+              @click="jumpHeading(h.id)"
+            >
+              {{ h.title }}
+            </button>
+            <p
+              v-if="!current?.headings.some((h) => h.level > 1)"
+              class="empty-hint"
+            >
+              当前笔记没有小节
             </p>
           </section>
-          <section class="vault-relations">
+          <template v-else
+            ><section class="vault-relations">
+              <h2>
+                反向链接 <small>{{ backlinks.length }}</small>
+              </h2>
+              <button
+                v-for="link in backlinks"
+                :key="link.source + link.relationType + link.label + link.anchor"
+                @click="openRelation(link, true, $event)"
+              >
+                <strong>{{ relationTitle(link, true) }}</strong>
+                <small
+                  >{{ relationName(link) }} ·
+                  {{ link.status === "inferred" ? "推断" : "已确认" }}</small
+                >
+                <p>{{ link.explanation || link.context }}</p>
+                <span class="relation-evidence"
+                  >证据：{{ link.evidence || link.context }}</span
+                >
+              </button>
+              <p v-if="!backlinks.length" class="empty-hint">
+                没有笔记链接到此处
+              </p>
+            </section>
+            <section class="vault-relations">
+              <h2>
+                出链 <small>{{ outlinks.length }}</small>
+              </h2>
+              <button
+                v-for="link in outlinks"
+                :key="
+                  (link.target || link.reference) +
+                  link.relationType +
+                  link.label +
+                  link.anchor
+                "
+                :disabled="!link.target"
+                @click="openRelation(link, false, $event)"
+              >
+                <strong
+                  >{{ relationTitle(link)
+                  }}<small v-if="link.reason">
+                    · {{ !link.target ? "未解析" : "标题未找到" }}</small
+                  ></strong
+                >
+                <small
+                  >{{ relationName(link) }} ·
+                  {{ link.status === "inferred" ? "推断" : "已确认" }}</small
+                >
+                <p>{{ link.explanation || link.context }}</p>
+                <span class="relation-evidence"
+                  >证据：{{ link.evidence || link.context }}</span
+                >
+              </button>
+              <p v-if="!outlinks.length" class="empty-hint">当前笔记没有出链</p>
+            </section></template
+          >
+          <section v-if="!isEmbedded" class="vault-local">
             <h2>
-              出链 <small>{{ outlinks.length }}</small>
+              <button @click="localOpen = !localOpen" :aria-expanded="localOpen">
+                <Icon
+                  name="chevron"
+                  :size="12"
+                  :class="{ rotated: localOpen }"
+                />局部图谱</button
+              ><label
+                >深度
+                <select v-model.number="localDepth" aria-label="局部图谱深度">
+                  <option v-for="depth in 5" :value="depth">{{ depth }}</option>
+                </select></label
+              >
             </h2>
+            <div
+              v-if="localOpen && current && rightOpen && !isEmbedded"
+              class="local-graph-container"
+            >
+              <ClientOnly
+                ><VaultGraph
+                  :index="index"
+                  :current="current.id"
+                  :active-note="current.id"
+                  :depth="localDepth"
+                  compact
+                  :enabled="rightOpen && !isEmbedded"
+                  @open="openNote"
+                  @expand="openGraph()"
+              /></ClientOnly>
+            </div>
             <button
-              v-for="link in outlinks"
-              :key="
-                (link.target || link.reference) +
-                link.relationType +
-                link.label +
-                link.anchor
-              "
-              :disabled="!link.target"
-              @click="openRelation(link, false, $event)"
+              class="local-list-toggle"
+              @click="localListOpen = !localListOpen"
+              :aria-expanded="localListOpen"
             >
-              <strong
-                >{{ relationTitle(link)
-                }}<small v-if="link.reason">
-                  · {{ !link.target ? "未解析" : "标题未找到" }}</small
-                ></strong
-              >
-              <small
-                >{{ relationName(link) }} ·
-                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
-              >
-              <p>{{ link.explanation || link.context }}</p>
-              <span class="relation-evidence"
-                >证据：{{ link.evidence || link.context }}</span
-              >
+              局部节点列表 · {{ localNeighbors.length }}
             </button>
-            <p v-if="!outlinks.length" class="empty-hint">当前笔记没有出链</p>
-          </section></template
-        >
-        <section v-if="!isEmbedded" class="vault-local">
-          <h2>
-            <button @click="localOpen = !localOpen" :aria-expanded="localOpen">
-              <Icon
-                name="chevron"
-                :size="12"
-                :class="{ rotated: localOpen }"
-              />局部图谱</button
-            ><label
-              >深度
-              <select v-model.number="localDepth" aria-label="局部图谱深度">
-                <option v-for="depth in 5" :value="depth">{{ depth }}</option>
-              </select></label
+            <div
+              v-if="localListOpen"
+              class="local-node-list"
+              aria-label="局部图谱节点列表"
             >
-          </h2>
-          <div
-            v-if="localOpen && current && rightOpen && !isEmbedded"
-            class="local-graph-container"
-          >
-            <ClientOnly
-              ><VaultGraph
-                :index="index"
-                :current="current.id"
-                :active-note="current.id"
-                :depth="localDepth"
-                compact
-                :enabled="rightOpen && !isEmbedded"
-                @open="openNote"
-                @expand="openGraph()"
-            /></ClientOnly>
-          </div>
-          <button
-            class="local-list-toggle"
-            @click="localListOpen = !localListOpen"
-            :aria-expanded="localListOpen"
-          >
-            局部节点列表 · {{ localNeighbors.length }}
-          </button>
-          <div
-            v-if="localListOpen"
-            class="local-node-list"
-            aria-label="局部图谱节点列表"
-          >
-            <button
-              v-for="note in localNeighbors"
-              :key="note.id"
-              @click="openNote(note, $event)"
-            >
-              {{ note.title }}
-            </button>
-          </div>
-        </section>
-      </div>
-    </aside>
+              <button
+                v-for="note in localNeighbors"
+                :key="note.id"
+                @click="openNote(note, $event)"
+              >
+                {{ note.title }}
+              </button>
+            </div>
+          </section>
+        </div>
+      </aside>
+    </div>
     <div
       v-if="preview"
       class="vault-hover-preview"
