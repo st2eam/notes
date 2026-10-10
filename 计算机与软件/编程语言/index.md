@@ -16,12 +16,15 @@ relations: []
 
 - 上级：[[计算机与软件/index|计算机与软件]]
 - 子分类：[[计算机与软件/编程语言/C++/index|C++]]
+- 子分类：[[计算机与软件/编程语言/Go/index|Go]]
 - 子分类：[[计算机与软件/编程语言/Java/index|Java]]
 - 子分类：[[计算机与软件/编程语言/JavaScript/index|JavaScript]]
 - 子分类：[[计算机与软件/编程语言/Python/index|Python]]
 - 子分类：[[计算机与软件/编程语言/TypeScript/index|TypeScript]]
 
 ## 分类成员
+
+- [[计算机与软件/编程语言/Go/index|Go]]
 
 
 
