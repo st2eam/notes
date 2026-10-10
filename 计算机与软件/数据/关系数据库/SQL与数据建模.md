@@ -61,4 +61,4 @@ print(rows)
 
 一次“创建笔记并写入检索元数据”要么全部成功，要么全部回滚，这就是事务的原子性。提交前不要把部分成功当作完成。常按 user_id 查笔记时，可考虑在该列建索引；索引提高某些读取速度，但增加空间和写入成本。用 EXPLAIN 或 EXPLAIN QUERY PLAN 观察执行计划，再根据真实查询和数据量决定是否建索引。
 
-延伸：[MongoDB 与文档数据](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E6%95%B0%E6%8D%AE/MongoDB/MongoDB.md)、[RAG 与检索质量](/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E5%BA%94%E7%94%A8%E4%B8%8E%E8%AF%84%E6%B5%8B/%E7%9F%A5%E8%AF%86%E6%A3%80%E7%B4%A2/RAG%E4%B8%8E%E6%A3%80%E7%B4%A2%E8%B4%A8%E9%87%8F.md)。参考：[PostgreSQL 官方教程](https://www.postgresql.org/docs/current/tutorial.html)、[Python sqlite3 文档](https://docs.python.org/3/library/sqlite3.html)。
+延伸：[MongoDB 与文档数据](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E6%95%B0%E6%8D%AE/MongoDB/MongoDB.md)、RAG 与检索质量。参考：[PostgreSQL 官方教程](https://www.postgresql.org/docs/current/tutorial.html)、[Python sqlite3 文档](https://docs.python.org/3/library/sqlite3.html)。

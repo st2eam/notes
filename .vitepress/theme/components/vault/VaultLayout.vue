@@ -25,6 +25,7 @@ import {
 import { embedHref } from "../../../vault/embed.mjs";
 import { migrateQuery } from "../../../vault/migration.mjs";
 import { searchNotes } from "../../../vault/search.mjs";
+import { sortHistoryTree } from "../../../vault/history.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
 import Icon from "./Icon.vue";
@@ -45,10 +46,10 @@ function toggleEmbedOutline() {
 }
 const notes = index.notes as VaultNote[],
   links = index.links as VaultLink[];
-const tree = buildTree(notes);
+const tree = sortHistoryTree(buildTree(notes));
 const categoryFilter = ref("");
 const categoryTree = computed(() =>
-  buildCategoryTree(notes, categoryFilter.value),
+  sortHistoryTree(buildCategoryTree(notes, categoryFilter.value)),
 );
 function browseCategory(category: string) {
   pane.value = "categories";

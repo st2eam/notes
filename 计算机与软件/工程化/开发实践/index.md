@@ -19,4 +19,4 @@ relations: []
 
 ## 分类成员
 
-- [[人工智能/应用与评测/智能体/agentic-engineering-patterns|Agentic 工程模式实践指南]] · 交叉分类
+- [[AI/应用与评测/智能体/agentic-engineering-patterns|Agentic 工程模式实践指南]] · 交叉分类

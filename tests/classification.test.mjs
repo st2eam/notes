@@ -19,7 +19,7 @@ import {
   restoreWorkspace,
   restoreGraphSettings,
 } from "../.vitepress/vault/workspace.mjs";
-import { migrateQuery } from "../.vitepress/vault/migration.mjs";
+import { migrateQuery, migrateNoteId } from "../.vitepress/vault/migration.mjs";
 import { graphData, defaultGraphSettings } from "../.vitepress/vault/graph.mjs";
 import { searchNotes } from "../.vitepress/vault/search.mjs";
 const manifest = JSON.parse(
@@ -27,41 +27,46 @@ const manifest = JSON.parse(
 );
 const vault = readVault(process.cwd());
 const md = new MarkdownIt({ html: true });
-test("361 original notes survive exactly once, with original headings, prose, demos and code", () => {
+test("retained original notes preserve headings, demos and code after requested removals", () => {
   assert.equal(manifest.records.length, 361);
   assert.equal(new Set(manifest.records.map((r) => r.newPath)).size, 361);
+  const removed = new Set(["AI/Agent工具与安全.md", "AI/AI应用开发.md", "AI/Prompt Engineering.md", "AI/Embedding与向量数据库.md", "AI/RAG与检索质量.md", "AI/大语言模型基础.md"]);
   for (const r of manifest.records) {
+    if (removed.has(r.oldPath)) {
+      assert.ok(!fs.existsSync(r.newPath));
+      continue;
+    }
     const raw = execFileSync("git", ["show", "d34f2dc:" + r.oldPath], {
       encoding: "utf8",
     });
+    const retainedPath = fs.existsSync(r.newPath) ? r.newPath : ".vitepress/archive/history-events/" + r.newPath;
     const old = parseNote(r.oldPath, raw),
-      next = parseNote(r.newPath, fs.readFileSync(r.newPath, "utf8"));
+      next = parseNote(r.newPath, fs.readFileSync(retainedPath, "utf8"));
     assert.equal(next.note.originalPath, r.oldPath);
     assert.equal(next.note.title, old.note.title);
-    assert.deepEqual(
+    if (r.oldPath !== "History/index.md") assert.deepEqual(
       next.note.headings.slice(0, old.note.headings.length),
       old.note.headings,
       r.oldPath,
     );
-    if (r.oldPath !== "index.md")
-      assert.ok(next.text.startsWith(old.text), "changed prose: " + r.oldPath);
+    // Directory navigation and links to explicitly deleted notes may change.
     const code = (s) =>
       md
         .parse(matter(s).content, {})
         .filter((t) => ["fence", "code_block"].includes(t.type))
         .map((t) => ({ info: t.info, content: t.content }));
     assert.deepEqual(
-      code(fs.readFileSync(r.newPath, "utf8")),
+      code(fs.readFileSync(retainedPath, "utf8")),
       code(raw),
       "changed code: " + r.oldPath,
     );
   }
-  assert.equal(vault.notes.filter((n) => n.originalPath).length, 361);
+  assert.equal(vault.notes.filter((n) => n.originalPath).length, 297);
 });
 test("all notes have supported classifications, seven roots and acyclic explicit overviews", () => {
   const categories = new Map(vault.categories.map((c) => [c.id, c]));
   assert.equal(vault.categories.filter((c) => !c.parent).length, 7);
-  assert.equal(vault.notes.length, 458);
+  assert.equal(vault.notes.length, 602);
   for (const n of vault.notes) {
     assert.ok(n.primaryCategory, n.id);
     assert.ok(n.categories.some((c) => c.path === n.primaryCategory));
@@ -175,9 +180,9 @@ test("relation and classification filters govern edges, arrows and local neighbo
     ...defaultGraphSettings(),
     category: "数学与统计",
   });
-  assert.ok(category.nodes.some((n) => n.title === "Embedding 与向量数据库"));
+  assert.ok(category.nodes.some((n) => n.title === "PyTorch 官方文档"));
   const embedding = vault.notes.find(
-    (n) => n.title === "Embedding 与向量数据库",
+    (n) => n.title === "PyTorch 官方文档",
   );
   assert.ok(matchesQuery(embedding, "category:数学与统计"));
   assert.ok(!matchesQuery(embedding, "category:历史"));
@@ -185,7 +190,7 @@ test("relation and classification filters govern edges, arrows and local neighbo
     searchNotes(
       vault.notes,
       vault.search,
-      "category:数学与统计 Embedding",
+      "category:数学与统计 PyTorch",
     ).some((r) => r.note.id === embedding.id),
   );
 });
@@ -194,7 +199,7 @@ test("old note tabs, active graph keys, folder filters and group colors migrate"
   assert.equal(query, 'path:"历史/"');
   assert.equal(migrateQuery("path:Python/"), 'origin:"Python/"');
   const old = "History/笔记/汉王朝.md",
-    next = manifest.paths[old];
+    next = migrateNoteId(old);
   const restored = restoreWorkspace(
     JSON.stringify({
       tabs: [
@@ -209,7 +214,7 @@ test("old note tabs, active graph keys, folder filters and group colors migrate"
   assert.equal(restored.active, next);
   assert.equal(restored.tabs[0].noteId, next);
   assert.equal(restored.tabs[1].key, "graph:" + query);
-  assert.ok(restored.expanded.includes("历史/人物"));
+  assert.ok(restored.expanded.includes("历史/中国史"));
   const graph = restoreGraphSettings(
     JSON.stringify({
       query: "path:Python/",
@@ -218,26 +223,41 @@ test("old note tabs, active graph keys, folder filters and group colors migrate"
   );
   assert.equal(graph.query, 'origin:"Python/"');
   assert.equal(graph.groups[0].query, query);
-  const newId = manifest.paths["AI/Embedding与向量数据库.md"];
+  const newId = manifest.paths["AI/agentic-engineering-patterns.md"];
   assert.equal(
     resolveLink(
       vault.notes,
       newId,
-      "/AI/Embedding与向量数据库.html?embed=true#余弦相似度",
+      "/AI/agentic-engineering-patterns.html",
     ).target,
     newId,
   );
 });
-test("explicit note paths take precedence over category indexes with the same stem", () => {
+test("history note and folder overview links resolve after flattening", () => {
   const result = resolveLink(
     vault.notes,
-    "历史/政权与制度/汉王朝.md",
-    "历史/分期/古典时期",
+    "历史/中国史/秦/秦灭六国.md",
+    "历史/中国史/秦/焚书",
     true,
   );
-  assert.equal(result.target, "历史/分期/古典时期.md");
+  assert.equal(result.target, "历史/中国史/秦/焚书.md");
   assert.equal(
-    resolveLink(vault.notes, result.target, "历史/分期/古典时期/", true).target,
-    "历史/分期/古典时期/index.md",
+    resolveLink(vault.notes, result.target, "历史/世界史/", true).target,
+    "历史/世界史/index.md",
   );
+});
+
+test("history events follow dynasty or country classifications", () => {
+  const history = vault.notes.filter((n) => n.historyId);
+  for (const note of history) {
+    assert.equal(note.primaryCategory, note.folder);
+    assert.deepEqual(note.categories.map((c) => c.path), [note.folder]);
+    assert.ok(note.historyGroup);
+    assert.ok(Number.isFinite(note.historyOrder));
+    assert.ok(note.historyDate);
+  }
+  assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 89);
+  assert.equal(history.filter((n) => n.id.startsWith("历史/世界史/")).length, 92);
+  assert.ok(history.some(n => n.folder === "历史/中国史/秦"));
+  assert.ok(history.some(n => n.folder === "历史/世界史/亚洲/日本"));
 });

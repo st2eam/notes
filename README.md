@@ -16,7 +16,7 @@ npm run docs:preview
 
 ## 维护笔记与链接
 
-Markdown 是正文和图谱关系的唯一来源。各模块的 `index.md` 是可见的目录笔记；新增笔记后请把它加入相应总览。构建时扫描笔记生成元数据、文件树、全文索引和链接关系；隐藏目录、依赖、缓存、构建产物和 VitePress 示例页不进入知识库索引。
+Markdown 是正文和图谱关系的唯一来源。各模块的 `index.md` 是目录笔记，目前隐藏文件夹中的总览入口，保留源文件；新增笔记后请把它加入相应总览。构建时扫描笔记生成元数据、文件树、全文索引和链接关系；隐藏目录、依赖、缓存、构建产物和 VitePress 示例页不进入知识库索引。
 
 ```md
 ---
@@ -26,14 +26,14 @@ tags: [历史, 学习]
 
 # 笔记标题
 
-[[历史/政权与制度/汉王朝]]
-[[历史/政权与制度/汉王朝#关键事件|汉代事件]]
-[标准链接](../历史/政权与制度/汉王朝.md#关键事件)
+汉王朝
+汉代事件
+[标准链接](../历史/中国史/秦/秦灭六国.md)
 ```
 
 ID 使用包含 `.md` 的完整相对路径。内部 Markdown 链接和 Wiki 链接共用解析规则；同名或同别名无法唯一解析时保留为未解析链接。代码、代码块和公式中的链接示例不形成关系。既有分期锚点和页面重定向继续保留。
 
-History 包含 42 篇实体笔记、6 篇主题笔记、6 篇分期文章和 4 篇书籍阅读路径；迁移保留 171 条事件和原有 130 条关系说明。历史来源与观点线索保留在正文中。旧 History 数据数组和固定 SVG 图谱已经移除。
+历史当前按中国史和世界史收录独立事件，每篇笔记只围绕一个事件记录时间、地点与经过。原人物、朝代、分期、主题和书籍阅读汇总保存在 `.vitepress/archive/history-events/`；正文保留参考资料名称，不提供外部链接。
 
 ## 阅读工作台
 
@@ -47,7 +47,7 @@ History 包含 42 篇实体笔记、6 篇主题笔记、6 篇分期文章和 4 �
 - 跨域 iframe 无法直接读取父页面的样式。父页面可在地址中传主题参数，或使用下方消息协议动态同步；通过 `parentOrigin` 指定父页面来源（省略时使用 Referrer，Referrer 不可用时仅信任站点同源）。
 
 ```html
-<iframe id="notes" src="https://st2eam.github.io/notes/历史/政权与制度/汉王朝.html?embed=true&background=transparent&parentOrigin=https%3A%2F%2Fyour-site.example"></iframe>
+<iframe id="notes" src="https://st2eam.github.io/notes/历史/中国史/秦/秦灭六国.html?embed=true&background=transparent&parentOrigin=https%3A%2F%2Fyour-site.example"></iframe>
 ```
 
 ```js
@@ -93,6 +93,8 @@ Canvas 2D 与 D3-force 按真实笔记链接布局。默认显示笔记和孤立
 
 `relations` 保存在 Markdown frontmatter，每项包含 `target`（完整笔记路径）、`type`（citation/similar/subordinate/causal）、`label`、`reason`、`evidence`、`status`（confirmed/inferred）。相似关系无方向；其余关系有方向。因果必须有可核查证据。普通正文链接继续生成引用，分类声明生成从属关系；同一目标可保留不同语义。
 
-工作台左栏“分类浏览”显示交叉归属，右栏展示分类理由与关系证据。图谱可筛选分类、关系类型及确认状态；搜索支持 `category:历史/主题/交流与贸易`。旧目录筛选会转换为新路径或 `origin:` 原路径筛选，旧页面保留查询和锚点后跳到新页面。
+工作台左栏“分类浏览”显示交叉归属，右栏展示分类理由与关系证据。图谱可筛选分类、关系类型及确认状态；搜索支持 `category:历史/中国史`。旧目录筛选会转换为新路径或 `origin:` 原路径筛选，旧页面保留查询和锚点后跳到新页面。
 
 完整整理清单与证据位于 `.vitepress/reports/reclassification.md`，机器可读记录在同目录 `classification.json`。该目录不参与页面发布或图谱扫描。`migration-paths.mjs` 是旧笔记身份映射，不是内容或图谱的第二份来源。
+
+历史的中国史按朝代与时期分类，世界史按国家与地区分类。两个时间总览支持分类筛选、关键词搜索、年份范围和日期正反排序。原历史分类总览保存在 `.vitepress/archive/history/`，不进入知识库索引。

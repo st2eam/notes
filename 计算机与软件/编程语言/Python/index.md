@@ -10,9 +10,9 @@ categories:
     reason: 原总览显式列出 NumPy 数组和数据类型，提供科学计算入口。
   - path: 计算机与软件/数据/MongoDB/PyMongo
     reason: 原总览显式列出 PyMongo 查询与增删改操作，提供数据库驱动入口。
-  - path: 人工智能/机器学习
+  - path: AI/机器学习
     reason: 原总览显式列出 PyTorch 和推荐系统用户行为数据，提供机器学习入口。
-  - path: 人工智能/自然语言处理
+  - path: AI/自然语言处理
     reason: 原总览显式列出 BERT 和 word2vec，提供自然语言处理入口。
 classificationStatus: confirmed
 relations: []
@@ -32,10 +32,10 @@ categoryOverview: 计算机与软件/编程语言/Python
 - [[计算机与软件/后端/Flask/蓝图视图|蓝图视图]]
 - [[计算机与软件/后端/Flask/项目可安装化|项目可安装化]]
 - [[计算机与软件/后端/Flask/项目布局|项目布局]]
-- [[人工智能/自然语言处理/BERT/快速入门|快速入门]]
-- [[人工智能/机器学习/PyTorch/快速入门|快速入门]]
-- [[人工智能/自然语言处理/词向量/word2vec|word2vec]]
-- [[人工智能/机器学习/推荐系统/用户行为数据|用户行为数据]]
+- [[AI/自然语言处理/BERT/快速入门|快速入门]]
+- [[AI/机器学习/PyTorch/快速入门|快速入门]]
+- [[AI/自然语言处理/词向量/word2vec|word2vec]]
+- [[AI/机器学习/推荐系统/用户行为数据|用户行为数据]]
 - [[数学与统计/科学计算/NumPy/index|NumPy]]
 - [[数学与统计/科学计算/NumPy/NumPy数据类型|NumPy数据类型]]
 - [[数学与统计/科学计算/NumPy/快速开始|快速开始]]

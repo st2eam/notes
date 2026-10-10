@@ -1,0 +1,14 @@
+---
+primaryCategory: 历史/世界史/美洲/美国
+categories:
+  - path: 历史/世界史/美洲/美国
+    reason: 历史事件的国家、地区或朝代导航，按事件发生日期排序。
+categoryOverview: 历史/世界史/美洲/美国
+classificationStatus: confirmed
+relations: []
+tags: []
+---
+# 美国
+
+- [[历史/世界史/美洲/美国/美国参加第一次世界大战|美国参加第一次世界大战]] · 1917 年 4 月
+- [[历史/世界史/美洲/美国/珍珠港事件|珍珠港事件]] · 1941 年 12 月 7 日

@@ -69,15 +69,15 @@ export const retrievalQueries = [
     docs: [
       { title: '认证与授权', path: '/计算机与软件/基础/网络/认证与授权', keyword: 0.98, semantic: 0.70 },
       { title: 'HTTP Cookie', path: '/计算机与软件/基础/网络/HTTP Cookie', keyword: 0.72, semantic: 0.66 },
-      { title: 'Agent 工具与安全', path: '/人工智能/应用与评测/智能体/Agent工具与安全', keyword: 0.20, semantic: 0.88 },
+      { title: 'Agentic 工程模式实践指南', path: '/AI/应用与评测/智能体/agentic-engineering-patterns', keyword: 0.20, semantic: 0.88 },
     ],
   },
   {
     label: '向量检索',
     docs: [
-      { title: 'Embedding 与向量数据库', path: '/人工智能/应用与评测/知识检索/Embedding与向量数据库', keyword: 0.90, semantic: 0.96 },
-      { title: 'RAG 与检索质量', path: '/人工智能/应用与评测/知识检索/RAG与检索质量', keyword: 0.62, semantic: 0.94 },
-      { title: 'AI 应用开发', path: '/人工智能/应用与评测/应用开发/AI应用开发', keyword: 0.38, semantic: 0.50 },
+      { title: 'word2vec', path: '/AI/自然语言处理/词向量/word2vec', keyword: 0.90, semantic: 0.96 },
+      { title: 'LLM Wiki 可视化教程', path: '/AI/应用与评测/知识检索/LLM Wiki 可视化教程', keyword: 0.62, semantic: 0.94 },
+      { title: 'AI 应用评测', path: '/AI/应用与评测/质量评测/应用评测', keyword: 0.38, semantic: 0.50 },
     ],
   },
 ]

@@ -189,7 +189,7 @@ export function parseNote(id, raw) {
         : [],
       classificationStatus: data.classificationStatus || "unclassified",
       categoryOverview: data.categoryOverview || null,
-      ...(data.historyId ? { historyId: data.historyId } : {}),
+      ...(data.historyId ? { historyId: data.historyId, historyDate: data.historyDate, historyOrder: data.historyOrder, historyGroup: data.historyGroup } : {}),
       ...(data.historyTheme ? { historyTheme: data.historyTheme } : {}),
     },
     references,

@@ -1,17 +1,17 @@
 {
   "version": 1,
   "paths": {
-    "AI/agentic-engineering-patterns.md": "人工智能/应用与评测/智能体/agentic-engineering-patterns.md",
-    "AI/Agent工具与安全.md": "人工智能/应用与评测/智能体/Agent工具与安全.md",
-    "AI/AI应用开发.md": "人工智能/应用与评测/应用开发/AI应用开发.md",
-    "AI/Embedding与向量数据库.md": "人工智能/应用与评测/知识检索/Embedding与向量数据库.md",
-    "AI/index.md": "人工智能/index.md",
-    "AI/LLM Wiki 可视化教程.md": "人工智能/应用与评测/知识检索/LLM Wiki 可视化教程.md",
-    "AI/LLM演进路线.md": "人工智能/模型原理/大语言模型/LLM演进路线.md",
-    "AI/Prompt Engineering.md": "人工智能/应用与评测/应用开发/Prompt Engineering.md",
-    "AI/RAG与检索质量.md": "人工智能/应用与评测/知识检索/RAG与检索质量.md",
-    "AI/大语言模型基础.md": "人工智能/模型原理/大语言模型/大语言模型基础.md",
-    "AI/应用评测.md": "人工智能/应用与评测/质量评测/应用评测.md",
+    "AI/agentic-engineering-patterns.md": "AI/应用与评测/智能体/agentic-engineering-patterns.md",
+    "AI/Agent工具与安全.md": "AI/应用与评测/智能体/Agent工具与安全.md",
+    "AI/AI应用开发.md": "AI/应用与评测/应用开发/AI应用开发.md",
+    "AI/Embedding与向量数据库.md": "AI/应用与评测/知识检索/Embedding与向量数据库.md",
+    "AI/index.md": "AI/index.md",
+    "AI/LLM Wiki 可视化教程.md": "AI/应用与评测/知识检索/LLM Wiki 可视化教程.md",
+    "AI/LLM演进路线.md": "AI/模型原理/大语言模型/LLM演进路线.md",
+    "AI/Prompt Engineering.md": "AI/应用与评测/应用开发/Prompt Engineering.md",
+    "AI/RAG与检索质量.md": "AI/应用与评测/知识检索/RAG与检索质量.md",
+    "AI/大语言模型基础.md": "AI/模型原理/大语言模型/大语言模型基础.md",
+    "AI/应用评测.md": "AI/应用与评测/质量评测/应用评测.md",
     "AI/机器学习数学基础.md": "数学与统计/机器学习数学/机器学习数学基础.md",
     "C++/index.md": "计算机与软件/编程语言/C++/index.md",
     "C++/QT/QT 信号与槽.md": "计算机与软件/前端/桌面应用/Qt/QT 信号与槽.md",
@@ -78,64 +78,64 @@
     "Fundamentals/短路求值.md": "计算机与软件/基础/编程概念/短路求值.md",
     "Fundamentals/语法糖.md": "计算机与软件/基础/编程概念/语法糖.md",
     "History/index.md": "历史/index.md",
-    "History/主题/交流与贸易.md": "历史/主题/交流与贸易/交流与贸易.md",
-    "History/主题/农业与生态.md": "历史/主题/农业与生态/农业与生态.md",
-    "History/主题/冲突与变革.md": "历史/主题/冲突与变革/冲突与变革.md",
-    "History/主题/增长与福祉.md": "历史/主题/增长与福祉/增长与福祉.md",
-    "History/主题/权力与制度.md": "历史/主题/权力与制度/权力与制度.md",
-    "History/主题/知识与传播.md": "历史/主题/知识与传播/知识与传播.md",
-    "History/古典时期.md": "历史/分期/古典时期.md",
-    "History/后古典时期.md": "历史/分期/后古典时期.md",
-    "History/当代.md": "历史/分期/当代.md",
-    "History/文明起源.md": "历史/分期/文明起源.md",
-    "History/早期近代.md": "历史/分期/早期近代.md",
-    "History/笔记/东周与诸子.md": "历史/政权与制度/东周与诸子.md",
-    "History/笔记/中华人民共和国成立.md": "历史/政权与制度/中华人民共和国成立.md",
-    "History/笔记/五四运动.md": "历史/事件与变革/五四运动.md",
-    "History/笔记/亚非去殖民化.md": "历史/事件与变革/亚非去殖民化.md",
-    "History/笔记/仰韶文化.md": "历史/文明与考古/仰韶文化.md",
-    "History/笔记/元王朝.md": "历史/政权与制度/元王朝.md",
-    "History/笔记/全球化加速.md": "历史/事件与变革/全球化加速.md",
-    "History/笔记/印度河文明.md": "历史/文明与考古/印度河文明.md",
-    "History/笔记/古埃及早王朝.md": "历史/政权与制度/古埃及早王朝.md",
-    "History/笔记/唐王朝.md": "历史/政权与制度/唐王朝.md",
-    "History/笔记/商王朝.md": "历史/政权与制度/商王朝.md",
-    "History/笔记/太平天国运动.md": "历史/事件与变革/太平天国运动.md",
-    "History/笔记/孔雀王朝.md": "历史/政权与制度/孔雀王朝.md",
-    "History/笔记/孙中山.md": "历史/人物/孙中山.md",
-    "History/笔记/宋代商业与技术.md": "历史/政权与制度/宋代商业与技术.md",
-    "History/笔记/工业革命.md": "历史/事件与变革/工业革命.md",
-    "History/笔记/广州贸易体系.md": "历史/贸易与交流/广州贸易体系.md",
-    "History/笔记/张骞.md": "历史/人物/张骞.md",
-    "History/笔记/改革开放.md": "历史/事件与变革/改革开放.md",
-    "History/笔记/明治维新.md": "历史/事件与变革/明治维新.md",
-    "History/笔记/明王朝.md": "历史/政权与制度/明王朝.md",
-    "History/笔记/晚明白银贸易.md": "历史/贸易与交流/晚明白银贸易.md",
-    "History/笔记/汉王朝.md": "历史/政权与制度/汉王朝.md",
-    "History/笔记/清前期.md": "历史/政权与制度/清前期.md",
-    "History/笔记/玄奘.md": "历史/人物/玄奘.md",
-    "History/笔记/瓜分非洲.md": "历史/事件与变革/瓜分非洲.md",
-    "History/笔记/秦统一.md": "历史/政权与制度/秦统一.md",
-    "History/笔记/第一次世界大战.md": "历史/事件与变革/第一次世界大战.md",
-    "History/笔记/第二次世界大战.md": "历史/事件与变革/第二次世界大战.md",
-    "History/笔记/罗马帝国.md": "历史/政权与制度/罗马帝国.md",
-    "History/笔记/良渚古城.md": "历史/文明与考古/良渚古城.md",
-    "History/笔记/苏美尔城邦.md": "历史/政权与制度/苏美尔城邦.md",
-    "History/笔记/莫卧儿帝国.md": "历史/政权与制度/莫卧儿帝国.md",
-    "History/笔记/蒙古帝国.md": "历史/政权与制度/蒙古帝国.md",
-    "History/笔记/跨大西洋奴隶贸易.md": "历史/贸易与交流/跨大西洋奴隶贸易.md",
-    "History/笔记/辛亥革命.md": "历史/事件与变革/辛亥革命.md",
-    "History/笔记/阿契美尼德帝国.md": "历史/政权与制度/阿契美尼德帝国.md",
-    "History/笔记/阿拔斯王朝.md": "历史/政权与制度/阿拔斯王朝.md",
-    "History/笔记/阿育王.md": "历史/人物/阿育王.md",
-    "History/笔记/马尼拉大帆船贸易.md": "历史/贸易与交流/马尼拉大帆船贸易.md",
-    "History/笔记/马里帝国.md": "历史/政权与制度/马里帝国.md",
-    "History/笔记/鸦片战争.md": "历史/事件与变革/鸦片战争.md",
-    "History/近现代.md": "历史/分期/近现代.md",
-    "History/阅读/中国历代政治得失.md": "历史/史学阅读/中国历代政治得失.md",
-    "History/阅读/人类简史 · 人类的融合.md": "历史/史学阅读/人类简史 · 人类的融合.md",
-    "History/阅读/人类简史 · 农业革命.md": "历史/史学阅读/人类简史 · 农业革命.md",
-    "History/阅读/人类简史 · 科学革命.md": "历史/史学阅读/人类简史 · 科学革命.md",
+    "History/主题/交流与贸易.md": "历史/世界史/交流与贸易.md",
+    "History/主题/农业与生态.md": "历史/世界史/农业与生态.md",
+    "History/主题/冲突与变革.md": "历史/世界史/冲突与变革.md",
+    "History/主题/增长与福祉.md": "历史/世界史/增长与福祉.md",
+    "History/主题/权力与制度.md": "历史/世界史/权力与制度.md",
+    "History/主题/知识与传播.md": "历史/世界史/知识与传播.md",
+    "History/古典时期.md": "历史/世界史/古典时期.md",
+    "History/后古典时期.md": "历史/世界史/后古典时期.md",
+    "History/当代.md": "历史/世界史/当代.md",
+    "History/文明起源.md": "历史/世界史/文明起源.md",
+    "History/早期近代.md": "历史/世界史/早期近代.md",
+    "History/笔记/东周与诸子.md": "历史/中国史/东周与诸子.md",
+    "History/笔记/中华人民共和国成立.md": "历史/中国史/中华人民共和国成立.md",
+    "History/笔记/五四运动.md": "历史/中国史/五四运动.md",
+    "History/笔记/亚非去殖民化.md": "历史/世界史/亚非去殖民化.md",
+    "History/笔记/仰韶文化.md": "历史/中国史/仰韶文化.md",
+    "History/笔记/元王朝.md": "历史/中国史/元王朝.md",
+    "History/笔记/全球化加速.md": "历史/世界史/全球化加速.md",
+    "History/笔记/印度河文明.md": "历史/世界史/印度河文明.md",
+    "History/笔记/古埃及早王朝.md": "历史/世界史/古埃及早王朝.md",
+    "History/笔记/唐王朝.md": "历史/中国史/唐王朝.md",
+    "History/笔记/商王朝.md": "历史/中国史/商王朝.md",
+    "History/笔记/太平天国运动.md": "历史/中国史/太平天国运动.md",
+    "History/笔记/孔雀王朝.md": "历史/世界史/孔雀王朝.md",
+    "History/笔记/孙中山.md": "历史/中国史/孙中山.md",
+    "History/笔记/宋代商业与技术.md": "历史/中国史/宋代商业与技术.md",
+    "History/笔记/工业革命.md": "历史/世界史/工业革命.md",
+    "History/笔记/广州贸易体系.md": "历史/中国史/广州贸易体系.md",
+    "History/笔记/张骞.md": "历史/中国史/张骞.md",
+    "History/笔记/改革开放.md": "历史/中国史/改革开放.md",
+    "History/笔记/明治维新.md": "历史/世界史/明治维新.md",
+    "History/笔记/明王朝.md": "历史/中国史/明王朝.md",
+    "History/笔记/晚明白银贸易.md": "历史/中国史/晚明白银贸易.md",
+    "History/笔记/汉王朝.md": "历史/中国史/汉王朝.md",
+    "History/笔记/清前期.md": "历史/中国史/清前期.md",
+    "History/笔记/玄奘.md": "历史/中国史/玄奘.md",
+    "History/笔记/瓜分非洲.md": "历史/世界史/瓜分非洲.md",
+    "History/笔记/秦统一.md": "历史/中国史/秦统一.md",
+    "History/笔记/第一次世界大战.md": "历史/世界史/第一次世界大战.md",
+    "History/笔记/第二次世界大战.md": "历史/世界史/第二次世界大战.md",
+    "History/笔记/罗马帝国.md": "历史/世界史/罗马帝国.md",
+    "History/笔记/良渚古城.md": "历史/中国史/良渚古城.md",
+    "History/笔记/苏美尔城邦.md": "历史/世界史/苏美尔城邦.md",
+    "History/笔记/莫卧儿帝国.md": "历史/世界史/莫卧儿帝国.md",
+    "History/笔记/蒙古帝国.md": "历史/世界史/蒙古帝国.md",
+    "History/笔记/跨大西洋奴隶贸易.md": "历史/世界史/跨大西洋奴隶贸易.md",
+    "History/笔记/辛亥革命.md": "历史/中国史/辛亥革命.md",
+    "History/笔记/阿契美尼德帝国.md": "历史/世界史/阿契美尼德帝国.md",
+    "History/笔记/阿拔斯王朝.md": "历史/世界史/阿拔斯王朝.md",
+    "History/笔记/阿育王.md": "历史/世界史/阿育王.md",
+    "History/笔记/马尼拉大帆船贸易.md": "历史/世界史/马尼拉大帆船贸易.md",
+    "History/笔记/马里帝国.md": "历史/世界史/马里帝国.md",
+    "History/笔记/鸦片战争.md": "历史/中国史/鸦片战争.md",
+    "History/近现代.md": "历史/世界史/近现代.md",
+    "History/阅读/中国历代政治得失.md": "历史/中国史/中国历代政治得失.md",
+    "History/阅读/人类简史 · 人类的融合.md": "历史/世界史/人类简史 · 人类的融合.md",
+    "History/阅读/人类简史 · 农业革命.md": "历史/世界史/人类简史 · 农业革命.md",
+    "History/阅读/人类简史 · 科学革命.md": "历史/世界史/人类简史 · 科学革命.md",
     "index.md": "index.md",
     "Language/index.md": "人文语言/index.md",
     "Language/日语.md": "人文语言/日语/日语.md",
@@ -152,10 +152,10 @@
     "Python/Flask/项目可安装化.md": "计算机与软件/后端/Flask/项目可安装化.md",
     "Python/Flask/项目布局.md": "计算机与软件/后端/Flask/项目布局.md",
     "Python/index.md": "计算机与软件/编程语言/Python/index.md",
-    "Python/NLP/BERT/快速入门.md": "人工智能/自然语言处理/BERT/快速入门.md",
-    "Python/NLP/PyTorch/快速入门.md": "人工智能/机器学习/PyTorch/快速入门.md",
-    "Python/NLP/word2vec.md": "人工智能/自然语言处理/词向量/word2vec.md",
-    "Python/NLP/推荐系统/用户行为数据.md": "人工智能/机器学习/推荐系统/用户行为数据.md",
+    "Python/NLP/BERT/快速入门.md": "AI/自然语言处理/BERT/快速入门.md",
+    "Python/NLP/PyTorch/快速入门.md": "AI/机器学习/PyTorch/快速入门.md",
+    "Python/NLP/word2vec.md": "AI/自然语言处理/词向量/word2vec.md",
+    "Python/NLP/推荐系统/用户行为数据.md": "AI/机器学习/推荐系统/用户行为数据.md",
     "Python/NumPy/index.md": "数学与统计/科学计算/NumPy/index.md",
     "Python/NumPy/NumPy数据类型.md": "数学与统计/科学计算/NumPy/NumPy数据类型.md",
     "Python/NumPy/快速开始.md": "数学与统计/科学计算/NumPy/快速开始.md",
@@ -707,100 +707,100 @@
       "noteId": "计算机与软件/数据/MongoDB/PyMongo/index.md"
     },
     {
-      "id": "人工智能",
-      "title": "人工智能",
+      "id": "AI",
+      "title": "AI",
       "parent": null,
-      "noteId": "人工智能/index.md"
+      "noteId": "AI/index.md"
     },
     {
-      "id": "人工智能/机器学习",
+      "id": "AI/机器学习",
       "title": "机器学习",
-      "parent": "人工智能",
-      "noteId": "人工智能/机器学习/index.md"
+      "parent": "AI",
+      "noteId": "AI/机器学习/index.md"
     },
     {
-      "id": "人工智能/机器学习/推荐系统",
+      "id": "AI/机器学习/推荐系统",
       "title": "推荐系统",
-      "parent": "人工智能/机器学习",
-      "noteId": "人工智能/机器学习/推荐系统/index.md"
+      "parent": "AI/机器学习",
+      "noteId": "AI/机器学习/推荐系统/index.md"
     },
     {
-      "id": "人工智能/机器学习/PyTorch",
+      "id": "AI/机器学习/PyTorch",
       "title": "PyTorch",
-      "parent": "人工智能/机器学习",
-      "noteId": "人工智能/机器学习/PyTorch/index.md"
+      "parent": "AI/机器学习",
+      "noteId": "AI/机器学习/PyTorch/index.md"
     },
     {
-      "id": "人工智能/模型原理",
+      "id": "AI/模型原理",
       "title": "模型原理",
-      "parent": "人工智能",
-      "noteId": "人工智能/模型原理/index.md"
+      "parent": "AI",
+      "noteId": "AI/模型原理/index.md"
     },
     {
-      "id": "人工智能/模型原理/大语言模型",
+      "id": "AI/模型原理/大语言模型",
       "title": "大语言模型",
-      "parent": "人工智能/模型原理",
-      "noteId": "人工智能/模型原理/大语言模型/index.md"
+      "parent": "AI/模型原理",
+      "noteId": "AI/模型原理/大语言模型/index.md"
     },
     {
-      "id": "人工智能/模型原理/向量表示",
+      "id": "AI/模型原理/向量表示",
       "title": "向量表示",
-      "parent": "人工智能/模型原理",
-      "noteId": "人工智能/模型原理/向量表示/index.md"
+      "parent": "AI/模型原理",
+      "noteId": "AI/模型原理/向量表示/index.md"
     },
     {
-      "id": "人工智能/模型原理/注意力",
+      "id": "AI/模型原理/注意力",
       "title": "注意力",
-      "parent": "人工智能/模型原理",
-      "noteId": "人工智能/模型原理/注意力/index.md"
+      "parent": "AI/模型原理",
+      "noteId": "AI/模型原理/注意力/index.md"
     },
     {
-      "id": "人工智能/应用与评测",
+      "id": "AI/应用与评测",
       "title": "应用与评测",
-      "parent": "人工智能",
-      "noteId": "人工智能/应用与评测/index.md"
+      "parent": "AI",
+      "noteId": "AI/应用与评测/index.md"
     },
     {
-      "id": "人工智能/应用与评测/应用开发",
+      "id": "AI/应用与评测/应用开发",
       "title": "应用开发",
-      "parent": "人工智能/应用与评测",
-      "noteId": "人工智能/应用与评测/应用开发/index.md"
+      "parent": "AI/应用与评测",
+      "noteId": "AI/应用与评测/应用开发/index.md"
     },
     {
-      "id": "人工智能/应用与评测/知识检索",
+      "id": "AI/应用与评测/知识检索",
       "title": "知识检索",
-      "parent": "人工智能/应用与评测",
-      "noteId": "人工智能/应用与评测/知识检索/index.md"
+      "parent": "AI/应用与评测",
+      "noteId": "AI/应用与评测/知识检索/index.md"
     },
     {
-      "id": "人工智能/应用与评测/质量评测",
+      "id": "AI/应用与评测/质量评测",
       "title": "质量评测",
-      "parent": "人工智能/应用与评测",
-      "noteId": "人工智能/应用与评测/质量评测/index.md"
+      "parent": "AI/应用与评测",
+      "noteId": "AI/应用与评测/质量评测/index.md"
     },
     {
-      "id": "人工智能/应用与评测/智能体",
+      "id": "AI/应用与评测/智能体",
       "title": "智能体",
-      "parent": "人工智能/应用与评测",
-      "noteId": "人工智能/应用与评测/智能体/index.md"
+      "parent": "AI/应用与评测",
+      "noteId": "AI/应用与评测/智能体/index.md"
     },
     {
-      "id": "人工智能/自然语言处理",
+      "id": "AI/自然语言处理",
       "title": "自然语言处理",
-      "parent": "人工智能",
-      "noteId": "人工智能/自然语言处理/index.md"
+      "parent": "AI",
+      "noteId": "AI/自然语言处理/index.md"
     },
     {
-      "id": "人工智能/自然语言处理/词向量",
+      "id": "AI/自然语言处理/词向量",
       "title": "词向量",
-      "parent": "人工智能/自然语言处理",
-      "noteId": "人工智能/自然语言处理/词向量/index.md"
+      "parent": "AI/自然语言处理",
+      "noteId": "AI/自然语言处理/词向量/index.md"
     },
     {
-      "id": "人工智能/自然语言处理/BERT",
+      "id": "AI/自然语言处理/BERT",
       "title": "BERT",
-      "parent": "人工智能/自然语言处理",
-      "noteId": "人工智能/自然语言处理/BERT/index.md"
+      "parent": "AI/自然语言处理",
+      "noteId": "AI/自然语言处理/BERT/index.md"
     },
     {
       "id": "数学与统计",
@@ -902,121 +902,121 @@
       "id": "历史/分期",
       "title": "分期",
       "parent": "历史",
-      "noteId": "历史/分期/index.md"
+      "noteId": "历史/世界史/index.md"
     },
     {
-      "id": "历史/分期/当代",
+      "id": "历史/世界史/当代",
       "title": "当代",
       "parent": "历史/分期",
-      "noteId": "历史/分期/当代/index.md"
+      "noteId": "历史/世界史/index.md"
     },
     {
-      "id": "历史/分期/古典时期",
+      "id": "历史/世界史/古典时期",
       "title": "古典时期",
       "parent": "历史/分期",
-      "noteId": "历史/分期/古典时期/index.md"
+      "noteId": "历史/世界史/index.md"
     },
     {
-      "id": "历史/分期/后古典时期",
+      "id": "历史/世界史/后古典时期",
       "title": "后古典时期",
       "parent": "历史/分期",
-      "noteId": "历史/分期/后古典时期/index.md"
+      "noteId": "历史/世界史/index.md"
     },
     {
-      "id": "历史/分期/近现代",
+      "id": "历史/世界史/近现代",
       "title": "近现代",
       "parent": "历史/分期",
-      "noteId": "历史/分期/近现代/index.md"
+      "noteId": "历史/世界史/index.md"
     },
     {
-      "id": "历史/分期/文明起源",
+      "id": "历史/世界史/文明起源",
       "title": "文明起源",
       "parent": "历史/分期",
-      "noteId": "历史/分期/文明起源/index.md"
+      "noteId": "历史/世界史/index.md"
     },
     {
-      "id": "历史/分期/早期近代",
+      "id": "历史/世界史/早期近代",
       "title": "早期近代",
       "parent": "历史/分期",
-      "noteId": "历史/分期/早期近代/index.md"
+      "noteId": "历史/世界史/index.md"
     },
     {
       "id": "历史/贸易与交流",
       "title": "贸易与交流",
       "parent": "历史",
-      "noteId": "历史/贸易与交流/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/人物",
       "title": "人物",
       "parent": "历史",
-      "noteId": "历史/人物/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/史学阅读",
       "title": "史学阅读",
       "parent": "历史",
-      "noteId": "历史/史学阅读/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/事件与变革",
       "title": "事件与变革",
       "parent": "历史",
-      "noteId": "历史/事件与变革/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/文明与考古",
       "title": "文明与考古",
       "parent": "历史",
-      "noteId": "历史/文明与考古/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/政权与制度",
       "title": "政权与制度",
       "parent": "历史",
-      "noteId": "历史/政权与制度/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/主题",
       "title": "主题",
       "parent": "历史",
-      "noteId": "历史/主题/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/主题/冲突与变革",
       "title": "冲突与变革",
       "parent": "历史/主题",
-      "noteId": "历史/主题/冲突与变革/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/主题/交流与贸易",
       "title": "交流与贸易",
       "parent": "历史/主题",
-      "noteId": "历史/主题/交流与贸易/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/主题/农业与生态",
       "title": "农业与生态",
       "parent": "历史/主题",
-      "noteId": "历史/主题/农业与生态/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/主题/权力与制度",
       "title": "权力与制度",
       "parent": "历史/主题",
-      "noteId": "历史/主题/权力与制度/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/主题/增长与福祉",
       "title": "增长与福祉",
       "parent": "历史/主题",
-      "noteId": "历史/主题/增长与福祉/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "历史/主题/知识与传播",
       "title": "知识与传播",
       "parent": "历史/主题",
-      "noteId": "历史/主题/知识与传播/index.md"
+      "noteId": "历史/index.md"
     },
     {
       "id": "人文语言",
@@ -1033,7 +1033,7 @@
   ],
   "roots": [
     "计算机与软件",
-    "人工智能",
+    "AI",
     "数学与统计",
     "设计",
     "影像",

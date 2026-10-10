@@ -18,7 +18,7 @@ function walkDir(dir) {
     if (path.resolve(dir) === path.resolve(".")) {
       const domains = [
         "计算机与软件",
-        "人工智能",
+        "AI",
         "数学与统计",
         "设计",
         "影像",
@@ -83,6 +83,7 @@ function walkDir(dir) {
           ].some((item) => file.replace("./", "") === item)
         )
           return;
+        if (path.basename(file) === "index.md") return;
         if (path.extname(file) === ".md") {
           results.push({
             text:

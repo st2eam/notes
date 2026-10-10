@@ -28,7 +28,7 @@ const emit = defineEmits(["toggle", "open"]);
         @open="(n: VaultNote, e: MouseEvent) => emit('open', n, e)"
       />
     </li>
-    <li v-for="note in branch.notes" :key="note.id">
+    <li v-for="note in branch.notes.filter((n: VaultNote) => !n.id.endsWith('/index.md') || ['历史/中国史/index.md', '历史/世界史/index.md'].includes(n.id))" :key="note.id">
       <button
         :class="['tree-note', { active: current === note.id }]"
         :aria-current="current === note.id ? 'page' : undefined"
@@ -38,7 +38,7 @@ const emit = defineEmits(["toggle", "open"]);
           note.id.endsWith("/index.md") &&
           (!note.categoryContext ||
             note.categoryOverview === note.categoryContext)
-            ? "总览"
+            ? "时间总览"
             : note.title
         }}</span
         ><small

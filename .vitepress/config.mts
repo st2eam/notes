@@ -2,12 +2,17 @@ import { defineConfig } from "vitepress";
 import sidebar from "./sidebar";
 import { readVault, wikiPlugin } from "./vault/build.mjs";
 import { resolveLink, slugify } from "./vault/model.mjs";
-const vault = readVault(process.cwd());
+import { vaultDevRefresh } from "./vault/dev-refresh.mjs";
+let vault = readVault(process.cwd());
 
 const base = "/notes/";
 
 export default defineConfig({
   base,
+  vite: {
+    server: { watch: { usePolling: true, interval: 200 } },
+    plugins: [vaultDevRefresh(() => { vault = readVault(process.cwd()); })],
+  },
   title: "Steam's Notes",
   outDir: "docs",
   srcExclude: [

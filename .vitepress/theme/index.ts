@@ -1,3 +1,4 @@
+import HistoryTimeline from "./components/history/HistoryTimeline.vue";
 import DefaultTheme from "vitepress/theme";
 import Layout from "./Layout.vue";
 import "./components/vault/vault.css";
@@ -58,6 +59,7 @@ export default {
   Layout,
   enhanceApp({ app, router }) {
     installRedirects(router);
+    app.component("HistoryTimeline", HistoryTimeline);
     app.component("MotionLab", MotionLab);
     app.component("DohertyLab", DohertyLab);
     app.component("TypeLab", TypeLab);

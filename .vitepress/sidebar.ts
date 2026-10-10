@@ -4,10 +4,6 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "index",
-                "link": "/计算机与软件/index.md"
-            },
-            {
                 "text": "前端",
                 "collapsed": true,
                 "items": [
@@ -18,10 +14,6 @@ export default [
                             {
                                 "text": "Canvas",
                                 "link": "/计算机与软件/前端/Canvas/Canvas.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/Canvas/index.md"
                             }
                         ]
                     },
@@ -82,10 +74,6 @@ export default [
                                 "link": "/计算机与软件/前端/CSS/CSS选择器.md"
                             },
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/CSS/index.md"
-                            },
-                            {
                                 "text": "Less",
                                 "link": "/计算机与软件/前端/CSS/Less.md"
                             },
@@ -112,18 +100,10 @@ export default [
                                 "link": "/计算机与软件/前端/HTML/HTML.md"
                             },
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/HTML/index.md"
-                            },
-                            {
                                 "text": "网站与网页",
                                 "link": "/计算机与软件/前端/HTML/网站与网页.md"
                             }
                         ]
-                    },
-                    {
-                        "text": "index",
-                        "link": "/计算机与软件/前端/index.md"
                     },
                     {
                         "text": "React",
@@ -182,10 +162,6 @@ export default [
                                         "link": "/计算机与软件/前端/React/Hooks/useState.md"
                                     }
                                 ]
-                            },
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/React/index.md"
                             },
                             {
                                 "text": "Next.js",
@@ -350,17 +326,9 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/Vue/index.md"
-                            },
-                            {
                                 "text": "Vue2",
                                 "collapsed": true,
                                 "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/前端/Vue/Vue2/index.md"
-                                    },
                                     {
                                         "text": "vue-property-decorator使用指南",
                                         "link": "/计算机与软件/前端/Vue/Vue2/vue-property-decorator使用指南.md"
@@ -484,10 +452,6 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/小程序/index.md"
-                            },
-                            {
                                 "text": "产品开发流程",
                                 "link": "/计算机与软件/前端/小程序/产品开发流程.md"
                             },
@@ -498,31 +462,13 @@ export default [
                         ]
                     },
                     {
-                        "text": "性能与反馈",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/性能与反馈/index.md"
-                            }
-                        ]
-                    },
-                    {
                         "text": "桌面应用",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/桌面应用/index.md"
-                            },
-                            {
                                 "text": "Qt",
                                 "collapsed": true,
                                 "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/index.md"
-                                    },
                                     {
                                         "text": "QT 信号与槽",
                                         "link": "/计算机与软件/前端/桌面应用/Qt/QT 信号与槽.md"
@@ -576,10 +522,6 @@ export default [
                                 "link": "/计算机与软件/前端/浏览器/DOM.md"
                             },
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/前端/浏览器/index.md"
-                            },
-                            {
                                 "text": "JS 事件",
                                 "link": "/计算机与软件/前端/浏览器/JS 事件.md"
                             },
@@ -614,10 +556,6 @@ export default [
                             {
                                 "text": "Express",
                                 "link": "/计算机与软件/后端/Express/Express.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/后端/Express/index.md"
                             }
                         ]
                     },
@@ -625,10 +563,6 @@ export default [
                         "text": "Flask",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/后端/Flask/index.md"
-                            },
                             {
                                 "text": "应用设置",
                                 "link": "/计算机与软件/后端/Flask/应用设置.md"
@@ -660,17 +594,9 @@ export default [
                         ]
                     },
                     {
-                        "text": "index",
-                        "link": "/计算机与软件/后端/index.md"
-                    },
-                    {
                         "text": "Koa",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/后端/Koa/index.md"
-                            },
                             {
                                 "text": "koa 上下文",
                                 "link": "/计算机与软件/后端/Koa/koa 上下文.md"
@@ -693,10 +619,6 @@ export default [
                         "text": "Node.js",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/后端/Node.js/index.md"
-                            },
                             {
                                 "text": "Node.js Buffer",
                                 "link": "/计算机与软件/后端/Node.js/Node.js Buffer.md"
@@ -736,23 +658,9 @@ export default [
                         ]
                     },
                     {
-                        "text": "接口与流程",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/后端/接口与流程/index.md"
-                            }
-                        ]
-                    },
-                    {
                         "text": "输入校验",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/后端/输入校验/index.md"
-                            },
                             {
                                 "text": "Joi",
                                 "link": "/计算机与软件/后端/输入校验/Joi.md"
@@ -766,37 +674,9 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/计算机与软件/基础/index.md"
-                    },
-                    {
-                        "text": "安全与权限",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/基础/安全与权限/index.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "并发与异步",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/基础/并发与异步/index.md"
-                            }
-                        ]
-                    },
-                    {
                         "text": "算法与数据结构",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/基础/算法与数据结构/index.md"
-                            },
                             {
                                 "text": "排序",
                                 "link": "/计算机与软件/基础/算法与数据结构/排序.md"
@@ -807,10 +687,6 @@ export default [
                         "text": "编程概念",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/基础/编程概念/index.md"
-                            },
                             {
                                 "text": "正则表达式",
                                 "link": "/计算机与软件/基础/编程概念/正则表达式.md"
@@ -862,22 +738,8 @@ export default [
                                 "link": "/计算机与软件/基础/网络/HTTP.md"
                             },
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/基础/网络/index.md"
-                            },
-                            {
                                 "text": "python网络编程",
                                 "link": "/计算机与软件/基础/网络/python网络编程.md"
-                            },
-                            {
-                                "text": "WebSocket",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/基础/网络/WebSocket/index.md"
-                                    }
-                                ]
                             },
                             {
                                 "text": "认证与授权",
@@ -889,10 +751,6 @@ export default [
                         "text": "计算机系统",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/基础/计算机系统/index.md"
-                            },
                             {
                                 "text": "pythonOS模块",
                                 "link": "/计算机与软件/基础/计算机系统/pythonOS模块.md"
@@ -910,20 +768,12 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/计算机与软件/工程化/index.md"
-                    },
-                    {
                         "text": "代码规范",
                         "collapsed": true,
                         "items": [
                             {
                                 "text": "ESLint",
                                 "link": "/计算机与软件/工程化/代码规范/ESLint.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/代码规范/index.md"
                             },
                             {
                                 "text": "JavaScript Standard Style",
@@ -935,10 +785,6 @@ export default [
                         "text": "包管理",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/包管理/index.md"
-                            },
                             {
                                 "text": "pythonPIP",
                                 "link": "/计算机与软件/工程化/包管理/pythonPIP.md"
@@ -958,22 +804,8 @@ export default [
                                 "link": "/计算机与软件/工程化/命令行工具/Chalk.md"
                             },
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/命令行工具/index.md"
-                            },
-                            {
                                 "text": "ora",
                                 "link": "/计算机与软件/工程化/命令行工具/ora.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "开发实践",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/开发实践/index.md"
                             }
                         ]
                     },
@@ -982,17 +814,9 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/构建/index.md"
-                            },
-                            {
                                 "text": "Webpack",
                                 "collapsed": true,
                                 "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/工程化/构建/Webpack/index.md"
-                                    },
                                     {
                                         "text": "概念",
                                         "collapsed": true,
@@ -1050,10 +874,6 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/测试与持续集成/index.md"
-                            },
-                            {
                                 "text": "Jest",
                                 "link": "/计算机与软件/工程化/测试与持续集成/Jest.md"
                             },
@@ -1074,10 +894,6 @@ export default [
                             {
                                 "text": "Git",
                                 "link": "/计算机与软件/工程化/版本管理/Git.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/版本管理/index.md"
                             }
                         ]
                     },
@@ -1085,10 +901,6 @@ export default [
                         "text": "配置管理",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/工程化/配置管理/index.md"
-                            },
                             {
                                 "text": "配置文件",
                                 "link": "/计算机与软件/工程化/配置管理/配置文件.md"
@@ -1102,17 +914,9 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/计算机与软件/数据/index.md"
-                    },
-                    {
                         "text": "MongoDB",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/数据/MongoDB/index.md"
-                            },
                             {
                                 "text": "MongoDB",
                                 "link": "/计算机与软件/数据/MongoDB/MongoDB.md"
@@ -1125,10 +929,6 @@ export default [
                                 "text": "PyMongo",
                                 "collapsed": true,
                                 "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/数据/MongoDB/PyMongo/index.md"
-                                    },
                                     {
                                         "text": "MongoDB Delete",
                                         "link": "/计算机与软件/数据/MongoDB/PyMongo/MongoDB Delete.md"
@@ -1150,23 +950,9 @@ export default [
                         ]
                     },
                     {
-                        "text": "信息检索",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/数据/信息检索/index.md"
-                            }
-                        ]
-                    },
-                    {
                         "text": "关系数据库",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/数据/关系数据库/index.md"
-                            },
                             {
                                 "text": "SQL与数据建模",
                                 "link": "/计算机与软件/数据/关系数据库/SQL与数据建模.md"
@@ -1174,23 +960,9 @@ export default [
                         ]
                     },
                     {
-                        "text": "向量检索",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/数据/向量检索/index.md"
-                            }
-                        ]
-                    },
-                    {
                         "text": "对象存储",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/数据/对象存储/index.md"
-                            },
                             {
                                 "text": "Node.js SDK",
                                 "link": "/计算机与软件/数据/对象存储/Node.js SDK.md"
@@ -1214,10 +986,6 @@ export default [
                                 "link": "/计算机与软件/数据/浏览器存储/Dexie.md"
                             },
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/数据/浏览器存储/index.md"
-                            },
-                            {
                                 "text": "IndexedDB",
                                 "link": "/计算机与软件/数据/浏览器存储/IndexedDB.md"
                             }
@@ -1230,35 +998,13 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/计算机与软件/架构/index.md"
-                    },
-                    {
-                        "text": "组件架构",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/架构/组件架构/index.md"
-                            }
-                        ]
-                    },
-                    {
                         "text": "设计模式",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/架构/设计模式/index.md"
-                            },
-                            {
                                 "text": "创建型",
                                 "collapsed": true,
                                 "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/架构/设计模式/创建型/index.md"
-                                    },
                                     {
                                         "text": "单例模式",
                                         "link": "/计算机与软件/架构/设计模式/创建型/单例模式.md"
@@ -1290,10 +1036,6 @@ export default [
                                 "collapsed": true,
                                 "items": [
                                     {
-                                        "text": "index",
-                                        "link": "/计算机与软件/架构/设计模式/概述与组合/index.md"
-                                    },
-                                    {
                                         "text": "模式联用",
                                         "link": "/计算机与软件/架构/设计模式/概述与组合/模式联用.md"
                                     },
@@ -1307,10 +1049,6 @@ export default [
                                 "text": "结构型",
                                 "collapsed": true,
                                 "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/index.md"
-                                    },
                                     {
                                         "text": "享元模式",
                                         "link": "/计算机与软件/架构/设计模式/结构型/享元模式.md"
@@ -1345,10 +1083,6 @@ export default [
                                 "text": "行为型",
                                 "collapsed": true,
                                 "items": [
-                                    {
-                                        "text": "index",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/index.md"
-                                    },
                                     {
                                         "text": "中介者模式",
                                         "link": "/计算机与软件/架构/设计模式/行为型/中介者模式.md"
@@ -1458,25 +1192,13 @@ export default [
                             {
                                 "text": "C++预处理",
                                 "link": "/计算机与软件/编程语言/C++/C++预处理.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/编程语言/C++/index.md"
                             }
                         ]
-                    },
-                    {
-                        "text": "index",
-                        "link": "/计算机与软件/编程语言/index.md"
                     },
                     {
                         "text": "Java",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/编程语言/Java/index.md"
-                            },
                             {
                                 "text": "Java",
                                 "link": "/计算机与软件/编程语言/Java/Java.md"
@@ -1516,10 +1238,6 @@ export default [
                                         "link": "/计算机与软件/编程语言/JavaScript/Function/JS 箭头函数.md"
                                     }
                                 ]
-                            },
-                            {
-                                "text": "index",
-                                "link": "/计算机与软件/编程语言/JavaScript/index.md"
                             },
                             {
                                 "text": "JS Decorator",
@@ -1604,10 +1322,6 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/编程语言/Python/index.md"
-                            },
-                            {
                                 "text": "pythonJSON",
                                 "link": "/计算机与软件/编程语言/Python/pythonJSON.md"
                             },
@@ -1686,10 +1400,6 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/计算机与软件/编程语言/TypeScript/index.md"
-                            },
-                            {
                                 "text": "TypeScript",
                                 "link": "/计算机与软件/编程语言/TypeScript/TypeScript.md"
                             }
@@ -1700,54 +1410,20 @@ export default [
         ]
     },
     {
-        "text": "人工智能",
+        "text": "AI",
         "collapsed": true,
         "items": [
-            {
-                "text": "index",
-                "link": "/人工智能/index.md"
-            },
             {
                 "text": "应用与评测",
                 "collapsed": true,
                 "items": [
-                    {
-                        "text": "index",
-                        "link": "/人工智能/应用与评测/index.md"
-                    },
-                    {
-                        "text": "应用开发",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "AI应用开发",
-                                "link": "/人工智能/应用与评测/应用开发/AI应用开发.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/人工智能/应用与评测/应用开发/index.md"
-                            },
-                            {
-                                "text": "Prompt Engineering",
-                                "link": "/人工智能/应用与评测/应用开发/Prompt Engineering.md"
-                            }
-                        ]
-                    },
                     {
                         "text": "智能体",
                         "collapsed": true,
                         "items": [
                             {
                                 "text": "agentic-engineering-patterns",
-                                "link": "/人工智能/应用与评测/智能体/agentic-engineering-patterns.md"
-                            },
-                            {
-                                "text": "Agent工具与安全",
-                                "link": "/人工智能/应用与评测/智能体/Agent工具与安全.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/人工智能/应用与评测/智能体/index.md"
+                                "link": "/AI/应用与评测/智能体/agentic-engineering-patterns.md"
                             }
                         ]
                     },
@@ -1756,20 +1432,8 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "Embedding与向量数据库",
-                                "link": "/人工智能/应用与评测/知识检索/Embedding与向量数据库.md"
-                            },
-                            {
-                                "text": "index",
-                                "link": "/人工智能/应用与评测/知识检索/index.md"
-                            },
-                            {
                                 "text": "LLM Wiki",
-                                "link": "/人工智能/应用与评测/知识检索/LLM Wiki 可视化教程.md"
-                            },
-                            {
-                                "text": "RAG与检索质量",
-                                "link": "/人工智能/应用与评测/知识检索/RAG与检索质量.md"
+                                "link": "/AI/应用与评测/知识检索/LLM Wiki 可视化教程.md"
                             }
                         ]
                     },
@@ -1778,12 +1442,8 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/人工智能/应用与评测/质量评测/index.md"
-                            },
-                            {
                                 "text": "应用评测",
-                                "link": "/人工智能/应用与评测/质量评测/应用评测.md"
+                                "link": "/AI/应用与评测/质量评测/应用评测.md"
                             }
                         ]
                     }
@@ -1794,20 +1454,12 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/人工智能/机器学习/index.md"
-                    },
-                    {
                         "text": "PyTorch",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/人工智能/机器学习/PyTorch/index.md"
-                            },
-                            {
                                 "text": "快速入门",
-                                "link": "/人工智能/机器学习/PyTorch/快速入门.md"
+                                "link": "/AI/机器学习/PyTorch/快速入门.md"
                             }
                         ]
                     },
@@ -1816,12 +1468,8 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/人工智能/机器学习/推荐系统/index.md"
-                            },
-                            {
                                 "text": "用户行为数据",
-                                "link": "/人工智能/机器学习/推荐系统/用户行为数据.md"
+                                "link": "/AI/机器学习/推荐系统/用户行为数据.md"
                             }
                         ]
                     }
@@ -1832,44 +1480,12 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/人工智能/模型原理/index.md"
-                    },
-                    {
-                        "text": "向量表示",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/人工智能/模型原理/向量表示/index.md"
-                            }
-                        ]
-                    },
-                    {
                         "text": "大语言模型",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/人工智能/模型原理/大语言模型/index.md"
-                            },
-                            {
                                 "text": "LLM演进路线",
-                                "link": "/人工智能/模型原理/大语言模型/LLM演进路线.md"
-                            },
-                            {
-                                "text": "大语言模型基础",
-                                "link": "/人工智能/模型原理/大语言模型/大语言模型基础.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "注意力",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/人工智能/模型原理/注意力/index.md"
+                                "link": "/AI/模型原理/大语言模型/LLM演进路线.md"
                             }
                         ]
                     }
@@ -1884,30 +1500,18 @@ export default [
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/人工智能/自然语言处理/BERT/index.md"
-                            },
-                            {
                                 "text": "快速入门",
-                                "link": "/人工智能/自然语言处理/BERT/快速入门.md"
+                                "link": "/AI/自然语言处理/BERT/快速入门.md"
                             }
                         ]
-                    },
-                    {
-                        "text": "index",
-                        "link": "/人工智能/自然语言处理/index.md"
                     },
                     {
                         "text": "词向量",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/人工智能/自然语言处理/词向量/index.md"
-                            },
-                            {
                                 "text": "word2vec",
-                                "link": "/人工智能/自然语言处理/词向量/word2vec.md"
+                                "link": "/AI/自然语言处理/词向量/word2vec.md"
                             }
                         ]
                     }
@@ -1920,17 +1524,9 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "index",
-                "link": "/数学与统计/index.md"
-            },
-            {
                 "text": "机器学习数学",
                 "collapsed": true,
                 "items": [
-                    {
-                        "text": "index",
-                        "link": "/数学与统计/机器学习数学/index.md"
-                    },
                     {
                         "text": "机器学习数学基础",
                         "link": "/数学与统计/机器学习数学/机器学习数学基础.md"
@@ -1942,10 +1538,6 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/数学与统计/概率与实验/index.md"
-                    },
-                    {
                         "text": "概率统计",
                         "link": "/数学与统计/概率与实验/概率统计.md"
                     }
@@ -1956,17 +1548,9 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/数学与统计/科学计算/index.md"
-                    },
-                    {
                         "text": "NumPy",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/数学与统计/科学计算/NumPy/index.md"
-                            },
                             {
                                 "text": "NumPy数据类型",
                                 "link": "/数学与统计/科学计算/NumPy/NumPy数据类型.md"
@@ -1986,17 +1570,9 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "index",
-                "link": "/设计/index.md"
-            },
-            {
                 "text": "交互设计",
                 "collapsed": true,
                 "items": [
-                    {
-                        "text": "index",
-                        "link": "/设计/交互设计/index.md"
-                    },
                     {
                         "text": "动效设计",
                         "link": "/设计/交互设计/动效设计.md"
@@ -2016,10 +1592,6 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/设计/视觉设计/index.md"
-                    },
-                    {
                         "text": "排版设计",
                         "link": "/设计/视觉设计/排版设计.md"
                     },
@@ -2036,25 +1608,13 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "index",
-                "link": "/影像/index.md"
-            },
-            {
                 "text": "摄影",
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/影像/摄影/index.md"
-                    },
-                    {
                         "text": "后期",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/影像/摄影/后期/index.md"
-                            },
                             {
                                 "text": "后期处理",
                                 "link": "/影像/摄影/后期/后期处理.md"
@@ -2065,10 +1625,6 @@ export default [
                         "text": "拍摄",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/影像/摄影/拍摄/index.md"
-                            },
                             {
                                 "text": "摄影基础",
                                 "link": "/影像/摄影/拍摄/摄影基础.md"
@@ -2082,17 +1638,9 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/影像/视频/index.md"
-                    },
-                    {
                         "text": "剪辑",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/影像/视频/剪辑/index.md"
-                            },
                             {
                                 "text": "视频剪辑基础",
                                 "link": "/影像/视频/剪辑/视频剪辑基础.md"
@@ -2103,10 +1651,6 @@ export default [
                         "text": "调色",
                         "collapsed": true,
                         "items": [
-                            {
-                                "text": "index",
-                                "link": "/影像/视频/调色/index.md"
-                            },
                             {
                                 "text": "视频调色",
                                 "link": "/影像/视频/调色/视频调色.md"
@@ -2122,438 +1666,1008 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "历史图谱",
-                "link": "/历史/"
-            },
-            {
-                "text": "主题",
+                "text": "世界史",
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/历史/主题/index.md"
-                    },
-                    {
-                        "text": "交流与贸易",
+                        "text": "亚洲",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/历史/主题/交流与贸易/index.md"
+                                "text": "两河流域",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "苏美尔城市兴起",
+                                        "link": "/历史/世界史/亚洲/两河流域/苏美尔城市兴起.md"
+                                    },
+                                    {
+                                        "text": "苏美尔城邦形成",
+                                        "link": "/历史/世界史/亚洲/两河流域/苏美尔城邦形成.md"
+                                    },
+                                    {
+                                        "text": "苏美尔早期文字记录出现",
+                                        "link": "/历史/世界史/亚洲/两河流域/苏美尔早期文字记录出现.md"
+                                    }
+                                ]
                             },
                             {
-                                "text": "交流与贸易",
-                                "link": "/历史/主题/交流与贸易/交流与贸易.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "农业与生态",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/历史/主题/农业与生态/index.md"
+                                "text": "南亚",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "印巴分治",
+                                        "link": "/历史/世界史/亚洲/南亚/印巴分治.md"
+                                    },
+                                    {
+                                        "text": "印度河文明城市衰落",
+                                        "link": "/历史/世界史/亚洲/南亚/印度河文明城市衰落.md"
+                                    },
+                                    {
+                                        "text": "印度河文明城市规划展开",
+                                        "link": "/历史/世界史/亚洲/南亚/印度河文明城市规划展开.md"
+                                    },
+                                    {
+                                        "text": "印度河文明远距离贸易形成",
+                                        "link": "/历史/世界史/亚洲/南亚/印度河文明远距离贸易形成.md"
+                                    },
+                                    {
+                                        "text": "奥朗则布即位",
+                                        "link": "/历史/世界史/亚洲/南亚/奥朗则布即位.md"
+                                    },
+                                    {
+                                        "text": "孔雀王朝结束",
+                                        "link": "/历史/世界史/亚洲/南亚/孔雀王朝结束.md"
+                                    },
+                                    {
+                                        "text": "旃陀罗笈多建国",
+                                        "link": "/历史/世界史/亚洲/南亚/旃陀罗笈多建国.md"
+                                    },
+                                    {
+                                        "text": "泰姬陵开建",
+                                        "link": "/历史/世界史/亚洲/南亚/泰姬陵开建.md"
+                                    },
+                                    {
+                                        "text": "第一次帕尼帕特战役",
+                                        "link": "/历史/世界史/亚洲/南亚/第一次帕尼帕特战役.md"
+                                    },
+                                    {
+                                        "text": "羯陵伽战争",
+                                        "link": "/历史/世界史/亚洲/南亚/羯陵伽战争.md"
+                                    },
+                                    {
+                                        "text": "莫卧儿末代皇帝被废",
+                                        "link": "/历史/世界史/亚洲/南亚/莫卧儿末代皇帝被废.md"
+                                    },
+                                    {
+                                        "text": "阿克巴扩张莫卧儿统治",
+                                        "link": "/历史/世界史/亚洲/南亚/阿克巴扩张莫卧儿统治.md"
+                                    },
+                                    {
+                                        "text": "阿育王即位",
+                                        "link": "/历史/世界史/亚洲/南亚/阿育王即位.md"
+                                    },
+                                    {
+                                        "text": "颁布石刻敕令",
+                                        "link": "/历史/世界史/亚洲/南亚/颁布石刻敕令.md"
+                                    }
+                                ]
                             },
                             {
-                                "text": "农业与生态",
-                                "link": "/历史/主题/农业与生态/农业与生态.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "冲突与变革",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/历史/主题/冲突与变革/index.md"
+                                "text": "日本",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "广岛原子弹爆炸",
+                                        "link": "/历史/世界史/亚洲/日本/广岛原子弹爆炸.md"
+                                    },
+                                    {
+                                        "text": "日本宣布接受波茨坦公告",
+                                        "link": "/历史/世界史/亚洲/日本/日本宣布接受波茨坦公告.md"
+                                    },
+                                    {
+                                        "text": "日本废藩置县",
+                                        "link": "/历史/世界史/亚洲/日本/日本废藩置县.md"
+                                    },
+                                    {
+                                        "text": "日本王政复古",
+                                        "link": "/历史/世界史/亚洲/日本/日本王政复古.md"
+                                    },
+                                    {
+                                        "text": "日本签署投降书",
+                                        "link": "/历史/世界史/亚洲/日本/日本签署投降书.md"
+                                    },
+                                    {
+                                        "text": "日本颁布明治宪法",
+                                        "link": "/历史/世界史/亚洲/日本/日本颁布明治宪法.md"
+                                    },
+                                    {
+                                        "text": "西南战争",
+                                        "link": "/历史/世界史/亚洲/日本/西南战争.md"
+                                    },
+                                    {
+                                        "text": "长崎原子弹爆炸",
+                                        "link": "/历史/世界史/亚洲/日本/长崎原子弹爆炸.md"
+                                    }
+                                ]
                             },
                             {
-                                "text": "冲突与变革",
-                                "link": "/历史/主题/冲突与变革/冲突与变革.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "增长与福祉",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/历史/主题/增长与福祉/index.md"
+                                "text": "波斯",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "大流士三世败亡",
+                                        "link": "/历史/世界史/亚洲/波斯/大流士三世败亡.md"
+                                    },
+                                    {
+                                        "text": "大流士整顿行省",
+                                        "link": "/历史/世界史/亚洲/波斯/大流士整顿行省.md"
+                                    },
+                                    {
+                                        "text": "居鲁士击败米底",
+                                        "link": "/历史/世界史/亚洲/波斯/居鲁士击败米底.md"
+                                    },
+                                    {
+                                        "text": "居鲁士攻占巴比伦",
+                                        "link": "/历史/世界史/亚洲/波斯/居鲁士攻占巴比伦.md"
+                                    }
+                                ]
                             },
                             {
-                                "text": "增长与福祉",
-                                "link": "/历史/主题/增长与福祉/增长与福祉.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "权力与制度",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/历史/主题/权力与制度/index.md"
+                                "text": "蒙古与中亚",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "蒙古攻陷巴格达",
+                                        "link": "/历史/世界史/亚洲/蒙古与中亚/蒙古攻陷巴格达.md"
+                                    },
+                                    {
+                                        "text": "西征花剌子模",
+                                        "link": "/历史/世界史/亚洲/蒙古与中亚/西征花剌子模.md"
+                                    },
+                                    {
+                                        "text": "铁木真称汗",
+                                        "link": "/历史/世界史/亚洲/蒙古与中亚/铁木真称汗.md"
+                                    }
+                                ]
                             },
                             {
-                                "text": "权力与制度",
-                                "link": "/历史/主题/权力与制度/权力与制度.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "知识与传播",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "index",
-                                "link": "/历史/主题/知识与传播/index.md"
+                                "text": "西亚与中东",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "翻译希腊文著作",
+                                        "link": "/历史/世界史/亚洲/西亚与中东/翻译希腊文著作.md"
+                                    },
+                                    {
+                                        "text": "营建巴格达",
+                                        "link": "/历史/世界史/亚洲/西亚与中东/营建巴格达.md"
+                                    },
+                                    {
+                                        "text": "阿拔斯击败倭马亚",
+                                        "link": "/历史/世界史/亚洲/西亚与中东/阿拔斯击败倭马亚.md"
+                                    }
+                                ]
                             },
                             {
-                                "text": "知识与传播",
-                                "link": "/历史/主题/知识与传播/知识与传播.md"
+                                "text": "越南",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "奠边府战役",
+                                        "link": "/历史/世界史/亚洲/越南/奠边府战役.md"
+                                    }
+                                ]
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "text": "事件与变革",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "index",
-                        "link": "/历史/事件与变革/index.md"
                     },
                     {
-                        "text": "五四运动",
-                        "link": "/历史/事件与变革/五四运动.md"
-                    },
-                    {
-                        "text": "亚非去殖民化",
-                        "link": "/历史/事件与变革/亚非去殖民化.md"
-                    },
-                    {
-                        "text": "全球化加速",
-                        "link": "/历史/事件与变革/全球化加速.md"
-                    },
-                    {
-                        "text": "太平天国运动",
-                        "link": "/历史/事件与变革/太平天国运动.md"
-                    },
-                    {
-                        "text": "工业革命",
-                        "link": "/历史/事件与变革/工业革命.md"
-                    },
-                    {
-                        "text": "改革开放",
-                        "link": "/历史/事件与变革/改革开放.md"
-                    },
-                    {
-                        "text": "明治维新",
-                        "link": "/历史/事件与变革/明治维新.md"
-                    },
-                    {
-                        "text": "瓜分非洲",
-                        "link": "/历史/事件与变革/瓜分非洲.md"
-                    },
-                    {
-                        "text": "第一次世界大战",
-                        "link": "/历史/事件与变革/第一次世界大战.md"
-                    },
-                    {
-                        "text": "第二次世界大战",
-                        "link": "/历史/事件与变革/第二次世界大战.md"
-                    },
-                    {
-                        "text": "辛亥革命",
-                        "link": "/历史/事件与变革/辛亥革命.md"
-                    },
-                    {
-                        "text": "鸦片战争",
-                        "link": "/历史/事件与变革/鸦片战争.md"
-                    }
-                ]
-            },
-            {
-                "text": "人物",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "index",
-                        "link": "/历史/人物/index.md"
-                    },
-                    {
-                        "text": "孙中山",
-                        "link": "/历史/人物/孙中山.md"
-                    },
-                    {
-                        "text": "张骞",
-                        "link": "/历史/人物/张骞.md"
-                    },
-                    {
-                        "text": "玄奘",
-                        "link": "/历史/人物/玄奘.md"
-                    },
-                    {
-                        "text": "阿育王",
-                        "link": "/历史/人物/阿育王.md"
-                    }
-                ]
-            },
-            {
-                "text": "分期",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "index",
-                        "link": "/历史/分期/index.md"
-                    },
-                    {
-                        "text": "文明起源",
-                        "link": "/历史/分期/文明起源.md"
-                    },
-                    {
-                        "text": "古典时期",
-                        "link": "/历史/分期/古典时期.md"
-                    },
-                    {
-                        "text": "后古典时期",
-                        "link": "/历史/分期/后古典时期.md"
-                    },
-                    {
-                        "text": "早期近代",
-                        "link": "/历史/分期/早期近代.md"
-                    },
-                    {
-                        "text": "近现代",
-                        "link": "/历史/分期/近现代.md"
-                    },
-                    {
-                        "text": "当代",
-                        "link": "/历史/分期/当代.md"
-                    },
-                    {
-                        "text": "古典时期",
+                        "text": "全球与跨地区",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/历史/分期/古典时期/index.md"
+                                "text": "世界贸易组织成立",
+                                "link": "/历史/世界史/全球与跨地区/世界贸易组织成立.md"
+                            },
+                            {
+                                "text": "乌尔达内塔找到太平洋返航路线",
+                                "link": "/历史/世界史/全球与跨地区/乌尔达内塔找到太平洋返航路线.md"
+                            },
+                            {
+                                "text": "第二次世界大战欧洲战场爆发",
+                                "link": "/历史/世界史/全球与跨地区/第二次世界大战欧洲战场爆发.md"
+                            },
+                            {
+                                "text": "英国废除殖民地奴隶制",
+                                "link": "/历史/世界史/全球与跨地区/英国废除殖民地奴隶制.md"
+                            },
+                            {
+                                "text": "英国禁止奴隶贸易",
+                                "link": "/历史/世界史/全球与跨地区/英国禁止奴隶贸易.md"
+                            },
+                            {
+                                "text": "西班牙建立马尼拉据点",
+                                "link": "/历史/世界史/全球与跨地区/西班牙建立马尼拉据点.md"
+                            },
+                            {
+                                "text": "西班牙限制马尼拉帆船数量",
+                                "link": "/历史/世界史/全球与跨地区/西班牙限制马尼拉帆船数量.md"
+                            },
+                            {
+                                "text": "跨大西洋奴隶直接贩运开始",
+                                "link": "/历史/世界史/全球与跨地区/跨大西洋奴隶直接贩运开始.md"
+                            },
+                            {
+                                "text": "跨大西洋奴隶贩运达到高峰",
+                                "link": "/历史/世界史/全球与跨地区/跨大西洋奴隶贩运达到高峰.md"
+                            },
+                            {
+                                "text": "跨大西洋奴隶贸易中段航程",
+                                "link": "/历史/世界史/全球与跨地区/跨大西洋奴隶贸易中段航程.md"
+                            },
+                            {
+                                "text": "金融危机扩散",
+                                "link": "/历史/世界史/全球与跨地区/金融危机扩散.md"
+                            },
+                            {
+                                "text": "马尼拉大帆船定期航线停止",
+                                "link": "/历史/世界史/全球与跨地区/马尼拉大帆船定期航线停止.md"
                             }
                         ]
                     },
                     {
-                        "text": "后古典时期",
+                        "text": "欧洲",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/历史/分期/后古典时期/index.md"
+                                "text": "俄罗斯与苏联",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "俄国二月革命",
+                                        "link": "/历史/世界史/欧洲/俄罗斯与苏联/俄国二月革命.md"
+                                    },
+                                    {
+                                        "text": "俄国十月革命",
+                                        "link": "/历史/世界史/欧洲/俄罗斯与苏联/俄国十月革命.md"
+                                    },
+                                    {
+                                        "text": "苏联解体",
+                                        "link": "/历史/世界史/欧洲/俄罗斯与苏联/苏联解体.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "德国",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "德国无条件投降",
+                                        "link": "/历史/世界史/欧洲/德国/德国无条件投降.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "法国",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "凡尔登战役",
+                                        "link": "/历史/世界史/欧洲/法国/凡尔登战役.md"
+                                    },
+                                    {
+                                        "text": "巴黎和会",
+                                        "link": "/历史/世界史/欧洲/法国/巴黎和会.md"
+                                    },
+                                    {
+                                        "text": "索姆河战役",
+                                        "link": "/历史/世界史/欧洲/法国/索姆河战役.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "罗马与地中海",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "卡拉卡拉授予公民权",
+                                        "link": "/历史/世界史/欧洲/罗马与地中海/卡拉卡拉授予公民权.md"
+                                    },
+                                    {
+                                        "text": "君士坦丁堡建都",
+                                        "link": "/历史/世界史/欧洲/罗马与地中海/君士坦丁堡建都.md"
+                                    },
+                                    {
+                                        "text": "屋大维称奥古斯都",
+                                        "link": "/历史/世界史/欧洲/罗马与地中海/屋大维称奥古斯都.md"
+                                    },
+                                    {
+                                        "text": "罗马帝国疆域达到最大",
+                                        "link": "/历史/世界史/欧洲/罗马与地中海/罗马帝国疆域达到最大.md"
+                                    },
+                                    {
+                                        "text": "西罗马皇帝被废",
+                                        "link": "/历史/世界史/欧洲/罗马与地中海/西罗马皇帝被废.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "英国",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "利物浦至曼彻斯特铁路开通定期客运",
+                                        "link": "/历史/世界史/欧洲/英国/利物浦至曼彻斯特铁路开通定期客运.md"
+                                    },
+                                    {
+                                        "text": "斯托克顿至达灵顿蒸汽铁路通车",
+                                        "link": "/历史/世界史/欧洲/英国/斯托克顿至达灵顿蒸汽铁路通车.md"
+                                    },
+                                    {
+                                        "text": "瓦特改进蒸汽机",
+                                        "link": "/历史/世界史/欧洲/英国/瓦特改进蒸汽机.md"
+                                    },
+                                    {
+                                        "text": "英国工厂制度扩展",
+                                        "link": "/历史/世界史/欧洲/英国/英国工厂制度扩展.md"
+                                    },
+                                    {
+                                        "text": "英国机械纺织工厂兴起",
+                                        "link": "/历史/世界史/欧洲/英国/英国机械纺织工厂兴起.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "跨地区",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "布列斯特和约签订",
+                                        "link": "/历史/世界史/欧洲/跨地区/布列斯特和约签订.md"
+                                    },
+                                    {
+                                        "text": "德国进攻苏联",
+                                        "link": "/历史/世界史/欧洲/跨地区/德国进攻苏联.md"
+                                    },
+                                    {
+                                        "text": "第一次世界大战停战协定签署",
+                                        "link": "/历史/世界史/欧洲/跨地区/第一次世界大战停战协定签署.md"
+                                    },
+                                    {
+                                        "text": "第一次世界大战爆发",
+                                        "link": "/历史/世界史/欧洲/跨地区/第一次世界大战爆发.md"
+                                    },
+                                    {
+                                        "text": "纳粹对犹太人的大屠杀",
+                                        "link": "/历史/世界史/欧洲/跨地区/纳粹对犹太人的大屠杀.md"
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "text": "当代",
+                        "text": "美洲",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/历史/分期/当代/index.md"
+                                "text": "南美",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "波托西银矿大规模开采",
+                                        "link": "/历史/世界史/美洲/南美/波托西银矿大规模开采.md"
+                                    },
+                                    {
+                                        "text": "马尼拉大帆船航线开通",
+                                        "link": "/历史/世界史/美洲/南美/马尼拉大帆船航线开通.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "美国",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "珍珠港事件",
+                                        "link": "/历史/世界史/美洲/美国/珍珠港事件.md"
+                                    },
+                                    {
+                                        "text": "美国参加第一次世界大战",
+                                        "link": "/历史/世界史/美洲/美国/美国参加第一次世界大战.md"
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "text": "文明起源",
+                        "text": "非洲",
                         "collapsed": true,
                         "items": [
                             {
-                                "text": "index",
-                                "link": "/历史/分期/文明起源/index.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "早期近代",
-                        "collapsed": true,
-                        "items": [
+                                "text": "刚果",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "刚果独立",
+                                        "link": "/历史/世界史/非洲/刚果/刚果独立.md"
+                                    },
+                                    {
+                                        "text": "刚果自由邦建立",
+                                        "link": "/历史/世界史/非洲/刚果/刚果自由邦建立.md"
+                                    }
+                                ]
+                            },
                             {
-                                "text": "index",
-                                "link": "/历史/分期/早期近代/index.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "近现代",
-                        "collapsed": true,
-                        "items": [
+                                "text": "南非",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "布尔战争",
+                                        "link": "/历史/世界史/非洲/南非/布尔战争.md"
+                                    }
+                                ]
+                            },
                             {
-                                "text": "index",
-                                "link": "/历史/分期/近现代/index.md"
+                                "text": "喀麦隆",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "喀麦隆独立",
+                                        "link": "/历史/世界史/非洲/喀麦隆/喀麦隆独立.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "埃及",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "上下埃及统一",
+                                        "link": "/历史/世界史/非洲/埃及/上下埃及统一.md"
+                                    },
+                                    {
+                                        "text": "古埃及早王朝结束",
+                                        "link": "/历史/世界史/非洲/埃及/古埃及早王朝结束.md"
+                                    },
+                                    {
+                                        "text": "古埃及象形文字用于行政",
+                                        "link": "/历史/世界史/非洲/埃及/古埃及象形文字用于行政.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "埃塞俄比亚",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "阿杜瓦战役",
+                                        "link": "/历史/世界史/非洲/埃塞俄比亚/阿杜瓦战役.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "塞内加尔",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "塞内加尔独立",
+                                        "link": "/历史/世界史/非洲/塞内加尔/塞内加尔独立.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "安哥拉",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "安哥拉独立",
+                                        "link": "/历史/世界史/非洲/安哥拉/安哥拉独立.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "莫桑比克",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "莫桑比克独立",
+                                        "link": "/历史/世界史/非洲/莫桑比克/莫桑比克独立.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "西非",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "基里纳战役",
+                                        "link": "/历史/世界史/非洲/西非/基里纳战役.md"
+                                    },
+                                    {
+                                        "text": "廷巴克图学术中心兴起",
+                                        "link": "/历史/世界史/非洲/西非/廷巴克图学术中心兴起.md"
+                                    },
+                                    {
+                                        "text": "曼萨·穆萨朝觐",
+                                        "link": "/历史/世界史/非洲/西非/曼萨·穆萨朝觐.md"
+                                    },
+                                    {
+                                        "text": "桑海取代马里的商路优势",
+                                        "link": "/历史/世界史/非洲/西非/桑海取代马里的商路优势.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "跨地区",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "柏林会议召开",
+                                        "link": "/历史/世界史/非洲/跨地区/柏林会议召开.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "阿尔及利亚",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "阿尔及利亚独立战争",
+                                        "link": "/历史/世界史/非洲/阿尔及利亚/阿尔及利亚独立战争.md"
+                                    }
+                                ]
+                            },
+                            {
+                                "text": "马里",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "马里独立",
+                                        "link": "/历史/世界史/非洲/马里/马里独立.md"
+                                    }
+                                ]
                             }
                         ]
                     }
                 ]
             },
             {
-                "text": "史学阅读",
+                "text": "中国史",
                 "collapsed": true,
                 "items": [
                     {
-                        "text": "index",
-                        "link": "/历史/史学阅读/index.md"
+                        "text": "东周",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "三家分晋",
+                                "link": "/历史/中国史/东周/三家分晋.md"
+                            },
+                            {
+                                "text": "孔子讲学",
+                                "link": "/历史/中国史/东周/孔子讲学.md"
+                            },
+                            {
+                                "text": "平王东迁",
+                                "link": "/历史/中国史/东周/平王东迁.md"
+                            },
+                            {
+                                "text": "秦灭西周",
+                                "link": "/历史/中国史/东周/秦灭西周.md"
+                            },
+                            {
+                                "text": "长平之战",
+                                "link": "/历史/中国史/东周/长平之战.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "中国历代政治得失",
-                        "link": "/历史/史学阅读/中国历代政治得失.md"
+                        "text": "中华人民共和国",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "中华人民共和国开国大典",
+                                "link": "/历史/中国史/中华人民共和国/中华人民共和国开国大典.md"
+                            },
+                            {
+                                "text": "中国加入世界贸易组织",
+                                "link": "/历史/中国史/中华人民共和国/中国加入世界贸易组织.md"
+                            },
+                            {
+                                "text": "中国设立经济特区",
+                                "link": "/历史/中国史/中华人民共和国/中国设立经济特区.md"
+                            },
+                            {
+                                "text": "十一届三中全会",
+                                "link": "/历史/中国史/中华人民共和国/十一届三中全会.md"
+                            },
+                            {
+                                "text": "妇好墓发掘",
+                                "link": "/历史/中国史/中华人民共和国/妇好墓发掘.md"
+                            },
+                            {
+                                "text": "文化大革命开始",
+                                "link": "/历史/中国史/中华人民共和国/文化大革命开始.md"
+                            },
+                            {
+                                "text": "新中国土地改革",
+                                "link": "/历史/中国史/中华人民共和国/新中国土地改革.md"
+                            },
+                            {
+                                "text": "毛泽东去世",
+                                "link": "/历史/中国史/中华人民共和国/毛泽东去世.md"
+                            },
+                            {
+                                "text": "邓小平南方谈话",
+                                "link": "/历史/中国史/中华人民共和国/邓小平南方谈话.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "人类简史 · 人类的融合",
-                        "link": "/历史/史学阅读/人类简史 · 人类的融合.md"
+                        "text": "中华民国",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "五四学生游行",
+                                "link": "/历史/中国史/中华民国/五四学生游行.md"
+                            },
+                            {
+                                "text": "五四运动六月罢课罢市",
+                                "link": "/历史/中国史/中华民国/五四运动六月罢课罢市.md"
+                            },
+                            {
+                                "text": "全面抗战爆发",
+                                "link": "/历史/中国史/中华民国/全面抗战爆发.md"
+                            },
+                            {
+                                "text": "孙中山就任临时大总统",
+                                "link": "/历史/中国史/中华民国/孙中山就任临时大总统.md"
+                            },
+                            {
+                                "text": "孙中山改组国民党",
+                                "link": "/历史/中国史/中华民国/孙中山改组国民党.md"
+                            },
+                            {
+                                "text": "孙中山辞去临时大总统",
+                                "link": "/历史/中国史/中华民国/孙中山辞去临时大总统.md"
+                            },
+                            {
+                                "text": "巴黎和会山东问题传入北京",
+                                "link": "/历史/中国史/中华民国/巴黎和会山东问题传入北京.md"
+                            },
+                            {
+                                "text": "苏联对日宣战",
+                                "link": "/历史/中国史/中华民国/苏联对日宣战.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "人类简史 · 农业革命",
-                        "link": "/历史/史学阅读/人类简史 · 农业革命.md"
+                        "text": "元",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "元军进入临安",
+                                "link": "/历史/中国史/元/元军进入临安.md"
+                            },
+                            {
+                                "text": "崖山之战",
+                                "link": "/历史/中国史/元/崖山之战.md"
+                            },
+                            {
+                                "text": "忽必烈定国号为大元",
+                                "link": "/历史/中国史/元/忽必烈定国号为大元.md"
+                            },
+                            {
+                                "text": "红巾军起义",
+                                "link": "/历史/中国史/元/红巾军起义.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "人类简史 · 科学革命",
-                        "link": "/历史/史学阅读/人类简史 · 科学革命.md"
-                    }
-                ]
-            },
-            {
-                "text": "政权与制度",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "index",
-                        "link": "/历史/政权与制度/index.md"
+                        "text": "史前",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "仰韶聚落出现",
+                                "link": "/历史/中国史/史前/仰韶聚落出现.md"
+                            },
+                            {
+                                "text": "半坡聚落形成",
+                                "link": "/历史/中国史/史前/半坡聚落形成.md"
+                            },
+                            {
+                                "text": "庙底沟类型扩展",
+                                "link": "/历史/中国史/史前/庙底沟类型扩展.md"
+                            },
+                            {
+                                "text": "良渚古城水利工程修筑",
+                                "link": "/历史/中国史/史前/良渚古城水利工程修筑.md"
+                            },
+                            {
+                                "text": "良渚古城衰落",
+                                "link": "/历史/中国史/史前/良渚古城衰落.md"
+                            },
+                            {
+                                "text": "良渚文化形成",
+                                "link": "/历史/中国史/史前/良渚文化形成.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "东周与诸子",
-                        "link": "/历史/政权与制度/东周与诸子.md"
+                        "text": "唐",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "安史之乱",
+                                "link": "/历史/中国史/唐/安史之乱.md"
+                            },
+                            {
+                                "text": "朱温废唐",
+                                "link": "/历史/中国史/唐/朱温废唐.md"
+                            },
+                            {
+                                "text": "李渊称帝",
+                                "link": "/历史/中国史/唐/李渊称帝.md"
+                            },
+                            {
+                                "text": "玄奘回国译经",
+                                "link": "/历史/中国史/唐/玄奘回国译经.md"
+                            },
+                            {
+                                "text": "玄奘西行",
+                                "link": "/历史/中国史/唐/玄奘西行.md"
+                            },
+                            {
+                                "text": "玄奘赴印度求学",
+                                "link": "/历史/中国史/唐/玄奘赴印度求学.md"
+                            },
+                            {
+                                "text": "玄武门之变",
+                                "link": "/历史/中国史/唐/玄武门之变.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "中华人民共和国成立",
-                        "link": "/历史/政权与制度/中华人民共和国成立.md"
+                        "text": "商",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "商代甲骨占卜记录",
+                                "link": "/历史/中国史/商/商代甲骨占卜记录.md"
+                            },
+                            {
+                                "text": "商汤建国的记载",
+                                "link": "/历史/中国史/商/商汤建国的记载.md"
+                            },
+                            {
+                                "text": "盘庚迁殷",
+                                "link": "/历史/中国史/商/盘庚迁殷.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "元王朝",
-                        "link": "/历史/政权与制度/元王朝.md"
+                        "text": "宋",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "澶渊之盟",
+                                "link": "/历史/中国史/宋/澶渊之盟.md"
+                            },
+                            {
+                                "text": "陈桥兵变",
+                                "link": "/历史/中国史/宋/陈桥兵变.md"
+                            },
+                            {
+                                "text": "靖康之变",
+                                "link": "/历史/中国史/宋/靖康之变.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "古埃及早王朝",
-                        "link": "/历史/政权与制度/古埃及早王朝.md"
+                        "text": "明",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "土木堡之变",
+                                "link": "/历史/中国史/明/土木堡之变.md"
+                            },
+                            {
+                                "text": "明军攻入大都",
+                                "link": "/历史/中国史/明/明军攻入大都.md"
+                            },
+                            {
+                                "text": "晚明白银流入减少",
+                                "link": "/历史/中国史/明/晚明白银流入减少.md"
+                            },
+                            {
+                                "text": "晚明白银赋税制度推广",
+                                "link": "/历史/中国史/明/晚明白银赋税制度推广.md"
+                            },
+                            {
+                                "text": "朱元璋称帝",
+                                "link": "/历史/中国史/明/朱元璋称帝.md"
+                            },
+                            {
+                                "text": "李自成入北京",
+                                "link": "/历史/中国史/明/李自成入北京.md"
+                            },
+                            {
+                                "text": "郑和七次下西洋",
+                                "link": "/历史/中国史/明/郑和七次下西洋.md"
+                            },
+                            {
+                                "text": "靖难之役",
+                                "link": "/历史/中国史/明/靖难之役.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "唐王朝",
-                        "link": "/历史/政权与制度/唐王朝.md"
+                        "text": "汉",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "七国之乱",
+                                "link": "/历史/中国史/汉/七国之乱.md"
+                            },
+                            {
+                                "text": "刘秀称帝",
+                                "link": "/历史/中国史/汉/刘秀称帝.md"
+                            },
+                            {
+                                "text": "刘邦称帝",
+                                "link": "/历史/中国史/汉/刘邦称帝.md"
+                            },
+                            {
+                                "text": "张骞第一次出使西域",
+                                "link": "/历史/中国史/汉/张骞第一次出使西域.md"
+                            },
+                            {
+                                "text": "张骞第二次出使西域",
+                                "link": "/历史/中国史/汉/张骞第二次出使西域.md"
+                            },
+                            {
+                                "text": "张骞首次出使归汉",
+                                "link": "/历史/中国史/汉/张骞首次出使归汉.md"
+                            },
+                            {
+                                "text": "汉献帝禅让",
+                                "link": "/历史/中国史/汉/汉献帝禅让.md"
+                            },
+                            {
+                                "text": "王莽代汉",
+                                "link": "/历史/中国史/汉/王莽代汉.md"
+                            },
+                            {
+                                "text": "黄巾起义",
+                                "link": "/历史/中国史/汉/黄巾起义.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "商王朝",
-                        "link": "/历史/政权与制度/商王朝.md"
+                        "text": "清",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "三藩之乱",
+                                "link": "/历史/中国史/清/三藩之乱.md"
+                            },
+                            {
+                                "text": "中国同盟会成立",
+                                "link": "/历史/中国史/清/中国同盟会成立.md"
+                            },
+                            {
+                                "text": "公行负责交易",
+                                "link": "/历史/中国史/清/公行负责交易.md"
+                            },
+                            {
+                                "text": "兴中会成立",
+                                "link": "/历史/中国史/清/兴中会成立.md"
+                            },
+                            {
+                                "text": "北京条约签订",
+                                "link": "/历史/中国史/清/北京条约签订.md"
+                            },
+                            {
+                                "text": "南京条约签订",
+                                "link": "/历史/中国史/清/南京条约签订.md"
+                            },
+                            {
+                                "text": "天京内讧",
+                                "link": "/历史/中国史/清/天京内讧.md"
+                            },
+                            {
+                                "text": "天京陷落",
+                                "link": "/历史/中国史/清/天京陷落.md"
+                            },
+                            {
+                                "text": "定都南京",
+                                "link": "/历史/中国史/清/定都南京.md"
+                            },
+                            {
+                                "text": "广州一口通商",
+                                "link": "/历史/中国史/清/广州一口通商.md"
+                            },
+                            {
+                                "text": "林则徐收缴鸦片",
+                                "link": "/历史/中国史/清/林则徐收缴鸦片.md"
+                            },
+                            {
+                                "text": "武昌起事",
+                                "link": "/历史/中国史/清/武昌起事.md"
+                            },
+                            {
+                                "text": "清军入关",
+                                "link": "/历史/中国史/清/清军入关.md"
+                            },
+                            {
+                                "text": "清军进入台湾",
+                                "link": "/历史/中国史/清/清军进入台湾.md"
+                            },
+                            {
+                                "text": "清帝退位",
+                                "link": "/历史/中国史/清/清帝退位.md"
+                            },
+                            {
+                                "text": "第一次鸦片战争",
+                                "link": "/历史/中国史/清/第一次鸦片战争.md"
+                            },
+                            {
+                                "text": "第二次鸦片战争",
+                                "link": "/历史/中国史/清/第二次鸦片战争.md"
+                            },
+                            {
+                                "text": "虎门销烟",
+                                "link": "/历史/中国史/清/虎门销烟.md"
+                            },
+                            {
+                                "text": "金田起事",
+                                "link": "/历史/中国史/清/金田起事.md"
+                            },
+                            {
+                                "text": "马戛尔尼使团到达",
+                                "link": "/历史/中国史/清/马戛尔尼使团到达.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "孔雀王朝",
-                        "link": "/历史/政权与制度/孔雀王朝.md"
+                        "text": "秦",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "嬴政称皇帝",
+                                "link": "/历史/中国史/秦/嬴政称皇帝.md"
+                            },
+                            {
+                                "text": "焚书",
+                                "link": "/历史/中国史/秦/焚书.md"
+                            },
+                            {
+                                "text": "秦始皇去世",
+                                "link": "/历史/中国史/秦/秦始皇去世.md"
+                            },
+                            {
+                                "text": "秦朝灭亡",
+                                "link": "/历史/中国史/秦/秦朝灭亡.md"
+                            },
+                            {
+                                "text": "秦灭六国",
+                                "link": "/历史/中国史/秦/秦灭六国.md"
+                            },
+                            {
+                                "text": "陈胜吴广起义",
+                                "link": "/历史/中国史/秦/陈胜吴广起义.md"
+                            }
+                        ]
                     },
                     {
-                        "text": "宋代商业与技术",
-                        "link": "/历史/政权与制度/宋代商业与技术.md"
-                    },
-                    {
-                        "text": "明王朝",
-                        "link": "/历史/政权与制度/明王朝.md"
-                    },
-                    {
-                        "text": "汉王朝",
-                        "link": "/历史/政权与制度/汉王朝.md"
-                    },
-                    {
-                        "text": "清前期",
-                        "link": "/历史/政权与制度/清前期.md"
-                    },
-                    {
-                        "text": "秦统一",
-                        "link": "/历史/政权与制度/秦统一.md"
-                    },
-                    {
-                        "text": "罗马帝国",
-                        "link": "/历史/政权与制度/罗马帝国.md"
-                    },
-                    {
-                        "text": "苏美尔城邦",
-                        "link": "/历史/政权与制度/苏美尔城邦.md"
-                    },
-                    {
-                        "text": "莫卧儿帝国",
-                        "link": "/历史/政权与制度/莫卧儿帝国.md"
-                    },
-                    {
-                        "text": "蒙古帝国",
-                        "link": "/历史/政权与制度/蒙古帝国.md"
-                    },
-                    {
-                        "text": "阿契美尼德帝国",
-                        "link": "/历史/政权与制度/阿契美尼德帝国.md"
-                    },
-                    {
-                        "text": "阿拔斯王朝",
-                        "link": "/历史/政权与制度/阿拔斯王朝.md"
-                    },
-                    {
-                        "text": "马里帝国",
-                        "link": "/历史/政权与制度/马里帝国.md"
-                    }
-                ]
-            },
-            {
-                "text": "文明与考古",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "index",
-                        "link": "/历史/文明与考古/index.md"
-                    },
-                    {
-                        "text": "仰韶文化",
-                        "link": "/历史/文明与考古/仰韶文化.md"
-                    },
-                    {
-                        "text": "印度河文明",
-                        "link": "/历史/文明与考古/印度河文明.md"
-                    },
-                    {
-                        "text": "良渚古城",
-                        "link": "/历史/文明与考古/良渚古城.md"
-                    }
-                ]
-            },
-            {
-                "text": "贸易与交流",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "index",
-                        "link": "/历史/贸易与交流/index.md"
-                    },
-                    {
-                        "text": "广州贸易体系",
-                        "link": "/历史/贸易与交流/广州贸易体系.md"
-                    },
-                    {
-                        "text": "晚明白银贸易",
-                        "link": "/历史/贸易与交流/晚明白银贸易.md"
-                    },
-                    {
-                        "text": "跨大西洋奴隶贸易",
-                        "link": "/历史/贸易与交流/跨大西洋奴隶贸易.md"
-                    },
-                    {
-                        "text": "马尼拉大帆船贸易",
-                        "link": "/历史/贸易与交流/马尼拉大帆船贸易.md"
+                        "text": "西周",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "牧野之战",
+                                "link": "/历史/中国史/西周/牧野之战.md"
+                            }
+                        ]
                     }
                 ]
             }
@@ -2564,17 +2678,9 @@ export default [
         "collapsed": true,
         "items": [
             {
-                "text": "index",
-                "link": "/人文语言/index.md"
-            },
-            {
                 "text": "日语",
                 "collapsed": true,
                 "items": [
-                    {
-                        "text": "index",
-                        "link": "/人文语言/日语/index.md"
-                    },
                     {
                         "text": "日语",
                         "link": "/人文语言/日语/日语.md"

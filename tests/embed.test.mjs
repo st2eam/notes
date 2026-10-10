@@ -55,7 +55,7 @@ test("embed configuration only accepts valid messages from the trusted parent", 
 });
 test("embed navigation retains theme, background, parent origin and anchors", () => {
   const href = embedHref(
-    "/历史/分期/古典时期.html?view=graph#思想",
+    "/历史/世界史/古典时期.html?view=graph#思想",
     "?theme=dark&background=theme&parentOrigin=https%3A%2F%2Fparent.example",
   );
   const url = new URL(href, "https://notes.example");

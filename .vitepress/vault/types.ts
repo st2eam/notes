@@ -20,6 +20,9 @@ export interface VaultNote {
   categoryOverview?: string;
   categoryContext?: string;
   historyId?: string;
+  historyDate?: string;
+  historyOrder?: number;
+  historyGroup?: string;
   historyTheme?: string;
 }
 export interface VaultLink {

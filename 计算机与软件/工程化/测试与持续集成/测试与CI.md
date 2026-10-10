@@ -8,7 +8,7 @@ categories:
       基础。目标：为纯函数写测试，区分单元、集成与端到端测试，让关键检查在提交时自动运行。最后核对：2026-09-29。 AI
       可以快速修改代码，但“生成了代码”不代表“需求已满足”。把验收条件转成可重复执行的检查，既帮助人审查，也帮助 Coding Agent
       在失败后迭代。”；据其实体与学习对象归入计算机与软件/工程化/测试与持续集成。
-  - path: 人工智能/应用与评测/智能体
+  - path: AI/应用与评测/智能体
     reason: 正文明确讨论 Coding Agent 生成代码后的验证、失败迭代和回归检查，属于智能体开发的验证环节。
 classificationStatus: confirmed
 relations: []
@@ -54,4 +54,4 @@ CI（持续集成）在每次提交或合并请求中自动运行构建和测试
 
 Agent 改代码时，先记录可观察的失败，再改动并运行相同检查。测试通过后仍要审查需求、权限和真实界面；测试只能证明它覆盖到的行为。
 
-参见[前端测试总结](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E5%B7%A5%E7%A8%8B%E5%8C%96/%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95.md)、[Flask 测试覆盖](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E5%90%8E%E7%AB%AF/Flask/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96.md)和[AI 应用评测](/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E5%BA%94%E7%94%A8%E4%B8%8E%E8%AF%84%E6%B5%8B/%E8%B4%A8%E9%87%8F%E8%AF%84%E6%B5%8B/%E5%BA%94%E7%94%A8%E8%AF%84%E6%B5%8B.md)。参考：[Python unittest 文档](https://docs.python.org/3/library/unittest.html)、[GitHub Actions 文档](https://docs.github.com/en/actions)。
+参见[前端测试总结](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E5%B7%A5%E7%A8%8B%E5%8C%96/%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/%E5%89%8D%E7%AB%AF%E6%B5%8B%E8%AF%95.md)、[Flask 测试覆盖](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E5%90%8E%E7%AB%AF/Flask/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96.md)和[AI 应用评测](/AI/%E5%BA%94%E7%94%A8%E4%B8%8E%E8%AF%84%E6%B5%8B/%E8%B4%A8%E9%87%8F%E8%AF%84%E6%B5%8B/%E5%BA%94%E7%94%A8%E8%AF%84%E6%B5%8B.md)。参考：[Python unittest 文档](https://docs.python.org/3/library/unittest.html)、[GitHub Actions 文档](https://docs.github.com/en/actions)。

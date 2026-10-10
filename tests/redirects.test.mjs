@@ -53,7 +53,7 @@ test("sidebar no longer lists the dissolved groups", () => {
   const names = domains.map((item) => item.text);
   assert.deepEqual(names, [
     "计算机与软件",
-    "人工智能",
+    "AI",
     "数学与统计",
     "设计",
     "影像",

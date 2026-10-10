@@ -27,7 +27,7 @@ test('attention weights are normalized and respond to query direction', () => {
 
 test('retrieval weights can change ranking', () => {
   assert.equal(rankDocuments(0, 1)[0].title, '认证与授权')
-  assert.equal(rankDocuments(0, 0)[0].title, 'Agent 工具与安全')
+  assert.equal(rankDocuments(0, 0)[0].title, 'Agentic 工程模式实践指南')
   assert.ok(rankDocuments(1, 0.5)[0].score >= rankDocuments(1, 0.5)[1].score)
 })
 

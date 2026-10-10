@@ -285,55 +285,32 @@ test("scan publishes only notes and excludes hidden dirs, symlinks, caches, depe
     fs.rmSync(root, { recursive: true, force: true });
   }
 });
-test("History migration retains 42 entities, 171 events, 6 themes, reading paths, relation sources and old anchors", () => {
+test("history publishes individual events without external links and archives all summaries", () => {
   const index = readVault(process.cwd());
-  const entities = index.notes.filter((n) => n.historyId);
-  assert.equal(entities.length, 42);
-  assert.equal(index.notes.filter((n) => n.historyTheme).length, 6);
-  let events = 0;
-  for (const note of entities) {
+  const events = index.notes.filter((n) => n.historyId);
+  assert.equal(events.length, 181);
+  assert.equal(index.notes.filter((n) => n.historyTheme).length, 0);
+  const report = JSON.parse(fs.readFileSync(".vitepress/reports/history-events.json", "utf8"));
+  assert.equal(report.originalNotes, 58);
+  assert.equal(new Set(report.provenance.map((p) => p.source + "#" + p.heading)).size, 171);
+  for (const note of events) {
     const raw = fs.readFileSync(note.path, "utf8");
-    assert.ok(raw.includes("## 参考来源"));
-    assert.ok(raw.includes("https://"));
-    assert.ok(raw.includes("## 关键事件"));
-    events += (raw.match(/^### /gm) || []).length;
-    const periodLink = index.links.find(
-      (l) =>
-        l.source === note.id &&
-        /^历史\/分期\/(文明起源|古典时期|后古典时期|早期近代|近现代|当代)\.md$/.test(
-          l.target || "",
-        ),
-    );
-    assert.ok(periodLink);
-    assert.ok(
-      index.notes
-        .find((n) => n.id === periodLink.target)
-        .headings.some((h) => h.id === note.historyId),
-    );
+    assert.equal((raw.match(/^# /gm) || []).length, 1);
+    assert.ok(!/https?:\/\/|href=|## 关键事件|^### /m.test(raw), note.path);
+    assert.ok(raw.includes("地点："), note.path);
+    assert.ok(!raw.includes("维基百科（入门索引）"), note.path);
+    assert.equal(note.headings[0].title, note.title);
   }
-  assert.equal(events, 171);
-  assert.equal(
-    index.notes.filter(
-      (n) => n.folder === "历史/史学阅读" && !n.categoryOverview,
-    ).length,
-    4,
-  );
-  assert.ok(
-    fs
-      .readFileSync("历史/史学阅读/中国历代政治得失.md", "utf8")
-      .includes("第五讲、总论"),
-  );
-  assert.ok(
-    !index.links.some((l) => l.source.startsWith("历史/") && !l.target),
-  );
-  assert.ok(
-    !fs.existsSync(".vitepress/theme/components/history/history-data.mjs"),
-  );
-  const related = index.links.filter(
-    (l) =>
-      l.source.startsWith("历史/") && l.structured && l.label !== "分类归属",
-  );
-  assert.equal(related.length, 129); // one duplicate WWI → May Fourth explanation is merged; both original paragraphs remain.
+  assert.ok(!index.links.some((l) => l.source.startsWith("历史/") && !l.target));
+  for (const source of new Set(report.provenance.map((p) => p.source))) {
+    assert.ok(fs.existsSync(report.archive + "/" + source), source);
+    assert.ok(!index.notes.some((n) => n.id === source), source);
+  }
+  const qinEvents = report.provenance.filter((p) => p.source.endsWith("/秦统一.md")).map((p) => p.event.split("/").at(-1));
+  assert.deepEqual(qinEvents, ["秦灭六国.md", "嬴政称皇帝.md", "焚书.md", "秦始皇去世.md", "陈胜吴广起义.md", "秦朝灭亡.md"]);
+  assert.ok(events.some((n) => n.title === "凡尔登战役"));
+  assert.ok(events.some((n) => n.title === "索姆河战役"));
+  assert.equal(events.filter((n) => n.title === "中国加入世界贸易组织").length, 1);
 });
 test("all published links resolve and retain VitePress heading slug conventions", () => {
   const index = readVault(process.cwd());
