@@ -93,14 +93,14 @@ test("all notes have supported classifications, six roots and acyclic explicit o
   const find = (branch, id) =>
     branch.notes.some((n) => n.id === id) ||
     branch.folders.some((f) => find(f, id));
-  assert.ok(find(tree, "数学与统计/机器学习数学/机器学习数学基础.md"));
+  assert.ok(find(tree, "数学/机器学习数学/机器学习数学基础.md"));
   assert.ok(
     !scanFiles(process.cwd()).some((f) => f.includes("/.vitepress/reports/")),
   );
 });
 test("semantic links retain independent meanings, evidence and safe cause direction", () => {
-  const source = "计算机与软件/前端/CSS/CSS布局.md",
-    target = "计算机与软件/前端/浏览器/浏览器渲染流程.md";
+  const source = "计算机/前端/CSS/CSS布局.md",
+    target = "计算机/前端/浏览器/浏览器渲染流程.md";
   const edges = vault.links.filter(
     (l) => (l.source === source && l.target === target) || (l.source === target && l.target === source),
   );
@@ -164,7 +164,7 @@ test("relation and classification filters govern edges, arrows and local neighbo
   const local = graphData(
     vault,
     settings,
-    "计算机与软件/前端/CSS/CSS布局.md",
+    "计算机/前端/CSS/CSS布局.md",
     1,
   );
   assert.equal(local.nodes.length, 2);
@@ -178,19 +178,19 @@ test("relation and classification filters govern edges, arrows and local neighbo
   assert.ok(inferred.edges.every((e) => !e.forward && !e.backward));
   const category = graphData(vault, {
     ...defaultGraphSettings(),
-    category: "数学与统计",
+    category: "数学",
   });
   assert.ok(category.nodes.some((n) => n.title === "PyTorch 官方文档"));
   const embedding = vault.notes.find(
     (n) => n.title === "PyTorch 官方文档",
   );
-  assert.ok(matchesQuery(embedding, "category:数学与统计"));
+  assert.ok(matchesQuery(embedding, "category:数学"));
   assert.ok(!matchesQuery(embedding, "category:历史"));
   assert.ok(
     searchNotes(
       vault.notes,
       vault.search,
-      "category:数学与统计 PyTorch",
+      "category:数学 PyTorch",
     ).some((r) => r.note.id === embedding.id),
   );
 });

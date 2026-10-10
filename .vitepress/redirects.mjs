@@ -1,3 +1,4 @@
+import { directoryMoves } from "./directory-redirects.mjs";
 import { migrationPaths } from "./vault/migration-paths.mjs";
 /** Old site path -> new site path, without the /notes base or a file extension. */
 const legacyRedirects = {
@@ -105,8 +106,19 @@ const moves = Object.fromEntries(
       return pairs;
     }),
 );
+export const prefixRedirects = Object.fromEntries(directoryMoves.map(({ from, to }) => [from, to]));
+const directoryRedirects = Object.fromEntries(
+  directoryMoves.flatMap(({ from, to, paths }) => paths.flatMap((path) => {
+    const source = stem(from.slice(1) + "/" + path);
+    const target = stem(to.slice(1) + "/" + path);
+    const pairs = [[source, moves[target] || target]];
+    if (path.endsWith("/index.md") || path === "index.md")
+      pairs.push([source.replace(/\/index$/, ""), moves[target] || target]);
+    return pairs;
+  })),
+);
 export const redirects = Object.fromEntries(
-  Object.entries({ ...legacyRedirects, ...moves }).map(([from, to]) => [
+  Object.entries({ ...legacyRedirects, ...moves, ...directoryRedirects }).map(([from, to]) => [
     from,
     moves[to] || to,
   ]),
@@ -130,5 +142,13 @@ export function normalizePath(input) {
 }
 
 export function redirectTarget(input) {
-  return redirects[normalizePath(input)] ?? null;
+  const path = normalizePath(input);
+  if (Object.hasOwn(redirects, path)) return redirects[path];
+  for (const [from, to] of Object.entries(prefixRedirects)) {
+    if (path === from || path.startsWith(from + "/")) {
+      const target = to + path.slice(from.length);
+      return redirects[target] || target;
+    }
+  }
+  return null;
 }

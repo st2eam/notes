@@ -1,6 +1,6 @@
 export default [
     {
-        "text": "计算机与软件",
+        "text": "计算机",
         "collapsed": true,
         "items": [
             {
@@ -13,7 +13,7 @@ export default [
                         "items": [
                             {
                                 "text": "Canvas",
-                                "link": "/计算机与软件/前端/Canvas/Canvas.md"
+                                "link": "/计算机/前端/Canvas/Canvas.md"
                             }
                         ]
                     },
@@ -23,71 +23,71 @@ export default [
                         "items": [
                             {
                                 "text": "BFC",
-                                "link": "/计算机与软件/前端/CSS/BFC.md"
+                                "link": "/计算机/前端/CSS/BFC.md"
                             },
                             {
                                 "text": "CSS Flex布局",
-                                "link": "/计算机与软件/前端/CSS/CSS Flex布局.md"
+                                "link": "/计算机/前端/CSS/CSS Flex布局.md"
                             },
                             {
                                 "text": "CSS Grid布局",
-                                "link": "/计算机与软件/前端/CSS/CSS Grid布局.md"
+                                "link": "/计算机/前端/CSS/CSS Grid布局.md"
                             },
                             {
                                 "text": "CSS",
-                                "link": "/计算机与软件/前端/CSS/CSS.md"
+                                "link": "/计算机/前端/CSS/CSS.md"
                             },
                             {
                                 "text": "CSS动画",
-                                "link": "/计算机与软件/前端/CSS/CSS动画.md"
+                                "link": "/计算机/前端/CSS/CSS动画.md"
                             },
                             {
                                 "text": "CSS变量",
-                                "link": "/计算机与软件/前端/CSS/CSS变量.md"
+                                "link": "/计算机/前端/CSS/CSS变量.md"
                             },
                             {
                                 "text": "CSS布局",
-                                "link": "/计算机与软件/前端/CSS/CSS布局.md"
+                                "link": "/计算机/前端/CSS/CSS布局.md"
                             },
                             {
                                 "text": "CSS文字",
-                                "link": "/计算机与软件/前端/CSS/CSS文字.md"
+                                "link": "/计算机/前端/CSS/CSS文字.md"
                             },
                             {
                                 "text": "CSS盒模型",
-                                "link": "/计算机与软件/前端/CSS/CSS盒模型.md"
+                                "link": "/计算机/前端/CSS/CSS盒模型.md"
                             },
                             {
                                 "text": "CSS背景",
-                                "link": "/计算机与软件/前端/CSS/CSS背景.md"
+                                "link": "/计算机/前端/CSS/CSS背景.md"
                             },
                             {
                                 "text": "CSS转换",
-                                "link": "/计算机与软件/前端/CSS/CSS转换.md"
+                                "link": "/计算机/前端/CSS/CSS转换.md"
                             },
                             {
                                 "text": "CSS过渡",
-                                "link": "/计算机与软件/前端/CSS/CSS过渡.md"
+                                "link": "/计算机/前端/CSS/CSS过渡.md"
                             },
                             {
                                 "text": "CSS选择器",
-                                "link": "/计算机与软件/前端/CSS/CSS选择器.md"
+                                "link": "/计算机/前端/CSS/CSS选择器.md"
                             },
                             {
                                 "text": "Less",
-                                "link": "/计算机与软件/前端/CSS/Less.md"
+                                "link": "/计算机/前端/CSS/Less.md"
                             },
                             {
                                 "text": "TailwindCSS",
-                                "link": "/计算机与软件/前端/CSS/TailwindCSS.md"
+                                "link": "/计算机/前端/CSS/TailwindCSS.md"
                             },
                             {
                                 "text": "一些CSS玩意",
-                                "link": "/计算机与软件/前端/CSS/一些CSS玩意.md"
+                                "link": "/计算机/前端/CSS/一些CSS玩意.md"
                             },
                             {
                                 "text": "响应式网页设计",
-                                "link": "/计算机与软件/前端/CSS/响应式网页设计.md"
+                                "link": "/计算机/前端/CSS/响应式网页设计.md"
                             }
                         ]
                     },
@@ -97,11 +97,11 @@ export default [
                         "items": [
                             {
                                 "text": "HTML",
-                                "link": "/计算机与软件/前端/HTML/HTML.md"
+                                "link": "/计算机/前端/HTML/HTML.md"
                             },
                             {
                                 "text": "网站与网页",
-                                "link": "/计算机与软件/前端/HTML/网站与网页.md"
+                                "link": "/计算机/前端/HTML/网站与网页.md"
                             }
                         ]
                     },
@@ -115,51 +115,51 @@ export default [
                                 "items": [
                                     {
                                         "text": "Additional-hooks",
-                                        "link": "/计算机与软件/前端/React/Hooks/Additional-hooks.md"
+                                        "link": "/计算机/前端/React/Hooks/Additional-hooks.md"
                                     },
                                     {
                                         "text": "Hook 规则",
-                                        "link": "/计算机与软件/前端/React/Hooks/Hook 规则.md"
+                                        "link": "/计算机/前端/React/Hooks/Hook 规则.md"
                                     },
                                     {
                                         "text": "Hook 预览",
-                                        "link": "/计算机与软件/前端/React/Hooks/Hook 预览.md"
+                                        "link": "/计算机/前端/React/Hooks/Hook 预览.md"
                                     },
                                     {
                                         "text": "Hook",
-                                        "link": "/计算机与软件/前端/React/Hooks/Hook.md"
+                                        "link": "/计算机/前端/React/Hooks/Hook.md"
                                     },
                                     {
                                         "text": "Hooks FAQ",
-                                        "link": "/计算机与软件/前端/React/Hooks/Hooks FAQ.md"
+                                        "link": "/计算机/前端/React/Hooks/Hooks FAQ.md"
                                     },
                                     {
                                         "text": "useCallback",
-                                        "link": "/计算机与软件/前端/React/Hooks/useCallback.md"
+                                        "link": "/计算机/前端/React/Hooks/useCallback.md"
                                     },
                                     {
                                         "text": "useContext",
-                                        "link": "/计算机与软件/前端/React/Hooks/useContext.md"
+                                        "link": "/计算机/前端/React/Hooks/useContext.md"
                                     },
                                     {
                                         "text": "useEffect",
-                                        "link": "/计算机与软件/前端/React/Hooks/useEffect.md"
+                                        "link": "/计算机/前端/React/Hooks/useEffect.md"
                                     },
                                     {
                                         "text": "useMemo",
-                                        "link": "/计算机与软件/前端/React/Hooks/useMemo.md"
+                                        "link": "/计算机/前端/React/Hooks/useMemo.md"
                                     },
                                     {
                                         "text": "useReducer",
-                                        "link": "/计算机与软件/前端/React/Hooks/useReducer.md"
+                                        "link": "/计算机/前端/React/Hooks/useReducer.md"
                                     },
                                     {
                                         "text": "useRef",
-                                        "link": "/计算机与软件/前端/React/Hooks/useRef.md"
+                                        "link": "/计算机/前端/React/Hooks/useRef.md"
                                     },
                                     {
                                         "text": "useState",
-                                        "link": "/计算机与软件/前端/React/Hooks/useState.md"
+                                        "link": "/计算机/前端/React/Hooks/useState.md"
                                     }
                                 ]
                             },
@@ -169,15 +169,15 @@ export default [
                                 "items": [
                                     {
                                         "text": "Next,js 代理",
-                                        "link": "/计算机与软件/前端/React/Next.js/Next,js 代理.md"
+                                        "link": "/计算机/前端/React/Next.js/Next,js 代理.md"
                                     },
                                     {
                                         "text": "Next.js",
-                                        "link": "/计算机与软件/前端/React/Next.js/Next.js.md"
+                                        "link": "/计算机/前端/React/Next.js/Next.js.md"
                                     },
                                     {
                                         "text": "Next.js里使用antd-mobile",
-                                        "link": "/计算机与软件/前端/React/Next.js/Next.js里使用antd-mobile.md"
+                                        "link": "/计算机/前端/React/Next.js/Next.js里使用antd-mobile.md"
                                     }
                                 ]
                             },
@@ -191,7 +191,7 @@ export default [
                                         "items": [
                                             {
                                                 "text": "路由",
-                                                "link": "/计算机与软件/前端/React/react-router/V5/路由.md"
+                                                "link": "/计算机/前端/React/react-router/V5/路由.md"
                                             }
                                         ]
                                     },
@@ -201,19 +201,19 @@ export default [
                                         "items": [
                                             {
                                                 "text": "Components",
-                                                "link": "/计算机与软件/前端/React/react-router/V6/Components.md"
+                                                "link": "/计算机/前端/React/react-router/V6/Components.md"
                                             },
                                             {
                                                 "text": "Hooks",
-                                                "link": "/计算机与软件/前端/React/react-router/V6/Hooks.md"
+                                                "link": "/计算机/前端/React/react-router/V6/Hooks.md"
                                             },
                                             {
                                                 "text": "react-router-dom",
-                                                "link": "/计算机与软件/前端/React/react-router/V6/react-router-dom.md"
+                                                "link": "/计算机/前端/React/react-router/V6/react-router-dom.md"
                                             },
                                             {
                                                 "text": "Router Auth",
-                                                "link": "/计算机与软件/前端/React/react-router/V6/Router Auth.md"
+                                                "link": "/计算机/前端/React/react-router/V6/Router Auth.md"
                                             }
                                         ]
                                     }
@@ -225,59 +225,59 @@ export default [
                                 "items": [
                                     {
                                         "text": "CSS Modules",
-                                        "link": "/计算机与软件/前端/React/基础/CSS Modules.md"
+                                        "link": "/计算机/前端/React/基础/CSS Modules.md"
                                     },
                                     {
                                         "text": "MobX",
-                                        "link": "/计算机与软件/前端/React/基础/MobX.md"
+                                        "link": "/计算机/前端/React/基础/MobX.md"
                                     },
                                     {
                                         "text": "React diff算法",
-                                        "link": "/计算机与软件/前端/React/基础/React diff算法.md"
+                                        "link": "/计算机/前端/React/基础/React diff算法.md"
                                     },
                                     {
                                         "text": "React render",
-                                        "link": "/计算机与软件/前端/React/基础/React render.md"
+                                        "link": "/计算机/前端/React/基础/React render.md"
                                     },
                                     {
                                         "text": "React哲学",
-                                        "link": "/计算机与软件/前端/React/基础/React哲学.md"
+                                        "link": "/计算机/前端/React/基础/React哲学.md"
                                     },
                                     {
                                         "text": "React基础",
-                                        "link": "/计算机与软件/前端/React/基础/React基础.md"
+                                        "link": "/计算机/前端/React/基础/React基础.md"
                                     },
                                     {
                                         "text": "React生命周期",
-                                        "link": "/计算机与软件/前端/React/基础/React生命周期.md"
+                                        "link": "/计算机/前端/React/基础/React生命周期.md"
                                     },
                                     {
                                         "text": "React脚手架",
-                                        "link": "/计算机与软件/前端/React/基础/React脚手架.md"
+                                        "link": "/计算机/前端/React/基础/React脚手架.md"
                                     },
                                     {
                                         "text": "state和props有什么区别",
-                                        "link": "/计算机与软件/前端/React/基础/state和props有什么区别.md"
+                                        "link": "/计算机/前端/React/基础/state和props有什么区别.md"
                                     },
                                     {
                                         "text": "状态提升",
-                                        "link": "/计算机与软件/前端/React/基础/状态提升.md"
+                                        "link": "/计算机/前端/React/基础/状态提升.md"
                                     },
                                     {
                                         "text": "组件通信",
-                                        "link": "/计算机与软件/前端/React/基础/组件通信.md"
+                                        "link": "/计算机/前端/React/基础/组件通信.md"
                                     },
                                     {
                                         "text": "组合 vs 继承",
-                                        "link": "/计算机与软件/前端/React/基础/组合 vs 继承.md"
+                                        "link": "/计算机/前端/React/基础/组合 vs 继承.md"
                                     },
                                     {
                                         "text": "虚拟DOM",
-                                        "link": "/计算机与软件/前端/React/基础/虚拟DOM.md"
+                                        "link": "/计算机/前端/React/基础/虚拟DOM.md"
                                     },
                                     {
                                         "text": "表单数据绑定",
-                                        "link": "/计算机与软件/前端/React/基础/表单数据绑定.md"
+                                        "link": "/计算机/前端/React/基础/表单数据绑定.md"
                                     }
                                 ]
                             },
@@ -287,35 +287,35 @@ export default [
                                 "items": [
                                     {
                                         "text": "React Router实现原理",
-                                        "link": "/计算机与软件/前端/React/高级/React Router实现原理.md"
+                                        "link": "/计算机/前端/React/高级/React Router实现原理.md"
                                     },
                                     {
                                         "text": "React中Key的作用",
-                                        "link": "/计算机与软件/前端/React/高级/React中Key的作用.md"
+                                        "link": "/计算机/前端/React/高级/React中Key的作用.md"
                                     },
                                     {
                                         "text": "代码分割",
-                                        "link": "/计算机与软件/前端/React/高级/代码分割.md"
+                                        "link": "/计算机/前端/React/高级/代码分割.md"
                                     },
                                     {
                                         "text": "如何拆分组件",
-                                        "link": "/计算机与软件/前端/React/高级/如何拆分组件.md"
+                                        "link": "/计算机/前端/React/高级/如何拆分组件.md"
                                     },
                                     {
                                         "text": "构建面向未来的前端架构",
-                                        "link": "/计算机与软件/前端/React/高级/构建面向未来的前端架构.md"
+                                        "link": "/计算机/前端/React/高级/构建面向未来的前端架构.md"
                                     },
                                     {
                                         "text": "深入JSX",
-                                        "link": "/计算机与软件/前端/React/高级/深入JSX.md"
+                                        "link": "/计算机/前端/React/高级/深入JSX.md"
                                     },
                                     {
                                         "text": "类型检查",
-                                        "link": "/计算机与软件/前端/React/高级/类型检查.md"
+                                        "link": "/计算机/前端/React/高级/类型检查.md"
                                     },
                                     {
                                         "text": "高阶组件",
-                                        "link": "/计算机与软件/前端/React/高级/高阶组件.md"
+                                        "link": "/计算机/前端/React/高级/高阶组件.md"
                                     }
                                 ]
                             }
@@ -331,11 +331,11 @@ export default [
                                 "items": [
                                     {
                                         "text": "vue-property-decorator使用指南",
-                                        "link": "/计算机与软件/前端/Vue/Vue2/vue-property-decorator使用指南.md"
+                                        "link": "/计算机/前端/Vue/Vue2/vue-property-decorator使用指南.md"
                                     },
                                     {
                                         "text": "深入响应式原理",
-                                        "link": "/计算机与软件/前端/Vue/Vue2/深入响应式原理.md"
+                                        "link": "/计算机/前端/Vue/Vue2/深入响应式原理.md"
                                     }
                                 ]
                             },
@@ -345,7 +345,7 @@ export default [
                                 "items": [
                                     {
                                         "text": "Class 与 Style 绑定",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/Class 与 Style 绑定.md"
+                                        "link": "/计算机/前端/Vue/Vue3/Class 与 Style 绑定.md"
                                     },
                                     {
                                         "text": "components",
@@ -353,81 +353,81 @@ export default [
                                         "items": [
                                             {
                                                 "text": "Props",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/components/Props.md"
+                                                "link": "/计算机/前端/Vue/Vue3/components/Props.md"
                                             },
                                             {
                                                 "text": "事件",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/components/事件.md"
+                                                "link": "/计算机/前端/Vue/Vue3/components/事件.md"
                                             },
                                             {
                                                 "text": "依赖注入",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/components/依赖注入.md"
+                                                "link": "/计算机/前端/Vue/Vue3/components/依赖注入.md"
                                             },
                                             {
                                                 "text": "异步组件",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/components/异步组件.md"
+                                                "link": "/计算机/前端/Vue/Vue3/components/异步组件.md"
                                             },
                                             {
                                                 "text": "插槽",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/components/插槽.md"
+                                                "link": "/计算机/前端/Vue/Vue3/components/插槽.md"
                                             },
                                             {
                                                 "text": "组件基础",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/components/组件基础.md"
+                                                "link": "/计算机/前端/Vue/Vue3/components/组件基础.md"
                                             },
                                             {
                                                 "text": "透传Attributes",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/components/透传Attributes.md"
+                                                "link": "/计算机/前端/Vue/Vue3/components/透传Attributes.md"
                                             }
                                         ]
                                     },
                                     {
                                         "text": "v-model",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/v-model.md"
+                                        "link": "/计算机/前端/Vue/Vue3/v-model.md"
                                     },
                                     {
                                         "text": "Vue3 与 TSX",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/Vue3 与 TSX.md"
+                                        "link": "/计算机/前端/Vue/Vue3/Vue3 与 TSX.md"
                                     },
                                     {
                                         "text": "watch",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/watch.md"
+                                        "link": "/计算机/前端/Vue/Vue3/watch.md"
                                     },
                                     {
                                         "text": "事件处理",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/事件处理.md"
+                                        "link": "/计算机/前端/Vue/Vue3/事件处理.md"
                                     },
                                     {
                                         "text": "列表渲染",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/列表渲染.md"
+                                        "link": "/计算机/前端/Vue/Vue3/列表渲染.md"
                                     },
                                     {
                                         "text": "响应式基础",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/响应式基础.md"
+                                        "link": "/计算机/前端/Vue/Vue3/响应式基础.md"
                                     },
                                     {
                                         "text": "对比 React Hooks 和 Vue Composition API",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/对比 React Hooks 和 Vue Composition API.md"
+                                        "link": "/计算机/前端/Vue/Vue3/对比 React Hooks 和 Vue Composition API.md"
                                     },
                                     {
                                         "text": "条件渲染",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/条件渲染.md"
+                                        "link": "/计算机/前端/Vue/Vue3/条件渲染.md"
                                     },
                                     {
                                         "text": "模板引用",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/模板引用.md"
+                                        "link": "/计算机/前端/Vue/Vue3/模板引用.md"
                                     },
                                     {
                                         "text": "模板语法",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/模板语法.md"
+                                        "link": "/计算机/前端/Vue/Vue3/模板语法.md"
                                     },
                                     {
                                         "text": "生命周期",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/生命周期.md"
+                                        "link": "/计算机/前端/Vue/Vue3/生命周期.md"
                                     },
                                     {
                                         "text": "计算属性",
-                                        "link": "/计算机与软件/前端/Vue/Vue3/计算属性.md"
+                                        "link": "/计算机/前端/Vue/Vue3/计算属性.md"
                                     },
                                     {
                                         "text": "逻辑复用",
@@ -435,11 +435,11 @@ export default [
                                         "items": [
                                             {
                                                 "text": "组合式函数",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/逻辑复用/组合式函数.md"
+                                                "link": "/计算机/前端/Vue/Vue3/逻辑复用/组合式函数.md"
                                             },
                                             {
                                                 "text": "自定义指令",
-                                                "link": "/计算机与软件/前端/Vue/Vue3/逻辑复用/自定义指令.md"
+                                                "link": "/计算机/前端/Vue/Vue3/逻辑复用/自定义指令.md"
                                             }
                                         ]
                                     }
@@ -453,11 +453,11 @@ export default [
                         "items": [
                             {
                                 "text": "产品开发流程",
-                                "link": "/计算机与软件/前端/小程序/产品开发流程.md"
+                                "link": "/计算机/前端/小程序/产品开发流程.md"
                             },
                             {
                                 "text": "微信小程序-简介",
-                                "link": "/计算机与软件/前端/小程序/微信小程序-简介.md"
+                                "link": "/计算机/前端/小程序/微信小程序-简介.md"
                             }
                         ]
                     },
@@ -471,39 +471,39 @@ export default [
                                 "items": [
                                     {
                                         "text": "QT 信号与槽",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT 信号与槽.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT 信号与槽.md"
                                     },
                                     {
                                         "text": "QT 国际化",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT 国际化.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT 国际化.md"
                                     },
                                     {
                                         "text": "QT 常用数据结构以及函数",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT 常用数据结构以及函数.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT 常用数据结构以及函数.md"
                                     },
                                     {
                                         "text": "QT 文件操作",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT 文件操作.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT 文件操作.md"
                                     },
                                     {
                                         "text": "QT 样式表",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT 样式表.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT 样式表.md"
                                     },
                                     {
                                         "text": "QT 线程同步",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT 线程同步.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT 线程同步.md"
                                     },
                                     {
                                         "text": "QT 网络编程",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT 网络编程.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT 网络编程.md"
                                     },
                                     {
                                         "text": "QT",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/QT.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/QT.md"
                                     },
                                     {
                                         "text": "元对象系统",
-                                        "link": "/计算机与软件/前端/桌面应用/Qt/元对象系统.md"
+                                        "link": "/计算机/前端/桌面应用/Qt/元对象系统.md"
                                     }
                                 ]
                             }
@@ -515,31 +515,31 @@ export default [
                         "items": [
                             {
                                 "text": "BOM",
-                                "link": "/计算机与软件/前端/浏览器/BOM.md"
+                                "link": "/计算机/前端/浏览器/BOM.md"
                             },
                             {
                                 "text": "DOM",
-                                "link": "/计算机与软件/前端/浏览器/DOM.md"
+                                "link": "/计算机/前端/浏览器/DOM.md"
                             },
                             {
                                 "text": "JS 事件",
-                                "link": "/计算机与软件/前端/浏览器/JS 事件.md"
+                                "link": "/计算机/前端/浏览器/JS 事件.md"
                             },
                             {
                                 "text": "前端手写代码",
-                                "link": "/计算机与软件/前端/浏览器/前端手写代码.md"
+                                "link": "/计算机/前端/浏览器/前端手写代码.md"
                             },
                             {
                                 "text": "浏览器引擎前缀",
-                                "link": "/计算机与软件/前端/浏览器/浏览器引擎前缀.md"
+                                "link": "/计算机/前端/浏览器/浏览器引擎前缀.md"
                             },
                             {
                                 "text": "浏览器技术",
-                                "link": "/计算机与软件/前端/浏览器/浏览器技术.md"
+                                "link": "/计算机/前端/浏览器/浏览器技术.md"
                             },
                             {
                                 "text": "浏览器渲染流程",
-                                "link": "/计算机与软件/前端/浏览器/浏览器渲染流程.md"
+                                "link": "/计算机/前端/浏览器/浏览器渲染流程.md"
                             }
                         ]
                     }
@@ -555,7 +555,7 @@ export default [
                         "items": [
                             {
                                 "text": "Express",
-                                "link": "/计算机与软件/后端/Express/Express.md"
+                                "link": "/计算机/后端/Express/Express.md"
                             }
                         ]
                     },
@@ -565,31 +565,31 @@ export default [
                         "items": [
                             {
                                 "text": "应用设置",
-                                "link": "/计算机与软件/后端/Flask/应用设置.md"
+                                "link": "/计算机/后端/Flask/应用设置.md"
                             },
                             {
                                 "text": "快速上手",
-                                "link": "/计算机与软件/后端/Flask/快速上手.md"
+                                "link": "/计算机/后端/Flask/快速上手.md"
                             },
                             {
                                 "text": "测试覆盖",
-                                "link": "/计算机与软件/后端/Flask/测试覆盖.md"
+                                "link": "/计算机/后端/Flask/测试覆盖.md"
                             },
                             {
                                 "text": "简单应用",
-                                "link": "/计算机与软件/后端/Flask/简单应用.md"
+                                "link": "/计算机/后端/Flask/简单应用.md"
                             },
                             {
                                 "text": "蓝图视图",
-                                "link": "/计算机与软件/后端/Flask/蓝图视图.md"
+                                "link": "/计算机/后端/Flask/蓝图视图.md"
                             },
                             {
                                 "text": "项目可安装化",
-                                "link": "/计算机与软件/后端/Flask/项目可安装化.md"
+                                "link": "/计算机/后端/Flask/项目可安装化.md"
                             },
                             {
                                 "text": "项目布局",
-                                "link": "/计算机与软件/后端/Flask/项目布局.md"
+                                "link": "/计算机/后端/Flask/项目布局.md"
                             }
                         ]
                     },
@@ -599,19 +599,19 @@ export default [
                         "items": [
                             {
                                 "text": "koa 上下文",
-                                "link": "/计算机与软件/后端/Koa/koa 上下文.md"
+                                "link": "/计算机/后端/Koa/koa 上下文.md"
                             },
                             {
                                 "text": "koa 响应",
-                                "link": "/计算机与软件/后端/Koa/koa 响应.md"
+                                "link": "/计算机/后端/Koa/koa 响应.md"
                             },
                             {
                                 "text": "koa 应用",
-                                "link": "/计算机与软件/后端/Koa/koa 应用.md"
+                                "link": "/计算机/后端/Koa/koa 应用.md"
                             },
                             {
                                 "text": "koa 请求",
-                                "link": "/计算机与软件/后端/Koa/koa 请求.md"
+                                "link": "/计算机/后端/Koa/koa 请求.md"
                             }
                         ]
                     },
@@ -621,39 +621,39 @@ export default [
                         "items": [
                             {
                                 "text": "Node.js Buffer",
-                                "link": "/计算机与软件/后端/Node.js/Node.js Buffer.md"
+                                "link": "/计算机/后端/Node.js/Node.js Buffer.md"
                             },
                             {
                                 "text": "Node.js EventEmitter",
-                                "link": "/计算机与软件/后端/Node.js/Node.js EventEmitter.md"
+                                "link": "/计算机/后端/Node.js/Node.js EventEmitter.md"
                             },
                             {
                                 "text": "Node.js Path",
-                                "link": "/计算机与软件/后端/Node.js/Node.js Path.md"
+                                "link": "/计算机/后端/Node.js/Node.js Path.md"
                             },
                             {
                                 "text": "Node.js Stream",
-                                "link": "/计算机与软件/后端/Node.js/Node.js Stream.md"
+                                "link": "/计算机/后端/Node.js/Node.js Stream.md"
                             },
                             {
                                 "text": "Node.js Web 模块",
-                                "link": "/计算机与软件/后端/Node.js/Node.js Web 模块.md"
+                                "link": "/计算机/后端/Node.js/Node.js Web 模块.md"
                             },
                             {
                                 "text": "Node.js 事件循环",
-                                "link": "/计算机与软件/后端/Node.js/Node.js 事件循环.md"
+                                "link": "/计算机/后端/Node.js/Node.js 事件循环.md"
                             },
                             {
                                 "text": "Node.js 回调函数",
-                                "link": "/计算机与软件/后端/Node.js/Node.js 回调函数.md"
+                                "link": "/计算机/后端/Node.js/Node.js 回调函数.md"
                             },
                             {
                                 "text": "Node.js 文件系统",
-                                "link": "/计算机与软件/后端/Node.js/Node.js 文件系统.md"
+                                "link": "/计算机/后端/Node.js/Node.js 文件系统.md"
                             },
                             {
                                 "text": "Node.js",
-                                "link": "/计算机与软件/后端/Node.js/Node.js.md"
+                                "link": "/计算机/后端/Node.js/Node.js.md"
                             }
                         ]
                     },
@@ -663,7 +663,7 @@ export default [
                         "items": [
                             {
                                 "text": "Joi",
-                                "link": "/计算机与软件/后端/输入校验/Joi.md"
+                                "link": "/计算机/后端/输入校验/Joi.md"
                             }
                         ]
                     }
@@ -679,7 +679,7 @@ export default [
                         "items": [
                             {
                                 "text": "排序",
-                                "link": "/计算机与软件/基础/算法与数据结构/排序.md"
+                                "link": "/计算机/基础/算法与数据结构/排序.md"
                             }
                         ]
                     },
@@ -689,15 +689,15 @@ export default [
                         "items": [
                             {
                                 "text": "正则表达式",
-                                "link": "/计算机与软件/基础/编程概念/正则表达式.md"
+                                "link": "/计算机/基础/编程概念/正则表达式.md"
                             },
                             {
                                 "text": "短路求值",
-                                "link": "/计算机与软件/基础/编程概念/短路求值.md"
+                                "link": "/计算机/基础/编程概念/短路求值.md"
                             },
                             {
                                 "text": "语法糖",
-                                "link": "/计算机与软件/基础/编程概念/语法糖.md"
+                                "link": "/计算机/基础/编程概念/语法糖.md"
                             }
                         ]
                     },
@@ -707,43 +707,43 @@ export default [
                         "items": [
                             {
                                 "text": "AbortController",
-                                "link": "/计算机与软件/基础/网络/AbortController.md"
+                                "link": "/计算机/基础/网络/AbortController.md"
                             },
                             {
                                 "text": "AJAX 响应",
-                                "link": "/计算机与软件/基础/网络/AJAX 响应.md"
+                                "link": "/计算机/基础/网络/AJAX 响应.md"
                             },
                             {
                                 "text": "AJAX 请求",
-                                "link": "/计算机与软件/基础/网络/AJAX 请求.md"
+                                "link": "/计算机/基础/网络/AJAX 请求.md"
                             },
                             {
                                 "text": "AJAX",
-                                "link": "/计算机与软件/基础/网络/AJAX.md"
+                                "link": "/计算机/基础/网络/AJAX.md"
                             },
                             {
                                 "text": "axios",
-                                "link": "/计算机与软件/基础/网络/axios.md"
+                                "link": "/计算机/基础/网络/axios.md"
                             },
                             {
                                 "text": "Hosts与DNS",
-                                "link": "/计算机与软件/基础/网络/Hosts与DNS.md"
+                                "link": "/计算机/基础/网络/Hosts与DNS.md"
                             },
                             {
                                 "text": "HTTP Cookie",
-                                "link": "/计算机与软件/基础/网络/HTTP Cookie.md"
+                                "link": "/计算机/基础/网络/HTTP Cookie.md"
                             },
                             {
                                 "text": "HTTP",
-                                "link": "/计算机与软件/基础/网络/HTTP.md"
+                                "link": "/计算机/基础/网络/HTTP.md"
                             },
                             {
                                 "text": "python网络编程",
-                                "link": "/计算机与软件/基础/网络/python网络编程.md"
+                                "link": "/计算机/基础/网络/python网络编程.md"
                             },
                             {
                                 "text": "认证与授权",
-                                "link": "/计算机与软件/基础/网络/认证与授权.md"
+                                "link": "/计算机/基础/网络/认证与授权.md"
                             }
                         ]
                     },
@@ -753,11 +753,11 @@ export default [
                         "items": [
                             {
                                 "text": "pythonOS模块",
-                                "link": "/计算机与软件/基础/计算机系统/pythonOS模块.md"
+                                "link": "/计算机/基础/计算机系统/pythonOS模块.md"
                             },
                             {
                                 "text": "汇编",
-                                "link": "/计算机与软件/基础/计算机系统/汇编.md"
+                                "link": "/计算机/基础/计算机系统/汇编.md"
                             }
                         ]
                     }
@@ -773,11 +773,11 @@ export default [
                         "items": [
                             {
                                 "text": "ESLint",
-                                "link": "/计算机与软件/工程化/代码规范/ESLint.md"
+                                "link": "/计算机/工程化/代码规范/ESLint.md"
                             },
                             {
                                 "text": "JavaScript Standard Style",
-                                "link": "/计算机与软件/工程化/代码规范/JavaScript Standard Style.md"
+                                "link": "/计算机/工程化/代码规范/JavaScript Standard Style.md"
                             }
                         ]
                     },
@@ -787,11 +787,11 @@ export default [
                         "items": [
                             {
                                 "text": "pythonPIP",
-                                "link": "/计算机与软件/工程化/包管理/pythonPIP.md"
+                                "link": "/计算机/工程化/包管理/pythonPIP.md"
                             },
                             {
                                 "text": "使用 NPM 管理软件包",
-                                "link": "/计算机与软件/工程化/包管理/使用 NPM 管理软件包.md"
+                                "link": "/计算机/工程化/包管理/使用 NPM 管理软件包.md"
                             }
                         ]
                     },
@@ -801,11 +801,11 @@ export default [
                         "items": [
                             {
                                 "text": "Chalk",
-                                "link": "/计算机与软件/工程化/命令行工具/Chalk.md"
+                                "link": "/计算机/工程化/命令行工具/Chalk.md"
                             },
                             {
                                 "text": "ora",
-                                "link": "/计算机与软件/工程化/命令行工具/ora.md"
+                                "link": "/计算机/工程化/命令行工具/ora.md"
                             }
                         ]
                     },
@@ -823,35 +823,35 @@ export default [
                                         "items": [
                                             {
                                                 "text": "configuration",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/configuration.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/configuration.md"
                                             },
                                             {
                                                 "text": "entry",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/entry.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/entry.md"
                                             },
                                             {
                                                 "text": "loader",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/loader.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/loader.md"
                                             },
                                             {
                                                 "text": "modules",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/modules.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/modules.md"
                                             },
                                             {
                                                 "text": "output",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/output.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/output.md"
                                             },
                                             {
                                                 "text": "plugin",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/plugin.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/plugin.md"
                                             },
                                             {
                                                 "text": "依赖图",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/依赖图.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/依赖图.md"
                                             },
                                             {
                                                 "text": "概念",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/概念/概念.md"
+                                                "link": "/计算机/工程化/构建/Webpack/概念/概念.md"
                                             }
                                         ]
                                     },
@@ -861,7 +861,7 @@ export default [
                                         "items": [
                                             {
                                                 "text": "开始",
-                                                "link": "/计算机与软件/工程化/构建/Webpack/起步/开始.md"
+                                                "link": "/计算机/工程化/构建/Webpack/起步/开始.md"
                                             }
                                         ]
                                     }
@@ -875,15 +875,15 @@ export default [
                         "items": [
                             {
                                 "text": "Jest",
-                                "link": "/计算机与软件/工程化/测试与持续集成/Jest.md"
+                                "link": "/计算机/工程化/测试与持续集成/Jest.md"
                             },
                             {
                                 "text": "前端测试",
-                                "link": "/计算机与软件/工程化/测试与持续集成/前端测试.md"
+                                "link": "/计算机/工程化/测试与持续集成/前端测试.md"
                             },
                             {
                                 "text": "测试与CI",
-                                "link": "/计算机与软件/工程化/测试与持续集成/测试与CI.md"
+                                "link": "/计算机/工程化/测试与持续集成/测试与CI.md"
                             }
                         ]
                     },
@@ -893,7 +893,7 @@ export default [
                         "items": [
                             {
                                 "text": "Git",
-                                "link": "/计算机与软件/工程化/版本管理/Git.md"
+                                "link": "/计算机/工程化/版本管理/Git.md"
                             }
                         ]
                     },
@@ -903,7 +903,7 @@ export default [
                         "items": [
                             {
                                 "text": "配置文件",
-                                "link": "/计算机与软件/工程化/配置管理/配置文件.md"
+                                "link": "/计算机/工程化/配置管理/配置文件.md"
                             }
                         ]
                     }
@@ -919,11 +919,11 @@ export default [
                         "items": [
                             {
                                 "text": "MongoDB",
-                                "link": "/计算机与软件/数据/MongoDB/MongoDB.md"
+                                "link": "/计算机/数据/MongoDB/MongoDB.md"
                             },
                             {
                                 "text": "NoSQL",
-                                "link": "/计算机与软件/数据/MongoDB/NoSQL.md"
+                                "link": "/计算机/数据/MongoDB/NoSQL.md"
                             },
                             {
                                 "text": "PyMongo",
@@ -931,19 +931,19 @@ export default [
                                 "items": [
                                     {
                                         "text": "MongoDB Delete",
-                                        "link": "/计算机与软件/数据/MongoDB/PyMongo/MongoDB Delete.md"
+                                        "link": "/计算机/数据/MongoDB/PyMongo/MongoDB Delete.md"
                                     },
                                     {
                                         "text": "MongoDB Insert",
-                                        "link": "/计算机与软件/数据/MongoDB/PyMongo/MongoDB Insert.md"
+                                        "link": "/计算机/数据/MongoDB/PyMongo/MongoDB Insert.md"
                                     },
                                     {
                                         "text": "MongoDB Query",
-                                        "link": "/计算机与软件/数据/MongoDB/PyMongo/MongoDB Query.md"
+                                        "link": "/计算机/数据/MongoDB/PyMongo/MongoDB Query.md"
                                     },
                                     {
                                         "text": "MongoDB Update",
-                                        "link": "/计算机与软件/数据/MongoDB/PyMongo/MongoDB Update.md"
+                                        "link": "/计算机/数据/MongoDB/PyMongo/MongoDB Update.md"
                                     }
                                 ]
                             }
@@ -955,7 +955,7 @@ export default [
                         "items": [
                             {
                                 "text": "SQL与数据建模",
-                                "link": "/计算机与软件/数据/关系数据库/SQL与数据建模.md"
+                                "link": "/计算机/数据/关系数据库/SQL与数据建模.md"
                             }
                         ]
                     },
@@ -965,15 +965,15 @@ export default [
                         "items": [
                             {
                                 "text": "Node.js SDK",
-                                "link": "/计算机与软件/数据/对象存储/Node.js SDK.md"
+                                "link": "/计算机/数据/对象存储/Node.js SDK.md"
                             },
                             {
                                 "text": "Quick Start",
-                                "link": "/计算机与软件/数据/对象存储/Quick Start.md"
+                                "link": "/计算机/数据/对象存储/Quick Start.md"
                             },
                             {
                                 "text": "访问控制RAM",
-                                "link": "/计算机与软件/数据/对象存储/访问控制RAM.md"
+                                "link": "/计算机/数据/对象存储/访问控制RAM.md"
                             }
                         ]
                     },
@@ -983,11 +983,11 @@ export default [
                         "items": [
                             {
                                 "text": "Dexie",
-                                "link": "/计算机与软件/数据/浏览器存储/Dexie.md"
+                                "link": "/计算机/数据/浏览器存储/Dexie.md"
                             },
                             {
                                 "text": "IndexedDB",
-                                "link": "/计算机与软件/数据/浏览器存储/IndexedDB.md"
+                                "link": "/计算机/数据/浏览器存储/IndexedDB.md"
                             }
                         ]
                     }
@@ -1007,27 +1007,27 @@ export default [
                                 "items": [
                                     {
                                         "text": "单例模式",
-                                        "link": "/计算机与软件/架构/设计模式/创建型/单例模式.md"
+                                        "link": "/计算机/架构/设计模式/创建型/单例模式.md"
                                     },
                                     {
                                         "text": "原型模式",
-                                        "link": "/计算机与软件/架构/设计模式/创建型/原型模式.md"
+                                        "link": "/计算机/架构/设计模式/创建型/原型模式.md"
                                     },
                                     {
                                         "text": "工厂模式",
-                                        "link": "/计算机与软件/架构/设计模式/创建型/工厂模式.md"
+                                        "link": "/计算机/架构/设计模式/创建型/工厂模式.md"
                                     },
                                     {
                                         "text": "建造者模式",
-                                        "link": "/计算机与软件/架构/设计模式/创建型/建造者模式.md"
+                                        "link": "/计算机/架构/设计模式/创建型/建造者模式.md"
                                     },
                                     {
                                         "text": "抽象工厂模式",
-                                        "link": "/计算机与软件/架构/设计模式/创建型/抽象工厂模式.md"
+                                        "link": "/计算机/架构/设计模式/创建型/抽象工厂模式.md"
                                     },
                                     {
                                         "text": "简单工厂模式",
-                                        "link": "/计算机与软件/架构/设计模式/创建型/简单工厂模式.md"
+                                        "link": "/计算机/架构/设计模式/创建型/简单工厂模式.md"
                                     }
                                 ]
                             },
@@ -1037,11 +1037,11 @@ export default [
                                 "items": [
                                     {
                                         "text": "模式联用",
-                                        "link": "/计算机与软件/架构/设计模式/概述与组合/模式联用.md"
+                                        "link": "/计算机/架构/设计模式/概述与组合/模式联用.md"
                                     },
                                     {
                                         "text": "设计模式概述",
-                                        "link": "/计算机与软件/架构/设计模式/概述与组合/设计模式概述.md"
+                                        "link": "/计算机/架构/设计模式/概述与组合/设计模式概述.md"
                                     }
                                 ]
                             },
@@ -1051,31 +1051,31 @@ export default [
                                 "items": [
                                     {
                                         "text": "享元模式",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/享元模式.md"
+                                        "link": "/计算机/架构/设计模式/结构型/享元模式.md"
                                     },
                                     {
                                         "text": "代理模式",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/代理模式.md"
+                                        "link": "/计算机/架构/设计模式/结构型/代理模式.md"
                                     },
                                     {
                                         "text": "外观模式",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/外观模式.md"
+                                        "link": "/计算机/架构/设计模式/结构型/外观模式.md"
                                     },
                                     {
                                         "text": "桥接模式",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/桥接模式.md"
+                                        "link": "/计算机/架构/设计模式/结构型/桥接模式.md"
                                     },
                                     {
                                         "text": "组合模式",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/组合模式.md"
+                                        "link": "/计算机/架构/设计模式/结构型/组合模式.md"
                                     },
                                     {
                                         "text": "装饰模式",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/装饰模式.md"
+                                        "link": "/计算机/架构/设计模式/结构型/装饰模式.md"
                                     },
                                     {
                                         "text": "适配器模式",
-                                        "link": "/计算机与软件/架构/设计模式/结构型/适配器模式.md"
+                                        "link": "/计算机/架构/设计模式/结构型/适配器模式.md"
                                     }
                                 ]
                             },
@@ -1085,47 +1085,47 @@ export default [
                                 "items": [
                                     {
                                         "text": "中介者模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/中介者模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/中介者模式.md"
                                     },
                                     {
                                         "text": "命令模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/命令模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/命令模式.md"
                                     },
                                     {
                                         "text": "备忘录模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/备忘录模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/备忘录模式.md"
                                     },
                                     {
                                         "text": "模板方法模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/模板方法模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/模板方法模式.md"
                                     },
                                     {
                                         "text": "状态模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/状态模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/状态模式.md"
                                     },
                                     {
                                         "text": "策略模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/策略模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/策略模式.md"
                                     },
                                     {
                                         "text": "观察者模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/观察者模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/观察者模式.md"
                                     },
                                     {
                                         "text": "解释器模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/解释器模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/解释器模式.md"
                                     },
                                     {
                                         "text": "访问者模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/访问者模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/访问者模式.md"
                                     },
                                     {
                                         "text": "责任链模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/责任链模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/责任链模式.md"
                                     },
                                     {
                                         "text": "迭代器模式",
-                                        "link": "/计算机与软件/架构/设计模式/行为型/迭代器模式.md"
+                                        "link": "/计算机/架构/设计模式/行为型/迭代器模式.md"
                                     }
                                 ]
                             }
@@ -1143,55 +1143,55 @@ export default [
                         "items": [
                             {
                                 "text": "C++",
-                                "link": "/计算机与软件/编程语言/C++/C++.md"
+                                "link": "/计算机/编程语言/C++/C++.md"
                             },
                             {
                                 "text": "C+++",
-                                "link": "/计算机与软件/编程语言/C++/C+++.md"
+                                "link": "/计算机/编程语言/C++/C+++.md"
                             },
                             {
                                 "text": "C++Lambda表达式",
-                                "link": "/计算机与软件/编程语言/C++/C++Lambda表达式.md"
+                                "link": "/计算机/编程语言/C++/C++Lambda表达式.md"
                             },
                             {
                                 "text": "C++STL",
-                                "link": "/计算机与软件/编程语言/C++/C++STL.md"
+                                "link": "/计算机/编程语言/C++/C++STL.md"
                             },
                             {
                                 "text": "C++多线程",
-                                "link": "/计算机与软件/编程语言/C++/C++多线程.md"
+                                "link": "/计算机/编程语言/C++/C++多线程.md"
                             },
                             {
                                 "text": "C++异常",
-                                "link": "/计算机与软件/编程语言/C++/C++异常.md"
+                                "link": "/计算机/编程语言/C++/C++异常.md"
                             },
                             {
                                 "text": "C++智能指针",
-                                "link": "/计算机与软件/编程语言/C++/C++智能指针.md"
+                                "link": "/计算机/编程语言/C++/C++智能指针.md"
                             },
                             {
                                 "text": "C++模板",
-                                "link": "/计算机与软件/编程语言/C++/C++模板.md"
+                                "link": "/计算机/编程语言/C++/C++模板.md"
                             },
                             {
                                 "text": "C++类",
-                                "link": "/计算机与软件/编程语言/C++/C++类.md"
+                                "link": "/计算机/编程语言/C++/C++类.md"
                             },
                             {
                                 "text": "C++类型转换",
-                                "link": "/计算机与软件/编程语言/C++/C++类型转换.md"
+                                "link": "/计算机/编程语言/C++/C++类型转换.md"
                             },
                             {
                                 "text": "C++虚函数",
-                                "link": "/计算机与软件/编程语言/C++/C++虚函数.md"
+                                "link": "/计算机/编程语言/C++/C++虚函数.md"
                             },
                             {
                                 "text": "C++运算符重载",
-                                "link": "/计算机与软件/编程语言/C++/C++运算符重载.md"
+                                "link": "/计算机/编程语言/C++/C++运算符重载.md"
                             },
                             {
                                 "text": "C++预处理",
-                                "link": "/计算机与软件/编程语言/C++/C++预处理.md"
+                                "link": "/计算机/编程语言/C++/C++预处理.md"
                             }
                         ]
                     },
@@ -1201,67 +1201,67 @@ export default [
                         "items": [
                             {
                                 "text": "go上下文控制",
-                                "link": "/计算机与软件/编程语言/Go/go上下文控制.md"
+                                "link": "/计算机/编程语言/Go/go上下文控制.md"
                             },
                             {
                                 "text": "go依赖管理",
-                                "link": "/计算机与软件/编程语言/Go/go依赖管理.md"
+                                "link": "/计算机/编程语言/Go/go依赖管理.md"
                             },
                             {
                                 "text": "go函数",
-                                "link": "/计算机与软件/编程语言/Go/go函数.md"
+                                "link": "/计算机/编程语言/Go/go函数.md"
                             },
                             {
                                 "text": "go反向DAP连接",
-                                "link": "/计算机与软件/编程语言/Go/go反向DAP连接.md"
+                                "link": "/计算机/编程语言/Go/go反向DAP连接.md"
                             },
                             {
                                 "text": "go并发",
-                                "link": "/计算机与软件/编程语言/Go/go并发.md"
+                                "link": "/计算机/编程语言/Go/go并发.md"
                             },
                             {
                                 "text": "go性能分析",
-                                "link": "/计算机与软件/编程语言/Go/go性能分析.md"
+                                "link": "/计算机/编程语言/Go/go性能分析.md"
                             },
                             {
                                 "text": "go接口",
-                                "link": "/计算机与软件/编程语言/Go/go接口.md"
+                                "link": "/计算机/编程语言/Go/go接口.md"
                             },
                             {
                                 "text": "go数据类型",
-                                "link": "/计算机与软件/编程语言/Go/go数据类型.md"
+                                "link": "/计算机/编程语言/Go/go数据类型.md"
                             },
                             {
                                 "text": "go断点变量截断",
-                                "link": "/计算机与软件/编程语言/Go/go断点变量截断.md"
+                                "link": "/计算机/编程语言/Go/go断点变量截断.md"
                             },
                             {
                                 "text": "go旧配置迁移",
-                                "link": "/计算机与软件/编程语言/Go/go旧配置迁移.md"
+                                "link": "/计算机/编程语言/Go/go旧配置迁移.md"
                             },
                             {
                                 "text": "go测试",
-                                "link": "/计算机与软件/编程语言/Go/go测试.md"
+                                "link": "/计算机/编程语言/Go/go测试.md"
                             },
                             {
                                 "text": "go简介",
-                                "link": "/计算机与软件/编程语言/Go/go简介.md"
+                                "link": "/计算机/编程语言/Go/go简介.md"
                             },
                             {
                                 "text": "go结构体与方法",
-                                "link": "/计算机与软件/编程语言/Go/go结构体与方法.md"
+                                "link": "/计算机/编程语言/Go/go结构体与方法.md"
                             },
                             {
                                 "text": "go语法",
-                                "link": "/计算机与软件/编程语言/Go/go语法.md"
+                                "link": "/计算机/编程语言/Go/go语法.md"
                             },
                             {
                                 "text": "go调试",
-                                "link": "/计算机与软件/编程语言/Go/go调试.md"
+                                "link": "/计算机/编程语言/Go/go调试.md"
                             },
                             {
                                 "text": "go错误处理",
-                                "link": "/计算机与软件/编程语言/Go/go错误处理.md"
+                                "link": "/计算机/编程语言/Go/go错误处理.md"
                             }
                         ]
                     },
@@ -1271,7 +1271,7 @@ export default [
                         "items": [
                             {
                                 "text": "Java",
-                                "link": "/计算机与软件/编程语言/Java/Java.md"
+                                "link": "/计算机/编程语言/Java/Java.md"
                             }
                         ]
                     },
@@ -1285,105 +1285,105 @@ export default [
                                 "items": [
                                     {
                                         "text": "Function.prototype.apply()",
-                                        "link": "/计算机与软件/编程语言/JavaScript/Function/Function.prototype.apply().md"
+                                        "link": "/计算机/编程语言/JavaScript/Function/Function.prototype.apply().md"
                                     },
                                     {
                                         "text": "Function.prototype.bind()",
-                                        "link": "/计算机与软件/编程语言/JavaScript/Function/Function.prototype.bind().md"
+                                        "link": "/计算机/编程语言/JavaScript/Function/Function.prototype.bind().md"
                                     },
                                     {
                                         "text": "Function.prototype.call()",
-                                        "link": "/计算机与软件/编程语言/JavaScript/Function/Function.prototype.call().md"
+                                        "link": "/计算机/编程语言/JavaScript/Function/Function.prototype.call().md"
                                     },
                                     {
                                         "text": "Function.prototype.toString()",
-                                        "link": "/计算机与软件/编程语言/JavaScript/Function/Function.prototype.toString().md"
+                                        "link": "/计算机/编程语言/JavaScript/Function/Function.prototype.toString().md"
                                     },
                                     {
                                         "text": "JS 函数",
-                                        "link": "/计算机与软件/编程语言/JavaScript/Function/JS 函数.md"
+                                        "link": "/计算机/编程语言/JavaScript/Function/JS 函数.md"
                                     },
                                     {
                                         "text": "JS 箭头函数",
-                                        "link": "/计算机与软件/编程语言/JavaScript/Function/JS 箭头函数.md"
+                                        "link": "/计算机/编程语言/JavaScript/Function/JS 箭头函数.md"
                                     }
                                 ]
                             },
                             {
                                 "text": "JS Decorator",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS Decorator.md"
+                                "link": "/计算机/编程语言/JavaScript/JS Decorator.md"
                             },
                             {
                                 "text": "JS Let和Const",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS Let和Const.md"
+                                "link": "/计算机/编程语言/JavaScript/JS Let和Const.md"
                             },
                             {
                                 "text": "JS Map",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS Map.md"
+                                "link": "/计算机/编程语言/JavaScript/JS Map.md"
                             },
                             {
                                 "text": "JS Math",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS Math.md"
+                                "link": "/计算机/编程语言/JavaScript/JS Math.md"
                             },
                             {
                                 "text": "JS Modules",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS Modules.md"
+                                "link": "/计算机/编程语言/JavaScript/JS Modules.md"
                             },
                             {
                                 "text": "JS Operator",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS Operator.md"
+                                "link": "/计算机/编程语言/JavaScript/JS Operator.md"
                             },
                             {
                                 "text": "JS Set",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS Set.md"
+                                "link": "/计算机/编程语言/JavaScript/JS Set.md"
                             },
                             {
                                 "text": "JS String",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS String.md"
+                                "link": "/计算机/编程语言/JavaScript/JS String.md"
                             },
                             {
                                 "text": "JS this",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS this.md"
+                                "link": "/计算机/编程语言/JavaScript/JS this.md"
                             },
                             {
                                 "text": "JS 位运算",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 位运算.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 位运算.md"
                             },
                             {
                                 "text": "JS 原型链",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 原型链.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 原型链.md"
                             },
                             {
                                 "text": "JS 小技巧",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 小技巧.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 小技巧.md"
                             },
                             {
                                 "text": "JS 异常",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 异常.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 异常.md"
                             },
                             {
                                 "text": "JS 异步编程",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 异步编程.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 异步编程.md"
                             },
                             {
                                 "text": "JS 循环",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 循环.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 循环.md"
                             },
                             {
                                 "text": "JS 数组",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 数组.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 数组.md"
                             },
                             {
                                 "text": "JS 正则表达式",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 正则表达式.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 正则表达式.md"
                             },
                             {
                                 "text": "JS 类和对象",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 类和对象.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 类和对象.md"
                             },
                             {
                                 "text": "JS 类型",
-                                "link": "/计算机与软件/编程语言/JavaScript/JS 类型.md"
+                                "link": "/计算机/编程语言/JavaScript/JS 类型.md"
                             }
                         ]
                     },
@@ -1393,75 +1393,75 @@ export default [
                         "items": [
                             {
                                 "text": "pythonJSON",
-                                "link": "/计算机与软件/编程语言/Python/pythonJSON.md"
+                                "link": "/计算机/编程语言/Python/pythonJSON.md"
                             },
                             {
                                 "text": "pythonRegEx",
-                                "link": "/计算机与软件/编程语言/Python/pythonRegEx.md"
+                                "link": "/计算机/编程语言/Python/pythonRegEx.md"
                             },
                             {
                                 "text": "python内建函数",
-                                "link": "/计算机与软件/编程语言/Python/python内建函数.md"
+                                "link": "/计算机/编程语言/Python/python内建函数.md"
                             },
                             {
                                 "text": "python函数",
-                                "link": "/计算机与软件/编程语言/Python/python函数.md"
+                                "link": "/计算机/编程语言/Python/python函数.md"
                             },
                             {
                                 "text": "python发送邮件",
-                                "link": "/计算机与软件/编程语言/Python/python发送邮件.md"
+                                "link": "/计算机/编程语言/Python/python发送邮件.md"
                             },
                             {
                                 "text": "python多线程",
-                                "link": "/计算机与软件/编程语言/Python/python多线程.md"
+                                "link": "/计算机/编程语言/Python/python多线程.md"
                             },
                             {
                                 "text": "python字符串",
-                                "link": "/计算机与软件/编程语言/Python/python字符串.md"
+                                "link": "/计算机/编程语言/Python/python字符串.md"
                             },
                             {
                                 "text": "python异常处理",
-                                "link": "/计算机与软件/编程语言/Python/python异常处理.md"
+                                "link": "/计算机/编程语言/Python/python异常处理.md"
                             },
                             {
                                 "text": "python循环",
-                                "link": "/计算机与软件/编程语言/Python/python循环.md"
+                                "link": "/计算机/编程语言/Python/python循环.md"
                             },
                             {
                                 "text": "python数据类型",
-                                "link": "/计算机与软件/编程语言/Python/python数据类型.md"
+                                "link": "/计算机/编程语言/Python/python数据类型.md"
                             },
                             {
                                 "text": "python日期",
-                                "link": "/计算机与软件/编程语言/Python/python日期.md"
+                                "link": "/计算机/编程语言/Python/python日期.md"
                             },
                             {
                                 "text": "python条件判断",
-                                "link": "/计算机与软件/编程语言/Python/python条件判断.md"
+                                "link": "/计算机/编程语言/Python/python条件判断.md"
                             },
                             {
                                 "text": "python简介",
-                                "link": "/计算机与软件/编程语言/Python/python简介.md"
+                                "link": "/计算机/编程语言/Python/python简介.md"
                             },
                             {
                                 "text": "python类和对象",
-                                "link": "/计算机与软件/编程语言/Python/python类和对象.md"
+                                "link": "/计算机/编程语言/Python/python类和对象.md"
                             },
                             {
                                 "text": "python语法",
-                                "link": "/计算机与软件/编程语言/Python/python语法.md"
+                                "link": "/计算机/编程语言/Python/python语法.md"
                             },
                             {
                                 "text": "python运算符",
-                                "link": "/计算机与软件/编程语言/Python/python运算符.md"
+                                "link": "/计算机/编程语言/Python/python运算符.md"
                             },
                             {
                                 "text": "python迭代器",
-                                "link": "/计算机与软件/编程语言/Python/python迭代器.md"
+                                "link": "/计算机/编程语言/Python/python迭代器.md"
                             },
                             {
                                 "text": "python集合",
-                                "link": "/计算机与软件/编程语言/Python/python集合.md"
+                                "link": "/计算机/编程语言/Python/python集合.md"
                             }
                         ]
                     },
@@ -1471,19 +1471,19 @@ export default [
                         "items": [
                             {
                                 "text": "ts内置工具类型",
-                                "link": "/计算机与软件/编程语言/TypeScript/ts内置工具类型.md"
+                                "link": "/计算机/编程语言/TypeScript/ts内置工具类型.md"
                             },
                             {
                                 "text": "ts函数工具类型",
-                                "link": "/计算机与软件/编程语言/TypeScript/ts函数工具类型.md"
+                                "link": "/计算机/编程语言/TypeScript/ts函数工具类型.md"
                             },
                             {
                                 "text": "ts类型运算符",
-                                "link": "/计算机与软件/编程语言/TypeScript/ts类型运算符.md"
+                                "link": "/计算机/编程语言/TypeScript/ts类型运算符.md"
                             },
                             {
                                 "text": "ts高级类型",
-                                "link": "/计算机与软件/编程语言/TypeScript/ts高级类型.md"
+                                "link": "/计算机/编程语言/TypeScript/ts高级类型.md"
                             }
                         ]
                     }
@@ -1614,7 +1614,7 @@ export default [
         ]
     },
     {
-        "text": "数学与统计",
+        "text": "数学",
         "collapsed": true,
         "items": [
             {
@@ -1623,7 +1623,7 @@ export default [
                 "items": [
                     {
                         "text": "机器学习数学基础",
-                        "link": "/数学与统计/机器学习数学/机器学习数学基础.md"
+                        "link": "/数学/机器学习数学/机器学习数学基础.md"
                     }
                 ]
             },
@@ -1632,12 +1632,24 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
+                        "text": "BGG榜单分析",
+                        "link": "/数学/概率与实验/BGG榜单分析.md"
+                    },
+                    {
+                        "text": "桌游期望值计算",
+                        "link": "/数学/概率与实验/桌游期望值计算.md"
+                    },
+                    {
                         "text": "概率统计",
-                        "link": "/数学与统计/概率与实验/概率统计.md"
+                        "link": "/数学/概率与实验/概率统计.md"
                     },
                     {
                         "text": "离散概率分布",
-                        "link": "/数学与统计/概率与实验/离散概率分布.md"
+                        "link": "/数学/概率与实验/离散概率分布.md"
+                    },
+                    {
+                        "text": "骰子概率分布",
+                        "link": "/数学/概率与实验/骰子概率分布.md"
                     }
                 ]
             },
@@ -1651,11 +1663,11 @@ export default [
                         "items": [
                             {
                                 "text": "NumPy数据类型",
-                                "link": "/数学与统计/科学计算/NumPy/NumPy数据类型.md"
+                                "link": "/数学/科学计算/NumPy/NumPy数据类型.md"
                             },
                             {
                                 "text": "快速开始",
-                                "link": "/数学与统计/科学计算/NumPy/快速开始.md"
+                                "link": "/数学/科学计算/NumPy/快速开始.md"
                             }
                         ]
                     }
@@ -3538,2076 +3550,6 @@ export default [
                                 "link": "/历史/中国史/隋/隋灭陈统一.md"
                             }
                         ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "text": "node_modules",
-        "collapsed": true,
-        "items": [
-            {
-                "text": "@algolia",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "abtesting",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/abtesting/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "autocomplete-core",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/autocomplete-core/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "autocomplete-plugin-algolia-insights",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/autocomplete-plugin-algolia-insights/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "autocomplete-preset-algolia",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/autocomplete-preset-algolia/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "client-abtesting",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/client-abtesting/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "client-analytics",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/client-analytics/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "client-insights",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/client-insights/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "client-personalization",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/client-personalization/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "client-query-suggestions",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/client-query-suggestions/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "client-search",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/client-search/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "ingestion",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/ingestion/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "monitoring",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/monitoring/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "recommend",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@algolia/recommend/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@babel",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "helper-string-parser",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@babel/helper-string-parser/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "helper-validator-identifier",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@babel/helper-validator-identifier/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "parser",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "CHANGELOG",
-                                "link": "/node_modules/@babel/parser/CHANGELOG.md"
-                            },
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@babel/parser/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "types",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@babel/types/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@docsearch",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "css",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@docsearch/css/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "js",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@docsearch/js/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "react",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@docsearch/react/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@esbuild",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "win32-x64",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@esbuild/win32-x64/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@iconify",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "types",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@iconify/types/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@iconify-json",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "simple-icons",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@iconify-json/simple-icons/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@jridgewell",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "sourcemap-codec",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@jridgewell/sourcemap-codec/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@rollup",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "rollup-win32-x64-gnu",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@rollup/rollup-win32-x64-gnu/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "rollup-win32-x64-msvc",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@rollup/rollup-win32-x64-msvc/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@shikijs",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "core",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/core/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "engine-javascript",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/engine-javascript/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "engine-oniguruma",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/engine-oniguruma/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "langs",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/langs/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "themes",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/themes/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "transformers",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/transformers/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "types",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/types/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "vscode-textmate",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "LICENSE",
-                                "link": "/node_modules/@shikijs/vscode-textmate/LICENSE.md"
-                            },
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@shikijs/vscode-textmate/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@types",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "estree",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/estree/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "hast",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/hast/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "linkify-it",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/linkify-it/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "markdown-it",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/markdown-it/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "mdast",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/mdast/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "mdurl",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/mdurl/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "unist",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/unist/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "web-bluetooth",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@types/web-bluetooth/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@ungap",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "structured-clone",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@ungap/structured-clone/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@vitejs",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "plugin-vue",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vitejs/plugin-vue/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@vue",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "compiler-core",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/compiler-core/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "compiler-dom",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/compiler-dom/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "compiler-sfc",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/compiler-sfc/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "compiler-ssr",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/compiler-ssr/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "devtools-api",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/devtools-api/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "devtools-kit",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/devtools-kit/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "devtools-shared",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/devtools-shared/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "reactivity",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/reactivity/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "runtime-core",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/runtime-core/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "runtime-dom",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/runtime-dom/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "server-renderer",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/server-renderer/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "shared",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vue/shared/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@vueuse",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "integrations",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/@vueuse/integrations/README.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "@xmldom",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "xmldom",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "CHANGELOG",
-                                "link": "/node_modules/@xmldom/xmldom/CHANGELOG.md"
-                            },
-                            {
-                                "text": "readme",
-                                "link": "/node_modules/@xmldom/xmldom/readme.md"
-                            },
-                            {
-                                "text": "SECURITY",
-                                "link": "/node_modules/@xmldom/xmldom/SECURITY.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "algoliasearch",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/algoliasearch/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "ansi-colors",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/ansi-colors/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "argparse",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/argparse/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/argparse/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "birpc",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/birpc/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "boolbase",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/boolbase/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "ccount",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/ccount/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "character-entities-html4",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/character-entities-html4/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "character-entities-legacy",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/character-entities-legacy/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "cheerio",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "Readme",
-                        "link": "/node_modules/cheerio/Readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "cheerio-select",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/cheerio-select/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "comma-separated-tokens",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/comma-separated-tokens/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "commander",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/commander/CHANGELOG.md"
-                    },
-                    {
-                        "text": "Readme",
-                        "link": "/node_modules/commander/Readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "copy-anything",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/copy-anything/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "css-select",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/css-select/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "css-what",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/css-what/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "csstype",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/csstype/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "d3-dispatch",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/d3-dispatch/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "d3-force",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/d3-force/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "d3-quadtree",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/d3-quadtree/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "d3-timer",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/d3-timer/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "dequal",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/dequal/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "devlop",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/devlop/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "dom-serializer",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "node_modules",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "entities",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "readme",
-                                        "link": "/node_modules/dom-serializer/node_modules/entities/readme.md"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/dom-serializer/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "domelementtype",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/domelementtype/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "domhandler",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/domhandler/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "domutils",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/domutils/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "emoji-regex-xs",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/emoji-regex-xs/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "entities",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/entities/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "esbuild",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/esbuild/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/esbuild/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "escape-goat",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/escape-goat/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "esm",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/esm/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "esprima",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/esprima/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "estree-walker",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/estree-walker/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/estree-walker/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "extend-shallow",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/extend-shallow/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "focus-trap",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/focus-trap/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/focus-trap/README.md"
-                    },
-                    {
-                        "text": "SECURITY",
-                        "link": "/node_modules/focus-trap/SECURITY.md"
-                    }
-                ]
-            },
-            {
-                "text": "gray-matter",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/gray-matter/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/gray-matter/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "hast-util-to-html",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/hast-util-to-html/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "hast-util-whitespace",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/hast-util-whitespace/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "hookable",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/hookable/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/hookable/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "html-void-elements",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/html-void-elements/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "htmlparser2",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "node_modules",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "entities",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "readme",
-                                        "link": "/node_modules/htmlparser2/node_modules/entities/readme.md"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/htmlparser2/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "is-extendable",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/is-extendable/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "is-what",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/is-what/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "js-yaml",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/js-yaml/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "juice",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/juice/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/juice/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "kind-of",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/kind-of/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/kind-of/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "linkify-it",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/linkify-it/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "magic-string",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/magic-string/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "mark.js",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CONTRIBUTING",
-                        "link": "/node_modules/mark.js/CONTRIBUTING.md"
-                    },
-                    {
-                        "text": "ISSUE_TEMPLATE",
-                        "link": "/node_modules/mark.js/ISSUE_TEMPLATE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mark.js/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "markdown-it",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "node_modules",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "argparse",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "README",
-                                        "link": "/node_modules/markdown-it/node_modules/argparse/README.md"
-                                    }
-                                ]
-                            },
-                            {
-                                "text": "entities",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "readme",
-                                        "link": "/node_modules/markdown-it/node_modules/entities/readme.md"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/markdown-it/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "markdown-it-mathjax3",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/markdown-it-mathjax3/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "mathjax-full",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CONTRIBUTING",
-                        "link": "/node_modules/mathjax-full/CONTRIBUTING.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mathjax-full/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "mdast-util-to-hast",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/mdast-util-to-hast/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "mdurl",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mdurl/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "mensch",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "HISTORY",
-                        "link": "/node_modules/mensch/HISTORY.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mensch/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "mhchemparser",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mhchemparser/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "micromark-util-character",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/micromark-util-character/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "micromark-util-encode",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/micromark-util-encode/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "micromark-util-sanitize-uri",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/micromark-util-sanitize-uri/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "micromark-util-symbol",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/micromark-util-symbol/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "micromark-util-types",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/micromark-util-types/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "mime",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/mime/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mime/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "minisearch",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/minisearch/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/minisearch/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "mitt",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mitt/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "mj-context-menu",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/mj-context-menu/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "nanoid",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/nanoid/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "node-fetch",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/node-fetch/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/node-fetch/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "nth-check",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/nth-check/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "oniguruma-to-es",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/oniguruma-to-es/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "parse5",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/parse5/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "parse5-htmlparser2-tree-adapter",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/parse5-htmlparser2-tree-adapter/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "perfect-debounce",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/perfect-debounce/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "picocolors",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/picocolors/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "postcss",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/postcss/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "preact",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/preact/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "property-information",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/property-information/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "punycode.js",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/punycode.js/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "regex",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/regex/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "regex-recursion",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/regex-recursion/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "regex-utilities",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/regex-utilities/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "rfdc",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/rfdc/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "rollup",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/rollup/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/rollup/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "search-insights",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/search-insights/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/search-insights/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "section-matter",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/section-matter/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "shiki",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/shiki/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "slick",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/slick/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "source-map-js",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/source-map-js/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "space-separated-tokens",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/space-separated-tokens/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "speakingurl",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/speakingurl/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/speakingurl/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "speech-rule-engine",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "bin",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "README",
-                                "link": "/node_modules/speech-rule-engine/bin/README.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "node_modules",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "commander",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "Readme",
-                                        "link": "/node_modules/speech-rule-engine/node_modules/commander/Readme.md"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/speech-rule-engine/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "sprintf-js",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/sprintf-js/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "stringify-entities",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/stringify-entities/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "strip-bom-string",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/strip-bom-string/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "superjson",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/superjson/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "tabbable",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/tabbable/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/tabbable/README.md"
-                    },
-                    {
-                        "text": "SECURITY",
-                        "link": "/node_modules/tabbable/SECURITY.md"
-                    }
-                ]
-            },
-            {
-                "text": "trim-lines",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/trim-lines/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "tslib",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/tslib/README.md"
-                    },
-                    {
-                        "text": "SECURITY",
-                        "link": "/node_modules/tslib/SECURITY.md"
-                    }
-                ]
-            },
-            {
-                "text": "uc.micro",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/uc.micro/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "unist-util-is",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/unist-util-is/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "unist-util-position",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/unist-util-position/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "unist-util-stringify-position",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/unist-util-stringify-position/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "unist-util-visit",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/unist-util-visit/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "unist-util-visit-parents",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/unist-util-visit-parents/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "valid-data-url",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CHANGELOG",
-                        "link": "/node_modules/valid-data-url/CHANGELOG.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/valid-data-url/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "vfile",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/vfile/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "vfile-message",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/vfile-message/readme.md"
-                    }
-                ]
-            },
-            {
-                "text": "vite",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/vite/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/vite/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "vitepress",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/vitepress/README.md"
-                    },
-                    {
-                        "text": "template",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "api-examples",
-                                "link": "/node_modules/vitepress/template/api-examples.md"
-                            },
-                            {
-                                "text": "markdown-examples",
-                                "link": "/node_modules/vitepress/template/markdown-examples.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "vue",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/vue/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "web-resource-inliner",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "node_modules",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "domhandler",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "readme",
-                                        "link": "/node_modules/web-resource-inliner/node_modules/domhandler/readme.md"
-                                    }
-                                ]
-                            },
-                            {
-                                "text": "entities",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "readme",
-                                        "link": "/node_modules/web-resource-inliner/node_modules/entities/readme.md"
-                                    }
-                                ]
-                            },
-                            {
-                                "text": "htmlparser2",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "README",
-                                        "link": "/node_modules/web-resource-inliner/node_modules/htmlparser2/README.md"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/web-resource-inliner/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "webidl-conversions",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "LICENSE",
-                        "link": "/node_modules/webidl-conversions/LICENSE.md"
-                    },
-                    {
-                        "text": "README",
-                        "link": "/node_modules/webidl-conversions/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "whatwg-url",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/whatwg-url/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "wicked-good-xpath",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "README",
-                        "link": "/node_modules/wicked-good-xpath/README.md"
-                    }
-                ]
-            },
-            {
-                "text": "zwitch",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "readme",
-                        "link": "/node_modules/zwitch/readme.md"
                     }
                 ]
             }

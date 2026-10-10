@@ -22,4 +22,4 @@ AI/自然语言处理的分类入口。
 
 
 
-- [[计算机与软件/编程语言/Python/index|Python]] · 交叉分类
+- [[计算机/编程语言/Python/index|Python]] · 交叉分类

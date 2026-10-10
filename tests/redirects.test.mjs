@@ -4,7 +4,7 @@ import { mkdtempSync, readdirSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { redirects, redirectTarget } from "../.vitepress/redirects.mjs";
+import { redirects, redirectTarget, prefixRedirects } from "../.vitepress/redirects.mjs";
 import {
   pageHref,
   writeRedirectPages,
@@ -35,11 +35,11 @@ test("every old note path redirects to exactly one existing page", () => {
   }
   assert.equal(
     redirectTarget("/Study/Git"),
-    "/计算机与软件/工程化/版本管理/Git",
+    "/计算机/工程化/版本管理/Git",
   );
   assert.equal(
     redirectTarget("/Design Patterns/单例模式"),
-    "/计算机与软件/架构/设计模式/创建型/单例模式",
+    "/计算机/架构/设计模式/创建型/单例模式",
   );
   assert.equal(listedExactly("/Design Patterns/单例模式"), false);
 });
@@ -51,9 +51,9 @@ test("sidebar no longer lists the dissolved groups", () => {
   );
   const names = domains.map((item) => item.text);
   assert.deepEqual(names, [
-    "计算机与软件",
+    "计算机",
     "AI",
-    "数学与统计",
+    "数学",
     "设计",
     "影像",
     "历史",
@@ -81,11 +81,32 @@ test("built redirect pages point at the notes base", () => {
     assert.match(
       html,
       new RegExp(
-        `url=${pageHref("/计算机与软件/工程化/版本管理/Git", "/notes/").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`,
+        `url=${pageHref("/计算机/工程化/版本管理/Git", "/notes/").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`,
       ),
     );
-    assert.ok(html.includes(pageHref("/计算机与软件/工程化/版本管理/Git")));
+    assert.ok(html.includes(pageHref("/计算机/工程化/版本管理/Git")));
     assert.match(html, /location\.search \+ location\.hash/);
+  } finally {
+    rmSync(out, { recursive: true, force: true });
+  }
+});
+
+test("directory prefixes normalize old URLs and generate every snapshot page", () => {
+  const out = mkdtempSync(join(tmpdir(), "notes-directory-redirects-"));
+  try {
+    writeRedirectPages(out, "/notes/");
+    for (const [from, to] of Object.entries(prefixRedirects)) {
+      for (const suffix of ["", "/arbitrary/nested/page"]) {
+        for (const input of [from + suffix, from + suffix + ".md", "/notes" + from + suffix + ".html", encodeURI("/notes" + from + suffix) + ".html?x=1#anchor"]) {
+          assert.equal(redirectTarget(input), suffix ? to + suffix : to + "/index");
+        }
+      }
+      assert.equal(redirectTarget(from + "-unrelated/page"), null);
+      for (const [source, target] of Object.entries(redirects).filter(([source]) => source === from || source.startsWith(from + "/"))) {
+        const html = readFileSync(join(out, source.slice(1) + ".html"), "utf8");
+        assert.ok(html.includes(pageHref(target)), source);
+      }
+    }
   } finally {
     rmSync(out, { recursive: true, force: true });
   }

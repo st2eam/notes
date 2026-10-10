@@ -5,6 +5,7 @@ const path = require("path");
 const gitignore = fs
   .readFileSync(".gitignore", "utf-8")
   .split("\n")
+  .map((line) => line.trim())
   .filter((line) => line.trim() !== "" && !line.startsWith("#"))
   .reduce((acc, curr) => {
     acc.push(path.resolve(curr));
@@ -17,9 +18,9 @@ function walkDir(dir) {
   const list = fs.readdirSync(dir).sort((a, b) => {
     if (path.resolve(dir) === path.resolve(".")) {
       const domains = [
-        "计算机与软件",
+        "计算机",
         "AI",
-        "数学与统计",
+        "数学",
         "设计",
         "影像",
         "历史",

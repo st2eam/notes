@@ -67,8 +67,8 @@ export const retrievalQueries = [
   {
     label: '认证与权限',
     docs: [
-      { title: '认证与授权', path: '/计算机与软件/基础/网络/认证与授权', keyword: 0.98, semantic: 0.70 },
-      { title: 'HTTP Cookie', path: '/计算机与软件/基础/网络/HTTP Cookie', keyword: 0.72, semantic: 0.66 },
+      { title: '认证与授权', path: '/计算机/基础/网络/认证与授权', keyword: 0.98, semantic: 0.70 },
+      { title: 'HTTP Cookie', path: '/计算机/基础/网络/HTTP Cookie', keyword: 0.72, semantic: 0.66 },
       { title: 'Agentic 工程模式实践指南', path: '/AI/应用与评测/智能体/agentic-engineering-patterns', keyword: 0.20, semantic: 0.88 },
     ],
   },

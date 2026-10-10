@@ -30,7 +30,7 @@ description: 为当前笔记仓库新增或导入的笔记自动提取核心概�
 
 ```yaml
 relations:
-  - target: 计算机与软件/人工智能/检索增强生成.md
+  - target: 计算机/人工智能/检索增强生成.md
     type: subordinate
     status: inferred
     reason: 本笔记讨论检索增强生成中的分块策略。

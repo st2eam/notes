@@ -4,7 +4,7 @@ primaryCategory: AI/应用与评测/智能体
 categories:
   - path: AI/应用与评测/智能体
     reason: 正文讨论本地 Codex 执行与验收。
-  - path: 计算机与软件/基础/安全与权限
+  - path: 计算机/基础/安全与权限
     reason: 正文解释工具授权与访问边界。
 classificationStatus: confirmed
 relations:
@@ -18,12 +18,12 @@ relations:
     status: confirmed
     reason: 采用应用评测方法。
     evidence: 保存相同任务集上的成功率、轨迹和费用
-  - target: 计算机与软件/基础/安全与权限/index.md
+  - target: 计算机/基础/安全与权限/index.md
     type: citation
     status: confirmed
     reason: 引用权限主题入口。
     evidence: 沙箱和审批分开检查
-  - target: 计算机与软件/工程化/测试与持续集成/测试与CI.md
+  - target: 计算机/工程化/测试与持续集成/测试与CI.md
     type: citation
     status: confirmed
     reason: 采用可重复验收。
@@ -64,7 +64,7 @@ if ($agentExitCode -ne 0) { throw "Agent 执行失败：$agentExitCode" }
 
 官方示例使用 --config model_reasoning_effort=...。待核实：本机支持的 low、medium、high 等等级、默认值、模型组合与配置优先级。[修复循环示例](https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex)
 
-read-only 用于调查，workspace-write 用于限定工作区内实现，danger-full-access 仅用于已有外部隔离的受控环境。沙箱和审批分开检查；无人值守任务遇到越权应停止并报告，不能依赖交互确认。具体设计参见[[AI/应用与评测/智能体/agent编排与工具沙箱|Agent 编排与工具沙箱]]与[[计算机与软件/基础/安全与权限/index|安全与权限入口]]。[CLI 参数参考](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
+read-only 用于调查，workspace-write 用于限定工作区内实现，danger-full-access 仅用于已有外部隔离的受控环境。沙箱和审批分开检查；无人值守任务遇到越权应停止并报告，不能依赖交互确认。具体设计参见[[AI/应用与评测/智能体/agent编排与工具沙箱|Agent 编排与工具沙箱]]与[[计算机/基础/安全与权限/index|安全与权限入口]]。[CLI 参数参考](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
 
 ## 4. 恢复会话与本次经验
 
@@ -81,7 +81,7 @@ codex exec resume SESSION_ID "根据验收失败修正笔记"
 
 ## 5. 验收与速查
 
-用[[计算机与软件/工程化/测试与持续集成/测试与CI|测试与 CI]]把验收命令固定下来，再按[[AI/应用与评测/质量评测/应用评测|应用评测]]保存相同任务集上的成功率、轨迹和费用。完成条件是产物与检查一致，退出码只是其中一项。
+用[[计算机/工程化/测试与持续集成/测试与CI|测试与 CI]]把验收命令固定下来，再按[[AI/应用与评测/质量评测/应用评测|应用评测]]保存相同任务集上的成功率、轨迹和费用。完成条件是产物与检查一致，退出码只是其中一项。
 
 - 开始前记录版本、工作目录、权限和本地差异。
 - 恢复前确认会话 ID 与文件状态，避免继续错误任务。

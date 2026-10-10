@@ -7,7 +7,7 @@ categories:
       核心学习对象为“Agentic 工程模式实践指南”，正文依据：“基于 Simon Willison 的 Agentic Engineering
       Patterns 深度学习整理
       初稿日期：2026-07-12；最后核对：2026-09-29”；据其实体与学习对象归入AI/应用与评测/智能体。
-  - path: 计算机与软件/工程化/开发实践
+  - path: 计算机/工程化/开发实践
     reason: 正文讨论 Coding Agent 协作、测试、技术债和代码理解，属于软件开发实践。
 classificationStatus: confirmed
 relations: []

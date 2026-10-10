@@ -1,12 +1,12 @@
 ---
 originalPath: index.md
-primaryCategory: 计算机与软件
+primaryCategory: 计算机
 categories:
-  - path: 计算机与软件
-    reason: 全站知识库入口，目录身份保留在站点根路径；以计算机与软件作为主分类，并提供七个领域的交叉导航。
+  - path: 计算机
+    reason: 全站知识库入口，目录身份保留在站点根路径；以计算机作为主分类，并提供七个领域的交叉导航。
   - path: AI
     reason: 本站首页提供该领域的阅读与图谱入口。
-  - path: 数学与统计
+  - path: 数学
     reason: 本站首页提供该领域的阅读与图谱入口。
   - path: 设计
     reason: 本站首页提供该领域的阅读与图谱入口。
@@ -24,9 +24,9 @@ tags: []
 
 ## 知识模块
 
-- [[计算机与软件/index|计算机与软件]]
+- [[计算机/index|计算机]]
 - [[AI/index|AI]]
-- [[数学与统计/index|数学与统计]]
+- [[数学/index|数学]]
 - [[设计/index|设计]]
 - [[影像/index|影像]]
 - [[历史/index|历史]]
