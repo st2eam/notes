@@ -37,7 +37,6 @@ test("every old note path redirects to exactly one existing page", () => {
     redirectTarget("/Study/Git"),
     "/计算机与软件/工程化/版本管理/Git",
   );
-  assert.equal(redirectTarget("/Language/Japanese"), "/人文语言/日语/日语");
   assert.equal(
     redirectTarget("/Design Patterns/单例模式"),
     "/计算机与软件/架构/设计模式/创建型/单例模式",
@@ -58,7 +57,6 @@ test("sidebar no longer lists the dissolved groups", () => {
     "设计",
     "影像",
     "历史",
-    "人文语言",
   ]);
   for (const gone of [
     '"/Study/',

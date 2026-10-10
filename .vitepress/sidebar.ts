@@ -3092,21 +3092,5 @@ export default [
                 ]
             }
         ]
-    },
-    {
-        "text": "人文语言",
-        "collapsed": true,
-        "items": [
-            {
-                "text": "日语",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "日语",
-                        "link": "/人文语言/日语/日语.md"
-                    }
-                ]
-            }
-        ]
     }
 ]

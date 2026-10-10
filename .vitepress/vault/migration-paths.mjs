@@ -129,8 +129,6 @@ export const migrationPaths = {
   "History/阅读/人类简史 · 农业革命.md": "历史/世界史/index.md",
   "History/阅读/人类简史 · 科学革命.md": "历史/世界史/index.md",
   "index.md": "index.md",
-  "Language/index.md": "人文语言/index.md",
-  "Language/日语.md": "人文语言/日语/日语.md",
   "Photography/index.md": "影像/index.md",
   "Photography/后期处理.md": "影像/摄影/后期/后期处理.md",
   "Photography/摄影基础.md": "影像/摄影/拍摄/摄影基础.md",

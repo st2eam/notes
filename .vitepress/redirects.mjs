@@ -14,7 +14,6 @@ const legacyRedirects = {
   "/C++/C++虚函数": "/C++/语言/C++虚函数",
   "/C++/C++运算符重载": "/C++/语言/C++运算符重载",
   "/C++/C++预处理": "/C++/语言/C++预处理",
-  "/Language/Japanese": "/Language/日语",
   "/Python/flask/应用设置": "/Python/Flask/应用设置",
   "/Python/flask/快速上手": "/Python/Flask/快速上手",
   "/Python/flask/测试覆盖": "/Python/Flask/测试覆盖",

@@ -14,8 +14,6 @@ categories:
     reason: 本站首页提供该领域的阅读与图谱入口。
   - path: 历史
     reason: 本站首页提供该领域的阅读与图谱入口。
-  - path: 人文语言
-    reason: 本站首页提供该领域的阅读与图谱入口。
 classificationStatus: confirmed
 relations: []
 tags: []
@@ -32,7 +30,6 @@ tags: []
 - [[设计/index|设计]]
 - [[影像/index|影像]]
 - [[历史/index|历史]]
-- [[人文语言/index|人文语言]]
 
 ## 使用方式
 
