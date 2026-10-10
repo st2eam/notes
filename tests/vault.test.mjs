@@ -288,7 +288,7 @@ test("scan publishes only notes and excludes hidden dirs, symlinks, caches, depe
 test("history publishes individual events without external links and archives all summaries", () => {
   const index = readVault(process.cwd());
   const events = index.notes.filter((n) => n.historyId);
-  assert.equal(events.length, 252);
+  assert.equal(events.length, 265);
   assert.equal(index.notes.filter((n) => n.historyTheme).length, 0);
   const report = JSON.parse(fs.readFileSync(".vitepress/reports/history-events.json", "utf8"));
   assert.equal(report.originalNotes, 58);
