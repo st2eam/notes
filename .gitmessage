@@ -1,0 +1,9 @@
+<type>(<scope>): <subject>
+
+<body>
+
+# --- 约定式提交（Conventional Commits）模板 ---
+# 格式: <type>(<scope>): <subject>
+# type: feat | fix | docs | style | refactor | perf | test | build | ci | chore | revert
+# 本仓库以笔记为主，新增/修改笔记默认使用 docs(<scope>)
+# 参考: https://github.com/conventional-commits/conventionalcommits.org

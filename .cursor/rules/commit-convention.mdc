@@ -1,0 +1,15 @@
+---
+description: 本仓库所有 git 提交必须遵循 Conventional Commits 约定式提交规范，提交信息格式为 <type>(<scope>): <subject>。
+globs:
+alwaysApply: true
+---
+
+# 约定式提交规范（Conventional Commits）
+
+所有 git 提交必须遵循 <https://github.com/conventional-commits/conventionalcommits.org> 定义的约定式提交格式：
+
+- 提交信息格式：`<type>(<scope>): <subject>`，例如 `docs(history): 补充笔记`、`fix: 修复报错`。
+- type 使用标准取值：`feat`、`fix`、`docs`、`style`、`refactor`、`perf`、`test`、`build`、`ci`、`chore`、`revert`。
+- 本仓库以笔记内容为主，新增或修改笔记默认使用 `docs(<scope>)`；scope 如 `history`、`ai`、`vue`、`python`、`design-patterns`、`embed`。
+- subject 简洁、祈使语气；中文仓库可用中文描述，不以句号结尾。
+- 需要补充背景说明时，在 subject 后空一行书写 body。
