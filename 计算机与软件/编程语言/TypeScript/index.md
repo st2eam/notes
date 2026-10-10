@@ -19,4 +19,7 @@ relations: []
 
 ## 分类成员
 
-- [[计算机与软件/编程语言/TypeScript/TypeScript|TypeScript 高级类型及用法]]
+- [[计算机与软件/编程语言/TypeScript/ts高级类型|TypeScript 高级类型]]
+- [[计算机与软件/编程语言/TypeScript/ts类型运算符|TypeScript 类型运算符]]
+- [[计算机与软件/编程语言/TypeScript/ts内置工具类型|TypeScript 内置工具类型]]
+- [[计算机与软件/编程语言/TypeScript/ts函数工具类型|TypeScript 函数工具类型]]

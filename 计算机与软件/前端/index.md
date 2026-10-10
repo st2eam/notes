@@ -24,7 +24,7 @@ categoryOverview: 计算机与软件/前端
 - [HTML](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E5%89%8D%E7%AB%AF/HTML/HTML.md)
 - [CSS](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E5%89%8D%E7%AB%AF/CSS/CSS.md)
 - [JavaScript](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/JS%20%E7%B1%BB%E5%9E%8B.md)
-- [TypeScript](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript.md)
+- [TypeScript](/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E8%BD%AF%E4%BB%B6/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/index.md)
 
 ## 前端框架
 
@@ -222,7 +222,7 @@ categoryOverview: 计算机与软件/前端
 - [[计算机与软件/后端/Node.js/Node.js|Node.js]]
 - [[计算机与软件/工程化/包管理/使用 NPM 管理软件包|使用 NPM 管理软件包]]
 - [[计算机与软件/工程化/配置管理/配置文件|配置文件]]
-- [[计算机与软件/编程语言/TypeScript/TypeScript|TypeScript]]
+- [[计算机与软件/编程语言/TypeScript/index|TypeScript]]
 
 
 ## 分类导航

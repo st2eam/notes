@@ -1,4 +1,5 @@
 export const migrationPaths = {
+  "计算机与软件/编程语言/TypeScript/TypeScript.md": "计算机与软件/编程语言/TypeScript/index.md",
   "AI/agentic-engineering-patterns.md": "AI/应用与评测/智能体/agentic-engineering-patterns.md",
   "AI/index.md": "AI/index.md",
   "AI/LLM Wiki 可视化教程.md": "AI/应用与评测/知识检索/LLM Wiki 可视化教程.md",
@@ -351,7 +352,7 @@ export const migrationPaths = {
   "Web/服务端/Node.js/Node.js.md": "计算机与软件/后端/Node.js/Node.js.md",
   "Web/服务端/Node.js/使用 NPM 管理软件包.md": "计算机与软件/工程化/包管理/使用 NPM 管理软件包.md",
   "Web/服务端/Node.js/配置文件.md": "计算机与软件/工程化/配置管理/配置文件.md",
-  "Web/语言/TypeScript.md": "计算机与软件/编程语言/TypeScript/TypeScript.md",
+  "Web/语言/TypeScript.md": "计算机与软件/编程语言/TypeScript/index.md",
   "人工智能/index.md": "AI/index.md",
   "人工智能/应用与评测/index.md": "AI/应用与评测/index.md",
   "人工智能/应用与评测/应用开发/index.md": "AI/应用与评测/应用开发/index.md",
