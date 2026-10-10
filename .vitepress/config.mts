@@ -10,12 +10,10 @@ const base = "/notes/";
 export default defineConfig({
   base,
   vite: {
-    cacheDir: "/private/tmp/notes-vite-cache-codex",
     server: { watch: { usePolling: true, interval: 200 } },
     plugins: [vaultDevRefresh(() => { vault = readVault(process.cwd()); })],
   },
   title: "Steam's Notes",
-  tempDir: "/private/tmp/notes-vitepress-temp-codex",
   outDir: "docs",
   srcExclude: [
     "README.md",
