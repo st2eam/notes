@@ -66,7 +66,7 @@ test("retained original notes preserve headings, demos and code after requested 
 test("all notes have supported classifications, seven roots and acyclic explicit overviews", () => {
   const categories = new Map(vault.categories.map((c) => [c.id, c]));
   assert.equal(vault.categories.filter((c) => !c.parent).length, 7);
-  assert.equal(vault.notes.length, 669);
+  assert.equal(vault.notes.length, 683);
   for (const n of vault.notes) {
     assert.ok(n.primaryCategory, n.id);
     assert.ok(n.categories.some((c) => c.path === n.primaryCategory));
@@ -256,7 +256,7 @@ test("history events follow dynasty or country classifications", () => {
     assert.ok(Number.isFinite(note.historyOrder));
     assert.ok(note.historyDate);
   }
-  assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 122);
+  assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 136);
   assert.equal(history.filter((n) => n.id.startsWith("历史/世界史/")).length, 116);
   assert.ok(history.some(n => n.folder === "历史/中国史/秦"));
   assert.ok(history.some(n => n.folder === "历史/世界史/亚洲/日本"));
