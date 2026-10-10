@@ -19,6 +19,9 @@ categoryOverview: AI
 ## 模块笔记
 
 - [[AI/应用与评测/智能体/agentic-engineering-patterns|agentic-engineering-patterns]]
+- [[AI/应用与评测/智能体/mcp协议与工具调用|MCP 协议与工具调用]]
+- [[AI/应用与评测/智能体/agent编排与工具沙箱|Agent 编排与工具沙箱]]
+- [[AI/应用与评测/智能体/codex-cli工作流|Codex CLI 本地工作流]]
 - [[AI/应用与评测/知识检索/LLM Wiki 可视化教程|LLM Wiki 可视化教程]]
 - [[AI/模型原理/大语言模型/LLM演进路线|LLM演进路线]]
 - [[AI/应用与评测/质量评测/应用评测|应用评测]]
