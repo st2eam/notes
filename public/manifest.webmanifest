@@ -1,0 +1,17 @@
+{
+  "id": "/notes/",
+  "name": "Steam's Notes",
+  "short_name": "Notes",
+  "description": "可离线阅读的个人知识库",
+  "lang": "zh-CN",
+  "start_url": "/notes/",
+  "scope": "/notes/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7852ee",
+  "icons": [
+    { "src": "pwa/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "pwa/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "pwa/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

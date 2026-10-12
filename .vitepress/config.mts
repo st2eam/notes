@@ -51,6 +51,11 @@ export default defineConfig({
     },
   },
   head: [
+    ["link", { rel: "manifest", href: `${base}manifest.webmanifest` }],
+    ["link", { rel: "apple-touch-icon", href: `${base}pwa/apple-touch-icon.png` }],
+    ["meta", { name: "theme-color", content: "#7852ee" }],
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    ["meta", { name: "apple-mobile-web-app-title", content: "Notes" }],
     ["link", { rel: "icon", href: `${base}favicon.ico`, type: "image/x-icon" }],
     [
       "link",

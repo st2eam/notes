@@ -20,6 +20,7 @@ test("preview supports notes base, direct Chinese/space paths, queries and case-
   );
   fs.writeFileSync(path.join(root, "404.html"), "not found");
   fs.writeFileSync(path.join(root, "app.js"), "export default 1");
+  fs.writeFileSync(path.join(root, "manifest.webmanifest"), '{"display":"standalone"}');
   const server = createPreviewServer(root);
   server.listen(0, "127.0.0.1");
   await once(server, "listening");
@@ -37,6 +38,10 @@ test("preview supports notes base, direct Chinese/space paths, queries and case-
       "text/javascript; charset=utf-8",
     );
     assert.equal((await fetch(base + "/notes/no-note.html")).status, 404);
+    assert.equal(
+      (await fetch(base + "/notes/manifest.webmanifest")).headers.get("content-type"),
+      "application/manifest+json; charset=utf-8",
+    );
     assert.equal((await fetch(base + "/Photography/")).status, 404);
   } finally {
     await new Promise((resolve) => server.close(resolve));

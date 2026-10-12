@@ -14,6 +14,14 @@ npm run docs:preview
 
 生产预览地址是 `http://127.0.0.1:4173/notes/`。预览服务按文件系统读取静态产物，兼容 macOS 上 `public/photography` 与 `Photography` 目录的大小写合并。GitHub Pages 使用已有 `.github/workflows/deploy.yml`，推送 `main` 后构建和发布 `docs/`。
 
+## PWA 安装与离线阅读
+
+生产构建支持 PWA，发布后可通过浏览器安装到桌面或手机。Chrome / Edge 可使用地址栏安装入口或站内“安装”提示；iPhone / iPad 在 Safari 的分享菜单中选择“添加到主屏幕”。安装和离线支持需要 HTTPS，本地生产预览的 localhost 地址也可使用。
+
+首次联网访问后，后台缓存首页、阅读工作台、全文索引和笔记脚本；缓存完成后支持离线启动、搜索及阅读已访问的笔记。笔记页面与不超过 5 MB 的同源附件按访问缓存，最多保留 200 项；未缓存页面在离线时显示返回首页的提示，外部资源和大型附件仍需联网。浏览器可能清理缓存，离线内容不替代源文件备份。
+
+发布新版本后，应用提示“新版本已准备好”，点击“刷新更新”切换版本并刷新已打开的应用页面。开发模式不注册 Service Worker；修改 PWA 后使用 `npm run docs:build` 和 `npm run docs:preview` 验证。构建末尾生成 `docs/sw.js`，缓存版本由发布内容决定；Manifest、图标和 Worker 的作用域均限定在 `/notes/`，兼容现有 GitHub Pages 部署。
+
 ## 维护笔记与链接
 
 Markdown 是正文和图谱关系的唯一来源。各模块的 `index.md` 是目录笔记，目前隐藏文件夹中的总览入口，保留源文件；新增笔记后请把它加入相应总览。构建时扫描笔记生成元数据、文件树、全文索引和链接关系；隐藏目录、依赖、缓存、构建产物和 VitePress 示例页不进入知识库索引。
