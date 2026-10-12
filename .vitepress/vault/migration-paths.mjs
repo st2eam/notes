@@ -1,4 +1,6 @@
 export const migrationPaths = {
+  "数学/概率与实验/桌游期望值计算.md": "数学/概率与实验/桌游中的概率与统计.md",
+  "数学/概率与实验/骰子概率分布.md": "数学/概率与实验/桌游中的概率与统计.md",
   "计算机/编程语言/TypeScript/TypeScript.md": "计算机/编程语言/TypeScript/index.md",
   "AI/agentic-engineering-patterns.md": "AI/应用与评测/智能体/agentic-engineering-patterns.md",
   "AI/index.md": "AI/index.md",

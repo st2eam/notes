@@ -5,6 +5,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { redirects, redirectTarget, prefixRedirects } from "../.vitepress/redirects.mjs";
+import { migrateNoteId } from "../.vitepress/vault/migration.mjs";
 import {
   pageHref,
   writeRedirectPages,
@@ -21,6 +22,20 @@ function listedExactly(sitePath) {
   }
   return readdirSync(dir).includes(`${parts.at(-1)}.md`);
 }
+
+test("merged board-game notes preserve old URLs and saved note identities", () => {
+  const target = "/数学/概率与实验/桌游中的概率与统计";
+  for (const name of ["桌游期望值计算", "骰子概率分布"]) {
+    for (const category of ["数学", "数学与统计"]) {
+      const path = `/${category}/概率与实验/${name}`;
+      assert.equal(redirectTarget(path), target);
+      assert.equal(redirectTarget(encodeURI(`/notes${path}.html?mode=read#section`)), target);
+    }
+    assert.equal(migrateNoteId(`数学/概率与实验/${name}.md`), `${target.slice(1)}.md`);
+    assert.equal(listedExactly(`/数学/概率与实验/${name}`), false);
+  }
+  assert.equal(listedExactly(target), true);
+});
 
 test("every old note path redirects to exactly one existing page", () => {
   const targets = new Set();
