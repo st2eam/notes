@@ -36,7 +36,7 @@
 .math-lab__field { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
 .math-lab__field label { font-weight: 600; }
 .math-lab__field output { float: right; font-weight: 400; }
-.math-lab .math-lab__field input[type='number'] {
+.math-lab .math-lab__field input[type='number'], .math-lab .math-lab__field select {
   width: 100%;
   min-height: 44px;
   padding: 0.45rem 0.65rem;
@@ -85,7 +85,7 @@
   border-top: 1px solid var(--vp-c-divider);
   border-bottom: 1px solid var(--vp-c-divider);
 }
-.math-lab .math-lab__metrics--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.math-lab .math-lab__metrics--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .math-lab__metrics dt { color: var(--lab-muted); font-size: 0.8rem; }
 .math-lab__metrics dd { margin: 0.3rem 0 0; font-size: 1.15rem; font-weight: 650; overflow-wrap: anywhere; }
 .math-lab__metrics small { font-weight: 400; font-size: 0.8rem; }
@@ -128,23 +128,16 @@
 .dice-lab__bar:first-child .dice-lab__point { left: 0; transform: none; }
 .dice-lab__bar:last-child .dice-lab__point { left: auto; right: 0; transform: none; }
 .dice-lab__picker { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.75rem; }
+.dice-lab__picker label { flex-shrink: 0; }
+.math-lab .dice-lab__picker select { min-width: 0; flex: 1; }
 .math-lab .dice-lab__picker select { min-height: 44px; max-width: 100%; padding: 0.4rem 0.65rem; border: 1px solid var(--vp-c-divider); border-radius: 6px; color: var(--demo-ink); background: var(--vp-c-bg); font: inherit; }
 .vp-doc .math-lab .dice-lab__selection { margin: 0.75rem 0; min-height: 1.5em; font-size: 0.85rem; }
-.card-lab__comparison { display: grid; gap: 0.6rem; margin: 1rem 0; }
-.card-lab__comparison > div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; color: var(--lab-muted); }
-.card-lab__comparison > .card-lab__active { color: var(--demo-ink); }
-.card-lab__comparison strong { flex-shrink: 0; }
-.risk-lab__tree { display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0; padding: 0.5rem 0; }
-.risk-lab__root { font-weight: 650; flex-shrink: 0; }
-.risk-lab__branches { position: relative; display: grid; gap: 1.5rem; flex: 1; margin: 0; }
-.risk-lab__branches::before { content: ''; position: absolute; top: 25%; bottom: 25%; left: -1rem; border-left: 1px solid var(--lab-failure); }
-.risk-lab__branches > div { position: relative; }
-.risk-lab__branches > div::before { content: ''; position: absolute; top: 50%; left: -1rem; width: 0.7rem; border-top: 1px solid var(--lab-failure); }
-.risk-lab__branches dt { color: var(--lab-muted); font-size: 0.8rem; }
-.risk-lab__branches dd { margin: 0; font-weight: 600; }
 @media (max-width: 640px) {
   .math-lab__controls, .math-lab__controls--three { grid-template-columns: minmax(0, 1fr); }
-  .math-lab .math-lab__metrics, .math-lab .math-lab__metrics--three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .math-lab .math-lab__metrics, .math-lab .math-lab__metrics--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .math-lab__choices { flex-direction: column; }
   .math-lab__choices button { text-align: left; }
 }
+
+.ev-lab__source { margin-bottom: 1rem; }
+.vp-doc .math-lab .ev-lab__formula { overflow-wrap: anywhere; font-size: 0.85rem; margin: 0.75rem 0; }
