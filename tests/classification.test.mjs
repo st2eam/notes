@@ -66,7 +66,7 @@ test("retained original notes preserve headings, demos and code after requested 
 test("all notes have supported classifications, six roots and acyclic explicit overviews", () => {
   const categories = new Map(vault.categories.map((c) => [c.id, c]));
   assert.equal(vault.categories.filter((c) => !c.parent).length, 6);
-  assert.equal(vault.notes.length, 814);
+  assert.equal(vault.notes.length, 836);
   for (const n of vault.notes) {
     assert.ok(n.primaryCategory, n.id);
     assert.ok(n.categories.some((c) => c.path === n.primaryCategory));
