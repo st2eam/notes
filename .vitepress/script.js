@@ -24,6 +24,7 @@ function walkDir(dir) {
         "设计",
         "影像",
         "历史",
+        "心理学",
         "人文语言",
       ];
       const aIndex = domains.indexOf(a),
