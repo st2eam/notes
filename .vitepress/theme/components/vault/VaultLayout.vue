@@ -698,6 +698,11 @@ onMounted(() => {
   restoring = false;
   const resumed =
     state.active && tabs.value.find((t) => t.key === state.active);
+  if (/^\/notes\/?$/.test(window.location.pathname) && !window.location.search) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("view", "graph");
+    history.replaceState(null, "", url.pathname + url.search + url.hash);
+  }
   if (
     resumed &&
     /^\/notes\/?$/.test(window.location.pathname) &&
