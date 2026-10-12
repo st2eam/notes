@@ -24,6 +24,10 @@ import AttentionLab from "./components/ai/AttentionLab.vue";
 import RetrievalLab from "./components/ai/RetrievalLab.vue";
 import ToolSafetyLab from "./components/ai/ToolSafetyLab.vue";
 import "./components/ai/ai-lab.css";
+import DiceExpectationLab from "./components/math/DiceExpectationLab.vue";
+import CardExpectationLab from "./components/math/CardExpectationLab.vue";
+import StopRiskLab from "./components/math/StopRiskLab.vue";
+import "./components/math/math-lab.css";
 
 import { withBase, type Theme } from "vitepress";
 import { redirectTarget } from "../redirects.mjs";
@@ -78,5 +82,8 @@ export default {
     app.component("AttentionLab", AttentionLab);
     app.component("RetrievalLab", RetrievalLab);
     app.component("ToolSafetyLab", ToolSafetyLab);
+    app.component("DiceExpectationLab", DiceExpectationLab);
+    app.component("CardExpectationLab", CardExpectationLab);
+    app.component("StopRiskLab", StopRiskLab);
   },
 } satisfies Theme;
