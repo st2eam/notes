@@ -35,6 +35,18 @@ const router = useRouter();
 const { page, isDark: vpIsDark, site } = useData();
 const isDark = ref(false);
 const { isEmbedded } = useEmbedMode();
+const drawerViewport = () => typeof window !== "undefined" && window.matchMedia(
+  "(max-width: 760px), (max-width: 1023px) and (pointer: coarse), (max-height: 500px) and (pointer: coarse)",
+).matches;
+function toggleSidebar(side: "left" | "right") {
+  if (side === "left") {
+    leftOpen.value = !leftOpen.value;
+    if (leftOpen.value && drawerViewport()) rightOpen.value = false;
+  } else {
+    rightOpen.value = !rightOpen.value;
+    if (rightOpen.value && drawerViewport()) leftOpen.value = false;
+  }
+}
 const embedDesktop = ref(false);
 let embedMedia: MediaQueryList | undefined;
 function updateEmbedLayout() {
@@ -320,7 +332,7 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
   if (anchor) document.getElementById(decode(anchor))?.scrollIntoView();
   if (
     typeof window !== "undefined" &&
-    window.innerWidth <= 760
+    drawerViewport()
   ) {
     leftOpen.value = false;
     rightOpen.value = embedDesktop.value;
@@ -346,7 +358,7 @@ function openGraph(filter = "") {
   navigate(tab);
   if (
     typeof window !== "undefined" &&
-    window.innerWidth <= 760
+    drawerViewport()
   ) {
     leftOpen.value = false;
     rightOpen.value = embedDesktop.value;
@@ -400,6 +412,7 @@ async function loadSearch() {
 async function showSearch() {
   pane.value = "search";
   leftOpen.value = true;
+  if (drawerViewport()) rightOpen.value = false;
   await loadSearch();
   nextTick(() =>
     document.querySelector<HTMLInputElement>(".vault-search-input")?.focus(),
@@ -460,7 +473,7 @@ function shortcut(e: KeyboardEvent) {
   if (e.key === "Escape") {
     modal.value = null;
     preview.value = null;
-    if (window.innerWidth <= 760) {
+    if (drawerViewport()) {
       leftOpen.value = false;
       rightOpen.value = embedDesktop.value;
     }
@@ -617,7 +630,7 @@ function relationTitle(link: VaultLink, incoming = false) {
 }
 function jumpHeading(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  if (!embedDesktop.value && (isEmbedded.value || window.innerWidth <= 760))
+  if (!embedDesktop.value && (isEmbedded.value || drawerViewport()))
     rightOpen.value = false;
 }
 watch(
@@ -691,7 +704,7 @@ onMounted(() => {
   isDark.value = state.theme ? state.theme === "dark" : vpIsDark.value;
   vpIsDark.value = isDark.value;
   document.documentElement.classList.toggle("dark", isDark.value);
-  if (window.innerWidth <= 760) {
+  if (drawerViewport()) {
     leftOpen.value = false;
     rightOpen.value = false;
   }
@@ -768,10 +781,12 @@ onBeforeUnmount(() => {
       <button
         class="icon-button ribbon-toggle"
         aria-label="切换文件侧栏"
+        :aria-expanded="leftOpen"
+        aria-controls="vault-note-browser"
         title="文件侧栏"
-        @click="leftOpen = !leftOpen"
+        @click="toggleSidebar('left')"
       >
-        <Icon name="left" />
+        <Icon name="left" /><span class="ribbon-label">笔记</span>
       </button>
       <button
         class="icon-button"
@@ -779,7 +794,7 @@ onBeforeUnmount(() => {
         title="全文搜索"
         @click="showSearch"
       >
-        <Icon name="search" />
+        <Icon name="search" /><span class="ribbon-label">搜索</span>
       </button>
       <button
         class="icon-button"
@@ -787,7 +802,7 @@ onBeforeUnmount(() => {
         title="全局图谱"
         @click="openGraph()"
       >
-        <Icon name="graph" />
+        <Icon name="graph" /><span class="ribbon-label">图谱</span>
       </button>
       <button
         class="icon-button"
@@ -795,10 +810,10 @@ onBeforeUnmount(() => {
         title="快速切换 · Ctrl/⌘ O"
         @click="showModal('quick')"
       >
-        <Icon name="file" />
+        <Icon name="file" /><span class="ribbon-label">切换</span>
       </button>
       <button
-        class="icon-button"
+        class="icon-button ribbon-command"
         aria-label="命令面板"
         title="命令面板 · Ctrl/⌘ P"
         @click="showModal('commands')"
@@ -812,7 +827,7 @@ onBeforeUnmount(() => {
         title="切换主题"
         @click="toggleTheme"
       >
-        <Icon :name="isDark ? 'sun' : 'moon'" />
+        <Icon :name="isDark ? 'sun' : 'moon'" /><span class="ribbon-label">主题</span>
       </button>
       <button
         class="icon-button"
@@ -820,7 +835,7 @@ onBeforeUnmount(() => {
         title="工作台命令"
         @click="showModal('commands')"
       >
-        <Icon name="settings" />
+        <Icon name="settings" /><span class="ribbon-label">命令</span>
       </button>
     </nav>
     <button
@@ -966,7 +981,7 @@ onBeforeUnmount(() => {
       <div class="vault-tabs" role="tablist" aria-label="已打开笔记">
         <button
           v-if="!leftOpen"
-          class="icon-button"
+          class="icon-button desktop-file-toggle"
           aria-label="打开文件侧栏"
           @click="leftOpen = true"
         >
@@ -1016,8 +1031,10 @@ onBeforeUnmount(() => {
         <button
           class="icon-button"
           aria-label="切换辅助侧栏"
+          :aria-expanded="rightOpen"
+          aria-controls="vault-note-details"
           title="辅助侧栏"
-          @click="rightOpen = !rightOpen"
+          @click="toggleSidebar('right')"
         >
           <Icon name="right" />
         </button>
@@ -1313,6 +1330,12 @@ onBeforeUnmount(() => {
         @keydown="modalKey"
         @keydown.tab.prevent="modalInput?.focus()"
       >
+        <div class="vault-modal-header mobile-only">
+          <span>{{ modal === 'quick' ? '快速切换笔记' : '命令面板' }}</span>
+          <button class="icon-button" type="button" aria-label="关闭对话框" @click="modal = null">
+            <Icon name="close" />
+          </button>
+        </div>
         <input
           ref="modalInput"
           v-model="modalQuery"

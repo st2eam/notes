@@ -95,4 +95,13 @@ onUnmounted(() => {
 button { flex-shrink: 0; color: var(--vault-accent); cursor: pointer; padding: 4px; }
 button:focus-visible { outline: 2px solid var(--vault-accent); outline-offset: 2px; }
 :global(.embed-mode) .pwa-status { display: none; }
+@media (max-width: 760px), (max-width: 1023px) and (pointer: coarse), (max-height: 500px) and (pointer: coarse) {
+  .pwa-status {
+    bottom: calc(92px + env(safe-area-inset-bottom));
+    gap: 8px;
+    padding: 6px 12px;
+    max-width: calc(100vw - 24px - env(safe-area-inset-left) - env(safe-area-inset-right));
+  }
+  button { min-width: 44px; min-height: 44px; }
+}
 </style>

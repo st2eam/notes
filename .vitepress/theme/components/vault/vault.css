@@ -61,9 +61,15 @@ body,
   font-family: var(--vp-font-family-base);
 }
 .vault-shell {
-  height: 100dvh;
   height: 100vh;
   height: 100dvh;
+  position: relative;
+  box-sizing: border-box;
+  --vault-safe-top: env(safe-area-inset-top, 0px);
+  --vault-safe-right: env(safe-area-inset-right, 0px);
+  --vault-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --vault-safe-left: env(safe-area-inset-left, 0px);
+  padding: var(--vault-safe-top) var(--vault-safe-right) var(--vault-safe-bottom) var(--vault-safe-left);
   display: flex;
   overflow: hidden;
   background: var(--vault-bg);
@@ -163,6 +169,9 @@ body,
 }
 .ribbon-spacer {
   flex: 1;
+}
+.ribbon-label {
+  display: none;
 }
 .vault-left {
   width: var(--left-width);
@@ -314,6 +323,7 @@ body,
 }
 .tab-scroll {
   display: flex;
+  min-width: 0;
   overflow: auto;
   scrollbar-width: none;
   align-self: stretch;
@@ -1006,42 +1016,106 @@ body,
     display: none;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 760px), (max-width: 1023px) and (pointer: coarse), (max-height: 500px) and (pointer: coarse) {
+  html:not(.embed-mode) .vault-shell {
+    flex-direction: column;
+  }
   .vault-ribbon {
-    width: 38px;
-    flex-basis: 38px;
-    padding: 7px 2px;
-    gap: 7px;
+    order: 2;
+    width: 100%;
+    flex: 0 0 56px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 8px;
+    gap: 2px;
+    border-right: 0;
+    border-top: 1px solid var(--vault-border);
+  }
+  .vault-ribbon .ribbon-command,
+  .vault-ribbon .ribbon-spacer,
+  .vault-tabs .desktop-file-toggle {
+    display: none;
+  }
+  .vault-ribbon .icon-button {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .vault-ribbon .ribbon-label {
+    display: block;
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .vault-modal-header {
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin: -4px 0 8px;
+    padding-left: 4px;
+  }
+  .vault-shell .icon-button,
+  .vault-shell .compact .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+  .vault-center {
+    order: 1;
+    min-height: 0;
+  }
+  .vault-shell button {
+    touch-action: manipulation;
+  }
+  .vault-shell button:active {
+    background-color: var(--vault-hover);
+  }
+  .vault-shell input:not([type="checkbox"]):not([type="range"]):not([type="color"]),
+  .vault-shell select {
+    font-size: 16px;
+    min-height: 44px;
   }
   .vault-tabs {
-    padding: 0 4px;
+    height: 56px;
+    flex-basis: 56px;
+    padding: 0 8px;
+    gap: 4px;
   }
-  .vault-tab {
-    min-width: 95px;
-    max-width: 180px;
-    flex-basis: 170px;
+  .vault-tab,
+  .vault-tab.active {
+    min-width: 140px;
+    max-width: 220px;
+    flex: 0 0 180px;
+    height: 48px;
+    margin-top: 7px;
   }
   .vault-tab > button[role="tab"] {
     padding: 0 8px;
-    font-size: 12px;
+    font-size: 13px;
+  }
+  .vault-tab .tab-close {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    margin-right: 0;
+    align-items: center;
+    justify-content: center;
   }
   .vault-document-toolbar {
-    padding: 0 5px;
-    height: 35px;
-    flex-basis: 35px;
+    padding: 0 8px;
+    height: 48px;
+    flex-basis: 48px;
   }
   .reading-mode {
     display: none;
   }
   .vault-breadcrumb {
-    font-size: 10px;
+    min-width: 0;
+    font-size: 12px;
     padding: 0 4px;
   }
   .vault-note-content {
     padding: 24px 20px 70px;
   }
   .vault-note-content.vp-doc {
-    font-size: 15px;
+    font-size: 16px;
   }
   .vault-note-content.vp-doc h1 {
     font-size: 25px;
@@ -1059,17 +1133,38 @@ body,
   .vault-left,
   .vault-right {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: var(--vault-safe-top);
+    bottom: calc(56px + var(--vault-safe-bottom));
     z-index: 35;
     box-shadow: 0 0 25px #0004;
-    width: min(300px, calc(100vw - 60px));
+    width: min(340px, calc(100% - 24px - var(--vault-safe-left) - var(--vault-safe-right)));
   }
   .vault-left {
-    left: 38px;
+    left: var(--vault-safe-left);
   }
   .vault-right {
-    right: 0;
+    right: var(--vault-safe-right);
+  }
+  .sidebar-tabbar {
+    height: 56px;
+    min-height: 56px;
+    padding: 5px 8px;
+    gap: 4px;
+  }
+  .vault-tree .tree-folder,
+  .vault-tree .tree-note,
+  .vault-outline > button,
+  .local-node-list > button,
+  .graph-node-list > button,
+  .modal-result {
+    min-height: 44px;
+  }
+  .vault-reading,
+  .file-tree-scroll,
+  .vault-right-scroll,
+  .search-results {
+    min-height: 0;
+    -webkit-overflow-scrolling: touch;
   }
   .vault-resizer {
     display: none;
@@ -1077,7 +1172,7 @@ body,
   .vault-drawer-backdrop {
     display: block !important;
     position: fixed;
-    inset: 0;
+    inset: var(--vault-safe-top) var(--vault-safe-right) calc(56px + var(--vault-safe-bottom)) var(--vault-safe-left);
     z-index: 30;
     background: #0005;
     border-radius: 0 !important;
@@ -1086,7 +1181,8 @@ body,
     display: inline-flex !important;
   }
   .vault-modal-backdrop {
-    padding: 8vh 12px 20px;
+    padding: max(16px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+    align-items: center;
   }
   .vault-modal {
     max-height: 78dvh;
@@ -1098,12 +1194,35 @@ body,
   }
   .graph-settings {
     width: min(270px, calc(100% - 24px));
+    top: 66px;
+    max-height: calc(100% - 78px);
+  }
+  .graph-settings summary,
+  .graph-settings label.check,
+  .graph-settings .vault-button,
+  .graph-caption button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .graph-caption {
+    gap: 8px;
+  }
+  .compact .graph-toolbar {
+    top: 8px;
+    right: 8px;
+    background: var(--vault-bg);
+  }
+  .compact .graph-toolbar .icon-button {
+    width: 44px;
+    height: 44px;
   }
   .graph-caption > span {
     display: none;
   }
   .graph-node-list {
-    width: 200px;
+    width: min(235px, calc(100% - 24px));
+    top: 66px;
+    max-height: calc(100% - 132px);
   }
   .vault-hover-preview {
     display: none;
@@ -1112,7 +1231,17 @@ body,
     padding: 20px 18px;
   }
   .ribbon-toggle {
-    margin-bottom: 2px;
+    margin-bottom: 0;
+  }
+}
+@media (pointer: coarse) {
+  .vault-shell .icon-button,
+  .vault-shell .compact .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+  .vault-hover-preview {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1207,6 +1336,9 @@ body,
   width: 100%;
   max-width: 100%;
   min-width: 0;
+}
+.embed-mode .vault-shell {
+  padding: 0;
 }
 .embed-mode .vault-shell .vault-left,
 .embed-mode .vault-shell .vault-right {

@@ -51,6 +51,7 @@ export default defineConfig({
     },
   },
   head: [
+    ["meta", { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" }],
     ["link", { rel: "manifest", href: `${base}manifest.webmanifest` }],
     ["link", { rel: "apple-touch-icon", href: `${base}pwa/apple-touch-icon.png` }],
     ["meta", { name: "theme-color", content: "#7852ee" }],
