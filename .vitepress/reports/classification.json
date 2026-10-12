@@ -9126,21 +9126,6 @@
       "title": "配置文件",
       "relations": [],
       "evidence": "在实际的项目中通常都会有很多的配置项，如数据库的连接信息、服务监听的端口，当程序运行在不同地方的时候这些信息可能会是有变化的，所以不应该将它们硬编码在代码中，我们通常会将这些信息放在配置文件当中，这样程序在启动的时候就可以动态获取这些数据了 实现配置文件的方式有很多种，这里介绍一个使用比较广泛、非常简单的方案，那就是 dotenv 这个库，首先在项目根目录放置一个 .env 文件，内容格式如下"
-    },
-    {
-      "oldPath": "Web/语言/TypeScript.md",
-      "newPath": "计算机/编程语言/TypeScript/TypeScript.md",
-      "primaryCategory": "计算机/编程语言/TypeScript",
-      "categories": [
-        {
-          "path": "计算机/编程语言/TypeScript",
-          "reason": "核心学习对象为“TypeScript 高级类型及用法”，正文依据：“原文链接：TypeScript: Documentation - Utility Types (typescriptlang.org) 交叉类型是将多个类型合并为一个类型。 这让我们可以把现有的多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性。”；据其实体与学习对象归入计算机/编程语言/TypeScript。"
-        }
-      ],
-      "classificationStatus": "confirmed",
-      "title": "TypeScript 高级类型及用法",
-      "relations": [],
-      "evidence": "原文链接：TypeScript: Documentation - Utility Types (typescriptlang.org) 交叉类型是将多个类型合并为一个类型。 这让我们可以把现有的多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性。"
     }
   ]
 }

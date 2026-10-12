@@ -5,13 +5,13 @@ categories:
   - path: 计算机/编程语言/Go
     reason: 正文介绍Go 依赖管理的语义、用法与实践注意点。
   - path: 计算机/工程化/包管理
-    reason: 这是包管理在 Go 中的实现。
+    reason: 这是包管理在 Go 中的具体实现。
 classificationStatus: confirmed
 relations:
   - target: 计算机/工程化/包管理/index.md
     type: subordinate
     status: inferred
-    reason: 这是包管理在 Go 中的实现。
+    reason: 这是包管理在 Go 中的具体实现。
     evidence: 这是包管理在 Go 中的实现。
 tags: []
 ---

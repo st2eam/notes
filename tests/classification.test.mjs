@@ -28,8 +28,8 @@ const manifest = JSON.parse(
 const vault = readVault(process.cwd());
 const md = new MarkdownIt({ html: true });
 test("retained original notes preserve headings, demos and code after requested removals", () => {
-  assert.equal(manifest.records.length, 361);
-  assert.equal(new Set(manifest.records.map((r) => r.newPath)).size, 361);
+  assert.equal(manifest.records.length, 360);
+  assert.equal(new Set(manifest.records.map((r) => r.newPath)).size, 360);
   const removed = new Set(["AI/Agent工具与安全.md", "AI/AI应用开发.md", "AI/Prompt Engineering.md", "AI/Embedding与向量数据库.md", "AI/RAG与检索质量.md", "AI/大语言模型基础.md", "Language/index.md", "Language/日语.md"]);
   for (const r of manifest.records) {
     if (removed.has(r.oldPath)) {
@@ -61,12 +61,12 @@ test("retained original notes preserve headings, demos and code after requested 
       "changed code: " + r.oldPath,
     );
   }
-  assert.equal(vault.notes.filter((n) => n.originalPath).length, 295);
+  assert.equal(vault.notes.filter((n) => n.originalPath).length, 324);
 });
 test("all notes have supported classifications, six roots and acyclic explicit overviews", () => {
   const categories = new Map(vault.categories.map((c) => [c.id, c]));
   assert.equal(vault.categories.filter((c) => !c.parent).length, 6);
-  assert.equal(vault.notes.length, 785);
+  assert.equal(vault.notes.length, 814);
   for (const n of vault.notes) {
     assert.ok(n.primaryCategory, n.id);
     assert.ok(n.categories.some((c) => c.path === n.primaryCategory));

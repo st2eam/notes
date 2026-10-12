@@ -5,7 +5,7 @@ categories:
   - path: AI/应用与评测/智能体
     reason: 正文讨论本地 Codex 执行与验收。
   - path: 计算机/基础/安全与权限
-    reason: 正文解释工具授权与访问边界。
+    reason: 正文解释工具授权与访问边界的设计。
 classificationStatus: confirmed
 relations:
   - target: AI/应用与评测/智能体/agentic-engineering-patterns.md
