@@ -37,6 +37,15 @@ test("merged board-game notes preserve old URLs and saved note identities", () =
   assert.equal(listedExactly(target), true);
 });
 
+test("flow theory replaces the immersion note while preserving its URL and saved identity", () => {
+  const oldPath = "/心理学/认知心理学/沉浸体验";
+  const target = "/心理学/认知心理学/心流理论";
+  assert.equal(redirectTarget(encodeURI(`/notes${oldPath}.html`)), target);
+  assert.equal(migrateNoteId(`${oldPath.slice(1)}.md`), `${target.slice(1)}.md`);
+  assert.equal(listedExactly(oldPath), false);
+  assert.equal(listedExactly(target), true);
+});
+
 test("every old note path redirects to exactly one existing page", () => {
   const targets = new Set();
   for (const [from, to] of Object.entries(redirects)) {
