@@ -804,8 +804,22 @@ export default [
                                 "link": "/计算机/工程化/命令行工具/Chalk.md"
                             },
                             {
+                                "text": "MarkItDown",
+                                "link": "/计算机/工程化/命令行工具/MarkItDown.md"
+                            },
+                            {
                                 "text": "ora",
                                 "link": "/计算机/工程化/命令行工具/ora.md"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "开发实践",
+                        "collapsed": true,
+                        "items": [
+                            {
+                                "text": "Markdown",
+                                "link": "/计算机/工程化/开发实践/Markdown.md"
                             }
                         ]
                     },
@@ -1518,6 +1532,10 @@ export default [
                             {
                                 "text": "mcp协议与工具调用",
                                 "link": "/AI/应用与评测/智能体/mcp协议与工具调用.md"
+                            },
+                            {
+                                "text": "上下文工程",
+                                "link": "/AI/应用与评测/智能体/上下文工程.md"
                             }
                         ]
                     },
@@ -1528,6 +1546,10 @@ export default [
                             {
                                 "text": "LLM Wiki",
                                 "link": "/AI/应用与评测/知识检索/LLM Wiki 可视化教程.md"
+                            },
+                            {
+                                "text": "Markdown 与 AI 知识管理",
+                                "link": "/AI/应用与评测/知识检索/Markdown 与 AI 知识管理.md"
                             }
                         ]
                     },
@@ -1580,6 +1602,10 @@ export default [
                             {
                                 "text": "LLM演进路线",
                                 "link": "/AI/模型原理/大语言模型/LLM演进路线.md"
+                            },
+                            {
+                                "text": "Token",
+                                "link": "/AI/模型原理/大语言模型/Token.md"
                             }
                         ]
                     }

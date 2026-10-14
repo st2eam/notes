@@ -20,3 +20,4 @@ relations: []
 ## 分类成员
 
 - [[AI/应用与评测/智能体/agentic-engineering-patterns|Agentic 工程模式实践指南]] · 交叉分类
+- [[计算机/工程化/开发实践/Markdown|Markdown]]

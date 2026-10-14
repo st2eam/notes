@@ -20,3 +20,4 @@ AI/应用与评测/知识检索的分类入口。
 ## 分类成员
 
 - [[AI/应用与评测/知识检索/LLM Wiki 可视化教程|LLM Wiki]]
+- [[AI/应用与评测/知识检索/Markdown 与 AI 知识管理|Markdown 与 AI 知识管理]]
