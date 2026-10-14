@@ -1,0 +1,99 @@
+/* Fit the interactive article into the notebook while preserving its standalone page. */
+html.notes-embed {
+  --paper: var(--bg);
+  --tint: color-mix(in srgb, var(--accent) 12%, var(--bg));
+  --hover: var(--soft);
+  --code: var(--soft);
+  --bar: var(--muted);
+  --bar-accent: var(--accent);
+  --sans: var(--embed-font, "PingFang SC", "Microsoft YaHei", sans-serif);
+  --serif: var(--sans);
+  --header-height: 0px;
+  --read-offset: 16px;
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+}
+.notes-embed body {
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  background: transparent;
+  font-size: 16px;
+}
+.notes-embed #root {
+  display: flow-root;
+}
+.notes-embed header,
+.notes-embed footer,
+.notes-embed .progress,
+.notes-embed .skip,
+.notes-embed .hero h1,
+.notes-embed .hero-actions > a,
+.notes-embed .meta time,
+.notes-embed .toc {
+  display: none;
+}
+.notes-embed .wrap {
+  width: 100%;
+}
+.notes-embed .hero {
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 0 0 28px;
+}
+.notes-embed .meta {
+  margin-top: 0;
+}
+.notes-embed .hero-intro {
+  max-width: none;
+  font-size: 16px;
+}
+.notes-embed .hero-actions {
+  margin-top: 16px;
+}
+.notes-embed .section {
+  padding: 28px 0;
+}
+.notes-embed .reader-bar {
+  position: static;
+  flex-wrap: wrap;
+}
+.notes-embed .reader-grid {
+  display: block;
+}
+.notes-embed .mobile-chapter {
+  display: block;
+  flex-basis: 100%;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  font-size: 16px;
+}
+.notes-embed .chapter,
+.notes-embed .prose {
+  max-width: none;
+}
+.notes-embed .section-head {
+  display: block;
+}
+.notes-embed .section-head p {
+  max-width: none;
+  margin-top: 8px;
+}
+.notes-embed .case-grid,
+.notes-embed .scenario-panel,
+.notes-embed .boundary-grid {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.notes-embed .sources-section {
+  padding: 0;
+}
+.notes-embed button,
+.notes-embed summary {
+  min-height: 44px;
+}

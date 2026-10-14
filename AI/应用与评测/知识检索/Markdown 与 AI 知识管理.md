@@ -21,11 +21,17 @@ relations:
     evidence: 本文第三节使用 git diff 检查笔记改动，第四节介绍 AGENTS.md；Codex CLI 工作流要求执行前检查 Git 差异与 AGENTS.md。
 ---
 
+<script setup>
+import NoteEmbed from '../../../.vitepress/theme/components/NoteEmbed.vue'
+</script>
+
 # 为什么 Markdown 成了 AI 时代知识管理的默认格式？
 
 2026-10-14
 
-<a href="/notes/embeds/markdown-ai-knowledge.html" target="_blank" rel="noopener noreferrer">打开互动阅读页</a> · 保留原网页的分节阅读、格式对比与下载功能。
+<NoteEmbed src="/embeds/markdown-ai-knowledge.html?embed=true" title="Markdown 与 AI 知识管理：互动笔记" />
+
+::: details 文字版笔记与参考资料
 
 [[计算机/工程化/开发实践/Markdown|Markdown]] 是带少量标记的纯文本。标题、列表、链接和代码都能写在一个文件里，人可以直接读，程序也方便处理。
 
@@ -140,3 +146,5 @@ knowledge/
 - [Notion 导出说明](https://www.notion.com/help/export-your-content)
 
 [知乎原问题](https://www.zhihu.com/question/2078797038666379704)
+
+:::

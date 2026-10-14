@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 
 defineProps<{ src: string; title: string }>()
@@ -68,6 +68,10 @@ function connect() {
   }
 }
 
+// A small cached HTML page can finish loading before Vue hydrates @load.
+onMounted(() => {
+  if (frame.value?.contentDocument?.readyState === 'complete') connect()
+})
 onBeforeUnmount(() => disconnect())
 </script>
 

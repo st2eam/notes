@@ -27,8 +27,11 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0ms!important}.progress{transition:none}}
     @media print{:root,html[data-theme="dark"]{--paper:white;--surface:white;--ink:#222;--muted:#555;--line:#ccc;--accent:#244ac4;--tint:#f0f2f8;--hover:#eee;--code:#f2f2f2;--bar:#9aa498;--bar-accent:#365bc9}body{font-size:12px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.wrap{width:100%}header,.progress,.skip,.hero-actions,.file-window,.file-caption,.reader-bar,.toc,.code-copy,.chapter-end,.chapter-controls,.feedback,.copy-fallback,.scenario-tabs,.scenario-panel,.footer-links,.no-print{display:none!important}.hero{display:block;padding:8px 0 20px}.hero h1{font-size:28px;max-width:100%}.meta{margin-top:10px}.hero-intro{font-size:12px;max-width:100%;margin-top:10px}.section{padding:22px 0}.section-head h2,.boundary-copy h2{font-size:20px}.section-head p{font-size:12px}.reader-grid{display:block}.chapter{display:block!important;max-width:100%;padding-bottom:22px}.chapter+.chapter{padding-top:20px}.chapter h3{font-size:16px;margin-bottom:10px;break-after:avoid}.prose{max-width:100%;font-size:12px;line-height:1.8}.prose p+p{margin-top:9px}.code-block{break-inside:avoid;margin:12px 0}.code-top{min-height:26px}.code-block pre{font-size:12px;padding:12px}.case-grid{grid-template-columns:.8fr 1.2fr;gap:25px}.case-chart{padding:14px;break-inside:avoid}.chart-note{font-size:12px}.boundary-grid{grid-template-columns:1fr;gap:18px}.accordion-body{display:block;font-size:12px;padding-bottom:14px}details{break-inside:avoid}summary .chevron{display:none}.sources-grid{grid-template-columns:1fr 1fr;column-gap:25px}.sources-grid li{break-inside:avoid;padding:10px 0}.sources-grid a{font-size:12px}.sources-grid p{font-size:12px}.print-only{display:block}.print-scenario{font-size:12px;margin-bottom:10px}footer{padding:15px 0}.footer-row{display:block}.print-question{font-size:12px}}
   </style>
+<link rel="stylesheet" href="markdown-ai-knowledge-embed.css">
+<script>if(new URLSearchParams(location.search).get("embed")==="true")document.documentElement.classList.add("notes-embed");</script>
 </head>
 <body>
+<div id="root">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <symbol id="i-note" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8z"/><path d="M14 3v5h5M8 12h8M8 16h6"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
@@ -123,5 +126,6 @@ markitdown input.pdf -o output.md
     document.getElementById('print-page').addEventListener('click',()=>{preparePrint();window.print();});window.addEventListener('beforeprint',preparePrint);window.addEventListener('afterprint',restorePrint);
     setMode('full',false);applyHash();updateProgress();
   </script>
+</div>
 </body>
 </html>
