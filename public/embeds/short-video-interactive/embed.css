@@ -1,0 +1,78 @@
+/* The standalone page keeps its own layout; these rules apply in the notebook. */
+html.notes-embed {
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  scroll-padding-top: 16px;
+}
+.notes-embed body {
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  font-family: var(--embed-font, Manrope, "Noto Sans SC", sans-serif);
+}
+.notes-embed #root {
+  display: flow-root;
+}
+.notes-embed .site-header,
+.notes-embed .site-footer,
+.notes-embed .hero h1,
+.notes-embed .hero-link,
+.notes-embed .skip-link {
+  display: none;
+}
+.notes-embed .page {
+  max-width: none;
+  padding: 0;
+}
+.notes-embed .hero {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  padding: 0 0 24px;
+}
+.notes-embed .hero-photo {
+  width: 100%;
+  aspect-ratio: 2.3;
+  border-radius: 8px;
+}
+.notes-embed .hero-copy > p {
+  max-width: none;
+  margin: 0;
+  font-size: 16px;
+}
+.notes-embed .scope-note {
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 18px 20px;
+  border-radius: 8px;
+}
+.notes-embed .section {
+  padding-top: 36px;
+}
+.notes-embed .section-heading h2,
+.notes-embed .evidence-intro h2 {
+  font-size: 25px;
+}
+.notes-embed .evidence-section {
+  margin-top: 36px;
+  padding-top: 24px;
+}
+.notes-embed .observation-photo {
+  position: static;
+  max-height: 220px;
+  aspect-ratio: 2;
+}
+.notes-embed .impact-section {
+  margin-top: 36px;
+}
+.notes-embed .select-wrap select {
+  min-height: 44px;
+  font-size: 16px;
+}
+.notes-embed button,
+.notes-embed summary {
+  min-height: 44px;
+}
