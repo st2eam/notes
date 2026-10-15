@@ -2250,6 +2250,16 @@ export default [
                                 ]
                             },
                             {
+                                "text": "荷兰",
+                                "collapsed": true,
+                                "items": [
+                                    {
+                                        "text": "郁金香泡沫",
+                                        "link": "/历史/世界史/欧洲/荷兰/郁金香泡沫.md"
+                                    }
+                                ]
+                            },
+                            {
                                 "text": "跨地区",
                                 "collapsed": true,
                                 "items": [
