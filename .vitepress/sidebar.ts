@@ -3582,6 +3582,16 @@ export default [
                         ]
                     }
                 ]
+            },
+            {
+                "text": "典故",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "挟天子以令诸侯",
+                        "link": "/历史/典故/挟天子以令诸侯.md"
+                    }
+                ]
             }
         ]
     },

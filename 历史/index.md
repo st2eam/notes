@@ -13,7 +13,8 @@ categoryOverview: 历史
 ---
 # History
 
-按中国史和世界史阅读，也可以打开[历史图谱](?view=graph&filter=path%3A%E5%8E%86%E5%8F%B2%2F)。
+按中国史和世界史阅读事件，或从典故了解词义、出处与历史背景。也可以打开[历史图谱](?view=graph&filter=path%3A%E5%8E%86%E5%8F%B2%2F)。
 
 - [[历史/中国史/index|中国史]]
 - [[历史/世界史/index|世界史]]
+- [[历史/典故/index|典故]]
