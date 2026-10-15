@@ -3588,6 +3588,10 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
+                        "text": "司马昭之心",
+                        "link": "/历史/典故/司马昭之心.md"
+                    },
+                    {
                         "text": "挟天子以令诸侯",
                         "link": "/历史/典故/挟天子以令诸侯.md"
                     }
