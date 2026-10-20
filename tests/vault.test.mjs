@@ -285,10 +285,10 @@ test("scan publishes only notes and excludes hidden dirs, symlinks, caches, depe
     fs.rmSync(root, { recursive: true, force: true });
   }
 });
-test("history publishes individual events without external links and archives all summaries", () => {
+test("history publishes individual events without external links and retains original archives", () => {
   const index = readVault(process.cwd());
   const events = index.notes.filter((n) => n.historyId);
-  assert.equal(events.length, 327);
+  assert.equal(events.length, 355);
   assert.equal(index.notes.filter((n) => n.historyTheme).length, 0);
   const report = JSON.parse(fs.readFileSync(".vitepress/reports/history-events.json", "utf8"));
   assert.equal(report.originalNotes, 58);
