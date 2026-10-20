@@ -4700,6 +4700,10 @@ export default [
                 "collapsed": true,
                 "items": [
                     {
+                        "text": "元认知",
+                        "link": "/心理学/认知心理学/元认知.md"
+                    },
+                    {
                         "text": "心流理论",
                         "link": "/心理学/认知心理学/心流理论.md"
                     },
@@ -4726,6 +4730,10 @@ export default [
                     {
                         "text": "记忆提取",
                         "link": "/心理学/认知心理学/记忆提取.md"
+                    },
+                    {
+                        "text": "达克效应",
+                        "link": "/心理学/认知心理学/达克效应.md"
                     },
                     {
                         "text": "选择性注意",
