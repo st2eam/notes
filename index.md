@@ -3,7 +3,7 @@ originalPath: index.md
 primaryCategory: 计算机
 categories:
   - path: 计算机
-    reason: 全站知识库入口，目录身份保留在站点根路径；以计算机作为主分类，并提供七个领域的交叉导航。
+    reason: 全站知识库入口，目录身份保留在站点根路径；以计算机作为主分类，并提供各领域的交叉导航。
   - path: AI
     reason: 本站首页提供该领域的阅读与图谱入口。
   - path: 数学
@@ -15,6 +15,8 @@ categories:
   - path: 历史
     reason: 本站首页提供该领域的阅读与图谱入口。
   - path: 心理学
+    reason: 本站首页提供该领域的阅读与图谱入口。
+  - path: 音乐
     reason: 本站首页提供该领域的阅读与图谱入口。
 classificationStatus: confirmed
 relations: []
@@ -33,6 +35,7 @@ tags: []
 - [[影像/index|影像]]
 - [[历史/index|历史]]
 - [[心理学/index|心理学]]
+- [[音乐/index|音乐]]
 
 ## 使用方式
 

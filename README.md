@@ -98,7 +98,7 @@ Canvas 2D 与 D3-force 按真实笔记链接布局。默认显示笔记和孤立
 
 ## 分类与语义关系
 
-目录按七个领域组织，每篇笔记的 `primaryCategory` 决定实体文件位置；`categories` 列出主分类与交叉分类，每项含 `path`、`reason`。`classificationStatus: provisional` 表示正文尚不足以确认。`tags` 用于人物、时代、语言或框架实体，不替代分类。
+目录按主题领域组织，每篇笔记的 `primaryCategory` 决定实体文件位置；`categories` 列出主分类与交叉分类，每项含 `path`、`reason`。`classificationStatus: provisional` 表示正文尚不足以确认。`tags` 用于人物、时代、语言或框架实体，不替代分类。
 
 `relations` 保存在 Markdown frontmatter，每项包含 `target`（完整笔记路径）、`type`（citation/similar/subordinate/causal）、`label`、`reason`、`evidence`、`status`（confirmed/inferred）。相似关系无方向；其余关系有方向。因果必须有可核查证据。普通正文链接继续生成引用，分类声明生成从属关系；同一目标可保留不同语义。
 

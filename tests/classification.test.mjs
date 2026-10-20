@@ -63,9 +63,9 @@ test("retained original notes preserve headings, demos and code after requested 
   }
   assert.equal(vault.notes.filter((n) => n.originalPath).length, 325);
 });
-test("all notes have supported classifications, eight roots and acyclic explicit overviews", () => {
+test("all notes have supported classifications, nine roots and acyclic explicit overviews", () => {
   const categories = new Map(vault.categories.map((c) => [c.id, c]));
-  assert.equal(vault.categories.filter((c) => !c.parent).length, 8);
+  assert.equal(vault.categories.filter((c) => !c.parent).length, 9);
   assert.ok(vault.notes.length > 0, "知识库应包含可分类的笔记");
   for (const n of vault.notes) {
     assert.ok(n.primaryCategory, n.id);
