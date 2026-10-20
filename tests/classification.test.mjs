@@ -256,8 +256,8 @@ test("history events follow dynasty or country classifications", () => {
     assert.ok(Number.isFinite(note.historyOrder));
     assert.ok(note.historyDate);
   }
-  assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 238);
-  assert.equal(history.filter((n) => n.id.startsWith("历史/世界史/")).length, 117);
+  assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 277);
+  assert.equal(history.filter((n) => n.id.startsWith("历史/世界史/")).length, 174);
   assert.ok(history.some(n => n.folder === "历史/中国史/秦"));
   assert.ok(history.some(n => n.folder === "历史/世界史/亚洲/日本"));
 });
