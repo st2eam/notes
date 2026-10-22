@@ -47,6 +47,11 @@ function toggleSidebar(side: "left" | "right") {
     if (rightOpen.value && drawerViewport()) leftOpen.value = false;
   }
 }
+function showNoteBrowser() {
+  pane.value = "files";
+  leftOpen.value = true;
+  if (drawerViewport()) rightOpen.value = false;
+}
 const embedDesktop = ref(false);
 let embedMedia: MediaQueryList | undefined;
 function updateEmbedLayout() {
@@ -185,7 +190,7 @@ const commands = computed(() =>
       icon: "graph",
       action: () => openGraph("path:历史/"),
     },
-    { title: "快速切换笔记", icon: "file", action: () => showModal("quick") },
+    { title: "查找并切换笔记", icon: "switch", action: () => showModal("quick") },
     { title: "全文搜索", icon: "search", action: () => showSearch() },
     { title: "切换浅色 / 深色主题", icon: "sun", action: () => toggleTheme() },
     {
@@ -198,7 +203,7 @@ const commands = computed(() =>
       icon: "right",
       action: () => (rightOpen.value = !rightOpen.value),
     },
-    { title: "在文件树中定位当前笔记", icon: "folder", action: () => reveal() },
+    { title: "在文件树中定位当前笔记", icon: "locate", action: () => reveal() },
     {
       title: "关闭当前标签页",
       icon: "close",
@@ -396,8 +401,8 @@ function reveal() {
   leftOpen.value = true;
   nextTick(() =>
     document
-      .querySelector(".tree-note.active")
-      ?.scrollIntoView({ block: "nearest" }),
+      .querySelector("#vault-note-browser .file-tree-scroll .tree-note.active")
+      ?.scrollIntoView({ block: "center", inline: "nearest" }),
   );
 }
 async function loadSearch() {
@@ -756,13 +761,12 @@ onBeforeUnmount(() => {
       aria-label="嵌入阅读工具"
     >
       <button
-        :aria-expanded="leftOpen"
-        :aria-pressed="leftOpen"
+        :aria-pressed="leftOpen && pane === 'files'"
         aria-controls="vault-note-browser"
         :class="{ selected: leftOpen }"
-        @click="leftOpen = !leftOpen"
+        @click="showNoteBrowser"
       >
-        <Icon name="folder" />笔记
+        <Icon name="notebook" />笔记
       </button>
       <button
         :aria-expanded="rightOpen"
@@ -779,17 +783,17 @@ onBeforeUnmount(() => {
     <a class="vault-skip" href="#vault-document">跳到正文</a>
     <nav class="vault-ribbon" aria-label="工具栏">
       <button
-        class="icon-button ribbon-toggle"
-        aria-label="切换文件侧栏"
-        :aria-expanded="leftOpen"
+        :class="['icon-button', 'ribbon-toggle', { selected: leftOpen && pane === 'files' }]"
+        aria-label="浏览笔记"
+        :aria-pressed="leftOpen && pane === 'files'"
         aria-controls="vault-note-browser"
-        title="文件侧栏"
-        @click="toggleSidebar('left')"
+        title="浏览笔记"
+        @click="showNoteBrowser"
       >
-        <Icon name="left" /><span class="ribbon-label">笔记</span>
+        <Icon name="notebook" /><span class="ribbon-label">笔记</span>
       </button>
       <button
-        class="icon-button"
+        :class="['icon-button', { selected: leftOpen && pane === 'search' }]"
         aria-label="全文搜索"
         title="全文搜索"
         @click="showSearch"
@@ -797,45 +801,29 @@ onBeforeUnmount(() => {
         <Icon name="search" /><span class="ribbon-label">搜索</span>
       </button>
       <button
-        class="icon-button"
+        :class="['icon-button', { selected: graphActive && (!drawerViewport() || !(leftOpen || rightOpen)) }]"
         aria-label="打开全局图谱"
         title="全局图谱"
         @click="openGraph()"
       >
         <Icon name="graph" /><span class="ribbon-label">图谱</span>
       </button>
-      <button
-        class="icon-button"
-        aria-label="快速切换笔记"
-        title="快速切换 · Ctrl/⌘ O"
-        @click="showModal('quick')"
-      >
-        <Icon name="file" /><span class="ribbon-label">切换</span>
-      </button>
-      <button
-        class="icon-button ribbon-command"
-        aria-label="命令面板"
-        title="命令面板 · Ctrl/⌘ P"
-        @click="showModal('commands')"
-      >
-        <Icon name="command" />
-      </button>
       <div class="ribbon-spacer" />
       <button
-        class="icon-button"
+        class="icon-button ribbon-secondary"
         :aria-label="isDark ? '切换浅色主题' : '切换深色主题'"
-        title="切换主题"
+        :title="isDark ? '切换浅色主题' : '切换深色主题'"
         @click="toggleTheme"
       >
         <Icon :name="isDark ? 'sun' : 'moon'" /><span class="ribbon-label">主题</span>
       </button>
       <button
-        class="icon-button"
-        aria-label="工作台命令"
-        title="工作台命令"
+        class="icon-button ribbon-secondary"
+        aria-label="命令面板"
+        title="命令面板 · Ctrl/⌘ P"
         @click="showModal('commands')"
       >
-        <Icon name="settings" /><span class="ribbon-label">命令</span>
+        <Icon name="terminal" /><span class="ribbon-label">命令</span>
       </button>
     </nav>
     <button
@@ -853,53 +841,35 @@ onBeforeUnmount(() => {
       class="vault-left"
       aria-label="文件与搜索"
     >
-      <div class="sidebar-tabbar">
+      <div class="file-actions">
+        <span>{{ pane === 'files' ? '文件' : pane === 'search' ? '搜索' : '分类' }}</span>
         <button
-          :class="['icon-button', { selected: pane === 'files' }]"
-          aria-label="文件列表"
-          title="文件列表"
-          @click="pane = 'files'"
-        >
-          <Icon name="folder" /></button
-        ><button
-          :class="['icon-button', { selected: pane === 'search' }]"
-          aria-label="搜索面板"
-          title="搜索面板"
-          @click="showSearch"
-        >
-          <Icon name="search" /></button
-        ><button
-          :class="['icon-button', { selected: pane === 'categories' }]"
-          aria-label="分类浏览"
-          title="分类浏览"
-          @click="pane = 'categories'"
-        >
-          <Icon name="list" /></button
-        ><span /><button
-          class="icon-button mobile-only"
-          aria-label="关闭文件侧栏"
-          @click="leftOpen = false"
-        >
-          <Icon name="close" /></button
-        ><button
           v-if="pane === 'files'"
           class="icon-button"
-          title="定位当前笔记"
           aria-label="定位当前笔记"
           @click="reveal"
         >
-          <Icon name="file" :size="16" />
+          <Icon name="locate" :size="16" />
+          <span class="sidebar-tooltip" aria-hidden="true">定位当前笔记</span>
         </button>
-      </div>
-      <div v-if="pane === 'files'" class="file-actions">
-        <span>文件</span
-        ><button
+        <button
+          v-if="pane === 'files'"
           class="icon-button"
-          title="折叠所有文件夹"
           aria-label="折叠所有文件夹"
           @click="expanded = []"
         >
-          <Icon name="list" :size="15" />
+          <Icon name="collapse" :size="16" />
+          <span class="sidebar-tooltip" aria-hidden="true">折叠所有文件夹</span>
+        </button>
+        <button
+          class="icon-button"
+          aria-label="收起笔记侧栏"
+          :aria-expanded="leftOpen"
+          aria-controls="vault-note-browser"
+          @click="leftOpen = false"
+        >
+          <Icon name="left" :size="16" />
+          <span class="sidebar-tooltip" aria-hidden="true">收起笔记侧栏</span>
         </button>
       </div>
       <div v-if="pane === 'files'" class="file-tree-scroll">
@@ -959,6 +929,18 @@ onBeforeUnmount(() => {
           </p>
         </div>
       </div>
+      <div v-if="!isEmbedded" class="vault-mobile-tools" role="group" aria-label="阅读工具">
+        <button
+          :aria-label="isDark ? '切换浅色主题' : '切换深色主题'"
+          @click="toggleTheme"
+        >
+          <Icon :name="isDark ? 'sun' : 'moon'" :size="17" />
+          <span>{{ isDark ? '切换浅色' : '切换深色' }}</span>
+        </button>
+        <button aria-label="命令面板" @click="showModal('commands')">
+          <Icon name="terminal" :size="17" /><span>命令面板</span>
+        </button>
+      </div>
       <div class="vault-name">
         <Icon name="folder" :size="15" /><span>{{ site.title }}</span
         ><small>{{ notes.length }}</small>
@@ -979,14 +961,6 @@ onBeforeUnmount(() => {
     />
     <section class="vault-center" aria-label="阅读工作区">
       <div class="vault-tabs" role="tablist" aria-label="已打开笔记">
-        <button
-          v-if="!leftOpen"
-          class="icon-button desktop-file-toggle"
-          aria-label="打开文件侧栏"
-          @click="leftOpen = true"
-        >
-          <Icon name="left" />
-        </button>
         <div class="tab-scroll">
           <div
             v-for="tab in tabs"
@@ -1132,20 +1106,22 @@ onBeforeUnmount(() => {
     >
       <div class="sidebar-tabbar">
         <button
-          :class="['icon-button', { selected: rightTab === 'outline' }]"
+          :class="['icon-button', 'sidebar-tab', { selected: rightTab === 'outline' }]"
           aria-label="笔记目录"
+          :aria-pressed="rightTab === 'outline'"
           title="目录"
           @click="rightTab = 'outline'"
         >
-          <Icon name="list" /></button
+          <Icon name="list" :size="16" /><span>目录</span></button
         ><button
-          :class="['icon-button', { selected: rightTab === 'links' }]"
+          :class="['icon-button', 'sidebar-tab', { selected: rightTab === 'links' }]"
           v-if="!embedDesktop"
           aria-label="双向链接"
+          :aria-pressed="rightTab === 'links'"
           title="反向链接与出链"
           @click="rightTab = 'links'"
         >
-          <Icon name="link" /></button
+          <Icon name="link" :size="16" /><span>链接</span></button
         ><span /><button
           class="icon-button mobile-only"
           aria-label="关闭辅助侧栏"

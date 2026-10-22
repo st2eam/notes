@@ -154,15 +154,27 @@ body,
   top: 10px;
 }
 .vault-ribbon {
-  width: 44px;
-  flex: 0 0 44px;
+  width: 60px;
+  flex: 0 0 60px;
   background: var(--vault-ribbon);
   border-right: 1px solid var(--vault-border);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 7px 4px;
-  gap: 6px;
+  gap: 4px;
+}
+.vault-shell .vault-ribbon .icon-button {
+  width: 48px;
+  height: 48px;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--vault-text);
+}
+.vault-shell .vault-ribbon .icon-button.selected,
+.vault-shell .sidebar-tab.selected {
+  color: var(--vault-accent);
+  background: var(--vault-accent-bg);
 }
 .ribbon-toggle {
   margin-bottom: 8px;
@@ -171,7 +183,10 @@ body,
   flex: 1;
 }
 .ribbon-label {
-  display: none;
+  display: block;
+  font-size: 11px;
+  line-height: 14px;
+  white-space: nowrap;
 }
 .vault-left {
   width: var(--left-width);
@@ -186,28 +201,69 @@ body,
   align-items: center;
   height: 43px;
   min-height: 43px;
-  padding: 5px 8px;
-  gap: 7px;
+  padding: 5px 6px;
+  gap: 2px;
   border-bottom: 1px solid var(--vault-border);
 }
 .sidebar-tabbar > span {
   flex: 1;
 }
+.vault-shell .icon-button.sidebar-tab {
+  width: auto;
+  gap: 4px;
+  padding: 0 6px;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--vault-text);
+}
+.vault-shell .sidebar-tab {
+  flex-shrink: 1;
+}
+.sidebar-tab svg {
+  flex-shrink: 0;
+}
 .file-actions {
   display: flex;
   align-items: center;
-  padding: 8px 14px 4px;
+  padding: 8px 10px 4px;
   color: var(--vault-muted);
   font-size: 12px;
 }
 .file-actions > span {
   flex: 1;
 }
+.file-actions .icon-button {
+  position: relative;
+}
+.sidebar-tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 10;
+  width: max-content;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: var(--vault-text);
+  color: var(--vault-bg);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  white-space: nowrap;
+  visibility: hidden;
+  pointer-events: none;
+}
+.file-actions .icon-button:hover .sidebar-tooltip,
+.file-actions .icon-button:focus-visible .sidebar-tooltip {
+  visibility: visible;
+}
 .file-tree-scroll {
   overflow: auto;
   flex: 1;
   padding: 0 8px 20px;
   scrollbar-width: thin;
+}
+.vault-mobile-tools {
+  display: none;
 }
 .vault-tree {
   list-style: none !important;
@@ -1031,19 +1087,40 @@ body,
     border-right: 0;
     border-top: 1px solid var(--vault-border);
   }
-  .vault-ribbon .ribbon-command,
   .vault-ribbon .ribbon-spacer,
-  .vault-tabs .desktop-file-toggle {
+  .vault-shell .vault-ribbon .ribbon-secondary {
     display: none;
   }
-  .vault-ribbon .icon-button {
+  .vault-shell .vault-ribbon .icon-button {
+    width: auto;
+    flex: 1;
     flex-direction: column;
     gap: 2px;
   }
   .vault-ribbon .ribbon-label {
     display: block;
-    font-size: 10px;
-    line-height: 12px;
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .vault-mobile-tools {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+    padding: 6px 10px;
+    border-top: 1px solid var(--vault-border);
+  }
+  .vault-mobile-tools > button {
+    display: inline-flex;
+    flex: 1;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px;
+    font-size: 12px;
+  }
+  .vault-mobile-tools > button:hover {
+    background: var(--vault-hover);
   }
   .vault-modal-header {
     align-items: center;
