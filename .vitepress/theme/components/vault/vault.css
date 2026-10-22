@@ -232,7 +232,10 @@ body,
 .file-actions > span {
   flex: 1;
 }
-.file-actions .icon-button {
+.file-actions .icon-button,
+.vault-tabs .detail-toggle,
+.sidebar-tabbar .icon-button,
+.compact .graph-toolbar .icon-button {
   position: relative;
 }
 .sidebar-tooltip {
@@ -253,7 +256,13 @@ body,
   pointer-events: none;
 }
 .file-actions .icon-button:hover .sidebar-tooltip,
-.file-actions .icon-button:focus-visible .sidebar-tooltip {
+.file-actions .icon-button:focus-visible .sidebar-tooltip,
+.vault-tabs .detail-toggle:hover .sidebar-tooltip,
+.vault-tabs .detail-toggle:focus-visible .sidebar-tooltip,
+.sidebar-tabbar .icon-button:hover .sidebar-tooltip,
+.sidebar-tabbar .icon-button:focus-visible .sidebar-tooltip,
+.compact .graph-toolbar .icon-button:hover .sidebar-tooltip,
+.compact .graph-toolbar .icon-button:focus-visible .sidebar-tooltip {
   visibility: visible;
 }
 .file-tree-scroll {
@@ -590,38 +599,80 @@ body,
   overflow: auto;
   scrollbar-width: thin;
   flex: 1;
-  padding: 14px 9px 35px;
+  min-height: 0;
+  padding: 14px 10px 28px;
+}
+.vault-right {
+  --vault-detail-muted: color-mix(in srgb, var(--vault-text) 75%, var(--vault-side));
+}
+.vault-detail-context {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 8px 18px;
+  padding: 0 0 14px;
+  border-bottom: 1px solid var(--vault-border);
+}
+.vault-detail-context svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--vault-detail-muted);
+}
+.vault-detail-context strong {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 .vault-right h2 {
-  font-size: 12px;
-  font-family: var(--vp-font-family-base);
-  font-weight: 600;
-  margin: 0 0 10px;
-  padding: 0 8px;
-  color: var(--vault-muted);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 0 8px;
+  color: var(--vault-text);
+  font-family: var(--vp-font-family-base);
+  font-size: 12px;
+  font-weight: 600;
 }
-.vault-right h2 small {
+.vault-right h2 small,
+.vault-classifications > summary > small,
+.local-list-toggle > small {
+  min-width: 20px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--vault-hover);
+  color: var(--vault-detail-muted);
   font-size: 11px;
   font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  white-space: nowrap;
 }
-.vault-outline {
-  margin-bottom: 28px;
+.vault-outline,
+.vault-relations,
+.vault-local {
+  margin-bottom: 20px;
 }
 .vault-outline > button {
   display: block;
-  text-align: left;
   width: 100%;
-  padding: 5px 10px;
-  color: var(--vault-muted);
+  min-height: 32px;
+  padding: 7px 10px;
+  color: var(--vault-detail-muted);
   font-size: 13px;
-  border-radius: 4px;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: anywhere;
 }
 .vault-outline > button:hover {
   background: var(--vault-hover);
   color: var(--vault-text);
+}
+.vault-outline > button.active {
+  background: var(--vault-accent-bg);
+  color: var(--vault-accent);
 }
 .empty-hint {
   font-size: 12px;
@@ -630,63 +681,113 @@ body,
   line-height: 1.5;
   margin: 0;
 }
-.vault-relations {
-  margin-bottom: 26px;
+.vault-right .empty-hint {
+  color: var(--vault-detail-muted);
+  padding: 10px 8px;
 }
-.vault-relations > button {
+.relation-item + .relation-item {
+  border-top: 1px solid var(--vault-border);
+}
+.vault-relations .relation-open {
   display: block;
   width: 100%;
+  padding: 10px 8px 6px;
   text-align: left;
-  margin: 3px 0;
-  padding: 9px 8px;
-  border-radius: 5px;
 }
-.vault-relations > button:hover {
+.relation-open:hover {
   background: var(--vault-hover);
 }
 .vault-relations strong {
+  display: block;
+  color: var(--vault-text);
   font-size: 13px;
   font-weight: 500;
-  color: var(--vault-text);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
-.vault-relations p {
-  font-size: 12px;
-  color: var(--vault-muted);
+.relation-meta {
+  display: block;
+  margin-top: 4px;
+  color: var(--vault-detail-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.relation-open p {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 5px 0 0;
-  line-height: 1.55;
+  margin: 6px 0 0;
+  color: var(--vault-detail-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.relation-evidence {
+  margin: 0 8px 8px;
+  color: var(--vault-detail-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.relation-evidence summary,
+.vault-classifications details summary {
+  width: fit-content;
+  padding: 4px 0;
+  cursor: pointer;
+  font-size: 11px;
+}
+.relation-evidence p {
+  margin: 4px 0 10px;
+}
+.vault-right summary:focus-visible {
+  outline: 2px solid var(--vault-accent);
+  outline-offset: 2px;
 }
 .vault-local h2 > button {
   display: flex;
+  min-height: 30px;
   align-items: center;
   gap: 5px;
+  text-align: left;
 }
 .vault-local h2 label {
-  font-size: 11px;
-  font-weight: 400;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  color: var(--vault-detail-muted);
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
 }
 .vault-local select {
-  padding: 1px 3px;
-  font-size: 11px;
-  background: transparent;
+  min-height: 28px;
+  padding: 3px 4px;
+  background: var(--vault-bg);
+  font-size: 12px;
 }
 .local-graph-container {
   height: 210px;
   border: 1px solid var(--vault-border);
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: hidden;
 }
-.local-list-toggle {
-  margin: 8px 8px 0;
-  color: var(--vault-muted) !important;
-  font-size: 11px !important;
-  text-decoration: underline;
+.vault-shell .local-list-toggle {
+  display: flex;
+  width: 100%;
+  min-height: 34px;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 5px 8px;
+  color: var(--vault-detail-muted);
+  font-size: 12px;
+  text-align: left;
+}
+.local-list-toggle > span {
+  flex: 1;
+}
+.local-list-toggle:hover {
+  background: var(--vault-hover);
 }
 .vault-search {
   flex: 1;
@@ -1233,7 +1334,12 @@ body,
   .vault-outline > button,
   .local-node-list > button,
   .graph-node-list > button,
-  .modal-result {
+  .modal-result,
+  .vault-local h2 > button,
+  .vault-shell .local-list-toggle,
+  .vault-classifications > summary,
+  .vault-classifications details summary,
+  .relation-evidence summary {
     min-height: 44px;
   }
   .vault-reading,
@@ -1334,11 +1440,19 @@ body,
   scrollbar-width: thin;
 }
 .local-node-list > button {
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--vault-detail-muted);
+  overflow-wrap: anywhere;
   text-align: left;
   font-size: 12px;
   width: 100%;
   padding: 6px 10px;
+}
+.local-node-list > button svg {
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 .local-node-list > button:hover {
   background: var(--vault-hover);
@@ -1452,29 +1566,53 @@ body,
 }
 
 .vault-classifications {
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--vault-border);
+  border-top: 1px solid var(--vault-border);
 }
-.vault-classifications h2 {
+.vault-classifications > summary {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  list-style: none;
+  color: var(--vault-text);
   font-size: 12px;
-  margin: 8px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.vault-classifications > summary::-webkit-details-marker {
+  display: none;
+}
+.vault-classifications > summary > span {
+  flex: 1;
+}
+.vault-classifications[open] > summary > svg {
+  transform: rotate(90deg);
+}
+.classification-item {
+  padding: 8px;
 }
 .vault-classifications button {
-  text-align: left;
-  font-size: 12px;
+  width: 100%;
   color: var(--vault-accent);
+  font-size: 12px;
   line-height: 1.6;
+  text-align: left;
+  overflow-wrap: anywhere;
 }
 .vault-classifications small {
-  color: var(--vault-muted);
+  display: block;
+  margin-top: 3px;
+  color: var(--vault-detail-muted);
+  font-size: 11px;
 }
 .vault-classifications details {
-  font-size: 11px;
-  margin: 4px 0 10px;
+  color: var(--vault-detail-muted);
+  font-size: 12px;
 }
 .vault-classifications details p {
+  margin: 6px 0;
   line-height: 1.6;
-  margin: 5px 0;
 }
 .category-browser-filter {
   display: block;
@@ -1484,13 +1622,6 @@ body,
 .category-browser-filter select {
   width: 100%;
   margin-top: 6px;
-}
-.relation-evidence {
-  display: block;
-  font-size: 10px;
-  line-height: 1.6;
-  opacity: 0.7;
-  overflow-wrap: anywhere;
 }
 .graph-relation-types {
   border: 0;

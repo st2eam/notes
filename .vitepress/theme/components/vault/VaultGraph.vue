@@ -553,20 +553,21 @@ onBeforeUnmount(() => {
       </button>
       <button
         class="icon-button"
-        title="适合屏幕"
+        :title="compact ? undefined : '适合屏幕'"
         aria-label="适合屏幕"
         @click="fit"
       >
         <Icon name="fit" />
+        <span v-if="compact" class="sidebar-tooltip" aria-hidden="true">适合屏幕</span>
       </button>
       <button
         v-if="compact"
         class="icon-button"
-        title="打开全局图谱"
         aria-label="打开全局图谱"
         @click="emit('expand')"
       >
         <Icon name="graph" :size="15" />
+        <span class="sidebar-tooltip" aria-hidden="true">打开全局图谱</span>
       </button>
       <button
         v-else

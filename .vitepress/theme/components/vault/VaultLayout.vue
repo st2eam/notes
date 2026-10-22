@@ -72,6 +72,7 @@ function browseCategory(category: string) {
   pane.value = "categories";
   categoryFilter.value = category;
   leftOpen.value = true;
+  if (drawerViewport()) rightOpen.value = false;
   expanded.value = category.split("/").map((_, i) =>
     category
       .split("/")
@@ -79,14 +80,14 @@ function browseCategory(category: string) {
       .join("/"),
   );
 }
-const relationName = (l: VaultLink) =>
-  l.label ||
-  {
-    citation: "引用",
-    similar: "相似主题",
-    subordinate: "从属",
-    causal: "因果",
-  }[l.relationType || "citation"];
+const relationLabels: Record<string, string> = {
+  citation: "引用",
+  similar: "相似主题",
+  subordinate: "从属",
+  causal: "因果",
+};
+const relationName = (link: VaultLink) =>
+  relationLabels[link.label || ""] || link.label || relationLabels[link.relationType || "citation"];
 type Tab = {
   key: string;
   title: string;
@@ -119,6 +120,9 @@ const activeTab = computed(() =>
 const graphActive = computed(() => activeTab.value?.key.startsWith("graph:"));
 const graphFilter = computed(() => activeTab.value?.filter || "");
 const rightTab = ref("outline");
+const outlineHeadings = computed(() => current.value?.headings.filter((h) => h.level > 1) || []);
+const activeHeading = ref("");
+let outlineFrame = 0;
 const localDepth = ref(1);
 const localListOpen = ref(false);
 const localOpen = ref(true);
@@ -166,6 +170,10 @@ const outlinks = computed(() =>
     "target",
   ),
 );
+const relationGroups = computed(() => [
+  { title: "反向链接", incoming: true, items: backlinks.value, empty: "没有笔记链接到此处" },
+  { title: "出链", incoming: false, items: outlinks.value, empty: "当前笔记没有出链" },
+]);
 function dedupe(items: VaultLink[], key: "source" | "target") {
   return [
     ...new Map(
@@ -633,8 +641,29 @@ function relationTitle(link: VaultLink, incoming = false) {
     link.reference
   );
 }
-function jumpHeading(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+function trackOutline() {
+  if (outlineFrame || graphActive.value || !article.value) return;
+  outlineFrame = requestAnimationFrame(() => {
+    outlineFrame = 0;
+    const top = article.value?.getBoundingClientRect().top || 0;
+    let selected = "";
+    for (const heading of outlineHeadings.value) {
+      const element = document.getElementById(heading.id);
+      if (!element || element.getBoundingClientRect().top > top + 80) break;
+      selected = heading.id;
+    }
+    activeHeading.value = selected;
+  });
+}
+async function jumpHeading(id: string) {
+  activeHeading.value = id;
+  if (graphActive.value && current.value) {
+    await openNote(current.value, undefined, id);
+  } else {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }
   if (!embedDesktop.value && (isEmbedded.value || drawerViewport()))
     rightOpen.value = false;
 }
@@ -659,6 +688,13 @@ watch(vpIsDark, (value) => {
 });
 watch(modalQuery, () => (modalIndex.value = 0));
 watch(query, loadSearch);
+watch([() => current.value?.id, graphActive], () => {
+  activeHeading.value = "";
+  nextTick(trackOutline);
+});
+watch([() => current.value?.id, rightTab], () => {
+  nextTick(() => document.querySelector(".vault-right-scroll")?.scrollTo({ top: 0 }));
+});
 // SSR always includes the current note. Browser state is restored after hydration.
 const initialNote = current.value;
 if (initialNote) {
@@ -744,6 +780,7 @@ onBeforeUnmount(() => {
   router.onAfterRouteChanged = oldAfter;
   cleanupResize?.();
   clearTimeout(previewTimer);
+  cancelAnimationFrame(outlineFrame);
 });
 </script>
 <template>
@@ -1003,14 +1040,15 @@ onBeforeUnmount(() => {
           <Icon name="plus" />
         </button>
         <button
-          class="icon-button"
-          aria-label="切换辅助侧栏"
+          v-if="!rightOpen"
+          class="icon-button detail-toggle"
+          aria-label="打开笔记辅助栏"
           :aria-expanded="rightOpen"
           aria-controls="vault-note-details"
-          title="辅助侧栏"
           @click="toggleSidebar('right')"
         >
-          <Icon name="right" />
+          <Icon name="right-open" />
+          <span class="sidebar-tooltip" aria-hidden="true">打开笔记辅助栏</span>
         </button>
       </div>
       <div class="vault-document-toolbar">
@@ -1063,6 +1101,7 @@ onBeforeUnmount(() => {
         @mouseout="leave"
         @focusin="hover"
         @focusout="leave"
+        @scroll.passive="trackOutline"
       >
         <div v-if="page.isNotFound" class="vault-note-content vp-doc">
           <h1>找不到这篇笔记</h1>
@@ -1123,167 +1162,130 @@ onBeforeUnmount(() => {
         >
           <Icon name="link" :size="16" /><span>链接</span></button
         ><span /><button
-          class="icon-button mobile-only"
-          aria-label="关闭辅助侧栏"
+          class="icon-button"
+          aria-label="收起笔记辅助栏"
+          :aria-expanded="rightOpen"
+          aria-controls="vault-note-details"
           @click="rightOpen = false"
         >
-          <Icon name="close" />
+          <Icon name="right" :size="16" />
+          <span class="sidebar-tooltip" aria-hidden="true">收起笔记辅助栏</span>
         </button>
       </div>
       <div class="vault-right-scroll">
-        <section
-          v-if="
-            current?.categories.length && (!isEmbedded || rightTab === 'links')
-          "
+        <div v-if="current" class="vault-detail-context">
+          <Icon name="notebook" :size="16" />
+          <strong>{{ current.title }}</strong>
+        </div>
+        <section v-if="rightTab === 'outline'" class="vault-outline" aria-label="文章目录">
+          <h2>文章目录 <small>{{ outlineHeadings.length }} 个小节</small></h2>
+          <button
+            v-for="heading in outlineHeadings"
+            :key="heading.id"
+            :class="{ active: activeHeading === heading.id }"
+            :aria-current="activeHeading === heading.id ? 'location' : undefined"
+            :style="{ paddingLeft: (heading.level - 2) * 12 + 10 + 'px' }"
+            @click="jumpHeading(heading.id)"
+          >
+            {{ heading.title }}
+          </button>
+          <p v-if="!outlineHeadings.length" class="empty-hint">当前笔记没有小节</p>
+        </section>
+        <template v-else>
+          <section v-for="group in relationGroups" :key="group.title" class="vault-relations">
+            <h2>{{ group.title }} <small>{{ group.items.length }}</small></h2>
+            <div
+              v-for="link in group.items"
+              :key="link.source + (link.target || link.reference) + link.relationType + link.label + link.anchor"
+              class="relation-item"
+            >
+              <button
+                class="relation-open"
+                :disabled="!group.incoming && !link.target"
+                @click="openRelation(link, group.incoming, $event)"
+              >
+                <strong>{{ relationTitle(link, group.incoming) }}</strong>
+                <small class="relation-meta">
+                  {{ relationName(link) }} · {{ link.status === 'inferred' ? '推断' : '已确认' }}
+                  <span v-if="!group.incoming && link.reason"> · {{ !link.target ? '未解析' : '标题未找到' }}</span>
+                </small>
+                <p v-if="link.explanation || link.context">{{ link.explanation || link.context }}</p>
+              </button>
+              <details v-if="link.evidence || link.context" class="relation-evidence">
+                <summary>查看依据</summary>
+                <p>{{ link.evidence || link.context }}</p>
+              </details>
+            </div>
+            <p v-if="!group.items.length" class="empty-hint">{{ group.empty }}</p>
+          </section>
+        </template>
+        <section v-if="!isEmbedded" class="vault-local">
+          <h2>
+            <button
+              @click="localOpen = !localOpen"
+              :aria-expanded="localOpen"
+              aria-controls="vault-local-content"
+            >
+              <Icon name="chevron" :size="12" :class="{ rotated: localOpen }" />局部图谱
+            </button>
+            <label v-if="localOpen">深度
+              <select v-model.number="localDepth" aria-label="局部图谱深度">
+                <option v-for="depth in 5" :key="depth" :value="depth">{{ depth }} 层</option>
+              </select>
+            </label>
+          </h2>
+          <div v-if="localOpen" id="vault-local-content">
+            <div v-if="current && rightOpen" class="local-graph-container">
+              <ClientOnly>
+                <VaultGraph
+                  :index="index"
+                  :current="current.id"
+                  :active-note="current.id"
+                  :depth="localDepth"
+                  compact
+                  :enabled="rightOpen"
+                  @open="openNote"
+                  @expand="openGraph()"
+                />
+              </ClientOnly>
+            </div>
+            <button
+              class="local-list-toggle"
+              @click="localListOpen = !localListOpen"
+              :aria-expanded="localListOpen"
+              aria-controls="vault-local-nodes"
+            >
+              <Icon name="chevron" :size="12" :class="{ rotated: localListOpen }" />
+              <span>相关笔记</span><small>{{ localNeighbors.length }}</small>
+            </button>
+            <div v-if="localListOpen" id="vault-local-nodes" class="local-node-list" aria-label="局部图谱节点列表">
+              <button v-for="note in localNeighbors" :key="note.id" @click="openNote(note, $event)">
+                <Icon name="file" :size="14" /><span>{{ note.title }}</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <details
+          v-if="current?.categories.length && (!isEmbedded || rightTab === 'links')"
+          :key="current.id"
           class="vault-classifications"
         >
-          <h2>
-            分类
-            <small v-if="current.classificationStatus === 'provisional'"
-              >待补充正文</small
-            >
-          </h2>
-          <div v-for="category in current.categories" :key="category.path">
+          <summary>
+            <Icon name="chevron" :size="12" />
+            <span>分类信息</span><small>{{ current.categories.length }}</small>
+          </summary>
+          <p v-if="current.classificationStatus === 'provisional'" class="empty-hint">待补充正文</p>
+          <div v-for="category in current.categories" :key="category.path" class="classification-item">
             <button @click="browseCategory(category.path)">
               {{ category.path }}
-              <small>{{
-                category.path === current.primaryCategory
-                  ? "主分类"
-                  : "交叉分类"
-              }}</small>
+              <small>{{ category.path === current.primaryCategory ? '主分类' : '交叉分类' }}</small>
             </button>
             <details>
               <summary>分类理由</summary>
               <p>{{ category.reason }}</p>
             </details>
           </div>
-        </section>
-        <section v-if="rightTab === 'outline'" class="vault-outline">
-          <h2>目录</h2>
-          <button
-            v-for="h in current?.headings.filter((h) => h.level > 1)"
-            :key="h.id"
-            :style="{ paddingLeft: (h.level - 2) * 12 + 12 + 'px' }"
-            @click="jumpHeading(h.id)"
-          >
-            {{ h.title }}
-          </button>
-          <p
-            v-if="!current?.headings.some((h) => h.level > 1)"
-            class="empty-hint"
-          >
-            当前笔记没有小节
-          </p>
-        </section>
-        <template v-else
-          ><section class="vault-relations">
-            <h2>
-              反向链接 <small>{{ backlinks.length }}</small>
-            </h2>
-            <button
-              v-for="link in backlinks"
-              :key="link.source + link.relationType + link.label + link.anchor"
-              @click="openRelation(link, true, $event)"
-            >
-              <strong>{{ relationTitle(link, true) }}</strong>
-              <small
-                >{{ relationName(link) }} ·
-                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
-              >
-              <p>{{ link.explanation || link.context }}</p>
-              <span class="relation-evidence"
-                >证据：{{ link.evidence || link.context }}</span
-              >
-            </button>
-            <p v-if="!backlinks.length" class="empty-hint">
-              没有笔记链接到此处
-            </p>
-          </section>
-          <section class="vault-relations">
-            <h2>
-              出链 <small>{{ outlinks.length }}</small>
-            </h2>
-            <button
-              v-for="link in outlinks"
-              :key="
-                (link.target || link.reference) +
-                link.relationType +
-                link.label +
-                link.anchor
-              "
-              :disabled="!link.target"
-              @click="openRelation(link, false, $event)"
-            >
-              <strong
-                >{{ relationTitle(link)
-                }}<small v-if="link.reason">
-                  · {{ !link.target ? "未解析" : "标题未找到" }}</small
-                ></strong
-              >
-              <small
-                >{{ relationName(link) }} ·
-                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
-              >
-              <p>{{ link.explanation || link.context }}</p>
-              <span class="relation-evidence"
-                >证据：{{ link.evidence || link.context }}</span
-              >
-            </button>
-            <p v-if="!outlinks.length" class="empty-hint">当前笔记没有出链</p>
-          </section></template
-        >
-        <section v-if="!isEmbedded" class="vault-local">
-          <h2>
-            <button @click="localOpen = !localOpen" :aria-expanded="localOpen">
-              <Icon
-                name="chevron"
-                :size="12"
-                :class="{ rotated: localOpen }"
-              />局部图谱</button
-            ><label
-              >深度
-              <select v-model.number="localDepth" aria-label="局部图谱深度">
-                <option v-for="depth in 5" :value="depth">{{ depth }}</option>
-              </select></label
-            >
-          </h2>
-          <div
-            v-if="localOpen && current && rightOpen && !isEmbedded"
-            class="local-graph-container"
-          >
-            <ClientOnly
-              ><VaultGraph
-                :index="index"
-                :current="current.id"
-                :active-note="current.id"
-                :depth="localDepth"
-                compact
-                :enabled="rightOpen && !isEmbedded"
-                @open="openNote"
-                @expand="openGraph()"
-            /></ClientOnly>
-          </div>
-          <button
-            class="local-list-toggle"
-            @click="localListOpen = !localListOpen"
-            :aria-expanded="localListOpen"
-          >
-            局部节点列表 · {{ localNeighbors.length }}
-          </button>
-          <div
-            v-if="localListOpen"
-            class="local-node-list"
-            aria-label="局部图谱节点列表"
-          >
-            <button
-              v-for="note in localNeighbors"
-              :key="note.id"
-              @click="openNote(note, $event)"
-            >
-              {{ note.title }}
-            </button>
-          </div>
-        </section>
+        </details>
       </div>
     </aside>
     </div>
