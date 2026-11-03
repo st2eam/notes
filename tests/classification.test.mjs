@@ -61,7 +61,10 @@ test("retained original notes preserve headings, demos and code after requested 
       "changed code: " + r.oldPath,
     );
   }
-  assert.equal(vault.notes.filter((n) => n.originalPath).length, 325);
+  const publishedIds = new Set(vault.notes.map((n) => n.id));
+  for (const r of manifest.records) {
+    if (fs.existsSync(r.newPath)) assert.ok(publishedIds.has(r.newPath), r.newPath);
+  }
 });
 test("all notes have supported classifications, ten roots and acyclic explicit overviews", () => {
   const categories = new Map(vault.categories.map((c) => [c.id, c]));

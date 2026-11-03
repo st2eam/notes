@@ -1,4 +1,7 @@
 export const migrationPaths = {
+  "历史/典故/index.md": "历史/中国史/三国/index.md",
+  "历史/典故/司马昭之心.md": "历史/中国史/三国/司马昭之心.md",
+  "历史/典故/挟天子以令诸侯.md": "历史/中国史/三国/挟天子以令诸侯.md",
   "AI/应用与评测/应用开发/index.md": "AI/应用与评测/index.md",
   "AI/模型原理/向量表示/index.md": "AI/模型原理/index.md",
   "AI/模型原理/注意力/index.md": "AI/模型原理/index.md",
