@@ -11,6 +11,24 @@ const clamp = (value, min, max, fallback) =>
   Number.isFinite(Number(value))
     ? Math.max(min, Math.min(max, Number(value)))
     : fallback;
+export function createGraphTab(note, filter = "", related = false) {
+  filter = migrateQuery(filter);
+  related = !!(related && note);
+  return {
+    key: "graph:" + (related ? "related:" + note.id + ":" : "") + filter,
+    noteId: note?.id,
+    title: related
+      ? note.title + " · 关联图谱"
+      : /^(path:历史|path:"历史)/.test(filter)
+        ? "历史图谱"
+        : filter ? "筛选图谱" : "全局图谱",
+    href: (note?.route || "/") + "?view=graph" +
+      (related ? "&scope=related" : "") +
+      (filter ? "&filter=" + encodeURIComponent(filter) : ""),
+    filter,
+    related,
+  };
+}
 export function restoreWorkspace(raw, notes) {
   let saved = {};
   try {
@@ -20,25 +38,12 @@ export function restoreWorkspace(raw, notes) {
   const tabs = (Array.isArray(saved.tabs) ? saved.tabs : []).flatMap((t) => {
     if (typeof t?.key !== "string") return [];
     if (t.key.startsWith("graph:")) {
-      const filter = migrateQuery(typeof t.filter === "string" ? t.filter : "");
-      keyMap.set(t.key, "graph:" + filter);
+      const filter = typeof t.filter === "string" ? t.filter : "";
       const note = notes.find((n) => n.id === migrateNoteId(t.noteId));
-      return [
-        {
-          key: "graph:" + filter,
-          noteId: note?.id,
-          title: /^(path:历史|path:"历史)/.test(filter)
-            ? "历史图谱"
-            : filter
-              ? "筛选图谱"
-              : "全局图谱",
-          href:
-            (note?.route || "/") +
-            "?view=graph" +
-            (filter ? "&filter=" + encodeURIComponent(filter) : ""),
-          filter,
-        },
-      ];
+      if (t.related === true && !note) return [];
+      const tab = createGraphTab(note, filter, t.related === true);
+      keyMap.set(t.key, tab.key);
+      return [tab];
     }
     const n = notes.find((n) => n.id === migrateNoteId(t.noteId));
     if (n) keyMap.set(t.key, n.id);

@@ -40,6 +40,7 @@ const props = withDefaults(
 );
 const emit = defineEmits<{
   open: [note: VaultNote, event?: MouseEvent];
+  context: [note: VaultNote, event: MouseEvent | KeyboardEvent];
   expand: [];
 }>();
 const canvas = ref<HTMLCanvasElement>();
@@ -113,7 +114,8 @@ let drag: any = null,
 let pendingFit = false;
 const storage = "steam-vault-graph-v1";
 const storageKey = () =>
-  storage + (props.compact ? ":local" : props.filter ? ":" + props.filter : "");
+  storage + (props.compact ? ":local" : props.current ? ":related:" + props.current : "") +
+  (!props.compact && props.filter ? ":" + props.filter : "");
 function colors() {
   if (!host.value) return;
   const css = getComputedStyle(host.value);
@@ -273,16 +275,34 @@ function zoom(factor: number, x = width / 2, y = height / 2) {
   scale = next;
   schedule();
 }
-function position(e: PointerEvent | WheelEvent) {
+function position(e: MouseEvent) {
   const r = canvas.value!.getBoundingClientRect();
   return { x: e.clientX - r.left, y: e.clientY - r.top };
 }
 function hit(p: { x: number; y: number }) {
   const x = (p.x - width / 2 - offset.x) / scale,
     y = (p.y - height / 2 - offset.y) / scale;
-  return [...nodes]
-    .reverse()
-    .find((n) => Math.hypot(n.x - x, n.y - y) < radius(n) + 6 / scale);
+  let closest: any;
+  let distance = Infinity;
+  for (const node of nodes) {
+    const candidate = Math.hypot(node.x - x, node.y - y);
+    if (candidate < radius(node) + 6 / scale && candidate <= distance) {
+      closest = node;
+      distance = candidate;
+    }
+  }
+  return closest;
+}
+function nodeContextMenu(node: any, event: MouseEvent | KeyboardEvent) {
+  if (node?.kind !== "note") return;
+  emit("context", node.note, event);
+  if (event.defaultPrevented) {
+    hovered.value = null;
+    schedule();
+  }
+}
+function canvasContextMenu(event: MouseEvent) {
+  nodeContextMenu(hit(position(event)), event);
 }
 function down(e: PointerEvent) {
   if (e.button !== 0) return;
@@ -529,6 +549,7 @@ onBeforeUnmount(() => {
           ? '局部图谱；加减键缩放，方向键平移，Home 适合屏幕'
           : '知识图谱；加减键缩放，方向键平移，Home 适合屏幕。使用节点列表选择笔记'
       "
+      @contextmenu="canvasContextMenu"
       @pointerdown="down"
       @pointermove="move"
       @pointerup="up"
@@ -765,6 +786,9 @@ onBeforeUnmount(() => {
           selected = '';
           schedule();
         "
+        :aria-haspopup="node.kind === 'note' ? 'menu' : undefined"
+        @contextmenu="nodeContextMenu(node, $event)"
+        @keydown="nodeContextMenu(node, $event)"
         @click="open(node, $event)"
       >
         {{ node.title }}<small>{{ node.degree }} 条连接</small>

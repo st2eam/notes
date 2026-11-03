@@ -837,6 +837,66 @@ body,
   color: var(--vault-muted);
   margin: 6px 0 0;
 }
+.vault-context-menu {
+  position: fixed;
+  z-index: 70;
+  width: 224px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100dvh - 16px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 5px;
+  background: var(--vault-bg);
+  color: var(--vault-text);
+  border: 1px solid var(--vault-border);
+  border-radius: 7px;
+  box-shadow: 0 6px 24px #0002;
+  font-size: 13px;
+  user-select: none;
+}
+.vault-context-menu > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 34px;
+  padding: 7px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.vault-context-menu > button > svg {
+  flex-shrink: 0;
+  color: var(--vault-muted);
+}
+.vault-context-menu > button:not(:disabled):hover,
+.vault-context-menu > button:focus {
+  background: var(--vault-hover);
+}
+.vault-context-menu > button.separated {
+  margin-top: 5px;
+  border-top: 1px solid var(--vault-border);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.vault-menu-status {
+  position: fixed;
+  z-index: 70;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100vw - 32px);
+  padding: 9px 14px;
+  border: 1px solid var(--vault-border);
+  border-radius: 6px;
+  background: var(--vault-bg);
+  color: var(--vault-text);
+  box-shadow: 0 4px 18px #0002;
+  opacity: 0;
+  pointer-events: none;
+}
+.vault-menu-status.visible {
+  opacity: 1;
+}
 .vault-hover-preview {
   position: fixed;
   width: 325px;

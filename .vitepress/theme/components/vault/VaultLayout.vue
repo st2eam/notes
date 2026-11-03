@@ -21,15 +21,17 @@ import {
   restoreWorkspace,
   readStorage,
   migrateGraphStorage,
+  createGraphTab,
 } from "../../../vault/workspace.mjs";
 import { embedHref } from "../../../vault/embed.mjs";
-import { migrateQuery } from "../../../vault/migration.mjs";
 import { searchNotes } from "../../../vault/search.mjs";
 import { sortHistoryTree } from "../../../vault/history.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
 import Icon from "./Icon.vue";
 import FileTree from "./FileTree.vue";
+import ContextMenu from "./ContextMenu.vue";
+import { publicNoteUrl } from "../../../vault/context-menu.mjs";
 const VaultGraph = defineAsyncComponent(() => import("./VaultGraph.vue"));
 const router = useRouter();
 const { page, isDark: vpIsDark, site } = useData();
@@ -94,6 +96,7 @@ type Tab = {
   href: string;
   noteId?: string;
   filter?: string;
+  related?: boolean;
 };
 const tabs = ref<Tab[]>([]);
 const active = ref("");
@@ -140,6 +143,41 @@ let restoring = true,
 let cleanupResize: (() => void) | null = null;
 let oldAfter: any;
 const storage = "steam-vault-workspace-v1";
+type MenuTarget =
+  | { kind: "note"; noteId: string; href?: string }
+  | { kind: "folder"; path: string }
+  | { kind: "tab"; key: string };
+const contextMenu = ref<{
+  serial: number;
+  target: MenuTarget;
+  trigger: HTMLElement;
+  route: string;
+  x: number;
+  y: number;
+} | null>(null);
+let menuSerial = 0;
+const menuStatus = ref("");
+let menuStatusTimer: ReturnType<typeof setTimeout>;
+const contextItems = computed(() => {
+  const target = contextMenu.value?.target;
+  if (!target) return [];
+  if (target.kind === "folder") return [{
+    id: "toggle-folder",
+    label: expanded.value.includes(target.path) ? "收起目录" : "展开目录",
+    icon: "folder",
+  }];
+  const items = [];
+  const tab = target.kind === "tab" ? tabs.value.find((t) => t.key === target.key) : undefined;
+  if (target.kind === "note") {
+    items.push({ id: "open", label: "打开笔记", icon: "file" });
+    if (!isEmbedded.value) items.push({ id: "new-tab", label: "在新笔记标签页打开", icon: "switch" });
+  }
+  items.push({ id: "copy", label: "复制链接", icon: "link" });
+  if (!isEmbedded.value && (target.kind === "note" || (tab?.noteId && !tab.key.startsWith("graph:"))))
+    items.push({ id: "relations", label: "查看关联", icon: "graph" });
+  if (target.kind === "tab") items.push({ id: "close-tab", label: "关闭标签页", icon: "close", separator: true });
+  return items;
+});
 const results = computed(() =>
   searchNotes(notes, documents.value, query.value),
 );
@@ -221,6 +259,92 @@ const commands = computed(() =>
     c.title.toLowerCase().includes(modalQuery.value.toLowerCase()),
   ),
 );
+function closeContextMenu(restoreFocus = false) {
+  const trigger = contextMenu.value?.trigger;
+  contextMenu.value = null;
+  if (restoreFocus && trigger?.isConnected) trigger.focus({ preventScroll: true });
+}
+function showContextMenu(target: MenuTarget, event: MouseEvent | KeyboardEvent, trigger?: HTMLElement) {
+  const keyboard = event.type === "keydown";
+  if (keyboard) {
+    const key = event as KeyboardEvent;
+    if (key.key !== "ContextMenu" && !(key.key === "F10" && key.shiftKey)) return;
+  } else if ((event as PointerEvent).pointerType === "touch" ||
+    (event as MouseEvent & { sourceCapabilities?: { firesTouchEvents: boolean } }).sourceCapabilities?.firesTouchEvents) return;
+  if (modal.value || (event.target as Element)?.closest?.("input, textarea, select, [contenteditable]:not([contenteditable='false']), [role='textbox']")) return;
+  const selection = window.getSelection();
+  if (selection && !selection.isCollapsed) return;
+  const element = trigger || event.currentTarget as HTMLElement;
+  if (!element) return;
+  if (target.kind === "note" && !notes.some((note) => note.id === target.noteId)) return;
+  if (target.kind === "tab" && !tabs.value.some((tab) => tab.key === target.key)) return;
+  event.preventDefault();
+  event.stopPropagation();
+  leave();
+  const rect = element.getBoundingClientRect();
+  const pointer = event as MouseEvent;
+  contextMenu.value = {
+    serial: ++menuSerial,
+    target,
+    trigger: element,
+    route: window.location.href,
+    x: keyboard ? rect.left : pointer.clientX,
+    y: keyboard ? rect.bottom : pointer.clientY,
+  };
+}
+function tabContextMenu(tab: Tab, event: MouseEvent | KeyboardEvent) {
+  const trigger = (event.currentTarget as HTMLElement).querySelector<HTMLElement>("[role='tab']");
+  if (trigger) showContextMenu({ kind: "tab", key: tab.key }, event, trigger);
+}
+function graphContextMenu(note: VaultNote, event: MouseEvent | KeyboardEvent) {
+  showContextMenu({ kind: "note", noteId: note.id }, event);
+}
+function contentContextMenu(event: MouseEvent | KeyboardEvent) {
+  const hit = anchorNote(event.target);
+  if (!hit?.note || hit.url.searchParams.get("view") === "graph" || hit.url.searchParams.get("embed") === "true") return;
+  showContextMenu({ kind: "note", noteId: hit.note.id, href: hit.url.href }, event, hit.anchor);
+}
+async function contextAction(action: string) {
+  const request = contextMenu.value;
+  if (!request) return;
+  const target = request.target;
+  const tab = target.kind === "tab" ? tabs.value.find((t) => t.key === target.key) : undefined;
+  const note = notes.find((n) => n.id === (target.kind === "note" ? target.noteId : tab?.noteId));
+  const href = target.kind === "note" ? target.href || note?.route
+    : tab?.key === active.value ? window.location.href : tab?.href;
+  closeContextMenu(action === "copy" || action === "toggle-folder");
+  if (action === "toggle-folder" && target.kind === "folder") {
+    toggleFolder(target.path);
+  } else if (action === "copy" && href) {
+    clearTimeout(menuStatusTimer);
+    menuStatus.value = "";
+    try {
+      await navigator.clipboard.writeText(publicNoteUrl(href, window.location.origin, withBase("/")));
+      menuStatus.value = "链接已复制";
+    } catch {
+      menuStatus.value = "无法复制链接，请检查浏览器剪贴板权限";
+    }
+    menuStatusTimer = setTimeout(() => (menuStatus.value = ""), 4000);
+  } else if (action === "close-tab" && target.kind === "tab") {
+    closeTab(target.key);
+    await nextTick();
+    if (menuSerial === request.serial)
+      (document.querySelector(".vault-tab.active [role='tab']") as HTMLElement)?.focus({ preventScroll: true });
+  } else if (note && action === "relations") {
+    await openGraph("", note);
+    await nextTick();
+    if (menuSerial === request.serial)
+      document.querySelector<HTMLCanvasElement>(".vault-graph-workspace canvas")?.focus({ preventScroll: true });
+  } else if (note && ["open", "new-tab"].includes(action)) {
+    const url = new URL(href || note.route, window.location.href);
+    await openNote(note, undefined, "", {
+      newTab: action === "new-tab",
+      href: note.route + url.search + url.hash,
+    });
+    await nextTick();
+    if (menuSerial === request.serial) article.value?.focus({ preventScroll: true });
+  }
+}
 function goBack() {
   window.history.back();
 }
@@ -266,23 +390,11 @@ function routeTab(): Tab {
       ? new URL("https://local" + router.route.path)
       : new URL(window.location.href);
   const graph = url.searchParams.get("view") === "graph";
-  if (graph) {
-    const filter = migrateQuery(url.searchParams.get("filter") || "");
-    return {
-      key: "graph:" + filter,
-      noteId: current.value?.id,
-      title: /^(path:历史|path:"历史)/.test(filter)
-        ? "历史图谱"
-        : filter
-          ? "筛选图谱"
-          : "全局图谱",
-      href:
-        (current.value?.route || "/") +
-        "?view=graph" +
-        (filter ? "&filter=" + encodeURIComponent(filter) : ""),
-      filter,
-    };
-  }
+  if (graph) return createGraphTab(
+    current.value,
+    url.searchParams.get("filter") || "",
+    url.searchParams.get("scope") === "related",
+  );
   const n = current.value;
   return {
     key: n?.id || url.pathname,
@@ -292,6 +404,7 @@ function routeTab(): Tab {
   };
 }
 function syncRoute() {
+  if (contextMenu.value && contextMenu.value.route !== window.location.href) closeContextMenu();
   const t = routeTab();
   const existing = tabs.value.find((x) => x.key === t.key);
   if (!existing) tabs.value.push(t);
@@ -313,6 +426,7 @@ function syncRoute() {
   save();
 }
 async function navigate(tab: Tab) {
+  closeContextMenu();
   rememberScroll();
   active.value = tab.key;
   await router.go(
@@ -322,8 +436,13 @@ async function navigate(tab: Tab) {
   );
   syncRoute();
 }
-async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
-  const isNew = !!(e?.ctrlKey || e?.metaKey || e?.shiftKey);
+async function openNote(
+  note: VaultNote,
+  e?: MouseEvent,
+  anchor = "",
+  options: { newTab?: boolean; href?: string } = {},
+) {
+  const isNew = options.newTab ?? !!(e?.ctrlKey || e?.metaKey || e?.shiftKey);
   rememberScroll();
   const tab: Tab = {
     key: note.id,
@@ -337,11 +456,10 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
     if (!isNew && at >= 0 && !graphActive.value) tabs.value.splice(at, 1, tab);
     else tabs.value.push(tab);
   }
-  await navigate(
-    anchor
-      ? { ...tab, href: tab.href + "#" + encodeURIComponent(anchor) }
-      : tab,
-  );
+  await navigate({
+    ...tab,
+    href: options.href || (anchor ? tab.href + "#" + encodeURIComponent(anchor) : tab.href),
+  });
   if (anchor) document.getElementById(decode(anchor))?.scrollIntoView();
   if (
     typeof window !== "undefined" &&
@@ -351,24 +469,10 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
     rightOpen.value = embedDesktop.value;
   }
 }
-function openGraph(filter = "") {
-  filter = migrateQuery(filter);
-  const tab = {
-    key: "graph:" + filter,
-    noteId: current.value?.id,
-    title: /^(path:历史|path:"历史)/.test(filter)
-      ? "历史图谱"
-      : filter
-        ? "筛选图谱"
-        : "全局图谱",
-    href:
-      (current.value?.route || "/") +
-      "?view=graph" +
-      (filter ? "&filter=" + encodeURIComponent(filter) : ""),
-    filter,
-  };
+async function openGraph(filter = "", relatedNote?: VaultNote) {
+  const tab = createGraphTab(relatedNote || current.value, filter, !!relatedNote);
   if (!tabs.value.some((t) => t.key === tab.key)) tabs.value.push(tab);
-  navigate(tab);
+  await navigate(tab);
   if (
     typeof window !== "undefined" &&
     drawerViewport()
@@ -483,6 +587,11 @@ function modalKey(e: KeyboardEvent) {
   }
 }
 function shortcut(e: KeyboardEvent) {
+  if (contextMenu.value && e.key === "Escape") {
+    e.preventDefault();
+    closeContextMenu(true);
+    return;
+  }
   if (e.key === "Escape") {
     modal.value = null;
     preview.value = null;
@@ -611,6 +720,7 @@ function contentClick(e: MouseEvent) {
   openNote(hit.note, e, decode(hit.url.hash.slice(1)));
 }
 function hover(e: MouseEvent | FocusEvent) {
+  if (contextMenu.value) return;
   clearTimeout(previewTimer);
   const hit = anchorNote(e.target);
   if (!hit?.note || hit.note.id === current.value?.id) return;
@@ -687,6 +797,7 @@ watch(vpIsDark, (value) => {
   isDark.value = value;
 });
 watch(modalQuery, () => (modalIndex.value = 0));
+watch([pane, leftOpen, rightOpen, categoryFilter, isEmbedded, modal], () => closeContextMenu());
 watch(query, loadSearch);
 watch([() => current.value?.id, graphActive], () => {
   activeHeading.value = "";
@@ -780,6 +891,7 @@ onBeforeUnmount(() => {
   router.onAfterRouteChanged = oldAfter;
   cleanupResize?.();
   clearTimeout(previewTimer);
+  clearTimeout(menuStatusTimer);
   cancelAnimationFrame(outlineFrame);
 });
 </script>
@@ -916,6 +1028,7 @@ onBeforeUnmount(() => {
           :expanded="expanded"
           @toggle="toggleFolder"
           @open="openNote"
+          @context="showContextMenu"
         />
       </div>
       <div v-else-if="pane === 'categories'" class="file-tree-scroll">
@@ -939,6 +1052,7 @@ onBeforeUnmount(() => {
           :expanded="expanded"
           @toggle="toggleFolder"
           @open="openNote"
+          @context="showContextMenu"
         />
       </div>
       <div v-else class="vault-search">
@@ -1003,9 +1117,12 @@ onBeforeUnmount(() => {
             v-for="tab in tabs"
             :key="tab.key"
             :class="['vault-tab', { active: tab.key === active }]"
+            @contextmenu="tabContextMenu(tab, $event)"
+            @keydown="tabContextMenu(tab, $event)"
           >
             <button
               role="tab"
+              aria-haspopup="menu"
               :aria-selected="tab.key === active"
               :tabindex="tab.key === active ? 0 : -1"
               @click="navigate(tab)"
@@ -1083,10 +1200,13 @@ onBeforeUnmount(() => {
       <div v-if="graphActive" class="vault-graph-workspace" role="tabpanel">
         <ClientOnly
           ><VaultGraph
+            :key="active"
             :index="index"
+            :current="activeTab?.related ? activeTab.noteId : undefined"
             :active-note="current?.id"
             :filter="graphFilter"
             @open="openNote"
+            @context="graphContextMenu"
         /></ClientOnly>
       </div>
       <article
@@ -1097,6 +1217,8 @@ onBeforeUnmount(() => {
         role="tabpanel"
         tabindex="-1"
         @click="contentClick"
+        @contextmenu="contentContextMenu"
+        @keydown="contentContextMenu"
         @mouseover="hover"
         @mouseout="leave"
         @focusin="hover"
@@ -1245,6 +1367,7 @@ onBeforeUnmount(() => {
                   compact
                   :enabled="rightOpen"
                   @open="openNote"
+                  @context="graphContextMenu"
                   @expand="openGraph()"
                 />
               </ClientOnly>
@@ -1289,6 +1412,18 @@ onBeforeUnmount(() => {
       </div>
     </aside>
     </div>
+    <ContextMenu
+      v-if="contextMenu"
+      :key="contextMenu.serial"
+      :items="contextItems"
+      :trigger="contextMenu.trigger"
+      :x="contextMenu.x"
+      :y="contextMenu.y"
+      :label="contextMenu.target.kind === 'folder' ? '目录操作' : contextMenu.target.kind === 'tab' ? '标签页操作' : '笔记操作'"
+      @select="contextAction"
+      @close="closeContextMenu"
+    />
+    <div class="vault-menu-status" role="status" aria-live="polite" aria-atomic="true" :class="{ visible: menuStatus }">{{ menuStatus }}</div>
     <div
       v-if="preview"
       class="vault-hover-preview"
