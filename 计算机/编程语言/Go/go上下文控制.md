@@ -4,15 +4,8 @@ primaryCategory: 计算机/编程语言/Go
 categories:
   - path: 计算机/编程语言/Go
     reason: 正文介绍Go 上下文控制的语义、用法与实践注意点。
-  - path: 计算机/基础/并发与异步
-    reason: 本笔记讨论并发与异步中的任务生命周期。
 classificationStatus: confirmed
 relations:
-  - target: 计算机/基础/并发与异步/index.md
-    type: subordinate
-    status: inferred
-    reason: 本笔记讨论并发与异步中的任务生命周期。
-    evidence: 本笔记讨论并发与异步中的任务生命周期。
   - target: 计算机/编程语言/Go/go并发.md
     type: citation
     status: confirmed
@@ -50,6 +43,6 @@ HTTP 请求可用 http.NewRequestWithContext，数据库调用优先采用 Query
 
 Done 通道关闭表明取消或超时，Err 区分 context.Canceled 与 context.DeadlineExceeded。WithValue 用于跨 API 的请求级信息，不用于替代函数必需参数；键宜使用自定义类型，避免碰撞。
 
-本笔记讨论 [[计算机/基础/并发与异步/index|并发与异步]] 中的任务生命周期。context 为 [[计算机/编程语言/Go/go并发|Go 并发]] 提供退出信号，不代替 WaitGroup 等待任务完成，也不负责保护共享状态。服务退出时应取消、等待并释放资源。
+并发与异步任务通过 context 管理取消信号和截止时间。context 为 [[计算机/编程语言/Go/go并发|Go 并发]] 提供退出信号，不代替 WaitGroup 等待任务完成，也不负责保护共享状态。服务退出时应取消、等待并释放资源。
 
 参考：[context 包](https://pkg.go.dev/context)。

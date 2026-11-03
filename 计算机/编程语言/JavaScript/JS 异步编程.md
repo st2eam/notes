@@ -8,8 +8,6 @@ categories:
       async/await，并处理超时、取消及并发请求。最后核对：2026-09-29。AI 应用的流式输出和工具调用也依赖这些基础，见AI 应用开发。
       异步编程模型是JavaScript的精髓，分我们来简单了解一下它的基本原理。V2.0 
       V1.0”；据其实体与学习对象归入计算机/编程语言/JavaScript。
-  - path: 计算机/基础/并发与异步
-    reason: 正文解释事件循环、Promise、async/await、取消和并发请求，属于并发与异步概念。
 classificationStatus: confirmed
 relations:
   - target: 计算机/后端/Node.js/Node.js 事件循环.md

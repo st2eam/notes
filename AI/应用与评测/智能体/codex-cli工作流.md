@@ -4,8 +4,6 @@ primaryCategory: AI/应用与评测/智能体
 categories:
   - path: AI/应用与评测/智能体
     reason: 正文讨论本地 Codex 执行与验收。
-  - path: 计算机/基础/安全与权限
-    reason: 正文解释工具授权与访问边界的设计。
 classificationStatus: confirmed
 relations:
   - target: AI/应用与评测/智能体/agentic-engineering-patterns.md
@@ -18,11 +16,6 @@ relations:
     status: confirmed
     reason: 采用应用评测方法。
     evidence: 保存相同任务集上的成功率、轨迹和费用
-  - target: 计算机/基础/安全与权限/index.md
-    type: citation
-    status: confirmed
-    reason: 引用权限主题入口。
-    evidence: 沙箱和审批分开检查
   - target: 计算机/工程化/测试与持续集成/测试与CI.md
     type: citation
     status: confirmed
@@ -64,7 +57,7 @@ if ($agentExitCode -ne 0) { throw "Agent 执行失败：$agentExitCode" }
 
 官方示例使用 --config model_reasoning_effort=...。待核实：本机支持的 low、medium、high 等等级、默认值、模型组合与配置优先级。[修复循环示例](https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex)
 
-read-only 用于调查，workspace-write 用于限定工作区内实现，danger-full-access 仅用于已有外部隔离的受控环境。沙箱和审批分开检查；无人值守任务遇到越权应停止并报告，不能依赖交互确认。具体设计参见[[AI/应用与评测/智能体/agent编排与工具沙箱|Agent 编排与工具沙箱]]与[[计算机/基础/安全与权限/index|安全与权限入口]]。[CLI 参数参考](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
+read-only 用于调查，workspace-write 用于限定工作区内实现，danger-full-access 仅用于已有外部隔离的受控环境。沙箱和审批分开检查；无人值守任务遇到越权应停止并报告，不能依赖交互确认。具体设计参见[[AI/应用与评测/智能体/agent编排与工具沙箱|Agent 编排与工具沙箱]]。[CLI 参数参考](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
 
 ## 4. 恢复会话与本次经验
 

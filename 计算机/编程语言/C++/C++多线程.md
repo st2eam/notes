@@ -6,8 +6,6 @@ categories:
     reason: >-
       核心学习对象为“C++多线程”，正文依据：“创建一个线程，不做处理会调用abort函数终止程序
       join()函数加入，汇合线程,阻塞主线程,等待子线程执行结束，才会回到主线程中”；据其实体与学习对象归入计算机/编程语言/C++。
-  - path: 计算机/基础/并发与异步
-    reason: 正文说明线程执行、互斥及死锁等共享状态协调问题，跨越具体语言与并发原理。
 classificationStatus: confirmed
 relations: []
 tags:
