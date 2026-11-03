@@ -5716,6 +5716,34 @@ export default [
         ]
     },
     {
+        "text": "经济学",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "政治经济学",
+                "collapsed": true,
+                "items": [
+                    {
+                        "text": "工人阶级",
+                        "link": "/经济学/政治经济学/工人阶级.md"
+                    },
+                    {
+                        "text": "生产资料",
+                        "link": "/经济学/政治经济学/生产资料.md"
+                    },
+                    {
+                        "text": "资产阶级",
+                        "link": "/经济学/政治经济学/资产阶级.md"
+                    },
+                    {
+                        "text": "雇佣劳动",
+                        "link": "/经济学/政治经济学/雇佣劳动.md"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "text": "心理学",
         "collapsed": true,
         "items": [
