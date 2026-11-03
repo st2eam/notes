@@ -39,7 +39,7 @@ const props = withDefaults(
   { depth: 1, filter: "", enabled: true },
 );
 const emit = defineEmits<{
-  open: [note: VaultNote, event?: MouseEvent];
+  relations: [note: VaultNote];
   context: [note: VaultNote, event: MouseEvent | KeyboardEvent];
   expand: [];
 }>();
@@ -372,7 +372,7 @@ function up(e: PointerEvent) {
     simulation.alphaTarget(0);
     drag = null;
   }
-  if (!moved && n) open(n, e as any);
+  if (!moved && n) activateNode(n);
   pinchDistance = 0;
   if (pointers.size === 1) {
     previous = [...pointers.values()][0];
@@ -383,8 +383,8 @@ function cancel(e: PointerEvent) {
   moved = true;
   up(e);
 }
-function open(n: any, e?: MouseEvent) {
-  if (n.kind === "note") emit("open", n.note, e);
+function activateNode(n: any) {
+  if (n.kind === "note") emit("relations", n.note);
   else if (n.kind === "attachment") {
     const a = props.index.attachments.find((a) => a.id === n.id);
     if (a) window.open("/notes" + a.route, "_blank", "noopener");
@@ -789,7 +789,7 @@ onBeforeUnmount(() => {
         :aria-haspopup="node.kind === 'note' ? 'menu' : undefined"
         @contextmenu="nodeContextMenu(node, $event)"
         @keydown="nodeContextMenu(node, $event)"
-        @click="open(node, $event)"
+        @click="activateNode(node)"
       >
         {{ node.title }}<small>{{ node.degree }} 条连接</small>
       </button>

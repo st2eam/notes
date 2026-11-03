@@ -299,6 +299,13 @@ function tabContextMenu(tab: Tab, event: MouseEvent | KeyboardEvent) {
 function graphContextMenu(note: VaultNote, event: MouseEvent | KeyboardEvent) {
   showContextMenu({ kind: "note", noteId: note.id }, event);
 }
+async function viewGraphRelations(note: VaultNote) {
+  const serial = menuSerial;
+  await openGraph("", note);
+  await nextTick();
+  if (menuSerial === serial)
+    document.querySelector<HTMLCanvasElement>(".vault-graph-workspace canvas")?.focus({ preventScroll: true });
+}
 function contentContextMenu(event: MouseEvent | KeyboardEvent) {
   const hit = anchorNote(event.target);
   if (!hit?.note || hit.url.searchParams.get("view") === "graph" || hit.url.searchParams.get("embed") === "true") return;
@@ -331,10 +338,7 @@ async function contextAction(action: string) {
     if (menuSerial === request.serial)
       (document.querySelector(".vault-tab.active [role='tab']") as HTMLElement)?.focus({ preventScroll: true });
   } else if (note && action === "relations") {
-    await openGraph("", note);
-    await nextTick();
-    if (menuSerial === request.serial)
-      document.querySelector<HTMLCanvasElement>(".vault-graph-workspace canvas")?.focus({ preventScroll: true });
+    await viewGraphRelations(note);
   } else if (note && ["open", "new-tab"].includes(action)) {
     const url = new URL(href || note.route, window.location.href);
     await openNote(note, undefined, "", {
@@ -1205,7 +1209,7 @@ onBeforeUnmount(() => {
             :current="activeTab?.related ? activeTab.noteId : undefined"
             :active-note="current?.id"
             :filter="graphFilter"
-            @open="openNote"
+            @relations="viewGraphRelations"
             @context="graphContextMenu"
         /></ClientOnly>
       </div>
@@ -1366,7 +1370,7 @@ onBeforeUnmount(() => {
                   :depth="localDepth"
                   compact
                   :enabled="rightOpen"
-                  @open="openNote"
+                  @relations="viewGraphRelations"
                   @context="graphContextMenu"
                   @expand="openGraph()"
                 />
@@ -1382,7 +1386,7 @@ onBeforeUnmount(() => {
               <span>相关笔记</span><small>{{ localNeighbors.length }}</small>
             </button>
             <div v-if="localListOpen" id="vault-local-nodes" class="local-node-list" aria-label="局部图谱节点列表">
-              <button v-for="note in localNeighbors" :key="note.id" @click="openNote(note, $event)">
+              <button v-for="note in localNeighbors" :key="note.id" @click="viewGraphRelations(note)">
                 <Icon name="file" :size="14" /><span>{{ note.title }}</span>
               </button>
             </div>
