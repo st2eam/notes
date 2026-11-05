@@ -37,13 +37,6 @@ function walkDir(dir) {
           (bIndex === -1 ? Infinity : bIndex)
         );
     }
-    if (path.resolve(dir) === path.resolve("./音乐")) {
-      const order = ["基础乐理", "半音阶口琴", "尤克里里"];
-      const aIndex = order.indexOf(a), bIndex = order.indexOf(b);
-      if (aIndex !== -1 || bIndex !== -1)
-        return (aIndex === -1 ? Infinity : aIndex) -
-          (bIndex === -1 ? Infinity : bIndex);
-    }
     if (path.resolve(dir) === path.resolve("./历史/分期")) {
       const order = [
         "index.md",
