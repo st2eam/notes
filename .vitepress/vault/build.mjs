@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import math from "markdown-it-mathjax3";
 import { slugify, resolveLink, noteRoute, normalizePath } from "./model.mjs";
 import { redirectTarget } from "../redirects.mjs";
+import { normalizeGeo, resolveGeoReferences } from "./geo.mjs";
 const md = new MarkdownIt({ html: true }).use(math);
 export function wikiPlugin(md, resolve) {
   md.inline.ruler.before("link", "vault-wiki", (state, silent) => {
@@ -189,8 +190,9 @@ export function parseNote(id, raw) {
         : [],
       classificationStatus: data.classificationStatus || "unclassified",
       categoryOverview: data.categoryOverview || null,
-      ...(data.historyId ? { historyId: data.historyId, historyDate: data.historyDate, historyOrder: data.historyOrder, historyGroup: data.historyGroup } : {}),
-      ...(data.historyTheme ? { historyTheme: data.historyTheme } : {}),
+      ...Object.fromEntries(["historyId", "historyDate", "historyOrder", "historyGroup", "historyPeriod", "historyTrack", "historyTheme"]
+        .filter((key) => data[key] != null).map((key) => [key, data[key]])),
+      ...(data.geo ? { geo: normalizeGeo(data.geo, id) } : {}),
     },
     references,
     relations: Array.isArray(data.relations) ? data.relations : [],
@@ -200,6 +202,10 @@ export function parseNote(id, raw) {
 export function buildVault(entries, root) {
   const parsed = entries.map(({ id, raw }) => parseNote(id, raw));
   const notes = parsed.map((p) => p.note);
+  for (const p of parsed) {
+    const references = resolveGeoReferences(notes, p.note, p.references);
+    if (references.length) p.note.geoReferences = references;
+  }
   const links = [];
   const attachments = [];
   const categoryNotes = new Map(

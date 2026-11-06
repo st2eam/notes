@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/美洲/南美
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-south-america
+    kind: region
+    modernName: 南美洲
+    variants: []
 ---
 # 南美
 

@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲/蒙古与中亚
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-central-asia
+    kind: region
+    modernName: 中亚
+    variants: []
 ---
 # 蒙古与中亚
 

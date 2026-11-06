@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/马里
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-mali
+    kind: region
+    modernName: 西非马里相关地区（含历史马里帝国部分地区）
+    variants: []
 ---
 # 马里
 

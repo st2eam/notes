@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲/波斯
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-persia
+    kind: region
+    modernName: 伊朗高原及周边相关地区（历史范围变化）
+    variants: []
 ---
 # 波斯
 

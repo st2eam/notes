@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/埃塞俄比亚
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-ethiopia
+    kind: region
+    modernName: 非洲之角埃塞俄比亚相关地区
+    variants: []
 ---
 # 埃塞俄比亚
 

@@ -8,6 +8,12 @@ classificationStatus: confirmed
 tags: [历史, 墨西哥]
 categoryOverview: 历史/世界史/美洲/墨西哥
 relations: []
+geo:
+  place:
+    id: region-mexico
+    kind: region
+    modernName: 墨西哥相关地区
+    variants: []
 ---
 
 # 墨西哥

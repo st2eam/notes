@@ -61,6 +61,8 @@ function walkDir(dir) {
     if (file.startsWith(".")) return;
     file = dir + "/" + file;
     const absolutePath = path.resolve(file);
+    // Public data and third-party license documents are assets, not notes.
+    if (absolutePath === path.resolve("public")) return;
     // 如果这个路径在.gitignore中，就跳过
     if (gitignore.some((item) => absolutePath.startsWith(item))) {
       return;

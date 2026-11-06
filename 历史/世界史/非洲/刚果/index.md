@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/刚果
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-congo
+    kind: region
+    modernName: 刚果河流域及相关历史地区，不等同于某一现代国家
+    variants: []
 ---
 # 刚果
 

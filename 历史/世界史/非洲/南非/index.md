@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/南非
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-south-africa
+    kind: region
+    modernName: 非洲南部南非地区
+    variants: []
 ---
 # 南非
 

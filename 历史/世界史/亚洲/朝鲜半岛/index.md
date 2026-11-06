@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲/朝鲜半岛
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-korea
+    kind: region
+    modernName: 朝鲜半岛
+    variants: []
 ---
 # 朝鲜半岛
 

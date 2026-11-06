@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲/日本
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-japan
+    kind: region
+    modernName: 日本列岛相关地区
+    variants: []
 ---
 # 日本
 

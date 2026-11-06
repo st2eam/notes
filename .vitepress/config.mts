@@ -16,6 +16,8 @@ export default defineConfig({
   title: "Steam's Notes",
   outDir: "docs",
   srcExclude: [
+    "docs/**",
+    "public/geo/**/*.md",
     "README.md",
     "AGENTS.md",
     "api-examples.md",

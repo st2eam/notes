@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/英国
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-britain
+    kind: region
+    modernName: 大不列颠及相关地区（历史范围变化）
+    variants: []
 ---
 # 英国
 

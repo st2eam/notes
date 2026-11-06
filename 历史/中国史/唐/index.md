@@ -7,6 +7,26 @@ categoryOverview: 历史/中国史/唐
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  scope: china
+  period: 唐
+  time: {from: 618, to: 907}
+  place:
+    id: tang
+    kind: polity
+    modernName: 中国及周边部分地区
+    variants:
+      - id: tang-800
+        name: 唐
+        from: 618
+        to: 907
+        snapshotYear: 800
+        geometry: /geo/v1/tang-800.geojson
+        labelCoordinates: [108.9, 34.3]
+        accuracy: 公元800年疆域概览（非逐年边界）
+        source:
+          title: Historical Basemaps
+          url: https://github.com/aourednik/historical-basemaps/blob/master/geojson/world_800.geojson
 ---
 # 唐
 

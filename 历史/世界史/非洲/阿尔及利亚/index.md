@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/阿尔及利亚
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-algeria
+    kind: region
+    modernName: 北非阿尔及利亚地区
+    variants: []
 ---
 # 阿尔及利亚
 

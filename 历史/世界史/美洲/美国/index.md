@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/美洲/美国
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-united-states
+    kind: region
+    modernName: 美国相关地区（历史范围变化）
+    variants: []
 ---
 # 美国
 

@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-africa
+    kind: region
+    modernName: 非洲
+    variants: []
 ---
 # 非洲
 

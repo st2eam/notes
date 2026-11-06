@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/古希腊
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-greek-world
+    kind: region
+    modernName: 希腊半岛及爱琴海周边地区
+    variants: []
 ---
 # 古希腊
 

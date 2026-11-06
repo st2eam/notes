@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲/西亚与中东
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-near-east
+    kind: region
+    modernName: 东地中海及西亚相关地区
+    variants: []
 ---
 # 西亚与中东
 

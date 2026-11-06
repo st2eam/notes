@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/德国
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-germany
+    kind: region
+    modernName: 德国相关地区（历史疆界变化）
+    variants: []
 ---
 # 德国
 

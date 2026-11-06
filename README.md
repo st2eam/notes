@@ -56,6 +56,69 @@ ID 使用包含 `.md` 的完整相对路径。内部 Markdown 链接和 Wiki 链
 - 手机及窄屏触摸平板使用底部工具栏；按钮点击范围至少为 44×44，窗口为刘海、圆角和底部手势区域预留安全区。文件和辅助侧栏互相避让，支持横屏阅读；搜索输入框使用 16px 字号，避免 iOS 聚焦时自动放大。
 - 标签页、主题、侧栏宽度、目录展开状态、局部图深度和图谱设置保存在此浏览器；关联图谱标签页保留各自的目标笔记。
 
+## 关联地点与历史地图
+
+右侧栏顶部显示当前笔记直接引用或通过 `geo.places` 声明的地点；地点笔记也显示自身。点位显示古称与今称，区域显示有来源的 Polygon / MultiPolygon。地图下方的地点列表提供定位、历史形态选择和打开笔记入口；尚缺坐标或边界的关联仍列出待补状态。普通入链、分类关系与间接图谱邻居不自动扩散为地点。
+
+地图使用 Vue 3 与本地打包的 Leaflet 1.9.4，GeoJSON 随站点同源部署，不请求第三方瓦片、在线地理编码、外部字体或地图 CDN，不需要 API 密钥。自然地理参照采用公有领域的 Natural Earth 陆地数据，不显示现代行政疆界；历史疆域采用经过校核的 Historical Basemaps 代表年份文件。首批覆盖公元 800 年唐代与周边概览，按 GPLv3 保留独立许可、源文件及处理说明，见 [地理数据来源](public/geo/SOURCES.md)。其精度用于大陆尺度历史地理理解，不能当作州县边界或逐年控制范围。
+
+地点元数据保存在地点笔记的 frontmatter，大型几何放在 `public/geo/`：
+
+```yaml
+geo:
+  place:
+    id: stable-place-id
+    kind: point # point / region / polity
+    modernName: 现代位置说明 # 不加“今”前缀
+    variants:
+      - id: historical-site
+        name: 历史名称
+        from: 618
+        to: 907
+        coordinates: [108.9, 34.3] # WGS84 [经度, 纬度]；本例仅演示格式
+        accuracy: 约略位置
+        source:
+          title: 定位资料标题
+          url: https://example.org/source
+```
+
+区域形态用 `geometry: /geo/v1/区域文件.geojson` 代替 `coordinates`，另可提供 `labelCoordinates` 放置标签。`snapshotYear` 标明区域快照的真实年份；其 `from/to` 只用于代表时期匹配，不代表边界在整个时期内不变。没有已核验区域边界时使用 `variants: []`，显示“区域范围待补”，不以现代同名城市或现代省界代替。
+
+事件可使用 `geo.time: {from: 805, to: 805}`、`geo.period: 唐`、`geo.scope: china`，并通过 `geo.places: [{target: 历史/中国史/洛阳.md, variant: 历史形态ID}]` 显式关联。没有独立笔记的地点使用共享目录 ID，不需要建立空白地点页：
+
+```yaml
+geo:
+  places:
+    - target: 历史/中国史/洛阳.md
+      variant: sui-tang
+    - place: city-paris
+    - place: city-beijing
+      name: 大都 # 保留本条笔记使用的古称；现代城市坐标只是位置参照
+  locationNote: 原文地点说明及关联所代表的角色
+  bindingStatus: bound # uncertain 表示古址或发生地点存在考证
+  excludePlaces:
+    - 历史/中国史/许昌.md # 明确排除的地点不因正文链接重新进入地图
+```
+
+`target` 与 `place` 每项只能使用一种。共享实体定义在 `scripts/geo/place-definitions.mjs`，从固定 GeoNames 快照提取城市坐标后生成 `.vitepress/vault/geo-places.mjs`；坐标来源为 GeoNames 及其贡献者，采用 CC BY 4.0，见 [城市数据来源](public/geo/sources/geonames/SOURCES.md)。今址、历史城址与历史行政区分别记录，现代聚落参照不代表古战场或宫殿的精确位置。
+
+年份以负数表示公元前，不使用零年。未显式声明时间时读取 `historyDate`，其次使用明确的朝代信息；跨度较大的笔记可切换显示年份。城址迁移以不同历史形态记录，无法唯一匹配时需手动选择。
+
+批量绑定读取正文中的明确“地点”字段，另检查人物页及《人类简史》笔记的地理内容；正文、非地理 frontmatter、代码示例、文献书名及参考资料不参与改写。复杂地点说明通过 `scripts/geo/location-overrides.mjs` 逐条消歧；已核验的历史形态选择会保留。此过程只在显式运行迁移命令时执行，浏览器不会按关键词猜测地名。
+
+```sh
+python3 -I scripts/geo/gazetteer/build.py
+node scripts/geo/build-place-catalog.mjs
+node scripts/geo/bind-notes.mjs # 预览变更
+node scripts/geo/bind-notes.mjs --write # 将绑定写入 Markdown 的 geo 字段
+```
+
+共享目录包含未取得合法边界或可靠坐标的实体。这些实体已绑定，但只显示相关地区说明与待补状态；不得将“已绑定”当作“全部可绘制”。无地理信息的笔记不强行绑定位置。
+
+历史疆域先筛选覆盖域与朝代，再选当年或该朝代内最近的已核验代表年份；页面同时显示笔记年代与地图参照年份。没有对应疆域时显示自然地理底图、已知地点和明确提示，不改用现代行政疆域。底图海岸线反映现代自然地理，不能视为古河道或古海岸线复原。数据未缓存或请求失败时保留地点列表并提供重试。
+
+地图资源按需加载，遵循 PWA 同源运行时缓存；首次离线未缓存的地理文件仍不可用。取消外部地图依赖不能保证 GitHub Pages 在国内网络稳定可达，部署域名仍需实测，也可将同一构建产物部署至国内静态托管。
+
 ## 右键菜单
 
 菜单操作针对右键命中的对象，适用于文件树、分类树、工作区标签页、正文普通内部笔记链接和图谱中的笔记节点。

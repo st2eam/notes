@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/喀麦隆
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-cameroon
+    kind: region
+    modernName: 中西非喀麦隆地区
+    variants: []
 ---
 # 喀麦隆
 

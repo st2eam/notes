@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/西非
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-west-africa
+    kind: region
+    modernName: 非洲西部
+    variants: []
 ---
 # 西非
 

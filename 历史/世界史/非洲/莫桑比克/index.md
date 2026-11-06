@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/莫桑比克
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-mozambique
+    kind: region
+    modernName: 非洲东南部莫桑比克地区
+    variants: []
 ---
 # 莫桑比克
 

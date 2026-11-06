@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/罗马与地中海
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-roman-world
+    kind: region
+    modernName: 地中海及周边历史统治地区，非罗马城单点
+    variants: []
 ---
 # 罗马与地中海
 

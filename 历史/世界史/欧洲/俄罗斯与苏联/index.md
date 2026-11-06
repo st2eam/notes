@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/俄罗斯与苏联
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-soviet-union
+    kind: region
+    modernName: 俄罗斯及其他原苏联成员共和国相关地区
+    variants: []
 ---
 # 俄罗斯与苏联
 

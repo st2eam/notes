@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/埃及
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-egypt
+    kind: region
+    modernName: 埃及及尼罗河下游相关地区
+    variants: []
 ---
 # 埃及
 

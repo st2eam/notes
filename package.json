@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/leaflet": "^1.9.21",
     "markdown-it-mathjax3": "^4.3.2",
     "vitepress": "^1.6.4"
   },
@@ -13,6 +14,7 @@
   "dependencies": {
     "d3-force": "^3.0.0",
     "gray-matter": "^4.0.3",
+    "leaflet": "^1.9.4",
     "markdown-it": "^15.0.2"
   }
 }

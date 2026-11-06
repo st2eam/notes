@@ -33,6 +33,7 @@ import FileTree from "./FileTree.vue";
 import ContextMenu from "./ContextMenu.vue";
 import { publicNoteUrl } from "../../../vault/context-menu.mjs";
 const VaultGraph = defineAsyncComponent(() => import("./VaultGraph.vue"));
+const VaultNoteMap = defineAsyncComponent(() => import("./VaultNoteMap.vue"));
 const router = useRouter();
 const { page, isDark: vpIsDark, site } = useData();
 const isDark = ref(false);
@@ -1303,48 +1304,15 @@ onBeforeUnmount(() => {
           <Icon name="notebook" :size="16" />
           <strong>{{ current.title }}</strong>
         </div>
-        <section v-if="rightTab === 'outline'" class="vault-outline" aria-label="文章目录">
-          <h2>文章目录 <small>{{ outlineHeadings.length }} 个小节</small></h2>
-          <button
-            v-for="heading in outlineHeadings"
-            :key="heading.id"
-            :class="{ active: activeHeading === heading.id }"
-            :aria-current="activeHeading === heading.id ? 'location' : undefined"
-            :style="{ paddingLeft: (heading.level - 2) * 12 + 10 + 'px' }"
-            @click="jumpHeading(heading.id)"
-          >
-            {{ heading.title }}
-          </button>
-          <p v-if="!outlineHeadings.length" class="empty-hint">当前笔记没有小节</p>
-        </section>
-        <template v-else>
-          <section v-for="group in relationGroups" :key="group.title" class="vault-relations">
-            <h2>{{ group.title }} <small>{{ group.items.length }}</small></h2>
-            <div
-              v-for="link in group.items"
-              :key="link.source + (link.target || link.reference) + link.relationType + link.label + link.anchor"
-              class="relation-item"
-            >
-              <button
-                class="relation-open"
-                :disabled="!group.incoming && !link.target"
-                @click="openRelation(link, group.incoming, $event)"
-              >
-                <strong>{{ relationTitle(link, group.incoming) }}</strong>
-                <small class="relation-meta">
-                  {{ relationName(link) }} · {{ link.status === 'inferred' ? '推断' : '已确认' }}
-                  <span v-if="!group.incoming && link.reason"> · {{ !link.target ? '未解析' : '标题未找到' }}</span>
-                </small>
-                <p v-if="link.explanation || link.context">{{ link.explanation || link.context }}</p>
-              </button>
-              <details v-if="link.evidence || link.context" class="relation-evidence">
-                <summary>查看依据</summary>
-                <p>{{ link.evidence || link.context }}</p>
-              </details>
-            </div>
-            <p v-if="!group.items.length" class="empty-hint">{{ group.empty }}</p>
-          </section>
-        </template>
+        <ClientOnly>
+          <VaultNoteMap
+            v-if="current && rightOpen && (current.geo?.place || current.geo?.locationNote || current.tags.includes('地点') || current.geoReferences?.length)"
+            :note="current"
+            :notes="notes"
+            :enabled="rightOpen"
+            @open="openNote"
+          />
+        </ClientOnly>
         <section v-if="!isEmbedded" class="vault-local">
           <h2>
             <button
@@ -1392,6 +1360,48 @@ onBeforeUnmount(() => {
             </div>
           </div>
         </section>
+        <section v-if="rightTab === 'outline'" class="vault-outline" aria-label="文章目录">
+          <h2>文章目录 <small>{{ outlineHeadings.length }} 个小节</small></h2>
+          <button
+            v-for="heading in outlineHeadings"
+            :key="heading.id"
+            :class="{ active: activeHeading === heading.id }"
+            :aria-current="activeHeading === heading.id ? 'location' : undefined"
+            :style="{ paddingLeft: (heading.level - 2) * 12 + 10 + 'px' }"
+            @click="jumpHeading(heading.id)"
+          >
+            {{ heading.title }}
+          </button>
+          <p v-if="!outlineHeadings.length" class="empty-hint">当前笔记没有小节</p>
+        </section>
+        <template v-else>
+          <section v-for="group in relationGroups" :key="group.title" class="vault-relations">
+            <h2>{{ group.title }} <small>{{ group.items.length }}</small></h2>
+            <div
+              v-for="link in group.items"
+              :key="link.source + (link.target || link.reference) + link.relationType + link.label + link.anchor"
+              class="relation-item"
+            >
+              <button
+                class="relation-open"
+                :disabled="!group.incoming && !link.target"
+                @click="openRelation(link, group.incoming, $event)"
+              >
+                <strong>{{ relationTitle(link, group.incoming) }}</strong>
+                <small class="relation-meta">
+                  {{ relationName(link) }} · {{ link.status === 'inferred' ? '推断' : '已确认' }}
+                  <span v-if="!group.incoming && link.reason"> · {{ !link.target ? '未解析' : '标题未找到' }}</span>
+                </small>
+                <p v-if="link.explanation || link.context">{{ link.explanation || link.context }}</p>
+              </button>
+              <details v-if="link.evidence || link.context" class="relation-evidence">
+                <summary>查看依据</summary>
+                <p>{{ link.evidence || link.context }}</p>
+              </details>
+            </div>
+            <p v-if="!group.items.length" class="empty-hint">{{ group.empty }}</p>
+          </section>
+        </template>
         <details
           v-if="current?.categories.length && (!isEmbedded || rightTab === 'links')"
           :key="current.id"
