@@ -26,6 +26,7 @@ import {
 import { embedHref } from "../../../vault/embed.mjs";
 import { searchNotes } from "../../../vault/search.mjs";
 import { sortHistoryTree } from "../../../vault/history.mjs";
+import { noteGeoTime } from "../../../vault/geo.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
 import Icon from "./Icon.vue";
@@ -1306,7 +1307,7 @@ onBeforeUnmount(() => {
         </div>
         <ClientOnly>
           <VaultNoteMap
-            v-if="current && rightOpen && (current.geo?.place || current.geo?.locationNote || current.tags.includes('地点') || current.geoReferences?.length)"
+            v-if="current && rightOpen && (current.geo?.place || current.geo?.locationNote || current.tags.includes('地点') || current.geoReferences?.length || noteGeoTime(current))"
             :note="current"
             :notes="notes"
             :enabled="rightOpen"

@@ -2,7 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { withBase } from "vitepress";
 import type { VaultNote, GeoVariant } from "../../../vault/types";
-import { describePlace, mapPlaces, mapYearOptions, noteGeoTime, selectHistoricalMap, timeLabel, yearLabel } from "../../../vault/geo.mjs";
+import { describePlace, initialMapYear, mapPlaces, mapYearOptions, noteGeoTime, selectHistoricalMap, timeLabel, yearLabel } from "../../../vault/geo.mjs";
 import { landMap } from "../../../vault/geo-catalog.mjs";
 import Icon from "./Icon.vue";
 import "leaflet/dist/leaflet.css";
@@ -15,6 +15,7 @@ const selectedVariants = ref<Record<string, string>>({});
 const selectedPlace = ref("");
 const busy = ref(false);
 const failures = ref<string[]>([]);
+const territoryNames = ref<string[]>([]);
 const rawPlaces = computed(() => mapPlaces(props.note, props.notes));
 const time = computed(() => noteGeoTime(props.note));
 const years = computed(() => mapYearOptions(props.note, rawPlaces.value));
@@ -25,6 +26,7 @@ const hasGeometry = computed(() => places.value.some((p: any) => p.variant));
 const countLabel = computed(() => `${places.value.length} 处`);
 const snapshotNote = computed(() => {
   if (!historical.value) return selectedYear.value == null ? "选择年代后匹配历史疆域" : "该时期暂无已核验疆域数据";
+  if (historical.value.modern) return "现代行政区参考，不还原笔记当年的边界；数据版本与说明见来源。";
   return historical.value.year === selectedYear.value ? "代表年份疆域概览" : "代表年份参照，与事件当年疆域可能不同";
 });
 const sourceList = computed(() => {
@@ -35,8 +37,7 @@ const sourceList = computed(() => {
 function initialSelection() {
   selectedVariants.value = {};
   selectedPlace.value = "";
-  const snapshot = props.note.geo?.place?.variants.find((v) => v.snapshotYear)?.snapshotYear;
-  selectedYear.value = snapshot ?? time.value?.from ?? null;
+  selectedYear.value = initialMapYear(props.note, rawPlaces.value);
   failures.value = [];
 }
 watch(() => props.note.id, initialSelection, { immediate: true, flush: "sync" });
@@ -94,6 +95,7 @@ function clearLayers() {
   placeLayers.clear();
   labelMarkers.length = 0;
   allBounds = null;
+  territoryNames.value = [];
 }
 function fit() {
   if (!map) return;
@@ -137,8 +139,8 @@ function arrangeLabels() {
     }
   }
 }
-function labelAt(position: any, text: string, chosen = false) {
-  const label = textNode(text, "note-map-label-text");
+function labelAt(position: any, text: string, chosen = false, territory = false) {
+  const label = textNode(text, "note-map-label-text" + (territory ? " note-map-territory-label" : ""));
   const marker = leaflet.marker(position, {
     icon: leaflet.divIcon({ html: label, className: "note-map-label", iconSize: [150, 22], iconAnchor: [0, 11] }),
     interactive: false, keyboard: false, pane: "mapLabels",
@@ -181,15 +183,22 @@ async function render() {
     interactive: false, className: "note-map-land", smoothFactor: 0.6,
     style: { weight: 0.7, fillOpacity: 1 },
   }).addTo(landLayer);
-  const background = historicalMap && resources.get(historicalMap.geometry);
-  if (background) leaflet.geoJSON(background, {
-    style: { color: colors.border, weight: 1, dashArray: "3 3", fillColor: colors.border, fillOpacity: 0.13 },
-    onEachFeature(feature: any, layer: any) {
-      const name = String(feature.properties?.displayName || feature.properties?.NAME || "历史区域");
-      layer.bindTooltip(textNode(name), { direction: "center", className: "note-map-tooltip" });
-    },
-  }).addTo(backgroundLayer);
+  // The default viewport includes every territory as well as every place.
+  // Land is only geographic context and must not expand this to the whole world.
   allBounds = leaflet.latLngBounds([]);
+  const background = historicalMap && resources.get(historicalMap.geometry);
+  if (background) {
+    const territories = leaflet.geoJSON(background, {
+      style: { color: colors.border, weight: 1, dashArray: "3 3", fillColor: colors.border, fillOpacity: 0.13, className: "note-map-territory" },
+      onEachFeature(feature: any, layer: any) {
+        const name = String(feature.properties?.displayName || feature.properties?.NAME || "历史区域");
+        layer.bindTooltip(textNode(name), { direction: "center", className: "note-map-tooltip" });
+      },
+    }).addTo(backgroundLayer);
+    if (territories.getBounds().isValid()) allBounds.extend(territories.getBounds());
+  }
+  territoryNames.value = background ? [...new Set<string>(background.features.map((feature: any) =>
+    String(feature.properties?.displayName || feature.properties?.NAME || "历史区域")))] : [];
   for (const item of items) {
     const v: GeoVariant | undefined = item.variant;
     if (!v) continue;
@@ -223,6 +232,11 @@ async function render() {
     layer.on("click", () => { selectedPlace.value = key; });
     if (labelPosition) labelAt(labelPosition, item.label, key === selectedPlace.value);
   }
+  for (const feature of background?.features || []) {
+    const p = feature.properties;
+    if (Array.isArray(p?.labelCoordinates))
+      labelAt(leaflet.latLng(p.labelCoordinates[1], p.labelCoordinates[0]), String(p.displayName || p.NAME), false, true);
+  }
   failures.value = failed;
   busy.value = false;
   await nextTick();
@@ -245,7 +259,7 @@ async function initializeMap() {
     if (!alive || !host.value) return;
     map = leaflet.map(host.value, {
       zoomControl: false, attributionControl: false, scrollWheelZoom: false,
-      minZoom: 0, maxZoom: 7, zoomSnap: 0.25, worldCopyJump: false,
+      minZoom: -3, maxZoom: 7, zoomSnap: 0.25, worldCopyJump: false,
       maxBounds: [[-75, -180], [85, 180]], maxBoundsViscosity: 0.8,
     });
     map.setView([34, 108], 3);
@@ -281,7 +295,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section v-if="rawPlaces.length || note.geo?.locationNote" class="note-map-section" aria-label="关联地点地图">
+  <section v-if="rawPlaces.length || note.geo?.locationNote || time" class="note-map-section" aria-label="关联地点地图">
     <h2>关联地点 <small>{{ countLabel }}</small></h2>
     <div class="note-map-time">
       <span>{{ timeLabel(time) }}</span>
@@ -298,15 +312,16 @@ onBeforeUnmount(() => {
       <div class="note-map-controls" aria-label="地图操作">
         <button type="button" aria-label="放大地图" title="放大" @click="map?.zoomIn()"><Icon name="plus" :size="14" /></button>
         <button type="button" aria-label="缩小地图" title="缩小" @click="map?.zoomOut()"><Icon name="minus" :size="14" /></button>
-        <button type="button" aria-label="显示全部关联地点" title="显示全部地点" @click="fit"><Icon name="fit" :size="14" /></button>
+        <button type="button" aria-label="显示完整疆域与全部关联地点" title="显示完整疆域与全部地点" @click="fit"><Icon name="fit" :size="14" /></button>
       </div>
       <div v-if="busy" class="note-map-loading" role="status">正在载入地理数据…</div>
       <div class="note-map-attribution"><a :href="withBase('/geo/SOURCES.md')" target="_blank" rel="noopener">地图资料</a> · <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a></div>
     </div>
     <div class="note-map-caption" aria-live="polite">
-      <strong v-if="historical">疆域参照：{{ yearLabel(historical.year) }}</strong>
+      <strong v-if="historical">{{ historical.modern ? '行政区参照：' : '疆域参照：' }}{{ historical.edition ? 'Natural Earth ' + historical.edition + ' 版' : yearLabel(historical.year) }}</strong>
       <span>{{ snapshotNote }}</span>
-      <span v-if="!hasGeometry">关联地点尚无可显示的地理资料</span>
+      <span v-if="!rawPlaces.length">本笔记未关联具体地点</span>
+      <span v-else-if="!hasGeometry">关联地点尚无可显示的地理资料</span>
       <span v-if="note.geo?.bindingStatus === 'uncertain'">地点或古址存在考证，列表仅表示相关地区；具体说明见数据来源。</span>
     </div>
     <p v-if="failures.length" class="note-map-error" role="status">
@@ -316,6 +331,10 @@ onBeforeUnmount(() => {
     <div class="note-map-legend" aria-label="地图图例">
       <span><i class="note-map-dot" />地点</span><span><i class="note-map-area" />区域</span><span><i class="note-map-context" />疆域参照</span>
     </div>
+    <details v-if="territoryNames.length" class="note-map-territories">
+      <summary>{{ historical?.modern ? '行政区' : '政权区域' }} · {{ territoryNames.length }}</summary>
+      <ul aria-label="地图区域名称"><li v-for="name in territoryNames" :key="name">{{ name }}</li></ul>
+    </details>
     <ul class="note-map-places" aria-label="关联地点列表">
       <li v-for="item in places" :key="item.key" :class="{ 'is-selected': selectedPlace === (item.key) }">
         <div class="note-map-place-row">
@@ -456,6 +475,10 @@ onBeforeUnmount(() => {
   font-size: 10px;
   line-height: 16px;
 }
+.note-map-territory-label { font-weight: 600; letter-spacing: 0.04em; }
+.note-map-territories { margin: 0 8px 9px; font-size: 11px; color: var(--vault-detail-muted); }
+.note-map-territories summary { cursor: pointer; }
+.vault-shell .note-map-territories ul { display: flex; flex-wrap: wrap; gap: 5px 12px; margin: 7px 0; padding: 0; list-style: none; }
 .note-map-section .leaflet-tooltip,
 .note-map-section .leaflet-popup-content-wrapper,
 .note-map-section .leaflet-popup-tip {

@@ -1,8 +1,8 @@
 # 地理底图来源与处理记录
 
-本目录包含自然陆地底图、公元 800 年东亚历史概览及 [GeoNames 城市坐标索引](sources/geonames/SOURCES.md)。城市坐标来源为 **GeoNames 及其贡献者**（<https://www.geonames.org/>），采用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，保留独立许可、获取日期、固定快照摘要与处理记录。城市坐标不用于推断古城或古战场的精确位置。
+本目录包含自然陆地底图、商周至民国的 33 份 [Cliopatria 代表年份疆域](sources/cliopatria/SOURCES.md)、公元 800 年东亚历史概览、[现代行政区参考](sources/modern/SOURCES.md)及 [GeoNames 城市坐标索引](sources/geonames/SOURCES.md)。城市坐标来源为 **GeoNames 及其贡献者**（<https://www.geonames.org/>），采用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，保留独立许可、获取日期、固定快照摘要与处理记录。城市坐标不用于推断古城或古战场的精确位置。
 
-历史地图部分：历史图层只表示上游选定代表年份的大陆尺度示意，不能表示完整唐代各年代疆域、唐代最大疆域、连续有效控制范围或县级精确边界。`tang-800.geojson` 可作为区域地点的概览范围引用，不能充当地点归属或历史行政区划判定依据。
+历史图层按代表年份提供主要政权疆域示意，涵盖商、西周、春秋、战国、秦、西汉、东汉、三国、两晋南北朝、隋、唐、五代十国、宋辽金夏、元、明、清和民国。它们不能表示逐年边界、连续有效控制范围或县级精确边界；没有穷尽全部地方政权。夏、史前及新朝仍没有接入合适的疆域几何。现代图独立使用现代资料，不能用于复原 1949 年或其他历史年份的边界。`tang-800.geojson` 可作为区域地点的概览范围引用，不能充当地点归属或历史行政区划判定依据。
 
 ## 数据来源
 
@@ -50,7 +50,7 @@ Natural Earth 采用 1:110,000,000 的自然陆地数据，适合全国／大陆
 
 坐标为 WGS 84 / CRS84 的 `[经度, 纬度]` 十进制度。输出省略源文件的旧式 `crs` 字段。4 位小数只是存储精度，不代表历史边界具有约十米的定位精度。集合级 `representativeYear: 800` 表示代表年份，不是起止时间。
 
-没有导入 `world_700.geojson` 或其他年份。上游 700 年索引中存在错误的 Sui 标签，不能将索引标签视为年代或几何正确性的证据。
+Historical Basemaps 部分没有导入 `world_700.geojson` 或其他年份；新增历史年份来自独立记录许可和版本的 Cliopatria。上游 700 年索引中存在错误的 Sui 标签，不能将索引标签视为年代或几何正确性的证据。
 
 ## 历史校核依据
 
@@ -95,4 +95,13 @@ python3 -I scripts/geo/build.py --download
 9d046cdc4662109c3f803ae46e2c8cba941aa092ec86eccc7823e6cf1554920c  sources/historical-basemaps/world_800.geojson
 ```
 
-其余许可与说明文件的固定摘要记录于脚本。三个生成文件共 143,039 字节，小于合计 5 MB 限额；连同原始资料也小于 5 MB。许可证使用 `LICENSE` 或 `LICENSE.md`，没有新增许可或元数据 `.json` 文件。
+以上三个原有生成文件共 143,039 字节。新增 Cliopatria 与现代数据的固定摘要、原始记录及许可单独保存在各自来源目录；它们不适用本节的三个文件统计。
+
+新增数据重建命令：
+
+```sh
+python3 -I scripts/geo/build-early-history.py
+python3 -I scripts/geo/build-modern.py
+```
+
+历史脚本从已固定摘要的原始子集确定性重建 33 个快照及运行时清单；使用 `--download` 可从固定版本 ZIP 重新提取子集，大型 ZIP 不随站点发布。现代脚本的来源与下载方式见 [现代数据处理说明](sources/modern/SOURCES.md)。所有脚本均由本项目维护，不执行上游下载的代码。

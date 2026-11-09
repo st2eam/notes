@@ -7,11 +7,15 @@ const placesById = new Map(geographicPlaces.map((place) => [place.id, place]));
 export const geographicPlace = (id) => placesById.get(id);
 
 const periods = [
-  ["秦", -221, -207], ["西汉", -202, 9], ["东汉", 25, 220],
-  ["三国", 220, 280], ["西晋", 266, 316], ["东晋", 317, 420],
+  ["商", -1600, -1047], ["西周", -1046, -771],
+  ["春秋", -770, -481], ["战国", -480, -222],
+  ["秦", -221, -207], ["西汉", -202, 8], ["东汉", 25, 220],
+  ["三国", 220, 280], ["西晋", 265, 316], ["东晋", 317, 420],
   ["南北朝", 420, 589], ["隋", 581, 618], ["唐", 618, 907],
   ["五代十国", 907, 979], ["北宋", 960, 1127], ["南宋", 1127, 1279],
   ["宋", 960, 1279], ["元", 1271, 1368], ["明", 1368, 1644], ["清", 1644, 1912],
+  ["汉", -202, 220], ["东周", -770, -256], ["两晋南北朝", 265, 589],
+  ["中华民国", 1912, 1949], ["中华人民共和国", 1949, 2026],
 ];
 const validYear = (n) => Number.isInteger(n) && n !== 0 && Math.abs(n) <= 100000;
 const validPoint = (p) => Array.isArray(p) && p.length === 2 &&
@@ -156,20 +160,26 @@ export const timeLabel = (time) => !time ? "年代未确定" :
   (time.approximate ? "时期：" : "") + yearLabel(time.from) +
   (time.from === time.to ? "" : `—${yearLabel(time.to)}`);
 
-function periodAt(note, year) {
+function periodAt(note, year, catalog) {
   const named = notePeriod(note);
-  if (named && periods.some(([name, from, to]) => name === named && year >= from && year <= to)) return named;
-  return periods.find(([, from, to]) => year >= from && year <= to)?.[0] || named || "";
+  const candidates = periods.filter(([, from, to]) => year >= from && year <= to).map(([name]) => name);
+  if (candidates.includes(named)) candidates.unshift(named);
+  // Dynasty end/start years overlap in historical chronology. Prefer a phase
+  // with an available map at the transition, without changing the era's dates.
+  return candidates.find((period) => catalog.some((m) =>
+    (m.period === period || m.periods?.includes(period) || m.modern) && year >= m.from && year <= m.to
+  )) || candidates[0] || named || "";
 }
 
 export function selectHistoricalMap(note, year, catalog = historicalMaps) {
   if (!validYear(year)) return null;
   const scope = note.geo?.scope || note.historyTrack ||
     (note.id.startsWith("历史/中国史/") ? "china" : "world");
-  const period = periodAt(note, year);
-  return catalog.filter((m) => m.scope === scope && m.period === period &&
+  const regional = catalog.filter((m) => m.scope === scope);
+  const period = periodAt(note, year, regional);
+  return regional.filter((m) => (m.period === period || m.periods?.includes(period) || m.modern) &&
     year >= m.from && year <= m.to)
-    .sort((a, b) => Math.abs(a.year - year) - Math.abs(b.year - year) || a.year - b.year)[0] || null;
+    .sort((a, b) => Math.abs((a.year ?? year) - year) - Math.abs((b.year ?? year) - year) || (a.year ?? year) - (b.year ?? year))[0] || null;
 }
 
 export function mapYearOptions(note, places) {
@@ -192,6 +202,17 @@ export function mapYearOptions(note, places) {
     if (time && m.year >= time.from && m.year <= time.to && selectHistoricalMap(note, m.year)?.id === m.id)
       years.add(m.year);
   return [...years].sort((a, b) => a - b);
+}
+
+export function initialMapYear(note, places) {
+  const snapshot = note.geo?.place?.variants.find((v) => v.snapshotYear)?.snapshotYear;
+  if (snapshot != null) return snapshot;
+  const time = noteGeoTime(note);
+  if (time?.approximate) {
+    const representative = mapYearOptions(note, places).find((year) => selectHistoricalMap(note, year)?.year === year);
+    if (representative != null) return representative;
+  }
+  return time?.from ?? null;
 }
 
 export function mapPlaces(note, notes) {

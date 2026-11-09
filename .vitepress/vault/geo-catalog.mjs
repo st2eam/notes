@@ -1,12 +1,17 @@
+import { earlyHistoricalMaps } from "./geo-early-catalog.mjs";
+import { modernMaps } from "./geo-modern-catalog.mjs";
+
 // A curated list, not an automatic import of the upstream historical index.
 // `period` permits a representative snapshot; it does not assert unchanged borders.
 export const historicalMaps = [
+  ...earlyHistoricalMaps,
+  ...modernMaps,
   {
     id: "east-asia-800",
     scope: "china",
     period: "唐",
     year: 800,
-    from: 618,
+    from: 755,
     to: 907,
     name: "唐代与周边 · 800 年",
     geometry: "/geo/v1/east-asia-800.geojson",
