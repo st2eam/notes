@@ -15,6 +15,8 @@ export default defineConfig({
   },
   title: "Steam's Notes",
   outDir: "docs",
+  // Share the route map and site config instead of inlining them in every page.
+  metaChunk: true,
   srcExclude: [
     "docs/**",
     "public/geo/**/*.md",
