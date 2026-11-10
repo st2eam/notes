@@ -80,7 +80,7 @@ export function restoreWorkspace(raw, notes) {
                 ]
               : [s];
           })
-      : ["历史"],
+      : [],
     localDepth: clamp(saved.localDepth, 1, 5, 1),
     rightTab: saved.rightTab === "links" ? "links" : "outline",
     theme: ["dark", "light"].includes(saved.theme) ? saved.theme : null,

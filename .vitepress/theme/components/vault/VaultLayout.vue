@@ -106,7 +106,7 @@ const leftOpen = ref(true),
   rightOpen = ref(true);
 const leftWidth = ref(250),
   rightWidth = ref(280);
-const expanded = ref<string[]>(["历史"]);
+const expanded = ref<string[]>([]);
 const pane = ref("files");
 const query = ref("");
 const documents = ref<{ id: string; text: string }[]>([]);
@@ -417,11 +417,15 @@ function syncRoute() {
   else Object.assign(existing, t);
   active.value = t.key;
   preview.value = null;
-  const parts = current.value?.folder.split("/") || [];
-  let path = "";
-  for (const part of parts) {
-    path += (path ? "/" : "") + part;
-    if (part && !expanded.value.includes(path)) expanded.value.push(path);
+  if (current.value?.id === "index.md") {
+    expanded.value = [];
+  } else {
+    const parts = current.value?.folder.split("/") || [];
+    let path = "";
+    for (const part of parts) {
+      path += (path ? "/" : "") + part;
+      if (part && !expanded.value.includes(path)) expanded.value.push(path);
+    }
   }
   nextTick(() => {
     const anchor =

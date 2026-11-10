@@ -6270,6 +6270,10 @@ export default [
         "collapsed": true,
         "items": [
             {
+                "text": "合作博弈与联盟收益",
+                "link": "/经济学/合作博弈与联盟收益.md"
+            },
+            {
                 "text": "政治经济学",
                 "collapsed": true,
                 "items": [
@@ -6322,6 +6326,14 @@ export default [
                         "link": "/经济学/政治经济学/马克思主义.md"
                     }
                 ]
+            },
+            {
+                "text": "沉没成本",
+                "link": "/经济学/沉没成本.md"
+            },
+            {
+                "text": "零和博弈与最小最大定理",
+                "link": "/经济学/零和博弈与最小最大定理.md"
             }
         ]
     },
@@ -6370,6 +6382,10 @@ export default [
                     {
                         "text": "短视频为何会让人上瘾",
                         "link": "/心理学/认知心理学/短视频为何会让人上瘾.md"
+                    },
+                    {
+                        "text": "结果偏差",
+                        "link": "/心理学/认知心理学/结果偏差.md"
                     },
                     {
                         "text": "舌尖现象",
@@ -6443,6 +6459,10 @@ export default [
         "text": "读书笔记",
         "collapsed": true,
         "items": [
+            {
+                "text": "不确定性下的决策",
+                "link": "/读书笔记/不确定性下的决策.md"
+            },
             {
                 "text": "人类简史",
                 "collapsed": true,
@@ -6602,6 +6622,10 @@ export default [
                         "link": "/读书笔记/博弈论/马尔可夫完美均衡.md"
                     }
                 ]
+            },
+            {
+                "text": "足球中的博弈论",
+                "link": "/读书笔记/足球中的博弈论.md"
             }
         ]
     }
