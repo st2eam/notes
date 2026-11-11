@@ -11,6 +11,8 @@
   --vault-faint: #aaa;
   --vault-accent: #7852ee;
   --vault-accent-bg: #ece7fc;
+  --search-hit-bg: #ffe27a;
+  --search-hit-text: #3a2a00;
   --graph-node: #929292;
   --graph-line: #bdbdbd;
   --graph-dim: #ddd;
@@ -43,6 +45,8 @@
   --vault-faint: #666;
   --vault-accent: #a88bfa;
   --vault-accent-bg: #352d47;
+  --search-hit-bg: #6b5b00;
+  --search-hit-text: #ffe9a3;
   --graph-node: #888;
   --graph-line: #545454;
   --graph-dim: #333;
@@ -735,6 +739,12 @@ body,
   line-height: 1.55;
   color: var(--vault-muted);
   margin: 6px 0 0;
+}
+mark.search-hit {
+  background: var(--search-hit-bg);
+  color: var(--search-hit-text);
+  border-radius: 2px;
+  padding: 0 1px;
 }
 .vault-hover-preview {
   position: fixed;

@@ -1,4 +1,16 @@
 import { matchesQuery } from './model.mjs';
+
+// Plain (non-structured, non-negative) terms extracted from a query, used to
+// highlight matches in the sidebar results and in the reading pane.
+export function searchTerms(query) {
+  const tokens = query.match(/-?(?:path:|tag:|category:|origin:)?"[^"]+"|\S+/g) || [];
+  return tokens
+    .filter((t) => !/^(-?path:|-?tag:|-?category:|-?origin:)/.test(t))
+    .map((t) => t.replace(/^"|"$/g, ""))
+    .filter((t) => t && !t.startsWith("-"))
+    .map((t) => t.toLowerCase());
+}
+
 export function searchNotes(notes, documents, query, quick = false) {
   const tokens = query.match(/-?(?:path:|tag:|category:|origin:)?"[^"]+"|\S+/g) || [];
   const structured = tokens.filter(t=>/^-?(path:|tag:|category:|origin:)/.test(t)).join(' ');

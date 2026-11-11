@@ -24,7 +24,7 @@ import {
 } from "../../../vault/workspace.mjs";
 import { embedHref } from "../../../vault/embed.mjs";
 import { migrateQuery } from "../../../vault/migration.mjs";
-import { searchNotes } from "../../../vault/search.mjs";
+import { searchNotes, searchTerms } from "../../../vault/search.mjs";
 import { sortHistoryTree } from "../../../vault/history.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
@@ -142,6 +142,29 @@ const results = computed(() =>
 const quickResults = computed(() =>
   searchNotes(notes, [], modalQuery.value, true),
 );
+const searchTermsList = computed(() => searchTerms(query.value));
+function escapeRegExp(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+function dedupeTerms() {
+  return [
+    ...new Set(searchTermsList.value.map((t) => t.trim()).filter(Boolean)),
+  ].sort((a, b) => b.length - a.length);
+}
+function buildRegex(terms: string[]) {
+  return terms.length
+    ? new RegExp(`(${terms.map(escapeRegExp).join("|")})`, "gi")
+    : null;
+}
+function highlightSegments(text: string) {
+  const terms = dedupeTerms();
+  const re = buildRegex(terms);
+  if (!text || !re) return [{ text: text || "", match: false }];
+  return text.split(re).map((part) => ({
+    text: part,
+    match: terms.some((t) => t.toLowerCase() === part.toLowerCase()),
+  }));
+}
 const localNeighbors = computed(() => {
   const ids = neighborhood(
     current.value?.id,
@@ -659,6 +682,68 @@ watch(vpIsDark, (value) => {
 });
 watch(modalQuery, () => (modalIndex.value = 0));
 watch(query, loadSearch);
+function clearBodyHighlight(root: HTMLElement) {
+  for (const mark of Array.from(root.querySelectorAll("mark.search-hit")))
+    mark.replaceWith(document.createTextNode(mark.textContent || ""));
+}
+function highlightMatches(text: string, terms: string[]): DocumentFragment | null {
+  const re = buildRegex(terms);
+  if (!re) return null;
+  const frag = document.createDocumentFragment();
+  let last = 0;
+  let found = false;
+  for (const m of text.matchAll(re)) {
+    const idx = m.index ?? 0;
+    if (idx > last) frag.append(document.createTextNode(text.slice(last, idx)));
+    const mark = document.createElement("mark");
+    mark.className = "search-hit";
+    mark.textContent = m[0];
+    frag.append(mark);
+    last = idx + m[0].length;
+    found = true;
+  }
+  if (!found) return null;
+  if (last < text.length) frag.append(document.createTextNode(text.slice(last)));
+  return frag;
+}
+function applyBodyHighlight() {
+  const root = article.value;
+  if (!root) return;
+  clearBodyHighlight(root);
+  const terms = dedupeTerms();
+  if (!terms.length) return;
+  const lower = terms.map((t) => t.toLowerCase());
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const value = node.nodeValue || "";
+      if (!value.trim()) return NodeFilter.FILTER_REJECT;
+      const parent = node.parentElement;
+      if (!parent) return NodeFilter.FILTER_REJECT;
+      if (
+        parent.closest(
+          "mark.search-hit, pre, script, style, noscript, mjx-container, math, .katex, .MathJax",
+        )
+      )
+        return NodeFilter.FILTER_REJECT;
+      if (!lower.some((t) => value.toLowerCase().includes(t)))
+        return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  const nodes: Text[] = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode as Text);
+  for (const node of nodes) {
+    const parent = node.parentNode;
+    if (!parent) continue;
+    const frag = highlightMatches(node.nodeValue || "", terms);
+    if (frag) parent.replaceChild(frag, node);
+  }
+}
+watch([query, () => page.value.relativePath], () => {
+  if (typeof window === "undefined") return;
+  nextTick(applyBodyHighlight);
+  window.setTimeout(applyBodyHighlight, 60);
+});
 // SSR always includes the current note. Browser state is restored after hydration.
 const initialNote = current.value;
 if (initialNote) {
@@ -920,9 +1005,35 @@ onBeforeUnmount(() => {
             :key="result.note.id"
             @click="openNote(result.note, $event)"
           >
-            <strong>{{ result.note.title }}</strong
-            ><small>{{ result.note.folder }}</small>
-            <p>{{ result.context }}</p>
+            <strong>
+              <template
+                v-for="(seg, i) in highlightSegments(result.note.title)"
+                :key="'t' + i"
+                ><mark v-if="seg.match" class="search-hit">{{
+                  seg.text
+                }}</mark
+                ><template v-else>{{ seg.text }}</template></template
+              ></strong
+            ><small>
+              <template
+                v-for="(seg, i) in highlightSegments(result.note.folder)"
+                :key="'f' + i"
+                ><mark v-if="seg.match" class="search-hit">{{
+                  seg.text
+                }}</mark
+                ><template v-else>{{ seg.text }}</template></template
+              ></small
+            >
+            <p>
+              <template
+                v-for="(seg, i) in highlightSegments(result.context)"
+                :key="'c' + i"
+                ><mark v-if="seg.match" class="search-hit">{{
+                  seg.text
+                }}</mark
+                ><template v-else>{{ seg.text }}</template></template
+              >
+            </p>
           </button>
           <p v-if="searchReady && !results.length" class="empty-hint">
             没有找到匹配的笔记
