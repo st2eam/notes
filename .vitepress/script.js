@@ -24,6 +24,7 @@ function walkDir(dir) {
         "设计",
         "影像",
         "历史",
+        "经济学",
         "心理学",
         "人文语言",
         "音乐",
@@ -35,13 +36,6 @@ function walkDir(dir) {
           (aIndex === -1 ? Infinity : aIndex) -
           (bIndex === -1 ? Infinity : bIndex)
         );
-    }
-    if (path.resolve(dir) === path.resolve("./音乐")) {
-      const order = ["基础乐理", "半音阶口琴", "尤克里里"];
-      const aIndex = order.indexOf(a), bIndex = order.indexOf(b);
-      if (aIndex !== -1 || bIndex !== -1)
-        return (aIndex === -1 ? Infinity : aIndex) -
-          (bIndex === -1 ? Infinity : bIndex);
     }
     if (path.resolve(dir) === path.resolve("./历史/分期")) {
       const order = [
@@ -67,6 +61,8 @@ function walkDir(dir) {
     if (file.startsWith(".")) return;
     file = dir + "/" + file;
     const absolutePath = path.resolve(file);
+    // Public data and third-party license documents are assets, not notes.
+    if (absolutePath === path.resolve("public")) return;
     // 如果这个路径在.gitignore中，就跳过
     if (gitignore.some((item) => absolutePath.startsWith(item))) {
       return;

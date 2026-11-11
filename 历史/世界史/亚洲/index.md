@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-asia
+    kind: region
+    modernName: 亚洲
+    variants: []
 ---
 # 亚洲
 

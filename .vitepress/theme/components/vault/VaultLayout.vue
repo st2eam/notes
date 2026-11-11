@@ -21,16 +21,20 @@ import {
   restoreWorkspace,
   readStorage,
   migrateGraphStorage,
+  createGraphTab,
 } from "../../../vault/workspace.mjs";
 import { embedHref } from "../../../vault/embed.mjs";
-import { migrateQuery } from "../../../vault/migration.mjs";
 import { searchNotes, searchTerms } from "../../../vault/search.mjs";
 import { sortHistoryTree } from "../../../vault/history.mjs";
+import { noteGeoTime } from "../../../vault/geo.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
 import Icon from "./Icon.vue";
 import FileTree from "./FileTree.vue";
+import ContextMenu from "./ContextMenu.vue";
+import { publicNoteUrl } from "../../../vault/context-menu.mjs";
 const VaultGraph = defineAsyncComponent(() => import("./VaultGraph.vue"));
+const VaultNoteMap = defineAsyncComponent(() => import("./VaultNoteMap.vue"));
 const router = useRouter();
 const { page, isDark: vpIsDark, site } = useData();
 const isDark = ref(false);
@@ -72,6 +76,7 @@ function browseCategory(category: string) {
   pane.value = "categories";
   categoryFilter.value = category;
   leftOpen.value = true;
+  if (drawerViewport()) rightOpen.value = false;
   expanded.value = category.split("/").map((_, i) =>
     category
       .split("/")
@@ -79,20 +84,21 @@ function browseCategory(category: string) {
       .join("/"),
   );
 }
-const relationName = (l: VaultLink) =>
-  l.label ||
-  {
-    citation: "引用",
-    similar: "相似主题",
-    subordinate: "从属",
-    causal: "因果",
-  }[l.relationType || "citation"];
+const relationLabels: Record<string, string> = {
+  citation: "引用",
+  similar: "相似主题",
+  subordinate: "从属",
+  causal: "因果",
+};
+const relationName = (link: VaultLink) =>
+  relationLabels[link.label || ""] || link.label || relationLabels[link.relationType || "citation"];
 type Tab = {
   key: string;
   title: string;
   href: string;
   noteId?: string;
   filter?: string;
+  related?: boolean;
 };
 const tabs = ref<Tab[]>([]);
 const active = ref("");
@@ -100,7 +106,7 @@ const leftOpen = ref(true),
   rightOpen = ref(true);
 const leftWidth = ref(250),
   rightWidth = ref(280);
-const expanded = ref<string[]>(["历史"]);
+const expanded = ref<string[]>([]);
 const pane = ref("files");
 const query = ref("");
 const documents = ref<{ id: string; text: string }[]>([]);
@@ -119,6 +125,9 @@ const activeTab = computed(() =>
 const graphActive = computed(() => activeTab.value?.key.startsWith("graph:"));
 const graphFilter = computed(() => activeTab.value?.filter || "");
 const rightTab = ref("outline");
+const outlineHeadings = computed(() => current.value?.headings.filter((h) => h.level > 1) || []);
+const activeHeading = ref("");
+let outlineFrame = 0;
 const localDepth = ref(1);
 const localListOpen = ref(false);
 const localOpen = ref(true);
@@ -136,6 +145,41 @@ let restoring = true,
 let cleanupResize: (() => void) | null = null;
 let oldAfter: any;
 const storage = "steam-vault-workspace-v1";
+type MenuTarget =
+  | { kind: "note"; noteId: string; href?: string }
+  | { kind: "folder"; path: string }
+  | { kind: "tab"; key: string };
+const contextMenu = ref<{
+  serial: number;
+  target: MenuTarget;
+  trigger: HTMLElement;
+  route: string;
+  x: number;
+  y: number;
+} | null>(null);
+let menuSerial = 0;
+const menuStatus = ref("");
+let menuStatusTimer: ReturnType<typeof setTimeout>;
+const contextItems = computed(() => {
+  const target = contextMenu.value?.target;
+  if (!target) return [];
+  if (target.kind === "folder") return [{
+    id: "toggle-folder",
+    label: expanded.value.includes(target.path) ? "收起目录" : "展开目录",
+    icon: "folder",
+  }];
+  const items = [];
+  const tab = target.kind === "tab" ? tabs.value.find((t) => t.key === target.key) : undefined;
+  if (target.kind === "note") {
+    items.push({ id: "open", label: "打开笔记", icon: "file" });
+    if (!isEmbedded.value) items.push({ id: "new-tab", label: "在新笔记标签页打开", icon: "switch" });
+  }
+  items.push({ id: "copy", label: "复制链接", icon: "link" });
+  if (!isEmbedded.value && (target.kind === "note" || (tab?.noteId && !tab.key.startsWith("graph:"))))
+    items.push({ id: "relations", label: "查看关联", icon: "graph" });
+  if (target.kind === "tab") items.push({ id: "close-tab", label: "关闭标签页", icon: "close", separator: true });
+  return items;
+});
 const results = computed(() =>
   searchNotes(notes, documents.value, query.value),
 );
@@ -189,6 +233,10 @@ const outlinks = computed(() =>
     "target",
   ),
 );
+const relationGroups = computed(() => [
+  { title: "反向链接", incoming: true, items: backlinks.value, empty: "没有笔记链接到此处" },
+  { title: "出链", incoming: false, items: outlinks.value, empty: "当前笔记没有出链" },
+]);
 function dedupe(items: VaultLink[], key: "source" | "target") {
   return [
     ...new Map(
@@ -236,6 +284,96 @@ const commands = computed(() =>
     c.title.toLowerCase().includes(modalQuery.value.toLowerCase()),
   ),
 );
+function closeContextMenu(restoreFocus = false) {
+  const trigger = contextMenu.value?.trigger;
+  contextMenu.value = null;
+  if (restoreFocus && trigger?.isConnected) trigger.focus({ preventScroll: true });
+}
+function showContextMenu(target: MenuTarget, event: MouseEvent | KeyboardEvent, trigger?: HTMLElement) {
+  const keyboard = event.type === "keydown";
+  if (keyboard) {
+    const key = event as KeyboardEvent;
+    if (key.key !== "ContextMenu" && !(key.key === "F10" && key.shiftKey)) return;
+  } else if ((event as PointerEvent).pointerType === "touch" ||
+    (event as MouseEvent & { sourceCapabilities?: { firesTouchEvents: boolean } }).sourceCapabilities?.firesTouchEvents) return;
+  if (modal.value || (event.target as Element)?.closest?.("input, textarea, select, [contenteditable]:not([contenteditable='false']), [role='textbox']")) return;
+  const selection = window.getSelection();
+  if (selection && !selection.isCollapsed) return;
+  const element = trigger || event.currentTarget as HTMLElement;
+  if (!element) return;
+  if (target.kind === "note" && !notes.some((note) => note.id === target.noteId)) return;
+  if (target.kind === "tab" && !tabs.value.some((tab) => tab.key === target.key)) return;
+  event.preventDefault();
+  event.stopPropagation();
+  leave();
+  const rect = element.getBoundingClientRect();
+  const pointer = event as MouseEvent;
+  contextMenu.value = {
+    serial: ++menuSerial,
+    target,
+    trigger: element,
+    route: window.location.href,
+    x: keyboard ? rect.left : pointer.clientX,
+    y: keyboard ? rect.bottom : pointer.clientY,
+  };
+}
+function tabContextMenu(tab: Tab, event: MouseEvent | KeyboardEvent) {
+  const trigger = (event.currentTarget as HTMLElement).querySelector<HTMLElement>("[role='tab']");
+  if (trigger) showContextMenu({ kind: "tab", key: tab.key }, event, trigger);
+}
+function graphContextMenu(note: VaultNote, event: MouseEvent | KeyboardEvent) {
+  showContextMenu({ kind: "note", noteId: note.id }, event);
+}
+async function viewGraphRelations(note: VaultNote) {
+  const serial = menuSerial;
+  await openGraph("", note);
+  await nextTick();
+  if (menuSerial === serial)
+    document.querySelector<HTMLCanvasElement>(".vault-graph-workspace canvas")?.focus({ preventScroll: true });
+}
+function contentContextMenu(event: MouseEvent | KeyboardEvent) {
+  const hit = anchorNote(event.target);
+  if (!hit?.note || hit.url.searchParams.get("view") === "graph" || hit.url.searchParams.get("embed") === "true") return;
+  showContextMenu({ kind: "note", noteId: hit.note.id, href: hit.url.href }, event, hit.anchor);
+}
+async function contextAction(action: string) {
+  const request = contextMenu.value;
+  if (!request) return;
+  const target = request.target;
+  const tab = target.kind === "tab" ? tabs.value.find((t) => t.key === target.key) : undefined;
+  const note = notes.find((n) => n.id === (target.kind === "note" ? target.noteId : tab?.noteId));
+  const href = target.kind === "note" ? target.href || note?.route
+    : tab?.key === active.value ? window.location.href : tab?.href;
+  closeContextMenu(action === "copy" || action === "toggle-folder");
+  if (action === "toggle-folder" && target.kind === "folder") {
+    toggleFolder(target.path);
+  } else if (action === "copy" && href) {
+    clearTimeout(menuStatusTimer);
+    menuStatus.value = "";
+    try {
+      await navigator.clipboard.writeText(publicNoteUrl(href, window.location.origin, withBase("/")));
+      menuStatus.value = "链接已复制";
+    } catch {
+      menuStatus.value = "无法复制链接，请检查浏览器剪贴板权限";
+    }
+    menuStatusTimer = setTimeout(() => (menuStatus.value = ""), 4000);
+  } else if (action === "close-tab" && target.kind === "tab") {
+    closeTab(target.key);
+    await nextTick();
+    if (menuSerial === request.serial)
+      (document.querySelector(".vault-tab.active [role='tab']") as HTMLElement)?.focus({ preventScroll: true });
+  } else if (note && action === "relations") {
+    await viewGraphRelations(note);
+  } else if (note && ["open", "new-tab"].includes(action)) {
+    const url = new URL(href || note.route, window.location.href);
+    await openNote(note, undefined, "", {
+      newTab: action === "new-tab",
+      href: note.route + url.search + url.hash,
+    });
+    await nextTick();
+    if (menuSerial === request.serial) article.value?.focus({ preventScroll: true });
+  }
+}
 function goBack() {
   window.history.back();
 }
@@ -281,23 +419,11 @@ function routeTab(): Tab {
       ? new URL("https://local" + router.route.path)
       : new URL(window.location.href);
   const graph = url.searchParams.get("view") === "graph";
-  if (graph) {
-    const filter = migrateQuery(url.searchParams.get("filter") || "");
-    return {
-      key: "graph:" + filter,
-      noteId: current.value?.id,
-      title: /^(path:历史|path:"历史)/.test(filter)
-        ? "历史图谱"
-        : filter
-          ? "筛选图谱"
-          : "全局图谱",
-      href:
-        (current.value?.route || "/") +
-        "?view=graph" +
-        (filter ? "&filter=" + encodeURIComponent(filter) : ""),
-      filter,
-    };
-  }
+  if (graph) return createGraphTab(
+    current.value,
+    url.searchParams.get("filter") || "",
+    url.searchParams.get("scope") === "related",
+  );
   const n = current.value;
   return {
     key: n?.id || url.pathname,
@@ -307,17 +433,22 @@ function routeTab(): Tab {
   };
 }
 function syncRoute() {
+  if (contextMenu.value && contextMenu.value.route !== window.location.href) closeContextMenu();
   const t = routeTab();
   const existing = tabs.value.find((x) => x.key === t.key);
   if (!existing) tabs.value.push(t);
   else Object.assign(existing, t);
   active.value = t.key;
   preview.value = null;
-  const parts = current.value?.folder.split("/") || [];
-  let path = "";
-  for (const part of parts) {
-    path += (path ? "/" : "") + part;
-    if (part && !expanded.value.includes(path)) expanded.value.push(path);
+  if (current.value?.id === "index.md") {
+    expanded.value = [];
+  } else {
+    const parts = current.value?.folder.split("/") || [];
+    let path = "";
+    for (const part of parts) {
+      path += (path ? "/" : "") + part;
+      if (part && !expanded.value.includes(path)) expanded.value.push(path);
+    }
   }
   nextTick(() => {
     const anchor =
@@ -328,6 +459,7 @@ function syncRoute() {
   save();
 }
 async function navigate(tab: Tab) {
+  closeContextMenu();
   rememberScroll();
   active.value = tab.key;
   await router.go(
@@ -337,8 +469,13 @@ async function navigate(tab: Tab) {
   );
   syncRoute();
 }
-async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
-  const isNew = !!(e?.ctrlKey || e?.metaKey || e?.shiftKey);
+async function openNote(
+  note: VaultNote,
+  e?: MouseEvent,
+  anchor = "",
+  options: { newTab?: boolean; href?: string } = {},
+) {
+  const isNew = options.newTab ?? !!(e?.ctrlKey || e?.metaKey || e?.shiftKey);
   rememberScroll();
   const tab: Tab = {
     key: note.id,
@@ -352,11 +489,10 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
     if (!isNew && at >= 0 && !graphActive.value) tabs.value.splice(at, 1, tab);
     else tabs.value.push(tab);
   }
-  await navigate(
-    anchor
-      ? { ...tab, href: tab.href + "#" + encodeURIComponent(anchor) }
-      : tab,
-  );
+  await navigate({
+    ...tab,
+    href: options.href || (anchor ? tab.href + "#" + encodeURIComponent(anchor) : tab.href),
+  });
   if (anchor) document.getElementById(decode(anchor))?.scrollIntoView();
   if (
     typeof window !== "undefined" &&
@@ -366,24 +502,10 @@ async function openNote(note: VaultNote, e?: MouseEvent, anchor = "") {
     rightOpen.value = embedDesktop.value;
   }
 }
-function openGraph(filter = "") {
-  filter = migrateQuery(filter);
-  const tab = {
-    key: "graph:" + filter,
-    noteId: current.value?.id,
-    title: /^(path:历史|path:"历史)/.test(filter)
-      ? "历史图谱"
-      : filter
-        ? "筛选图谱"
-        : "全局图谱",
-    href:
-      (current.value?.route || "/") +
-      "?view=graph" +
-      (filter ? "&filter=" + encodeURIComponent(filter) : ""),
-    filter,
-  };
+async function openGraph(filter = "", relatedNote?: VaultNote) {
+  const tab = createGraphTab(relatedNote || current.value, filter, !!relatedNote);
   if (!tabs.value.some((t) => t.key === tab.key)) tabs.value.push(tab);
-  navigate(tab);
+  await navigate(tab);
   if (
     typeof window !== "undefined" &&
     drawerViewport()
@@ -498,6 +620,11 @@ function modalKey(e: KeyboardEvent) {
   }
 }
 function shortcut(e: KeyboardEvent) {
+  if (contextMenu.value && e.key === "Escape") {
+    e.preventDefault();
+    closeContextMenu(true);
+    return;
+  }
   if (e.key === "Escape") {
     modal.value = null;
     preview.value = null;
@@ -626,6 +753,7 @@ function contentClick(e: MouseEvent) {
   openNote(hit.note, e, decode(hit.url.hash.slice(1)));
 }
 function hover(e: MouseEvent | FocusEvent) {
+  if (contextMenu.value) return;
   clearTimeout(previewTimer);
   const hit = anchorNote(e.target);
   if (!hit?.note || hit.note.id === current.value?.id) return;
@@ -656,8 +784,29 @@ function relationTitle(link: VaultLink, incoming = false) {
     link.reference
   );
 }
-function jumpHeading(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+function trackOutline() {
+  if (outlineFrame || graphActive.value || !article.value) return;
+  outlineFrame = requestAnimationFrame(() => {
+    outlineFrame = 0;
+    const top = article.value?.getBoundingClientRect().top || 0;
+    let selected = "";
+    for (const heading of outlineHeadings.value) {
+      const element = document.getElementById(heading.id);
+      if (!element || element.getBoundingClientRect().top > top + 80) break;
+      selected = heading.id;
+    }
+    activeHeading.value = selected;
+  });
+}
+async function jumpHeading(id: string) {
+  activeHeading.value = id;
+  if (graphActive.value && current.value) {
+    await openNote(current.value, undefined, id);
+  } else {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }
   if (!embedDesktop.value && (isEmbedded.value || drawerViewport()))
     rightOpen.value = false;
 }
@@ -681,6 +830,7 @@ watch(vpIsDark, (value) => {
   isDark.value = value;
 });
 watch(modalQuery, () => (modalIndex.value = 0));
+watch([pane, leftOpen, rightOpen, categoryFilter, isEmbedded, modal], () => closeContextMenu());
 watch(query, loadSearch);
 function clearBodyHighlight(root: HTMLElement) {
   for (const mark of Array.from(root.querySelectorAll("mark.search-hit")))
@@ -743,6 +893,13 @@ watch([query, () => page.value.relativePath], () => {
   if (typeof window === "undefined") return;
   nextTick(applyBodyHighlight);
   window.setTimeout(applyBodyHighlight, 60);
+});
+watch([() => current.value?.id, graphActive], () => {
+  activeHeading.value = "";
+  nextTick(trackOutline);
+});
+watch([() => current.value?.id, rightTab], () => {
+  nextTick(() => document.querySelector(".vault-right-scroll")?.scrollTo({ top: 0 }));
 });
 // SSR always includes the current note. Browser state is restored after hydration.
 const initialNote = current.value;
@@ -829,6 +986,8 @@ onBeforeUnmount(() => {
   router.onAfterRouteChanged = oldAfter;
   cleanupResize?.();
   clearTimeout(previewTimer);
+  clearTimeout(menuStatusTimer);
+  cancelAnimationFrame(outlineFrame);
 });
 </script>
 <template>
@@ -964,6 +1123,7 @@ onBeforeUnmount(() => {
           :expanded="expanded"
           @toggle="toggleFolder"
           @open="openNote"
+          @context="showContextMenu"
         />
       </div>
       <div v-else-if="pane === 'categories'" class="file-tree-scroll">
@@ -987,6 +1147,7 @@ onBeforeUnmount(() => {
           :expanded="expanded"
           @toggle="toggleFolder"
           @open="openNote"
+          @context="showContextMenu"
         />
       </div>
       <div v-else class="vault-search">
@@ -1077,9 +1238,12 @@ onBeforeUnmount(() => {
             v-for="tab in tabs"
             :key="tab.key"
             :class="['vault-tab', { active: tab.key === active }]"
+            @contextmenu="tabContextMenu(tab, $event)"
+            @keydown="tabContextMenu(tab, $event)"
           >
             <button
               role="tab"
+              aria-haspopup="menu"
               :aria-selected="tab.key === active"
               :tabindex="tab.key === active ? 0 : -1"
               @click="navigate(tab)"
@@ -1114,14 +1278,15 @@ onBeforeUnmount(() => {
           <Icon name="plus" />
         </button>
         <button
-          class="icon-button"
-          aria-label="切换辅助侧栏"
+          v-if="!rightOpen"
+          class="icon-button detail-toggle"
+          aria-label="打开笔记辅助栏"
           :aria-expanded="rightOpen"
           aria-controls="vault-note-details"
-          title="辅助侧栏"
           @click="toggleSidebar('right')"
         >
-          <Icon name="right" />
+          <Icon name="right-open" />
+          <span class="sidebar-tooltip" aria-hidden="true">打开笔记辅助栏</span>
         </button>
       </div>
       <div class="vault-document-toolbar">
@@ -1156,10 +1321,13 @@ onBeforeUnmount(() => {
       <div v-if="graphActive" class="vault-graph-workspace" role="tabpanel">
         <ClientOnly
           ><VaultGraph
+            :key="active"
             :index="index"
+            :current="activeTab?.related ? activeTab.noteId : undefined"
             :active-note="current?.id"
             :filter="graphFilter"
-            @open="openNote"
+            @relations="viewGraphRelations"
+            @context="graphContextMenu"
         /></ClientOnly>
       </div>
       <article
@@ -1170,10 +1338,13 @@ onBeforeUnmount(() => {
         role="tabpanel"
         tabindex="-1"
         @click="contentClick"
+        @contextmenu="contentContextMenu"
+        @keydown="contentContextMenu"
         @mouseover="hover"
         @mouseout="leave"
         @focusin="hover"
         @focusout="leave"
+        @scroll.passive="trackOutline"
       >
         <div v-if="page.isNotFound" class="vault-note-content vp-doc">
           <h1>找不到这篇笔记</h1>
@@ -1234,170 +1405,155 @@ onBeforeUnmount(() => {
         >
           <Icon name="link" :size="16" /><span>链接</span></button
         ><span /><button
-          class="icon-button mobile-only"
-          aria-label="关闭辅助侧栏"
+          class="icon-button"
+          aria-label="收起笔记辅助栏"
+          :aria-expanded="rightOpen"
+          aria-controls="vault-note-details"
           @click="rightOpen = false"
         >
-          <Icon name="close" />
+          <Icon name="right" :size="16" />
+          <span class="sidebar-tooltip" aria-hidden="true">收起笔记辅助栏</span>
         </button>
       </div>
       <div class="vault-right-scroll">
-        <section
-          v-if="
-            current?.categories.length && (!isEmbedded || rightTab === 'links')
-          "
+        <div v-if="current" class="vault-detail-context">
+          <Icon name="notebook" :size="16" />
+          <strong>{{ current.title }}</strong>
+        </div>
+        <ClientOnly>
+          <VaultNoteMap
+            v-if="current && rightOpen && (current.geo?.place || current.geo?.locationNote || current.tags.includes('地点') || current.geoReferences?.length || noteGeoTime(current))"
+            :note="current"
+            :notes="notes"
+            :enabled="rightOpen"
+            @open="openNote"
+          />
+        </ClientOnly>
+        <section v-if="!isEmbedded" class="vault-local">
+          <h2>
+            <button
+              @click="localOpen = !localOpen"
+              :aria-expanded="localOpen"
+              aria-controls="vault-local-content"
+            >
+              <Icon name="chevron" :size="12" :class="{ rotated: localOpen }" />局部图谱
+            </button>
+            <label v-if="localOpen">深度
+              <select v-model.number="localDepth" aria-label="局部图谱深度">
+                <option v-for="depth in 5" :key="depth" :value="depth">{{ depth }} 层</option>
+              </select>
+            </label>
+          </h2>
+          <div v-if="localOpen" id="vault-local-content">
+            <div v-if="current && rightOpen" class="local-graph-container">
+              <ClientOnly>
+                <VaultGraph
+                  :index="index"
+                  :current="current.id"
+                  :active-note="current.id"
+                  :depth="localDepth"
+                  compact
+                  :enabled="rightOpen"
+                  @relations="viewGraphRelations"
+                  @context="graphContextMenu"
+                  @expand="openGraph()"
+                />
+              </ClientOnly>
+            </div>
+            <button
+              class="local-list-toggle"
+              @click="localListOpen = !localListOpen"
+              :aria-expanded="localListOpen"
+              aria-controls="vault-local-nodes"
+            >
+              <Icon name="chevron" :size="12" :class="{ rotated: localListOpen }" />
+              <span>相关笔记</span><small>{{ localNeighbors.length }}</small>
+            </button>
+            <div v-if="localListOpen" id="vault-local-nodes" class="local-node-list" aria-label="局部图谱节点列表">
+              <button v-for="note in localNeighbors" :key="note.id" @click="viewGraphRelations(note)">
+                <Icon name="file" :size="14" /><span>{{ note.title }}</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section v-if="rightTab === 'outline'" class="vault-outline" aria-label="文章目录">
+          <h2>文章目录 <small>{{ outlineHeadings.length }} 个小节</small></h2>
+          <button
+            v-for="heading in outlineHeadings"
+            :key="heading.id"
+            :class="{ active: activeHeading === heading.id }"
+            :aria-current="activeHeading === heading.id ? 'location' : undefined"
+            :style="{ paddingLeft: (heading.level - 2) * 12 + 10 + 'px' }"
+            @click="jumpHeading(heading.id)"
+          >
+            {{ heading.title }}
+          </button>
+          <p v-if="!outlineHeadings.length" class="empty-hint">当前笔记没有小节</p>
+        </section>
+        <template v-else>
+          <section v-for="group in relationGroups" :key="group.title" class="vault-relations">
+            <h2>{{ group.title }} <small>{{ group.items.length }}</small></h2>
+            <div
+              v-for="link in group.items"
+              :key="link.source + (link.target || link.reference) + link.relationType + link.label + link.anchor"
+              class="relation-item"
+            >
+              <button
+                class="relation-open"
+                :disabled="!group.incoming && !link.target"
+                @click="openRelation(link, group.incoming, $event)"
+              >
+                <strong>{{ relationTitle(link, group.incoming) }}</strong>
+                <small class="relation-meta">
+                  {{ relationName(link) }} · {{ link.status === 'inferred' ? '推断' : '已确认' }}
+                  <span v-if="!group.incoming && link.reason"> · {{ !link.target ? '未解析' : '标题未找到' }}</span>
+                </small>
+                <p v-if="link.explanation || link.context">{{ link.explanation || link.context }}</p>
+              </button>
+              <details v-if="link.evidence || link.context" class="relation-evidence">
+                <summary>查看依据</summary>
+                <p>{{ link.evidence || link.context }}</p>
+              </details>
+            </div>
+            <p v-if="!group.items.length" class="empty-hint">{{ group.empty }}</p>
+          </section>
+        </template>
+        <details
+          v-if="current?.categories.length && (!isEmbedded || rightTab === 'links')"
+          :key="current.id"
           class="vault-classifications"
         >
-          <h2>
-            分类
-            <small v-if="current.classificationStatus === 'provisional'"
-              >待补充正文</small
-            >
-          </h2>
-          <div v-for="category in current.categories" :key="category.path">
+          <summary>
+            <Icon name="chevron" :size="12" />
+            <span>分类信息</span><small>{{ current.categories.length }}</small>
+          </summary>
+          <p v-if="current.classificationStatus === 'provisional'" class="empty-hint">待补充正文</p>
+          <div v-for="category in current.categories" :key="category.path" class="classification-item">
             <button @click="browseCategory(category.path)">
               {{ category.path }}
-              <small>{{
-                category.path === current.primaryCategory
-                  ? "主分类"
-                  : "交叉分类"
-              }}</small>
+              <small>{{ category.path === current.primaryCategory ? '主分类' : '交叉分类' }}</small>
             </button>
             <details>
               <summary>分类理由</summary>
               <p>{{ category.reason }}</p>
             </details>
           </div>
-        </section>
-        <section v-if="rightTab === 'outline'" class="vault-outline">
-          <h2>目录</h2>
-          <button
-            v-for="h in current?.headings.filter((h) => h.level > 1)"
-            :key="h.id"
-            :style="{ paddingLeft: (h.level - 2) * 12 + 12 + 'px' }"
-            @click="jumpHeading(h.id)"
-          >
-            {{ h.title }}
-          </button>
-          <p
-            v-if="!current?.headings.some((h) => h.level > 1)"
-            class="empty-hint"
-          >
-            当前笔记没有小节
-          </p>
-        </section>
-        <template v-else
-          ><section class="vault-relations">
-            <h2>
-              反向链接 <small>{{ backlinks.length }}</small>
-            </h2>
-            <button
-              v-for="link in backlinks"
-              :key="link.source + link.relationType + link.label + link.anchor"
-              @click="openRelation(link, true, $event)"
-            >
-              <strong>{{ relationTitle(link, true) }}</strong>
-              <small
-                >{{ relationName(link) }} ·
-                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
-              >
-              <p>{{ link.explanation || link.context }}</p>
-              <span class="relation-evidence"
-                >证据：{{ link.evidence || link.context }}</span
-              >
-            </button>
-            <p v-if="!backlinks.length" class="empty-hint">
-              没有笔记链接到此处
-            </p>
-          </section>
-          <section class="vault-relations">
-            <h2>
-              出链 <small>{{ outlinks.length }}</small>
-            </h2>
-            <button
-              v-for="link in outlinks"
-              :key="
-                (link.target || link.reference) +
-                link.relationType +
-                link.label +
-                link.anchor
-              "
-              :disabled="!link.target"
-              @click="openRelation(link, false, $event)"
-            >
-              <strong
-                >{{ relationTitle(link)
-                }}<small v-if="link.reason">
-                  · {{ !link.target ? "未解析" : "标题未找到" }}</small
-                ></strong
-              >
-              <small
-                >{{ relationName(link) }} ·
-                {{ link.status === "inferred" ? "推断" : "已确认" }}</small
-              >
-              <p>{{ link.explanation || link.context }}</p>
-              <span class="relation-evidence"
-                >证据：{{ link.evidence || link.context }}</span
-              >
-            </button>
-            <p v-if="!outlinks.length" class="empty-hint">当前笔记没有出链</p>
-          </section></template
-        >
-        <section v-if="!isEmbedded" class="vault-local">
-          <h2>
-            <button @click="localOpen = !localOpen" :aria-expanded="localOpen">
-              <Icon
-                name="chevron"
-                :size="12"
-                :class="{ rotated: localOpen }"
-              />局部图谱</button
-            ><label
-              >深度
-              <select v-model.number="localDepth" aria-label="局部图谱深度">
-                <option v-for="depth in 5" :value="depth">{{ depth }}</option>
-              </select></label
-            >
-          </h2>
-          <div
-            v-if="localOpen && current && rightOpen && !isEmbedded"
-            class="local-graph-container"
-          >
-            <ClientOnly
-              ><VaultGraph
-                :index="index"
-                :current="current.id"
-                :active-note="current.id"
-                :depth="localDepth"
-                compact
-                :enabled="rightOpen && !isEmbedded"
-                @open="openNote"
-                @expand="openGraph()"
-            /></ClientOnly>
-          </div>
-          <button
-            class="local-list-toggle"
-            @click="localListOpen = !localListOpen"
-            :aria-expanded="localListOpen"
-          >
-            局部节点列表 · {{ localNeighbors.length }}
-          </button>
-          <div
-            v-if="localListOpen"
-            class="local-node-list"
-            aria-label="局部图谱节点列表"
-          >
-            <button
-              v-for="note in localNeighbors"
-              :key="note.id"
-              @click="openNote(note, $event)"
-            >
-              {{ note.title }}
-            </button>
-          </div>
-        </section>
+        </details>
       </div>
     </aside>
     </div>
+    <ContextMenu
+      v-if="contextMenu"
+      :key="contextMenu.serial"
+      :items="contextItems"
+      :trigger="contextMenu.trigger"
+      :x="contextMenu.x"
+      :y="contextMenu.y"
+      :label="contextMenu.target.kind === 'folder' ? '目录操作' : contextMenu.target.kind === 'tab' ? '标签页操作' : '笔记操作'"
+      @select="contextAction"
+      @close="closeContextMenu"
+    />
+    <div class="vault-menu-status" role="status" aria-live="polite" aria-atomic="true" :class="{ visible: menuStatus }">{{ menuStatus }}</div>
     <div
       v-if="preview"
       class="vault-hover-preview"

@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/塞内加尔
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-senegal
+    kind: region
+    modernName: 西非塞内加尔地区
+    variants: []
 ---
 # 塞内加尔
 

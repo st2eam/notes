@@ -32,6 +32,11 @@ jobs:
       - name: Build
         run: npm run docs:build
 
+      - name: Report Pages artifact size
+        run: |
+          du -sh docs
+          find docs -type f | wc -l
+
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
@@ -44,7 +49,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1200000

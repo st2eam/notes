@@ -39,7 +39,8 @@ const props = withDefaults(
   { depth: 1, filter: "", enabled: true },
 );
 const emit = defineEmits<{
-  open: [note: VaultNote, event?: MouseEvent];
+  relations: [note: VaultNote];
+  context: [note: VaultNote, event: MouseEvent | KeyboardEvent];
   expand: [];
 }>();
 const canvas = ref<HTMLCanvasElement>();
@@ -113,7 +114,8 @@ let drag: any = null,
 let pendingFit = false;
 const storage = "steam-vault-graph-v1";
 const storageKey = () =>
-  storage + (props.compact ? ":local" : props.filter ? ":" + props.filter : "");
+  storage + (props.compact ? ":local" : props.current ? ":related:" + props.current : "") +
+  (!props.compact && props.filter ? ":" + props.filter : "");
 function colors() {
   if (!host.value) return;
   const css = getComputedStyle(host.value);
@@ -273,16 +275,34 @@ function zoom(factor: number, x = width / 2, y = height / 2) {
   scale = next;
   schedule();
 }
-function position(e: PointerEvent | WheelEvent) {
+function position(e: MouseEvent) {
   const r = canvas.value!.getBoundingClientRect();
   return { x: e.clientX - r.left, y: e.clientY - r.top };
 }
 function hit(p: { x: number; y: number }) {
   const x = (p.x - width / 2 - offset.x) / scale,
     y = (p.y - height / 2 - offset.y) / scale;
-  return [...nodes]
-    .reverse()
-    .find((n) => Math.hypot(n.x - x, n.y - y) < radius(n) + 6 / scale);
+  let closest: any;
+  let distance = Infinity;
+  for (const node of nodes) {
+    const candidate = Math.hypot(node.x - x, node.y - y);
+    if (candidate < radius(node) + 6 / scale && candidate <= distance) {
+      closest = node;
+      distance = candidate;
+    }
+  }
+  return closest;
+}
+function nodeContextMenu(node: any, event: MouseEvent | KeyboardEvent) {
+  if (node?.kind !== "note") return;
+  emit("context", node.note, event);
+  if (event.defaultPrevented) {
+    hovered.value = null;
+    schedule();
+  }
+}
+function canvasContextMenu(event: MouseEvent) {
+  nodeContextMenu(hit(position(event)), event);
 }
 function down(e: PointerEvent) {
   if (e.button !== 0) return;
@@ -352,7 +372,7 @@ function up(e: PointerEvent) {
     simulation.alphaTarget(0);
     drag = null;
   }
-  if (!moved && n) open(n, e as any);
+  if (!moved && n) activateNode(n);
   pinchDistance = 0;
   if (pointers.size === 1) {
     previous = [...pointers.values()][0];
@@ -363,8 +383,8 @@ function cancel(e: PointerEvent) {
   moved = true;
   up(e);
 }
-function open(n: any, e?: MouseEvent) {
-  if (n.kind === "note") emit("open", n.note, e);
+function activateNode(n: any) {
+  if (n.kind === "note") emit("relations", n.note);
   else if (n.kind === "attachment") {
     const a = props.index.attachments.find((a) => a.id === n.id);
     if (a) window.open("/notes" + a.route, "_blank", "noopener");
@@ -529,6 +549,7 @@ onBeforeUnmount(() => {
           ? '局部图谱；加减键缩放，方向键平移，Home 适合屏幕'
           : '知识图谱；加减键缩放，方向键平移，Home 适合屏幕。使用节点列表选择笔记'
       "
+      @contextmenu="canvasContextMenu"
       @pointerdown="down"
       @pointermove="move"
       @pointerup="up"
@@ -553,20 +574,21 @@ onBeforeUnmount(() => {
       </button>
       <button
         class="icon-button"
-        title="适合屏幕"
+        :title="compact ? undefined : '适合屏幕'"
         aria-label="适合屏幕"
         @click="fit"
       >
         <Icon name="fit" />
+        <span v-if="compact" class="sidebar-tooltip" aria-hidden="true">适合屏幕</span>
       </button>
       <button
         v-if="compact"
         class="icon-button"
-        title="打开全局图谱"
         aria-label="打开全局图谱"
         @click="emit('expand')"
       >
         <Icon name="graph" :size="15" />
+        <span class="sidebar-tooltip" aria-hidden="true">打开全局图谱</span>
       </button>
       <button
         v-else
@@ -764,7 +786,10 @@ onBeforeUnmount(() => {
           selected = '';
           schedule();
         "
-        @click="open(node, $event)"
+        :aria-haspopup="node.kind === 'note' ? 'menu' : undefined"
+        @contextmenu="nodeContextMenu(node, $event)"
+        @keydown="nodeContextMenu(node, $event)"
+        @click="activateNode(node)"
       >
         {{ node.title }}<small>{{ node.degree }} 条连接</small>
       </button>

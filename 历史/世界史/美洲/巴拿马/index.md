@@ -8,6 +8,12 @@ classificationStatus: confirmed
 tags: [历史, 巴拿马]
 categoryOverview: 历史/世界史/美洲/巴拿马
 relations: []
+geo:
+  place:
+    id: region-panama
+    kind: region
+    modernName: 中美洲巴拿马地区
+    variants: []
 ---
 
 # 巴拿马

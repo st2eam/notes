@@ -3,6 +3,35 @@ export interface VaultHeading {
   id: string;
   level: number;
 }
+export interface GeoSource {
+  title: string;
+  url: string;
+}
+export interface GeoVariant {
+  id: string;
+  name: string;
+  from?: number;
+  to?: number;
+  snapshotYear?: number;
+  coordinates?: [number, number];
+  geometry?: string;
+  labelCoordinates?: [number, number];
+  accuracy: string;
+  source: GeoSource;
+}
+export interface GeoPlace {
+  id: string;
+  kind: "point" | "region" | "polity";
+  modernName: string;
+  variants: GeoVariant[];
+}
+export interface GeoReference {
+  target: string | null;
+  place?: string;
+  name?: string;
+  reference: string;
+  variant?: string;
+}
 export interface VaultNote {
   id: string;
   path: string;
@@ -24,6 +53,19 @@ export interface VaultNote {
   historyOrder?: number;
   historyGroup?: string;
   historyTheme?: string;
+  historyPeriod?: string;
+  historyTrack?: string;
+  geo?: {
+    scope?: string;
+    period?: string;
+    time?: { from: number; to: number };
+    place?: GeoPlace;
+    places?: ({ target: string; place?: never; variant?: string; name?: string } | { place: string; target?: never; variant?: string; name?: string })[];
+    excludePlaces?: string[];
+    locationNote?: string;
+    bindingStatus?: "bound" | "uncertain";
+  };
+  geoReferences?: GeoReference[];
 }
 export interface VaultLink {
   source: string;

@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-europe
+    kind: region
+    modernName: 欧洲
+    variants: []
 ---
 # 欧洲
 

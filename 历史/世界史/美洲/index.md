@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/美洲
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-americas
+    kind: region
+    modernName: 美洲
+    variants: []
 ---
 # 美洲
 

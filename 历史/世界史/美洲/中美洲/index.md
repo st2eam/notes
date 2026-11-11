@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/美洲/中美洲
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-central-america
+    kind: region
+    modernName: 中美洲
+    variants: []
 ---
 # 中美洲
 

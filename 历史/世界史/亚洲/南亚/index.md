@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲/南亚
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-south-asia
+    kind: region
+    modernName: 南亚
+    variants: []
 ---
 # 南亚
 

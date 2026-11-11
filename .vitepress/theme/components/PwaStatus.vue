@@ -94,7 +94,7 @@ onUnmounted(() => {
 .pwa-status { position: fixed; bottom: calc(36px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 12px; width: max-content; max-width: calc(100vw - 24px); padding: 10px 14px; border: 1px solid var(--vault-border); border-radius: 8px; background: var(--vault-bg); color: var(--vault-text); font-size: 13px; box-shadow: 0 4px 20px #0002; }
 button { flex-shrink: 0; color: var(--vault-accent); cursor: pointer; padding: 4px; }
 button:focus-visible { outline: 2px solid var(--vault-accent); outline-offset: 2px; }
-:global(.embed-mode) .pwa-status { display: none; }
+.embed-mode .pwa-status { display: none; }
 @media (max-width: 760px), (max-width: 1023px) and (pointer: coarse), (max-height: 500px) and (pointer: coarse) {
   .pwa-status {
     bottom: calc(92px + env(safe-area-inset-bottom));

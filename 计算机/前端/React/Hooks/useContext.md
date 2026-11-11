@@ -9,8 +9,6 @@ categories:
       主题），这些属性是应用程序中许多组件都需要的。Context 提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递
       props。自定义Hook在不同的组件之间共享逻辑，Context 在不同的组件之间共享状态。
       useC”；据其实体与学习对象归入计算机/前端/React。
-  - path: 计算机/架构/组件架构
-    reason: 正文讨论深层组件传参及共享 Context，涉及组件树的依赖传递与组织。
 classificationStatus: confirmed
 relations:
   - target: 计算机/前端/Vue/Vue3/components/依赖注入.md

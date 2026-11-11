@@ -4,8 +4,6 @@ primaryCategory: AI/应用与评测/智能体
 categories:
   - path: AI/应用与评测/智能体
     reason: 正文讨论 MCP 接入和工具循环。
-  - path: 计算机/基础/安全与权限
-    reason: 正文解释工具授权与访问边界的设计。
 classificationStatus: confirmed
 relations:
   - target: AI/应用与评测/智能体/agentic-engineering-patterns.md
@@ -18,11 +16,6 @@ relations:
     status: confirmed
     reason: 采用应用评测方法。
     evidence: 分别记录工具选择、参数、权限、时延和最终任务成功率
-  - target: 计算机/基础/安全与权限/index.md
-    type: citation
-    status: confirmed
-    reason: 引用权限主题入口。
-    evidence: 权限主题见
   - target: 计算机/工程化/测试与持续集成/测试与CI.md
     type: citation
     status: confirmed
@@ -74,7 +67,7 @@ MCP 使用 JSON-RPC 2.0，ID 匹配响应。stdio 通过子进程标准流通信
 
 区分协议失败、工具业务失败和任务失败：连接断开、参数被拒、查无结果分别需要重连、修正参数、换查询。读操作可有限重试；写操作超时后先查询状态，使用幂等键或去重记录，避免重复写入。设置总轮数、耗时、输出大小与费用上限，并把停止原因交给用户。
 
-权限主题见[[计算机/基础/安全与权限/index|安全与权限入口]]。工具返回文本可能含提示注入，host 应把它当作外部数据；工具名称或“只读”描述不能替代授权检查。远端工具写入的数据库不受本地文件沙箱自动保护，具体边界见[[AI/应用与评测/智能体/agent编排与工具沙箱|Agent 编排与工具沙箱]]。
+工具返回文本可能含提示注入，host 应把它当作外部数据；工具名称或“只读”描述不能替代授权检查。远端工具写入的数据库不受本地文件沙箱自动保护，具体边界见[[AI/应用与评测/智能体/agent编排与工具沙箱|Agent 编排与工具沙箱]]。
 
 ## 5. 验证与速查
 

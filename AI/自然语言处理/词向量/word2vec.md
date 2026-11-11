@@ -6,8 +6,6 @@ categories:
     reason: >-
       核心学习对象为“word2vec”，正文依据：“Word2Vec是一种用于生成词向量的技术，它可以将单词映射到向量空间中的位置，使得相似的单词在向量空间中的距离也相似。Word2Vec模型由Google在2013年发布，它是一种基于神经网络的模型，可以通过大量的文本数据来训练。
       Word2Vec模型有两种不同的架构：连续词袋模型（CBOW）和Skip-gram模型。CBOW模型尝试根据上下文单词的平均值来预测当前单词，而Skip-gram模型则”；据其实体与学习对象归入AI/自然语言处理/词向量。
-  - path: AI/模型原理/向量表示
-    reason: 正文介绍词到向量空间的映射以及 CBOW／Skip-gram 两类训练架构，属于向量表示原理。
 classificationStatus: confirmed
 relations: []
 tags: []

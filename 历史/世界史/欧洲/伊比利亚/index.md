@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/伊比利亚
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-iberia
+    kind: region
+    modernName: 西班牙、葡萄牙所在半岛
+    variants: []
 ---
 # 伊比利亚
 

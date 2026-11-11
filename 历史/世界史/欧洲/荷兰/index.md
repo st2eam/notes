@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/荷兰
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-netherlands
+    kind: region
+    modernName: 今荷兰及低地相关地区
+    variants: []
 ---
 # 荷兰
 

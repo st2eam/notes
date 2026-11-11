@@ -1,0 +1,5 @@
+6e5bb17e2c265df549ca7d8cae1762d8cf4ce04a9edca9426c2cdbf378b42c0e  scripts/geo/gazetteer/raw/cities15000.zip
+b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5  public/geo/sources/geonames/upstream-readme.txt
+9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411  public/geo/sources/geonames/LICENSE-CC-BY-4.0.txt
+8abd7b5a72bd5c6a3dee8bdb28ffda090bcb2ad11408fa6ce4a62e780a814506  public/geo/sources/geonames/selection.tsv
+3d4c9a2fa21c5e215f4d0b2de83b6604d75e1e4b5957ea1b89ba065bb4de0198  public/geo/v1/cities.tsv

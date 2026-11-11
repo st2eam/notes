@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/大洋洲
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-oceania
+    kind: region
+    modernName: 大洋洲
+    variants: []
 ---
 # 大洋洲
 

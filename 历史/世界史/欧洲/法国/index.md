@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/欧洲/法国
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-france
+    kind: region
+    modernName: 法国相关地区（历史疆界变化）
+    variants: []
 ---
 # 法国
 

@@ -4,15 +4,8 @@ primaryCategory: 计算机/编程语言/Go
 categories:
   - path: 计算机/编程语言/Go
     reason: 正文介绍Go 并发的语义、用法与实践注意点。
-  - path: 计算机/基础/并发与异步
-    reason: 本笔记是并发与异步在 Go 中的具体应用。
 classificationStatus: confirmed
 relations:
-  - target: 计算机/基础/并发与异步/index.md
-    type: subordinate
-    status: inferred
-    reason: 本笔记是并发与异步在 Go 中的具体应用。
-    evidence: 本笔记是并发与异步在 Go 中的具体应用。
   - target: 计算机/编程语言/Python/python多线程.md
     type: similar
     status: inferred
@@ -59,6 +52,6 @@ select 等待可执行分支，多分支同时就绪时不保证业务优先级�
 
 sync.Mutex 保护临界区，所有访问应遵守同一锁约定，使用后不要复制锁。普通 map 的并发读写需同步。用 go test -race ./... 检测实际执行路径中的竞争，未报告不等于所有路径安全。
 
-本笔记是 [[计算机/基础/并发与异步/index|并发与异步]] 在 Go 中的具体应用。[[计算机/编程语言/Python/python多线程|Python 多线程]]同样讨论共享数据和锁，但任务调度模型不同。超时与退出参见 [[计算机/编程语言/Go/go上下文控制|上下文控制]]。
+goroutine、channel 和锁是 Go 实现并发与异步任务的基本机制。[[计算机/编程语言/Python/python多线程|Python 多线程]]同样讨论共享数据和锁，但任务调度模型不同。超时与退出参见 [[计算机/编程语言/Go/go上下文控制|上下文控制]]。
 
 参考：[Go Tour：并发](https://go.dev/tour/concurrency/1)、[sync 包](https://pkg.go.dev/sync)。

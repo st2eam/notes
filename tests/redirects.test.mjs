@@ -81,6 +81,7 @@ test("sidebar no longer lists the dissolved groups", () => {
     "设计",
     "影像",
     "历史",
+    "经济学",
     "心理学",
     "音乐",
     "读书笔记",

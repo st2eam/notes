@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/亚洲/越南
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-vietnam
+    kind: region
+    modernName: 越南相关地区（历史疆界变化）
+    variants: []
 ---
 # 越南
 

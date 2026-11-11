@@ -7,6 +7,12 @@ categoryOverview: 历史/世界史/非洲/安哥拉
 classificationStatus: confirmed
 relations: []
 tags: []
+geo:
+  place:
+    id: region-angola
+    kind: region
+    modernName: 非洲西南部安哥拉地区
+    variants: []
 ---
 # 安哥拉
 
