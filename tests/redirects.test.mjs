@@ -84,6 +84,7 @@ test("sidebar no longer lists the dissolved groups", () => {
     "经济学",
     "心理学",
     "音乐",
+    "生物学",
     "读书笔记",
   ]);
   for (const gone of [

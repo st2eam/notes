@@ -2,7 +2,7 @@
 primaryCategory: 历史/世界史/美洲/中美洲
 categories:
   - path: 历史/世界史/美洲/中美洲
-    reason: 历史事件的国家、地区或朝代导航，按事件发生日期排序。
+    reason: 汇集中美洲的人物、事件及背景笔记，并通过子分类导航。
 categoryOverview: 历史/世界史/美洲/中美洲
 classificationStatus: confirmed
 relations: []
@@ -16,4 +16,6 @@ geo:
 ---
 # 中美洲
 
-- [[历史/世界史/美洲/中美洲/阿兹特克文明|阿兹特克文明]] · 1325 年—1521 年
+## 分类导航
+
+- 子分类：[[历史/世界史/美洲/中美洲/事件/index|事件]]

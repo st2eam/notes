@@ -94,8 +94,8 @@ export function createBinder(notes, catalog = geographicPlaces) {
         }
         const year = Number(String(note.historyDate || "").match(/\d{3,4}/)?.[0]);
         if (name === "武昌" && (year >= 1000 || /\/(?:清|晚清|中华民国|中华人民共和国)\//.test(note.id))) candidates = [{ place: "city-wuhan", name: "武昌" }];
-        if (name === "南京" && year >= 960 && year <= 1127) candidates = [{ target: "历史/中国史/南京应天府.md" }];
-        if (name === "东京" && note.id.startsWith("历史/中国史/")) candidates = [{ target: "历史/中国史/开封.md" }];
+        if (name === "南京" && year >= 960 && year <= 1127) candidates = [{ target: "历史/中国史/宋/地点/南京应天府.md" }];
+        if (name === "东京" && note.id.startsWith("历史/中国史/")) candidates = [{ target: "历史/中国史/宋/地点/开封.md" }];
         if (candidates.length !== 1) continue;
         let ref = candidates[0];
         if (ref.place) {

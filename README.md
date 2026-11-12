@@ -40,12 +40,12 @@ tags: [历史, 学习]
 
 [[历史/中国史/三国/司马昭之心]]
 [[历史/中国史/三国/挟天子以令诸侯|汉末政治安排]]
-[标准链接](/历史/中国史/秦/秦灭六国.md)
+[标准链接](/历史/中国史/秦/事件/秦灭六国.md)
 ```
 
 ID 使用包含 `.md` 的完整相对路径。内部 Markdown 链接和 Wiki 链接共用解析规则；同名或同别名无法唯一解析时保留为未解析链接。代码、代码块和公式中的链接示例不形成关系。既有分期锚点和页面重定向继续保留。
 
-历史按中国史和世界史组织。事件笔记围绕单一事件记录时间、地点与经过，使用 `historyId` 进入时间总览；历史概念、人物总览和文学概念归入相应地区及朝代、时期，不标记 `historyId`。中国史的“司马昭之心”“挟天子以令诸侯”归入三国，记录史料出处、政治背景与词义，保留可核查的来源链接。人物页通过内部链接串联生平事件；唐宋八大家入口位于“历史/中国史/唐宋八大家”。此前迁移的原人物、朝代、分期、主题和书籍阅读汇总保存在 `.vitepress/archive/history-events/`；事件正文保留参考资料名称，不提供外部链接。
+历史按中国史和世界史组织。事件笔记围绕单一事件记录时间、地点与经过，使用 `historyId` 进入时间总览；历史概念、人物总览和文学概念归入相应地区及朝代、时期，不标记 `historyId`。中国史的“司马昭之心”“挟天子以令诸侯”归入三国，记录史料出处、政治背景与词义，保留可核查的来源链接。人物页通过内部链接串联生平事件；中国史各朝代目录下按内容分设 `人物/`、`地点/`、`事件/` 子类，制度、典故和时期综述类笔记仍留在朝代根目录；跨朝代地点归入“历史/中国史/地点”，时期综述、时间线及制度、文学专题文章归入“历史/中国史/专题”，唐宋八大家入口位于“历史/中国史/专题/唐宋八大家”。世界史同样按洲、国家或地区分设 `人物/`、`事件/` 子类（目前没有独立地点笔记），跨地区的综述、时间线和主题文章归入“历史/世界史/专题”。此前迁移的原人物、朝代、分期、主题和书籍阅读汇总保存在 `.vitepress/archive/history-events/`；事件正文保留参考资料名称，不提供外部链接。
 
 ## 阅读工作台
 
@@ -86,12 +86,12 @@ geo:
 
 区域形态用 `geometry: /geo/v1/区域文件.geojson` 代替 `coordinates`，另可提供 `labelCoordinates` 放置标签。`snapshotYear` 标明区域快照的真实年份；其 `from/to` 只用于代表时期匹配，不代表边界在整个时期内不变。没有已核验区域边界时使用 `variants: []`，显示“区域范围待补”，不以现代同名城市或现代省界代替。
 
-事件可使用 `geo.time: {from: 805, to: 805}`、`geo.period: 唐`、`geo.scope: china`，并通过 `geo.places: [{target: 历史/中国史/洛阳.md, variant: 历史形态ID}]` 显式关联。没有独立笔记的地点使用共享目录 ID，不需要建立空白地点页：
+事件可使用 `geo.time: {from: 805, to: 805}`、`geo.period: 唐`、`geo.scope: china`，并通过 `geo.places: [{target: 历史/中国史/地点/洛阳.md, variant: 历史形态ID}]` 显式关联。没有独立笔记的地点使用共享目录 ID，不需要建立空白地点页：
 
 ```yaml
 geo:
   places:
-    - target: 历史/中国史/洛阳.md
+    - target: 历史/中国史/地点/洛阳.md
       variant: sui-tang
     - place: city-paris
     - place: city-beijing
@@ -99,7 +99,7 @@ geo:
   locationNote: 原文地点说明及关联所代表的角色
   bindingStatus: bound # uncertain 表示古址或发生地点存在考证
   excludePlaces:
-    - 历史/中国史/许昌.md # 明确排除的地点不因正文链接重新进入地图
+    - 历史/中国史/三国/地点/许昌.md # 明确排除的地点不因正文链接重新进入地图
 ```
 
 `target` 与 `place` 每项只能使用一种。共享实体定义在 `scripts/geo/place-definitions.mjs`，从固定 GeoNames 快照提取城市坐标后生成 `.vitepress/vault/geo-places.mjs`；坐标来源为 GeoNames 及其贡献者，采用 CC BY 4.0，见 [城市数据来源](public/geo/sources/geonames/SOURCES.md)。今址、历史城址与历史行政区分别记录，现代聚落参照不代表古战场或宫殿的精确位置。
@@ -153,7 +153,7 @@ node scripts/geo/bind-notes.mjs --write # 将绑定写入 Markdown 的 geo 字�
 跨域 iframe 无法直接读取父页面的样式。父页面可在地址中传主题参数，或使用下方消息协议动态同步；通过 `parentOrigin` 指定父页面来源（省略时使用 Referrer，Referrer 不可用时仅信任站点同源）。
 
 ```html
-<iframe id="notes" src="https://st2eam.github.io/notes/历史/中国史/秦/秦灭六国.html?embed=true&background=transparent&parentOrigin=https%3A%2F%2Fyour-site.example"></iframe>
+<iframe id="notes" src="https://st2eam.github.io/notes/历史/中国史/秦/事件/秦灭六国.html?embed=true&background=transparent&parentOrigin=https%3A%2F%2Fyour-site.example"></iframe>
 ```
 
 ```js

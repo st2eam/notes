@@ -132,7 +132,7 @@ test("migration preserves body, unrelated YAML and explicit historical overrides
   assert.equal(matter(raw).content, matter(changed).content);
   assert.ok(changed.includes("title: '地点示例'\r\nrelations: []"));
   const event = get("唐迁都洛阳");
-  assert.ok(event.geo.places.some((r) => r.target === "历史/中国史/洛阳.md" && r.variant === "sui-tang"));
+  assert.ok(event.geo.places.some((r) => r.target === "历史/中国史/地点/洛阳.md" && r.variant === "sui-tang"));
   const report = await bindNotes();
   assert.equal(report.changed, 0);
   assert.equal(report.explicitFields, report.explicitBound);

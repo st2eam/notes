@@ -2,7 +2,7 @@
 primaryCategory: 历史/世界史/非洲/塞内加尔
 categories:
   - path: 历史/世界史/非洲/塞内加尔
-    reason: 历史事件的国家、地区或朝代导航，按事件发生日期排序。
+    reason: 汇集塞内加尔的人物、事件及背景笔记，并通过子分类导航。
 categoryOverview: 历史/世界史/非洲/塞内加尔
 classificationStatus: confirmed
 relations: []
@@ -16,4 +16,6 @@ geo:
 ---
 # 塞内加尔
 
-- [[历史/世界史/非洲/塞内加尔/塞内加尔独立|塞内加尔独立]] · 1960 年
+## 分类导航
+
+- 子分类：[[历史/世界史/非洲/塞内加尔/事件/index|事件]]

@@ -66,9 +66,9 @@ test("retained original notes preserve headings, demos and code after requested 
     if (fs.existsSync(r.newPath)) assert.ok(publishedIds.has(r.newPath), r.newPath);
   }
 });
-test("all notes have supported classifications, ten roots and acyclic explicit overviews", () => {
+test("all notes have supported classifications, eleven roots and acyclic explicit overviews", () => {
   const categories = new Map(vault.categories.map((c) => [c.id, c]));
-  assert.equal(vault.categories.filter((c) => !c.parent).length, 10);
+  assert.equal(vault.categories.filter((c) => !c.parent).length, 11);
   assert.ok(vault.notes.length > 0, "知识库应包含可分类的笔记");
   for (const n of vault.notes) {
     assert.ok(n.primaryCategory, n.id);
@@ -239,11 +239,11 @@ test("old note tabs, active graph keys, folder filters and group colors migrate"
 test("history note and folder overview links resolve after flattening", () => {
   const result = resolveLink(
     vault.notes,
-    "历史/中国史/秦/秦灭六国.md",
+    "历史/中国史/秦/事件/秦灭六国.md",
     "历史/中国史/秦/焚书",
     true,
   );
-  assert.equal(result.target, "历史/中国史/秦/焚书.md");
+  assert.equal(result.target, "历史/中国史/秦/事件/焚书.md");
   assert.equal(
     resolveLink(vault.notes, result.target, "历史/世界史/", true).target,
     "历史/世界史/index.md",
@@ -261,6 +261,6 @@ test("history events follow dynasty or country classifications", () => {
   }
   assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 310);
   assert.equal(history.filter((n) => n.id.startsWith("历史/世界史/")).length, 174);
-  assert.ok(history.some(n => n.folder === "历史/中国史/秦"));
-  assert.ok(history.some(n => n.folder === "历史/世界史/亚洲/日本"));
+  assert.ok(history.some(n => n.folder === "历史/中国史/秦/事件"));
+  assert.ok(history.some(n => n.folder === "历史/世界史/亚洲/日本/事件"));
 });
