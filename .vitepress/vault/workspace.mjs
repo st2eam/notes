@@ -29,6 +29,18 @@ export function createGraphTab(note, filter = "", related = false) {
     related,
   };
 }
+export function closeWorkspaceTabs(tabs, active, keys) {
+  const closing = new Set(keys);
+  const remaining = tabs.filter((tab) => tab.key === "graph:" || !closing.has(tab.key));
+  if (!remaining.length) remaining.push(createGraphTab());
+  const at = tabs.findIndex((tab) => tab.key === active);
+  return {
+    tabs: remaining,
+    active: remaining.some((tab) => tab.key === active)
+      ? active
+      : (tabs.slice(Math.max(0, at)).find((tab) => remaining.includes(tab)) || remaining[remaining.length - 1]).key,
+  };
+}
 export function restoreWorkspace(raw, notes) {
   let saved = {};
   try {

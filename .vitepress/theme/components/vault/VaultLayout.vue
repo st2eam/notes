@@ -22,6 +22,7 @@ import {
   readStorage,
   migrateGraphStorage,
   createGraphTab,
+  closeWorkspaceTabs,
 } from "../../../vault/workspace.mjs";
 import { embedHref } from "../../../vault/embed.mjs";
 import { searchNotes, searchTerms } from "../../../vault/search.mjs";
@@ -177,7 +178,13 @@ const contextItems = computed(() => {
   items.push({ id: "copy", label: "复制链接", icon: "link" });
   if (!isEmbedded.value && (target.kind === "note" || (tab?.noteId && !tab.key.startsWith("graph:"))))
     items.push({ id: "relations", label: "查看关联", icon: "graph" });
-  if (target.kind === "tab") items.push({ id: "close-tab", label: "关闭标签页", icon: "close", separator: true });
+  if (target.kind === "tab") {
+    items.push(
+      { id: "close-tab", label: "关闭标签页", icon: "close", separator: true, disabled: tab?.key === "graph:" },
+      { id: "close-others", label: "关闭其他", icon: "close", disabled: !tabs.value.some((t) => t.key !== target.key && t.key !== "graph:") },
+      { id: "close-all", label: "全部关闭", icon: "close", disabled: !tabs.value.some((t) => t.key !== "graph:") },
+    );
+  }
   return items;
 });
 const results = computed(() =>
@@ -357,8 +364,10 @@ async function contextAction(action: string) {
       menuStatus.value = "无法复制链接，请检查浏览器剪贴板权限";
     }
     menuStatusTimer = setTimeout(() => (menuStatus.value = ""), 4000);
-  } else if (action === "close-tab" && target.kind === "tab") {
-    closeTab(target.key);
+  } else if (["close-tab", "close-others", "close-all"].includes(action) && target.kind === "tab") {
+    const keys = action === "close-tab" ? [target.key]
+      : tabs.value.filter((t) => action === "close-all" || t.key !== target.key).map((t) => t.key);
+    await closeTabs(keys, action === "close-others" ? target.key : active.value);
     await nextTick();
     if (menuSerial === request.serial)
       (document.querySelector(".vault-tab.active [role='tab']") as HTMLElement)?.focus({ preventScroll: true });
@@ -515,18 +524,16 @@ async function openGraph(filter = "", relatedNote?: VaultNote) {
   }
 }
 function closeTab(key: string) {
-  const at = tabs.value.findIndex((t) => t.key === key);
-  if (at < 0) return;
-  const wasActive = active.value === key;
-  tabs.value.splice(at, 1);
-  scrolls.delete(key);
-  if (wasActive) {
-    const next = tabs.value[Math.min(at, tabs.value.length - 1)];
-    if (next) navigate(next);
-    else {
-      const home = notes.find((n) => n.id === "index.md")!;
-      openNote(home);
-    }
+  return closeTabs([key]);
+}
+async function closeTabs(keys: string[], nextActive = active.value) {
+  const state: { tabs: Tab[]; active: string } = closeWorkspaceTabs(tabs.value, nextActive, keys);
+  for (const tab of tabs.value) {
+    if (!state.tabs.some((remaining) => remaining.key === tab.key)) scrolls.delete(tab.key);
+  }
+  tabs.value = state.tabs;
+  if (state.active !== active.value) {
+    await navigate(state.tabs.find((tab) => tab.key === state.active)!);
   }
   save();
 }
@@ -640,7 +647,7 @@ function shortcut(e: KeyboardEvent) {
   } else if (e.key.toLowerCase() === "p") {
     e.preventDefault();
     showModal("commands");
-  } else if (e.key.toLowerCase() === "w" && tabs.value.length > 1) {
+  } else if (e.key.toLowerCase() === "w") {
     e.preventDefault();
     closeTab(active.value);
   } else if (
@@ -1261,6 +1268,7 @@ onBeforeUnmount(() => {
                 :size="15"
               /><span>{{ tab.title }}</span></button
             ><button
+              v-if="tab.key !== 'graph:'"
               class="tab-close"
               :aria-label="'关闭 ' + tab.title"
               @click="closeTab(tab.key)"
