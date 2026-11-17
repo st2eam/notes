@@ -29,6 +29,25 @@ export function createGraphTab(note, filter = "", related = false) {
     related,
   };
 }
+export function normalizeMapView(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return undefined;
+  const entries = value.variants && typeof value.variants === "object" && !Array.isArray(value.variants) ? Object.entries(value.variants) : [];
+  const variants = Object.fromEntries(entries.filter(([key, variant]) =>
+    !["__proto__", "constructor", "prototype"].includes(key) && key.length <= 500 &&
+    typeof variant === "string" && variant.length <= 500).slice(0, 100));
+  return { year: Number.isInteger(value.year) && value.year !== 0 && Math.abs(value.year) <= 100000 ? value.year : null,
+    showRegions: value.showRegions !== false, showSettlements: value.showSettlements !== false, variants };
+}
+export function parseMapView(raw) {
+  try { return typeof raw === "string" && raw.length <= 12000 ? normalizeMapView(JSON.parse(raw)) : undefined; }
+  catch { return undefined; }
+}
+export function createMapTab(note, view) {
+  const state = normalizeMapView(view);
+  return { key: "map:" + note.id, title: note.title + " · 地图", noteId: note.id,
+    href: note.route + "?view=map" + (state ? "&map=" + encodeURIComponent(JSON.stringify(state)) : ""),
+    ...(state ? { view: state } : {}) };
+}
 export function closeWorkspaceTabs(tabs, active, keys) {
   const closing = new Set(keys);
   const remaining = tabs.filter((tab) => tab.key === "graph:" || !closing.has(tab.key));
@@ -58,6 +77,12 @@ export function restoreWorkspace(raw, notes) {
       return [tab];
     }
     const n = notes.find((n) => n.id === migrateNoteId(t.noteId));
+    if (t.key.startsWith("map:")) {
+      if (!n) return [];
+      const tab = createMapTab(n, t.view);
+      keyMap.set(t.key, tab.key);
+      return [tab];
+    }
     if (n) keyMap.set(t.key, n.id);
     return n
       ? [{ key: n.id, title: n.title, href: n.route, noteId: n.id }]

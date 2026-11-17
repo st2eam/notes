@@ -1,0 +1,6154 @@
+{
+  "repository": "https://github.com/DeanChensj/jiangshan-map",
+  "commit": "897b9ad4e987fcface8728ffdfbe33e801a3dbae",
+  "license": "GPL-3.0-only",
+  "attribution": "DeanChensj/jiangshan-map and contributors",
+  "sourcePath": "/history/sources/jiangshan/",
+  "periods": 18,
+  "referencedSnapshots": 204,
+  "milestones": 526,
+  "settlements": 1763,
+  "reviewedMappings": 2,
+  "withoutReferences": 441,
+  "ambiguousYearCandidates": 50,
+  "localMetadataIssues": [],
+  "events": [
+    {
+      "upstreamKey": "zhanguo:-403",
+      "index": 0,
+      "headline": "周威烈王命韩、赵、魏为诸侯（三家分晋）",
+      "year": -403,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-386",
+      "index": 1,
+      "headline": "周安王册命田和为齐侯，田氏代齐，七雄形成",
+      "year": -386,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-381",
+      "index": 2,
+      "headline": "楚悼王任吴起变法强兵，南平百越、北并陈蔡、西却三晋",
+      "year": -381,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-375",
+      "index": 3,
+      "headline": "韩哀侯攻灭郑国并迁都新郑；前376年三家废晋静公尽分晋地",
+      "year": -375,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-356",
+      "index": 4,
+      "headline": "秦孝公任商鞅变法强秦；前350年迁都咸阳",
+      "year": -356,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-353",
+      "index": 5,
+      "headline": "桂陵之战：齐孙膑、田忌“围魏救赵”，大破庞涓",
+      "year": -353,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-341",
+      "index": 6,
+      "headline": "马陵之战孙膑射杀庞涓；商鞅收河西，魏迁大梁",
+      "year": -341,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-323",
+      "index": 7,
+      "headline": "公孙衍发起“五国相王”，并促成五国合纵攻秦函谷关（前318年）",
+      "year": -323,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-316",
+      "index": 8,
+      "headline": "秦司马错灭巴、蜀；前312年丹阳之战破楚取汉中",
+      "year": -316,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-307",
+      "index": 9,
+      "headline": "赵武灵王推行“胡服骑射”强兵，连年略中山，北破林胡楼烦辟云中九原",
+      "year": -307,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-306",
+      "index": 10,
+      "headline": "楚怀王发兵灭越，尽取旧吴之地，东扩至海",
+      "year": -306,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-300",
+      "index": 11,
+      "headline": "燕将秦开大破东胡却地千里，筑北长城置燕北五郡",
+      "year": -300,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-296",
+      "index": 12,
+      "headline": "赵惠文王彻底攻灭中山国；齐、韩、魏三国合纵攻秦，败秦军于函谷关",
+      "year": -296,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-286",
+      "index": 13,
+      "headline": "齐湣王灭宋，齐楚魏三分宋地（魏得商丘、楚得彭城、齐得定陶）",
+      "year": -286,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-284",
+      "index": 14,
+      "headline": "燕昭王拜乐毅统五国联军破齐，连下七十余城",
+      "year": -284,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-279",
+      "index": 15,
+      "headline": "即墨之战：齐将田单摆“火牛阵”大破燕军，收复七十余城",
+      "year": -279,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-278",
+      "index": 16,
+      "headline": "秦白起拔楚都郢置南郡，楚迁都于陈，屈原自沉汨罗江",
+      "year": -278,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-272",
+      "index": 17,
+      "headline": "秦宣太后诱杀义渠戎王于甘泉宫，起兵灭义渠，置陇西、北地、上郡",
+      "year": -272,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-260",
+      "index": 18,
+      "headline": "长平之战：白起坑杀赵卒四十万，六国难独抗秦",
+      "year": -260,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-257",
+      "index": 19,
+      "headline": "邯郸之战：魏信陵君“窃符救赵”合楚春申君大破秦军",
+      "year": -257,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-256",
+      "index": 20,
+      "headline": "秦灭西周国迁九鼎；蜀守李冰修筑都江堰",
+      "year": -256,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-249",
+      "index": 21,
+      "headline": "楚考烈王伐灭鲁国迁鲁顷公于莒；秦吕不韦灭东周置三川郡",
+      "year": -249,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-247",
+      "index": 22,
+      "headline": "蒙骜攻赵取晋阳等三十七城，秦置太原郡",
+      "year": -247,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-246",
+      "index": 23,
+      "headline": "韩水工郑国入秦开凿三百里“郑国渠”，关中自此成沃野",
+      "year": -246,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-242",
+      "index": 24,
+      "headline": "蒙骜攻魏取二十城初置东郡，秦地东接齐境",
+      "year": -242,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-241",
+      "index": 25,
+      "headline": "五国最后合纵攻秦败于蕞；楚畏秦自陈东迁寿春",
+      "year": -241,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-238",
+      "index": 26,
+      "headline": "秦王政亲政，平嫪毐、罢吕不韦，部署灭六国方略",
+      "year": -238,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-236",
+      "index": 27,
+      "headline": "王翦、桓齮攻赵邺城取九城，拉开秦灭六国序幕",
+      "year": -236,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-230",
+      "index": 28,
+      "headline": "秦灭韩：内史腾急袭新郑俘韩王安，置颍川郡",
+      "year": -230,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-228",
+      "index": 29,
+      "headline": "秦灭赵：王翦克邯郸俘赵王迁，公子嘉奔代自立",
+      "year": -228,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-226",
+      "index": 30,
+      "headline": "荆轲刺秦不中；王翦破燕拔蓟城，燕王喜走辽东",
+      "year": -226,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-225",
+      "index": 31,
+      "headline": "秦灭魏：王贲引河沟水灌大梁，魏王假降，魏亡",
+      "year": -225,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-223",
+      "index": 32,
+      "headline": "秦灭楚：王翦统军六十万斩项燕、克寿春俘楚王",
+      "year": -223,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "zhanguo:-222",
+      "index": 33,
+      "headline": "王贲灭燕与代，王翦定江南置会稽郡，唯余齐国",
+      "year": -222,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-221",
+      "index": 0,
+      "headline": "王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨",
+      "year": -221,
+      "mapped": [
+        "event-163"
+      ],
+      "candidates": [
+        "event-163",
+        "event-162"
+      ],
+      "status": "reviewed-content-match",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-215",
+      "index": 1,
+      "headline": "蒙恬北击匈奴收复河套，其后数年连筑长城",
+      "year": -215,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-214",
+      "index": 2,
+      "headline": "秦军开凿灵渠通湘漓，平定岭南置桂林、象、南海三郡",
+      "year": -214,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-213",
+      "index": 3,
+      "headline": "秦始皇采李斯议下“焚书令”，次年于咸阳坑杀方士儒生",
+      "year": -213,
+      "mapped": [],
+      "candidates": [
+        "event-164"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-212",
+      "index": 4,
+      "headline": "蒙恬奉诏修筑秦直道（九原至云阳）",
+      "year": -212,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-210",
+      "index": 5,
+      "headline": "沙丘政变：始皇崩于沙丘，赵高李斯矫诏杀扶苏立胡亥",
+      "year": -210,
+      "mapped": [],
+      "candidates": [
+        "event-165"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-209",
+      "index": 6,
+      "headline": "陈胜吴广大泽乡起义建张楚；武臣、韩广、田儋相继复立赵、燕、齐",
+      "year": -209,
+      "mapped": [],
+      "candidates": [
+        "event-166"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-207",
+      "index": 7,
+      "headline": "项羽巨鹿之战破釜沉舟；南海尉赵佗绝秦道，据南海郡自守",
+      "year": -207,
+      "mapped": [],
+      "candidates": [
+        "event-167"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-206",
+      "index": 8,
+      "headline": "子婴降刘邦，秦亡；鸿门宴后项羽分封十八诸侯，楚汉争霸开启",
+      "year": -206,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-204",
+      "index": 9,
+      "headline": "韩信于井陉背水一战灭赵，楚汉两军于荥阳、成皋持久相持",
+      "year": -204,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qin:-203",
+      "index": 10,
+      "headline": "楚汉久持后“鸿沟议和”中分天下，刘邦旋毁约东追项羽",
+      "year": -203,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-202",
+      "index": 0,
+      "headline": "韩信等垓下十面埋伏灭项羽，汉高祖刘邦称帝定都长安",
+      "year": -202,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-200",
+      "index": 1,
+      "headline": "汉高祖亲征匈奴困于白登，汉初遂行和亲之策",
+      "year": -200,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-180",
+      "index": 2,
+      "headline": "周勃、陈平诛灭诸吕迎立汉文帝，开启休养生息之政",
+      "year": -180,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-167",
+      "index": 3,
+      "headline": "汉文帝废除肉刑、免收全国田租，与景帝轻徭薄赋共创“文景之治”",
+      "year": -167,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-154",
+      "index": 4,
+      "headline": "汉景帝削藩引发七国之乱，周亚夫三月平叛固集权",
+      "year": -154,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-138",
+      "index": 5,
+      "headline": "张骞出使西域，凿空丝绸之路",
+      "year": -138,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-134",
+      "index": 6,
+      "headline": "汉武帝采董仲舒策独尊儒术，兴太学、初令郡国察举孝廉",
+      "year": -134,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-133",
+      "index": 7,
+      "headline": "马邑之谋：汉武帝纳王恢策于马邑设伏诱击单于未果，汉匈全面战争爆发",
+      "year": -133,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-127",
+      "index": 8,
+      "headline": "卫青收复河套置朔方郡；主父偃献《推恩令》削弱诸侯",
+      "year": -127,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-121",
+      "index": 9,
+      "headline": "霍去病两次河西之战受降浑邪王，初置武威、酒泉郡",
+      "year": -121,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-119",
+      "index": 10,
+      "headline": "漠北之战，卫青破单于、霍去病封狼居胥",
+      "year": -119,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-118",
+      "index": 11,
+      "headline": "汉武帝改铸五铢钱、推行盐铁官营，继行均输平准，财权收归中央",
+      "year": -118,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-111",
+      "index": 12,
+      "headline": "路博德、杨仆平定南越设九郡；分河西置张掖、敦煌郡",
+      "year": -111,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-110",
+      "index": 13,
+      "headline": "汉武帝灭闽越国迁其民于江淮，并于海南岛置珠崖、儋耳二郡",
+      "year": -110,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-109",
+      "index": 14,
+      "headline": "汉武帝发兵平西南夷，滇王降汉，置益州郡赐金印",
+      "year": -109,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-108",
+      "index": 15,
+      "headline": "汉军攻灭卫氏朝鲜，设乐浪、玄菟、真番、临屯四郡",
+      "year": -108,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-100",
+      "index": 16,
+      "headline": "贰师将军李广利伐大宛，丝路昆仑北路畅通",
+      "year": -100,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-91",
+      "index": 17,
+      "headline": "巫蛊之祸太子刘据兵败湖县自尽；太史令司马迁撰成《史记》",
+      "year": -91,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-89",
+      "index": 18,
+      "headline": "武帝下轮台罪己诏，转向与民休息",
+      "year": -89,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-81",
+      "index": 19,
+      "headline": "苏武持节十九载白发归汉；汉昭帝召集盐铁会议辩论国策",
+      "year": -81,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-74",
+      "index": 20,
+      "headline": "大将军霍光废昌邑王刘贺，迎立汉宣帝开启昭宣中兴",
+      "year": -74,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-61",
+      "index": 21,
+      "headline": "赵充国率军平定河湟先零诸羌，首创河湟军屯并置破羌县",
+      "year": -61,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-60",
+      "index": 22,
+      "headline": "汉廷设西域都护府（郑吉首任），西域正式纳入版图",
+      "year": -60,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-51",
+      "index": 23,
+      "headline": "呼韩邪单于入长安朝觐，汉宣帝画麒麟阁十一功臣",
+      "year": -51,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-36",
+      "index": 24,
+      "headline": "陈汤矫制发兵远征康居斩郅支单于，“犯强汉者虽远必诛”",
+      "year": -36,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-33",
+      "index": 25,
+      "headline": "昭君出塞，呼韩邪单于入朝和亲",
+      "year": -33,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-25",
+      "index": 26,
+      "headline": "西域都护段会宗复入乌孙平定内乱，安辑葱岭以西诸国",
+      "year": -25,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:-8",
+      "index": 27,
+      "headline": "汉成帝改置三公；王莽任大司马，王氏外戚掌权",
+      "year": -8,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:6",
+      "index": 28,
+      "headline": "王莽受封安汉公专擅朝政，汉平帝崩后立孺子婴居摄称“假皇帝”",
+      "year": 6,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:8",
+      "index": 29,
+      "headline": "外戚王莽迫孺子婴禅让，于未央宫即真天子位，改国号“新”，西汉亡",
+      "year": 8,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:9",
+      "index": 30,
+      "headline": "王莽推行王田、私属与五均六筦托古改制，四方民变渐起",
+      "year": 9,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:11",
+      "index": 31,
+      "headline": "黄河于魏郡元城决口，禹贡北流故道断绝泛滥兖豫",
+      "year": 11,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:17",
+      "index": 32,
+      "headline": "绿林军起于绿林山；次年樊崇起赤眉军于琅琊，新莽末年大起义爆发",
+      "year": 17,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:23",
+      "index": 33,
+      "headline": "绿林军拥汉宗室刘玄称更始帝；宗室刘秀昆阳大破莽军，入长安诛王莽",
+      "year": 23,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xihan:24",
+      "index": 34,
+      "headline": "更始帝刘玄入都长安；刘秀以大司马北渡独立经略河北，拔邯郸诛王郎",
+      "year": 24,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:25",
+      "index": 0,
+      "headline": "赤眉军入长安覆灭更始政权；萧王刘秀于鄗城称帝兴复汉室，定都洛阳",
+      "year": 25,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:36",
+      "index": 1,
+      "headline": "吴汉攻克成都灭公孙述，光武帝刘秀统一全国",
+      "year": 36,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:39",
+      "index": 2,
+      "headline": "光武帝下诏核查全国垦田与户口（度田），打击豪强隐匿田赋",
+      "year": 39,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:43",
+      "index": 3,
+      "headline": "伏波将军马援南征交趾平二征起义，立铜柱定汉界",
+      "year": 43,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:48",
+      "index": 4,
+      "headline": "匈奴日逐王比南附东汉称呼韩邪单于，匈奴分裂为南北二部，驻美稷",
+      "year": 48,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:68",
+      "index": 5,
+      "headline": "汉明帝建白马寺，佛教正式传入洛阳",
+      "year": 68,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:69",
+      "index": 6,
+      "headline": "王景发卒数十万修渠治河，形成千年安流“王景故道”",
+      "year": 69,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:73",
+      "index": 7,
+      "headline": "班超出使西域，重开丝路",
+      "year": 73,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:79",
+      "index": 8,
+      "headline": "汉章帝亲临白虎观讲议五经同异，班固撰《白虎通义》与《汉书》",
+      "year": 79,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:89",
+      "index": 9,
+      "headline": "窦宪破北匈奴于稽落山，登燕然山勒石记功",
+      "year": 89,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:91",
+      "index": 10,
+      "headline": "金微山之战：耿夔大破北匈奴，北单于西遁",
+      "year": 91,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:92",
+      "index": 11,
+      "headline": "永元之隆：汉和帝联结郑众诛大将军窦宪，东汉达极盛",
+      "year": 92,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:97",
+      "index": 12,
+      "headline": "班超遣甘英出使大秦（罗马）",
+      "year": 97,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:105",
+      "index": 13,
+      "headline": "蔡伦奏进改进造纸术（蔡侯纸）",
+      "year": 105,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:107",
+      "index": 14,
+      "headline": "永初羌乱爆发席卷凉州，东汉罢西域都护",
+      "year": 107,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:123",
+      "index": 15,
+      "headline": "班勇任西域长史屯兵柳中破北匈奴，复通西域",
+      "year": 123,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:132",
+      "index": 16,
+      "headline": "张衡造候风地动仪与浑天仪",
+      "year": 132,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:144",
+      "index": 17,
+      "headline": "护羌校尉赵冲战殁，西羌大乱席卷关陇；汉顺帝崩，梁冀专权",
+      "year": 144,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:159",
+      "index": 18,
+      "headline": "汉桓帝与单超等五宦官合谋诛灭梁冀外戚集团；段颎于陇右破羌",
+      "year": 159,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:166",
+      "index": 19,
+      "headline": "党锢之祸：166、169年两兴党狱，清流名士遭禁锢诛戮",
+      "year": 166,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:177",
+      "index": 20,
+      "headline": "夏育、田晏、臧旻三路伐鲜卑大败，檀石槐称雄漠南",
+      "year": 177,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:184",
+      "index": 21,
+      "headline": "张角率太平道发起黄巾起义",
+      "year": 184,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:189",
+      "index": 22,
+      "headline": "何进召外兵谋诛宦官遇害，董卓入洛废少帝立献帝，次年焚洛阳西迁长安",
+      "year": 189,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:195",
+      "index": 23,
+      "headline": "孙策渡江创业平定江东；汉献帝自长安东归洛阳",
+      "year": 195,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:196",
+      "index": 24,
+      "headline": "曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田",
+      "year": 196,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:198",
+      "index": 25,
+      "headline": "下邳之战：曹操决泗、沂水灌城，擒杀吕布，尽取徐州",
+      "year": 198,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:200",
+      "index": 26,
+      "headline": "官渡之战：曹操奇袭乌巢焚粮，大破袁绍主力；孙策遇刺，孙权继立",
+      "year": 200,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:204",
+      "index": 27,
+      "headline": "曹操引漳水围破邺城，定冀、青、幽、并四州，迁霸府于邺",
+      "year": 204,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:207",
+      "index": 28,
+      "headline": "刘备三顾茅庐请诸葛亮出山，定《隆中对》跨有荆益之策",
+      "year": 207,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:208",
+      "index": 29,
+      "headline": "赤壁之战，孙刘联军破曹，刘备据有荆州",
+      "year": 208,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:211",
+      "index": 30,
+      "headline": "潼关之战：曹操渡渭离间大破马超、韩遂，平定关陇",
+      "year": 211,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:214",
+      "index": 31,
+      "headline": "刘备入成都迫降刘璋，跨有荆、益二州",
+      "year": 214,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:215",
+      "index": 32,
+      "headline": "曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津",
+      "year": 215,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:216",
+      "index": 33,
+      "headline": "曹操于邺城进爵“魏王”设天子旌旗，继封魏公加九锡后代汉基业成",
+      "year": 216,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "donghan:219",
+      "index": 34,
+      "headline": "刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡",
+      "year": 219,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:220",
+      "index": 0,
+      "headline": "魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏",
+      "year": 220,
+      "mapped": [],
+      "candidates": [
+        "event-263"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:221",
+      "index": 1,
+      "headline": "闻汉献帝遭废传言，刘备在成都称帝延续汉室正统，国号汉（蜀汉）",
+      "year": 221,
+      "mapped": [],
+      "candidates": [
+        "event-254",
+        "event-240",
+        "event-264"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:222",
+      "index": 2,
+      "headline": "夷陵之战，陆逊火烧连营大破刘备",
+      "year": 222,
+      "mapped": [],
+      "candidates": [
+        "event-three-kingdoms-wu-shu-alliance-renewal",
+        "event-240"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:223",
+      "index": 3,
+      "headline": "刘备病逝永安白帝城，临终托孤于丞相诸葛亮",
+      "year": 223,
+      "mapped": [],
+      "candidates": [
+        "event-three-kingdoms-wu-shu-alliance-renewal",
+        "event-241"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:225",
+      "index": 4,
+      "headline": "诸葛亮南征孟获，平定南中",
+      "year": 225,
+      "mapped": [],
+      "candidates": [
+        "event-242"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:228",
+      "index": 5,
+      "headline": "诸葛亮首次北伐，马谡失街亭",
+      "year": 228,
+      "mapped": [],
+      "candidates": [
+        "event-265",
+        "event-255",
+        "event-243"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:229",
+      "index": 6,
+      "headline": "吴王孙权于武昌称帝建国号吴，旋东迁建业，三国鼎立定型",
+      "year": 229,
+      "mapped": [],
+      "candidates": [
+        "event-256",
+        "event-243"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:230",
+      "index": 7,
+      "headline": "孙权遣卫温、诸葛直率万人航海至夷洲",
+      "year": 230,
+      "mapped": [],
+      "candidates": [
+        "event-243"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:234",
+      "index": 8,
+      "headline": "司马懿坚壁拒守百余日；诸葛亮病逝五丈原，蜀军退回汉中",
+      "year": 234,
+      "mapped": [],
+      "candidates": [
+        "event-243"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:238",
+      "index": 9,
+      "headline": "司马懿远征辽东斩公孙渊，收复辽东与乐浪、带方",
+      "year": 238,
+      "mapped": [],
+      "candidates": [
+        "event-three-kingdoms-wei-conquest-liaodong"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:244",
+      "index": 10,
+      "headline": "兴势之战：王平据险拒退曹爽伐蜀大军；毌丘俭东征高句丽克丸都",
+      "year": 244,
+      "mapped": [],
+      "candidates": [
+        "event-258"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:249",
+      "index": 11,
+      "headline": "高平陵之变：司马懿趁曹爽扈帝谒陵闭城夺权，诛曹爽族党尽控曹魏朝政",
+      "year": 249,
+      "mapped": [],
+      "candidates": [
+        "event-258",
+        "event-244"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:255",
+      "index": 12,
+      "headline": "毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经",
+      "year": 255,
+      "mapped": [],
+      "candidates": [
+        "event-258",
+        "event-257"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:260",
+      "index": 13,
+      "headline": "甘露之变：魏帝曹髦率宿卫讨司马昭，于南阙下遇弑",
+      "year": 260,
+      "mapped": [],
+      "candidates": [
+        "event-259",
+        "event-258"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:263",
+      "index": 14,
+      "headline": "邓艾、钟会率魏军伐蜀，蜀汉亡",
+      "year": 263,
+      "mapped": [],
+      "candidates": [
+        "event-245",
+        "event-266"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:264",
+      "index": 15,
+      "headline": "钟会、姜维于成都构乱败亡；曹魏分益州置梁州，孙吴分交州置广州",
+      "year": 264,
+      "mapped": [],
+      "candidates": [
+        "event-260"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:265",
+      "index": 16,
+      "headline": "晋王司马昭卒，子司马炎嗣位后迫魏元帝禅让称帝，建立西晋，曹魏亡",
+      "year": 265,
+      "mapped": [],
+      "candidates": [
+        "event-246"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:272",
+      "index": 17,
+      "headline": "西陵之战：陆抗围城打援大破晋将羊祜、杨肇，斩叛将步阐",
+      "year": 272,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:279",
+      "index": 18,
+      "headline": "晋军六路伐吴，王濬楼船下益州",
+      "year": 279,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sanguo:280",
+      "index": 19,
+      "headline": "晋水陆大军直捣建业石头城，吴主孙皓面缚出降，西晋灭吴，三国归晋",
+      "year": 280,
+      "mapped": [],
+      "candidates": [
+        "event-247"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:280",
+      "index": 0,
+      "headline": "西晋灭吴，三国归晋；颁占田制与罢州郡兵，开启“太康之治”",
+      "year": 280,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:289",
+      "index": 1,
+      "headline": "太康年间门阀骄奢斗富；武帝大封诸王出镇重兵，命刘渊领并州匈奴部",
+      "year": 289,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:291",
+      "index": 2,
+      "headline": "晋武帝崩后惠帝即位，次年贾南风诛杨骏与辅政宗王，八王之乱爆发",
+      "year": 291,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:299",
+      "index": 3,
+      "headline": "关陇氐羌齐万年之乱历两年余始平；江统著《徙戎论》警诫五胡内迁隐患",
+      "year": 299,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:301",
+      "index": 4,
+      "headline": "入蜀就食的关陇六郡流民推略阳氐帅李特为主，于绵竹起兵反晋",
+      "year": 301,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:303",
+      "index": 5,
+      "headline": "司马伦篡位败亡后诸王混战；司马颖据邺、司马颙据长安联兵攻洛阳",
+      "year": 303,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:304",
+      "index": 6,
+      "headline": "司马颖遣并州匈奴五部刘渊归离石发兵，刘渊称汉王、李雄称成都王",
+      "year": 304,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:306",
+      "index": 7,
+      "headline": "李雄称帝建立成汉；司马越立晋怀帝，八王之乱终结",
+      "year": 306,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:307",
+      "index": 8,
+      "headline": "司马睿用王导谋镇建邺，江东初定，王与马共天下之基立",
+      "year": 307,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:311",
+      "index": 9,
+      "headline": "永嘉之乱：汉赵刘曜攻陷洛阳，俘晋怀帝",
+      "year": 311,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:313",
+      "index": 10,
+      "headline": "晋愍帝在长安即位；祖逖中流击楫渡江北伐",
+      "year": 313,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "xijin:316",
+      "index": 11,
+      "headline": "刘曜围长安迫降晋愍帝，西晋亡；张氏据凉州、拓跋据代北、慕容据昌黎",
+      "year": 316,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:317",
+      "index": 0,
+      "headline": "司马睿在建康即晋王位建东晋；河西前凉、代北代国、辽东前燕并立",
+      "year": 317,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:319",
+      "index": 1,
+      "headline": "刘曜于长安改汉为前赵，石勒在襄国称赵王建后赵，汉赵分裂",
+      "year": 319,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:322",
+      "index": 2,
+      "headline": "王敦之乱：王敦自武昌举兵攻入建康，控制东晋朝政",
+      "year": 322,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:327",
+      "index": 3,
+      "headline": "前凉张骏擒戊己校尉赵贞，以其地置高昌郡",
+      "year": 327,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:328",
+      "index": 4,
+      "headline": "苏峻之乱：历阳内史苏峻反，攻陷建康台城，温峤、陶侃起兵讨平",
+      "year": 328,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:329",
+      "index": 5,
+      "headline": "石勒于洛阳生擒前赵主刘曜，次年克长安灭前赵，后赵统一北方大部",
+      "year": 329,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:335",
+      "index": 6,
+      "headline": "石虎迁后赵都城至邺；慕容皝据辽东棘城，337年称燕王建前燕",
+      "year": 335,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:347",
+      "index": 7,
+      "headline": "桓温西征灭成汉，收复巴蜀",
+      "year": 347,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:350",
+      "index": 8,
+      "headline": "后赵石虎崩后诸子争位自残，大将军冉闵尽诛石氏建冉魏，颁杀胡令",
+      "year": 350,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:351",
+      "index": 9,
+      "headline": "略阳氐帅苻洪子苻健率部自枋头西入潼关克长安，称天王建立前秦",
+      "year": 351,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:352",
+      "index": 10,
+      "headline": "前燕慕容儁大败冉闵灭冉魏，取邺城，正式称帝",
+      "year": 352,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:353",
+      "index": 11,
+      "headline": "王羲之与谢安等雅集会稽山阴兰亭，作《兰亭集序》",
+      "year": 353,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:354",
+      "index": 12,
+      "headline": "桓温首次北伐至灞上，王猛扪虱谈天下",
+      "year": 354,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:356",
+      "index": 13,
+      "headline": "桓温第二次北伐大破姚襄，收复故都洛阳，修复先帝陵墓",
+      "year": 356,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:364",
+      "index": 14,
+      "headline": "桓温主持推行“庚戌土断”，整顿侨置州郡户籍以充实东晋赋役",
+      "year": 364,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:369",
+      "index": 15,
+      "headline": "枋头之战：桓温北伐受挫，慕容垂大破晋军；垂遭忌投前秦",
+      "year": 369,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:370",
+      "index": 16,
+      "headline": "王猛于潞川大破前燕三十万主力，乘胜攻克邺城俘慕容暐，前燕亡",
+      "year": 370,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:373",
+      "index": 17,
+      "headline": "前秦取东晋梁、益二州，周仲孙退走南中，巴蜀入秦",
+      "year": 373,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:376",
+      "index": 18,
+      "headline": "前秦灭前凉、代国，苻坚统一北方",
+      "year": 376,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:383",
+      "index": 19,
+      "headline": "淝水之战：谢安、谢玄率八万北府兵大破苻坚大军，前秦瓦解",
+      "year": 383,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:384",
+      "index": 20,
+      "headline": "慕容垂建后燕、姚苌建后秦，东晋收复荆襄，次年复取益州",
+      "year": 384,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:385",
+      "index": 21,
+      "headline": "乞伏国仁在陇西建西秦；吕光入据姑臧，次年建后凉",
+      "year": 385,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:386",
+      "index": 22,
+      "headline": "代王什翼犍之孙拓跋珪于牛川重聚旧部即代王位，旋改国号魏（北魏）",
+      "year": 386,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:395",
+      "index": 23,
+      "headline": "参合陂之战，北魏大破后燕主力，进据中原",
+      "year": 395,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:397",
+      "index": 24,
+      "headline": "秃发乌孤据乐都建南凉；段业、沮渠蒙逊起于建康建北凉，次年徙张掖",
+      "year": 397,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:398",
+      "index": 25,
+      "headline": "拓跋珪自盛乐迁都平城，正式称帝（北魏道武帝）",
+      "year": 398,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:399",
+      "index": 26,
+      "headline": "南燕慕容德定都广固；孙恩五斗米道起事席卷江东八郡，动摇门阀政治",
+      "year": 399,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:404",
+      "index": 27,
+      "headline": "桓玄篡晋建楚，刘裕京口起兵复晋；谯纵建谯蜀，403年后凉降于后秦",
+      "year": 404,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:407",
+      "index": 28,
+      "headline": "赫连勃勃于朔方建胡夏；冯跋兄弟于龙城弑后燕慕容熙，拥高云建北燕",
+      "year": 407,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:410",
+      "index": 29,
+      "headline": "刘裕北伐攻破广固，灭南燕",
+      "year": 410,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:413",
+      "index": 30,
+      "headline": "刘裕遣朱龄石西征平定谯蜀，收复巴蜀",
+      "year": 413,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:414",
+      "index": 31,
+      "headline": "西秦乞伏炽磐袭破乐都灭南凉；北凉沮渠蒙逊迁都姑臧称河西王",
+      "year": 414,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:417",
+      "index": 32,
+      "headline": "刘裕北伐灭后秦，收复洛阳、长安",
+      "year": 417,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "dongjin:420",
+      "index": 33,
+      "headline": "晋恭帝禅位于刘裕，东晋亡，宋齐梁陈南朝开启",
+      "year": 420,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:420",
+      "index": 0,
+      "headline": "刘裕代晋建宋，南朝开始",
+      "year": 420,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:427",
+      "index": 1,
+      "headline": "北魏取河南关中，太武帝又袭克胡夏都城统万城",
+      "year": 427,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:431",
+      "index": 2,
+      "headline": "赫连定灭西秦后被俘，北魏灭胡夏；宋文帝元嘉之治",
+      "year": 431,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:436",
+      "index": 3,
+      "headline": "北魏攻入龙城，北燕亡",
+      "year": 436,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:439",
+      "index": 4,
+      "headline": "北魏太武帝灭北凉，统一北方，结束十六国",
+      "year": 439,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:446",
+      "index": 5,
+      "headline": "北魏太武帝采崔浩议下诏灭佛，焚毁寺塔经像，后文成帝复佛",
+      "year": 446,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:450",
+      "index": 6,
+      "headline": "宋文帝元嘉北伐失利，北魏太武帝南征饮马长江",
+      "year": 450,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:469",
+      "index": 7,
+      "headline": "北魏慕容白曜尽取刘宋淮北四州，南北分界南移淮水",
+      "year": 469,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:474",
+      "index": 8,
+      "headline": "刘宋桂阳王自寻阳举兵逼建康，萧道成守新亭平叛执掌禁军与朝政",
+      "year": 474,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:479",
+      "index": 9,
+      "headline": "权臣萧道成继废杀宋后废帝后，迫宋顺帝禅位建南齐，南朝宋亡",
+      "year": 479,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:485",
+      "index": 10,
+      "headline": "北魏冯太后与孝文帝颁行均田制与三长制，奠定田制根基",
+      "year": 485,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:494",
+      "index": 11,
+      "headline": "北魏孝文帝迁都洛阳，推行汉化改革",
+      "year": 494,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:500",
+      "index": 12,
+      "headline": "齐明帝与东昏侯大诛高武子孙及朝臣，雍州刺史萧衍于襄阳起兵",
+      "year": 500,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:502",
+      "index": 13,
+      "headline": "萧衍率军顺江东下攻克建康，迫齐和帝禅位建梁，开启天监之治",
+      "year": 502,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:507",
+      "index": 14,
+      "headline": "钟离之战：梁将韦睿、曹景宗火攻水淹大破北魏三十万大军",
+      "year": 507,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:523",
+      "index": 15,
+      "headline": "六镇之乱：破六韩拔陵于沃野镇起兵，北魏边防崩解",
+      "year": 523,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:528",
+      "index": 16,
+      "headline": "河阴之变：尔朱荣奉孝庄帝元子攸入洛，沉胡太后并屠北魏王公两千余人",
+      "year": 528,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:529",
+      "index": 17,
+      "headline": "梁将陈庆之率七千白袍军北伐连克三十二城，攻入洛阳",
+      "year": 529,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:530",
+      "index": 18,
+      "headline": "孝庄帝不甘受制，于洛阳明光殿设伏手刃权臣尔朱荣；尔朱兆反扑陷洛阳",
+      "year": 530,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:532",
+      "index": 19,
+      "headline": "韩陵之战：高欢以少胜多大破尔朱氏二十万联军，入洛阳执掌北魏朝政",
+      "year": 532,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:534",
+      "index": 20,
+      "headline": "魏孝武帝西奔长安依宇文泰，高欢立孝静帝迁都邺城，北魏分裂为东西魏",
+      "year": 534,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:537",
+      "index": 21,
+      "headline": "沙苑之战：宇文泰以少胜多破高欢，创西魏府兵制",
+      "year": 537,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:546",
+      "index": 22,
+      "headline": "玉壁之战：西魏韦孝宽坚守五十日，挫败东魏高欢大军",
+      "year": 546,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:548",
+      "index": 23,
+      "headline": "侯景之乱攻陷建康台城，梁武帝萧衍饿死，江南残破",
+      "year": 548,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:550",
+      "index": 24,
+      "headline": "高洋迫东魏禅让建北齐；西魏宇文泰设八柱国十二大将军，关陇集团成型",
+      "year": 550,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:551",
+      "index": 25,
+      "headline": "王僧辩、陈霸先东讨平侯景，次年萧绎于江陵即位",
+      "year": 551,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:552",
+      "index": 26,
+      "headline": "突厥土门可汗大破柔然，建突厥汗国，称雄漠北",
+      "year": 552,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:553",
+      "index": 27,
+      "headline": "西魏尉迟迥伐蜀攻克成都，尽取萧梁巴蜀益州之地",
+      "year": 553,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:554",
+      "index": 28,
+      "headline": "西魏于谨攻陷江陵，梁元帝焚书十四万卷；西魏立萧詧为西梁主",
+      "year": 554,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:557",
+      "index": 29,
+      "headline": "陈霸先诛王僧辩掌梁政，受禅建陈；宇文泰子宇文觉代西魏建北周",
+      "year": 557,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:573",
+      "index": 30,
+      "headline": "太建北伐：陈将吴明彻大破北齐，尽复江北淮南之地",
+      "year": 573,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:574",
+      "index": 31,
+      "headline": "北周武帝下诏禁佛道二教、沙汰僧尼归农充兵，蓄力统一北方",
+      "year": 574,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:577",
+      "index": 32,
+      "headline": "北周武帝灭北齐，北方再统一",
+      "year": 577,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:578",
+      "index": 33,
+      "headline": "吕梁之战北周破陈军生擒吴明彻，次年韦孝宽南征尽夺淮南，陈退守长江",
+      "year": 578,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nanbei:580",
+      "index": 34,
+      "headline": "杨坚以丞相辅政，韦孝宽平尉迟迥，焚毁邺城",
+      "year": 580,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:581",
+      "index": 0,
+      "headline": "杨坚建隋，定都大兴；确立三省六部制，颁《开皇律》",
+      "year": 581,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:587",
+      "index": 1,
+      "headline": "隋文帝废西梁国，江陵并入隋境，大造战船备战伐陈",
+      "year": 587,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:589",
+      "index": 2,
+      "headline": "晋王杨广统军渡江，韩擒虎、贺若弼攻克建康擒陈后主，隋灭陈统一全国",
+      "year": 589,
+      "mapped": [],
+      "candidates": [
+        "event-184"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:599",
+      "index": 3,
+      "headline": "东突厥启民可汗内附，隋于河套北筑大利城",
+      "year": 599,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:605",
+      "index": 4,
+      "headline": "隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制",
+      "year": 605,
+      "mapped": [],
+      "candidates": [
+        "event-185",
+        "event-186"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:608",
+      "index": 5,
+      "headline": "隋炀帝开凿永济渠，北通涿郡，南达黄河",
+      "year": 608,
+      "mapped": [],
+      "candidates": [
+        "event-185"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:609",
+      "index": 6,
+      "headline": "隋炀帝西巡张掖，破吐谷浑，置西海、河源、鄯善、且末四郡",
+      "year": 609,
+      "mapped": [],
+      "candidates": [
+        "event-185"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:610",
+      "index": 7,
+      "headline": "隋炀帝开凿江南河，大运河贯通南北",
+      "year": 610,
+      "mapped": [],
+      "candidates": [
+        "event-185"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:612",
+      "index": 8,
+      "headline": "隋炀帝征调百万大军东征高句丽，萨水失利",
+      "year": 612,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:615",
+      "index": 9,
+      "headline": "隋炀帝雁门被突厥围困；未几瓦岗军克洛口仓群雄并起",
+      "year": 615,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:617",
+      "index": 10,
+      "headline": "李渊太原起兵，攻入大兴城；瓦岗军据中原",
+      "year": 617,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "sui:618",
+      "index": 11,
+      "headline": "宇文化及江都兵变弑隋炀帝，隋亡",
+      "year": 618,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:618",
+      "index": 0,
+      "headline": "隋炀帝江都遇弑后，唐王李渊迫隋恭帝杨侑禅让，于长安称帝建立唐朝",
+      "year": 618,
+      "mapped": [],
+      "candidates": [
+        "event-110"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:621",
+      "index": 1,
+      "headline": "虎牢之战李世民擒窦建德、降王世充；李靖平萧铣",
+      "year": 621,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:624",
+      "index": 2,
+      "headline": "唐高祖颁行武德律令，初定均田制与租庸调制",
+      "year": 624,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:626",
+      "index": 3,
+      "headline": "玄武门之变：秦王李世民伏兵诛太子建成、齐王元吉，唐高祖退位禅让",
+      "year": 626,
+      "mapped": [],
+      "candidates": [
+        "event-111"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:627",
+      "index": 4,
+      "headline": "唐太宗改元贞观，任房玄龄、杜如晦定官制，虚怀纳谏开创“贞观之治”",
+      "year": 627,
+      "mapped": [],
+      "candidates": [
+        "event-191"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:630",
+      "index": 5,
+      "headline": "李靖灭东突厥，西北诸君尊唐太宗为“天可汗”，置定襄、云中都督府",
+      "year": 630,
+      "mapped": [],
+      "candidates": [
+        "event-tang-eastern-turkic-conquest",
+        "event-191"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:635",
+      "index": 6,
+      "headline": "李靖分道远征吐谷浑抵黄河源柏海，伏允败亡，其子慕容顺举国降唐",
+      "year": 635,
+      "mapped": [],
+      "candidates": [
+        "event-160",
+        "event-191"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:640",
+      "index": 7,
+      "headline": "侯君集灭高昌，唐置安西都护府",
+      "year": 640,
+      "mapped": [],
+      "candidates": [
+        "event-160",
+        "event-191"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:641",
+      "index": 8,
+      "headline": "文成公主入藏，与吐蕃松赞干布联姻",
+      "year": 641,
+      "mapped": [
+        "event-361"
+      ],
+      "candidates": [
+        "event-361",
+        "event-160",
+        "event-191"
+      ],
+      "status": "reviewed-content-match",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:645",
+      "index": 9,
+      "headline": "玄奘自天竺载经归长安译经；唐太宗亲征高句丽克辽东城",
+      "year": 645,
+      "mapped": [],
+      "candidates": [
+        "event-161",
+        "event-191"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:648",
+      "index": 10,
+      "headline": "王玄策借吐蕃兵大破中天竺阿罗那顺，声威达南亚",
+      "year": 648,
+      "mapped": [],
+      "candidates": [
+        "event-191"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:653",
+      "index": 11,
+      "headline": "长孙无忌等撰成《永徽律疏》（唐律疏议）颁行天下，集礼法大成",
+      "year": 653,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:657",
+      "index": 12,
+      "headline": "苏定方灭西突厥，置昆陵、濛池都护府，唐疆西极咸海",
+      "year": 657,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:663",
+      "index": 13,
+      "headline": "白江口海战大破日济水军；同年吐蕃禄东赞攻灭吐谷浑，诺曷钵奔凉州",
+      "year": 663,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:668",
+      "index": 14,
+      "headline": "李勣攻克平壤灭高句丽，置安东都护府",
+      "year": 668,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:670",
+      "index": 15,
+      "headline": "大非川之战：薛仁贵败于吐蕃，吐谷浑入吐蕃；吐蕃陷安西四镇",
+      "year": 670,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:676",
+      "index": 16,
+      "headline": "安东都护府自平壤内迁辽东故城",
+      "year": 676,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:679",
+      "index": 17,
+      "headline": "裴行俭擒阿史那都支，复置安西四镇；改交州都督府为安南都护府",
+      "year": 679,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:684",
+      "index": 18,
+      "headline": "武则天于洛阳废中宗临朝称制，遣军讨平徐敬业扬州起兵",
+      "year": 684,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:686",
+      "index": 19,
+      "headline": "垂拱二年武则天弃安西四镇，四镇复陷吐蕃",
+      "year": 686,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:690",
+      "index": 20,
+      "headline": "武则天改唐为周，定都神都洛阳",
+      "year": 690,
+      "mapped": [],
+      "candidates": [
+        "event-192"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:692",
+      "index": 21,
+      "headline": "王孝杰大破吐蕃收复安西四镇，复置安西都护府于龟兹",
+      "year": 692,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:698",
+      "index": 22,
+      "headline": "粟末靺鞨大祚荣于东牟山立震国，后受唐封渤海郡王建渤海国",
+      "year": 698,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:702",
+      "index": 23,
+      "headline": "武则天于庭州设北庭都护府，统辖天山北路",
+      "year": 702,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:705",
+      "index": 24,
+      "headline": "神龙政变：张柬之等拥唐中宗于洛阳复辟，复唐国号",
+      "year": 705,
+      "mapped": [],
+      "candidates": [
+        "event-tang-shenlong-coup"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:707",
+      "index": 25,
+      "headline": "景龙政变：太子李重俊发羽林兵诛武三思，兵败被杀",
+      "year": 707,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:710",
+      "index": 26,
+      "headline": "唐隆政变：李隆基联结太平公主诛韦后，奉唐睿宗复位",
+      "year": 710,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:713",
+      "index": 27,
+      "headline": "先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王",
+      "year": 713,
+      "mapped": [],
+      "candidates": [
+        "event-193"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:727",
+      "index": 28,
+      "headline": "王君㚟、信安王李祎反击吐蕃拔石堡城，固河西防线",
+      "year": 727,
+      "mapped": [],
+      "candidates": [
+        "event-193"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:733",
+      "index": 29,
+      "headline": "唐玄宗分全国为开元十五道，置采访使定型道州监察制",
+      "year": 733,
+      "mapped": [],
+      "candidates": [
+        "event-193"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:738",
+      "index": 30,
+      "headline": "唐册封皮逻阁为云南王，六诏合一建南诏迁都太和城",
+      "year": 738,
+      "mapped": [],
+      "candidates": [
+        "event-193"
+      ],
+      "status": "candidate-only",
+      "hasReferences": true,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:742",
+      "index": 31,
+      "headline": "唐廷改元天宝，沿边常设安西、范阳等十节度使，外重内轻",
+      "year": 742,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:744",
+      "index": 32,
+      "headline": "骨力裴罗灭后突厥建回鹘汗国，受唐封为怀仁可汗",
+      "year": 744,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:747",
+      "index": 33,
+      "headline": "高仙芝率军翻越帕米尔远征小勃律，西域震恐归附",
+      "year": 747,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:751",
+      "index": 34,
+      "headline": "怛罗斯之战，造纸术西传阿拉伯世界",
+      "year": 751,
+      "mapped": [],
+      "candidates": [
+        "event-tang-talas-battle"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:753",
+      "index": 35,
+      "headline": "鉴真第六次东渡自扬州启航，次年抵日本传播律宗与唐文化",
+      "year": 753,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:755",
+      "index": 36,
+      "headline": "安禄山、史思明于范阳起兵，安史之乱爆发",
+      "year": 755,
+      "mapped": [],
+      "candidates": [
+        "event-113"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:756",
+      "index": 37,
+      "headline": "马嵬驿兵变诛杨国忠、赐死杨贵妃；唐肃宗灵武即位",
+      "year": 756,
+      "mapped": [],
+      "candidates": [
+        "event-113"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:757",
+      "index": 38,
+      "headline": "郭子仪借回纥兵收复长安、洛阳两京，安庆绪退保邺城",
+      "year": 757,
+      "mapped": [],
+      "candidates": [
+        "event-113"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:763",
+      "index": 39,
+      "headline": "安史之乱平定，河朔三镇割据肇端；吐蕃一度攻入长安",
+      "year": 763,
+      "mapped": [],
+      "candidates": [
+        "event-113"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:764",
+      "index": 40,
+      "headline": "凉州陷于吐蕃，河西走廊被截断，安西北庭孤悬坚守",
+      "year": 764,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:780",
+      "index": 41,
+      "headline": "杨炎推行两税法，赋税制度重大转型",
+      "year": 780,
+      "mapped": [],
+      "candidates": [
+        "event-tang-two-tax-reform"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:783",
+      "index": 42,
+      "headline": "泾原兵变与奉天之难，唐德宗颁《罪己诏》姑息河朔藩镇",
+      "year": 783,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:786",
+      "index": 43,
+      "headline": "沙州陷于吐蕃，唐朝陇右、河西州县尽失",
+      "year": 786,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:790",
+      "index": 44,
+      "headline": "吐蕃联结葛逻禄攻陷北庭都护府，安西四镇孤悬绝域，唐廷与西域隔绝",
+      "year": 790,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:805",
+      "index": 45,
+      "headline": "永贞内禅：王叔文、柳宗元革新受挫，俱文珍迫顺宗禅位",
+      "year": 805,
+      "mapped": [],
+      "candidates": [
+        "event-332",
+        "event-333"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:817",
+      "index": 46,
+      "headline": "李愬雪夜入蔡州平淮西，史称元和中兴",
+      "year": 817,
+      "mapped": [],
+      "candidates": [
+        "event-334",
+        "event-329"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:821",
+      "index": 47,
+      "headline": "长庆科举覆试案引发“牛李党争”，朝臣朋党相倾长达四十余年",
+      "year": 821,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:822",
+      "index": 48,
+      "headline": "唐蕃长庆会盟：继长安盟誓后再盟于逻些，次年立会盟碑于大昭寺",
+      "year": 822,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:835",
+      "index": 49,
+      "headline": "甘露之变：唐文宗与李训谋诛仇士良事败，晚唐宦官专权",
+      "year": 835,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:840",
+      "index": 50,
+      "headline": "回鹘汗国崩溃；唐武宗与李德裕破回鹘、平泽潞（会昌中兴）",
+      "year": 840,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:845",
+      "index": 51,
+      "headline": "唐武宗下诏拆毁天下佛寺四千六百余所、僧尼还俗，史称会昌法难",
+      "year": 845,
+      "mapped": [],
+      "candidates": [
+        "event-tang-huichang-suppression"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:848",
+      "index": 52,
+      "headline": "张议潮沙州起义，建归义军收复瓜沙甘肃等十一州归唐",
+      "year": 848,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:868",
+      "index": 53,
+      "headline": "赴援安南之桂林戍卒由庞勋率领起义北攻徐州，截断江淮漕运",
+      "year": 868,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:875",
+      "index": 54,
+      "headline": "王仙芝、黄巢于曹州发动唐末大起义",
+      "year": 875,
+      "mapped": [],
+      "candidates": [
+        "event-tang-huang-chao-rebellion"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:881",
+      "index": 55,
+      "headline": "黄巢破潼关入长安称帝建齐；唐僖宗奔蜀，唐室衰亡",
+      "year": 881,
+      "mapped": [],
+      "candidates": [
+        "event-tang-huang-chao-rebellion"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:885",
+      "index": 56,
+      "headline": "唐僖宗还京，朱温、李克用等藩镇并立，唐室政令不出畿辅",
+      "year": 885,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:895",
+      "index": 57,
+      "headline": "李克用入关中讨李茂贞，王建据蜀、杨行密据淮南，藩镇割据成型",
+      "year": 895,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:904",
+      "index": 58,
+      "headline": "朱温劫唐昭宗毁长安东迁洛阳，旋弑昭宗立哀帝（次年白马之祸）",
+      "year": 904,
+      "mapped": [],
+      "candidates": [
+        "event-tang-capital-relocation"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "tang:907",
+      "index": 59,
+      "headline": "朱温逼唐哀帝禅位建后梁，唐朝灭亡",
+      "year": 907,
+      "mapped": [],
+      "candidates": [
+        "event-114"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:907",
+      "index": 0,
+      "headline": "朱温代唐建后梁；王建在成都称帝建前蜀，契丹耶律阿保机称汗",
+      "year": 907,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:909",
+      "index": 1,
+      "headline": "后梁册封王审知为闽王，定都福州保境安民",
+      "year": 909,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:910",
+      "index": 2,
+      "headline": "吴越王钱镠筑钱塘捍海石塘；徐温掌淮南政固杨吴基业",
+      "year": 910,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:911",
+      "index": 3,
+      "headline": "刘守光在幽州称大燕皇帝，晋王李存勖兴兵讨燕（913年灭桀燕）",
+      "year": 911,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:916",
+      "index": 4,
+      "headline": "耶律阿保机建契丹国，称帝建元神册",
+      "year": 916,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:917",
+      "index": 5,
+      "headline": "刘龑在番禺称帝建南汉，定都兴王府",
+      "year": 917,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:923",
+      "index": 6,
+      "headline": "李存勖于魏州称帝建后唐，旋遣奇兵自郓州渡河袭破汴州，后梁末帝自尽",
+      "year": 923,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:925",
+      "index": 7,
+      "headline": "后唐庄宗遣军灭前蜀并有巴蜀；次年契丹灭渤海国",
+      "year": 925,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:926",
+      "index": 8,
+      "headline": "兴教门之变：郭从谦洛阳兵变弑后唐庄宗，李嗣源即位",
+      "year": 926,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:927",
+      "index": 9,
+      "headline": "后唐册封马殷为楚国王，与荆南高氏分扼湖湘荆襄商道",
+      "year": 927,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:934",
+      "index": 10,
+      "headline": "后唐西川节度使孟知祥兼并东川据有全蜀，趁唐乱于成都称帝建后蜀",
+      "year": 934,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:936",
+      "index": 11,
+      "headline": "河东节度使石敬瑭反后唐，认契丹主为父帝割燕云十六州，灭唐建后晋",
+      "year": 936,
+      "mapped": [],
+      "candidates": [
+        "event-187"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:937",
+      "index": 12,
+      "headline": "徐知诰（李昪）代杨吴建南唐，定都金陵",
+      "year": 937,
+      "mapped": [],
+      "candidates": [
+        "event-187"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:939",
+      "index": 13,
+      "headline": "吴权于白藤江设桩大破南汉水军，于交州称王自立，安南脱离中原王朝",
+      "year": 939,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:942",
+      "index": 14,
+      "headline": "后晋高祖石敬瑭卒，出帝石重贵即位，用景延广议对契丹“称孙不称臣”",
+      "year": 942,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:945",
+      "index": 15,
+      "headline": "南唐攻灭闽国，与吴越分其地",
+      "year": 945,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:947",
+      "index": 16,
+      "headline": "契丹南下俘石重贵灭后晋，改国号辽；河东节度使刘知远于太原建后汉",
+      "year": 947,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:951",
+      "index": 17,
+      "headline": "枢密使郭威遭后汉隐帝猜忌起兵代汉建后周；刘崇建北汉，南唐灭马楚",
+      "year": 951,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:954",
+      "index": 18,
+      "headline": "高平之战：周世宗柴荣亲征，赵匡胤死战大破北汉与辽联军",
+      "year": 954,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:955",
+      "index": 19,
+      "headline": "周世宗西征后蜀收复秦、凤、成、阶四州，同年冬南征淮南",
+      "year": 955,
+      "mapped": [],
+      "candidates": [
+        "event-188"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:958",
+      "index": 20,
+      "headline": "周世宗三征南唐功成：李璟去帝号献江北淮南十四州",
+      "year": 958,
+      "mapped": [],
+      "candidates": [
+        "event-188"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:959",
+      "index": 21,
+      "headline": "周世宗北伐辽国，收复瀛、莫、易三州与三关",
+      "year": 959,
+      "mapped": [],
+      "candidates": [
+        "event-188"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "wudai:960",
+      "index": 22,
+      "headline": "周世宗崩后幼主柴宗训嗣位，殿前都点检赵匡胤陈桥兵变，受禅建宋",
+      "year": 960,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:960",
+      "index": 0,
+      "headline": "殿前都点检赵匡胤发动陈桥兵变，回师开封受后周恭帝禅位，建立北宋",
+      "year": 960,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:961",
+      "index": 1,
+      "headline": "宋太祖“杯酒释兵权”定重文轻武，继设通判、转运使收地方权",
+      "year": 961,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:963",
+      "index": 2,
+      "headline": "慕容延钊假道灭虢，北宋平定荆南与湖南",
+      "year": 963,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:965",
+      "index": 3,
+      "headline": "王全斌攻入成都灭后蜀孟昶降，花蕊夫人赋诗叹亡国",
+      "year": 965,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:971",
+      "index": 4,
+      "headline": "潘美率宋军克广州，刘鋹降，南汉亡",
+      "year": 971,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:975",
+      "index": 5,
+      "headline": "曹彬率宋军攻克金陵，李煜降，南唐亡",
+      "year": 975,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:976",
+      "index": 6,
+      "headline": "斧声烛影：宋太祖万岁殿夜饮暴崩，晋王赵光义即位",
+      "year": 976,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:978",
+      "index": 7,
+      "headline": "吴越王钱俶纳土归宋，江南和平统一",
+      "year": 978,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:979",
+      "index": 8,
+      "headline": "宋太宗灭北汉结束十国分裂；高梁河之战北伐失利",
+      "year": 979,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:986",
+      "index": 9,
+      "headline": "雍熙北伐失利，杨业于陈家谷力战殉国",
+      "year": 986,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:997",
+      "index": 10,
+      "headline": "宋太宗分全国为至道十五路，定型“路—州—县”体制",
+      "year": 997,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1002",
+      "index": 11,
+      "headline": "李继迁攻陷北宋灵州改西平府，党项尽据河套平原",
+      "year": 1002,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1004",
+      "index": 12,
+      "headline": "辽萧太后与圣宗统军南下抵澶州，寇准力劝宋真宗亲征，订立澶渊之盟",
+      "year": 1004,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1007",
+      "index": 13,
+      "headline": "辽圣宗营建中京大定府；宋辽沿边广设榷场互市",
+      "year": 1007,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1014",
+      "index": 14,
+      "headline": "宋真宗升宋州应天府为南京陪都",
+      "year": 1014,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1023",
+      "index": 15,
+      "headline": "成都设益州交子务，发行世界最早官方纸币“交子”",
+      "year": 1023,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1038",
+      "index": 16,
+      "headline": "元昊于兴庆府称帝建大夏（西夏）",
+      "year": 1038,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1041",
+      "index": 17,
+      "headline": "好水川之战：西夏元昊设伏歼灭任福主力，震动宋廷",
+      "year": 1041,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1042",
+      "index": 18,
+      "headline": "宋辽达成“重熙增币”；宋仁宗建大名府为北京陪都以备御辽",
+      "year": 1042,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1043",
+      "index": 19,
+      "headline": "范仲淹、富弼主持推行“庆历新政”",
+      "year": 1043,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1044",
+      "index": 20,
+      "headline": "宋夏订立“庆历和议”，元昊称臣、北宋岁赐银绢茶",
+      "year": 1044,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1048",
+      "index": 21,
+      "headline": "黄河于澶州商胡埽决口北流，东汉以来王景故道废弃",
+      "year": 1048,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1057",
+      "index": 22,
+      "headline": "欧阳修主持嘉祐二年贡举，苏轼、苏辙、曾巩、张载、程颢同榜登科",
+      "year": 1057,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1069",
+      "index": 23,
+      "headline": "宋神宗任用王安石推行熙宁变法",
+      "year": 1069,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1072",
+      "index": 24,
+      "headline": "王韶熙河开边，收复熙、河、洮、岷等六州，新置熙河路",
+      "year": 1072,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1084",
+      "index": 25,
+      "headline": "司马光历时十九年编成编年体通史巨著《资治通鉴》进呈宋神宗",
+      "year": 1084,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1085",
+      "index": 26,
+      "headline": "高太后垂帘起用司马光尽废新法（元祐更化），党争激化",
+      "year": 1085,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1104",
+      "index": 27,
+      "headline": "王厚、童贯发起“河湟开边”，收复青唐置西宁州",
+      "year": 1104,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1105",
+      "index": 28,
+      "headline": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴“花石纲”劳民伤财",
+      "year": 1105,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1115",
+      "index": 29,
+      "headline": "完颜阿骨打在会宁称帝建金，攻取辽东与上京",
+      "year": 1115,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1120",
+      "index": 30,
+      "headline": "北宋遣马政、赵良嗣自登州泛海使金，订立“海上之盟”约夹攻辽朝",
+      "year": 1120,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1121",
+      "index": 31,
+      "headline": "方腊江南起义攻陷杭州震动东南，童贯率北伐军南下讨平",
+      "year": 1121,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1123",
+      "index": 32,
+      "headline": "金依海上之盟交割燕京六州空城，北宋置燕山府路",
+      "year": 1123,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1125",
+      "index": 33,
+      "headline": "完颜娄室俘辽天祚帝，金朝灭辽",
+      "year": 1125,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "beisong:1127",
+      "index": 34,
+      "headline": "靖康之变：金军二围东京攻陷汴梁，掳宋徽宗、钦宗二帝北去，北宋亡",
+      "year": 1127,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1127",
+      "index": 0,
+      "headline": "赵构即位于南京应天府，南宋开始",
+      "year": 1127,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1129",
+      "index": 1,
+      "headline": "苗刘兵变：苗傅、刘正彦于杭州逼高宗禅位，韩世忠平叛",
+      "year": 1129,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1130",
+      "index": 2,
+      "headline": "韩世忠黄天荡阻击金兀术水军",
+      "year": 1130,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1134",
+      "index": 3,
+      "headline": "岳飞挥师北伐收复襄阳、随、郢、唐、邓、信阳六郡",
+      "year": 1134,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1138",
+      "index": 4,
+      "headline": "宋高宗赵构结束巡幸，正式以临安府为行在，秦桧复相主持议和",
+      "year": 1138,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1140",
+      "index": 5,
+      "headline": "岳飞北伐，郾城、颍昌大捷，进兵朱仙镇",
+      "year": 1140,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1141",
+      "index": 6,
+      "headline": "秦桧构陷冤杀岳武穆，宋金订立《绍兴和议》，划淮河—大散关为界",
+      "year": 1141,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1153",
+      "index": 7,
+      "headline": "金海陵王完颜亮自上京迁都燕京，改名中都大兴府",
+      "year": 1153,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1161",
+      "index": 8,
+      "headline": "金海陵王南侵，虞允文采石矶大捷",
+      "year": 1161,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1163",
+      "index": 9,
+      "headline": "宋孝宗隆兴北伐，次年订立隆兴和议",
+      "year": 1163,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1175",
+      "index": 10,
+      "headline": "南宋乾淳之治与金大定之治对峙；朱熹陆九渊鹅湖之会",
+      "year": 1175,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1194",
+      "index": 11,
+      "headline": "绍熙内禅赵汝愚拥立宋宁宗；同年黄河阳武决口夺泗入淮",
+      "year": 1194,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1197",
+      "index": 12,
+      "headline": "韩侂胄指斥朱熹理学为“伪学”并列庆元党籍五十余人，史称庆元党禁",
+      "year": 1197,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1206",
+      "index": 13,
+      "headline": "铁木真相继攻灭克烈、乃蛮等部统一漠北草原，于斡难河源称成吉思汗",
+      "year": 1206,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1207",
+      "index": 14,
+      "headline": "韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》",
+      "year": 1207,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1215",
+      "index": 15,
+      "headline": "蒙古攻陷金中都，金迁都汴京，黄河以北与辽东被蒙古吞并",
+      "year": 1215,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1227",
+      "index": 16,
+      "headline": "成吉思汗六盘山病逝，蒙古灭西夏",
+      "year": 1227,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1234",
+      "index": 17,
+      "headline": "宋蒙联军蔡州灭金；宋军“端平入洛”溃败，宋蒙战争爆发",
+      "year": 1234,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1235",
+      "index": 18,
+      "headline": "窝阔台汗分兵三路全面伐宋，川陕、荆襄、江淮战火延烧",
+      "year": 1235,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1247",
+      "index": 19,
+      "headline": "凉州会盟：萨迦班智达与蒙古阔端会谈，吐蕃正式归附",
+      "year": 1247,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1253",
+      "index": 20,
+      "headline": "忽必烈率蒙军渡金沙江平定大理国",
+      "year": 1253,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1259",
+      "index": 21,
+      "headline": "钓鱼城之战，蒙哥汗战死城下",
+      "year": 1259,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1263",
+      "index": 22,
+      "headline": "南宋权相贾似道于两浙强行推开“公田法”抑买民田，东南离心",
+      "year": 1263,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1264",
+      "index": 23,
+      "headline": "忽必烈设总制院（后改宣政院），统辖吐蕃政教事务",
+      "year": 1264,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1271",
+      "index": 24,
+      "headline": "忽必烈击败幼弟阿里不哥争位后，采《易经》“大哉乾元”改国号为大元",
+      "year": 1271,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1273",
+      "index": 25,
+      "headline": "吕文焕力竭降元，襄阳苦守六年陷落",
+      "year": 1273,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1275",
+      "index": 26,
+      "headline": "马可·波罗随元廷南返冬都大都，开启旅华十七载见闻",
+      "year": 1275,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1276",
+      "index": 27,
+      "headline": "伯颜率元军入临安，恭帝出降；元置云南行中书省于中庆路",
+      "year": 1276,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1277",
+      "index": 28,
+      "headline": "元军南下连陷闽广州郡，张世杰、陆秀夫奉宋端宗迁播广东碙洲",
+      "year": 1277,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "nansong:1279",
+      "index": 29,
+      "headline": "陆秀夫等奉宋室退保闽广，崖山海战张世杰覆师，陆秀夫负帝投海宋亡",
+      "year": 1279,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1279",
+      "index": 0,
+      "headline": "张弘范于崖山海战灭南宋，元朝统一全国",
+      "year": 1279,
+      "mapped": [],
+      "candidates": [
+        "event-108"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1281",
+      "index": 1,
+      "headline": "元廷置澎湖巡检司管辖澎湖与琉球，并第二次东征日本",
+      "year": 1281,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1283",
+      "index": 2,
+      "headline": "元廷采纳朱清、张瑄议开辟江南刘家港至直沽海上漕运航线",
+      "year": 1283,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1287",
+      "index": 3,
+      "headline": "忽必烈亲征平定辽东乃颜之乱，设辽阳行省",
+      "year": 1287,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1288",
+      "index": 4,
+      "headline": "元廷设宣政院掌佛教与吐蕃事务，西藏纳入中央管辖",
+      "year": 1288,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1293",
+      "index": 5,
+      "headline": "元世祖忽必烈命郭守敬开凿通惠河，京杭大运河全线贯通",
+      "year": 1293,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1295",
+      "index": 6,
+      "headline": "元成宗即位诏尊孔子、停征日本与安南，整饬吏治开启大德守成",
+      "year": 1295,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1307",
+      "index": 7,
+      "headline": "元武宗置和林行省（后改岭北行省），中书省与诸行省行政格局定型",
+      "year": 1307,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1313",
+      "index": 8,
+      "headline": "元仁宗诏复科举，以程朱理学取士，延续至清末",
+      "year": 1313,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1323",
+      "index": 9,
+      "headline": "南坡之变：铁失于上都南坡行帐弑元英宗与丞相拜住",
+      "year": 1323,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1328",
+      "index": 10,
+      "headline": "两都之战（天历之变）：燕铁木儿拥元文宗击败上都天顺帝",
+      "year": 1328,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1341",
+      "index": 11,
+      "headline": "元顺帝任脱脱为相改弦更张，恢复科举并诏修宋、辽、金三史",
+      "year": 1341,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1344",
+      "index": 12,
+      "headline": "黄河于曹县白茅堤大决口泛滥，元廷命贾鲁治河征发民夫",
+      "year": 1344,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1351",
+      "index": 13,
+      "headline": "韩山童、刘福通于颍州发动红巾军起义，徐寿辉于蕲水称帝建天完",
+      "year": 1351,
+      "mapped": [],
+      "candidates": [
+        "event-109"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1354",
+      "index": 14,
+      "headline": "高邮之战：脱脱围张士诚，临阵被罢，元军百万溃散",
+      "year": 1354,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1355",
+      "index": 15,
+      "headline": "刘福通迎韩林儿于亳州称帝，建国号大宋（改元龙凤）",
+      "year": 1355,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1356",
+      "index": 16,
+      "headline": "朱元璋攻克集庆路改置应天府；张士诚渡江定都平江",
+      "year": 1356,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1358",
+      "index": 17,
+      "headline": "红巾军三路北伐，中路关先生攻破上都，焚毁宫阙",
+      "year": 1358,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1360",
+      "index": 18,
+      "headline": "陈友谅于采石杀徐寿辉称帝，建国号汉，率水师东攻应天败于龙湾",
+      "year": 1360,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1363",
+      "index": 19,
+      "headline": "鄱阳湖水战朱元璋大败陈友谅；张士诚称吴王、明玉珍于重庆称帝建夏",
+      "year": 1363,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1367",
+      "index": 20,
+      "headline": "朱元璋攻灭张士诚统一江南，命徐达、常遇春誓师北伐",
+      "year": 1367,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "yuan:1368",
+      "index": 21,
+      "headline": "明大将军徐达、常遇春攻克大都，元顺帝北走上都，元亡",
+      "year": 1368,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1368",
+      "index": 0,
+      "headline": "朱元璋于应天称帝建明；徐达北伐克大都，元廷北迁",
+      "year": 1368,
+      "mapped": [],
+      "candidates": [
+        "event-68",
+        "event-141"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1369",
+      "index": 1,
+      "headline": "常遇春克元上都，徐达定陕西，北元退居漠北",
+      "year": 1369,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1371",
+      "index": 2,
+      "headline": "汤和、傅友德分道伐蜀，灭明夏政权平定四川",
+      "year": 1371,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1380",
+      "index": 3,
+      "headline": "明太祖兴胡惟庸案诛权臣，罢中书省、永废丞相制",
+      "year": 1380,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1382",
+      "index": 4,
+      "headline": "傅友德、蓝玉、沐英率军平定云南元梁王与大理段氏",
+      "year": 1382,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1388",
+      "index": 5,
+      "headline": "冯胜北征金山降纳哈出（1387年）；蓝玉捕鱼儿海破北元",
+      "year": 1388,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1393",
+      "index": 6,
+      "headline": "蓝玉案株连一万五千人，明初开国功臣宿将殆尽",
+      "year": 1393,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1399",
+      "index": 7,
+      "headline": "燕王朱棣于北平起兵发动“靖难之役”",
+      "year": 1399,
+      "mapped": [],
+      "candidates": [
+        "event-142"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1402",
+      "index": 8,
+      "headline": "靖难军破南京朱棣即位为明成祖，选解缙等入值文渊阁创内阁制",
+      "year": 1402,
+      "mapped": [],
+      "candidates": [
+        "event-142"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1405",
+      "index": 9,
+      "headline": "郑和率宝船队自刘家港首次下西洋",
+      "year": 1405,
+      "mapped": [],
+      "candidates": [
+        "event-143"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1407",
+      "index": 10,
+      "headline": "明军平安南设交趾布政司；1409年设奴儿干都司",
+      "year": 1407,
+      "mapped": [],
+      "candidates": [
+        "event-143"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1408",
+      "index": 11,
+      "headline": "解缙、姚广孝等历时五年编成《永乐大典》二万二千八百余卷",
+      "year": 1408,
+      "mapped": [],
+      "candidates": [
+        "event-143"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1413",
+      "index": 12,
+      "headline": "明成祖废思州、思南宣慰司，置贵州承宣布政使司定十三行省",
+      "year": 1413,
+      "mapped": [],
+      "candidates": [
+        "event-143"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1421",
+      "index": 13,
+      "headline": "明成祖迁都北京，以南京为留都；1420年设东厂，与锦衣卫称厂卫",
+      "year": 1421,
+      "mapped": [],
+      "candidates": [
+        "event-143"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1427",
+      "index": 14,
+      "headline": "明宣宗罢交趾布政使司撤军弃安南，黎利旋建后黎朝",
+      "year": 1427,
+      "mapped": [],
+      "candidates": [
+        "event-143"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1433",
+      "index": 15,
+      "headline": "郑和末次下西洋，此后海禁",
+      "year": 1433,
+      "mapped": [],
+      "candidates": [
+        "event-143"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1442",
+      "index": 16,
+      "headline": "明廷始筑辽东边墙，防御朵颜三卫与女真",
+      "year": 1442,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1449",
+      "index": 17,
+      "headline": "土木堡之变：瓦剌也先大破明军，俘明英宗",
+      "year": 1449,
+      "mapped": [],
+      "candidates": [
+        "event-144"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1457",
+      "index": 18,
+      "headline": "夺门之变：石亨、徐有贞迎明英宗自南宫复辟，于谦遇害",
+      "year": 1457,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1474",
+      "index": 19,
+      "headline": "余子俊奏筑延绥边墙，明代九边长城防线成型",
+      "year": 1474,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1479",
+      "index": 20,
+      "headline": "汪直、朱永会同朝鲜征建州女真，史称“成化犁庭”",
+      "year": 1479,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1494",
+      "index": 21,
+      "headline": "刘大夏于黄陵岗塞河筑太行堤，断黄河北流成“河夺淮”定局",
+      "year": 1494,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1508",
+      "index": 22,
+      "headline": "王守仁贬谪贵州修文“龙场悟道”，创立知行合一心学",
+      "year": 1508,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1513",
+      "index": 23,
+      "headline": "吐鲁番满速儿攻占哈密卫，关西诸卫渐次内迁",
+      "year": 1513,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1519",
+      "index": 24,
+      "headline": "王阳明督兵三十五日平定江西南昌宁王朱宸濠之乱",
+      "year": 1519,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1524",
+      "index": 25,
+      "headline": "大礼议之争：嘉靖帝于左顺门廷杖百官，皇权压倒内阁",
+      "year": 1524,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1542",
+      "index": 26,
+      "headline": "壬寅宫变：杨金英等宫女谋缢嘉靖帝未遂，帝移居西苑",
+      "year": 1542,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1550",
+      "index": 27,
+      "headline": "庚戌之变：鞑靼俺答汗因请开贡市遭拒，率骑破古北口兵临北京城下",
+      "year": 1550,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1561",
+      "index": 28,
+      "headline": "戚继光率戚家军九战九捷，平定台州倭患",
+      "year": 1561,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1567",
+      "index": 29,
+      "headline": "明廷实行“隆庆开关”，于福建漳州月港开放海外贸易",
+      "year": 1567,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1571",
+      "index": 30,
+      "headline": "隆庆和议：明廷封俺答汗为顺义王，于大同得胜堡开互市",
+      "year": 1571,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1581",
+      "index": 31,
+      "headline": "张居正清丈全国田亩，推行“一条鞭法”",
+      "year": 1581,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1592",
+      "index": 32,
+      "headline": "万历朝鲜之役：明军入朝抗击丰臣秀吉日军",
+      "year": 1592,
+      "mapped": [],
+      "candidates": [
+        "event-148"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1600",
+      "index": 33,
+      "headline": "李化龙平定播州杨应龙之乱，“改土归流”分置遵义、平越二府",
+      "year": 1600,
+      "mapped": [],
+      "candidates": [
+        "event-148"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1616",
+      "index": 34,
+      "headline": "努尔哈赤于赫图阿拉称汗，建立后金",
+      "year": 1616,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1619",
+      "index": 35,
+      "headline": "萨尔浒之战：努尔哈赤各个击破明军四路大军",
+      "year": 1619,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1621",
+      "index": 36,
+      "headline": "沈辽之战：努尔哈赤连克沈阳、辽阳，后金迁都辽阳",
+      "year": 1621,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1624",
+      "index": 37,
+      "headline": "杨涟疏参魏忠贤二十四大罪，阉党兴诏狱残害东林党人，朝政糜烂",
+      "year": 1624,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1626",
+      "index": 38,
+      "headline": "宁远大捷：袁崇焕凭孤城红夷大炮重创后金努尔哈赤",
+      "year": 1626,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1627",
+      "index": 39,
+      "headline": "澄城王二起事，陕北民变揭开明末农民战争序幕",
+      "year": 1627,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1636",
+      "index": 40,
+      "headline": "皇太极在盛京称帝，改国号“大清”",
+      "year": 1636,
+      "mapped": [],
+      "candidates": [
+        "event-149"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1642",
+      "index": 41,
+      "headline": "松锦大战：皇太极围点打援击溃洪承畴十三万明军，关外防线尽失",
+      "year": 1642,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1643",
+      "index": 42,
+      "headline": "李自成破潼关入西安，张献忠据武昌称大西王",
+      "year": 1643,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "ming:1644",
+      "index": 43,
+      "headline": "李自成破北京，明亡；清军入关",
+      "year": 1644,
+      "mapped": [],
+      "candidates": [
+        "event-145"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1644",
+      "index": 0,
+      "headline": "山海关总兵吴三桂降清开关，多尔衮率清军大败李自成大顺军，定都北京",
+      "year": 1644,
+      "mapped": [],
+      "candidates": [
+        "event-156"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1645",
+      "index": 1,
+      "headline": "清军破扬州、南京，弘光政权覆灭；颁剃发令，江南抗清",
+      "year": 1645,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1661",
+      "index": 2,
+      "headline": "郑成功横渡鹿耳门驱逐荷兰殖民者，收复台湾设承天府",
+      "year": 1661,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1662",
+      "index": 3,
+      "headline": "吴三桂于昆明杀南明永历帝，李定国病逝，南明大陆抗清终结",
+      "year": 1662,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1669",
+      "index": 4,
+      "headline": "少年康熙帝于武英殿智擒专权辅臣鳌拜，正式亲政",
+      "year": 1669,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1673",
+      "index": 5,
+      "headline": "康熙帝下旨撤藩，吴三桂于云南起兵反清，三藩之乱爆发",
+      "year": 1673,
+      "mapped": [],
+      "candidates": [
+        "event-157"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1681",
+      "index": 6,
+      "headline": "清军攻克昆明，康熙帝彻底平定三藩之乱",
+      "year": 1681,
+      "mapped": [],
+      "candidates": [
+        "event-157"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1683",
+      "index": 7,
+      "headline": "康熙帝命施琅于澎湖大破明郑水师，郑克塽出降，清廷设台湾府",
+      "year": 1683,
+      "mapped": [],
+      "candidates": [
+        "event-158"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1685",
+      "index": 8,
+      "headline": "康熙命彭春、萨布素发起雅克萨之战，痛击沙俄侵略军",
+      "year": 1685,
+      "mapped": [],
+      "candidates": [
+        "event-367"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1689",
+      "index": 9,
+      "headline": "康熙帝遣索额图与沙俄订立《尼布楚条约》，划定中俄东段边界",
+      "year": 1689,
+      "mapped": [],
+      "candidates": [
+        "event-367"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1691",
+      "index": 10,
+      "headline": "多伦会盟，喀尔喀蒙古内附",
+      "year": 1691,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1696",
+      "index": 11,
+      "headline": "康熙帝三次亲征漠北，昭莫多之战大破准噶尔部噶尔丹主力",
+      "year": 1696,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1720",
+      "index": 12,
+      "headline": "康熙帝遣清军驱逐准噶尔军，护送七世达赖入藏，西藏定局",
+      "year": 1720,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1722",
+      "index": 13,
+      "headline": "康熙帝卒，雍正帝即位，开启摊丁入亩与西南改土归流",
+      "year": 1722,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1724",
+      "index": 14,
+      "headline": "年羹尧平青海罗卜藏丹津",
+      "year": 1724,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1727",
+      "index": 15,
+      "headline": "清廷始设驻藏大臣督办藏务；中俄签订《恰克图条约》",
+      "year": 1727,
+      "mapped": [],
+      "candidates": [
+        "event-368"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1729",
+      "index": 16,
+      "headline": "雍正帝设军机房（后称军机处），皇权空前集中",
+      "year": 1729,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1735",
+      "index": 17,
+      "headline": "乾隆帝即位，设办理苗疆事务、经略西北准部",
+      "year": 1735,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1755",
+      "index": 18,
+      "headline": "乾隆帝命清军两路出师西域直抵伊犁，攻灭准噶尔汗国并俘达瓦齐",
+      "year": 1755,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1757",
+      "index": 19,
+      "headline": "乾隆帝限令西洋商船只许广州一口通商，十三行专营",
+      "year": 1757,
+      "mapped": [],
+      "candidates": [
+        "event-132"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1759",
+      "index": 20,
+      "headline": "清军平定准噶尔与大小和卓，统合西域并设伊犁将军",
+      "year": 1759,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1771",
+      "index": 21,
+      "headline": "渥巴锡率土尔扈特部自伏尔加河万里东归",
+      "year": 1771,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1773",
+      "index": 22,
+      "headline": "乾隆帝开四库全书馆编纂《四库全书》，同时借修书屡兴文字狱",
+      "year": 1773,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1787",
+      "index": 23,
+      "headline": "福康安率军渡海平定台湾林爽文起义，乾隆赐改诸罗县为“嘉义”",
+      "year": 1787,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1792",
+      "index": 24,
+      "headline": "福康安击退廓尔喀，颁《钦定藏内善后章程》与金瓶掣签制",
+      "year": 1792,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1793",
+      "index": 25,
+      "headline": "英使马戛尔尼于承德觐见乾隆帝请开商埠遭拒",
+      "year": 1793,
+      "mapped": [],
+      "candidates": [
+        "event-159"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1796",
+      "index": 26,
+      "headline": "太上皇乾隆禅位嘉庆帝；川楚白莲教起义爆发",
+      "year": 1796,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1799",
+      "index": 27,
+      "headline": "乾隆崩后嘉庆帝亲政，迅雷赐死贪墨权臣和珅，清廷由盛转衰",
+      "year": 1799,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1813",
+      "index": 28,
+      "headline": "癸酉之变：天理教林清攻入紫禁城隆宗门，皇子绵宁御敌",
+      "year": 1813,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1826",
+      "index": 29,
+      "headline": "张格尔之乱攻陷喀什噶尔，长龄率军西征平定",
+      "year": 1826,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1839",
+      "index": 30,
+      "headline": "林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟",
+      "year": 1839,
+      "mapped": [],
+      "candidates": [
+        "event-134",
+        "event-173"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1840",
+      "index": 31,
+      "headline": "英军封锁珠江口北犯，第一次鸦片战争爆发",
+      "year": 1840,
+      "mapped": [],
+      "candidates": [
+        "event-174"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1842",
+      "index": 32,
+      "headline": "《南京条约》签订：割让香港岛，开五口通商",
+      "year": 1842,
+      "mapped": [],
+      "candidates": [
+        "event-135",
+        "event-174"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1851",
+      "index": 33,
+      "headline": "洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）",
+      "year": 1851,
+      "mapped": [],
+      "candidates": [
+        "event-120"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1855",
+      "index": 34,
+      "headline": "黄河于兰阳铜瓦厢决口夺大清河入渤海，奠定现代走向",
+      "year": 1855,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1856",
+      "index": 35,
+      "headline": "天京事变：杨韦内讧血洗天京，石达开出走，太平天国转衰",
+      "year": 1856,
+      "mapped": [],
+      "candidates": [
+        "event-122",
+        "event-175"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1858",
+      "index": 36,
+      "headline": "沙俄迫签《瑷珲条约》，割占黑龙江以北外兴安岭以南",
+      "year": 1858,
+      "mapped": [],
+      "candidates": [
+        "event-175"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1860",
+      "index": 37,
+      "headline": "英法联军攻占北京、火烧圆明园；签《北京条约》割外东北",
+      "year": 1860,
+      "mapped": [],
+      "candidates": [
+        "event-176",
+        "event-175",
+        "event-369"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1861",
+      "index": 38,
+      "headline": "辛酉政变：慈禧、慈安联结恭亲王奕訢诛肃顺等八大臣垂帘",
+      "year": 1861,
+      "mapped": [],
+      "candidates": [
+        "event-197"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1864",
+      "index": 39,
+      "headline": "湘军攻陷天京，太平天国覆灭；沙俄迫签《勘分西北界约记》",
+      "year": 1864,
+      "mapped": [],
+      "candidates": [
+        "event-123",
+        "event-197"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1865",
+      "index": 40,
+      "headline": "曾国藩、李鸿章创办江南制造总局，洋务运动兴起",
+      "year": 1865,
+      "mapped": [],
+      "candidates": [
+        "event-197"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1876",
+      "index": 41,
+      "headline": "左宗棠抬棺西征平定阿古柏，收复新疆（1884年建省）",
+      "year": 1876,
+      "mapped": [],
+      "candidates": [
+        "event-371",
+        "event-197"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1881",
+      "index": 42,
+      "headline": "曾纪泽使俄订立《中俄伊犁条约》，收复伊犁九城大部",
+      "year": 1881,
+      "mapped": [],
+      "candidates": [
+        "event-197"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1885",
+      "index": 43,
+      "headline": "老将冯子材率军于镇南关大捷重创法军并克谅山，扭转中法战局",
+      "year": 1885,
+      "mapped": [],
+      "candidates": [
+        "event-370",
+        "event-197"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1887",
+      "index": 44,
+      "headline": "台湾正式建省，刘铭传任首任巡抚，筑铁路、设电报",
+      "year": 1887,
+      "mapped": [],
+      "candidates": [
+        "event-197"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1894",
+      "index": 45,
+      "headline": "甲午战争爆发；黄海海战邓世昌驾“致远”舰壮烈殉国",
+      "year": 1894,
+      "mapped": [],
+      "candidates": [
+        "event-124",
+        "event-197",
+        "event-198"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1895",
+      "index": 46,
+      "headline": "清廷甲午战败，遣李鸿章赴日签订《马关条约》，割让台湾、澎湖",
+      "year": 1895,
+      "mapped": [],
+      "candidates": [
+        "event-372",
+        "event-197",
+        "event-198",
+        "event-267"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1898",
+      "index": 47,
+      "headline": "百日维新与戊戌政变慈禧囚光绪；列强强租胶州湾、旅大与新界",
+      "year": 1898,
+      "mapped": [],
+      "candidates": [
+        "event-373",
+        "event-372",
+        "event-199"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1900",
+      "index": 48,
+      "headline": "八国联军占北京，慈禧挟光绪奔西安；东南督抚行东南互保",
+      "year": 1900,
+      "mapped": [],
+      "candidates": [
+        "event-268",
+        "event-269"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1901",
+      "index": 49,
+      "headline": "清廷命奕劻、李鸿章与十一国签订《辛丑条约》，赔款四亿五千万两",
+      "year": 1901,
+      "mapped": [],
+      "candidates": [
+        "event-268",
+        "event-271",
+        "event-270"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1905",
+      "index": 50,
+      "headline": "清廷废除科举，延续一千三百年的取士制度终结",
+      "year": 1905,
+      "mapped": [],
+      "candidates": [
+        "event-125",
+        "event-271",
+        "event-374"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1908",
+      "index": 51,
+      "headline": "清廷颁布《钦定宪法大纲》行预备立宪；光绪帝与慈禧太后相继崩逝",
+      "year": 1908,
+      "mapped": [],
+      "candidates": [
+        "event-271"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "qing:1911",
+      "index": 52,
+      "headline": "武昌起义爆发，各省响应开启辛亥革命",
+      "year": 1911,
+      "mapped": [],
+      "candidates": [
+        "event-171",
+        "event-271"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1912",
+      "index": 0,
+      "headline": "孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结",
+      "year": 1912,
+      "mapped": [],
+      "candidates": [
+        "event-126",
+        "event-127"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1915",
+      "index": 1,
+      "headline": "蔡锷在云南起义，发起讨袁护国战争",
+      "year": 1915,
+      "mapped": [],
+      "candidates": [
+        "event-274",
+        "event-273"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1916",
+      "index": 2,
+      "headline": "袁世凯病逝，北洋集团分裂为皖、直、奉系，南北军阀割据",
+      "year": 1916,
+      "mapped": [],
+      "candidates": [
+        "event-274"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1919",
+      "index": 3,
+      "headline": "巴黎和会外交失利，北京爆发五四运动",
+      "year": 1919,
+      "mapped": [],
+      "candidates": [
+        "event-102",
+        "event-103",
+        "event-101"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1920",
+      "index": 4,
+      "headline": "直皖战争爆发，曹锟、吴佩孚直系击败段祺瑞皖系控制北京",
+      "year": 1920,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1921",
+      "index": 5,
+      "headline": "中国共产党第一次全国代表大会召开",
+      "year": 1921,
+      "mapped": [],
+      "candidates": [
+        "event-275"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1924",
+      "index": 6,
+      "headline": "国共第一次合作，黄埔军校在广州创办",
+      "year": 1924,
+      "mapped": [],
+      "candidates": [
+        "event-128",
+        "event-276"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1926",
+      "index": 7,
+      "headline": "国民革命军自广州誓师北伐，攻克武昌、南昌",
+      "year": 1926,
+      "mapped": [],
+      "candidates": [
+        "event-200"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1928",
+      "index": 8,
+      "headline": "国民革命军北伐完成，张学良东北易帜，南京国民政府形式统一",
+      "year": 1928,
+      "mapped": [],
+      "candidates": [
+        "event-376",
+        "event-279",
+        "event-200"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1931",
+      "index": 9,
+      "headline": "日本关东军袭占沈阳，发动九一八事变",
+      "year": 1931,
+      "mapped": [],
+      "candidates": [
+        "event-295",
+        "event-280"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1932",
+      "index": 10,
+      "headline": "日本扶植溥仪在长春建伪“满洲国”，东北沦陷十四载",
+      "year": 1932,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1935",
+      "index": 11,
+      "headline": "红军长征途中召开遵义会议，次年会师陕甘",
+      "year": 1935,
+      "mapped": [],
+      "candidates": [
+        "event-281",
+        "event-201",
+        "event-292"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1936",
+      "index": 12,
+      "headline": "张学良、杨虎城发动西安事变，促成联共抗日",
+      "year": 1936,
+      "mapped": [],
+      "candidates": [
+        "event-378",
+        "event-201",
+        "event-202"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1937",
+      "index": 13,
+      "headline": "七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发",
+      "year": 1937,
+      "mapped": [],
+      "candidates": [
+        "event-40",
+        "event-283",
+        "event-282",
+        "event-379",
+        "event-298"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1938",
+      "index": 14,
+      "headline": "台儿庄大捷与武汉会战，抗战进入相持阶段",
+      "year": 1938,
+      "mapped": [],
+      "candidates": [
+        "event-296"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1945",
+      "index": 15,
+      "headline": "抗日战争胜利，中国正式收回台湾全岛与澎湖列岛",
+      "year": 1945,
+      "mapped": [],
+      "candidates": [
+        "event-381",
+        "event-284",
+        "event-48",
+        "event-285"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1946",
+      "index": 16,
+      "headline": "国民政府承认外蒙古独立公投结果，外蒙古脱离中国版图",
+      "year": 1946,
+      "mapped": [],
+      "candidates": [
+        "event-382",
+        "event-299"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1948",
+      "index": 17,
+      "headline": "辽沈、淮海、平津三大战役展开",
+      "year": 1948,
+      "mapped": [],
+      "candidates": [
+        "event-203",
+        "event-383",
+        "event-299"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "roc:1949",
+      "index": 18,
+      "headline": "解放军发起渡江战役攻克南京，国民政府退往台北",
+      "year": 1949,
+      "mapped": [],
+      "candidates": [
+        "event-301",
+        "event-203",
+        "event-300",
+        "event-286"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1949",
+      "index": 0,
+      "headline": "毛泽东于天安门宣告中华人民共和国成立",
+      "year": 1949,
+      "mapped": [],
+      "candidates": [
+        "event-96"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1951",
+      "index": 1,
+      "headline": "中央政府与西藏地方签订《十七条协议》，西藏和平解放",
+      "year": 1951,
+      "mapped": [],
+      "candidates": [
+        "event-204"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1964",
+      "index": 2,
+      "headline": "中国第一颗原子弹在罗布泊成功爆炸",
+      "year": 1964,
+      "mapped": [],
+      "candidates": [
+        "event-206",
+        "event-307",
+        "event-306"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1971",
+      "index": 3,
+      "headline": "第26届联大通过第2758号决议，中华人民共和国恢复合法席位",
+      "year": 1971,
+      "mapped": [],
+      "candidates": [
+        "event-207"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1978",
+      "index": 4,
+      "headline": "中共十一届三中全会召开，开启改革开放",
+      "year": 1978,
+      "mapped": [],
+      "candidates": [
+        "event-100",
+        "event-309"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1980",
+      "index": 5,
+      "headline": "中央决定设立深圳、珠海、汕头、厦门四大经济特区",
+      "year": 1980,
+      "mapped": [],
+      "candidates": [
+        "event-139",
+        "event-309"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1990",
+      "index": 6,
+      "headline": "中央宣布开发开放上海浦东新区",
+      "year": 1990,
+      "mapped": [],
+      "candidates": [
+        "event-390"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1997",
+      "index": 7,
+      "headline": "中国对香港恢复行使主权，香港回归祖国",
+      "year": 1997,
+      "mapped": [],
+      "candidates": [
+        "event-314",
+        "event-208"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:1999",
+      "index": 8,
+      "headline": "中国对澳门恢复行使主权，澳门回归祖国",
+      "year": 1999,
+      "mapped": [],
+      "candidates": [
+        "event-209"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:2001",
+      "index": 9,
+      "headline": "中国正式加入世界贸易组织（WTO）；青藏铁路开工",
+      "year": 2001,
+      "mapped": [],
+      "candidates": [
+        "event-8"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:2008",
+      "index": 10,
+      "headline": "第29届夏季奥林匹克运动会于北京举行",
+      "year": 2008,
+      "mapped": [],
+      "candidates": [
+        "event-319"
+      ],
+      "status": "candidate-only",
+      "hasReferences": false,
+      "hasCoordinate": true
+    },
+    {
+      "upstreamKey": "prc:2010",
+      "index": 11,
+      "headline": "中国2010年上海世界博览会盛大举行",
+      "year": 2010,
+      "mapped": [],
+      "candidates": [],
+      "status": "unmatched",
+      "hasReferences": false,
+      "hasCoordinate": true
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import {
   nextTick,
   onBeforeUnmount,
   onMounted,
+  provide,
   ref,
   watch,
 } from "vue";
@@ -22,6 +23,8 @@ import {
   readStorage,
   migrateGraphStorage,
   createGraphTab,
+  createMapTab,
+  parseMapView,
   closeWorkspaceTabs,
 } from "../../../vault/workspace.mjs";
 import { embedHref } from "../../../vault/embed.mjs";
@@ -30,6 +33,7 @@ import { sortHistoryTree } from "../../../vault/history.mjs";
 import { noteGeoTime } from "../../../vault/geo.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
+import { mapWorkspaceKey, type MapViewState } from "../../composables/useMapWorkspace";
 import Icon from "./Icon.vue";
 import FileTree from "./FileTree.vue";
 import ContextMenu from "./ContextMenu.vue";
@@ -100,6 +104,7 @@ type Tab = {
   noteId?: string;
   filter?: string;
   related?: boolean;
+  view?: MapViewState;
 };
 const tabs = ref<Tab[]>([]);
 const active = ref("");
@@ -124,6 +129,9 @@ const activeTab = computed(() =>
   tabs.value.find((t) => t.key === active.value),
 );
 const graphActive = computed(() => activeTab.value?.key.startsWith("graph:"));
+const mapActive = computed(() => activeTab.value?.key.startsWith("map:"));
+const canvasActive = computed(() => graphActive.value || mapActive.value);
+const mapNote = computed(() => notes.find(note => note.id === activeTab.value?.noteId));
 const graphFilter = computed(() => activeTab.value?.filter || "");
 const rightTab = ref("outline");
 const outlineHeadings = computed(() => current.value?.headings.filter((h) => h.level > 1) || []);
@@ -340,7 +348,7 @@ async function viewGraphRelations(note: VaultNote) {
 }
 function contentContextMenu(event: MouseEvent | KeyboardEvent) {
   const hit = anchorNote(event.target);
-  if (!hit?.note || hit.url.searchParams.get("view") === "graph" || hit.url.searchParams.get("embed") === "true") return;
+  if (!hit?.note || ["graph", "map"].includes(hit.url.searchParams.get("view") || "") || hit.url.searchParams.get("embed") === "true") return;
   showContextMenu({ kind: "note", noteId: hit.note.id, href: hit.url.href }, event, hit.anchor);
 }
 async function contextAction(action: string) {
@@ -434,6 +442,7 @@ function routeTab(): Tab {
     url.searchParams.get("scope") === "related",
   );
   const n = current.value;
+  if (url.searchParams.get("view") === "map" && n) return createMapTab(n, parseMapView(url.searchParams.get("map")));
   return {
     key: n?.id || url.pathname,
     title: n?.title || page.value.title || "笔记",
@@ -495,7 +504,7 @@ async function openNote(
   const existing = tabs.value.find((t) => t.key === tab.key);
   if (!existing) {
     const at = tabs.value.findIndex((t) => t.key === active.value);
-    if (!isNew && at >= 0 && !graphActive.value) tabs.value.splice(at, 1, tab);
+    if (!isNew && at >= 0 && !canvasActive.value) tabs.value.splice(at, 1, tab);
     else tabs.value.push(tab);
   }
   await navigate({
@@ -522,6 +531,28 @@ async function openGraph(filter = "", relatedNote?: VaultNote) {
     leftOpen.value = false;
     rightOpen.value = embedDesktop.value;
   }
+}
+async function openMap(note: VaultNote, view?: MapViewState) {
+  const tab = createMapTab(note, view);
+  const existing = tabs.value.find(t => t.key === tab.key);
+  if (existing) Object.assign(existing, tab);
+  else tabs.value.push(tab);
+  await navigate(tab);
+  if (drawerViewport()) {
+    leftOpen.value = false;
+    rightOpen.value = embedDesktop.value;
+  }
+}
+provide(mapWorkspaceKey, (note, view) => { void openMap(note, view); });
+function updateMapView(view: MapViewState) {
+  const tab = activeTab.value;
+  if (!mapActive.value || !tab || !mapNote.value) return;
+  const updated = createMapTab(mapNote.value, view);
+  if (updated.href === tab.href) return;
+  Object.assign(tab, updated);
+  const href = isEmbedded.value ? embedHref(tab.href, window.location.search) : tab.href;
+  window.history.replaceState(window.history.state, "", withBase(href));
+  save();
 }
 function closeTab(key: string) {
   return closeTabs([key]);
@@ -724,6 +755,12 @@ function contentClick(e: MouseEvent) {
     return;
   }
   if (!hit.note) return;
+  if (hit.url.searchParams.get("view") === "map") {
+    e.preventDefault();
+    e.stopPropagation();
+    void openMap(hit.note, parseMapView(hit.url.searchParams.get("map")));
+    return;
+  }
   if (hit.url.searchParams.get("embed") === "true") {
     e.preventDefault();
     e.stopPropagation();
@@ -792,7 +829,7 @@ function relationTitle(link: VaultLink, incoming = false) {
   );
 }
 function trackOutline() {
-  if (outlineFrame || graphActive.value || !article.value) return;
+  if (outlineFrame || canvasActive.value || !article.value) return;
   outlineFrame = requestAnimationFrame(() => {
     outlineFrame = 0;
     const top = article.value?.getBoundingClientRect().top || 0;
@@ -807,7 +844,7 @@ function trackOutline() {
 }
 async function jumpHeading(id: string) {
   activeHeading.value = id;
-  if (graphActive.value && current.value) {
+  if (canvasActive.value && current.value) {
     await openNote(current.value, undefined, id);
   } else {
     document.getElementById(id)?.scrollIntoView({
@@ -901,7 +938,7 @@ watch([query, () => page.value.relativePath], () => {
   nextTick(applyBodyHighlight);
   window.setTimeout(applyBodyHighlight, 60);
 });
-watch([() => current.value?.id, graphActive], () => {
+watch([() => current.value?.id, canvasActive], () => {
   activeHeading.value = "";
   nextTick(trackOutline);
 });
@@ -1264,7 +1301,7 @@ onBeforeUnmount(() => {
               "
             >
               <Icon
-                :name="tab.key.startsWith('graph:') ? 'graph' : 'file'"
+                :name="tab.key.startsWith('graph:') ? 'graph' : tab.key.startsWith('map:') ? 'locate' : 'file'"
                 :size="15"
               /><span>{{ tab.title }}</span></button
             ><button
@@ -1317,13 +1354,13 @@ onBeforeUnmount(() => {
           {{
             graphActive
               ? "图谱视图"
-              : current?.folder.replaceAll("/", " / ") || site.title
+              : mapActive ? "地图视图" : current?.folder.replaceAll("/", " / ") || site.title
           }}<span v-if="!graphActive && current?.folder">
             / {{ current.title }}</span
           >
         </div>
         <span class="reading-mode">{{
-          graphActive ? "关系探索" : "阅读视图"
+          graphActive ? "关系探索" : mapActive ? "地图探索" : "阅读视图"
         }}</span>
       </div>
       <div v-if="graphActive" class="vault-graph-workspace" role="tabpanel">
@@ -1338,8 +1375,12 @@ onBeforeUnmount(() => {
             @context="graphContextMenu"
         /></ClientOnly>
       </div>
+      <div v-if="mapActive && mapNote" class="vault-graph-workspace vault-map-workspace" role="tabpanel" aria-label="地图工作区">
+        <ClientOnly><VaultNoteMap :key="active" :note="mapNote" :notes="notes" :enabled="true" :expanded="true"
+          :view="activeTab?.view" @view-change="updateMapView" @open="openNote" /></ClientOnly>
+      </div>
       <article
-        v-show="!graphActive"
+        v-show="!canvasActive"
         id="vault-document"
         ref="article"
         class="vault-reading"
@@ -1363,13 +1404,13 @@ onBeforeUnmount(() => {
       </article>
       <div class="vault-status">
         <span>{{
-          graphActive ? "图谱" : current?.tags.map((t) => "#" + t).join("  ")
+          graphActive ? "图谱" : mapActive ? "地图" : current?.tags.map((t) => "#" + t).join("  ")
         }}</span
         ><span
           >{{
             graphActive
               ? notes.length + " 篇笔记"
-              : backlinks.length + " 个反向链接"
+              : mapActive ? "历史地理探索" : backlinks.length + " 个反向链接"
           }}
           <span class="status-dot">·</span> 本地发布</span
         >

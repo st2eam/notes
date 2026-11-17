@@ -65,7 +65,7 @@ test("time parser handles BCE ranges, exact dates and rejects invalid or ambiguo
   assert.deepEqual(parseGeoTime("805 年 8 月"), { from: 805, to: 805 });
   assert.equal(parseGeoTime("0年"), null);
   assert.equal(parseGeoTime("907年—618年"), null);
-  assert.equal(parseGeoTime("8世纪"), null);
+  assert.deepEqual(parseGeoTime("8世纪"), { from: 701, to: 800 });
   assert.equal(noteGeoTime(note("普通.md")), null);
 });
 
@@ -125,6 +125,12 @@ test("shipped geometry and real note fixtures support points, polygons and hones
   const area = describePlace(mapPlaces(tang, notes).find((p) => p.target === tang.id), 800);
   assert.ok(area.variant.geometry);
   assert.equal(area.variant.snapshotYear, 800);
+  const earlier = describePlace(mapPlaces(tang, notes).find((p) => p.target === tang.id), 650);
+  assert.equal(earlier.variant, null);
+  assert.equal(earlier.snapshot.snapshotYear, 800);
+  assert.match(earlier.missing, /仅代表800 年/);
+  assert.equal(selectPlaceVariant(area.place, 650, "tang-800"), null);
+  assert.equal(selectHistoricalMap(tang, 650).year, 650);
   const polygon = JSON.parse(fs.readFileSync(path.join(root, "public", area.variant.geometry), "utf8"));
   assert.ok(polygon.features.some((f) => f.geometry.type === "MultiPolygon"));
   const jingzhou = notes.find((n) => n.title === "荆州");

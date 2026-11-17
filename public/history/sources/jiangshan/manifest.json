@@ -1,0 +1,35 @@
+{
+  "repository": "https://github.com/DeanChensj/jiangshan-map",
+  "commit": "897b9ad4e987fcface8728ffdfbe33e801a3dbae",
+  "retrieved": "2026-11-17",
+  "files": [
+    {
+      "path": "map-data/source.js.txt",
+      "upstreamPath": "js/map_data.js",
+      "url": "https://raw.githubusercontent.com/DeanChensj/jiangshan-map/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+      "sha256": "0654ae269ebd9e89162be87aef484cf3d3d224fe96295a132db75948d0bbbfa1",
+      "bytes": 336585
+    },
+    {
+      "path": "milestone-sources/source.js.txt",
+      "upstreamPath": "js/milestone_sources.js",
+      "url": "https://raw.githubusercontent.com/DeanChensj/jiangshan-map/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/milestone_sources.js",
+      "sha256": "fa2af0b51f131a3448a097a546399599df15c57430522c80fbbc650e3ec50490",
+      "bytes": 5029
+    },
+    {
+      "path": "license/LICENSE",
+      "upstreamPath": "LICENSE",
+      "url": "https://raw.githubusercontent.com/DeanChensj/jiangshan-map/897b9ad4e987fcface8728ffdfbe33e801a3dbae/LICENSE",
+      "sha256": "e57f1c320b8cf8798a7d2ff83a6f9e06a33a03585f6e065fea97f1d86db84052",
+      "bytes": 35150
+    },
+    {
+      "path": "readme/README.txt",
+      "upstreamPath": "README.md",
+      "url": "https://raw.githubusercontent.com/DeanChensj/jiangshan-map/897b9ad4e987fcface8728ffdfbe33e801a3dbae/README.md",
+      "sha256": "ad6daf12bd51ee8b66f7fd322a49ce15c2604458b4a0e0037236eca9be4d2adf",
+      "bytes": 33702
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { resolveLink } from "./model.mjs";
-import { historyDateOrder } from "./history.mjs";
+import { parseHistoryTime } from "./history-time.mjs";
 import { historicalMaps } from "./geo-catalog.mjs";
 import { geographicPlaces } from "./geo-places.mjs";
 
@@ -122,21 +122,8 @@ export function resolveGeoReferences(notes, note, references) {
 }
 
 export function parseGeoTime(label = "") {
-  const text = String(label).replace(/\s/g, "");
-  const match = text.match(/^(?:约)?((?:公元)?前?)(\d+)年(?:[—–~～至-]+((?:公元)?前?)(\d+)年)?$/);
-  if (match) {
-    const from = Number(match[2]) * (match[1].includes("前") ? -1 : 1);
-    const to = match[4] ? Number(match[4]) *
-      ((match[3].includes("前") || (!match[3] && match[1].includes("前"))) ? -1 : 1) : from;
-    return validYear(from) && validYear(to) && from <= to ? { from, to } : null;
-  }
-  // Exact dates can reuse the site's existing year/month/day grammar.
-  if (/^(?:约)?(?:公元)?前?\d+年\d+月(?:\d+日)?$/.test(text)) {
-    const order = historyDateOrder(text);
-    const year = order == null ? null : Math.floor(order / 10000);
-    return validYear(year) ? { from: year, to: year } : null;
-  }
-  return null;
+  const time = parseHistoryTime(label);
+  return time ? { from: time.from, to: time.to } : null;
 }
 
 function notePeriod(note) {
@@ -148,8 +135,8 @@ function notePeriod(note) {
 
 export function noteGeoTime(note) {
   if (note.geo?.time) return { ...note.geo.time, approximate: false };
-  const parsed = parseGeoTime(note.historyDate);
-  if (parsed) return { ...parsed, approximate: String(note.historyDate).includes("约") };
+  const parsed = parseHistoryTime(note.historyDate);
+  if (parsed) return { from: parsed.from, to: parsed.to, approximate: parsed.approximate };
   const period = notePeriod(note);
   const era = periods.find(([name]) => name === period);
   return era ? { from: era[1], to: era[2], approximate: true } : null;
@@ -238,7 +225,8 @@ export function mapPlaces(note, notes) {
 export function selectPlaceVariant(place, year, variantId) {
   const variants = place?.variants || [];
   // An explicit override resolves ambiguity, but must still belong to this date.
-  const fits = (v) => year == null || ((v.from == null || year >= v.from) && (v.to == null || year <= v.to));
+  const fits = (v) => year == null || ((v.from == null || year >= v.from) && (v.to == null || year <= v.to) &&
+    (!v.geometry || v.snapshotYear == null || year === v.snapshotYear));
   if (variantId) return variants.find((v) => v.id === variantId && fits(v)) || null;
   const candidates = variants.filter(fits);
   if (candidates.length === 1) return candidates[0];
@@ -257,12 +245,16 @@ export function describePlace(item, year, chosenVariant) {
   const variant = selectPlaceVariant(place, year, variantId);
   const name = item.name || variant?.name || item.title || item.note?.title || item.reference;
   const modern = place?.modernName;
+  const snapshot = !variant && place?.variants.find((v) => v.geometry && v.snapshotYear != null &&
+    (!variantId || variantId === v.id) && (v.from == null || year == null || year >= v.from) &&
+    (v.to == null || year == null || year <= v.to));
   let missing = "";
   if (!item.note && !item.catalog) missing = "地点引用待确认";
   else if (!place) missing = "地理资料待补";
   else if (!place.variants.length) missing = place.kind === "point" ? "坐标待补" : "区域范围待补";
+  else if (snapshot) missing = `该区域几何仅代表${yearLabel(snapshot.snapshotYear)}，未叠加到当前年份`;
   else if (!variant) missing = variantId ? "该历史形态不适用于当前年份" :
     (year == null || place.variants.filter((v) => (v.from == null || year >= v.from) &&
       (v.to == null || year <= v.to)).length > 1) ? "请选择历史形态" : "该时期地理资料待补";
-  return { ...item, place, variant, name, label: `${name}（${modern ? "今" + modern : "今址待考"}）`, missing };
+  return { ...item, place, variant, snapshot, name, label: `${name}（${modern ? "今" + modern : "今址待考"}）`, missing };
 }
