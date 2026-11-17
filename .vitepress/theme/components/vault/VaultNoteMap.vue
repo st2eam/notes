@@ -180,7 +180,7 @@ function fit() {
 function arrangeLabels() {
   if (!map || !host.value) return;
   const boxes: { x: number; y: number; width: number }[] = [];
-  const sorted = [...labelMarkers].sort((a, b) => Number(b.chosen) - Number(a.chosen));
+  const sorted = labelMarkers.toSorted((a, b) => Number(b.chosen) - Number(a.chosen));
   const width = host.value.clientWidth;
   const height = host.value.clientHeight;
   for (const { marker, position, text } of sorted) {

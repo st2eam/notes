@@ -205,7 +205,7 @@
     function renderTimeline(filter) {
       var tl = document.getElementById('f-timeline');
       if (!tl) return;
-      tl.innerHTML = '';
+      tl.replaceChildren();
       var kw = (filter || '').toLowerCase().trim();
 
       phases.forEach(function(p, i) {

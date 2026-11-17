@@ -49,7 +49,7 @@ export function auditHistoryMetadata(notes) {
   return issues;
 }
 export function sortHistory(notes, descending = false) {
-  return [...notes].sort((a, b) => {
+  return notes.toSorted((a, b) => {
     const x = a.historyOrder ?? historyDateOrder(a.historyDate);
     const y = b.historyOrder ?? historyDateOrder(b.historyDate);
     if (x == null || y == null) return x == null ? (y == null ? a.title.localeCompare(b.title, "zh-CN") : 1) : -1;
