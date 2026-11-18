@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { computed, inject, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { computed, inject, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from "vue";
 import { withBase } from "vitepress";
 import type { VaultNote } from "../../../vault/types";
 import { mapPlaces, noteGeoTime, timeLabel, yearLabel } from "../../../vault/geo.mjs";
-import { defaultMapPlace, describeJiangshanPlace, initialJiangshanYear, jiangshanYears, jiangshanSource, selectJiangshanPhase, settlementsAt, visibleAt } from "../../../vault/jiangshan-map.mjs";
+import { historyMapContext, historyMapNeighbors, historyMapPlace } from "../../../vault/history-map.mjs";
+import { defaultMapPlace, initialJiangshanYear, jiangshanYears, jiangshanSource, settlementsAt, visibleAt } from "../../../vault/jiangshan-map.mjs";
 import Icon from "./Icon.vue";
 import "leaflet/dist/leaflet.css";
 import { mapWorkspaceKey, type MapViewState } from "../../composables/useMapWorkspace";
 
-const props = defineProps<{ note: VaultNote; notes: VaultNote[]; enabled: boolean; expanded?: boolean; view?: MapViewState }>();
+const props = defineProps<{ note: VaultNote; notes: VaultNote[]; enabled: boolean; expanded?: boolean; explorer?: boolean; view?: MapViewState; focusRequest?: number; focusYear?: number }>();
 const emit = defineEmits<{ open: [note: VaultNote, event: MouseEvent]; "view-change": [view: MapViewState] }>();
 const openMapWorkspace = inject(mapWorkspaceKey, undefined);
 const showDetails = ref(false);
@@ -28,34 +29,39 @@ const rawPlaces = computed(() => mapPlaces(props.note, props.notes));
 const time = computed(() => noteGeoTime(props.note));
 const years = computed(() => [...new Set([...jiangshanYears(props.note),
   ...(Number.isInteger(selectedYear.value) && selectedYear.value !== 0 ? [selectedYear.value!] : [])])].sort((a, b) => a - b));
-const areaFeatures = ref<any[]>([]);
+// GeoJSON is immutable input for Leaflet; avoid proxying every coordinate.
+const areaFeatures = shallowRef<any[]>([]);
 const showRegions = ref(true);
 const showSettlements = ref(true);
 const places = computed(() => rawPlaces.value.map((item: any) =>
-  describeJiangshanPlace(item, selectedYear.value, areaFeatures.value, selectedVariants.value[item.key])));
-const historical = computed(() => selectJiangshanPhase(selectedYear.value));
+  historyMapPlace(item, selectedYear.value, areaFeatures.value, selectedVariants.value[item.key], props.explorer)));
+const chinaScope = computed(() => props.note.id.startsWith("历史/中国史/") || props.note.geo?.scope === "china");
+const mapContext = computed(() => historyMapContext(props.note, selectedYear.value, props.explorer));
+const historical = computed(() => mapContext.value.historical);
+const referenceMap = computed(() => mapContext.value.reference);
 const visiblePlaces = computed(() => places.value.filter((p: any) => p.variant || p.candidates.length));
 const hasGeometry = computed(() => visiblePlaces.value.length > 0);
 const countLabel = computed(() => `${visiblePlaces.value.length} 处`);
 const placeAccuracy = computed(() => [...new Set(visiblePlaces.value
   .filter((p: any) => p.variant).map((p: any) => p.variant.accuracy))]);
-const snapshotNote = computed(() => !historical.value
+const snapshotNote = computed(() => referenceMap.value ? referenceMap.value.accuracy : !historical.value
   ? selectedYear.value == null ? "选择年代后匹配江山地图" :
     !Number.isInteger(selectedYear.value) || selectedYear.value === 0 ? "请输入非零整数年份。" :
       "该年代暂无江山地图疆域图，仅显示有来源的地点参照。"
   : "江山地图阶段示意边界；阶段内共用轮廓，不表示逐年复原。聚落为代表点，数据以中国史及周边为主。");
-const sourceList = [jiangshanSource];
+const sourceList = computed(() => referenceMap.value ? [referenceMap.value] : [jiangshanSource]);
 function initialSelection() {
   selectedVariants.value = {};
   selectedPlace.value = "";
-  areaFeatures.value = [];
+  if (!props.explorer) areaFeatures.value = [];
   selectedYear.value = props.view ? props.view.year : initialJiangshanYear(props.note);
   showRegions.value = props.view?.showRegions ?? true;
   showSettlements.value = props.view?.showSettlements ?? true;
   selectedVariants.value = { ...props.view?.variants };
   failures.value = [];
 }
-watch(() => props.note.id, initialSelection, { immediate: true, flush: "sync" });
+// Read the completed props update so a new note never emits the previous view year.
+watch(() => props.note.id, initialSelection, { immediate: true });
 watch(selectedYear, () => { selectedVariants.value = {}; }, { flush: "sync" });
 function currentView(): MapViewState {
   return { year: selectedYear.value, showRegions: showRegions.value, showSettlements: showSettlements.value,
@@ -84,14 +90,29 @@ let leaflet: any;
 let map: any;
 let landLayer: any;
 let backgroundLayer: any;
+let hydroLayer: any;
+let settlementLayer: any;
+let labelLayer: any;
 let placeLayer: any;
+let territoryBounds: any;
+let renderedLand = "";
+let renderedTerritory = "";
+let renderedHydro = "";
+let renderedSettlements = "";
+let renderedEvents = "";
+let eventBounds: any;
+let renderFrame = 0;
+let prefetchTimer: ReturnType<typeof setTimeout> | undefined;
 let selectionLayer: any;
 let observer: ResizeObserver | undefined;
 let request: AbortController | undefined;
 let generation = 0;
 let alive = false;
 let initializing = false;
+let hasRendered = false;
+let renderedFocusRequest: number | undefined;
 const cache = new Map<string, any>();
+const pendingResources = new Map<string, Promise<any>>();
 const placeLayers = new Map<string, any>();
 const labelMarkers: { marker: any; position: any; text: string; chosen: boolean }[] = [];
 let allBounds: any;
@@ -117,15 +138,38 @@ function styleTokens() {
     border: style.getPropertyValue("--map-boundary").trim(),
   };
 }
-async function geojson(path: string, signal: AbortSignal) {
-  if (cache.has(path)) return cache.get(path);
-  const response = await fetch(withBase(path), { signal });
-  if (!response.ok) throw new Error(`Map resource: ${response.status}`);
-  const value = await response.json();
-  if (value.type !== "FeatureCollection" || !Array.isArray(value.features)) throw new Error("Invalid GeoJSON");
-  if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-  cache.set(path, value);
+function cachedGeojson(path: string) {
+  const value = cache.get(path);
+  if (value) { cache.delete(path); cache.set(path, value); }
   return value;
+}
+function geojson(path: string, signal: AbortSignal): Promise<any> {
+  if (cache.has(path)) return Promise.resolve(cachedGeojson(path));
+  const pending = pendingResources.get(path);
+  if (pending) return pending;
+  const loading = (async () => {
+    const response = await fetch(withBase(path), { signal });
+    if (!response.ok) throw new Error(`Map resource: ${response.status}`);
+    const value = await response.json();
+    if (value.type !== "FeatureCollection" || !Array.isArray(value.features)) throw new Error("Invalid GeoJSON");
+    if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+    cache.set(path, value);
+    // Bound memory when scrubbing through the whole atlas.
+    if (cache.size > 24) cache.delete(cache.keys().next().value!);
+    return value;
+  })().finally(() => pendingResources.delete(path));
+  pendingResources.set(path, loading);
+  return loading;
+}
+function prefetchNeighbors() {
+  if (!props.explorer || !request) return;
+  clearTimeout(prefetchTimer);
+  const paths = historyMapNeighbors(props.note, selectedYear.value);
+  const signal = request.signal;
+  prefetchTimer = setTimeout(() => {
+    if (!alive || !props.enabled) return;
+    for (const path of paths) void geojson(path, signal).catch(() => {});
+  }, 0);
 }
 function clearAreaSelection() {
   selectionLayer?.clearLayers();
@@ -171,15 +215,23 @@ function bindAreaSelection(feature: any, layer: any, label: string, onChoose?: (
   layer.on("add", decorate);
   decorate();
 }
-function clearLayers() {
+function clearEventLayers() {
   clearPlaceTooltips();
   clearAreaSelection();
-  landLayer?.clearLayers();
-  backgroundLayer?.clearLayers();
   placeLayer?.clearLayers();
   placeLayers.clear();
+}
+function clearLayers() {
+  clearEventLayers();
+  landLayer?.clearLayers();
+  backgroundLayer?.clearLayers();
+  hydroLayer?.clearLayers();
+  settlementLayer?.clearLayers();
+  labelLayer?.clearLayers();
   labelMarkers.length = 0;
-  allBounds = null;
+  allBounds = territoryBounds = null;
+  renderedLand = renderedTerritory = renderedHydro = renderedSettlements = renderedEvents = "";
+  eventBounds = null;
   territoryNames.value = [];
 }
 function detailsInset() {
@@ -213,13 +265,12 @@ function arrangeLabels() {
   const sorted = labelMarkers.toSorted((a, b) => Number(b.chosen) - Number(a.chosen));
   const width = host.value.clientWidth;
   const height = host.value.clientHeight;
-  for (const { marker, position, text } of sorted) {
-    const element = marker.getElement();
-    if (!element) continue;
+  const labels = sorted.map(item => ({ ...item, element: item.marker.getElement() })).filter(item => item.element);
+  // Batch size writes, then measurements, then placement writes to avoid layout thrashing.
+  for (const { element } of labels) element.firstElementChild.style.maxWidth = `${Math.min(150, width - 56)}px`;
+  const measured = labels.map(item => ({ ...item, labelWidth: item.element.firstElementChild.getBoundingClientRect().width }));
+  for (const { element, position, labelWidth } of measured) {
     const point = map.latLngToContainerPoint(position);
-    const textElement = element.firstElementChild as HTMLElement;
-    textElement.style.maxWidth = `${Math.min(150, width - 56)}px`;
-    const labelWidth = textElement.getBoundingClientRect().width;
     const candidates = [
       { x: point.x + 9, y: point.y - 11 },
       { x: point.x - labelWidth - 9, y: point.y - 11 },
@@ -245,87 +296,132 @@ function labelAt(position: any, text: string, chosen = false, territory = false)
   const marker = leaflet.marker(position, {
     icon: leaflet.divIcon({ html: label, className: "note-map-label", iconSize: [150, 22], iconAnchor: [0, 11] }),
     interactive: false, keyboard: false, pane: "mapLabels",
-  }).addTo(placeLayer);
+  }).addTo(labelLayer);
   labelMarkers.push({ marker, position, text, chosen });
 }
-function focusPlace(item: any) {
+function focusPlace(item: any, preserveView = false) {
   clearPlaceTooltips();
   selectedPlace.value = item.key;
   const layer = placeLayers.get(selectedPlace.value);
   if (!layer || !map) return;
   clearAreaSelection();
   if (layer.getLatLng) {
-    map.setView(layer.getLatLng(), POINT_ZOOM, { animate: false });
-    const inset = detailsInset();
-    if (inset) map.panBy([inset / 2, 0], { animate: false });
+    if (!preserveView) {
+      map.setView(layer.getLatLng(), props.explorer ? 5 : POINT_ZOOM, { animate: false });
+      const inset = detailsInset();
+      if (inset) map.panBy([inset / 2, 0], { animate: false });
+    }
   } else if (layer.getBounds?.().isValid()) {
     selectArea(item.variant?.feature);
-    fitBounds(layer.getBounds(), true);
+    if (!preserveView) fitBounds(layer.getBounds(), true);
   }
-  layer.bindTooltip(textNode(item.label), { permanent: true, className: "note-map-tooltip", direction: layer.getLatLng ? "top" : "center" }).openTooltip();
+  layer.bindTooltip(textNode(props.explorer && props.note.historyId ? `${props.note.title} · ${item.label}` : item.label), { permanent: true, className: "note-map-tooltip", direction: layer.getLatLng ? "top" : "center" }).openTooltip();
 }
 async function render() {
-  request?.abort();
   const serial = ++generation;
+  const focusRequest = props.focusRequest;
   if (!alive || !map) return;
-  clearLayers();
+  if (!props.explorer) clearLayers();
   failures.value = [];
   busy.value = false;
   if (!props.enabled) return;
-  request = new AbortController();
+  // Share in-flight resources across years; generation checks discard stale renders.
+  request ||= new AbortController();
   const signal = request.signal;
   const historicalMap = historical.value;
   const year = selectedYear.value;
-  areaFeatures.value = [];
-  const paths = historicalMap ? [jiangshanSource.neighbors, jiangshanSource.hydro, historicalMap.geometry] :
-    Number.isInteger(year) && year !== 0 && rawPlaces.value.length ? [jiangshanSource.neighbors] : [];
+  const reference = referenceMap.value;
+  const landPath = mapContext.value.landPath;
+  const geometryPath = historicalMap?.geometry || reference?.geometry;
+  const paths = props.explorer ? [landPath, ...(geometryPath ? [geometryPath] : []), ...(historicalMap ? [jiangshanSource.hydro] : [])]
+    : historicalMap ? [jiangshanSource.neighbors, jiangshanSource.hydro, historicalMap.geometry]
+      : Number.isInteger(year) && year !== 0 && rawPlaces.value.length ? [jiangshanSource.neighbors] : [];
   busy.value = true;
   const resources = new Map<string, any>();
   const failed: string[] = [];
-  await Promise.all([...new Set(paths)].map(async (path) => {
+  const missing = [...new Set(paths)].filter(path => {
+    if (!cache.has(path)) return true;
+    resources.set(path, cachedGeojson(path));
+    return false;
+  });
+  if (missing.length) await Promise.all(missing.map(async (path) => {
     try { resources.set(path, await geojson(path, signal)); }
     catch (error: any) { if (error.name !== "AbortError") failed.push(path); }
   }));
   if (serial !== generation || !alive || signal.aborted) return;
   const colors = styleTokens();
-  const land = resources.get(jiangshanSource.neighbors);
-  if (land) leaflet.geoJSON(land, {
-    interactive: false, className: "note-map-land", smoothFactor: 0.6,
-    style: { weight: 0.7, fillOpacity: 1 },
-  }).addTo(landLayer);
+  const land = resources.get(landPath);
+  if (renderedLand !== landPath || !land) {
+    landLayer.clearLayers();
+    if (land) leaflet.geoJSON(land, {
+      interactive: false, className: "note-map-land", smoothFactor: 0.6,
+      style: { weight: 0.7, fillOpacity: 1 },
+    }).addTo(landLayer);
+    renderedLand = land ? landPath : "";
+  }
   allBounds = leaflet.latLngBounds([]);
-  const background = historicalMap && resources.get(historicalMap.geometry);
-  areaFeatures.value = background?.features || [];
-  if (background) {
-    const territories = leaflet.geoJSON(background, {
-      bubblingMouseEvents: false,
-      filter: (feature: any) => showRegions.value || feature.properties.layer !== "region",
-      style: (feature: any) => ({ color: colors.border, weight: feature.properties.layer === "polity" ? 1.5 : 0.7,
-        dashArray: feature.properties.layer === "region" ? "3 3" : undefined,
-        fillColor: colors.border, fillOpacity: feature.properties.layer === "polity" ? 0.13 : 0.04, className: "note-map-territory" }),
-      onEachFeature(feature: any, layer: any) {
-        const p = feature.properties;
-        const label = `${p.title} · ${p.layer === 'region' ? '一级区划' : '政权'}`;
-        bindAreaSelection(feature, layer, label);
-      },
-    }).addTo(backgroundLayer);
-    if (territories.getBounds().isValid()) allBounds.extend(territories.getBounds());
+  const rawBackground = geometryPath && resources.get(geometryPath);
+  const background = reference && rawBackground ? { ...rawBackground, features: rawBackground.features.map((feature: any) => ({ ...feature,
+    properties: { ...feature.properties, title: feature.properties.displayName || feature.properties.NAME_ZH || feature.properties.NAME || feature.properties.shapeName,
+      layer: chinaScope.value ? "region" : "polity" } })) } : rawBackground;
+  const territoryKey = JSON.stringify([background ? geometryPath : null, showRegions.value, colors.border]);
+  const territoryChanged = territoryKey !== renderedTerritory;
+  if (territoryChanged) {
+    backgroundLayer.clearLayers();
+    labelLayer.clearLayers();
+    labelMarkers.length = 0;
+    territoryBounds = null;
+    areaFeatures.value = background?.features || [];
+    if (background) {
+      const territories = leaflet.geoJSON(background, {
+        bubblingMouseEvents: false,
+        filter: (feature: any) => showRegions.value || feature.properties.layer !== "region",
+        style: (feature: any) => ({ color: colors.border, weight: feature.properties.layer === "polity" ? 1.5 : 0.7,
+          dashArray: feature.properties.layer === "region" ? "3 3" : undefined,
+          fillColor: colors.border, fillOpacity: feature.properties.layer === "polity" ? 0.13 : 0.04, className: "note-map-territory" }),
+        onEachFeature(feature: any, layer: any) {
+          const p = feature.properties;
+          bindAreaSelection(feature, layer, `${p.title} · ${p.layer === 'region' ? '一级区划' : '政权'}`);
+        },
+      }).addTo(backgroundLayer);
+      territoryBounds = territories.getBounds();
+    }
+    territoryNames.value = background ? [...new Set<string>(background.features
+      .filter((f: any) => showRegions.value || f.properties.layer !== "region")
+      .map((f: any) => `${f.properties.title} · ${f.properties.layer === 'region' ? '一级区划' : '政权'}`))] : [];
+    renderedTerritory = territoryKey;
   }
+  if (territoryBounds?.isValid()) allBounds.extend(territoryBounds);
   const hydro = resources.get(jiangshanSource.hydro);
-  if (hydro) leaflet.geoJSON(hydro, {
-    filter: (f: any) => visibleAt(f.properties, year),
-    style: { color: colors.border, weight: 0.8, opacity: 0.5, fillColor: colors.surface, fillOpacity: 1 },
-    interactive: false,
-  }).addTo(backgroundLayer);
-  territoryNames.value = background ? [...new Set<string>(background.features
-    .filter((f: any) => showRegions.value || f.properties.layer !== "region")
-    .map((f: any) => `${f.properties.title} · ${f.properties.layer === 'region' ? '一级区划' : '政权'}`))] : [];
-  if (historicalMap && showSettlements.value) for (const city of settlementsAt(year)) {
-    const position = leaflet.latLng(city.coord[1], city.coord[0]);
-    leaflet.circleMarker(position, { radius: city.isCapital ? 4 : 2.5, color: colors.surface, weight: 1,
-      fillColor: colors.border, fillOpacity: 0.9, interactive: false }).addTo(placeLayer);
+  const hydroFeatures = hydro?.features.filter((f: any) => visibleAt(f.properties, year)) || [];
+  const hydroKey = JSON.stringify([hydroFeatures.map((f: any) => hydro.features.indexOf(f)), colors.border, colors.surface]);
+  if (hydroKey !== renderedHydro) {
+    hydroLayer.clearLayers();
+    if (hydroFeatures.length) leaflet.geoJSON({ type: "FeatureCollection", features: hydroFeatures }, {
+      style: { color: colors.border, weight: 0.8, opacity: 0.5, fillColor: colors.surface, fillOpacity: 1 },
+      interactive: false,
+    }).addTo(hydroLayer);
+    renderedHydro = hydroKey;
   }
-  for (const item of places.value) {
+  const cities = historicalMap && showSettlements.value ? settlementsAt(year) : [];
+  const settlementKey = JSON.stringify([cities.map((city: any) => [city.coord, city.isCapital]), colors.surface, colors.border]);
+  if (settlementKey !== renderedSettlements) {
+    settlementLayer.clearLayers();
+    for (const city of cities) {
+      const position = leaflet.latLng(city.coord[1], city.coord[0]);
+      leaflet.circleMarker(position, { radius: city.isCapital ? 4 : 2.5, color: colors.surface, weight: 1,
+        fillColor: colors.border, fillOpacity: 0.9, interactive: false }).addTo(settlementLayer);
+    }
+    renderedSettlements = settlementKey;
+  }
+  const eventKey = JSON.stringify([props.note.id, colors.mark, colors.surface, places.value.map((item: any) =>
+    [item.key, item.label, item.variant?.id, item.variant?.coordinates, item.variant?.feature ? territoryKey : null])]);
+  const eventsChanged = eventKey !== renderedEvents;
+  if (eventsChanged) {
+    clearEventLayers();
+    eventBounds = leaflet.latLngBounds([]);
+  }
+  if (eventsChanged) for (const item of places.value) {
     const v = item.variant;
     if (!v) continue;
     let layer: any;
@@ -339,7 +435,7 @@ async function render() {
         radius: 4.5, color: colors.surface, weight: 2, fillColor: colors.mark,
         fillOpacity: 1, interactive: false,
       }).addTo(placeLayer);
-      allBounds.extend(labelPosition);
+      eventBounds.extend(labelPosition);
     } else if (v.feature) {
       layer = leaflet.geoJSON(v.feature, {
         bubblingMouseEvents: false,
@@ -347,7 +443,7 @@ async function render() {
         onEachFeature(feature: any, featureLayer: any) { bindAreaSelection(feature, featureLayer, item.label, () => focusPlace(item)); },
       }).addTo(placeLayer);
       if (layer.getBounds().isValid()) {
-        allBounds.extend(layer.getBounds());
+        eventBounds.extend(layer.getBounds());
       }
     }
     if (!layer) continue;
@@ -355,7 +451,10 @@ async function render() {
     placeLayers.set(key, layer);
     if (v.coordinates) bindAreaSelection(null, layer, item.label, () => focusPlace(item));
   }
-  for (const feature of background?.features || []) {
+  renderedEvents = eventKey;
+  if (eventBounds?.isValid()) allBounds.extend(eventBounds);
+  if (territoryChanged) clearAreaSelection();
+  if (territoryChanged) for (const feature of background?.features || []) {
     const p = feature.properties;
     if (props.expanded && p?.layer === "polity" && Array.isArray(p.anchor))
       labelAt(leaflet.latLng(p.anchor[1], p.anchor[0]), String(p.title), false, true);
@@ -364,21 +463,36 @@ async function render() {
   busy.value = false;
   await nextTick();
   if (serial !== generation || !alive) return;
-  map.invalidateSize();
   const selected = defaultMapPlace(places.value, props.note, selectedPlace.value);
-  if (selected) focusPlace(selected);
-  else { selectedPlace.value = ""; fit(); }
-  arrangeLabels();
+  // Year changes update content only. Explicit event selection may reposition the map.
+  const preserveView = Boolean(props.explorer && hasRendered &&
+    (focusRequest === renderedFocusRequest || (props.focusYear !== undefined && props.focusYear !== year)));
+  if (selected) {
+    if (eventsChanged || territoryChanged || !preserveView) focusPlace(selected, preserveView);
+  } else { selectedPlace.value = ""; if (!preserveView) fit(); }
+  hasRendered = true;
+  renderedFocusRequest = focusRequest;
+  if (territoryChanged || !preserveView) arrangeLabels();
+  if (territoryChanged) prefetchNeighbors();
 }
-watch([rawPlaces, selectedYear, selectedVariants, showRegions, showSettlements, () => props.enabled], () => {
-  if (map) void render();
+function scheduleRender() {
+  generation++;
+  busy.value = props.enabled;
+  if (renderFrame) return;
+  renderFrame = requestAnimationFrame(() => {
+    renderFrame = 0;
+    if (alive) void render();
+  });
+}
+watch([rawPlaces, selectedYear, selectedVariants, showRegions, showSettlements, () => props.enabled, () => props.focusRequest], () => {
+  if (map) scheduleRender();
   else if (alive && host.value) void initializeMap();
 }, { flush: "post", deep: true });
 
 watch(showDetails, async () => {
   await nextTick();
   const selected = places.value.find((p: any) => p.key === selectedPlace.value && p.variant);
-  if (selected) focusPlace(selected);
+  if (selected) focusPlace(selected, Boolean(props.explorer && hasRendered));
 });
 function retry() {
   if (map) void render();
@@ -405,6 +519,9 @@ async function initializeMap() {
     map.getPane("mapLabels").style.zIndex = "450";
     landLayer = leaflet.layerGroup().addTo(map);
     backgroundLayer = leaflet.layerGroup().addTo(map);
+    hydroLayer = leaflet.layerGroup().addTo(map);
+    settlementLayer = leaflet.layerGroup().addTo(map);
+    labelLayer = leaflet.layerGroup().addTo(map);
     placeLayer = leaflet.layerGroup().addTo(map);
     selectionLayer = leaflet.layerGroup().addTo(map);
     map.on("click", clearSelection);
@@ -413,7 +530,8 @@ async function initializeMap() {
       if (props.enabled && host.value?.clientWidth) {
         map.invalidateSize();
         const selected = places.value.find((p: any) => p.key === selectedPlace.value && p.variant);
-        if (selected) focusPlace(selected); else fit();
+        if (selected) focusPlace(selected, Boolean(props.explorer && hasRendered));
+        else if (!props.explorer || !hasRendered) fit();
         arrangeLabels();
       }
     });
@@ -428,29 +546,30 @@ onMounted(() => { alive = true; void initializeMap(); });
 // CSS classes style the geographic layers; recreate JS-styled marks on theme changes.
 let themeObserver: MutationObserver | undefined;
 onMounted(() => {
-  themeObserver = new MutationObserver(() => { void render(); });
+  themeObserver = new MutationObserver(scheduleRender);
   themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 });
 onBeforeUnmount(() => {
   alive = false; generation++; request?.abort(); observer?.disconnect(); themeObserver?.disconnect();
-  map?.remove(); cache.clear();
+  cancelAnimationFrame(renderFrame); clearTimeout(prefetchTimer);
+  map?.remove(); cache.clear(); pendingResources.clear();
 });
 </script>
 
 <template>
-  <section v-show="expanded || hasGeometry" :class="['note-map-section', { 'note-map-expanded': expanded }]" :aria-label="expanded ? note.title + '的大图地图' : '关联地点地图'">
+  <section v-show="expanded || hasGeometry" :class="['note-map-section', { 'note-map-expanded': expanded, 'note-map-explorer': explorer }]" :aria-label="expanded ? note.title + '的大图地图' : '关联地点地图'">
     <h2 v-if="!expanded">关联地点</h2>
     <div class="note-map-time">
-      <strong v-if="expanded" class="note-map-workspace-title"><Icon name="locate" :size="16" />{{ note.title }} · 地图</strong>
-      <span>{{ timeLabel(time) }}</span>
-      <label v-if="years.length > 1">
+      <strong v-if="expanded && !explorer" class="note-map-workspace-title"><Icon name="locate" :size="16" />{{ note.title }} · 地图</strong>
+      <span v-if="!explorer">{{ timeLabel(time) }}</span>
+      <label v-if="!explorer && years.length > 1">
         <span class="note-map-sr-only">地图显示年代</span>
         <select v-model="selectedYear" aria-label="地图显示年代">
           <option v-if="!time" :value="null">选择年代</option>
           <option v-for="year in years" :key="year" :value="year">{{ yearLabel(year) }}</option>
         </select>
       </label>
-      <label v-if="expanded" class="note-map-year-input"><span>指定年份</span><input :value="selectedYear" type="number" step="1" aria-label="指定地图年份" placeholder="如 650" @input="setYear" /></label>
+      <label v-if="expanded && !explorer" class="note-map-year-input"><span>指定年份</span><input :value="selectedYear" type="number" step="1" aria-label="指定地图年份" placeholder="如 650" @input="setYear" /></label>
       <button v-if="expanded" type="button" class="note-map-details-toggle" :aria-pressed="showDetails" @click="showDetails = !showDetails"><Icon name="settings" :size="15" />地图详情</button>
     </div>
     <div class="note-map-frame" :aria-busy="busy">
@@ -462,6 +581,7 @@ onBeforeUnmount(() => {
         <button type="button" aria-label="显示完整疆域与全部关联地点" title="显示完整疆域与全部地点" @click="fit"><Icon name="fit" :size="14" /></button>
       </div>
       <div v-if="busy" class="note-map-loading" role="status">正在载入地理数据…</div>
+      <div v-if="explorer && note.historyId" class="note-map-event-callout" aria-live="polite"><strong>{{ note.title }}</strong><span>{{ visiblePlaces.length ? '已显示可定位的关联地点' : '当前事件暂无可定位地点' }}</span><button type="button" @click="emit('open', note, $event)">阅读事件笔记</button></div>
       <div class="note-map-attribution"><a :href="withBase('/history/sources/jiangshan/SOURCES.md')" target="_blank" rel="noopener">地图资料</a> · <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a></div>
     </div>
     <div v-show="!expanded || showDetails" class="note-map-details" @keydown.esc.stop="showDetails = false">
@@ -746,5 +866,22 @@ onBeforeUnmount(() => {
   .note-map-dot { background: CanvasText; }
   .note-map-area, .note-map-context { border-color: CanvasText; }
   .note-map-label-text { background: Canvas; color: CanvasText; }
+}
+/* The history explorer owns the year controls and event rail around this map. */
+.note-map-explorer.note-map-expanded { grid-template-rows: minmax(0, 1fr) auto; }
+.note-map-explorer.note-map-expanded .note-map-frame { grid-area: 1 / 1; }
+.note-map-explorer.note-map-expanded .note-map-time { grid-area: 1 / 1; position: absolute; top: 12px; right: 52px; z-index: 3; padding: 0; border: 0; background: var(--vault-bg); border-radius: 4px; }
+.note-map-explorer.note-map-expanded .note-map-details { grid-area: 1 / 1; margin-top: 56px; }
+.note-map-explorer.note-map-expanded .note-map-workspace-caption { grid-area: 2 / 1; font-size: 10px; }
+.note-map-event-callout { position: absolute; bottom: 34px; left: 14px; z-index: 2; max-width: min(340px, calc(100% - 76px)); padding: 12px 14px; border: 1px solid var(--vault-border); border-radius: 4px; background: var(--vault-bg); color: var(--vault-text); }
+.note-map-event-callout strong { display: block; font-size: 15px; line-height: 1.5; overflow-wrap: anywhere; }
+.note-map-event-callout span { display: block; margin-top: 5px; font-size: 11px; color: var(--vault-detail-muted); }
+.vault-shell .note-map-event-callout button { margin-top: 7px; padding: 3px 0; min-height: 26px; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .note-map-explorer.note-map-expanded .note-map-time { top: 8px; right: 48px; }
+  .note-map-explorer.note-map-expanded .note-map-workspace-caption { display: none; }
+  .note-map-event-callout { left: 8px; bottom: 22px; max-width: calc(100% - 76px); padding: 7px 9px; }
+  .note-map-event-callout strong { font-size: 13px; }
+  .note-map-event-callout span, .vault-shell .note-map-event-callout button { font-size: 10px; }
 }
 </style>
