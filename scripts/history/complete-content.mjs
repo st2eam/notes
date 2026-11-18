@@ -270,7 +270,7 @@ for(const period of dynasties)for(const m of period.milestones){
     geo:{scope:'china',time:{from:parseHistoryTime(date).from,to:parseHistoryTime(date).to},places,bindingStatus:customSites[key]||places.some(p=>notes.get(p.target).data.geo.place.kind==='region')?'uncertain':'bound',locationNote:`${places.map(p=>p.name).join('、')}。地点分别对应正文中的行动或地理范围；代表点不表示精确战场/宫城。`}};
   const limit=details&&differences[key]?`\n\n## 对读与纪年\n\n${differences[key]}`:'';
   const sourceQuote=details?`${details.source?'\n\n- [本条核对的史籍原文]('+details.source+')。':''}\n\n上游合写原条：“${m.headline}”。本条只展开其中“${title}”相关部分，其余行动分别对应同条清单中的笔记。`:'';
-  const content=`# ${title}\n\n> ${date}\n\n${linked}\n\n## 发生地点\n\n${geoText}。${places.length>1?'这些地点分别承接正文中的行动、行程或政权变更，不能合并为一个发生点。':'此处采用历史地点身份定位；区域名称表示事件涉及范围，不等于现代同名行政区的全部边界。'}${sourceQuote}${limit}\n\n## 来源\n\n${sourceLine(key)}${sourceBooks(key)?'\n'+sourceBooks(key):''}`;
+  const content=`# ${title}\n\n> ${date}\n\n${linked}\n\n## 发生地点\n\n${geoText}。${places.length>1?'这些地点分别承接正文中的行动、行程或政权变更，不能合并为一个发生点。':''}${sourceQuote}${limit}\n\n## 来源\n\n${sourceLine(key)}${sourceBooks(key)?'\n'+sourceBooks(key):''}`;
   save(id,data,content);
   for(const e of entityTargets)remember(id,e.id);
   for(const place of places)remember(id,place.target);
