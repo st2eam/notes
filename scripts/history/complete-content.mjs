@@ -23,7 +23,6 @@ for(const file of manifest.files){
  if(createHash('sha256').update(bytes).digest('hex')!==file.sha256)throw new Error(`Source checksum mismatch: ${file.upstreamPath}`);
 }
 export const sourceUrl = `https://github.com/DeanChensj/jiangshan-map/blob/${manifest.commit}/js/map_data.js`;
-const attribution = 'DeanChensj/jiangshan-map and contributors；固定快照派生内容遵循 GPL-3.0-only，许可见仓库 public/history/sources/jiangshan/license/LICENSE。';
 const dynasties = parseUpstreamData(fs.readFileSync(path.join(base,'map-data/source.js.txt'),'utf8'),'DYNASTY_DATA');
 const citations = parseUpstreamData(fs.readFileSync(path.join(base,'milestone-sources/source.js.txt'),'utf8'),'ATLAS_MILESTONE_SOURCES');
 // Migrate the earlier literal-source title while preserving its stable historyId.
@@ -80,8 +79,12 @@ const safe = text=>text.replace(/[<>:"/\\|?*]/g,'').replace(/\.$/,'').trim();
 const yearLabel = year=>year<0?`前 ${-year} 年`:`${year} 年`;
 const eventKey = (p,m)=>`${p.key}:${m.year}`;
 const eventId = (p,m,suffix='')=>`event-jiangshan-${p.key}-${m.year<0?'bce'+(-m.year):m.year}${suffix}`;
-const sourceLine = key=>`- [江山地图：${key}](${sourceUrl})，原始里程碑及地点；${attribution}`;
-const sourceBooks = key=>(citations[key]||[]).map(([book,vols])=>`- 上游列出的文献线索：《${book}》${vols.join('、')}。此处保留线索，不表示已经逐卷复核。`).join('\n');
+const sourceBooks = key=>(citations[key]||[]).map(([book,vols])=>`- 《${book}》${vols.join('、')}`).join('\n');
+function sourceSection(keys, extra=[]){
+  const books=(Array.isArray(keys)?keys:[keys]).flatMap(key=>sourceBooks(key).split('\n').filter(Boolean));
+  const lines=[...new Set([...extra,...books])];
+  return lines.length?'\n\n## 来源\n\n'+lines.join('\n'):'';
+}
 function save(id,data,content){
   const raw=matter.stringify(content.trim()+'\n',data,{lineWidth:-1});
   if(!notes.has(id))added.add(id);
@@ -136,7 +139,7 @@ for(const [title,group,definition] of people){
     const mentions=dynasties.flatMap(p=>p.milestones.filter(m=>m.headline.includes(title.replace('（前蜀）',''))).map(m=>({key:eventKey(p,m),year:m.year,headline:m.headline})));
     if(!mentions.length)continue;
     const excerpts=mentions.slice(0,6).map(m=>`- ${yearLabel(m.year)}：${m.headline}。`).join('\n');
-    save(id,meta(title,`历史/中国史/${group}/人物`,['人物']),`# ${title}\n\n${definition}\n\n## 与时间线有关的活动\n\n${excerpts}\n\n以上各项是上游里程碑对其活动的摘要。任官、作战与即位属于不同身份阶段，具体年份的异同以各事件笔记中的对读说明为准。\n\n## 来源\n\n${sourceLine(mentions.map(m=>m.key).join('、'))}`);
+    save(id,meta(title,`历史/中国史/${group}/人物`,['人物']),`# ${title}\n\n${definition}\n\n## 与时间线有关的活动\n\n${excerpts}${sourceSection(mentions.map(m=>m.key))}`);
   }
   entities.push({term:title.replace('（前蜀）',''),id});
 }
@@ -147,7 +150,7 @@ for(const [title,definition,background] of concepts){
   else {
     id=`历史/中国史/概念/${safe(title)}.md`;
     const target=`历史/中国史/专题/${background}.md`;
-    save(id,meta(title,'历史/中国史/概念',['概念']),`# ${title}\n\n${definition}\n\n## 事件与制度的区别\n\n本概念用于解释事件笔记中对应的制度、组织或交往方式。政策颁布地、实际施行范围和后续变化需要分别考察，不能用一个时间线代表点取代这些层次。\n\n具体历史背景见${wikilink(target,background)}。\n\n## 来源\n\n- ${wikilink(target,background)}及其列出的史籍与研究。\n- [江山地图固定版本：相关制度事件](${sourceUrl})，保留其事件线索；${attribution}`);
+    save(id,meta(title,'历史/中国史/概念',['概念']),`# ${title}\n\n${definition}\n\n## 来源\n\n- ${wikilink(target,background)}及其列出的史籍与研究。`);
     remember(id,target);
   }
   entities.push({term:title,id});
@@ -210,7 +213,7 @@ function siteNode(label,coord,key,year,custom={}){
   const data=meta(canonical,'历史/中国史/地点',['地点']);
   data.aliases=[...new Set([bare,label,...(cat?.aliases||[])].filter(x=>x!==canonical))];
   data.geo={scope:'china',place:{id:cat?.location.id||'history-'+sha(canonical).slice(0,12),kind:broad?'region':'point',modernName:modern,variants:[]}};
-  const content=`# ${canonical}\n\n${canonical}是本仓库事件笔记使用的${broad?'历史地理范围':'历史地点'}。江山地图在“${key}”条中将它写作“${label}”；此名称用于定位该事件涉及的地点身份，不表示不同时期的城市、辖区或现代行政边界完全相同。\n\n## 地点与事件范围\n\n${broad?'本条按区域处理。区域可能包含多处聚落、交通线或战场，不能以一个坐标代表完整边界；没有有据的区域几何时保留范围说明。':'上游坐标仅作聚落或事件区域的代表点，不是经考古测定的宫殿、古城城墙或战场精确位置。'}古今名和同名异地应结合事件年代判断。\n\n## 来源\n\n${sourceLine(key)}`;
+  const content=`# ${canonical}${sourceSection(key)}`;
   save(id,data,content);p=notes.get(id);
  }
  if(canonical==='振武'){
@@ -262,15 +265,15 @@ for(const period of dynasties)for(const m of period.milestones){
   if(previous&&previous.data.historyId!==historyId)throw new Error(`Content title identity collision: ${id}`);
   const date=details?.date||newDates[key]||yearLabel(m.year);
   const places=sitesFor(period,m,details);
-  const main=details?.text||(differences[key]?`上游以${yearLabel(m.year)}为节点概述：“${m.headline}”。\n\n本地对读：${differences[key]}`:m.headline+'。');
+  const main=details?.text||(differences[key]?`事件摘要：“${m.headline}”。\n\n${differences[key]}`:m.headline+'。');
   const entityTargets=entities.filter(e=>main.includes(e.term)).filter((e,i,a)=>a.findIndex(x=>x.id===e.id)===i).slice(0,5);
   const linked=paragraphLinks(main,entityTargets);
   const geoText=places.map(p=>wikilink(p.target,p.name)).join('、');
   const data={...meta(title,`历史/中国史/${group}/事件`,[group]),historyId,historyKind:'event',historyPeriod:initialEvents.find(n=>n.historyGroup===group)?.historyPeriod||'postclassical',historyTrack:'china',historyDate:date,historyOrder:parseHistoryTime(date).from*10000,historyGroup:group,
     geo:{scope:'china',time:{from:parseHistoryTime(date).from,to:parseHistoryTime(date).to},places,bindingStatus:customSites[key]||places.some(p=>notes.get(p.target).data.geo.place.kind==='region')?'uncertain':'bound',locationNote:`${places.map(p=>p.name).join('、')}。地点分别对应正文中的行动或地理范围；代表点不表示精确战场/宫城。`}};
   const limit=details&&differences[key]?`\n\n## 对读与纪年\n\n${differences[key]}`:'';
-  const sourceQuote=details?`${details.source?'\n\n- [本条核对的史籍原文]('+details.source+')。':''}\n\n上游合写原条：“${m.headline}”。本条只展开其中“${title}”相关部分，其余行动分别对应同条清单中的笔记。`:'';
-  const content=`# ${title}\n\n> ${date}\n\n${linked}\n\n## 发生地点\n\n${geoText}。}${sourceQuote}${limit}\n\n## 来源\n\n${sourceLine(key)}${sourceBooks(key)?'\n'+sourceBooks(key):''}`;
+  const sources=sourceSection(key,details?.source?['- [史籍原文]('+details.source+')。']:[]);
+  const content=`# ${title}\n\n> ${date}\n\n${linked}\n\n## 发生地点\n\n${geoText}。${limit}${sources}`;
   save(id,data,content);
   for(const e of entityTargets)remember(id,e.id);
   for(const place of places)remember(id,place.target);
@@ -304,7 +307,7 @@ for(const [pk,year,details] of supplemental){
  const id=`历史/中国史/${group}/事件/${safe(details.title)}.md`,historyId=eventId(p,m,details.suffix||'-supplement');
  const date=details.date||yearLabel(year);const places=sitesFor(p,m,details);const targets=entities.filter(e=>details.text.includes(e.term)).filter((e,i,a)=>a.findIndex(x=>x.id===e.id)===i).slice(0,5);
  const data={...meta(details.title,`历史/中国史/${group}/事件`,[group]),historyId,historyKind:'event',historyPeriod:initialEvents.find(n=>n.historyGroup===group)?.historyPeriod||'postclassical',historyTrack:'china',historyDate:date,historyOrder:parseHistoryTime(date).from*10000,historyGroup:group,geo:{scope:'china',places,locationNote:details.site+'。',bindingStatus:'bound'}};
- save(id,data,`# ${details.title}\n\n> ${date}\n\n${paragraphLinks(details.text,targets)}\n\n发生地点：${places.map(p=>wikilink(p.target,p.name)).join('、')}。\n\n## 与上游的对应\n\n上游“${key}”将本条与其他行动合写：“${m.headline}”。本条展开其中独立的时间、政治或制度阶段。${differences[key]||''}\n\n## 来源\n\n${sourceLine(key)}\n${details.source?'- [本条核对的史籍原文]('+details.source+')。\n':''}${sourceBooks(key)}`);
+ save(id,data,`# ${details.title}\n\n> ${date}\n\n${paragraphLinks(details.text,targets)}\n\n发生地点：${places.map(p=>wikilink(p.target,p.name)).join('、')}。${differences[key]?'\n\n## 对读与纪年\n\n'+differences[key]:''}${sourceSection(key,details.source?['- [史籍原文]('+details.source+')。']:[])}`);
  for(const t of [...targets.map(e=>e.id),...places.map(p=>p.target)])remember(id,t);
  ledger.find(x=>x.upstreamKey===key).matches.push({historyId,title:details.title,path:id,scope:details.title,reason:'具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。',difference:differences[key]||null});
 }
@@ -420,7 +423,7 @@ for(const n of initialEvents){
      target=`历史/中国史/地点/${safe(place.title)}.md`;placeByTitle.set(place.title,target);
      if(notes.has(target)&&!notes.get(target).data.geo?.place)continue;
      const url=loc.variants[0]?.source?.url;
-     save(target,data,`# ${place.title}\n\n${place.title}是“${n.title}”正文明确涉及的历史地点。${loc.modernName?`今地参照为${loc.modernName}。`:''}本条沿用仓库已审定的地点身份与别名，名称相同并不保证古代范围与现代行政区边界一致。\n\n## 事件中的作用\n\n${wikilink(n.id,n.title)}记述的发生地说明为：${p.data.geo.locationNote}\n\n${loc.kind==='region'?'按区域级地点处理，没有具体范围几何时不添加猜测坐标。':'已有城市坐标表示聚落参照，不能当作事件精确发生点。江山地图绘图仍只采用其固定来源允许的数据。'}\n\n## 来源\n\n- ${wikilink(n.id,n.title)}的正文及参考资料。${url?`\n- [已有地点坐标来源](${url})，仅为位置参照。`:''}`);
+     save(target,data,`# ${place.title}\n\n${loc.modernName?`今地参照为${loc.modernName}。`:''}\n\n## 事件中的作用\n\n${wikilink(n.id,n.title)}：${p.data.geo.locationNote}\n\n## 来源\n\n- ${wikilink(n.id,n.title)}的正文及参考资料。${url?`\n- [已有地点坐标来源](${url})，仅为位置参照。`:''}`);
      remember(target,n.id);
    }
    if(!p.content.includes(noext(target))){p.content+=`\n\n发生地点：${wikilink(target,entry.name||place.title)}。\n`;remember(n.id,target);}
@@ -436,7 +439,7 @@ for(const id of new Set(siteRecords.map(r=>r.id))){
  const keys=[...new Set(rows.map(r=>r.key))];
  const entries=ledger.filter(x=>keys.includes(x.upstreamKey)).slice(0,8);
  if(entries.length&&!p.content.includes('## 涉及事件')){
- p.content+='\n\n## 涉及事件\n\n'+entries.map(e=>{const m=e.matches[0];remember(id,m.path);return `- ${yearLabel(e.year)}：${wikilink(m.path,m.title)}。上游原文：“${e.headline}”。`;}).join('\n')+'\n';save(id,p.data,p.content);
+ p.content+='\n\n## 涉及事件\n\n'+entries.map(e=>{const m=e.matches[0];remember(id,m.path);return `- ${yearLabel(e.year)}：${wikilink(m.path,m.title)}${e.headline===m.title?'。':'：'+e.headline+'。'}`;}).join('\n')+'\n';save(id,p.data,p.content);
  }
 }
 // These two new biographies are named in source actions summarized by older
