@@ -47,39 +47,62 @@ export function parseUpstreamData(text, name) {
 
 // Content correspondence was reviewed against both records. This is NOT an
 // assertion that the primary sources, dates or coordinates have been verified.
-export const reviewedMappings = [
-  { historyId: "event-163", upstreamKey: "qin:-221", title: "嬴政称皇帝",
-    reason: "上游条目合写统一、称帝及制度措施；仅对应本地称帝事件，不自动合并同年的其他事件。" },
-  { historyId: "event-361", upstreamKey: "tang:641", title: "文成公主入藏",
-    reason: "年份与文成公主入藏、联姻主题一致；文献卷次作为上游线索保留，未据此确认地点坐标。" },
-];
+const contentReviewPath = fileURLToPath(new URL('../../.vitepress/reports/history-content-review.json', import.meta.url));
+export const reviewedMappings = JSON.parse(fs.readFileSync(contentReviewPath, 'utf8')).events.flatMap(event =>
+  event.matches.map(match => ({ ...match, upstreamKey: event.upstreamKey,
+    sourceUrl: `https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js`,
+    difference: match.difference || event.difference || undefined })));
 
 export function adaptReferences(dynasties, citations, notes, mappings = reviewedMappings) {
   const events = dynasties.flatMap((dynasty) => (dynasty.milestones || []).map((event, index) => ({
     key: `${dynasty.key}:${event.year}`, period: dynasty.title, index, ...event,
   })));
   const references = {};
+  const seen = new Set();
   for (const mapping of mappings) {
     const local = notes.filter((note) => note.historyId === mapping.historyId);
     const matches = events.filter((event) => event.key === mapping.upstreamKey);
-    const books = citations[mapping.upstreamKey];
-    if (local.length !== 1 || local[0].title !== mapping.title || matches.length !== 1 || !books?.length)
+    const books = citations[mapping.upstreamKey] || [];
+    if (local.length !== 1 || local[0].title !== mapping.title || matches.length !== 1 || !mapping.reason)
       throw new Error(`Ambiguous or missing reviewed mapping: ${mapping.historyId}`);
     const time = eventTime(local[0]);
-    if (!time || matches[0].year < time.from || matches[0].year > time.to || references[mapping.historyId])
+    // A compound headline can mention a different year in its prose. Such a
+    // correspondence requires an explicit chronology difference and is
+    // never inferred from a nearby date.
+    const outside = !time || matches[0].year < time.from || matches[0].year > time.to;
+    const identity = `${mapping.historyId}\0${mapping.upstreamKey}`;
+    if (!time || (outside && !mapping.difference) || seen.has(identity))
       throw new Error(`Inconsistent reviewed mapping: ${mapping.historyId}`);
+    seen.add(identity);
     if (books.some((item) => !Array.isArray(item) || typeof item[0] !== "string" ||
       !Array.isArray(item[1]) || item[1].some((volume) => typeof volume !== "string")))
       throw new Error(`Invalid citations: ${mapping.upstreamKey}`);
-    references[mapping.historyId] = { ...mapping, headline: matches[0].headline,
-      books: books.map(([title, volumes]) => ({ title, volumes })), status: "upstream-reference" };
+    const match = { upstreamKey: mapping.upstreamKey, headline: matches[0].headline,
+      year: matches[0].year, reason: mapping.reason, scope: mapping.scope || mapping.title,
+      status: "reviewed-content-match", ...(mapping.difference ? { difference: mapping.difference } : {}),
+      sourceUrl: mapping.sourceUrl || "https://github.com/DeanChensj/jiangshan-map",
+      books: books.map(([title, volumes]) => ({ title, volumes })) };
+    const reference = references[mapping.historyId] ||= { historyId: mapping.historyId,
+      title: mapping.title, upstreamKey: mapping.upstreamKey, headline: matches[0].headline,
+      reason: mapping.reason, books: [], matches: [], status: "upstream-reference" };
+    reference.matches.push(match);
+    for (const book of match.books) {
+      const existing = reference.books.find(item => item.title === book.title);
+      if (existing) existing.volumes = [...new Set([...existing.volumes, ...book.volumes])];
+      else reference.books.push({ title: book.title, volumes: [...book.volumes] });
+    }
+    if (reference.matches.length > 1)
+      reference.reason = "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。";
   }
   const audit = events.map((event) => {
-    const mapped = mappings.filter((mapping) => mapping.upstreamKey === event.key).map((mapping) => mapping.historyId);
+    const reviewed = mappings.filter((mapping) => mapping.upstreamKey === event.key);
+    const mapped = reviewed.map((mapping) => mapping.historyId);
     const candidates = notes.filter((note) => note.historyId && note.historyGroup === event.period &&
       eventTime(note)?.from <= event.year && eventTime(note)?.to >= event.year).map((note) => note.historyId);
     return { upstreamKey: event.key, index: event.index, headline: event.headline, year: event.year,
-      mapped, candidates, status: mapped.length ? "reviewed-content-match" : candidates.length ? "candidate-only" : "unmatched",
+      mapped, matches: reviewed.map(mapping => ({ historyId: mapping.historyId, scope: mapping.scope || mapping.title,
+        reason: mapping.reason, ...(mapping.difference ? { difference: mapping.difference } : {}) })),
+      candidates, status: mapped.length ? "reviewed-content-match" : candidates.length ? "candidate-only" : "unmatched",
       hasReferences: Boolean(citations[event.key]?.length), hasCoordinate: Array.isArray(event.coord) };
   });
   return { references, report: {
@@ -87,6 +110,10 @@ export function adaptReferences(dynasties, citations, notes, mappings = reviewed
     referencedSnapshots: new Set(dynasties.flatMap((dynasty) => (dynasty.phases || []).map((phase) => phase.snap))).size,
     milestones: events.length, settlements: dynasties.reduce((count, dynasty) => count + (dynasty.settlements?.length || 0), 0),
     reviewedMappings: Object.keys(references).length,
+    reviewedCorrespondences: mappings.length,
+    coveredMilestones: audit.filter(item => item.mapped.length).length,
+    localChineseEvents: notes.filter(note => note.id?.startsWith('历史/中国史/') && note.historyId).length,
+    addedEventIds: notes.filter(note => note.id?.startsWith('历史/中国史/') && note.historyId?.startsWith('event-jiangshan-')).map(note => note.historyId).sort(),
     withoutReferences: audit.filter((item) => !item.hasReferences).length,
     ambiguousYearCandidates: audit.filter((item) => item.candidates.length > 1).length,
     localMetadataIssues: auditHistoryMetadata(notes), events: audit,

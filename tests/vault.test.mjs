@@ -274,10 +274,10 @@ test("scan publishes only notes and excludes hidden dirs, symlinks, caches, depe
     }
     fs.writeFileSync(path.join(root, "api-examples.md"), "# example");
     fs.writeFileSync(path.join(root, "index.md"), "# Home");
-    fs.symlinkSync(path.join(root, "Module"), path.join(root, "alias"));
+    fs.symlinkSync(path.join(root, "Module"), path.join(root, "alias"), process.platform === "win32" ? "junction" : "dir");
     assert.deepEqual(
       scanFiles(root)
-        .map((f) => path.relative(root, f))
+        .map((f) => path.relative(root, f).replaceAll("\\", "/"))
         .sort(),
       ["Module/test.md", "index.md"],
     );
@@ -285,10 +285,13 @@ test("scan publishes only notes and excludes hidden dirs, symlinks, caches, depe
     fs.rmSync(root, { recursive: true, force: true });
   }
 });
-test("history publishes individual events without external links and retains original archives", () => {
+test("history publishes individual sourced events and retains original archives", () => {
   const index = readVault(process.cwd());
   const events = index.notes.filter((n) => n.historyId);
-  assert.equal(events.length, 484);
+  const alignment = JSON.parse(fs.readFileSync(".vitepress/reports/jiangshan-audit.json", "utf8"));
+  assert.equal(events.length, 484 + alignment.addedEventIds.length);
+  assert.equal(new Set(events.map(n => n.historyId)).size, events.length);
+  for (const id of alignment.addedEventIds) assert.ok(events.some(n => n.historyId === id), id);
   assert.equal(index.notes.filter((n) => n.historyTheme).length, 0);
   const report = JSON.parse(fs.readFileSync(".vitepress/reports/history-events.json", "utf8"));
   assert.equal(report.originalNotes, 58);
@@ -296,8 +299,8 @@ test("history publishes individual events without external links and retains ori
   for (const note of events) {
     const raw = fs.readFileSync(note.path, "utf8");
     assert.equal((raw.match(/^# /gm) || []).length, 1);
-    assert.ok(!/https?:\/\/|href=|## 关键事件|^### /m.test(raw), note.path);
-    assert.ok(raw.includes("地点："), note.path);
+    assert.ok(!/href=|## 关键事件|^### /m.test(raw), note.path);
+    assert.ok(/地点：|^## 发生地点$/m.test(raw), note.path);
     assert.ok(!raw.includes("维基百科（入门索引）"), note.path);
     assert.equal(note.headings[0].title, note.title);
   }

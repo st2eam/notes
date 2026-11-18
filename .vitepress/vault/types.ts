@@ -26,6 +26,7 @@ export interface GeoPlace {
   variants: GeoVariant[];
 }
 export interface GeoReference {
+  role?: "occurrence" | "related";
   target: string | null;
   place?: string;
   name?: string;
@@ -60,7 +61,7 @@ export interface VaultNote {
     period?: string;
     time?: { from: number; to: number };
     place?: GeoPlace;
-    places?: ({ target: string; place?: never; variant?: string; name?: string } | { place: string; target?: never; variant?: string; name?: string })[];
+    places?: (({ target: string; place?: never } | { place: string; target?: never }) & { variant?: string; name?: string; role?: "occurrence" | "related" })[];
     excludePlaces?: string[];
     locationNote?: string;
     bindingStatus?: "bound" | "uncertain";

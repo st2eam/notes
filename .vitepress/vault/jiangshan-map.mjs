@@ -1,5 +1,5 @@
 import { jiangshanPeriods, jiangshanSettlements, jiangshanSource } from "./jiangshan-catalog.mjs";
-import { noteGeoTime } from "./geo.mjs";
+import { noteGeoTime, selectPlaceVariant } from "./geo.mjs";
 
 export { jiangshanSource };
 export function selectJiangshanPhase(year, periods = jiangshanPeriods) {
@@ -30,6 +30,7 @@ export function initialJiangshanYear(note) {
 export const visibleAt = (item, year) => year != null &&
   (item.appear == null || year >= item.appear) && (item.vanish == null || year < item.vanish);
 export function settlementsAt(year, settlements = jiangshanSettlements) {
+  if (!Number.isInteger(year) || year === 0) return [];
   return settlements.filter(s => year >= s.from && year <= s.to && visibleAt(s, year)).map(s => {
     const era = s.eraNames?.find(n => (n.from == null || year >= n.from) && (n.until == null || year < n.until));
     return { ...s, originalAncient: s.ancient, ancient: era?.zh || s.ancient,
@@ -41,6 +42,20 @@ export function placeNames(item) {
   return [...new Set([item.name, item.title, item.reference, ...(item.note?.aliases || []),
     ...(item.catalog?.aliases || []), ...(item.location?.variants || []).map(v => v.name)]
     .map(normalizeName).filter(Boolean))];
+}
+export function defaultMapPlace(places, note, selectedKey = "") {
+  const available = places.filter(p => p.variant);
+  const selected = available.find(p => p.key === selectedKey);
+  if (selected) return selected;
+  const occurrence = available.find(p => p.role === "occurrence");
+  if (occurrence) return occurrence;
+  // An event with a documented but unmappable occurrence must not silently
+  // select a different city mentioned in its prose.
+  if (places.some(p => p.role === "occurrence")) return undefined;
+  const explicit = note.geo?.places || [];
+  return available.find(p => explicit.some(ref => ref.role !== "related" &&
+    ((ref.place && ref.place === p.catalog?.id) || (ref.target && ref.target === p.note?.id)))) ||
+    (!note.historyId?.startsWith("event-") ? available[0] : undefined);
 }
 export function describeJiangshanPlace(item, year, areas = [], selected, settlements = jiangshanSettlements) {
   const names = placeNames(item);
@@ -59,9 +74,23 @@ export function describeJiangshanPlace(item, year, areas = [], selected, settlem
     candidates = unique.map(s => ({ id: `settlement:${s.dynasty}:${s.ancient}:${s.coord.join(",")}`, name: s.ancient,
       coordinates: s.coord, modern: s.modern, accuracy: "江山地图聚落代表点，非事件发生点的精确定位", source: jiangshanSource.source }));
   }
-  const variant = selected ? candidates.find(v => v.id === selected) : candidates.length === 1 ? candidates[0] : null;
+  // Event-site coordinates may be transcribed from the same pinned upstream
+  // milestones. Older gazetteers remain metadata, never a drawing fallback.
+  const location = item.location || item.note?.geo?.place;
+  const upstreamPrefix = `https://github.com/DeanChensj/jiangshan-map/blob/${jiangshanSource.commit}/js/map_data.js`;
+  const eventVariants = (location?.variants || []).filter(v => v.coordinates &&
+    (v.source?.url === upstreamPrefix || v.source?.url?.startsWith(upstreamPrefix + "#")) &&
+    (v.from == null || year >= v.from) && (v.to == null || year <= v.to));
+  if (eventVariants.length) {
+    const site = selectPlaceVariant({ variants: eventVariants }, year, selected || item.variant);
+    candidates = eventVariants.filter(v => (v.from == null || year >= v.from) && (v.to == null || year <= v.to));
+    if (site) candidates = [site];
+  }
+  if (!Number.isInteger(year) || year === 0) candidates = [];
+  const variant = selected ? candidates.find(v => v.id === selected) || null : candidates.length === 1 ? candidates[0] : null;
   const name = item.name || variant?.name || item.title || item.reference;
-  const label = variant?.modern ? `${name}（今${variant.modern}）` : name;
+  const modern = variant?.modern || (eventVariants.length && location.modernName);
+  const label = modern ? `${name}（今${modern}）` : name;
   const missing = variant ? "" : year == null ? "选择年代后匹配江山地图地点" :
     !selectJiangshanPhase(year) ? "江山地图未覆盖该年代" :
     candidates.length > 1 ? "上游存在多个同名地点，请选择" : "江山地图此阶段未收录对应地点";

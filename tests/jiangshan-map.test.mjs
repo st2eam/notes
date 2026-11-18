@@ -4,7 +4,7 @@ import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { decodeRing, closedRing, permittedSubset, staticConstant, buildPeriods, buildMapOutputs } from "../scripts/history/jiangshan-map.mjs";
 import { parseUpstreamData } from "../scripts/history/jiangshan.mjs";
-import { selectJiangshanPhase, settlementsAt, describeJiangshanPlace, visibleAt } from "../.vitepress/vault/jiangshan-map.mjs";
+import { defaultMapPlace, selectJiangshanPhase, settlementsAt, describeJiangshanPlace, visibleAt } from "../.vitepress/vault/jiangshan-map.mjs";
 import { jiangshanPeriods, jiangshanSettlements } from "../.vitepress/vault/jiangshan-catalog.mjs";
 
 test("static extraction and VLQ decoding do not execute upstream code", () => {
@@ -80,6 +80,31 @@ test("place matching uses only upstream coordinates and current snapshot polygon
   const region = { title: "吐蕃", location: { kind: "region", variants: [{ geometry: "/geo/old.geojson" }] } };
   assert.equal(describeJiangshanPlace(region, 641, [polygon]).variant.feature, polygon);
   assert.equal(describeJiangshanPlace(region, 641).variant, null);
+});
+
+test("event occurrence wins over earlier prose references without inventing a fallback", () => {
+  const related = { key: "capital", variant: { coordinates: [116, 40] }, role: "related" };
+  const occurrence = { key: "site", variant: { coordinates: [112, 30] }, role: "occurrence" };
+  const event = { historyId: "event-example" };
+  assert.equal(defaultMapPlace([related, occurrence], event), occurrence);
+  assert.equal(defaultMapPlace([related, occurrence], event, "capital"), related);
+  assert.equal(defaultMapPlace([related, { ...occurrence, variant: null }], event), undefined);
+  assert.equal(defaultMapPlace([related], event), undefined);
+});
+
+test("documented event sites use the pinned Jiangshan source and honor their dates", () => {
+  const url = "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js#L1";
+  const variant = { id: "event-site", name: "发生地", from: 700, to: 700, coordinates: [102, 35],
+    source: { title: "江山地图", url }, accuracy: "上游事件代表点" };
+  const item = { title: "上游聚落目录未列的事件地点", location: { kind: "point", variants: [variant] } };
+  assert.deepEqual(describeJiangshanPlace(item, 700).variant.coordinates, [102, 35]);
+  assert.equal(describeJiangshanPlace(item, 701).variant, null);
+  assert.equal(describeJiangshanPlace(item, null).variant, null);
+  assert.deepEqual(describeJiangshanPlace({ ...item, title: "长安" }, 641).variant.coordinates, [108.941, 34.341]);
+  const modern = { ...item, location: { ...item.location, variants: [{ ...variant, from: 1949, to: 1949 }] } };
+  assert.deepEqual(describeJiangshanPlace(modern, 1949).variant.coordinates, [102, 35]);
+  assert.equal(describeJiangshanPlace({ ...item, location: { ...item.location, variants: [{ ...variant,
+    source: { title: "旧来源", url: "https://www.geonames.org/1/" } }] } }, 700).variant, null);
 });
 
 test("published files are deterministic, checked, and contain no restricted layers", () => {

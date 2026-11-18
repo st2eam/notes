@@ -56,6 +56,18 @@ test("explicit references resolve aliases, preserve ambiguity and override a pla
   assert.equal(describePlace(mapPlaces(event, [luoyang])[1], 805).missing, "地点引用待确认");
 });
 
+test("occurrence roles survive normalization, resolution and duplicate place identities", () => {
+  const city = note("洛阳.md", { geo: { place: { ...point, id: "city-luoyang" } } });
+  const geo = normalizeGeo({ places: [{ target: "洛阳.md", role: "occurrence" }, { place: "city-luoyang", role: "related" }] });
+  const event = note("事件.md", { geo });
+  event.geoReferences = resolveGeoReferences([event, city], event, [{ reference: "洛阳.md", wiki: true }]);
+  assert.equal(event.geoReferences[0].role, "occurrence");
+  const places = mapPlaces(event, [event, city]);
+  assert.equal(places.length, 1);
+  assert.equal(places[0].role, "occurrence");
+  assert.throws(() => normalizeGeo({ places: [{ target: "洛阳.md", role: "unknown" }] }), /places.target/);
+});
+
 test("time parser handles BCE ranges, exact dates and rejects invalid or ambiguous intervals", () => {
   assert.deepEqual(parseGeoTime("前 230 年—前 221 年"), { from: -230, to: -221 });
   assert.deepEqual(parseGeoTime("前230年—221年"), { from: -230, to: -221 });

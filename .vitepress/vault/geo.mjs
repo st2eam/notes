@@ -54,8 +54,10 @@ export function normalizeGeo(raw, noteId = "") {
       if (typeof entry?.[key] !== "string" || !entry[key].trim() ||
         (entry.place != null && entry.target != null) ||
         (entry.variant != null && typeof entry.variant !== "string") ||
-        (entry.name != null && (typeof entry.name !== "string" || !entry.name.trim()))) invalid("places.target");
-      return { [key]: entry[key], ...(entry.variant ? { variant: entry.variant } : {}), ...(entry.name ? { name: entry.name } : {}) };
+        (entry.name != null && (typeof entry.name !== "string" || !entry.name.trim())) ||
+        (entry.role != null && !["occurrence", "related"].includes(entry.role))) invalid("places.target");
+      return { [key]: entry[key], ...(entry.variant ? { variant: entry.variant } : {}),
+        ...(entry.name ? { name: entry.name } : {}), ...(entry.role ? { role: entry.role } : {}) };
     });
   }
   if (raw.place) {
@@ -106,6 +108,7 @@ export function resolveGeoReferences(notes, note, references) {
         target: null, place: explicit.place, reference: place?.title || explicit.place,
         ...(explicit.variant ? { variant: explicit.variant } : {}),
         ...(explicit.name ? { name: explicit.name } : {}),
+        ...(explicit.role ? { role: explicit.role } : {}),
       });
       continue;
     }
@@ -116,6 +119,7 @@ export function resolveGeoReferences(notes, note, references) {
       target: resolved?.target || null, reference: explicit.target,
       ...(explicit.variant ? { variant: explicit.variant } : {}),
       ...(explicit.name ? { name: explicit.name } : {}),
+      ...(explicit.role ? { role: explicit.role } : {}),
     });
   }
   return [...result.values()];
@@ -214,8 +218,11 @@ export function mapPlaces(note, notes) {
     const key = location?.id || ref.target || ref.place || ref.reference;
     const previous = places.get(key);
     places.set(key, {
-      ...previous, ...ref, key, note: target || previous?.note || null,
-      catalog: record || previous?.catalog || null, location,
+      ...previous, ...ref, key,
+      ...((previous?.role === "occurrence" || ref.role === "occurrence") ? { role: "occurrence" } : {}),
+      note: target || previous?.note || null,
+      catalog: record || previous?.catalog || null,
+      location: target?.geo?.place || previous?.note?.geo?.place || location,
       title: target?.title || previous?.note?.title || record?.title || ref.reference,
     });
   }

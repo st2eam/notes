@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
+import os from "node:os";
 import matter from "gray-matter";
 import { readVault, scanFiles } from "../.vitepress/vault/build.mjs";
 import { geographicPlaces } from "../.vitepress/vault/geo-places.mjs";
@@ -81,7 +82,12 @@ test("historical homonyms resolve to their documented cities and regions remain 
 
 test("negated places and unspecified creation cities never become occurrence markers", () => {
   assert.deepEqual(titles("九品中正制确立"), ["曹氏魏国与曹魏相关州郡"]);
-  assert.deepEqual(titles("诸葛瑾致书刘备"), ["白帝城"]);
+  const correspondence = mapPlaces(get("诸葛瑾致书刘备"), vault.notes);
+  const occurrence = correspondence.find(p => p.role === "occurrence");
+  assert.equal(occurrence.title, "孙吴至白帝城通信范围");
+  assert.equal(occurrence.location.kind, "region");
+  assert.deepEqual(occurrence.location.variants, []);
+  assert.equal(correspondence.find(p => p.title === "白帝城").role, "related");
   assert.deepEqual(titles("吕布殒命白门楼"), ["下邳"]);
   assert.ok(!titles("东兴之战").includes("合肥"));
   assert.ok(!titles("石亭之战").includes("合肥"));
@@ -133,7 +139,21 @@ test("migration preserves body, unrelated YAML and explicit historical overrides
   assert.ok(changed.includes("title: '地点示例'\r\nrelations: []"));
   const event = get("唐迁都洛阳");
   assert.ok(event.geo.places.some((r) => r.target === "历史/中国史/地点/洛阳.md" && r.variant === "sui-tang"));
-  const report = await bindNotes();
-  assert.equal(report.changed, 0);
-  assert.equal(report.explicitFields, report.explicitBound);
+  const fixture = fs.mkdtempSync(path.join(os.tmpdir(), "curated-geography-"));
+  try {
+    const tokyo = geographicPlaces.find(place => place.id === "city-tokyo");
+    fs.writeFileSync(path.join(fixture, "日本东京.md"), matter.stringify("# 日本东京\n", {
+      tags: ["地点"], aliases: ["江户"], geo: { place: tokyo.location },
+    }));
+    const reviewed = matter.stringify("# 会议\n\n地点：东京，非开封。\n", {
+      custom: "keep", geo: { places: [{ target: "江户", role: "occurrence" }],
+        locationNote: "日本东京，具体会址另见正文", bindingStatus: "bound" },
+    });
+    fs.writeFileSync(path.join(fixture, "会议.md"), reviewed);
+    const report = await bindNotes({ projectRoot: fixture, write: true });
+    assert.equal(report.changed, 0);
+    assert.equal(report.explicitFields, report.explicitBound);
+    assert.equal(fs.readFileSync(path.join(fixture, "会议.md"), "utf8"), reviewed);
+    assert.equal((await bindNotes({ projectRoot: fixture })).changed, 0);
+  } finally { fs.rmSync(fixture, { recursive: true, force: true }); }
 });

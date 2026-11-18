@@ -4,6 +4,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import { scanFiles, parseNote, wikiPlugin } from "../../.vitepress/vault/build.mjs";
+import { resolveLink } from "../../.vitepress/vault/model.mjs";
 import { geographicPlaces } from "../../.vitepress/vault/geo-places.mjs";
 import { existingPlaceSources, siteDefinitions } from "./place-definitions.mjs";
 
@@ -157,7 +158,8 @@ export async function bindNotes({ write = false, projectRoot = root } = {}) {
     entry.preparedGeo = geo;
     entry.note = { ...note, geo };
   }
-  const binder = createBinder(entries.map((e) => e.note), catalog);
+  const notes = entries.map((e) => e.note);
+  const binder = createBinder(notes, catalog);
   const exclusions = {
     "九品中正制确立": ["邺城", "洛阳"], "诸葛瑾致书刘备": ["成都"],
     "吕布殒命白门楼": ["许昌", "建康"], "东兴之战": ["合肥"],
@@ -173,6 +175,21 @@ export async function bindNotes({ write = false, projectRoot = root } = {}) {
     if (note.tags.includes("地点")) report.placeNotes++;
     if (fields.length) {
       report.explicitFields++;
+      // Explicit occurrence roles record a reviewed event site. Re-running the
+      // older keyword migration must not replace it with a contextual homonym.
+      if (geo.places?.some((ref) => ref.role === "occurrence")) {
+        for (const ref of geo.places) {
+          if (ref.place) binder.reference(ref.place);
+          else {
+            const target = resolveLink(notes, note.id, ref.target, true)?.target;
+            if (!target) throw new Error("Unknown reviewed place note: " + ref.target);
+            binder.reference(target);
+          }
+        }
+        report.explicitBound++;
+        if (geo.bindingStatus === "uncertain") report.uncertain.push({ id: note.id, location: geo.locationNote });
+        continue;
+      }
       const override = locationOverrides[note.id];
       refs.push(...(override ? override.places.map(binder.reference) : fields.flatMap((f) => binder.match(f, note))));
       geo.locationNote = fields.map(readableLocation).join("；");

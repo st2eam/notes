@@ -37,6 +37,7 @@ import { mapWorkspaceKey, type MapViewState } from "../../composables/useMapWork
 import Icon from "./Icon.vue";
 import FileTree from "./FileTree.vue";
 import ContextMenu from "./ContextMenu.vue";
+import HistoryReferences from "../history/HistoryReferences.vue";
 import { publicNoteUrl } from "../../../vault/context-menu.mjs";
 const VaultGraph = defineAsyncComponent(() => import("./VaultGraph.vue"));
 const VaultNoteMap = defineAsyncComponent(() => import("./VaultNoteMap.vue"));
@@ -139,7 +140,7 @@ const activeHeading = ref("");
 let outlineFrame = 0;
 const localDepth = ref(1);
 const localListOpen = ref(false);
-const localOpen = ref(true);
+const localOpen = ref(false);
 const modalNewTab = ref(false);
 const modal = ref<"quick" | "commands" | null>(null);
 const modalQuery = ref("");
@@ -1465,20 +1466,16 @@ onBeforeUnmount(() => {
         </button>
       </div>
       <div class="vault-right-scroll">
-        <div v-if="current" class="vault-detail-context">
-          <Icon name="notebook" :size="16" />
-          <strong>{{ current.title }}</strong>
-        </div>
         <ClientOnly>
           <VaultNoteMap
-            v-if="current && rightOpen && (current.geo?.place || current.geo?.locationNote || current.tags.includes('地点') || current.geoReferences?.length || noteGeoTime(current))"
+            v-if="current && rightOpen && !mapActive && (current.geo?.place || current.geo?.locationNote || current.tags.includes('地点') || current.geoReferences?.length || noteGeoTime(current))"
             :note="current"
             :notes="notes"
             :enabled="rightOpen"
             @open="openNote"
           />
         </ClientOnly>
-        <section v-if="!isEmbedded" class="vault-local">
+        <section v-if="!isEmbedded && rightTab === 'links'" class="vault-local">
           <h2>
             <button
               @click="localOpen = !localOpen"
@@ -1559,7 +1556,7 @@ onBeforeUnmount(() => {
                 </small>
                 <p v-if="link.explanation || link.context">{{ link.explanation || link.context }}</p>
               </button>
-              <details v-if="link.evidence || link.context" class="relation-evidence">
+              <details v-if="link.evidence && link.evidence !== (link.explanation || link.context)" class="relation-evidence">
                 <summary>查看依据</summary>
                 <p>{{ link.evidence || link.context }}</p>
               </details>
@@ -1567,8 +1564,9 @@ onBeforeUnmount(() => {
             <p v-if="!group.items.length" class="empty-hint">{{ group.empty }}</p>
           </section>
         </template>
+        <HistoryReferences v-if="current" :history-id="current.historyId" />
         <details
-          v-if="current?.categories.length && (!isEmbedded || rightTab === 'links')"
+          v-if="current?.categories.length && rightTab === 'links'"
           :key="current.id"
           class="vault-classifications"
         >

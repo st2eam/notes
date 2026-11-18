@@ -3,9 +3,8 @@ import { computed, inject, nextTick, onBeforeUnmount, onMounted, ref, watch } fr
 import { withBase } from "vitepress";
 import type { VaultNote } from "../../../vault/types";
 import { mapPlaces, noteGeoTime, timeLabel, yearLabel } from "../../../vault/geo.mjs";
-import { describeJiangshanPlace, initialJiangshanYear, jiangshanYears, jiangshanSource, selectJiangshanPhase, settlementsAt, visibleAt } from "../../../vault/jiangshan-map.mjs";
+import { defaultMapPlace, describeJiangshanPlace, initialJiangshanYear, jiangshanYears, jiangshanSource, selectJiangshanPhase, settlementsAt, visibleAt } from "../../../vault/jiangshan-map.mjs";
 import Icon from "./Icon.vue";
-import HistoryReferences from "../history/HistoryReferences.vue";
 import "leaflet/dist/leaflet.css";
 import { mapWorkspaceKey, type MapViewState } from "../../composables/useMapWorkspace";
 
@@ -19,6 +18,7 @@ const selectedVariants = ref<Record<string, string>>({});
 const selectedPlace = ref("");
 const selectedArea = ref("");
 const DEFAULT_ZOOM = 4;
+const POINT_ZOOM = 7;
 const MAX_ZOOM = 12;
 const FIT_PADDING: [number, number] = [4, 4];
 const busy = ref(false);
@@ -34,10 +34,15 @@ const showSettlements = ref(true);
 const places = computed(() => rawPlaces.value.map((item: any) =>
   describeJiangshanPlace(item, selectedYear.value, areaFeatures.value, selectedVariants.value[item.key])));
 const historical = computed(() => selectJiangshanPhase(selectedYear.value));
-const hasGeometry = computed(() => places.value.some((p: any) => p.variant));
-const countLabel = computed(() => `${places.value.length} 处`);
+const visiblePlaces = computed(() => places.value.filter((p: any) => p.variant || p.candidates.length));
+const hasGeometry = computed(() => visiblePlaces.value.length > 0);
+const countLabel = computed(() => `${visiblePlaces.value.length} 处`);
+const placeAccuracy = computed(() => [...new Set(visiblePlaces.value
+  .filter((p: any) => p.variant).map((p: any) => p.variant.accuracy))]);
 const snapshotNote = computed(() => !historical.value
-  ? selectedYear.value == null ? "选择年代后匹配江山地图" : "江山地图未覆盖该年代；支持前 403 年至 1948 年的非零整数年份。"
+  ? selectedYear.value == null ? "选择年代后匹配江山地图" :
+    !Number.isInteger(selectedYear.value) || selectedYear.value === 0 ? "请输入非零整数年份。" :
+      "该年代暂无江山地图疆域图，仅显示有来源的地点参照。"
   : "江山地图阶段示意边界；阶段内共用轮廓，不表示逐年复原。聚落为代表点，数据以中国史及周边为主。");
 const sourceList = [jiangshanSource];
 function initialSelection() {
@@ -68,7 +73,7 @@ watch([selectedYear, showRegions, showSettlements, selectedVariants], () => {
 }, { deep: true });
 function mapKeydown(event: KeyboardEvent) {
   if (event.key === "0" || event.key === "Home") { event.preventDefault(); fit(); }
-  if (event.key === "Escape") { clearAreaSelection(); showDetails.value = false; }
+  if (event.key === "Escape") { clearSelection(); showDetails.value = false; }
 }
 function setYear(event: Event) {
   const value = (event.target as HTMLInputElement).value;
@@ -90,19 +95,18 @@ const cache = new Map<string, any>();
 const placeLayers = new Map<string, any>();
 const labelMarkers: { marker: any; position: any; text: string; chosen: boolean }[] = [];
 let allBounds: any;
+let contextTooltip: any;
+
+function clearPlaceTooltips() {
+  for (const layer of placeLayers.values()) layer.unbindTooltip();
+  contextTooltip?.unbindTooltip();
+  contextTooltip = undefined;
+}
 
 function textNode(text: string, className = "") {
   const el = document.createElement("span");
   el.textContent = text;
   if (className) el.className = className;
-  return el;
-}
-function popupContent(item: any) {
-  const el = document.createElement("div");
-  el.append(textNode(item.label, "note-map-popup-title"));
-  const detail = document.createElement("p");
-  detail.textContent = item.variant.accuracy + (item.variant.snapshotYear ? ` · ${yearLabel(item.variant.snapshotYear)}` : "");
-  el.append(detail);
   return el;
 }
 function styleTokens() {
@@ -127,6 +131,11 @@ function clearAreaSelection() {
   selectionLayer?.clearLayers();
   selectedArea.value = "";
 }
+function clearSelection() {
+  clearPlaceTooltips();
+  clearAreaSelection();
+  selectedPlace.value = "";
+}
 function selectArea(feature: any) {
   clearAreaSelection();
   if (!feature?.geometry || !selectionLayer) return;
@@ -136,9 +145,18 @@ function selectArea(feature: any) {
     style: { color: styleTokens().mark, weight: 2.5, fill: false, className: "note-map-selected-contour" },
   }).addTo(selectionLayer);
 }
-function bindAreaSelection(feature: any, layer: any, label: string) {
-  layer.on("click", () => selectArea(feature));
-  layer.on("add", () => {
+function bindAreaSelection(feature: any, layer: any, label: string, onChoose?: () => void) {
+  const choose = () => {
+    if (onChoose) { onChoose(); return; }
+    clearPlaceTooltips();
+    selectedPlace.value = "";
+    selectArea(feature);
+    if (layer.getBounds?.().isValid()) fitBounds(layer.getBounds(), true);
+    contextTooltip = layer;
+    layer.bindTooltip(textNode(label), { permanent: true, direction: "center", className: "note-map-tooltip" }).openTooltip();
+  };
+  layer.on("click", choose);
+  const decorate = () => {
     const element = layer.getElement();
     if (!element) return;
     element.setAttribute("tabindex", "0");
@@ -147,11 +165,14 @@ function bindAreaSelection(feature: any, layer: any, label: string) {
     leaflet.DomEvent.on(element, "keydown", (event: KeyboardEvent) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       leaflet.DomEvent.stop(event);
-      selectArea(feature);
+      choose();
     });
-  });
+  };
+  layer.on("add", decorate);
+  decorate();
 }
 function clearLayers() {
+  clearPlaceTooltips();
   clearAreaSelection();
   landLayer?.clearLayers();
   backgroundLayer?.clearLayers();
@@ -161,13 +182,22 @@ function clearLayers() {
   allBounds = null;
   territoryNames.value = [];
 }
-function fitBounds(bounds: any) {
+function detailsInset() {
+  if (!props.expanded || !showDetails.value || !host.value || host.value.clientWidth < 600) return 0;
+  const panel = host.value.closest(".note-map-section")?.querySelector(".note-map-details");
+  return panel ? panel.getBoundingClientRect().width + 66 : 0;
+}
+function fitBounds(bounds: any, selected = false) {
   if (bounds.getSouthWest().equals(bounds.getNorthEast())) {
     map.setView(bounds.getCenter(), DEFAULT_ZOOM, { animate: false });
   } else {
     // Fit both dimensions without a fixed zoom ceiling or asymmetric margins.
     // Leaflet preserves the projection's aspect ratio; zoomSnap: 0 avoids rounding down.
-    map.fitBounds(bounds, { padding: FIT_PADDING, animate: false });
+    const size = map.getSize();
+    const inset = selected ? detailsInset() : 0;
+    const padding = selected ? [(size.x - inset) / 8, size.y / 8] : FIT_PADDING;
+    map.fitBounds(bounds, { paddingTopLeft: padding,
+      paddingBottomRight: [padding[0] + inset, padding[1]], animate: false });
   }
 }
 function fit() {
@@ -219,16 +249,20 @@ function labelAt(position: any, text: string, chosen = false, territory = false)
   labelMarkers.push({ marker, position, text, chosen });
 }
 function focusPlace(item: any) {
+  clearPlaceTooltips();
   selectedPlace.value = item.key;
   const layer = placeLayers.get(selectedPlace.value);
   if (!layer || !map) return;
   clearAreaSelection();
-  if (layer.getLatLng) map.setView(layer.getLatLng(), Math.min(MAX_ZOOM, Math.max(DEFAULT_ZOOM, map.getZoom())), { animate: false });
-  else if (layer.getBounds?.().isValid()) {
+  if (layer.getLatLng) {
+    map.setView(layer.getLatLng(), POINT_ZOOM, { animate: false });
+    const inset = detailsInset();
+    if (inset) map.panBy([inset / 2, 0], { animate: false });
+  } else if (layer.getBounds?.().isValid()) {
     selectArea(item.variant?.feature);
-    fitBounds(layer.getBounds());
+    fitBounds(layer.getBounds(), true);
   }
-  layer.openPopup();
+  layer.bindTooltip(textNode(item.label), { permanent: true, className: "note-map-tooltip", direction: layer.getLatLng ? "top" : "center" }).openTooltip();
 }
 async function render() {
   request?.abort();
@@ -243,7 +277,8 @@ async function render() {
   const historicalMap = historical.value;
   const year = selectedYear.value;
   areaFeatures.value = [];
-  const paths = historicalMap ? [jiangshanSource.neighbors, jiangshanSource.hydro, historicalMap.geometry] : [];
+  const paths = historicalMap ? [jiangshanSource.neighbors, jiangshanSource.hydro, historicalMap.geometry] :
+    Number.isInteger(year) && year !== 0 && rawPlaces.value.length ? [jiangshanSource.neighbors] : [];
   busy.value = true;
   const resources = new Map<string, any>();
   const failed: string[] = [];
@@ -271,7 +306,6 @@ async function render() {
       onEachFeature(feature: any, layer: any) {
         const p = feature.properties;
         const label = `${p.title} · ${p.layer === 'region' ? '一级区划' : '政权'}`;
-        layer.bindTooltip(textNode(label), { direction: "center", className: "note-map-tooltip" });
         bindAreaSelection(feature, layer, label);
       },
     }).addTo(backgroundLayer);
@@ -281,7 +315,7 @@ async function render() {
   if (hydro) leaflet.geoJSON(hydro, {
     filter: (f: any) => visibleAt(f.properties, year),
     style: { color: colors.border, weight: 0.8, opacity: 0.5, fillColor: colors.surface, fillOpacity: 1 },
-    onEachFeature(f: any, layer: any) { if (f.properties.name) layer.bindTooltip(textNode(f.properties.name)); },
+    interactive: false,
   }).addTo(backgroundLayer);
   territoryNames.value = background ? [...new Set<string>(background.features
     .filter((f: any) => showRegions.value || f.properties.layer !== "region")
@@ -289,19 +323,17 @@ async function render() {
   if (historicalMap && showSettlements.value) for (const city of settlementsAt(year)) {
     const position = leaflet.latLng(city.coord[1], city.coord[0]);
     leaflet.circleMarker(position, { radius: city.isCapital ? 4 : 2.5, color: colors.surface, weight: 1,
-      fillColor: colors.border, fillOpacity: 0.9 }).bindTooltip(textNode(`${city.ancient}${city.modern ? '（今' + city.modern + '）' : ''}`)).addTo(placeLayer);
-    if (city.isCapital) labelAt(position, city.ancient, false);
+      fillColor: colors.border, fillOpacity: 0.9, interactive: false }).addTo(placeLayer);
   }
   for (const item of places.value) {
     const v = item.variant;
     if (!v) continue;
     let layer: any;
-    let labelPosition: any;
     if (v.coordinates) {
-      labelPosition = leaflet.latLng(v.coordinates[1], v.coordinates[0]);
+      const labelPosition = leaflet.latLng(v.coordinates[1], v.coordinates[0]);
       // A transparent outer marker supplies a larger target than the visible dot.
       layer = leaflet.circleMarker(labelPosition, {
-        radius: 13, weight: 0, fillOpacity: 0, fill: true,
+        radius: 13, weight: 0, fillOpacity: 0, fill: true, bubblingMouseEvents: false,
       }).addTo(placeLayer);
       leaflet.circleMarker(labelPosition, {
         radius: 4.5, color: colors.surface, weight: 2, fillColor: colors.mark,
@@ -312,27 +344,20 @@ async function render() {
       layer = leaflet.geoJSON(v.feature, {
         bubblingMouseEvents: false,
         style: { color: colors.mark, weight: 2, fillColor: colors.mark, fillOpacity: 0.16 },
-        onEachFeature(feature: any, featureLayer: any) { bindAreaSelection(feature, featureLayer, item.label); },
+        onEachFeature(feature: any, featureLayer: any) { bindAreaSelection(feature, featureLayer, item.label, () => focusPlace(item)); },
       }).addTo(placeLayer);
       if (layer.getBounds().isValid()) {
         allBounds.extend(layer.getBounds());
-        labelPosition = v.labelCoordinates ? leaflet.latLng(v.labelCoordinates[1], v.labelCoordinates[0]) : layer.getBounds().getCenter();
       }
     }
     if (!layer) continue;
     const key = item.key;
     placeLayers.set(key, layer);
-    layer.bindPopup(popupContent(item), { maxWidth: 220, autoPanPadding: [12, 12], className: "note-map-popup" });
-    layer.bindTooltip(textNode(item.label), { className: "note-map-tooltip", direction: "top" });
-    layer.on("click", () => {
-      selectedPlace.value = key;
-      if (!v.feature) clearAreaSelection();
-    });
-    if (labelPosition) labelAt(labelPosition, item.label, key === selectedPlace.value);
+    if (v.coordinates) bindAreaSelection(null, layer, item.label, () => focusPlace(item));
   }
   for (const feature of background?.features || []) {
     const p = feature.properties;
-    if (p?.layer === "polity" && Array.isArray(p.anchor))
+    if (props.expanded && p?.layer === "polity" && Array.isArray(p.anchor))
       labelAt(leaflet.latLng(p.anchor[1], p.anchor[0]), String(p.title), false, true);
   }
   failures.value = failed;
@@ -340,7 +365,9 @@ async function render() {
   await nextTick();
   if (serial !== generation || !alive) return;
   map.invalidateSize();
-  fit();
+  const selected = defaultMapPlace(places.value, props.note, selectedPlace.value);
+  if (selected) focusPlace(selected);
+  else { selectedPlace.value = ""; fit(); }
   arrangeLabels();
 }
 watch([rawPlaces, selectedYear, selectedVariants, showRegions, showSettlements, () => props.enabled], () => {
@@ -348,6 +375,11 @@ watch([rawPlaces, selectedYear, selectedVariants, showRegions, showSettlements, 
   else if (alive && host.value) void initializeMap();
 }, { flush: "post", deep: true });
 
+watch(showDetails, async () => {
+  await nextTick();
+  const selected = places.value.find((p: any) => p.key === selectedPlace.value && p.variant);
+  if (selected) focusPlace(selected);
+});
 function retry() {
   if (map) void render();
   else void initializeMap();
@@ -361,7 +393,7 @@ async function initializeMap() {
     leaflet = await import("leaflet");
     if (!alive || !host.value) return;
     map = leaflet.map(host.value, {
-      zoomControl: false, attributionControl: false, scrollWheelZoom: Boolean(props.expanded),
+      zoomControl: false, attributionControl: false, fadeAnimation: false, scrollWheelZoom: Boolean(props.expanded),
       minZoom: -3, maxZoom: MAX_ZOOM, zoom: DEFAULT_ZOOM, zoomSnap: 0, worldCopyJump: false,
       maxBounds: [[-75, -180], [85, 180]], maxBoundsViscosity: 0.8,
     });
@@ -375,11 +407,14 @@ async function initializeMap() {
     backgroundLayer = leaflet.layerGroup().addTo(map);
     placeLayer = leaflet.layerGroup().addTo(map);
     selectionLayer = leaflet.layerGroup().addTo(map);
-    map.on("click", clearAreaSelection);
+    map.on("click", clearSelection);
     map.on("moveend zoomend", arrangeLabels);
     observer = new ResizeObserver(() => {
       if (props.enabled && host.value?.clientWidth) {
-        map.invalidateSize(); fit(); arrangeLabels();
+        map.invalidateSize();
+        const selected = places.value.find((p: any) => p.key === selectedPlace.value && p.variant);
+        if (selected) focusPlace(selected); else fit();
+        arrangeLabels();
       }
     });
     observer.observe(host.value);
@@ -403,8 +438,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section v-if="expanded || rawPlaces.length || note.geo?.locationNote || time" :class="['note-map-section', { 'note-map-expanded': expanded }]" :aria-label="expanded ? note.title + '的大图地图' : '关联地点地图'">
-    <h2 v-if="!expanded">关联地点 <small>{{ countLabel }}</small></h2>
+  <section v-show="expanded || hasGeometry" :class="['note-map-section', { 'note-map-expanded': expanded }]" :aria-label="expanded ? note.title + '的大图地图' : '关联地点地图'">
+    <h2 v-if="!expanded">关联地点</h2>
     <div class="note-map-time">
       <strong v-if="expanded" class="note-map-workspace-title"><Icon name="locate" :size="16" />{{ note.title }} · 地图</strong>
       <span>{{ timeLabel(time) }}</span>
@@ -415,7 +450,7 @@ onBeforeUnmount(() => {
           <option v-for="year in years" :key="year" :value="year">{{ yearLabel(year) }}</option>
         </select>
       </label>
-      <label class="note-map-year-input"><span>指定年份</span><input :value="selectedYear" type="number" step="1" aria-label="指定地图年份" placeholder="如 650" @input="setYear" /></label>
+      <label v-if="expanded" class="note-map-year-input"><span>指定年份</span><input :value="selectedYear" type="number" step="1" aria-label="指定地图年份" placeholder="如 650" @input="setYear" /></label>
       <button v-if="expanded" type="button" class="note-map-details-toggle" :aria-pressed="showDetails" @click="showDetails = !showDetails"><Icon name="settings" :size="15" />地图详情</button>
     </div>
     <div class="note-map-frame" :aria-busy="busy">
@@ -430,36 +465,30 @@ onBeforeUnmount(() => {
       <div class="note-map-attribution"><a :href="withBase('/history/sources/jiangshan/SOURCES.md')" target="_blank" rel="noopener">地图资料</a> · <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a></div>
     </div>
     <div v-show="!expanded || showDetails" class="note-map-details" @keydown.esc.stop="showDetails = false">
-    <div class="note-map-caption" aria-live="polite">
-      <strong v-if="historical">江山地图 · {{ historical.period }} · {{ yearLabel(historical.from) }}—{{ yearLabel(historical.to) }}</strong>
-      <span v-if="historical">{{ historical.title }}</span>
-      <span>{{ snapshotNote }}</span>
-      <span v-if="selectedArea">已选区域：{{ selectedArea }}</span>
-      <span v-if="!rawPlaces.length">本笔记未关联具体地点</span>
-      <span v-else-if="!hasGeometry">关联地点尚无可显示的地理资料</span>
-      <span v-if="note.geo?.bindingStatus === 'uncertain'">地点或古址存在考证，列表仅表示相关地区；具体说明见数据来源。</span>
+    <div v-if="expanded && !hasGeometry" class="note-map-caption" role="status">
+      <span>当前年代暂无可显示的关联地点。</span>
     </div>
     <p v-if="failures.length" class="note-map-error" role="status">
       部分地图资源未载入，离线时可能尚未缓存。地点列表仍可使用。
       <button type="button" @click="retry">重试</button>
     </p>
-    <div class="note-map-legend" aria-label="地图图例">
+    <div v-if="expanded" class="note-map-legend" aria-label="地图图例">
       <span><i class="note-map-dot" />关联地点</span><span><i class="note-map-area" />政权轮廓</span><span><i class="note-map-context" />一级区划</span>
     </div>
-    <div class="note-map-layers" aria-label="江山地图图层">
+    <div v-if="expanded" class="note-map-layers" aria-label="江山地图图层">
       <label><input v-model="showRegions" type="checkbox" />一级区划</label>
       <label><input v-model="showSettlements" type="checkbox" />聚落与都城</label>
     </div>
-    <details v-if="territoryNames.length" class="note-map-territories">
+    <details v-if="expanded && territoryNames.length" class="note-map-territories">
       <summary>政权与区划 · {{ territoryNames.length }}</summary>
       <ul aria-label="地图区域名称"><li v-for="name in territoryNames" :key="name">{{ name }}</li></ul>
     </details>
     <ul class="note-map-places" aria-label="关联地点列表">
-      <li v-for="item in places" :key="item.key" :class="{ 'is-selected': selectedPlace === (item.key) }">
+      <li v-for="item in visiblePlaces" :key="item.key" :class="{ 'is-selected': selectedPlace === item.key }">
         <div class="note-map-place-row">
-          <button type="button" class="note-map-place-focus" :disabled="!item.variant" :aria-label="'在地图上定位' + item.label" @click="focusPlace(item)">
+          <button type="button" class="note-map-place-focus" :disabled="!item.variant" :aria-pressed="selectedPlace === item.key" :aria-label="'在地图上定位' + item.label" @click="focusPlace(item)">
             <i :class="item.place?.kind === 'point' || !item.place ? 'note-map-dot' : 'note-map-area'" />
-            <span>{{ item.label }}</span>
+            <span>{{ item.label }}<small v-if="item.role === 'occurrence'" class="note-map-occurrence">发生地</small></span>
           </button>
           <button v-if="item.note" type="button" class="note-map-open" :aria-label="'打开' + item.note.title + '笔记'" title="打开地点笔记" @click="emit('open', item.note, $event)"><Icon name="forward" :size="14" /></button>
         </div>
@@ -471,16 +500,18 @@ onBeforeUnmount(() => {
           </select>
         </label>
         <small v-if="item.missing" class="note-map-place-detail">{{ item.missing }}</small>
-        <small v-else class="note-map-place-detail">{{ item.variant.accuracy }}<template v-if="item.variant.snapshotYear"> · {{ yearLabel(item.variant.snapshotYear) }}参照</template></small>
       </li>
     </ul>
     <details class="note-map-sources">
       <summary>数据来源与精度</summary>
+      <p v-if="historical">{{ historical.period }} · {{ historical.title }} · {{ yearLabel(historical.from) }}—{{ yearLabel(historical.to) }}</p>
+      <p>{{ snapshotNote }}</p>
+      <p v-for="accuracy in placeAccuracy" :key="accuracy">{{ accuracy }}</p>
+      <p v-if="note.geo?.bindingStatus === 'uncertain'">地点或古址存在考证，具体范围以笔记说明为准。</p>
       <p v-if="note.geo?.locationNote"><strong>笔记中的地点说明</strong><span>{{ note.geo.locationNote }}</span></p>
-      <p v-for="source in sourceList" :key="source.source.url + source.accuracy"><a :href="source.source.url" target="_blank" rel="noopener">{{ source.source.title }}</a><span>{{ source.accuracy }}</span></p>
+      <p v-for="source in sourceList" :key="source.source.url"><a :href="source.source.url" target="_blank" rel="noopener">{{ source.source.title }}</a></p>
       <a :href="withBase('/history/sources/jiangshan/SOURCES.md')" target="_blank" rel="noopener">数据版本、许可与处理说明</a>
     </details>
-    <HistoryReferences :history-id="note.historyId" />
     </div>
     <div v-if="expanded" class="note-map-workspace-caption"><span>{{ countLabel }}关联地点</span><span>拖动平移 · 滚轮缩放 · 方向键移动</span><span v-if="failures.length" role="status">部分资源未载入 <button type="button" @click="retry">重试</button></span></div>
   </section>
@@ -493,7 +524,7 @@ onBeforeUnmount(() => {
 .note-map-details-toggle { display: inline-flex; align-items: center; gap: 5px; padding: 5px 7px; border: 1px solid var(--vault-border); border-radius: 4px; }
 .note-map-details-toggle[aria-pressed="true"] { background: var(--vault-hover); }
 .note-map-expanded .note-map-frame { grid-area: 2 / 1; height: auto; min-height: 0; border: 0; border-radius: 0; }
-.note-map-expanded .note-map-details { grid-area: 2 / 1; position: relative; z-index: 3; justify-self: end; min-height: 0; margin: 12px 54px 12px 12px; width: min(300px, calc(100% - 76px)); overflow: auto; padding: 14px; border: 1px solid var(--vault-border); border-radius: 5px; background: var(--vault-bg); }
+.note-map-expanded .note-map-details { grid-area: 2 / 1; position: relative; z-index: 3; justify-self: end; align-self: start; max-height: calc(100% - 24px); min-height: 0; margin: 12px 54px 12px 12px; width: min(300px, calc(100% - 76px)); overflow: auto; padding: 14px; border: 1px solid var(--vault-border); border-radius: 5px; background: var(--vault-bg); }
 .note-map-workspace-caption { grid-area: 3 / 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding: 8px 14px; border-top: 1px solid var(--vault-border); color: var(--vault-detail-muted); font-size: 11px; }
 .note-map-workspace-caption button { text-decoration: underline; }
 .note-map-layers { display: flex; flex-wrap: wrap; gap: 12px; padding: 0 8px 10px; font-size: 11px; color: var(--vault-detail-muted); }
@@ -619,18 +650,18 @@ onBeforeUnmount(() => {
 .note-map-territories { margin: 0 8px 9px; font-size: 11px; color: var(--vault-detail-muted); }
 .note-map-territories summary { cursor: pointer; }
 .vault-shell .note-map-territories ul { display: flex; flex-wrap: wrap; gap: 5px 12px; margin: 7px 0; padding: 0; list-style: none; }
-.note-map-section .leaflet-tooltip,
-.note-map-section .leaflet-popup-content-wrapper,
-.note-map-section .leaflet-popup-tip {
+.note-map-section .leaflet-tooltip {
   background: var(--vault-bg);
   color: var(--vault-text);
   border-color: var(--vault-border);
   box-shadow: none;
+  width: max-content;
+  max-width: min(200px, calc(100vw - 100px));
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+  font-size: 11px;
 }
-.note-map-section .leaflet-popup-content { margin: 12px; font-size: 12px; line-height: 1.6; }
-.note-map-section .leaflet-popup-content p { margin: 6px 0 0; }
-.note-map-popup-title { font-weight: 600; }
-.note-map-section .leaflet-container a.leaflet-popup-close-button { color: var(--vault-detail-muted); }
 .note-map-caption {
   display: grid;
   gap: 3px;
@@ -656,8 +687,11 @@ onBeforeUnmount(() => {
 .note-map-area { width: 11px; height: 9px; border: 1.5px solid var(--map-mark); background: color-mix(in srgb, var(--map-mark) 16%, transparent); }
 .note-map-context { width: 11px; height: 0; border-top: 1.5px dashed var(--map-boundary); }
 .vault-shell .note-map-places { margin: 0; padding: 0; list-style: none; }
-.note-map-places > li { padding: 6px 8px 8px; border-top: 1px solid var(--vault-border); }
+.note-map-places > li { margin-top: 3px; padding: 5px 8px; border-radius: 4px; }
 .note-map-places > li.is-selected { background: var(--vault-hover); }
+.note-map-occurrence { display: block; color: var(--vault-detail-muted); font-size: 10px; line-height: 1.4; }
+.note-map-section :is(button, select, input, summary):focus-visible { outline: 2px solid var(--map-mark); outline-offset: 2px; }
+.note-map-section ::selection { background: var(--vault-accent-bg); color: var(--vault-text); }
 .note-map-place-row { display: flex; align-items: flex-start; gap: 4px; }
 .vault-shell .note-map-place-focus {
   display: flex;
@@ -691,6 +725,22 @@ onBeforeUnmount(() => {
   .vault-shell .note-map-open { width: 44px; height: 44px; }
   .vault-shell .note-map-place-focus { min-height: 44px; }
   .vault-shell .note-map-section select { font-size: 16px; }
+}
+@media (max-width: 599px) {
+  .note-map-expanded { grid-template-rows: auto minmax(160px, 1fr) auto auto; }
+  .note-map-expanded .note-map-details {
+    grid-area: 3 / 1;
+    justify-self: stretch;
+    align-self: stretch;
+    width: auto;
+    max-height: min(36dvh, 280px);
+    margin: 0;
+    padding: 10px 14px;
+    border: 0;
+    border-top: 1px solid var(--vault-border);
+    border-radius: 0;
+  }
+  .note-map-expanded .note-map-workspace-caption { grid-area: 4 / 1; }
 }
 @media (forced-colors: active) {
   .note-map-dot { background: CanvasText; }

@@ -6,6 +6,7 @@ import { createHistorySearchIndex, eventTime, filterHistoryEvents, historyYearRa
 import { embedHref } from "../../../vault/embed.mjs";
 import { useEmbedMode } from "../../composables/useEmbedMode";
 import type { VaultNote } from "../../../vault/types";
+import HistoryReferences from "./HistoryReferences.vue";
 const VaultNoteMap = defineAsyncComponent(() => import("../vault/VaultNoteMap.vue"));
 const props = defineProps<{ scope: "中国史" | "世界史" }>();
 const router = useRouter();
@@ -70,8 +71,8 @@ function openPlace(note: VaultNote, event: MouseEvent) {
     <p v-else-if="!filtered.length" class="history-empty">没有符合条件的事件。试试其他关键词或年份。</p>
     <section v-if="selected" ref="mapPanel" class="history-map-panel" tabindex="-1" :aria-label="selected.title + '的事件地图'" @keydown.esc.stop.prevent="closeMap">
       <div class="history-map-heading"><div><span>事件地图</span><h3>{{ selected.title }}</h3><a :href="withBase(selected.route)">阅读事件笔记 ↗</a></div><button type="button" class="history-map-close" aria-label="关闭事件地图" @click="closeMap">关闭</button></div>
-      <p class="history-map-description">地点表示笔记中有依据的关联，不全部等同于发生地；疆域参照年份见图下注明。</p>
       <ClientOnly><VaultNoteMap :note="selected" :notes="allNotes" :enabled="true" @open="openPlace" /></ClientOnly>
+      <HistoryReferences :history-id="selected.historyId" />
       <p v-if="!selected.geoReferences?.length && !selected.geo?.place && !eventTime(selected)" class="history-footnote">此事件暂无可定位的年代或地点资料，仍可阅读原笔记。</p>
     </section>
     <ol v-if="!invalidRange && filtered.length" class="history-events">
@@ -122,7 +123,6 @@ function openPlace(note: VaultNote, event: MouseEvent) {
 .history-map-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
 .history-map-heading span, .history-map-heading a { font-size: 12px; color: var(--vp-c-text-2); }
 .history-map-heading h3 { margin: 6px 0; padding: 0; border: 0; font-size: 20px; }
-.history-map-description { font-size: 12px; line-height: 1.7; color: var(--vp-c-text-2); margin: 16px 0; }
 .history-map-panel :deep(.note-map-frame) { height: 340px; }
 .history-empty { padding: 40px 0; color: var(--vp-c-text-2); }
 .history-footnote { margin-top: 24px; font-size: 11px; color: var(--vp-c-text-3); }

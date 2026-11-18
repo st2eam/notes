@@ -259,7 +259,9 @@ test("history events follow dynasty or country classifications", () => {
     assert.ok(Number.isFinite(note.historyOrder));
     assert.ok(note.historyDate);
   }
-  assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 310);
+  const alignment = JSON.parse(fs.readFileSync(".vitepress/reports/jiangshan-audit.json", "utf8"));
+  assert.equal(history.filter((n) => n.id.startsWith("历史/中国史/")).length, 310 + alignment.addedEventIds.length);
+  assert.equal(alignment.localChineseEvents, 310 + alignment.addedEventIds.length);
   assert.equal(history.filter((n) => n.id.startsWith("历史/世界史/")).length, 174);
   assert.ok(history.some(n => n.folder === "历史/中国史/秦/事件"));
   assert.ok(history.some(n => n.folder === "历史/世界史/亚洲/日本/事件"));

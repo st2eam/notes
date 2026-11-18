@@ -609,25 +609,6 @@ body,
 .vault-right {
   --vault-detail-muted: color-mix(in srgb, var(--vault-text) 75%, var(--vault-side));
 }
-.vault-detail-context {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin: 0 8px 18px;
-  padding: 0 0 14px;
-  border-bottom: 1px solid var(--vault-border);
-}
-.vault-detail-context svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-  color: var(--vault-detail-muted);
-}
-.vault-detail-context strong {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
 .vault-right h2 {
   display: flex;
   justify-content: space-between;

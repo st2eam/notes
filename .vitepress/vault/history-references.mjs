@@ -8,12 +8,675 @@ export const referenceSource = {
   "sourcePath": "/history/sources/jiangshan/"
 };
 export const historyReferences = {
-  "event-163": {
-    "historyId": "event-163",
-    "upstreamKey": "qin:-221",
-    "title": "嬴政称皇帝",
-    "reason": "上游条目合写统一、称帝及制度措施；仅对应本地称帝事件，不自动合并同年的其他事件。",
-    "headline": "王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨",
+  "event-93": {
+    "historyId": "event-93",
+    "title": "三家分晋",
+    "upstreamKey": "zhanguo:-403",
+    "headline": "周威烈王命韩、赵、魏为诸侯（三家分晋）",
+    "reason": "正文中的“三家分晋”与上游“周威烈王命韩、赵、魏为诸侯（三家分晋）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-403",
+        "headline": "周威烈王命韩、赵、魏为诸侯（三家分晋）",
+        "year": -403,
+        "reason": "正文中的“三家分晋”与上游“周威烈王命韩、赵、魏为诸侯（三家分晋）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "三家分晋",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce386": {
+    "historyId": "event-jiangshan-zhanguo-bce386",
+    "title": "周安王册命田和为齐侯，田氏代齐",
+    "upstreamKey": "zhanguo:-386",
+    "headline": "周安王册命田和为齐侯，田氏代齐，七雄形成",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-386",
+        "headline": "周安王册命田和为齐侯，田氏代齐，七雄形成",
+        "year": -386,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "周安王册命田和为齐侯，田氏代齐，七雄形成",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce381": {
+    "historyId": "event-jiangshan-zhanguo-bce381",
+    "title": "楚悼王任吴起变法强兵，南平百越、北并陈蔡、西却三晋",
+    "upstreamKey": "zhanguo:-381",
+    "headline": "楚悼王任吴起变法强兵，南平百越、北并陈蔡、西却三晋",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-381",
+        "headline": "楚悼王任吴起变法强兵，南平百越、北并陈蔡、西却三晋",
+        "year": -381,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "楚悼王任吴起变法强兵，南平百越、北并陈蔡、西却三晋",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce375": {
+    "historyId": "event-jiangshan-zhanguo-bce375",
+    "title": "韩哀侯攻灭郑国并迁都新郑",
+    "upstreamKey": "zhanguo:-375",
+    "headline": "韩哀侯攻灭郑国并迁都新郑；前376年三家废晋静公尽分晋地",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-375",
+        "headline": "韩哀侯攻灭郑国并迁都新郑；前376年三家废晋静公尽分晋地",
+        "year": -375,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "韩哀侯攻灭郑国并迁都新郑；前376年三家废晋静公尽分晋地",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-355": {
+    "historyId": "event-355",
+    "title": "商鞅变法",
+    "upstreamKey": "zhanguo:-356",
+    "headline": "秦孝公任商鞅变法强秦；前350年迁都咸阳",
+    "reason": "正文中的“商鞅变法”与上游“秦孝公任商鞅变法强秦；前350年迁都咸阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-356",
+        "headline": "秦孝公任商鞅变法强秦；前350年迁都咸阳",
+        "year": -356,
+        "reason": "正文中的“商鞅变法”与上游“秦孝公任商鞅变法强秦；前350年迁都咸阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "商鞅变法",
+        "status": "reviewed-content-match",
+        "difference": "前356年商鞅初次变法的秦都在栎阳；前350年迁都咸阳是上游同条后续节点，不以咸阳代表全部改革发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce353": {
+    "historyId": "event-jiangshan-zhanguo-bce353",
+    "title": "桂陵之战",
+    "upstreamKey": "zhanguo:-353",
+    "headline": "桂陵之战：齐孙膑、田忌“围魏救赵”，大破庞涓",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-353",
+        "headline": "桂陵之战：齐孙膑、田忌“围魏救赵”，大破庞涓",
+        "year": -353,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "桂陵之战：齐孙膑、田忌“围魏救赵”，大破庞涓",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce341": {
+    "historyId": "event-jiangshan-zhanguo-bce341",
+    "title": "马陵之战",
+    "upstreamKey": "zhanguo:-341",
+    "headline": "马陵之战孙膑射杀庞涓；商鞅收河西，魏迁大梁",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-341",
+        "headline": "马陵之战孙膑射杀庞涓；商鞅收河西，魏迁大梁",
+        "year": -341,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "马陵之战",
+        "status": "reviewed-content-match",
+        "difference": "马陵战役常系前341年，也有前342年说。《史记》卷65写庞涓兵败自剄，纠正上游“孙膑射杀庞涓”。商鞅攻魏虏公子卬通常系前340年；魏迁大梁另有前361年等考证纪年。《史记》卷44、卷68将迁都接叙于魏军败后，不能据此把三事都定在前341年，也不能把商鞅一役写作河西全部领土同时归秦。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce341-supplement": {
+    "historyId": "event-jiangshan-zhanguo-bce341-supplement",
+    "title": "商鞅攻魏虏公子卬",
+    "upstreamKey": "zhanguo:-341",
+    "headline": "马陵之战孙膑射杀庞涓；商鞅收河西，魏迁大梁",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-341",
+        "headline": "马陵之战孙膑射杀庞涓；商鞅收河西，魏迁大梁",
+        "year": -341,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "商鞅攻魏虏公子卬",
+        "status": "reviewed-content-match",
+        "difference": "马陵战役常系前341年，也有前342年说。《史记》卷65写庞涓兵败自剄，纠正上游“孙膑射杀庞涓”。商鞅攻魏虏公子卬通常系前340年；魏迁大梁另有前361年等考证纪年。《史记》卷44、卷68将迁都接叙于魏军败后，不能据此把三事都定在前341年，也不能把商鞅一役写作河西全部领土同时归秦。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce341-supplement-migration": {
+    "historyId": "event-jiangshan-zhanguo-bce341-supplement-migration",
+    "title": "魏迁大梁",
+    "upstreamKey": "zhanguo:-341",
+    "headline": "马陵之战孙膑射杀庞涓；商鞅收河西，魏迁大梁",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-341",
+        "headline": "马陵之战孙膑射杀庞涓；商鞅收河西，魏迁大梁",
+        "year": -341,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "魏迁大梁",
+        "status": "reviewed-content-match",
+        "difference": "马陵战役常系前341年，也有前342年说。《史记》卷65写庞涓兵败自剄，纠正上游“孙膑射杀庞涓”。商鞅攻魏虏公子卬通常系前340年；魏迁大梁另有前361年等考证纪年。《史记》卷44、卷68将迁都接叙于魏军败后，不能据此把三事都定在前341年，也不能把商鞅一役写作河西全部领土同时归秦。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce323": {
+    "historyId": "event-jiangshan-zhanguo-bce323",
+    "title": "公孙衍发起五国相王，并促成五国合纵攻秦函谷关（前318年）",
+    "upstreamKey": "zhanguo:-323",
+    "headline": "公孙衍发起“五国相王”，并促成五国合纵攻秦函谷关（前318年）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-323",
+        "headline": "公孙衍发起“五国相王”，并促成五国合纵攻秦函谷关（前318年）",
+        "year": -323,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "公孙衍发起“五国相王”，并促成五国合纵攻秦函谷关（前318年）",
+        "status": "reviewed-content-match",
+        "difference": "上游将前323年五国相王与前318年合纵攻秦合写；本地按前323—前318年的阶段记录，函谷关仅对应攻秦。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce316": {
+    "historyId": "event-jiangshan-zhanguo-bce316",
+    "title": "秦司马错灭巴、蜀",
+    "upstreamKey": "zhanguo:-316",
+    "headline": "秦司马错灭巴、蜀；前312年丹阳之战破楚取汉中",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-316",
+        "headline": "秦司马错灭巴、蜀；前312年丹阳之战破楚取汉中",
+        "year": -316,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "秦司马错灭巴、蜀；前312年丹阳之战破楚取汉中",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce307": {
+    "historyId": "event-jiangshan-zhanguo-bce307",
+    "title": "赵武灵王推行胡服骑射强兵，连年略中山",
+    "upstreamKey": "zhanguo:-307",
+    "headline": "赵武灵王推行“胡服骑射”强兵，连年略中山，北破林胡楼烦辟云中九原",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-307",
+        "headline": "赵武灵王推行“胡服骑射”强兵，连年略中山，北破林胡楼烦辟云中九原",
+        "year": -307,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "赵武灵王推行“胡服骑射”强兵，连年略中山，北破林胡楼烦辟云中九原",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce306": {
+    "historyId": "event-jiangshan-zhanguo-bce306",
+    "title": "楚怀王发兵灭越，尽取旧吴之地",
+    "upstreamKey": "zhanguo:-306",
+    "headline": "楚怀王发兵灭越，尽取旧吴之地，东扩至海",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-306",
+        "headline": "楚怀王发兵灭越，尽取旧吴之地，东扩至海",
+        "year": -306,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "楚怀王发兵灭越，尽取旧吴之地，东扩至海",
+        "status": "reviewed-content-match",
+        "difference": "楚灭越的时间与过程有争议；前306年及越地一次性全归楚的写法仅作为上游口径保留。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce300": {
+    "historyId": "event-jiangshan-zhanguo-bce300",
+    "title": "燕将秦开大破东胡却地千里，筑北长城置燕北五郡",
+    "upstreamKey": "zhanguo:-300",
+    "headline": "燕将秦开大破东胡却地千里，筑北长城置燕北五郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-300",
+        "headline": "燕将秦开大破东胡却地千里，筑北长城置燕北五郡",
+        "year": -300,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "燕将秦开大破东胡却地千里，筑北长城置燕北五郡",
+        "status": "reviewed-content-match",
+        "difference": "秦开却东胡及筑长城的确切年份未明，上游前300年是时间轴约定，正文不改写成无争议纪年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce296": {
+    "historyId": "event-jiangshan-zhanguo-bce296",
+    "title": "赵惠文王彻底攻灭中山国",
+    "upstreamKey": "zhanguo:-296",
+    "headline": "赵惠文王彻底攻灭中山国；齐、韩、魏三国合纵攻秦，败秦军于函谷关",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-296",
+        "headline": "赵惠文王彻底攻灭中山国；齐、韩、魏三国合纵攻秦，败秦军于函谷关",
+        "year": -296,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "赵惠文王彻底攻灭中山国；齐、韩、魏三国合纵攻秦，败秦军于函谷关",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce286": {
+    "historyId": "event-jiangshan-zhanguo-bce286",
+    "title": "齐湣王灭宋，齐楚魏三分宋地（魏得商丘、楚得彭城、齐得定陶）",
+    "upstreamKey": "zhanguo:-286",
+    "headline": "齐湣王灭宋，齐楚魏三分宋地（魏得商丘、楚得彭城、齐得定陶）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-286",
+        "headline": "齐湣王灭宋，齐楚魏三分宋地（魏得商丘、楚得彭城、齐得定陶）",
+        "year": -286,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "齐湣王灭宋，齐楚魏三分宋地（魏得商丘、楚得彭城、齐得定陶）",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce284": {
+    "historyId": "event-jiangshan-zhanguo-bce284",
+    "title": "燕昭王拜乐毅统五国联军破齐，连下七十余城",
+    "upstreamKey": "zhanguo:-284",
+    "headline": "燕昭王拜乐毅统五国联军破齐，连下七十余城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-284",
+        "headline": "燕昭王拜乐毅统五国联军破齐，连下七十余城",
+        "year": -284,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "燕昭王拜乐毅统五国联军破齐，连下七十余城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce279": {
+    "historyId": "event-jiangshan-zhanguo-bce279",
+    "title": "即墨之战",
+    "upstreamKey": "zhanguo:-279",
+    "headline": "即墨之战：齐将田单摆“火牛阵”大破燕军，收复七十余城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-279",
+        "headline": "即墨之战：齐将田单摆“火牛阵”大破燕军，收复七十余城",
+        "year": -279,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "即墨之战：齐将田单摆“火牛阵”大破燕军，收复七十余城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce278": {
+    "historyId": "event-jiangshan-zhanguo-bce278",
+    "title": "秦白起拔楚都郢置南郡，楚迁都于陈",
+    "upstreamKey": "zhanguo:-278",
+    "headline": "秦白起拔楚都郢置南郡，楚迁都于陈，屈原自沉汨罗江",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-278",
+        "headline": "秦白起拔楚都郢置南郡，楚迁都于陈，屈原自沉汨罗江",
+        "year": -278,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "秦白起拔楚都郢置南郡，楚迁都于陈，屈原自沉汨罗江",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce272": {
+    "historyId": "event-jiangshan-zhanguo-bce272",
+    "title": "秦宣太后诱杀义渠戎王于甘泉宫，起兵灭义渠",
+    "upstreamKey": "zhanguo:-272",
+    "headline": "秦宣太后诱杀义渠戎王于甘泉宫，起兵灭义渠，置陇西、北地、上郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-272",
+        "headline": "秦宣太后诱杀义渠戎王于甘泉宫，起兵灭义渠，置陇西、北地、上郡",
+        "year": -272,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "秦宣太后诱杀义渠戎王于甘泉宫，起兵灭义渠，置陇西、北地、上郡",
+        "status": "reviewed-content-match",
+        "difference": "义渠灭亡通常系前272年，陇西、北地、上郡设置及其沿革不必全在同一年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-94": {
+    "historyId": "event-94",
+    "title": "长平之战",
+    "upstreamKey": "zhanguo:-260",
+    "headline": "长平之战：白起坑杀赵卒四十万，六国难独抗秦",
+    "reason": "正文中的“长平之战”与上游“长平之战：白起坑杀赵卒四十万，六国难独抗秦”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-260",
+        "headline": "长平之战：白起坑杀赵卒四十万，六国难独抗秦",
+        "year": -260,
+        "reason": "正文中的“长平之战”与上游“长平之战：白起坑杀赵卒四十万，六国难独抗秦”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "长平之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce257": {
+    "historyId": "event-jiangshan-zhanguo-bce257",
+    "title": "邯郸之战",
+    "upstreamKey": "zhanguo:-257",
+    "headline": "邯郸之战：魏信陵君“窃符救赵”合楚春申君大破秦军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-257",
+        "headline": "邯郸之战：魏信陵君“窃符救赵”合楚春申君大破秦军",
+        "year": -257,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "邯郸之战：魏信陵君“窃符救赵”合楚春申君大破秦军",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-95": {
+    "historyId": "event-95",
+    "title": "秦灭西周",
+    "upstreamKey": "zhanguo:-256",
+    "headline": "秦灭西周国迁九鼎；蜀守李冰修筑都江堰",
+    "reason": "正文中的“秦灭西周”与上游“秦灭西周国迁九鼎；蜀守李冰修筑都江堰”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-256",
+        "headline": "秦灭西周国迁九鼎；蜀守李冰修筑都江堰",
+        "year": -256,
+        "reason": "正文中的“秦灭西周”与上游“秦灭西周国迁九鼎；蜀守李冰修筑都江堰”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦灭西周",
+        "status": "reviewed-content-match",
+        "difference": "秦灭西周国与都江堰工程各有本地笔记；工程约年不能因同条并列而变成精确开工年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-356": {
+    "historyId": "event-356",
+    "title": "都江堰修建",
+    "upstreamKey": "zhanguo:-256",
+    "headline": "秦灭西周国迁九鼎；蜀守李冰修筑都江堰",
+    "reason": "正文中的“都江堰修建”与上游“秦灭西周国迁九鼎；蜀守李冰修筑都江堰”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-256",
+        "headline": "秦灭西周国迁九鼎；蜀守李冰修筑都江堰",
+        "year": -256,
+        "reason": "正文中的“都江堰修建”与上游“秦灭西周国迁九鼎；蜀守李冰修筑都江堰”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "都江堰修建",
+        "status": "reviewed-content-match",
+        "difference": "秦灭西周国与都江堰工程各有本地笔记；工程约年不能因同条并列而变成精确开工年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce249": {
+    "historyId": "event-jiangshan-zhanguo-bce249",
+    "title": "楚考烈王伐灭鲁国迁鲁顷公于莒",
+    "upstreamKey": "zhanguo:-249",
+    "headline": "楚考烈王伐灭鲁国迁鲁顷公于莒；秦吕不韦灭东周置三川郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-249",
+        "headline": "楚考烈王伐灭鲁国迁鲁顷公于莒；秦吕不韦灭东周置三川郡",
+        "year": -249,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "楚考烈王伐灭鲁国迁鲁顷公于莒；秦吕不韦灭东周置三川郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce247": {
+    "historyId": "event-jiangshan-zhanguo-bce247",
+    "title": "蒙骜攻赵取晋阳等三十七城，秦置太原郡",
+    "upstreamKey": "zhanguo:-247",
+    "headline": "蒙骜攻赵取晋阳等三十七城，秦置太原郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-247",
+        "headline": "蒙骜攻赵取晋阳等三十七城，秦置太原郡",
+        "year": -247,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "蒙骜攻赵取晋阳等三十七城，秦置太原郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce246": {
+    "historyId": "event-jiangshan-zhanguo-bce246",
+    "title": "韩水工郑国入秦开凿三百里郑国渠，关中自此成沃野",
+    "upstreamKey": "zhanguo:-246",
+    "headline": "韩水工郑国入秦开凿三百里“郑国渠”，关中自此成沃野",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-246",
+        "headline": "韩水工郑国入秦开凿三百里“郑国渠”，关中自此成沃野",
+        "year": -246,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "韩水工郑国入秦开凿三百里“郑国渠”，关中自此成沃野",
+        "status": "reviewed-content-match",
+        "difference": "郑国渠始建年代常系秦王政初年，上游前246年是常用时间节点，工程持续多年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce242": {
+    "historyId": "event-jiangshan-zhanguo-bce242",
+    "title": "蒙骜攻魏取二十城初置东郡，秦地东接齐境",
+    "upstreamKey": "zhanguo:-242",
+    "headline": "蒙骜攻魏取二十城初置东郡，秦地东接齐境",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-242",
+        "headline": "蒙骜攻魏取二十城初置东郡，秦地东接齐境",
+        "year": -242,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "蒙骜攻魏取二十城初置东郡，秦地东接齐境",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce241": {
+    "historyId": "event-jiangshan-zhanguo-bce241",
+    "title": "五国最后合纵攻秦败于蕞",
+    "upstreamKey": "zhanguo:-241",
+    "headline": "五国最后合纵攻秦败于蕞；楚畏秦自陈东迁寿春",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-241",
+        "headline": "五国最后合纵攻秦败于蕞；楚畏秦自陈东迁寿春",
+        "year": -241,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "五国最后合纵攻秦败于蕞；楚畏秦自陈东迁寿春",
+        "status": "reviewed-content-match",
+        "difference": "上游合写合纵攻秦与楚迁寿春；楚迁寿春常系前241年，函谷关外进攻点与楚都并不相同。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce238": {
+    "historyId": "event-jiangshan-zhanguo-bce238",
+    "title": "秦王政亲政，平嫪毐、罢吕不韦",
+    "upstreamKey": "zhanguo:-238",
+    "headline": "秦王政亲政，平嫪毐、罢吕不韦，部署灭六国方略",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-238",
+        "headline": "秦王政亲政，平嫪毐、罢吕不韦，部署灭六国方略",
+        "year": -238,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "秦王政亲政，平嫪毐、罢吕不韦，部署灭六国方略",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce236": {
+    "historyId": "event-jiangshan-zhanguo-bce236",
+    "title": "王翦、桓齮攻赵邺城取九城，拉开秦灭六国序幕",
+    "upstreamKey": "zhanguo:-236",
+    "headline": "王翦、桓齮攻赵邺城取九城，拉开秦灭六国序幕",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-236",
+        "headline": "王翦、桓齮攻赵邺城取九城，拉开秦灭六国序幕",
+        "year": -236,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王翦、桓齮攻赵邺城取九城，拉开秦灭六国序幕",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-162": {
+    "historyId": "event-162",
+    "title": "秦灭六国",
+    "upstreamKey": "zhanguo:-230",
+    "headline": "秦灭韩：内史腾急袭新郑俘韩王安，置颍川郡",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
     "books": [
       {
         "title": "史记",
@@ -22,14 +685,6576 @@ export const historyReferences = {
         ]
       }
     ],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-230",
+        "headline": "秦灭韩：内史腾急袭新郑俘韩王安，置颍川郡",
+        "year": -230,
+        "reason": "正文中的“秦灭六国”与上游“秦灭韩：内史腾急袭新郑俘韩王安，置颍川郡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦灭六国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "zhanguo:-228",
+        "headline": "秦灭赵：王翦克邯郸俘赵王迁，公子嘉奔代自立",
+        "year": -228,
+        "reason": "正文中的“秦灭六国”与上游“秦灭赵：王翦克邯郸俘赵王迁，公子嘉奔代自立”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦灭六国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "zhanguo:-225",
+        "headline": "秦灭魏：王贲引河沟水灌大梁，魏王假降，魏亡",
+        "year": -225,
+        "reason": "正文中的“秦灭六国”与上游“秦灭魏：王贲引河沟水灌大梁，魏王假降，魏亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦灭六国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "zhanguo:-223",
+        "headline": "秦灭楚：王翦统军六十万斩项燕、克寿春俘楚王",
+        "year": -223,
+        "reason": "正文中的“秦灭六国”与上游“秦灭楚：王翦统军六十万斩项燕、克寿春俘楚王”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦灭六国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "zhanguo:-222",
+        "headline": "王贲灭燕与代，王翦定江南置会稽郡，唯余齐国",
+        "year": -222,
+        "reason": "正文中的“秦灭六国”与上游“王贲灭燕与代，王翦定江南置会稽郡，唯余齐国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦灭六国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "qin:-221",
+        "headline": "王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨",
+        "year": -221,
+        "reason": "正文中的“秦灭六国”与上游“王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦灭六国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-zhanguo-bce226": {
+    "historyId": "event-jiangshan-zhanguo-bce226",
+    "title": "荆轲刺秦不中",
+    "upstreamKey": "zhanguo:-226",
+    "headline": "荆轲刺秦不中；王翦破燕拔蓟城，燕王喜走辽东",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "zhanguo:-226",
+        "headline": "荆轲刺秦不中；王翦破燕拔蓟城，燕王喜走辽东",
+        "year": -226,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "荆轲刺秦不中；王翦破燕拔蓟城，燕王喜走辽东",
+        "status": "reviewed-content-match",
+        "difference": "荆轲刺秦通常系前227年，秦破蓟城系前226年；本地标记前227—前226年并分别关联咸阳与蓟城。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-163": {
+    "historyId": "event-163",
+    "title": "嬴政称皇帝",
+    "upstreamKey": "qin:-221",
+    "headline": "王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨",
+    "reason": "正文中的“嬴政称皇帝”与上游“王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷6"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-221",
+        "headline": "王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨",
+        "year": -221,
+        "reason": "正文中的“嬴政称皇帝”与上游“王贲受齐王建降，秦王嬴政统一六国称始皇帝，行郡县、书同文车同轨”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "嬴政称皇帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce215": {
+    "historyId": "event-jiangshan-qin-bce215",
+    "title": "蒙恬北击匈奴收复河套，其后数年连筑长城",
+    "upstreamKey": "qin:-215",
+    "headline": "蒙恬北击匈奴收复河套，其后数年连筑长城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷6",
+          "卷88"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷7"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-215",
+        "headline": "蒙恬北击匈奴收复河套，其后数年连筑长城",
+        "year": -215,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "蒙恬北击匈奴收复河套，其后数年连筑长城",
+        "status": "reviewed-content-match",
+        "difference": "蒙恬北击匈奴常系前215—前214年；连筑长城为后续过程，不能只画成九原的一日活动。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6",
+              "卷88"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷7"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce214": {
+    "historyId": "event-jiangshan-qin-bce214",
+    "title": "秦军开凿灵渠通湘漓，平定岭南置桂林、象、南海三郡",
+    "upstreamKey": "qin:-214",
+    "headline": "秦军开凿灵渠通湘漓，平定岭南置桂林、象、南海三郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷6",
+          "卷112"
+        ]
+      },
+      {
+        "title": "全唐文",
+        "volumes": [
+          "卷804"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-214",
+        "headline": "秦军开凿灵渠通湘漓，平定岭南置桂林、象、南海三郡",
+        "year": -214,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "秦军开凿灵渠通湘漓，平定岭南置桂林、象、南海三郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6",
+              "卷112"
+            ]
+          },
+          {
+            "title": "全唐文",
+            "volumes": [
+              "卷804"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-164": {
+    "historyId": "event-164",
+    "title": "焚书",
+    "upstreamKey": "qin:-213",
+    "headline": "秦始皇采李斯议下“焚书令”，次年于咸阳坑杀方士儒生",
+    "reason": "正文中的“焚书”与上游“秦始皇采李斯议下“焚书令”，次年于咸阳坑杀方士儒生”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷6"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-213",
+        "headline": "秦始皇采李斯议下“焚书令”，次年于咸阳坑杀方士儒生",
+        "year": -213,
+        "reason": "正文中的“焚书”与上游“秦始皇采李斯议下“焚书令”，次年于咸阳坑杀方士儒生”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "焚书",
+        "status": "reviewed-content-match",
+        "difference": "焚书系前213年，坑杀方士儒生系前212年；原有焚书笔记只对应前一子句，另补坑杀条目。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce213-supplement": {
+    "historyId": "event-jiangshan-qin-bce213-supplement",
+    "title": "秦坑杀方士儒生",
+    "upstreamKey": "qin:-213",
+    "headline": "秦始皇采李斯议下“焚书令”，次年于咸阳坑杀方士儒生",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷6"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-213",
+        "headline": "秦始皇采李斯议下“焚书令”，次年于咸阳坑杀方士儒生",
+        "year": -213,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "秦坑杀方士儒生",
+        "status": "reviewed-content-match",
+        "difference": "焚书系前213年，坑杀方士儒生系前212年；原有焚书笔记只对应前一子句，另补坑杀条目。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce212": {
+    "historyId": "event-jiangshan-qin-bce212",
+    "title": "蒙恬奉诏修筑秦直道（九原至云阳）",
+    "upstreamKey": "qin:-212",
+    "headline": "蒙恬奉诏修筑秦直道（九原至云阳）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷6",
+          "卷88"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷7"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-212",
+        "headline": "蒙恬奉诏修筑秦直道（九原至云阳）",
+        "year": -212,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "蒙恬奉诏修筑秦直道（九原至云阳）",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6",
+              "卷88"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷7"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-165": {
+    "historyId": "event-165",
+    "title": "秦始皇去世",
+    "upstreamKey": "qin:-210",
+    "headline": "沙丘政变：始皇崩于沙丘，赵高李斯矫诏杀扶苏立胡亥",
+    "reason": "正文中的“秦始皇去世”与上游“沙丘政变：始皇崩于沙丘，赵高李斯矫诏杀扶苏立胡亥”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷6",
+          "卷87"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-210",
+        "headline": "沙丘政变：始皇崩于沙丘，赵高李斯矫诏杀扶苏立胡亥",
+        "year": -210,
+        "reason": "正文中的“秦始皇去世”与上游“沙丘政变：始皇崩于沙丘，赵高李斯矫诏杀扶苏立胡亥”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦始皇去世",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷6",
+              "卷87"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-166": {
+    "historyId": "event-166",
+    "title": "陈胜吴广起义",
+    "upstreamKey": "qin:-209",
+    "headline": "陈胜吴广大泽乡起义建张楚；武臣、韩广、田儋相继复立赵、燕、齐",
+    "reason": "正文中的“陈胜吴广起义”与上游“陈胜吴广大泽乡起义建张楚；武臣、韩广、田儋相继复立赵、燕、齐”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷48"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-209",
+        "headline": "陈胜吴广大泽乡起义建张楚；武臣、韩广、田儋相继复立赵、燕、齐",
+        "year": -209,
+        "reason": "正文中的“陈胜吴广起义”与上游“陈胜吴广大泽乡起义建张楚；武臣、韩广、田儋相继复立赵、燕、齐”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "陈胜吴广起义",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷48"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce209-supplement": {
+    "historyId": "event-jiangshan-qin-bce209-supplement",
+    "title": "秦末赵燕齐政权复立",
+    "upstreamKey": "qin:-209",
+    "headline": "陈胜吴广大泽乡起义建张楚；武臣、韩广、田儋相继复立赵、燕、齐",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷48"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-209",
+        "headline": "陈胜吴广大泽乡起义建张楚；武臣、韩广、田儋相继复立赵、燕、齐",
+        "year": -209,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "秦末赵燕齐政权复立",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷48"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce207": {
+    "historyId": "event-jiangshan-qin-bce207",
+    "title": "项羽巨鹿之战破釜沉舟",
+    "upstreamKey": "qin:-207",
+    "headline": "项羽巨鹿之战破釜沉舟；南海尉赵佗绝秦道，据南海郡自守",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷7",
+          "卷16",
+          "卷113"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷12"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-207",
+        "headline": "项羽巨鹿之战破釜沉舟；南海尉赵佗绝秦道，据南海郡自守",
+        "year": -207,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "项羽巨鹿之战破釜沉舟；南海尉赵佗绝秦道，据南海郡自守",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷7",
+              "卷16",
+              "卷113"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷12"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-167": {
+    "historyId": "event-167",
+    "title": "秦朝灭亡",
+    "upstreamKey": "qin:-206",
+    "headline": "子婴降刘邦，秦亡；鸿门宴后项羽分封十八诸侯，楚汉争霸开启",
+    "reason": "正文中的“秦朝灭亡”与上游“子婴降刘邦，秦亡；鸿门宴后项羽分封十八诸侯，楚汉争霸开启”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷7",
+          "卷8"
+        ]
+      },
+      {
+        "title": "汉书",
+        "volumes": [
+          "卷1上"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷9"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-206",
+        "headline": "子婴降刘邦，秦亡；鸿门宴后项羽分封十八诸侯，楚汉争霸开启",
+        "year": -206,
+        "reason": "正文中的“秦朝灭亡”与上游“子婴降刘邦，秦亡；鸿门宴后项羽分封十八诸侯，楚汉争霸开启”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "秦朝灭亡",
+        "status": "reviewed-content-match",
+        "difference": "子婴投降常按秦二世三年系前207年；鸿门宴、分封等在前206年。保留本地秦亡前207年，不用上游整条年份覆盖。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷7",
+              "卷8"
+            ]
+          },
+          {
+            "title": "汉书",
+            "volumes": [
+              "卷1上"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷9"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce206-supplement": {
+    "historyId": "event-jiangshan-qin-bce206-supplement",
+    "title": "鸿门宴与项羽分封诸侯",
+    "upstreamKey": "qin:-206",
+    "headline": "子婴降刘邦，秦亡；鸿门宴后项羽分封十八诸侯，楚汉争霸开启",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷7",
+          "卷8"
+        ]
+      },
+      {
+        "title": "汉书",
+        "volumes": [
+          "卷1上"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷9"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-206",
+        "headline": "子婴降刘邦，秦亡；鸿门宴后项羽分封十八诸侯，楚汉争霸开启",
+        "year": -206,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "鸿门宴与项羽分封诸侯",
+        "status": "reviewed-content-match",
+        "difference": "子婴投降常按秦二世三年系前207年；鸿门宴、分封等在前206年。保留本地秦亡前207年，不用上游整条年份覆盖。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷7",
+              "卷8"
+            ]
+          },
+          {
+            "title": "汉书",
+            "volumes": [
+              "卷1上"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷9"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce204": {
+    "historyId": "event-jiangshan-qin-bce204",
+    "title": "韩信于井陉背水一战灭赵，楚汉两军于荥阳、成皋持久相持",
+    "upstreamKey": "qin:-204",
+    "headline": "韩信于井陉背水一战灭赵，楚汉两军于荥阳、成皋持久相持",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷8",
+          "卷92"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷10"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-204",
+        "headline": "韩信于井陉背水一战灭赵，楚汉两军于荥阳、成皋持久相持",
+        "year": -204,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "韩信于井陉背水一战灭赵，楚汉两军于荥阳、成皋持久相持",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷8",
+              "卷92"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷10"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qin-bce203": {
+    "historyId": "event-jiangshan-qin-bce203",
+    "title": "楚汉久持后鸿沟议和中分天下，刘邦旋毁约东追项羽",
+    "upstreamKey": "qin:-203",
+    "headline": "楚汉久持后“鸿沟议和”中分天下，刘邦旋毁约东追项羽",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "史记",
+        "volumes": [
+          "卷7"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷10",
+          "卷11"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "qin:-203",
+        "headline": "楚汉久持后“鸿沟议和”中分天下，刘邦旋毁约东追项羽",
+        "year": -203,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "楚汉久持后“鸿沟议和”中分天下，刘邦旋毁约东追项羽",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "史记",
+            "volumes": [
+              "卷7"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷10",
+              "卷11"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-150": {
+    "historyId": "event-150",
+    "title": "刘邦称帝",
+    "upstreamKey": "xihan:-202",
+    "headline": "韩信等垓下十面埋伏灭项羽，汉高祖刘邦称帝定都长安",
+    "reason": "正文中的“刘邦称帝”与上游“韩信等垓下十面埋伏灭项羽，汉高祖刘邦称帝定都长安”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-202",
+        "headline": "韩信等垓下十面埋伏灭项羽，汉高祖刘邦称帝定都长安",
+        "year": -202,
+        "reason": "正文中的“刘邦称帝”与上游“韩信等垓下十面埋伏灭项羽，汉高祖刘邦称帝定都长安”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "刘邦称帝",
+        "status": "reviewed-content-match",
+        "difference": "垓下战事、刘邦在氾水即位、先都洛阳后迁长安是不同地点的阶段。称帝地点改为定陶氾水，长安列为迁都地点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce202-supplement": {
+    "historyId": "event-jiangshan-xihan-bce202-supplement",
+    "title": "垓下之战",
+    "upstreamKey": "xihan:-202",
+    "headline": "韩信等垓下十面埋伏灭项羽，汉高祖刘邦称帝定都长安",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-202",
+        "headline": "韩信等垓下十面埋伏灭项羽，汉高祖刘邦称帝定都长安",
+        "year": -202,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "垓下之战",
+        "status": "reviewed-content-match",
+        "difference": "垓下战事、刘邦在氾水即位、先都洛阳后迁长安是不同地点的阶段。称帝地点改为定陶氾水，长安列为迁都地点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce200": {
+    "historyId": "event-jiangshan-xihan-bce200",
+    "title": "汉高祖亲征匈奴困于白登，汉初遂行和亲之策",
+    "upstreamKey": "xihan:-200",
+    "headline": "汉高祖亲征匈奴困于白登，汉初遂行和亲之策",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-200",
+        "headline": "汉高祖亲征匈奴困于白登，汉初遂行和亲之策",
+        "year": -200,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉高祖亲征匈奴困于白登，汉初遂行和亲之策",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-357": {
+    "historyId": "event-357",
+    "title": "文景之治",
+    "upstreamKey": "xihan:-180",
+    "headline": "周勃、陈平诛灭诸吕迎立汉文帝，开启休养生息之政",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-180",
+        "headline": "周勃、陈平诛灭诸吕迎立汉文帝，开启休养生息之政",
+        "year": -180,
+        "reason": "正文中的“文景之治”与上游“周勃、陈平诛灭诸吕迎立汉文帝，开启休养生息之政”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "文景之治",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "xihan:-167",
+        "headline": "汉文帝废除肉刑、免收全国田租，与景帝轻徭薄赋共创“文景之治”",
+        "year": -167,
+        "reason": "正文中的“文景之治”与上游“汉文帝废除肉刑、免收全国田租，与景帝轻徭薄赋共创“文景之治””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "文景之治",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce180-supplement": {
+    "historyId": "event-jiangshan-xihan-bce180-supplement",
+    "title": "诛诸吕与汉文帝即位",
+    "upstreamKey": "xihan:-180",
+    "headline": "周勃、陈平诛灭诸吕迎立汉文帝，开启休养生息之政",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-180",
+        "headline": "周勃、陈平诛灭诸吕迎立汉文帝，开启休养生息之政",
+        "year": -180,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "诛诸吕与汉文帝即位",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce167-supplement": {
+    "historyId": "event-jiangshan-xihan-bce167-supplement",
+    "title": "汉文帝废肉刑与免田租",
+    "upstreamKey": "xihan:-167",
+    "headline": "汉文帝废除肉刑、免收全国田租，与景帝轻徭薄赋共创“文景之治”",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-167",
+        "headline": "汉文帝废除肉刑、免收全国田租，与景帝轻徭薄赋共创“文景之治”",
+        "year": -167,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "汉文帝废肉刑与免田租",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-151": {
+    "historyId": "event-151",
+    "title": "七国之乱",
+    "upstreamKey": "xihan:-154",
+    "headline": "汉景帝削藩引发七国之乱，周亚夫三月平叛固集权",
+    "reason": "正文中的“七国之乱”与上游“汉景帝削藩引发七国之乱，周亚夫三月平叛固集权”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-154",
+        "headline": "汉景帝削藩引发七国之乱，周亚夫三月平叛固集权",
+        "year": -154,
+        "reason": "正文中的“七国之乱”与上游“汉景帝削藩引发七国之乱，周亚夫三月平叛固集权”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "七国之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-136": {
+    "historyId": "event-136",
+    "title": "张骞第一次出使西域",
+    "upstreamKey": "xihan:-138",
+    "headline": "张骞出使西域，凿空丝绸之路",
+    "reason": "正文中的“张骞第一次出使西域”与上游“张骞出使西域，凿空丝绸之路”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-138",
+        "headline": "张骞出使西域，凿空丝绸之路",
+        "year": -138,
+        "reason": "正文中的“张骞第一次出使西域”与上游“张骞出使西域，凿空丝绸之路”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "张骞第一次出使西域",
+        "status": "reviewed-content-match",
+        "difference": "前138年对应张骞首次出使的出发节点；原有返汉笔记记前128—前126年归途阶段，属于同次出使后续而非前138年当年返国。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-137": {
+    "historyId": "event-137",
+    "title": "张骞首次出使归汉",
+    "upstreamKey": "xihan:-138",
+    "headline": "张骞出使西域，凿空丝绸之路",
+    "reason": "正文中的“张骞首次出使归汉”与上游“张骞出使西域，凿空丝绸之路”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-138",
+        "headline": "张骞出使西域，凿空丝绸之路",
+        "year": -138,
+        "reason": "正文中的“张骞首次出使归汉”与上游“张骞出使西域，凿空丝绸之路”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "张骞首次出使归汉",
+        "status": "reviewed-content-match",
+        "difference": "前138年对应张骞首次出使的出发节点；原有返汉笔记记前128—前126年归途阶段，属于同次出使后续而非前138年当年返国。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce134": {
+    "historyId": "event-jiangshan-xihan-bce134",
+    "title": "汉武帝采董仲舒策独尊儒术，兴太学、初令郡国察举孝廉",
+    "upstreamKey": "xihan:-134",
+    "headline": "汉武帝采董仲舒策独尊儒术，兴太学、初令郡国察举孝廉",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-134",
+        "headline": "汉武帝采董仲舒策独尊儒术，兴太学、初令郡国察举孝廉",
+        "year": -134,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉武帝采董仲舒策独尊儒术，兴太学、初令郡国察举孝廉",
+        "status": "reviewed-content-match",
+        "difference": "董仲舒对策、察举与太学沿革跨年；太学通常系前124年，不统写为前134年一次完成。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce133": {
+    "historyId": "event-jiangshan-xihan-bce133",
+    "title": "马邑之谋",
+    "upstreamKey": "xihan:-133",
+    "headline": "马邑之谋：汉武帝纳王恢策于马邑设伏诱击单于未果，汉匈全面战争爆发",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-133",
+        "headline": "马邑之谋：汉武帝纳王恢策于马邑设伏诱击单于未果，汉匈全面战争爆发",
+        "year": -133,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "马邑之谋：汉武帝纳王恢策于马邑设伏诱击单于未果，汉匈全面战争爆发",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-358": {
+    "historyId": "event-358",
+    "title": "汉武帝颁行推恩令",
+    "upstreamKey": "xihan:-127",
+    "headline": "卫青收复河套置朔方郡；主父偃献《推恩令》削弱诸侯",
+    "reason": "正文中的“汉武帝颁行推恩令”与上游“卫青收复河套置朔方郡；主父偃献《推恩令》削弱诸侯”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-127",
+        "headline": "卫青收复河套置朔方郡；主父偃献《推恩令》削弱诸侯",
+        "year": -127,
+        "reason": "正文中的“汉武帝颁行推恩令”与上游“卫青收复河套置朔方郡；主父偃献《推恩令》削弱诸侯”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "汉武帝颁行推恩令",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce127-detail": {
+    "historyId": "event-jiangshan-xihan-bce127-detail",
+    "title": "卫青收复河套",
+    "upstreamKey": "xihan:-127",
+    "headline": "卫青收复河套置朔方郡；主父偃献《推恩令》削弱诸侯",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-127",
+        "headline": "卫青收复河套置朔方郡；主父偃献《推恩令》削弱诸侯",
+        "year": -127,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "卫青收复河套",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce121": {
+    "historyId": "event-jiangshan-xihan-bce121",
+    "title": "霍去病两次河西之战受降浑邪王，初置武威、酒泉郡",
+    "upstreamKey": "xihan:-121",
+    "headline": "霍去病两次河西之战受降浑邪王，初置武威、酒泉郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-121",
+        "headline": "霍去病两次河西之战受降浑邪王，初置武威、酒泉郡",
+        "year": -121,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "霍去病两次河西之战受降浑邪王，初置武威、酒泉郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce119": {
+    "historyId": "event-jiangshan-xihan-bce119",
+    "title": "漠北之战，卫青破单于、霍去病封狼居胥",
+    "upstreamKey": "xihan:-119",
+    "headline": "漠北之战，卫青破单于、霍去病封狼居胥",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-119",
+        "headline": "漠北之战，卫青破单于、霍去病封狼居胥",
+        "year": -119,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "漠北之战，卫青破单于、霍去病封狼居胥",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce118": {
+    "historyId": "event-jiangshan-xihan-bce118",
+    "title": "汉武帝改铸五铢钱、推行盐铁官营，继行均输平准",
+    "upstreamKey": "xihan:-118",
+    "headline": "汉武帝改铸五铢钱、推行盐铁官营，继行均输平准，财权收归中央",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-118",
+        "headline": "汉武帝改铸五铢钱、推行盐铁官营，继行均输平准，财权收归中央",
+        "year": -118,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉武帝改铸五铢钱、推行盐铁官营，继行均输平准，财权收归中央",
+        "status": "reviewed-content-match",
+        "difference": "五铢钱与盐铁官营、均输平准先后实施；上游前118年作为财政制度条目节点，不作全套政策同年完成证明。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce111": {
+    "historyId": "event-jiangshan-xihan-bce111",
+    "title": "路博德、杨仆平定南越设九郡",
+    "upstreamKey": "xihan:-111",
+    "headline": "路博德、杨仆平定南越设九郡；分河西置张掖、敦煌郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-111",
+        "headline": "路博德、杨仆平定南越设九郡；分河西置张掖、敦煌郡",
+        "year": -111,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "路博德、杨仆平定南越设九郡；分河西置张掖、敦煌郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce110": {
+    "historyId": "event-jiangshan-xihan-bce110",
+    "title": "汉武帝灭闽越国迁其民于江淮，并于海南岛置珠崖、儋耳二郡",
+    "upstreamKey": "xihan:-110",
+    "headline": "汉武帝灭闽越国迁其民于江淮，并于海南岛置珠崖、儋耳二郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-110",
+        "headline": "汉武帝灭闽越国迁其民于江淮，并于海南岛置珠崖、儋耳二郡",
+        "year": -110,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉武帝灭闽越国迁其民于江淮，并于海南岛置珠崖、儋耳二郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce109": {
+    "historyId": "event-jiangshan-xihan-bce109",
+    "title": "汉武帝发兵平西南夷，滇王降汉",
+    "upstreamKey": "xihan:-109",
+    "headline": "汉武帝发兵平西南夷，滇王降汉，置益州郡赐金印",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-109",
+        "headline": "汉武帝发兵平西南夷，滇王降汉，置益州郡赐金印",
+        "year": -109,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉武帝发兵平西南夷，滇王降汉，置益州郡赐金印",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce108": {
+    "historyId": "event-jiangshan-xihan-bce108",
+    "title": "汉军攻灭卫氏朝鲜，设乐浪、玄菟、真番、临屯四郡",
+    "upstreamKey": "xihan:-108",
+    "headline": "汉军攻灭卫氏朝鲜，设乐浪、玄菟、真番、临屯四郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-108",
+        "headline": "汉军攻灭卫氏朝鲜，设乐浪、玄菟、真番、临屯四郡",
+        "year": -108,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉军攻灭卫氏朝鲜，设乐浪、玄菟、真番、临屯四郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce100": {
+    "historyId": "event-jiangshan-xihan-bce100",
+    "title": "贰师将军李广利伐大宛，丝路昆仑北路畅通",
+    "upstreamKey": "xihan:-100",
+    "headline": "贰师将军李广利伐大宛，丝路昆仑北路畅通",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-100",
+        "headline": "贰师将军李广利伐大宛，丝路昆仑北路畅通",
+        "year": -100,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "贰师将军李广利伐大宛，丝路昆仑北路畅通",
+        "status": "reviewed-content-match",
+        "difference": "李广利两次伐大宛常系前104—前101年；前100年不作为战役确切开端。敦煌、于阗为路途节点，大宛才是进攻对象。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce91": {
+    "historyId": "event-jiangshan-xihan-bce91",
+    "title": "巫蛊之祸太子刘据兵败湖县自尽",
+    "upstreamKey": "xihan:-91",
+    "headline": "巫蛊之祸太子刘据兵败湖县自尽；太史令司马迁撰成《史记》",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-91",
+        "headline": "巫蛊之祸太子刘据兵败湖县自尽；太史令司马迁撰成《史记》",
+        "year": -91,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "巫蛊之祸太子刘据兵败湖县自尽；太史令司马迁撰成《史记》",
+        "status": "reviewed-content-match",
+        "difference": "巫蛊之祸与司马迁撰史并非同一事件；史记完成时间有讨论，不将前91年设为不可更动的完稿日期。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce89": {
+    "historyId": "event-jiangshan-xihan-bce89",
+    "title": "武帝下轮台罪己诏，转向与民休息",
+    "upstreamKey": "xihan:-89",
+    "headline": "武帝下轮台罪己诏，转向与民休息",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-89",
+        "headline": "武帝下轮台罪己诏，转向与民休息",
+        "year": -89,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "武帝下轮台罪己诏，转向与民休息",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce81": {
+    "historyId": "event-jiangshan-xihan-bce81",
+    "title": "苏武持节十九载白发归汉",
+    "upstreamKey": "xihan:-81",
+    "headline": "苏武持节十九载白发归汉；汉昭帝召集盐铁会议辩论国策",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-81",
+        "headline": "苏武持节十九载白发归汉；汉昭帝召集盐铁会议辩论国策",
+        "year": -81,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "苏武持节十九载白发归汉；汉昭帝召集盐铁会议辩论国策",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce74": {
+    "historyId": "event-jiangshan-xihan-bce74",
+    "title": "大将军霍光废昌邑王刘贺，迎立汉宣帝开启昭宣中兴",
+    "upstreamKey": "xihan:-74",
+    "headline": "大将军霍光废昌邑王刘贺，迎立汉宣帝开启昭宣中兴",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-74",
+        "headline": "大将军霍光废昌邑王刘贺，迎立汉宣帝开启昭宣中兴",
+        "year": -74,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "大将军霍光废昌邑王刘贺，迎立汉宣帝开启昭宣中兴",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce61": {
+    "historyId": "event-jiangshan-xihan-bce61",
+    "title": "赵充国率军平定河湟先零诸羌，首创河湟军屯并置破羌县",
+    "upstreamKey": "xihan:-61",
+    "headline": "赵充国率军平定河湟先零诸羌，首创河湟军屯并置破羌县",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-61",
+        "headline": "赵充国率军平定河湟先零诸羌，首创河湟军屯并置破羌县",
+        "year": -61,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "赵充国率军平定河湟先零诸羌，首创河湟军屯并置破羌县",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-359": {
+    "historyId": "event-359",
+    "title": "西域都护设置",
+    "upstreamKey": "xihan:-60",
+    "headline": "汉廷设西域都护府（郑吉首任），西域正式纳入版图",
+    "reason": "正文中的“西域都护设置”与上游“汉廷设西域都护府（郑吉首任），西域正式纳入版图”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-60",
+        "headline": "汉廷设西域都护府（郑吉首任），西域正式纳入版图",
+        "year": -60,
+        "reason": "正文中的“西域都护设置”与上游“汉廷设西域都护府（郑吉首任），西域正式纳入版图”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "西域都护设置",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce51": {
+    "historyId": "event-jiangshan-xihan-bce51",
+    "title": "呼韩邪单于入长安朝觐，汉宣帝画麒麟阁十一功臣",
+    "upstreamKey": "xihan:-51",
+    "headline": "呼韩邪单于入长安朝觐，汉宣帝画麒麟阁十一功臣",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-51",
+        "headline": "呼韩邪单于入长安朝觐，汉宣帝画麒麟阁十一功臣",
+        "year": -51,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "呼韩邪单于入长安朝觐，汉宣帝画麒麟阁十一功臣",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce36": {
+    "historyId": "event-jiangshan-xihan-bce36",
+    "title": "陈汤矫制发兵远征康居斩郅支单于，犯强汉者虽远必诛",
+    "upstreamKey": "xihan:-36",
+    "headline": "陈汤矫制发兵远征康居斩郅支单于，“犯强汉者虽远必诛”",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-36",
+        "headline": "陈汤矫制发兵远征康居斩郅支单于，“犯强汉者虽远必诛”",
+        "year": -36,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "陈汤矫制发兵远征康居斩郅支单于，“犯强汉者虽远必诛”",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce33": {
+    "historyId": "event-jiangshan-xihan-bce33",
+    "title": "昭君出塞，呼韩邪单于入朝和亲",
+    "upstreamKey": "xihan:-33",
+    "headline": "昭君出塞，呼韩邪单于入朝和亲",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-33",
+        "headline": "昭君出塞，呼韩邪单于入朝和亲",
+        "year": -33,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "昭君出塞，呼韩邪单于入朝和亲",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce25": {
+    "historyId": "event-jiangshan-xihan-bce25",
+    "title": "西域都护段会宗复入乌孙平定内乱，安辑葱岭以西诸国",
+    "upstreamKey": "xihan:-25",
+    "headline": "西域都护段会宗复入乌孙平定内乱，安辑葱岭以西诸国",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-25",
+        "headline": "西域都护段会宗复入乌孙平定内乱，安辑葱岭以西诸国",
+        "year": -25,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "西域都护段会宗复入乌孙平定内乱，安辑葱岭以西诸国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-bce8": {
+    "historyId": "event-jiangshan-xihan-bce8",
+    "title": "汉成帝改置三公",
+    "upstreamKey": "xihan:-8",
+    "headline": "汉成帝改置三公；王莽任大司马，王氏外戚掌权",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:-8",
+        "headline": "汉成帝改置三公；王莽任大司马，王氏外戚掌权",
+        "year": -8,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉成帝改置三公；王莽任大司马，王氏外戚掌权",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-6": {
+    "historyId": "event-jiangshan-xihan-6",
+    "title": "王莽受封安汉公专擅朝政，汉平帝崩后立孺子婴居摄称假皇帝",
+    "upstreamKey": "xihan:6",
+    "headline": "王莽受封安汉公专擅朝政，汉平帝崩后立孺子婴居摄称“假皇帝”",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:6",
+        "headline": "王莽受封安汉公专擅朝政，汉平帝崩后立孺子婴居摄称“假皇帝”",
+        "year": 6,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王莽受封安汉公专擅朝政，汉平帝崩后立孺子婴居摄称“假皇帝”",
+        "status": "reviewed-content-match",
+        "difference": "王莽受封安汉公在1年，6年是居摄阶段，合写条目不将两者视为同年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-152": {
+    "historyId": "event-152",
+    "title": "王莽代汉",
+    "upstreamKey": "xihan:8",
+    "headline": "外戚王莽迫孺子婴禅让，于未央宫即真天子位，改国号“新”，西汉亡",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:8",
+        "headline": "外戚王莽迫孺子婴禅让，于未央宫即真天子位，改国号“新”，西汉亡",
+        "year": 8,
+        "reason": "正文中的“王莽代汉”与上游“外戚王莽迫孺子婴禅让，于未央宫即真天子位，改国号“新”，西汉亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "王莽代汉",
+        "status": "reviewed-content-match",
+        "difference": "汉初始元年十二月即位换算公历涉及8—9年之交；本地王莽代汉保留9年常用纪年，并记录上游8年差异。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "xihan:9",
+        "headline": "王莽推行王田、私属与五均六筦托古改制，四方民变渐起",
+        "year": 9,
+        "reason": "正文中的“王莽代汉”与上游“王莽推行王田、私属与五均六筦托古改制，四方民变渐起”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "王莽代汉",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-11": {
+    "historyId": "event-jiangshan-xihan-11",
+    "title": "黄河于魏郡元城决口，禹贡北流故道断绝泛滥兖豫",
+    "upstreamKey": "xihan:11",
+    "headline": "黄河于魏郡元城决口，禹贡北流故道断绝泛滥兖豫",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:11",
+        "headline": "黄河于魏郡元城决口，禹贡北流故道断绝泛滥兖豫",
+        "year": 11,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "黄河于魏郡元城决口，禹贡北流故道断绝泛滥兖豫",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-17": {
+    "historyId": "event-jiangshan-xihan-17",
+    "title": "绿林军起于绿林山",
+    "upstreamKey": "xihan:17",
+    "headline": "绿林军起于绿林山；次年樊崇起赤眉军于琅琊，新莽末年大起义爆发",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:17",
+        "headline": "绿林军起于绿林山；次年樊崇起赤眉军于琅琊，新莽末年大起义爆发",
+        "year": 17,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "绿林军起于绿林山；次年樊崇起赤眉军于琅琊，新莽末年大起义爆发",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-23": {
+    "historyId": "event-jiangshan-xihan-23",
+    "title": "绿林军拥汉宗室刘玄称更始帝",
+    "upstreamKey": "xihan:23",
+    "headline": "绿林军拥汉宗室刘玄称更始帝；宗室刘秀昆阳大破莽军，入长安诛王莽",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:23",
+        "headline": "绿林军拥汉宗室刘玄称更始帝；宗室刘秀昆阳大破莽军，入长安诛王莽",
+        "year": 23,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "绿林军拥汉宗室刘玄称更始帝；宗室刘秀昆阳大破莽军，入长安诛王莽",
+        "status": "reviewed-content-match",
+        "difference": "昆阳之战由刘秀等参战，但入长安杀王莽的是绿林军部众，不写成刘秀亲率入长安。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xihan-24": {
+    "historyId": "event-jiangshan-xihan-24",
+    "title": "更始帝刘玄入都长安",
+    "upstreamKey": "xihan:24",
+    "headline": "更始帝刘玄入都长安；刘秀以大司马北渡独立经略河北，拔邯郸诛王郎",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "xihan:24",
+        "headline": "更始帝刘玄入都长安；刘秀以大司马北渡独立经略河北，拔邯郸诛王郎",
+        "year": 24,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "更始帝刘玄入都长安；刘秀以大司马北渡独立经略河北，拔邯郸诛王郎",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-153": {
+    "historyId": "event-153",
+    "title": "刘秀称帝",
+    "upstreamKey": "donghan:25",
+    "headline": "赤眉军入长安覆灭更始政权；萧王刘秀于鄗城称帝兴复汉室，定都洛阳",
+    "reason": "正文中的“刘秀称帝”与上游“赤眉军入长安覆灭更始政权；萧王刘秀于鄗城称帝兴复汉室，定都洛阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:25",
+        "headline": "赤眉军入长安覆灭更始政权；萧王刘秀于鄗城称帝兴复汉室，定都洛阳",
+        "year": 25,
+        "reason": "正文中的“刘秀称帝”与上游“赤眉军入长安覆灭更始政权；萧王刘秀于鄗城称帝兴复汉室，定都洛阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "刘秀称帝",
+        "status": "reviewed-content-match",
+        "difference": "刘秀于鄗城即位，洛阳为其后都城；赤眉攻入长安是同年另一个政治过程。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-25-supplement": {
+    "historyId": "event-jiangshan-donghan-25-supplement",
+    "title": "赤眉军攻入长安",
+    "upstreamKey": "donghan:25",
+    "headline": "赤眉军入长安覆灭更始政权；萧王刘秀于鄗城称帝兴复汉室，定都洛阳",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:25",
+        "headline": "赤眉军入长安覆灭更始政权；萧王刘秀于鄗城称帝兴复汉室，定都洛阳",
+        "year": 25,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "赤眉军攻入长安",
+        "status": "reviewed-content-match",
+        "difference": "刘秀于鄗城即位，洛阳为其后都城；赤眉攻入长安是同年另一个政治过程。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-36": {
+    "historyId": "event-jiangshan-donghan-36",
+    "title": "吴汉攻克成都灭公孙述，光武帝刘秀统一全国",
+    "upstreamKey": "donghan:36",
+    "headline": "吴汉攻克成都灭公孙述，光武帝刘秀统一全国",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:36",
+        "headline": "吴汉攻克成都灭公孙述，光武帝刘秀统一全国",
+        "year": 36,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吴汉攻克成都灭公孙述，光武帝刘秀统一全国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-39": {
+    "historyId": "event-jiangshan-donghan-39",
+    "title": "光武帝下诏核查全国垦田与户口（度田），打击豪强隐匿田赋",
+    "upstreamKey": "donghan:39",
+    "headline": "光武帝下诏核查全国垦田与户口（度田），打击豪强隐匿田赋",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:39",
+        "headline": "光武帝下诏核查全国垦田与户口（度田），打击豪强隐匿田赋",
+        "year": 39,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "光武帝下诏核查全国垦田与户口（度田），打击豪强隐匿田赋",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-43": {
+    "historyId": "event-jiangshan-donghan-43",
+    "title": "伏波将军马援南征交趾平二征起义，立铜柱定汉界",
+    "upstreamKey": "donghan:43",
+    "headline": "伏波将军马援南征交趾平二征起义，立铜柱定汉界",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:43",
+        "headline": "伏波将军马援南征交趾平二征起义，立铜柱定汉界",
+        "year": 43,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "伏波将军马援南征交趾平二征起义，立铜柱定汉界",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-48": {
+    "historyId": "event-jiangshan-donghan-48",
+    "title": "匈奴日逐王比南附东汉称呼韩邪单于，匈奴分裂为南北二部",
+    "upstreamKey": "donghan:48",
+    "headline": "匈奴日逐王比南附东汉称呼韩邪单于，匈奴分裂为南北二部，驻美稷",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:48",
+        "headline": "匈奴日逐王比南附东汉称呼韩邪单于，匈奴分裂为南北二部，驻美稷",
+        "year": 48,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "匈奴日逐王比南附东汉称呼韩邪单于，匈奴分裂为南北二部，驻美稷",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-68": {
+    "historyId": "event-jiangshan-donghan-68",
+    "title": "汉明帝建白马寺，佛教正式传入洛阳",
+    "upstreamKey": "donghan:68",
+    "headline": "汉明帝建白马寺，佛教正式传入洛阳",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:68",
+        "headline": "汉明帝建白马寺，佛教正式传入洛阳",
+        "year": 68,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉明帝建白马寺，佛教正式传入洛阳",
+        "status": "reviewed-content-match",
+        "difference": "白马寺创建及佛教初传叙事有传统记载与史料层次之别，不以68年认定佛教此前绝不存在。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-69": {
+    "historyId": "event-jiangshan-donghan-69",
+    "title": "王景发卒数十万修渠治河，形成千年安流王景故道",
+    "upstreamKey": "donghan:69",
+    "headline": "王景发卒数十万修渠治河，形成千年安流“王景故道”",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:69",
+        "headline": "王景发卒数十万修渠治河，形成千年安流“王景故道”",
+        "year": 69,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王景发卒数十万修渠治河，形成千年安流“王景故道”",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-73": {
+    "historyId": "event-jiangshan-donghan-73",
+    "title": "班超出使西域，重开丝路",
+    "upstreamKey": "donghan:73",
+    "headline": "班超出使西域，重开丝路",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:73",
+        "headline": "班超出使西域，重开丝路",
+        "year": 73,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "班超出使西域，重开丝路",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-79": {
+    "historyId": "event-jiangshan-donghan-79",
+    "title": "汉章帝亲临白虎观讲议五经同异，班固撰《白虎通义》与《汉书》",
+    "upstreamKey": "donghan:79",
+    "headline": "汉章帝亲临白虎观讲议五经同异，班固撰《白虎通义》与《汉书》",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:79",
+        "headline": "汉章帝亲临白虎观讲议五经同异，班固撰《白虎通义》与《汉书》",
+        "year": 79,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉章帝亲临白虎观讲议五经同异，班固撰《白虎通义》与《汉书》",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-89": {
+    "historyId": "event-jiangshan-donghan-89",
+    "title": "窦宪破北匈奴于稽落山，登燕然山勒石记功",
+    "upstreamKey": "donghan:89",
+    "headline": "窦宪破北匈奴于稽落山，登燕然山勒石记功",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:89",
+        "headline": "窦宪破北匈奴于稽落山，登燕然山勒石记功",
+        "year": 89,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "窦宪破北匈奴于稽落山，登燕然山勒石记功",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-91": {
+    "historyId": "event-jiangshan-donghan-91",
+    "title": "金微山之战",
+    "upstreamKey": "donghan:91",
+    "headline": "金微山之战：耿夔大破北匈奴，北单于西遁",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:91",
+        "headline": "金微山之战：耿夔大破北匈奴，北单于西遁",
+        "year": 91,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "金微山之战：耿夔大破北匈奴，北单于西遁",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-92": {
+    "historyId": "event-jiangshan-donghan-92",
+    "title": "永元之隆",
+    "upstreamKey": "donghan:92",
+    "headline": "永元之隆：汉和帝联结郑众诛大将军窦宪，东汉达极盛",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:92",
+        "headline": "永元之隆：汉和帝联结郑众诛大将军窦宪，东汉达极盛",
+        "year": 92,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "永元之隆：汉和帝联结郑众诛大将军窦宪，东汉达极盛",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-97": {
+    "historyId": "event-jiangshan-donghan-97",
+    "title": "班超遣甘英出使大秦（罗马）",
+    "upstreamKey": "donghan:97",
+    "headline": "班超遣甘英出使大秦（罗马）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:97",
+        "headline": "班超遣甘英出使大秦（罗马）",
+        "year": 97,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "班超遣甘英出使大秦（罗马）",
+        "status": "reviewed-content-match",
+        "difference": "甘英奉班超命西行，疏勒为上游示意点；他未到罗马，不能把“大秦”目标写成已完成访问。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-360": {
+    "historyId": "event-360",
+    "title": "蔡伦奏报改进造纸术",
+    "upstreamKey": "donghan:105",
+    "headline": "蔡伦奏进改进造纸术（蔡侯纸）",
+    "reason": "正文中的“蔡伦奏报改进造纸术”与上游“蔡伦奏进改进造纸术（蔡侯纸）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:105",
+        "headline": "蔡伦奏进改进造纸术（蔡侯纸）",
+        "year": 105,
+        "reason": "正文中的“蔡伦奏报改进造纸术”与上游“蔡伦奏进改进造纸术（蔡侯纸）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "蔡伦奏报改进造纸术",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-107": {
+    "historyId": "event-jiangshan-donghan-107",
+    "title": "永初羌乱爆发席卷凉州，东汉罢西域都护",
+    "upstreamKey": "donghan:107",
+    "headline": "永初羌乱爆发席卷凉州，东汉罢西域都护",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "后汉书",
+        "volumes": [
+          "卷87",
+          "卷88"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "donghan:107",
+        "headline": "永初羌乱爆发席卷凉州，东汉罢西域都护",
+        "year": 107,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "永初羌乱爆发席卷凉州，东汉罢西域都护",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "后汉书",
+            "volumes": [
+              "卷87",
+              "卷88"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-123": {
+    "historyId": "event-jiangshan-donghan-123",
+    "title": "班勇任西域长史屯兵柳中破北匈奴，复通西域",
+    "upstreamKey": "donghan:123",
+    "headline": "班勇任西域长史屯兵柳中破北匈奴，复通西域",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "后汉书",
+        "volumes": [
+          "卷88"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "donghan:123",
+        "headline": "班勇任西域长史屯兵柳中破北匈奴，复通西域",
+        "year": 123,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "班勇任西域长史屯兵柳中破北匈奴，复通西域",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "后汉书",
+            "volumes": [
+              "卷88"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-132": {
+    "historyId": "event-jiangshan-donghan-132",
+    "title": "张衡造候风地动仪与浑天仪",
+    "upstreamKey": "donghan:132",
+    "headline": "张衡造候风地动仪与浑天仪",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:132",
+        "headline": "张衡造候风地动仪与浑天仪",
+        "year": 132,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "张衡造候风地动仪与浑天仪",
+        "status": "reviewed-content-match",
+        "difference": "132年为地动仪记载节点，浑天仪研制年代不同；功能、复原与现代地震仪不可等同。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-144": {
+    "historyId": "event-jiangshan-donghan-144",
+    "title": "护羌校尉赵冲战殁，西羌大乱席卷关陇",
+    "upstreamKey": "donghan:144",
+    "headline": "护羌校尉赵冲战殁，西羌大乱席卷关陇；汉顺帝崩，梁冀专权",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:144",
+        "headline": "护羌校尉赵冲战殁，西羌大乱席卷关陇；汉顺帝崩，梁冀专权",
+        "year": 144,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "护羌校尉赵冲战殁，西羌大乱席卷关陇；汉顺帝崩，梁冀专权",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-159": {
+    "historyId": "event-jiangshan-donghan-159",
+    "title": "汉桓帝与单超等五宦官合谋诛灭梁冀外戚集团",
+    "upstreamKey": "donghan:159",
+    "headline": "汉桓帝与单超等五宦官合谋诛灭梁冀外戚集团；段颎于陇右破羌",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:159",
+        "headline": "汉桓帝与单超等五宦官合谋诛灭梁冀外戚集团；段颎于陇右破羌",
+        "year": 159,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汉桓帝与单超等五宦官合谋诛灭梁冀外戚集团；段颎于陇右破羌",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-166": {
+    "historyId": "event-jiangshan-donghan-166",
+    "title": "党锢之祸",
+    "upstreamKey": "donghan:166",
+    "headline": "党锢之祸：166、169年两兴党狱，清流名士遭禁锢诛戮",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:166",
+        "headline": "党锢之祸：166、169年两兴党狱，清流名士遭禁锢诛戮",
+        "year": 166,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "党锢之祸：166、169年两兴党狱，清流名士遭禁锢诛戮",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-177": {
+    "historyId": "event-jiangshan-donghan-177",
+    "title": "夏育、田晏、臧旻三路伐鲜卑大败，檀石槐称雄漠南",
+    "upstreamKey": "donghan:177",
+    "headline": "夏育、田晏、臧旻三路伐鲜卑大败，檀石槐称雄漠南",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:177",
+        "headline": "夏育、田晏、臧旻三路伐鲜卑大败，檀石槐称雄漠南",
+        "year": 177,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "夏育、田晏、臧旻三路伐鲜卑大败，檀石槐称雄漠南",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-154": {
+    "historyId": "event-154",
+    "title": "黄巾起义",
+    "upstreamKey": "donghan:184",
+    "headline": "张角率太平道发起黄巾起义",
+    "reason": "正文中的“黄巾起义”与上游“张角率太平道发起黄巾起义”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:184",
+        "headline": "张角率太平道发起黄巾起义",
+        "year": 184,
+        "reason": "正文中的“黄巾起义”与上游“张角率太平道发起黄巾起义”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "黄巾起义",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-234": {
+    "historyId": "event-234",
+    "title": "董卓之乱",
+    "upstreamKey": "donghan:189",
+    "headline": "何进召外兵谋诛宦官遇害，董卓入洛废少帝立献帝，次年焚洛阳西迁长安",
+    "reason": "正文中的“董卓之乱”与上游“何进召外兵谋诛宦官遇害，董卓入洛废少帝立献帝，次年焚洛阳西迁长安”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:189",
+        "headline": "何进召外兵谋诛宦官遇害，董卓入洛废少帝立献帝，次年焚洛阳西迁长安",
+        "year": 189,
+        "reason": "正文中的“董卓之乱”与上游“何进召外兵谋诛宦官遇害，董卓入洛废少帝立献帝，次年焚洛阳西迁长安”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "董卓之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-249": {
+    "historyId": "event-249",
+    "title": "孙策平定江东",
+    "upstreamKey": "donghan:195",
+    "headline": "孙策渡江创业平定江东；汉献帝自长安东归洛阳",
+    "reason": "正文中的“孙策平定江东”与上游“孙策渡江创业平定江东；汉献帝自长安东归洛阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:195",
+        "headline": "孙策渡江创业平定江东；汉献帝自长安东归洛阳",
+        "year": 195,
+        "reason": "正文中的“孙策平定江东”与上游“孙策渡江创业平定江东；汉献帝自长安东归洛阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "孙策平定江东",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-195-detail": {
+    "historyId": "event-jiangshan-donghan-195-detail",
+    "title": "汉献帝东归洛阳",
+    "upstreamKey": "donghan:195",
+    "headline": "孙策渡江创业平定江东；汉献帝自长安东归洛阳",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:195",
+        "headline": "孙策渡江创业平定江东；汉献帝自长安东归洛阳",
+        "year": 195,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "汉献帝东归洛阳",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-235": {
+    "historyId": "event-235",
+    "title": "曹操迎汉献帝迁都许昌",
+    "upstreamKey": "donghan:196",
+    "headline": "曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田",
+    "reason": "正文中的“曹操迎汉献帝迁都许昌”与上游“曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:196",
+        "headline": "曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田",
+        "year": 196,
+        "reason": "正文中的“曹操迎汉献帝迁都许昌”与上游“曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "曹操迎汉献帝迁都许昌",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-261": {
+    "historyId": "event-261",
+    "title": "曹操推行屯田制",
+    "upstreamKey": "donghan:196",
+    "headline": "曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田",
+    "reason": "正文中的“曹操推行屯田制”与上游“曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:196",
+        "headline": "曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田",
+        "year": 196,
+        "reason": "正文中的“曹操推行屯田制”与上游“曹操迎汉献帝都许，挟天子以令诸侯；始兴屯田”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "曹操推行屯田制",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-250": {
+    "historyId": "event-250",
+    "title": "吕布殒命白门楼",
+    "upstreamKey": "donghan:198",
+    "headline": "下邳之战：曹操决泗、沂水灌城，擒杀吕布，尽取徐州",
+    "reason": "正文中的“吕布殒命白门楼”与上游“下邳之战：曹操决泗、沂水灌城，擒杀吕布，尽取徐州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:198",
+        "headline": "下邳之战：曹操决泗、沂水灌城，擒杀吕布，尽取徐州",
+        "year": 198,
+        "reason": "正文中的“吕布殒命白门楼”与上游“下邳之战：曹操决泗、沂水灌城，擒杀吕布，尽取徐州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "吕布殒命白门楼",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-179": {
+    "historyId": "event-179",
+    "title": "官渡之战",
+    "upstreamKey": "donghan:200",
+    "headline": "官渡之战：曹操奇袭乌巢焚粮，大破袁绍主力；孙策遇刺，孙权继立",
+    "reason": "正文中的“官渡之战”与上游“官渡之战：曹操奇袭乌巢焚粮，大破袁绍主力；孙策遇刺，孙权继立”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:200",
+        "headline": "官渡之战：曹操奇袭乌巢焚粮，大破袁绍主力；孙策遇刺，孙权继立",
+        "year": 200,
+        "reason": "正文中的“官渡之战”与上游“官渡之战：曹操奇袭乌巢焚粮，大破袁绍主力；孙策遇刺，孙权继立”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "官渡之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-200-detail": {
+    "historyId": "event-jiangshan-donghan-200-detail",
+    "title": "孙策遇刺与孙权继掌江东",
+    "upstreamKey": "donghan:200",
+    "headline": "官渡之战：曹操奇袭乌巢焚粮，大破袁绍主力；孙策遇刺，孙权继立",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:200",
+        "headline": "官渡之战：曹操奇袭乌巢焚粮，大破袁绍主力；孙策遇刺，孙权继立",
+        "year": 200,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "孙策遇刺与孙权继掌江东",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-three-kingdoms-capture-ye": {
+    "historyId": "event-three-kingdoms-capture-ye",
+    "title": "曹操攻取邺城",
+    "upstreamKey": "donghan:204",
+    "headline": "曹操引漳水围破邺城，定冀、青、幽、并四州，迁霸府于邺",
+    "reason": "正文中的“曹操攻取邺城”与上游“曹操引漳水围破邺城，定冀、青、幽、并四州，迁霸府于邺”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:204",
+        "headline": "曹操引漳水围破邺城，定冀、青、幽、并四州，迁霸府于邺",
+        "year": 204,
+        "reason": "正文中的“曹操攻取邺城”与上游“曹操引漳水围破邺城，定冀、青、幽、并四州，迁霸府于邺”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "曹操攻取邺城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-236": {
+    "historyId": "event-236",
+    "title": "隆中对",
+    "upstreamKey": "donghan:207",
+    "headline": "刘备三顾茅庐请诸葛亮出山，定《隆中对》跨有荆益之策",
+    "reason": "正文中的“隆中对”与上游“刘备三顾茅庐请诸葛亮出山，定《隆中对》跨有荆益之策”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:207",
+        "headline": "刘备三顾茅庐请诸葛亮出山，定《隆中对》跨有荆益之策",
+        "year": 207,
+        "reason": "正文中的“隆中对”与上游“刘备三顾茅庐请诸葛亮出山，定《隆中对》跨有荆益之策”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "隆中对",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-180": {
+    "historyId": "event-180",
+    "title": "赤壁之战",
+    "upstreamKey": "donghan:208",
+    "headline": "赤壁之战，孙刘联军破曹，刘备据有荆州",
+    "reason": "正文中的“赤壁之战”与上游“赤壁之战，孙刘联军破曹，刘备据有荆州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:208",
+        "headline": "赤壁之战，孙刘联军破曹，刘备据有荆州",
+        "year": 208,
+        "reason": "正文中的“赤壁之战”与上游“赤壁之战，孙刘联军破曹，刘备据有荆州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "赤壁之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-three-kingdoms-jiangling": {
+    "historyId": "event-three-kingdoms-jiangling",
+    "title": "江陵之战",
+    "upstreamKey": "donghan:208",
+    "headline": "赤壁之战，孙刘联军破曹，刘备据有荆州",
+    "reason": "正文中的“江陵之战”与上游“赤壁之战，孙刘联军破曹，刘备据有荆州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:208",
+        "headline": "赤壁之战，孙刘联军破曹，刘备据有荆州",
+        "year": 208,
+        "reason": "正文中的“江陵之战”与上游“赤壁之战，孙刘联军破曹，刘备据有荆州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "江陵之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-252": {
+    "historyId": "event-252",
+    "title": "渭南之战",
+    "upstreamKey": "donghan:211",
+    "headline": "潼关之战：曹操渡渭离间大破马超、韩遂，平定关陇",
+    "reason": "正文中的“渭南之战”与上游“潼关之战：曹操渡渭离间大破马超、韩遂，平定关陇”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:211",
+        "headline": "潼关之战：曹操渡渭离间大破马超、韩遂，平定关陇",
+        "year": 211,
+        "reason": "正文中的“渭南之战”与上游“潼关之战：曹操渡渭离间大破马超、韩遂，平定关陇”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "渭南之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-237": {
+    "historyId": "event-237",
+    "title": "刘备入蜀",
+    "upstreamKey": "donghan:214",
+    "headline": "刘备入成都迫降刘璋，跨有荆、益二州",
+    "reason": "正文中的“刘备入蜀”与上游“刘备入成都迫降刘璋，跨有荆、益二州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:214",
+        "headline": "刘备入成都迫降刘璋，跨有荆、益二州",
+        "year": 214,
+        "reason": "正文中的“刘备入蜀”与上游“刘备入成都迫降刘璋，跨有荆、益二州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "刘备入蜀",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-three-kingdoms-xiang-river-settlement": {
+    "historyId": "event-three-kingdoms-xiang-river-settlement",
+    "title": "湘水划界",
+    "upstreamKey": "donghan:215",
+    "headline": "曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津",
+    "reason": "正文中的“湘水划界”与上游“曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:215",
+        "headline": "曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津",
+        "year": 215,
+        "reason": "正文中的“湘水划界”与上游“曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "湘水划界",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-253": {
+    "historyId": "event-253",
+    "title": "逍遥津之战",
+    "upstreamKey": "donghan:215",
+    "headline": "曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津",
+    "reason": "正文中的“逍遥津之战”与上游“曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:215",
+        "headline": "曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津",
+        "year": 215,
+        "reason": "正文中的“逍遥津之战”与上游“曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "逍遥津之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-215-detail": {
+    "historyId": "event-jiangshan-donghan-215-detail",
+    "title": "曹操降张鲁取汉中",
+    "upstreamKey": "donghan:215",
+    "headline": "曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:215",
+        "headline": "曹操西征阳平关降汉中张鲁；孙刘湘水划界分荆州；张辽威震逍遥津",
+        "year": 215,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "曹操降张鲁取汉中",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-donghan-216-supplement": {
+    "historyId": "event-jiangshan-donghan-216-supplement",
+    "title": "曹操进魏王",
+    "upstreamKey": "donghan:216",
+    "headline": "曹操于邺城进爵“魏王”设天子旌旗，继封魏公加九锡后代汉基业成",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:216",
+        "headline": "曹操于邺城进爵“魏王”设天子旌旗，继封魏公加九锡后代汉基业成",
+        "year": 216,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "曹操进魏王",
+        "status": "reviewed-content-match",
+        "difference": "曹操受九锡在213年，进魏王在216年；旧笔记只覆盖前者，另补216年条目。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-238": {
+    "historyId": "event-238",
+    "title": "汉中之战",
+    "upstreamKey": "donghan:219",
+    "headline": "刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡",
+    "reason": "正文中的“汉中之战”与上游“刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:219",
+        "headline": "刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡",
+        "year": 219,
+        "reason": "正文中的“汉中之战”与上游“刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "汉中之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-239": {
+    "historyId": "event-239",
+    "title": "关羽失荆州",
+    "upstreamKey": "donghan:219",
+    "headline": "刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡",
+    "reason": "正文中的“关羽失荆州”与上游“刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "donghan:219",
+        "headline": "刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡",
+        "year": 219,
+        "reason": "正文中的“关羽失荆州”与上游“刘备于沔阳自立为汉中王；冬吕蒙白衣渡江袭荆州，关羽败亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "关羽失荆州",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-263": {
+    "historyId": "event-263",
+    "title": "九品中正制确立",
+    "upstreamKey": "sanguo:220",
+    "headline": "魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏",
+    "reason": "正文中的“九品中正制确立”与上游“魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:220",
+        "headline": "魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏",
+        "year": 220,
+        "reason": "正文中的“九品中正制确立”与上游“魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "九品中正制确立",
+        "status": "reviewed-content-match",
+        "difference": "九品官人法创制城市原史料未明；汉魏受禅坛在繁阳亭，上游洛阳仅为中枢代表点，不能覆盖两条的发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-155": {
+    "historyId": "event-155",
+    "title": "汉献帝禅让",
+    "upstreamKey": "sanguo:220",
+    "headline": "魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏",
+    "reason": "正文中的“汉献帝禅让”与上游“魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:220",
+        "headline": "魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏",
+        "year": 220,
+        "reason": "正文中的“汉献帝禅让”与上游“魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "汉献帝禅让",
+        "status": "reviewed-content-match",
+        "difference": "九品官人法创制城市原史料未明；汉魏受禅坛在繁阳亭，上游洛阳仅为中枢代表点，不能覆盖两条的发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sanguo-220-detail": {
+    "historyId": "event-jiangshan-sanguo-220-detail",
+    "title": "曹操病逝洛阳",
+    "upstreamKey": "sanguo:220",
+    "headline": "魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:220",
+        "headline": "魏王曹操病逝；曹丕采陈群议行九品官人法，旋迫汉献帝禅让建曹魏",
+        "year": 220,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "曹操病逝洛阳",
+        "status": "reviewed-content-match",
+        "difference": "九品官人法创制城市原史料未明；汉魏受禅坛在繁阳亭，上游洛阳仅为中枢代表点，不能覆盖两条的发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-254": {
+    "historyId": "event-254",
+    "title": "刘备称帝",
+    "upstreamKey": "sanguo:221",
+    "headline": "闻汉献帝遭废传言，刘备在成都称帝延续汉室正统，国号汉（蜀汉）",
+    "reason": "正文中的“刘备称帝”与上游“闻汉献帝遭废传言，刘备在成都称帝延续汉室正统，国号汉（蜀汉）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:221",
+        "headline": "闻汉献帝遭废传言，刘备在成都称帝延续汉室正统，国号汉（蜀汉）",
+        "year": 221,
+        "reason": "正文中的“刘备称帝”与上游“闻汉献帝遭废传言，刘备在成都称帝延续汉室正统，国号汉（蜀汉）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "刘备称帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-240": {
+    "historyId": "event-240",
+    "title": "夷陵之战",
+    "upstreamKey": "sanguo:222",
+    "headline": "夷陵之战，陆逊火烧连营大破刘备",
+    "reason": "正文中的“夷陵之战”与上游“夷陵之战，陆逊火烧连营大破刘备”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:222",
+        "headline": "夷陵之战，陆逊火烧连营大破刘备",
+        "year": 222,
+        "reason": "正文中的“夷陵之战”与上游“夷陵之战，陆逊火烧连营大破刘备”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "夷陵之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-241": {
+    "historyId": "event-241",
+    "title": "白帝城托孤",
+    "upstreamKey": "sanguo:223",
+    "headline": "刘备病逝永安白帝城，临终托孤于丞相诸葛亮",
+    "reason": "正文中的“白帝城托孤”与上游“刘备病逝永安白帝城，临终托孤于丞相诸葛亮”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:223",
+        "headline": "刘备病逝永安白帝城，临终托孤于丞相诸葛亮",
+        "year": 223,
+        "reason": "正文中的“白帝城托孤”与上游“刘备病逝永安白帝城，临终托孤于丞相诸葛亮”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "白帝城托孤",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-242": {
+    "historyId": "event-242",
+    "title": "诸葛亮南征",
+    "upstreamKey": "sanguo:225",
+    "headline": "诸葛亮南征孟获，平定南中",
+    "reason": "正文中的“诸葛亮南征”与上游“诸葛亮南征孟获，平定南中”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:225",
+        "headline": "诸葛亮南征孟获，平定南中",
+        "year": 225,
+        "reason": "正文中的“诸葛亮南征”与上游“诸葛亮南征孟获，平定南中”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "诸葛亮南征",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-243": {
+    "historyId": "event-243",
+    "title": "诸葛亮北伐",
+    "upstreamKey": "sanguo:228",
+    "headline": "诸葛亮首次北伐，马谡失街亭",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:228",
+        "headline": "诸葛亮首次北伐，马谡失街亭",
+        "year": 228,
+        "reason": "正文中的“诸葛亮北伐”与上游“诸葛亮首次北伐，马谡失街亭”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "诸葛亮北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "sanguo:234",
+        "headline": "司马懿坚壁拒守百余日；诸葛亮病逝五丈原，蜀军退回汉中",
+        "year": 234,
+        "reason": "正文中的“诸葛亮北伐”与上游“司马懿坚壁拒守百余日；诸葛亮病逝五丈原，蜀军退回汉中”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "诸葛亮北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-255": {
+    "historyId": "event-255",
+    "title": "街亭之战",
+    "upstreamKey": "sanguo:228",
+    "headline": "诸葛亮首次北伐，马谡失街亭",
+    "reason": "正文中的“街亭之战”与上游“诸葛亮首次北伐，马谡失街亭”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:228",
+        "headline": "诸葛亮首次北伐，马谡失街亭",
+        "year": 228,
+        "reason": "正文中的“街亭之战”与上游“诸葛亮首次北伐，马谡失街亭”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "街亭之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-256": {
+    "historyId": "event-256",
+    "title": "孙权称帝",
+    "upstreamKey": "sanguo:229",
+    "headline": "吴王孙权于武昌称帝建国号吴，旋东迁建业，三国鼎立定型",
+    "reason": "正文中的“孙权称帝”与上游“吴王孙权于武昌称帝建国号吴，旋东迁建业，三国鼎立定型”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:229",
+        "headline": "吴王孙权于武昌称帝建国号吴，旋东迁建业，三国鼎立定型",
+        "year": 229,
+        "reason": "正文中的“孙权称帝”与上游“吴王孙权于武昌称帝建国号吴，旋东迁建业，三国鼎立定型”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "孙权称帝",
+        "status": "reviewed-content-match",
+        "difference": "孙权先于武昌（今鄂州）称帝，随后迁建业；上游只给建业点，称帝笔记保留武昌发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sanguo-230": {
+    "historyId": "event-jiangshan-sanguo-230",
+    "title": "孙权遣卫温、诸葛直率万人航海至夷洲",
+    "upstreamKey": "sanguo:230",
+    "headline": "孙权遣卫温、诸葛直率万人航海至夷洲",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:230",
+        "headline": "孙权遣卫温、诸葛直率万人航海至夷洲",
+        "year": 230,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "孙权遣卫温、诸葛直率万人航海至夷洲",
+        "status": "reviewed-content-match",
+        "difference": "夷洲与今台湾的对应属于历史地理解释，确切登陆地点未明，采用区域关联，不把全岛代表点当登陆点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-three-kingdoms-wei-conquest-liaodong": {
+    "historyId": "event-three-kingdoms-wei-conquest-liaodong",
+    "title": "曹魏灭燕",
+    "upstreamKey": "sanguo:238",
+    "headline": "司马懿远征辽东斩公孙渊，收复辽东与乐浪、带方",
+    "reason": "正文中的“曹魏灭燕”与上游“司马懿远征辽东斩公孙渊，收复辽东与乐浪、带方”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:238",
+        "headline": "司马懿远征辽东斩公孙渊，收复辽东与乐浪、带方",
+        "year": 238,
+        "reason": "正文中的“曹魏灭燕”与上游“司马懿远征辽东斩公孙渊，收复辽东与乐浪、带方”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "曹魏灭燕",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sanguo-244": {
+    "historyId": "event-jiangshan-sanguo-244",
+    "title": "兴势之战",
+    "upstreamKey": "sanguo:244",
+    "headline": "兴势之战：王平据险拒退曹爽伐蜀大军；毌丘俭东征高句丽克丸都",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:244",
+        "headline": "兴势之战：王平据险拒退曹爽伐蜀大军；毌丘俭东征高句丽克丸都",
+        "year": 244,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "兴势之战：王平据险拒退曹爽伐蜀大军；毌丘俭东征高句丽克丸都",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-244": {
+    "historyId": "event-244",
+    "title": "高平陵之变",
+    "upstreamKey": "sanguo:249",
+    "headline": "高平陵之变：司马懿趁曹爽扈帝谒陵闭城夺权，诛曹爽族党尽控曹魏朝政",
+    "reason": "正文中的“高平陵之变”与上游“高平陵之变：司马懿趁曹爽扈帝谒陵闭城夺权，诛曹爽族党尽控曹魏朝政”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:249",
+        "headline": "高平陵之变：司马懿趁曹爽扈帝谒陵闭城夺权，诛曹爽族党尽控曹魏朝政",
+        "year": 249,
+        "reason": "正文中的“高平陵之变”与上游“高平陵之变：司马懿趁曹爽扈帝谒陵闭城夺权，诛曹爽族党尽控曹魏朝政”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "高平陵之变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-257": {
+    "historyId": "event-257",
+    "title": "淮南三叛",
+    "upstreamKey": "sanguo:255",
+    "headline": "毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经",
+    "reason": "正文中的“淮南三叛”与上游“毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:255",
+        "headline": "毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经",
+        "year": 255,
+        "reason": "正文中的“淮南三叛”与上游“毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "淮南三叛",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-258": {
+    "historyId": "event-258",
+    "title": "姜维北伐",
+    "upstreamKey": "sanguo:255",
+    "headline": "毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经",
+    "reason": "正文中的“姜维北伐”与上游“毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:255",
+        "headline": "毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经",
+        "year": 255,
+        "reason": "正文中的“姜维北伐”与上游“毌丘俭、文钦寿春起兵讨司马师败亡；姜维北伐洮西大破王经”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "姜维北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-259": {
+    "historyId": "event-259",
+    "title": "司马昭弑君",
+    "upstreamKey": "sanguo:260",
+    "headline": "甘露之变：魏帝曹髦率宿卫讨司马昭，于南阙下遇弑",
+    "reason": "正文中的“司马昭弑君”与上游“甘露之变：魏帝曹髦率宿卫讨司马昭，于南阙下遇弑”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:260",
+        "headline": "甘露之变：魏帝曹髦率宿卫讨司马昭，于南阙下遇弑",
+        "year": 260,
+        "reason": "正文中的“司马昭弑君”与上游“甘露之变：魏帝曹髦率宿卫讨司马昭，于南阙下遇弑”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "司马昭弑君",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-245": {
+    "historyId": "event-245",
+    "title": "蜀汉灭亡",
+    "upstreamKey": "sanguo:263",
+    "headline": "邓艾、钟会率魏军伐蜀，蜀汉亡",
+    "reason": "正文中的“蜀汉灭亡”与上游“邓艾、钟会率魏军伐蜀，蜀汉亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:263",
+        "headline": "邓艾、钟会率魏军伐蜀，蜀汉亡",
+        "year": 263,
+        "reason": "正文中的“蜀汉灭亡”与上游“邓艾、钟会率魏军伐蜀，蜀汉亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "蜀汉灭亡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-266": {
+    "historyId": "event-266",
+    "title": "邓艾偷渡阴平",
+    "upstreamKey": "sanguo:263",
+    "headline": "邓艾、钟会率魏军伐蜀，蜀汉亡",
+    "reason": "正文中的“邓艾偷渡阴平”与上游“邓艾、钟会率魏军伐蜀，蜀汉亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:263",
+        "headline": "邓艾、钟会率魏军伐蜀，蜀汉亡",
+        "year": 263,
+        "reason": "正文中的“邓艾偷渡阴平”与上游“邓艾、钟会率魏军伐蜀，蜀汉亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "邓艾偷渡阴平",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-260": {
+    "historyId": "event-260",
+    "title": "钟会之乱",
+    "upstreamKey": "sanguo:264",
+    "headline": "钟会、姜维于成都构乱败亡；曹魏分益州置梁州，孙吴分交州置广州",
+    "reason": "正文中的“钟会之乱”与上游“钟会、姜维于成都构乱败亡；曹魏分益州置梁州，孙吴分交州置广州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:264",
+        "headline": "钟会、姜维于成都构乱败亡；曹魏分益州置梁州，孙吴分交州置广州",
+        "year": 264,
+        "reason": "正文中的“钟会之乱”与上游“钟会、姜维于成都构乱败亡；曹魏分益州置梁州，孙吴分交州置广州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "钟会之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sanguo-264-detail": {
+    "historyId": "event-jiangshan-sanguo-264-detail",
+    "title": "魏分梁州与吴分广州",
+    "upstreamKey": "sanguo:264",
+    "headline": "钟会、姜维于成都构乱败亡；曹魏分益州置梁州，孙吴分交州置广州",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:264",
+        "headline": "钟会、姜维于成都构乱败亡；曹魏分益州置梁州，孙吴分交州置广州",
+        "year": 264,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "魏分梁州与吴分广州",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-246": {
+    "historyId": "event-246",
+    "title": "西晋代魏",
+    "upstreamKey": "sanguo:265",
+    "headline": "晋王司马昭卒，子司马炎嗣位后迫魏元帝禅让称帝，建立西晋，曹魏亡",
+    "reason": "正文中的“西晋代魏”与上游“晋王司马昭卒，子司马炎嗣位后迫魏元帝禅让称帝，建立西晋，曹魏亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:265",
+        "headline": "晋王司马昭卒，子司马炎嗣位后迫魏元帝禅让称帝，建立西晋，曹魏亡",
+        "year": 265,
+        "reason": "正文中的“西晋代魏”与上游“晋王司马昭卒，子司马炎嗣位后迫魏元帝禅让称帝，建立西晋，曹魏亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "西晋代魏",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sanguo-272": {
+    "historyId": "event-jiangshan-sanguo-272",
+    "title": "西陵之战",
+    "upstreamKey": "sanguo:272",
+    "headline": "西陵之战：陆抗围城打援大破晋将羊祜、杨肇，斩叛将步阐",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:272",
+        "headline": "西陵之战：陆抗围城打援大破晋将羊祜、杨肇，斩叛将步阐",
+        "year": 272,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "西陵之战：陆抗围城打援大破晋将羊祜、杨肇，斩叛将步阐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-247": {
+    "historyId": "event-247",
+    "title": "晋灭吴统一",
+    "upstreamKey": "sanguo:279",
+    "headline": "晋军六路伐吴，王濬楼船下益州",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷81"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷26",
+          "卷43"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sanguo:279",
+        "headline": "晋军六路伐吴，王濬楼船下益州",
+        "year": 279,
+        "reason": "正文中的“晋灭吴统一”与上游“晋军六路伐吴，王濬楼船下益州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "晋灭吴统一",
+        "status": "reviewed-content-match",
+        "difference": "晋灭吴战争于279年冬发动、280年受降；本地标题以280年结局记年，正文包含279年出兵阶段，故明确对应上游两个节点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "sanguo:280",
+        "headline": "晋水陆大军直捣建业石头城，吴主孙皓面缚出降，西晋灭吴，三国归晋",
+        "year": 280,
+        "reason": "正文中的“晋灭吴统一”与上游“晋水陆大军直捣建业石头城，吴主孙皓面缚出降，西晋灭吴，三国归晋”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "晋灭吴统一",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "xijin:280",
+        "headline": "西晋灭吴，三国归晋；颁占田制与罢州郡兵，开启“太康之治”",
+        "year": 280,
+        "reason": "正文中的“晋灭吴统一”与上游“西晋灭吴，三国归晋；颁占田制与罢州郡兵，开启“太康之治””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "晋灭吴统一",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷81"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷26",
+              "卷43"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-280-detail": {
+    "historyId": "event-jiangshan-xijin-280-detail",
+    "title": "西晋占田制与罢州郡兵",
+    "upstreamKey": "xijin:280",
+    "headline": "西晋灭吴，三国归晋；颁占田制与罢州郡兵，开启“太康之治”",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷81"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷26",
+          "卷43"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:280",
+        "headline": "西晋灭吴，三国归晋；颁占田制与罢州郡兵，开启“太康之治”",
+        "year": 280,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "西晋占田制与罢州郡兵",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷81"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷26",
+              "卷43"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-289": {
+    "historyId": "event-jiangshan-xijin-289",
+    "title": "太康年间门阀骄奢斗富",
+    "upstreamKey": "xijin:289",
+    "headline": "太康年间门阀骄奢斗富；武帝大封诸王出镇重兵，命刘渊领并州匈奴部",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷81",
+          "卷82"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷101"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:289",
+        "headline": "太康年间门阀骄奢斗富；武帝大封诸王出镇重兵，命刘渊领并州匈奴部",
+        "year": 289,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "太康年间门阀骄奢斗富；武帝大封诸王出镇重兵，命刘渊领并州匈奴部",
+        "status": "reviewed-content-match",
+        "difference": "诸王出镇、门阀斗富与刘渊任职是不同进程，289年为上游观察节点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷81",
+              "卷82"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷101"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-181": {
+    "historyId": "event-181",
+    "title": "八王之乱",
+    "upstreamKey": "xijin:291",
+    "headline": "晋武帝崩后惠帝即位，次年贾南风诛杨骏与辅政宗王，八王之乱爆发",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷82",
+          "卷84",
+          "卷85",
+          "卷86"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:291",
+        "headline": "晋武帝崩后惠帝即位，次年贾南风诛杨骏与辅政宗王，八王之乱爆发",
+        "year": 291,
+        "reason": "正文中的“八王之乱”与上游“晋武帝崩后惠帝即位，次年贾南风诛杨骏与辅政宗王，八王之乱爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "八王之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷82"
+            ]
+          }
+        ]
+      },
+      {
+        "upstreamKey": "xijin:303",
+        "headline": "司马伦篡位败亡后诸王混战；司马颖据邺、司马颙据长安联兵攻洛阳",
+        "year": 303,
+        "reason": "正文中的“八王之乱”与上游“司马伦篡位败亡后诸王混战；司马颖据邺、司马颙据长安联兵攻洛阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "八王之乱",
+        "status": "reviewed-content-match",
+        "difference": "司马伦篡位败亡在301年，诸王混战延续至303年；上游合写，八王之乱笔记按整个战争区间对应。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷84",
+              "卷85"
+            ]
+          }
+        ]
+      },
+      {
+        "upstreamKey": "xijin:306",
+        "headline": "李雄称帝建立成汉；司马越立晋怀帝，八王之乱终结",
+        "year": 306,
+        "reason": "正文中的“八王之乱”与上游“李雄称帝建立成汉；司马越立晋怀帝，八王之乱终结”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "八王之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷86"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-299": {
+    "historyId": "event-jiangshan-xijin-299",
+    "title": "关陇氐羌齐万年之乱历两年余始平",
+    "upstreamKey": "xijin:299",
+    "headline": "关陇氐羌齐万年之乱历两年余始平；江统著《徙戎论》警诫五胡内迁隐患",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷82",
+          "卷83"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷56"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:299",
+        "headline": "关陇氐羌齐万年之乱历两年余始平；江统著《徙戎论》警诫五胡内迁隐患",
+        "year": 299,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "关陇氐羌齐万年之乱历两年余始平；江统著《徙戎论》警诫五胡内迁隐患",
+        "status": "reviewed-content-match",
+        "difference": "齐万年起事在296年，299年平定；战事按关陇范围处理。江统著徙戎论是战后的政策论述，以洛阳朝廷语境关联，不把上游长安代表点当作全部交战与著述发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷82",
+              "卷83"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷56"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-301": {
+    "historyId": "event-jiangshan-xijin-301",
+    "title": "入蜀就食的关陇六郡流民推略阳氐帅李特为主，于绵竹起兵反晋",
+    "upstreamKey": "xijin:301",
+    "headline": "入蜀就食的关陇六郡流民推略阳氐帅李特为主，于绵竹起兵反晋",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷82",
+          "卷84"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:301",
+        "headline": "入蜀就食的关陇六郡流民推略阳氐帅李特为主，于绵竹起兵反晋",
+        "year": 301,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "入蜀就食的关陇六郡流民推略阳氐帅李特为主，于绵竹起兵反晋",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷82",
+              "卷84"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-304": {
+    "historyId": "event-jiangshan-xijin-304",
+    "title": "司马颖遣并州匈奴五部刘渊归离石发兵，刘渊称汉王、李雄称成都王",
+    "upstreamKey": "xijin:304",
+    "headline": "司马颖遣并州匈奴五部刘渊归离石发兵，刘渊称汉王、李雄称成都王",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷85"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷101",
+          "卷121"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:304",
+        "headline": "司马颖遣并州匈奴五部刘渊归离石发兵，刘渊称汉王、李雄称成都王",
+        "year": 304,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "司马颖遣并州匈奴五部刘渊归离石发兵，刘渊称汉王、李雄称成都王",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷85"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷101",
+              "卷121"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-306-detail": {
+    "historyId": "event-jiangshan-xijin-306-detail",
+    "title": "李雄称帝建立成汉",
+    "upstreamKey": "xijin:306",
+    "headline": "李雄称帝建立成汉；司马越立晋怀帝，八王之乱终结",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷86"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:306",
+        "headline": "李雄称帝建立成汉；司马越立晋怀帝，八王之乱终结",
+        "year": 306,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "李雄称帝建立成汉",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷86"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-307": {
+    "historyId": "event-jiangshan-xijin-307",
+    "title": "司马睿用王导谋镇建邺，江东初定",
+    "upstreamKey": "xijin:307",
+    "headline": "司马睿用王导谋镇建邺，江东初定，王与马共天下之基立",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷86"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷98"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:307",
+        "headline": "司马睿用王导谋镇建邺，江东初定，王与马共天下之基立",
+        "year": 307,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "司马睿用王导谋镇建邺，江东初定，王与马共天下之基立",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷86"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷98"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-311": {
+    "historyId": "event-jiangshan-xijin-311",
+    "title": "永嘉之乱",
+    "upstreamKey": "xijin:311",
+    "headline": "永嘉之乱：汉赵刘曜攻陷洛阳，俘晋怀帝",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷87"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷5"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:311",
+        "headline": "永嘉之乱：汉赵刘曜攻陷洛阳，俘晋怀帝",
+        "year": 311,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "永嘉之乱：汉赵刘曜攻陷洛阳，俘晋怀帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷87"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷5"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-313": {
+    "historyId": "event-jiangshan-xijin-313",
+    "title": "晋愍帝在长安即位",
+    "upstreamKey": "xijin:313",
+    "headline": "晋愍帝在长安即位；祖逖中流击楫渡江北伐",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷88"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷62"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:313",
+        "headline": "晋愍帝在长安即位；祖逖中流击楫渡江北伐",
+        "year": 313,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "晋愍帝在长安即位；祖逖中流击楫渡江北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷88"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷62"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-xijin-316": {
+    "historyId": "event-jiangshan-xijin-316",
+    "title": "刘曜围长安迫降晋愍帝，西晋亡",
+    "upstreamKey": "xijin:316",
+    "headline": "刘曜围长安迫降晋愍帝，西晋亡；张氏据凉州、拓跋据代北、慕容据昌黎",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷89",
+          "卷91"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷108"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "xijin:316",
+        "headline": "刘曜围长安迫降晋愍帝，西晋亡；张氏据凉州、拓跋据代北、慕容据昌黎",
+        "year": 316,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘曜围长安迫降晋愍帝，西晋亡；张氏据凉州、拓跋据代北、慕容据昌黎",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷89",
+              "卷91"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷108"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-317": {
+    "historyId": "event-jiangshan-dongjin-317",
+    "title": "司马睿在建康即晋王位建东晋",
+    "upstreamKey": "dongjin:317",
+    "headline": "司马睿在建康即晋王位建东晋；河西前凉、代北代国、辽东前燕并立",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷90"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:317",
+        "headline": "司马睿在建康即晋王位建东晋；河西前凉、代北代国、辽东前燕并立",
+        "year": 317,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "司马睿在建康即晋王位建东晋；河西前凉、代北代国、辽东前燕并立",
+        "status": "reviewed-content-match",
+        "difference": "317年即晋王位，318年司马睿正式称帝；保持晋王与皇帝名号的阶段区别。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷90"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-319": {
+    "historyId": "event-jiangshan-dongjin-319",
+    "title": "刘曜于长安改汉为前赵，石勒在襄国称赵王建后赵",
+    "upstreamKey": "dongjin:319",
+    "headline": "刘曜于长安改汉为前赵，石勒在襄国称赵王建后赵，汉赵分裂",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷91"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:319",
+        "headline": "刘曜于长安改汉为前赵，石勒在襄国称赵王建后赵，汉赵分裂",
+        "year": 319,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘曜于长安改汉为前赵，石勒在襄国称赵王建后赵，汉赵分裂",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷91"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-322": {
+    "historyId": "event-jiangshan-dongjin-322",
+    "title": "王敦之乱",
+    "upstreamKey": "dongjin:322",
+    "headline": "王敦之乱：王敦自武昌举兵攻入建康，控制东晋朝政",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷92"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:322",
+        "headline": "王敦之乱：王敦自武昌举兵攻入建康，控制东晋朝政",
+        "year": 322,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王敦之乱：王敦自武昌举兵攻入建康，控制东晋朝政",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷92"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-327": {
+    "historyId": "event-jiangshan-dongjin-327",
+    "title": "前凉张骏擒戊己校尉赵贞，以其地置高昌郡",
+    "upstreamKey": "dongjin:327",
+    "headline": "前凉张骏擒戊己校尉赵贞，以其地置高昌郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷14",
+          "卷86"
+        ]
+      },
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷93"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:327",
+        "headline": "前凉张骏擒戊己校尉赵贞，以其地置高昌郡",
+        "year": 327,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "前凉张骏擒戊己校尉赵贞，以其地置高昌郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷14",
+              "卷86"
+            ]
+          },
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷93"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-328": {
+    "historyId": "event-jiangshan-dongjin-328",
+    "title": "苏峻之乱",
+    "upstreamKey": "dongjin:328",
+    "headline": "苏峻之乱：历阳内史苏峻反，攻陷建康台城，温峤、陶侃起兵讨平",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷93",
+          "卷94"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:328",
+        "headline": "苏峻之乱：历阳内史苏峻反，攻陷建康台城，温峤、陶侃起兵讨平",
+        "year": 328,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "苏峻之乱：历阳内史苏峻反，攻陷建康台城，温峤、陶侃起兵讨平",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷93",
+              "卷94"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-329": {
+    "historyId": "event-jiangshan-dongjin-329",
+    "title": "石勒于洛阳生擒前赵主刘曜，次年克长安灭前赵",
+    "upstreamKey": "dongjin:329",
+    "headline": "石勒于洛阳生擒前赵主刘曜，次年克长安灭前赵，后赵统一北方大部",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷94"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:329",
+        "headline": "石勒于洛阳生擒前赵主刘曜，次年克长安灭前赵，后赵统一北方大部",
+        "year": 329,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "石勒于洛阳生擒前赵主刘曜，次年克长安灭前赵，后赵统一北方大部",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷94"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-335": {
+    "historyId": "event-jiangshan-dongjin-335",
+    "title": "石虎迁后赵都城至邺",
+    "upstreamKey": "dongjin:335",
+    "headline": "石虎迁后赵都城至邺；慕容皝据辽东棘城，337年称燕王建前燕",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷95"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:335",
+        "headline": "石虎迁后赵都城至邺；慕容皝据辽东棘城，337年称燕王建前燕",
+        "year": 335,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "石虎迁后赵都城至邺；慕容皝据辽东棘城，337年称燕王建前燕",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷95"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-347": {
+    "historyId": "event-jiangshan-dongjin-347",
+    "title": "桓温西征灭成汉，收复巴蜀",
+    "upstreamKey": "dongjin:347",
+    "headline": "桓温西征灭成汉，收复巴蜀",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷97"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:347",
+        "headline": "桓温西征灭成汉，收复巴蜀",
+        "year": 347,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "桓温西征灭成汉，收复巴蜀",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷97"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-350": {
+    "historyId": "event-jiangshan-dongjin-350",
+    "title": "后赵石虎崩后诸子争位自残，大将军冉闵尽诛石氏建冉魏",
+    "upstreamKey": "dongjin:350",
+    "headline": "后赵石虎崩后诸子争位自残，大将军冉闵尽诛石氏建冉魏，颁杀胡令",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷98"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:350",
+        "headline": "后赵石虎崩后诸子争位自残，大将军冉闵尽诛石氏建冉魏，颁杀胡令",
+        "year": 350,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "后赵石虎崩后诸子争位自残，大将军冉闵尽诛石氏建冉魏，颁杀胡令",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷98"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-351": {
+    "historyId": "event-jiangshan-dongjin-351",
+    "title": "略阳氐帅苻洪子苻健率部自枋头西入潼关克长安，称天王建立前秦",
+    "upstreamKey": "dongjin:351",
+    "headline": "略阳氐帅苻洪子苻健率部自枋头西入潼关克长安，称天王建立前秦",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷98",
+          "卷99"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:351",
+        "headline": "略阳氐帅苻洪子苻健率部自枋头西入潼关克长安，称天王建立前秦",
+        "year": 351,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "略阳氐帅苻洪子苻健率部自枋头西入潼关克长安，称天王建立前秦",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷98",
+              "卷99"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-352": {
+    "historyId": "event-jiangshan-dongjin-352",
+    "title": "前燕慕容儁大败冉闵灭冉魏，取邺城",
+    "upstreamKey": "dongjin:352",
+    "headline": "前燕慕容儁大败冉闵灭冉魏，取邺城，正式称帝",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷99",
+          "卷100"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:352",
+        "headline": "前燕慕容儁大败冉闵灭冉魏，取邺城，正式称帝",
+        "year": 352,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "前燕慕容儁大败冉闵灭冉魏，取邺城，正式称帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷99",
+              "卷100"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-353": {
+    "historyId": "event-jiangshan-dongjin-353",
+    "title": "王羲之与谢安等雅集会稽山阴兰亭，作《兰亭集序》",
+    "upstreamKey": "dongjin:353",
+    "headline": "王羲之与谢安等雅集会稽山阴兰亭，作《兰亭集序》",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷80"
+        ]
+      },
+      {
+        "title": "法书要录",
+        "volumes": [
+          "卷三"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:353",
+        "headline": "王羲之与谢安等雅集会稽山阴兰亭，作《兰亭集序》",
+        "year": 353,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王羲之与谢安等雅集会稽山阴兰亭，作《兰亭集序》",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷80"
+            ]
+          },
+          {
+            "title": "法书要录",
+            "volumes": [
+              "卷三"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-354": {
+    "historyId": "event-jiangshan-dongjin-354",
+    "title": "桓温首次北伐至灞上，王猛扪虱谈天下",
+    "upstreamKey": "dongjin:354",
+    "headline": "桓温首次北伐至灞上，王猛扪虱谈天下",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷99"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷114"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:354",
+        "headline": "桓温首次北伐至灞上，王猛扪虱谈天下",
+        "year": 354,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "桓温首次北伐至灞上，王猛扪虱谈天下",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷99"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷114"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-356": {
+    "historyId": "event-jiangshan-dongjin-356",
+    "title": "桓温第二次北伐大破姚襄，收复故都洛阳",
+    "upstreamKey": "dongjin:356",
+    "headline": "桓温第二次北伐大破姚襄，收复故都洛阳，修复先帝陵墓",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷100"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:356",
+        "headline": "桓温第二次北伐大破姚襄，收复故都洛阳，修复先帝陵墓",
+        "year": 356,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "桓温第二次北伐大破姚襄，收复故都洛阳，修复先帝陵墓",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷100"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-364": {
+    "historyId": "event-jiangshan-dongjin-364",
+    "title": "桓温主持推行庚戌土断，整顿侨置州郡户籍以充实东晋赋役",
+    "upstreamKey": "dongjin:364",
+    "headline": "桓温主持推行“庚戌土断”，整顿侨置州郡户籍以充实东晋赋役",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷101"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:364",
+        "headline": "桓温主持推行“庚戌土断”，整顿侨置州郡户籍以充实东晋赋役",
+        "year": 364,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "桓温主持推行“庚戌土断”，整顿侨置州郡户籍以充实东晋赋役",
+        "status": "reviewed-content-match",
+        "difference": "庚戌土断的干支为兴宁二年（364年），不是所有侨置州郡均被一次取消。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷101"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-369": {
+    "historyId": "event-jiangshan-dongjin-369",
+    "title": "枋头之战",
+    "upstreamKey": "dongjin:369",
+    "headline": "枋头之战：桓温北伐受挫，慕容垂大破晋军；垂遭忌投前秦",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷102"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:369",
+        "headline": "枋头之战：桓温北伐受挫，慕容垂大破晋军；垂遭忌投前秦",
+        "year": 369,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "枋头之战：桓温北伐受挫，慕容垂大破晋军；垂遭忌投前秦",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷102"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-370": {
+    "historyId": "event-jiangshan-dongjin-370",
+    "title": "王猛于潞川大破前燕三十万主力，乘胜攻克邺城俘慕容暐",
+    "upstreamKey": "dongjin:370",
+    "headline": "王猛于潞川大破前燕三十万主力，乘胜攻克邺城俘慕容暐，前燕亡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷102"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:370",
+        "headline": "王猛于潞川大破前燕三十万主力，乘胜攻克邺城俘慕容暐，前燕亡",
+        "year": 370,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王猛于潞川大破前燕三十万主力，乘胜攻克邺城俘慕容暐，前燕亡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷102"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-373": {
+    "historyId": "event-jiangshan-dongjin-373",
+    "title": "前秦取东晋梁、益二州，周仲孙退走南中",
+    "upstreamKey": "dongjin:373",
+    "headline": "前秦取东晋梁、益二州，周仲孙退走南中，巴蜀入秦",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷103"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:373",
+        "headline": "前秦取东晋梁、益二州，周仲孙退走南中，巴蜀入秦",
+        "year": 373,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "前秦取东晋梁、益二州，周仲孙退走南中，巴蜀入秦",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷103"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-376": {
+    "historyId": "event-jiangshan-dongjin-376",
+    "title": "前秦灭前凉、代国，苻坚统一北方",
+    "upstreamKey": "dongjin:376",
+    "headline": "前秦灭前凉、代国，苻坚统一北方",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷104"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:376",
+        "headline": "前秦灭前凉、代国，苻坚统一北方",
+        "year": 376,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "前秦灭前凉、代国，苻坚统一北方",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷104"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-182": {
+    "historyId": "event-182",
+    "title": "淝水之战",
+    "upstreamKey": "dongjin:383",
+    "headline": "淝水之战：谢安、谢玄率八万北府兵大破苻坚大军，前秦瓦解",
+    "reason": "正文中的“淝水之战”与上游“淝水之战：谢安、谢玄率八万北府兵大破苻坚大军，前秦瓦解”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷105"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:383",
+        "headline": "淝水之战：谢安、谢玄率八万北府兵大破苻坚大军，前秦瓦解",
+        "year": 383,
+        "reason": "正文中的“淝水之战”与上游“淝水之战：谢安、谢玄率八万北府兵大破苻坚大军，前秦瓦解”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "淝水之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷105"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-384": {
+    "historyId": "event-jiangshan-dongjin-384",
+    "title": "慕容垂建后燕、姚苌建后秦，东晋收复荆襄",
+    "upstreamKey": "dongjin:384",
+    "headline": "慕容垂建后燕、姚苌建后秦，东晋收复荆襄，次年复取益州",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷105",
+          "卷106"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷9"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:384",
+        "headline": "慕容垂建后燕、姚苌建后秦，东晋收复荆襄，次年复取益州",
+        "year": 384,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "慕容垂建后燕、姚苌建后秦，东晋收复荆襄，次年复取益州",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷105",
+              "卷106"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷9"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-385": {
+    "historyId": "event-jiangshan-dongjin-385",
+    "title": "乞伏国仁在陇西建西秦",
+    "upstreamKey": "dongjin:385",
+    "headline": "乞伏国仁在陇西建西秦；吕光入据姑臧，次年建后凉",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷106",
+          "卷107",
+          "卷108"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷122"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:385",
+        "headline": "乞伏国仁在陇西建西秦；吕光入据姑臧，次年建后凉",
+        "year": 385,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "乞伏国仁在陇西建西秦；吕光入据姑臧，次年建后凉",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷106",
+              "卷107",
+              "卷108"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷122"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-386": {
+    "historyId": "event-jiangshan-dongjin-386",
+    "title": "代王什翼犍之孙拓跋珪于牛川重聚旧部即代王位，旋改国号魏（北魏）",
+    "upstreamKey": "dongjin:386",
+    "headline": "代王什翼犍之孙拓跋珪于牛川重聚旧部即代王位，旋改国号魏（北魏）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷106"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:386",
+        "headline": "代王什翼犍之孙拓跋珪于牛川重聚旧部即代王位，旋改国号魏（北魏）",
+        "year": 386,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "代王什翼犍之孙拓跋珪于牛川重聚旧部即代王位，旋改国号魏（北魏）",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷106"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-395": {
+    "historyId": "event-jiangshan-dongjin-395",
+    "title": "参合陂之战，北魏大破后燕主力",
+    "upstreamKey": "dongjin:395",
+    "headline": "参合陂之战，北魏大破后燕主力，进据中原",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷108"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:395",
+        "headline": "参合陂之战，北魏大破后燕主力，进据中原",
+        "year": 395,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "参合陂之战，北魏大破后燕主力，进据中原",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷108"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-397": {
+    "historyId": "event-jiangshan-dongjin-397",
+    "title": "秃发乌孤据乐都建南凉",
+    "upstreamKey": "dongjin:397",
+    "headline": "秃发乌孤据乐都建南凉；段业、沮渠蒙逊起于建康建北凉，次年徙张掖",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷109",
+          "卷110"
+        ]
+      },
+      {
+        "title": "晋书",
+        "volumes": [
+          "卷14"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:397",
+        "headline": "秃发乌孤据乐都建南凉；段业、沮渠蒙逊起于建康建北凉，次年徙张掖",
+        "year": 397,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "秃发乌孤据乐都建南凉；段业、沮渠蒙逊起于建康建北凉，次年徙张掖",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷109",
+              "卷110"
+            ]
+          },
+          {
+            "title": "晋书",
+            "volumes": [
+              "卷14"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-398": {
+    "historyId": "event-jiangshan-dongjin-398",
+    "title": "拓跋珪自盛乐迁都平城，正式称帝（北魏道武帝）",
+    "upstreamKey": "dongjin:398",
+    "headline": "拓跋珪自盛乐迁都平城，正式称帝（北魏道武帝）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷110"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:398",
+        "headline": "拓跋珪自盛乐迁都平城，正式称帝（北魏道武帝）",
+        "year": 398,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "拓跋珪自盛乐迁都平城，正式称帝（北魏道武帝）",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷110"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-399": {
+    "historyId": "event-jiangshan-dongjin-399",
+    "title": "南燕慕容德定都广固",
+    "upstreamKey": "dongjin:399",
+    "headline": "南燕慕容德定都广固；孙恩五斗米道起事席卷江东八郡，动摇门阀政治",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷111"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:399",
+        "headline": "南燕慕容德定都广固；孙恩五斗米道起事席卷江东八郡，动摇门阀政治",
+        "year": 399,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "南燕慕容德定都广固；孙恩五斗米道起事席卷江东八郡，动摇门阀政治",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷111"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-404": {
+    "historyId": "event-jiangshan-dongjin-404",
+    "title": "桓玄篡晋建楚，刘裕京口起兵复晋",
+    "upstreamKey": "dongjin:404",
+    "headline": "桓玄篡晋建楚，刘裕京口起兵复晋；谯纵建谯蜀，403年后凉降于后秦",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷113",
+          "卷114"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:404",
+        "headline": "桓玄篡晋建楚，刘裕京口起兵复晋；谯纵建谯蜀，403年后凉降于后秦",
+        "year": 404,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "桓玄篡晋建楚，刘裕京口起兵复晋；谯纵建谯蜀，403年后凉降于后秦",
+        "status": "reviewed-content-match",
+        "difference": "桓玄篡晋在403年，刘裕起兵在404年；谯纵建蜀常系405年，按403—405年合写范围记录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷113",
+              "卷114"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-407": {
+    "historyId": "event-jiangshan-dongjin-407",
+    "title": "赫连勃勃于朔方建胡夏",
+    "upstreamKey": "dongjin:407",
+    "headline": "赫连勃勃于朔方建胡夏；冯跋兄弟于龙城弑后燕慕容熙，拥高云建北燕",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷114"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:407",
+        "headline": "赫连勃勃于朔方建胡夏；冯跋兄弟于龙城弑后燕慕容熙，拥高云建北燕",
+        "year": 407,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "赫连勃勃于朔方建胡夏；冯跋兄弟于龙城弑后燕慕容熙，拥高云建北燕",
+        "status": "reviewed-content-match",
+        "difference": "407年高云政权与409年冯跋称天王的北燕建国口径有区别；统万城营建在413年起，不作407年都城已建证明。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷114"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-410": {
+    "historyId": "event-jiangshan-dongjin-410",
+    "title": "刘裕北伐攻破广固，灭南燕",
+    "upstreamKey": "dongjin:410",
+    "headline": "刘裕北伐攻破广固，灭南燕",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷115"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:410",
+        "headline": "刘裕北伐攻破广固，灭南燕",
+        "year": 410,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘裕北伐攻破广固，灭南燕",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷115"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-413": {
+    "historyId": "event-jiangshan-dongjin-413",
+    "title": "刘裕遣朱龄石西征平定谯蜀，收复巴蜀",
+    "upstreamKey": "dongjin:413",
+    "headline": "刘裕遣朱龄石西征平定谯蜀，收复巴蜀",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷116"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:413",
+        "headline": "刘裕遣朱龄石西征平定谯蜀，收复巴蜀",
+        "year": 413,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘裕遣朱龄石西征平定谯蜀，收复巴蜀",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷116"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-414": {
+    "historyId": "event-jiangshan-dongjin-414",
+    "title": "西秦乞伏炽磐袭破乐都灭南凉",
+    "upstreamKey": "dongjin:414",
+    "headline": "西秦乞伏炽磐袭破乐都灭南凉；北凉沮渠蒙逊迁都姑臧称河西王",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷116"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:414",
+        "headline": "西秦乞伏炽磐袭破乐都灭南凉；北凉沮渠蒙逊迁都姑臧称河西王",
+        "year": 414,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "西秦乞伏炽磐袭破乐都灭南凉；北凉沮渠蒙逊迁都姑臧称河西王",
+        "status": "reviewed-content-match",
+        "difference": "西秦灭南凉系414年，沮渠蒙逊迁姑臧常系412年；本条跨节点叙述并列，不强改同年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷116"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-417": {
+    "historyId": "event-jiangshan-dongjin-417",
+    "title": "刘裕北伐灭后秦，收复洛阳、长安",
+    "upstreamKey": "dongjin:417",
+    "headline": "刘裕北伐灭后秦，收复洛阳、长安",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷117",
+          "卷118"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:417",
+        "headline": "刘裕北伐灭后秦，收复洛阳、长安",
+        "year": 417,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘裕北伐灭后秦，收复洛阳、长安",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷117",
+              "卷118"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-dongjin-420": {
+    "historyId": "event-jiangshan-dongjin-420",
+    "title": "晋恭帝禅位于刘裕，东晋亡",
+    "upstreamKey": "dongjin:420",
+    "headline": "晋恭帝禅位于刘裕，东晋亡，宋齐梁陈南朝开启",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷119"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "dongjin:420",
+        "headline": "晋恭帝禅位于刘裕，东晋亡，宋齐梁陈南朝开启",
+        "year": 420,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "晋恭帝禅位于刘裕，东晋亡，宋齐梁陈南朝开启",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷119"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-420": {
+    "historyId": "event-jiangshan-nanbei-420",
+    "title": "刘裕代晋建宋，南朝开始",
+    "upstreamKey": "nanbei:420",
+    "headline": "刘裕代晋建宋，南朝开始",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:420",
+        "headline": "刘裕代晋建宋，南朝开始",
+        "year": 420,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘裕代晋建宋，南朝开始",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-427": {
+    "historyId": "event-jiangshan-nanbei-427",
+    "title": "北魏取河南关中，太武帝又袭克胡夏都城统万城",
+    "upstreamKey": "nanbei:427",
+    "headline": "北魏取河南关中，太武帝又袭克胡夏都城统万城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:427",
+        "headline": "北魏取河南关中，太武帝又袭克胡夏都城统万城",
+        "year": 427,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北魏取河南关中，太武帝又袭克胡夏都城统万城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-431": {
+    "historyId": "event-jiangshan-nanbei-431",
+    "title": "赫连定灭西秦后被俘，北魏灭胡夏",
+    "upstreamKey": "nanbei:431",
+    "headline": "赫连定灭西秦后被俘，北魏灭胡夏；宋文帝元嘉之治",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:431",
+        "headline": "赫连定灭西秦后被俘，北魏灭胡夏；宋文帝元嘉之治",
+        "year": 431,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "赫连定灭西秦后被俘，北魏灭胡夏；宋文帝元嘉之治",
+        "status": "reviewed-content-match",
+        "difference": "胡夏灭亡常系431年；元嘉之治是刘宋一段统治时期，不是当年单次政策。统万城在427年已被北魏攻取，不能把431年赫连定的后续交战和被俘全部定位在那里；保留西秦、胡夏交战范围与建康中枢的区别。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-436": {
+    "historyId": "event-jiangshan-nanbei-436",
+    "title": "北魏攻入龙城，北燕亡",
+    "upstreamKey": "nanbei:436",
+    "headline": "北魏攻入龙城，北燕亡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:436",
+        "headline": "北魏攻入龙城，北燕亡",
+        "year": 436,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北魏攻入龙城，北燕亡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-439": {
+    "historyId": "event-jiangshan-nanbei-439",
+    "title": "北魏太武帝灭北凉，统一北方",
+    "upstreamKey": "nanbei:439",
+    "headline": "北魏太武帝灭北凉，统一北方，结束十六国",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:439",
+        "headline": "北魏太武帝灭北凉，统一北方，结束十六国",
+        "year": 439,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北魏太武帝灭北凉，统一北方，结束十六国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-446": {
+    "historyId": "event-jiangshan-nanbei-446",
+    "title": "北魏太武帝采崔浩议下诏灭佛，焚毁寺塔经像",
+    "upstreamKey": "nanbei:446",
+    "headline": "北魏太武帝采崔浩议下诏灭佛，焚毁寺塔经像，后文成帝复佛",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:446",
+        "headline": "北魏太武帝采崔浩议下诏灭佛，焚毁寺塔经像，后文成帝复佛",
+        "year": 446,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北魏太武帝采崔浩议下诏灭佛，焚毁寺塔经像，后文成帝复佛",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-450": {
+    "historyId": "event-jiangshan-nanbei-450",
+    "title": "宋文帝元嘉北伐失利，北魏太武帝南征饮马长江",
+    "upstreamKey": "nanbei:450",
+    "headline": "宋文帝元嘉北伐失利，北魏太武帝南征饮马长江",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:450",
+        "headline": "宋文帝元嘉北伐失利，北魏太武帝南征饮马长江",
+        "year": 450,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宋文帝元嘉北伐失利，北魏太武帝南征饮马长江",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-469": {
+    "historyId": "event-jiangshan-nanbei-469",
+    "title": "北魏慕容白曜尽取刘宋淮北四州，南北分界南移淮水",
+    "upstreamKey": "nanbei:469",
+    "headline": "北魏慕容白曜尽取刘宋淮北四州，南北分界南移淮水",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:469",
+        "headline": "北魏慕容白曜尽取刘宋淮北四州，南北分界南移淮水",
+        "year": 469,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北魏慕容白曜尽取刘宋淮北四州，南北分界南移淮水",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-474": {
+    "historyId": "event-jiangshan-nanbei-474",
+    "title": "刘宋桂阳王自寻阳举兵逼建康，萧道成守新亭平叛执掌禁军与朝政",
+    "upstreamKey": "nanbei:474",
+    "headline": "刘宋桂阳王自寻阳举兵逼建康，萧道成守新亭平叛执掌禁军与朝政",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:474",
+        "headline": "刘宋桂阳王自寻阳举兵逼建康，萧道成守新亭平叛执掌禁军与朝政",
+        "year": 474,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘宋桂阳王自寻阳举兵逼建康，萧道成守新亭平叛执掌禁军与朝政",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-479": {
+    "historyId": "event-jiangshan-nanbei-479",
+    "title": "权臣萧道成继废杀宋后废帝后，迫宋顺帝禅位建南齐",
+    "upstreamKey": "nanbei:479",
+    "headline": "权臣萧道成继废杀宋后废帝后，迫宋顺帝禅位建南齐，南朝宋亡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:479",
+        "headline": "权臣萧道成继废杀宋后废帝后，迫宋顺帝禅位建南齐，南朝宋亡",
+        "year": 479,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "权臣萧道成继废杀宋后废帝后，迫宋顺帝禅位建南齐，南朝宋亡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-485": {
+    "historyId": "event-jiangshan-nanbei-485",
+    "title": "北魏冯太后与孝文帝颁行均田制与三长制，奠定田制根基",
+    "upstreamKey": "nanbei:485",
+    "headline": "北魏冯太后与孝文帝颁行均田制与三长制，奠定田制根基",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:485",
+        "headline": "北魏冯太后与孝文帝颁行均田制与三长制，奠定田制根基",
+        "year": 485,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北魏冯太后与孝文帝颁行均田制与三长制，奠定田制根基",
+        "status": "reviewed-content-match",
+        "difference": "均田令通常系485年，三长制通常系486年，本地记录485—486年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-183": {
+    "historyId": "event-183",
+    "title": "北魏孝文帝改革",
+    "upstreamKey": "nanbei:494",
+    "headline": "北魏孝文帝迁都洛阳，推行汉化改革",
+    "reason": "正文中的“北魏孝文帝改革”与上游“北魏孝文帝迁都洛阳，推行汉化改革”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:494",
+        "headline": "北魏孝文帝迁都洛阳，推行汉化改革",
+        "year": 494,
+        "reason": "正文中的“北魏孝文帝改革”与上游“北魏孝文帝迁都洛阳，推行汉化改革”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "北魏孝文帝改革",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-500": {
+    "historyId": "event-jiangshan-nanbei-500",
+    "title": "齐明帝与东昏侯大诛高武子孙及朝臣，雍州刺史萧衍于襄阳起兵",
+    "upstreamKey": "nanbei:500",
+    "headline": "齐明帝与东昏侯大诛高武子孙及朝臣，雍州刺史萧衍于襄阳起兵",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:500",
+        "headline": "齐明帝与东昏侯大诛高武子孙及朝臣，雍州刺史萧衍于襄阳起兵",
+        "year": 500,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "齐明帝与东昏侯大诛高武子孙及朝臣，雍州刺史萧衍于襄阳起兵",
+        "status": "reviewed-content-match",
+        "difference": "齐明帝、东昏侯杀戮宗室持续多年，萧衍于501年起兵；标记500—501年背景与行动。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-502": {
+    "historyId": "event-jiangshan-nanbei-502",
+    "title": "萧衍率军顺江东下攻克建康，迫齐和帝禅位建梁",
+    "upstreamKey": "nanbei:502",
+    "headline": "萧衍率军顺江东下攻克建康，迫齐和帝禅位建梁，开启天监之治",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:502",
+        "headline": "萧衍率军顺江东下攻克建康，迫齐和帝禅位建梁，开启天监之治",
+        "year": 502,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "萧衍率军顺江东下攻克建康，迫齐和帝禅位建梁，开启天监之治",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-507": {
+    "historyId": "event-jiangshan-nanbei-507",
+    "title": "钟离之战",
+    "upstreamKey": "nanbei:507",
+    "headline": "钟离之战：梁将韦睿、曹景宗火攻水淹大破北魏三十万大军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:507",
+        "headline": "钟离之战：梁将韦睿、曹景宗火攻水淹大破北魏三十万大军",
+        "year": 507,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "钟离之战：梁将韦睿、曹景宗火攻水淹大破北魏三十万大军",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-523": {
+    "historyId": "event-jiangshan-nanbei-523",
+    "title": "六镇之乱",
+    "upstreamKey": "nanbei:523",
+    "headline": "六镇之乱：破六韩拔陵于沃野镇起兵，北魏边防崩解",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:523",
+        "headline": "六镇之乱：破六韩拔陵于沃野镇起兵，北魏边防崩解",
+        "year": 523,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "六镇之乱：破六韩拔陵于沃野镇起兵，北魏边防崩解",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-528": {
+    "historyId": "event-jiangshan-nanbei-528",
+    "title": "河阴之变",
+    "upstreamKey": "nanbei:528",
+    "headline": "河阴之变：尔朱荣奉孝庄帝元子攸入洛，沉胡太后并屠北魏王公两千余人",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:528",
+        "headline": "河阴之变：尔朱荣奉孝庄帝元子攸入洛，沉胡太后并屠北魏王公两千余人",
+        "year": 528,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "河阴之变：尔朱荣奉孝庄帝元子攸入洛，沉胡太后并屠北魏王公两千余人",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-529": {
+    "historyId": "event-jiangshan-nanbei-529",
+    "title": "梁将陈庆之率七千白袍军北伐连克三十二城，攻入洛阳",
+    "upstreamKey": "nanbei:529",
+    "headline": "梁将陈庆之率七千白袍军北伐连克三十二城，攻入洛阳",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:529",
+        "headline": "梁将陈庆之率七千白袍军北伐连克三十二城，攻入洛阳",
+        "year": 529,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "梁将陈庆之率七千白袍军北伐连克三十二城，攻入洛阳",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-530": {
+    "historyId": "event-jiangshan-nanbei-530",
+    "title": "孝庄帝不甘受制，于洛阳明光殿设伏手刃权臣尔朱荣",
+    "upstreamKey": "nanbei:530",
+    "headline": "孝庄帝不甘受制，于洛阳明光殿设伏手刃权臣尔朱荣；尔朱兆反扑陷洛阳",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:530",
+        "headline": "孝庄帝不甘受制，于洛阳明光殿设伏手刃权臣尔朱荣；尔朱兆反扑陷洛阳",
+        "year": 530,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "孝庄帝不甘受制，于洛阳明光殿设伏手刃权臣尔朱荣；尔朱兆反扑陷洛阳",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-532": {
+    "historyId": "event-jiangshan-nanbei-532",
+    "title": "韩陵之战",
+    "upstreamKey": "nanbei:532",
+    "headline": "韩陵之战：高欢以少胜多大破尔朱氏二十万联军，入洛阳执掌北魏朝政",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:532",
+        "headline": "韩陵之战：高欢以少胜多大破尔朱氏二十万联军，入洛阳执掌北魏朝政",
+        "year": 532,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "韩陵之战：高欢以少胜多大破尔朱氏二十万联军，入洛阳执掌北魏朝政",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-534": {
+    "historyId": "event-jiangshan-nanbei-534",
+    "title": "魏孝武帝西奔长安依宇文泰，高欢立孝静帝迁都邺城",
+    "upstreamKey": "nanbei:534",
+    "headline": "魏孝武帝西奔长安依宇文泰，高欢立孝静帝迁都邺城，北魏分裂为东西魏",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:534",
+        "headline": "魏孝武帝西奔长安依宇文泰，高欢立孝静帝迁都邺城，北魏分裂为东西魏",
+        "year": 534,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "魏孝武帝西奔长安依宇文泰，高欢立孝静帝迁都邺城，北魏分裂为东西魏",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-537": {
+    "historyId": "event-jiangshan-nanbei-537",
+    "title": "沙苑之战",
+    "upstreamKey": "nanbei:537",
+    "headline": "沙苑之战：宇文泰以少胜多破高欢，创西魏府兵制",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:537",
+        "headline": "沙苑之战：宇文泰以少胜多破高欢，创西魏府兵制",
+        "year": 537,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "沙苑之战：宇文泰以少胜多破高欢，创西魏府兵制",
+        "status": "reviewed-content-match",
+        "difference": "沙苑战事系537年，西魏府兵制逐步形成于后续年代，不把战役与成熟制度等同。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-546": {
+    "historyId": "event-jiangshan-nanbei-546",
+    "title": "玉壁之战",
+    "upstreamKey": "nanbei:546",
+    "headline": "玉壁之战：西魏韦孝宽坚守五十日，挫败东魏高欢大军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:546",
+        "headline": "玉壁之战：西魏韦孝宽坚守五十日，挫败东魏高欢大军",
+        "year": 546,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "玉壁之战：西魏韦孝宽坚守五十日，挫败东魏高欢大军",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-548": {
+    "historyId": "event-jiangshan-nanbei-548",
+    "title": "侯景之乱攻陷建康台城，梁武帝萧衍饿死",
+    "upstreamKey": "nanbei:548",
+    "headline": "侯景之乱攻陷建康台城，梁武帝萧衍饿死，江南残破",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:548",
+        "headline": "侯景之乱攻陷建康台城，梁武帝萧衍饿死，江南残破",
+        "year": 548,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "侯景之乱攻陷建康台城，梁武帝萧衍饿死，江南残破",
+        "status": "reviewed-content-match",
+        "difference": "侯景于548年起兵，549年攻破台城、梁武帝去世；本地记录548—549年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-550": {
+    "historyId": "event-jiangshan-nanbei-550",
+    "title": "高洋迫东魏禅让建北齐",
+    "upstreamKey": "nanbei:550",
+    "headline": "高洋迫东魏禅让建北齐；西魏宇文泰设八柱国十二大将军，关陇集团成型",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:550",
+        "headline": "高洋迫东魏禅让建北齐；西魏宇文泰设八柱国十二大将军，关陇集团成型",
+        "year": 550,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "高洋迫东魏禅让建北齐；西魏宇文泰设八柱国十二大将军，关陇集团成型",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-551": {
+    "historyId": "event-jiangshan-nanbei-551",
+    "title": "王僧辩、陈霸先东讨平侯景，次年萧绎于江陵即位",
+    "upstreamKey": "nanbei:551",
+    "headline": "王僧辩、陈霸先东讨平侯景，次年萧绎于江陵即位",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:551",
+        "headline": "王僧辩、陈霸先东讨平侯景，次年萧绎于江陵即位",
+        "year": 551,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王僧辩、陈霸先东讨平侯景，次年萧绎于江陵即位",
+        "status": "reviewed-content-match",
+        "difference": "王僧辩、陈霸先于552年攻入建康平侯景；551年属反攻阶段，标为551—552年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-552": {
+    "historyId": "event-jiangshan-nanbei-552",
+    "title": "突厥土门可汗大破柔然，建突厥汗国",
+    "upstreamKey": "nanbei:552",
+    "headline": "突厥土门可汗大破柔然，建突厥汗国，称雄漠北",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:552",
+        "headline": "突厥土门可汗大破柔然，建突厥汗国，称雄漠北",
+        "year": 552,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "突厥土门可汗大破柔然，建突厥汗国，称雄漠北",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-553": {
+    "historyId": "event-jiangshan-nanbei-553",
+    "title": "西魏尉迟迥伐蜀攻克成都，尽取萧梁巴蜀益州之地",
+    "upstreamKey": "nanbei:553",
+    "headline": "西魏尉迟迥伐蜀攻克成都，尽取萧梁巴蜀益州之地",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:553",
+        "headline": "西魏尉迟迥伐蜀攻克成都，尽取萧梁巴蜀益州之地",
+        "year": 553,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "西魏尉迟迥伐蜀攻克成都，尽取萧梁巴蜀益州之地",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-554": {
+    "historyId": "event-jiangshan-nanbei-554",
+    "title": "西魏于谨攻陷江陵，梁元帝焚书十四万卷",
+    "upstreamKey": "nanbei:554",
+    "headline": "西魏于谨攻陷江陵，梁元帝焚书十四万卷；西魏立萧詧为西梁主",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:554",
+        "headline": "西魏于谨攻陷江陵，梁元帝焚书十四万卷；西魏立萧詧为西梁主",
+        "year": 554,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "西魏于谨攻陷江陵，梁元帝焚书十四万卷；西魏立萧詧为西梁主",
+        "status": "reviewed-content-match",
+        "difference": "西魏攻陷江陵系554年，萧詧西梁通常系555年建立；用554—555年范围。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-557": {
+    "historyId": "event-jiangshan-nanbei-557",
+    "title": "陈霸先诛王僧辩掌梁政，受禅建陈",
+    "upstreamKey": "nanbei:557",
+    "headline": "陈霸先诛王僧辩掌梁政，受禅建陈；宇文泰子宇文觉代西魏建北周",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:557",
+        "headline": "陈霸先诛王僧辩掌梁政，受禅建陈；宇文泰子宇文觉代西魏建北周",
+        "year": 557,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "陈霸先诛王僧辩掌梁政，受禅建陈；宇文泰子宇文觉代西魏建北周",
+        "status": "reviewed-content-match",
+        "difference": "陈霸先诛王僧辩在555年；557年建立陈朝，与北周建立并列，不能把诛杀改到557年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-573": {
+    "historyId": "event-jiangshan-nanbei-573",
+    "title": "太建北伐",
+    "upstreamKey": "nanbei:573",
+    "headline": "太建北伐：陈将吴明彻大破北齐，尽复江北淮南之地",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:573",
+        "headline": "太建北伐：陈将吴明彻大破北齐，尽复江北淮南之地",
+        "year": 573,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "太建北伐：陈将吴明彻大破北齐，尽复江北淮南之地",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-574": {
+    "historyId": "event-jiangshan-nanbei-574",
+    "title": "北周武帝下诏禁佛道二教、沙汰僧尼归农充兵，蓄力统一北方",
+    "upstreamKey": "nanbei:574",
+    "headline": "北周武帝下诏禁佛道二教、沙汰僧尼归农充兵，蓄力统一北方",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:574",
+        "headline": "北周武帝下诏禁佛道二教、沙汰僧尼归农充兵，蓄力统一北方",
+        "year": 574,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北周武帝下诏禁佛道二教、沙汰僧尼归农充兵，蓄力统一北方",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-577": {
+    "historyId": "event-jiangshan-nanbei-577",
+    "title": "北周武帝灭北齐，北方再统一",
+    "upstreamKey": "nanbei:577",
+    "headline": "北周武帝灭北齐，北方再统一",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:577",
+        "headline": "北周武帝灭北齐，北方再统一",
+        "year": 577,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "北周武帝灭北齐，北方再统一",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-578": {
+    "historyId": "event-jiangshan-nanbei-578",
+    "title": "吕梁之战北周破陈军生擒吴明彻，次年韦孝宽南征尽夺淮南",
+    "upstreamKey": "nanbei:578",
+    "headline": "吕梁之战北周破陈军生擒吴明彻，次年韦孝宽南征尽夺淮南，陈退守长江",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:578",
+        "headline": "吕梁之战北周破陈军生擒吴明彻，次年韦孝宽南征尽夺淮南，陈退守长江",
+        "year": 578,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吕梁之战北周破陈军生擒吴明彻，次年韦孝宽南征尽夺淮南，陈退守长江",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nanbei-580": {
+    "historyId": "event-jiangshan-nanbei-580",
+    "title": "杨坚以丞相辅政，韦孝宽平尉迟迥",
+    "upstreamKey": "nanbei:580",
+    "headline": "杨坚以丞相辅政，韦孝宽平尉迟迥，焚毁邺城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nanbei:580",
+        "headline": "杨坚以丞相辅政，韦孝宽平尉迟迥，焚毁邺城",
+        "year": 580,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "杨坚以丞相辅政，韦孝宽平尉迟迥，焚毁邺城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-581": {
+    "historyId": "event-jiangshan-sui-581",
+    "title": "杨坚建隋，定都大兴",
+    "upstreamKey": "sui:581",
+    "headline": "杨坚建隋，定都大兴；确立三省六部制，颁《开皇律》",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷175"
+        ]
+      },
+      {
+        "title": "隋书",
+        "volumes": [
+          "卷25",
+          "卷28"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:581",
+        "headline": "杨坚建隋，定都大兴；确立三省六部制，颁《开皇律》",
+        "year": 581,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "杨坚建隋，定都大兴；确立三省六部制，颁《开皇律》",
+        "status": "reviewed-content-match",
+        "difference": "581年杨坚称帝于长安，582年始营大兴城；律令和三省六部经历发展，581年并非各制度最终定型日。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷175"
+            ]
+          },
+          {
+            "title": "隋书",
+            "volumes": [
+              "卷25",
+              "卷28"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-587": {
+    "historyId": "event-jiangshan-sui-587",
+    "title": "隋文帝废西梁国，江陵并入隋境",
+    "upstreamKey": "sui:587",
+    "headline": "隋文帝废西梁国，江陵并入隋境，大造战船备战伐陈",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷176"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:587",
+        "headline": "隋文帝废西梁国，江陵并入隋境，大造战船备战伐陈",
+        "year": 587,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "隋文帝废西梁国，江陵并入隋境，大造战船备战伐陈",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷176"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-184": {
+    "historyId": "event-184",
+    "title": "隋灭陈统一",
+    "upstreamKey": "sui:589",
+    "headline": "晋王杨广统军渡江，韩擒虎、贺若弼攻克建康擒陈后主，隋灭陈统一全国",
+    "reason": "正文中的“隋灭陈统一”与上游“晋王杨广统军渡江，韩擒虎、贺若弼攻克建康擒陈后主，隋灭陈统一全国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷177"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:589",
+        "headline": "晋王杨广统军渡江，韩擒虎、贺若弼攻克建康擒陈后主，隋灭陈统一全国",
+        "year": 589,
+        "reason": "正文中的“隋灭陈统一”与上游“晋王杨广统军渡江，韩擒虎、贺若弼攻克建康擒陈后主，隋灭陈统一全国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "隋灭陈统一",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷177"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-599": {
+    "historyId": "event-jiangshan-sui-599",
+    "title": "东突厥启民可汗内附，隋于河套北筑大利城",
+    "upstreamKey": "sui:599",
+    "headline": "东突厥启民可汗内附，隋于河套北筑大利城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷178"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:599",
+        "headline": "东突厥启民可汗内附，隋于河套北筑大利城",
+        "year": 599,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "东突厥启民可汗内附，隋于河套北筑大利城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷178"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-185": {
+    "historyId": "event-185",
+    "title": "大运河开通",
+    "upstreamKey": "sui:605",
+    "headline": "隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷180",
+          "卷181"
+        ]
+      },
+      {
+        "title": "通典",
+        "volumes": [
+          "卷14"
+        ]
+      },
+      {
+        "title": "唐摭言",
+        "volumes": [
+          "卷一"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷119"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:605",
+        "headline": "隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制",
+        "year": 605,
+        "reason": "正文中的“大运河开通”与上游“隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "大运河开通",
+        "status": "reviewed-content-match",
+        "difference": "进士科创制的具体年代存在考证，采用隋炀帝大业年间逐渐确立的表述，不断言某年完全取代全部九品中正制。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷180"
+            ]
+          },
+          {
+            "title": "通典",
+            "volumes": [
+              "卷14"
+            ]
+          },
+          {
+            "title": "唐摭言",
+            "volumes": [
+              "卷一"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷119"
+            ]
+          }
+        ]
+      },
+      {
+        "upstreamKey": "sui:608",
+        "headline": "隋炀帝开凿永济渠，北通涿郡，南达黄河",
+        "year": 608,
+        "reason": "正文中的“大运河开通”与上游“隋炀帝开凿永济渠，北通涿郡，南达黄河”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "大运河开通",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷181"
+            ]
+          }
+        ]
+      },
+      {
+        "upstreamKey": "sui:610",
+        "headline": "隋炀帝开凿江南河，大运河贯通南北",
+        "year": 610,
+        "reason": "正文中的“大运河开通”与上游“隋炀帝开凿江南河，大运河贯通南北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "大运河开通",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷181"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-186": {
+    "historyId": "event-186",
+    "title": "科举制创立",
+    "upstreamKey": "sui:605",
+    "headline": "隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制",
+    "reason": "正文中的“科举制创立”与上游“隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷180"
+        ]
+      },
+      {
+        "title": "通典",
+        "volumes": [
+          "卷14"
+        ]
+      },
+      {
+        "title": "唐摭言",
+        "volumes": [
+          "卷一"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷119"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:605",
+        "headline": "隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制",
+        "year": 605,
+        "reason": "正文中的“科举制创立”与上游“隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "科举制创立",
+        "status": "reviewed-content-match",
+        "difference": "进士科创制的具体年代存在考证，采用隋炀帝大业年间逐渐确立的表述，不断言某年完全取代全部九品中正制。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷180"
+            ]
+          },
+          {
+            "title": "通典",
+            "volumes": [
+              "卷14"
+            ]
+          },
+          {
+            "title": "唐摭言",
+            "volumes": [
+              "卷一"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷119"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-605-detail": {
+    "historyId": "event-jiangshan-sui-605-detail",
+    "title": "隋营建东都洛阳",
+    "upstreamKey": "sui:605",
+    "headline": "隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷180"
+        ]
+      },
+      {
+        "title": "通典",
+        "volumes": [
+          "卷14"
+        ]
+      },
+      {
+        "title": "唐摭言",
+        "volumes": [
+          "卷一"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷119"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:605",
+        "headline": "隋炀帝营建东都洛阳、开通济渠；始设进士科创立科举制",
+        "year": 605,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "隋营建东都洛阳",
+        "status": "reviewed-content-match",
+        "difference": "进士科创制的具体年代存在考证，采用隋炀帝大业年间逐渐确立的表述，不断言某年完全取代全部九品中正制。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷180"
+            ]
+          },
+          {
+            "title": "通典",
+            "volumes": [
+              "卷14"
+            ]
+          },
+          {
+            "title": "唐摭言",
+            "volumes": [
+              "卷一"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷119"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-609": {
+    "historyId": "event-jiangshan-sui-609",
+    "title": "隋炀帝西巡张掖，破吐谷浑",
+    "upstreamKey": "sui:609",
+    "headline": "隋炀帝西巡张掖，破吐谷浑，置西海、河源、鄯善、且末四郡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷181"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:609",
+        "headline": "隋炀帝西巡张掖，破吐谷浑，置西海、河源、鄯善、且末四郡",
+        "year": 609,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "隋炀帝西巡张掖，破吐谷浑，置西海、河源、鄯善、且末四郡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷181"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-612": {
+    "historyId": "event-jiangshan-sui-612",
+    "title": "隋炀帝征调百万大军东征高句丽，萨水失利",
+    "upstreamKey": "sui:612",
+    "headline": "隋炀帝征调百万大军东征高句丽，萨水失利",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷181"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:612",
+        "headline": "隋炀帝征调百万大军东征高句丽，萨水失利",
+        "year": 612,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "隋炀帝征调百万大军东征高句丽，萨水失利",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷181"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-615": {
+    "historyId": "event-jiangshan-sui-615",
+    "title": "隋炀帝雁门被突厥围困",
+    "upstreamKey": "sui:615",
+    "headline": "隋炀帝雁门被突厥围困；未几瓦岗军克洛口仓群雄并起",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷182",
+          "卷183"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:615",
+        "headline": "隋炀帝雁门被突厥围困；未几瓦岗军克洛口仓群雄并起",
+        "year": 615,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "隋炀帝雁门被突厥围困；未几瓦岗军克洛口仓群雄并起",
+        "status": "reviewed-content-match",
+        "difference": "雁门围困系615年，瓦岗军取洛口仓在617年，本地标为615—617年并列节点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷182",
+              "卷183"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-617": {
+    "historyId": "event-jiangshan-sui-617",
+    "title": "李渊太原起兵，攻入大兴城",
+    "upstreamKey": "sui:617",
+    "headline": "李渊太原起兵，攻入大兴城；瓦岗军据中原",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷184"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:617",
+        "headline": "李渊太原起兵，攻入大兴城；瓦岗军据中原",
+        "year": 617,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李渊太原起兵，攻入大兴城；瓦岗军据中原",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷184"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-sui-618": {
+    "historyId": "event-jiangshan-sui-618",
+    "title": "宇文化及江都兵变弑隋炀帝，隋亡",
+    "upstreamKey": "sui:618",
+    "headline": "宇文化及江都兵变弑隋炀帝，隋亡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷185"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "sui:618",
+        "headline": "宇文化及江都兵变弑隋炀帝，隋亡",
+        "year": 618,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宇文化及江都兵变弑隋炀帝，隋亡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷185"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-110": {
+    "historyId": "event-110",
+    "title": "李渊称帝",
+    "upstreamKey": "tang:618",
+    "headline": "隋炀帝江都遇弑后，唐王李渊迫隋恭帝杨侑禅让，于长安称帝建立唐朝",
+    "reason": "正文中的“李渊称帝”与上游“隋炀帝江都遇弑后，唐王李渊迫隋恭帝杨侑禅让，于长安称帝建立唐朝”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷185"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷1"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:618",
+        "headline": "隋炀帝江都遇弑后，唐王李渊迫隋恭帝杨侑禅让，于长安称帝建立唐朝",
+        "year": 618,
+        "reason": "正文中的“李渊称帝”与上游“隋炀帝江都遇弑后，唐王李渊迫隋恭帝杨侑禅让，于长安称帝建立唐朝”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "李渊称帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷185"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷1"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-621": {
+    "historyId": "event-jiangshan-tang-621",
+    "title": "虎牢之战李世民擒窦建德、降王世充",
+    "upstreamKey": "tang:621",
+    "headline": "虎牢之战李世民擒窦建德、降王世充；李靖平萧铣",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷189"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷2"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:621",
+        "headline": "虎牢之战李世民擒窦建德、降王世充；李靖平萧铣",
+        "year": 621,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "虎牢之战李世民擒窦建德、降王世充；李靖平萧铣",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷189"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷2"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-624": {
+    "historyId": "event-jiangshan-tang-624",
+    "title": "唐高祖颁行武德律令，初定均田制与租庸调制",
+    "upstreamKey": "tang:624",
+    "headline": "唐高祖颁行武德律令，初定均田制与租庸调制",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷190"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷48"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:624",
+        "headline": "唐高祖颁行武德律令，初定均田制与租庸调制",
+        "year": 624,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "唐高祖颁行武德律令，初定均田制与租庸调制",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷190"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷48"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-111": {
+    "historyId": "event-111",
+    "title": "玄武门之变",
+    "upstreamKey": "tang:626",
+    "headline": "玄武门之变：秦王李世民伏兵诛太子建成、齐王元吉，唐高祖退位禅让",
+    "reason": "正文中的“玄武门之变”与上游“玄武门之变：秦王李世民伏兵诛太子建成、齐王元吉，唐高祖退位禅让”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷191"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:626",
+        "headline": "玄武门之变：秦王李世民伏兵诛太子建成、齐王元吉，唐高祖退位禅让",
+        "year": 626,
+        "reason": "正文中的“玄武门之变”与上游“玄武门之变：秦王李世民伏兵诛太子建成、齐王元吉，唐高祖退位禅让”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "玄武门之变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷191"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-191": {
+    "historyId": "event-191",
+    "title": "贞观之治",
+    "upstreamKey": "tang:627",
+    "headline": "唐太宗改元贞观，任房玄龄、杜如晦定官制，虚怀纳谏开创“贞观之治”",
+    "reason": "正文中的“贞观之治”与上游“唐太宗改元贞观，任房玄龄、杜如晦定官制，虚怀纳谏开创“贞观之治””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷192"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷66"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:627",
+        "headline": "唐太宗改元贞观，任房玄龄、杜如晦定官制，虚怀纳谏开创“贞观之治”",
+        "year": 627,
+        "reason": "正文中的“贞观之治”与上游“唐太宗改元贞观，任房玄龄、杜如晦定官制，虚怀纳谏开创“贞观之治””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "贞观之治",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷192"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷66"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-tang-eastern-turkic-conquest": {
+    "historyId": "event-tang-eastern-turkic-conquest",
+    "title": "唐灭东突厥",
+    "upstreamKey": "tang:630",
+    "headline": "李靖灭东突厥，西北诸君尊唐太宗为“天可汗”，置定襄、云中都督府",
+    "reason": "正文中的“唐灭东突厥”与上游“李靖灭东突厥，西北诸君尊唐太宗为“天可汗”，置定襄、云中都督府”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷193"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:630",
+        "headline": "李靖灭东突厥，西北诸君尊唐太宗为“天可汗”，置定襄、云中都督府",
+        "year": 630,
+        "reason": "正文中的“唐灭东突厥”与上游“李靖灭东突厥，西北诸君尊唐太宗为“天可汗”，置定襄、云中都督府”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "唐灭东突厥",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷193"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-635": {
+    "historyId": "event-jiangshan-tang-635",
+    "title": "李靖分道远征吐谷浑抵黄河源柏海，伏允败亡",
+    "upstreamKey": "tang:635",
+    "headline": "李靖分道远征吐谷浑抵黄河源柏海，伏允败亡，其子慕容顺举国降唐",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷194"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷198"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:635",
+        "headline": "李靖分道远征吐谷浑抵黄河源柏海，伏允败亡，其子慕容顺举国降唐",
+        "year": 635,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李靖分道远征吐谷浑抵黄河源柏海，伏允败亡，其子慕容顺举国降唐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷194"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷198"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-640": {
+    "historyId": "event-jiangshan-tang-640",
+    "title": "侯君集灭高昌，唐置安西都护府",
+    "upstreamKey": "tang:640",
+    "headline": "侯君集灭高昌，唐置安西都护府",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷195"
+        ]
+      },
+      {
+        "title": "旧唐书",
+        "volumes": [
+          "卷198"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:640",
+        "headline": "侯君集灭高昌，唐置安西都护府",
+        "year": 640,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "侯君集灭高昌，唐置安西都护府",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷195"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷198"
+            ]
+          }
+        ]
+      }
+    ],
     "status": "upstream-reference"
   },
   "event-361": {
     "historyId": "event-361",
-    "upstreamKey": "tang:641",
     "title": "文成公主入藏",
-    "reason": "年份与文成公主入藏、联姻主题一致；文献卷次作为上游线索保留，未据此确认地点坐标。",
+    "upstreamKey": "tang:641",
     "headline": "文成公主入藏，与吐蕃松赞干布联姻",
+    "reason": "正文中的“文成公主入藏”与上游“文成公主入藏，与吐蕃松赞干布联姻”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
     "books": [
       {
         "title": "资治通鉴",
@@ -42,6 +7267,6829 @@ export const historyReferences = {
         "volumes": [
           "卷196上"
         ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:641",
+        "headline": "文成公主入藏，与吐蕃松赞干布联姻",
+        "year": 641,
+        "reason": "正文中的“文成公主入藏”与上游“文成公主入藏，与吐蕃松赞干布联姻”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "文成公主入藏",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷196"
+            ]
+          },
+          {
+            "title": "旧唐书",
+            "volumes": [
+              "卷196上"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-161": {
+    "historyId": "event-161",
+    "title": "玄奘回国译经",
+    "upstreamKey": "tang:645",
+    "headline": "玄奘自天竺载经归长安译经；唐太宗亲征高句丽克辽东城",
+    "reason": "正文中的“玄奘回国译经”与上游“玄奘自天竺载经归长安译经；唐太宗亲征高句丽克辽东城”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:645",
+        "headline": "玄奘自天竺载经归长安译经；唐太宗亲征高句丽克辽东城",
+        "year": 645,
+        "reason": "正文中的“玄奘回国译经”与上游“玄奘自天竺载经归长安译经；唐太宗亲征高句丽克辽东城”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "玄奘回国译经",
+        "status": "reviewed-content-match",
+        "difference": "玄奘归国与太宗征高句丽分属两事；旧笔记只覆盖归国译经，远征单独补录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-645-detail": {
+    "historyId": "event-jiangshan-tang-645-detail",
+    "title": "唐太宗亲征高句丽",
+    "upstreamKey": "tang:645",
+    "headline": "玄奘自天竺载经归长安译经；唐太宗亲征高句丽克辽东城",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:645",
+        "headline": "玄奘自天竺载经归长安译经；唐太宗亲征高句丽克辽东城",
+        "year": 645,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "唐太宗亲征高句丽",
+        "status": "reviewed-content-match",
+        "difference": "玄奘归国与太宗征高句丽分属两事；旧笔记只覆盖归国译经，远征单独补录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-648": {
+    "historyId": "event-jiangshan-tang-648",
+    "title": "王玄策借吐蕃兵大破中天竺阿罗那顺，声威达南亚",
+    "upstreamKey": "tang:648",
+    "headline": "王玄策借吐蕃兵大破中天竺阿罗那顺，声威达南亚",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:648",
+        "headline": "王玄策借吐蕃兵大破中天竺阿罗那顺，声威达南亚",
+        "year": 648,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王玄策借吐蕃兵大破中天竺阿罗那顺，声威达南亚",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-653": {
+    "historyId": "event-jiangshan-tang-653",
+    "title": "长孙无忌等撰成《永徽律疏》（唐律疏议）颁行天下，集礼法大成",
+    "upstreamKey": "tang:653",
+    "headline": "长孙无忌等撰成《永徽律疏》（唐律疏议）颁行天下，集礼法大成",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:653",
+        "headline": "长孙无忌等撰成《永徽律疏》（唐律疏议）颁行天下，集礼法大成",
+        "year": 653,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "长孙无忌等撰成《永徽律疏》（唐律疏议）颁行天下，集礼法大成",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-657": {
+    "historyId": "event-jiangshan-tang-657",
+    "title": "苏定方灭西突厥，置昆陵、濛池都护府",
+    "upstreamKey": "tang:657",
+    "headline": "苏定方灭西突厥，置昆陵、濛池都护府，唐疆西极咸海",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:657",
+        "headline": "苏定方灭西突厥，置昆陵、濛池都护府，唐疆西极咸海",
+        "year": 657,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "苏定方灭西突厥，置昆陵、濛池都护府，唐疆西极咸海",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-663": {
+    "historyId": "event-jiangshan-tang-663",
+    "title": "白江口海战大破日济水军",
+    "upstreamKey": "tang:663",
+    "headline": "白江口海战大破日济水军；同年吐蕃禄东赞攻灭吐谷浑，诺曷钵奔凉州",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷201"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:663",
+        "headline": "白江口海战大破日济水军；同年吐蕃禄东赞攻灭吐谷浑，诺曷钵奔凉州",
+        "year": 663,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "白江口海战大破日济水军；同年吐蕃禄东赞攻灭吐谷浑，诺曷钵奔凉州",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷201"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-668": {
+    "historyId": "event-jiangshan-tang-668",
+    "title": "李勣攻克平壤灭高句丽，置安东都护府",
+    "upstreamKey": "tang:668",
+    "headline": "李勣攻克平壤灭高句丽，置安东都护府",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:668",
+        "headline": "李勣攻克平壤灭高句丽，置安东都护府",
+        "year": 668,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李勣攻克平壤灭高句丽，置安东都护府",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-670": {
+    "historyId": "event-jiangshan-tang-670",
+    "title": "大非川之战",
+    "upstreamKey": "tang:670",
+    "headline": "大非川之战：薛仁贵败于吐蕃，吐谷浑入吐蕃；吐蕃陷安西四镇",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷201"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:670",
+        "headline": "大非川之战：薛仁贵败于吐蕃，吐谷浑入吐蕃；吐蕃陷安西四镇",
+        "year": 670,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "大非川之战：薛仁贵败于吐蕃，吐谷浑入吐蕃；吐蕃陷安西四镇",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷201"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-676": {
+    "historyId": "event-jiangshan-tang-676",
+    "title": "安东都护府自平壤内迁辽东故城",
+    "upstreamKey": "tang:676",
+    "headline": "安东都护府自平壤内迁辽东故城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:676",
+        "headline": "安东都护府自平壤内迁辽东故城",
+        "year": 676,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "安东都护府自平壤内迁辽东故城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-679": {
+    "historyId": "event-jiangshan-tang-679",
+    "title": "裴行俭擒阿史那都支，复置安西四镇",
+    "upstreamKey": "tang:679",
+    "headline": "裴行俭擒阿史那都支，复置安西四镇；改交州都督府为安南都护府",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷202"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:679",
+        "headline": "裴行俭擒阿史那都支，复置安西四镇；改交州都督府为安南都护府",
+        "year": 679,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "裴行俭擒阿史那都支，复置安西四镇；改交州都督府为安南都护府",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷202"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-684": {
+    "historyId": "event-jiangshan-tang-684",
+    "title": "武则天于洛阳废中宗临朝称制，遣军讨平徐敬业扬州起兵",
+    "upstreamKey": "tang:684",
+    "headline": "武则天于洛阳废中宗临朝称制，遣军讨平徐敬业扬州起兵",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:684",
+        "headline": "武则天于洛阳废中宗临朝称制，遣军讨平徐敬业扬州起兵",
+        "year": 684,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "武则天于洛阳废中宗临朝称制，遣军讨平徐敬业扬州起兵",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-686": {
+    "historyId": "event-jiangshan-tang-686",
+    "title": "垂拱二年武则天弃安西四镇，四镇复陷吐蕃",
+    "upstreamKey": "tang:686",
+    "headline": "垂拱二年武则天弃安西四镇，四镇复陷吐蕃",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:686",
+        "headline": "垂拱二年武则天弃安西四镇，四镇复陷吐蕃",
+        "year": 686,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "垂拱二年武则天弃安西四镇，四镇复陷吐蕃",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-192": {
+    "historyId": "event-192",
+    "title": "武则天称帝",
+    "upstreamKey": "tang:690",
+    "headline": "武则天改唐为周，定都神都洛阳",
+    "reason": "正文中的“武则天称帝”与上游“武则天改唐为周，定都神都洛阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:690",
+        "headline": "武则天改唐为周，定都神都洛阳",
+        "year": 690,
+        "reason": "正文中的“武则天称帝”与上游“武则天改唐为周，定都神都洛阳”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "武则天称帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-692": {
+    "historyId": "event-jiangshan-tang-692",
+    "title": "王孝杰大破吐蕃收复安西四镇，复置安西都护府于龟兹",
+    "upstreamKey": "tang:692",
+    "headline": "王孝杰大破吐蕃收复安西四镇，复置安西都护府于龟兹",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷205"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:692",
+        "headline": "王孝杰大破吐蕃收复安西四镇，复置安西都护府于龟兹",
+        "year": 692,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王孝杰大破吐蕃收复安西四镇，复置安西都护府于龟兹",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷205"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-698": {
+    "historyId": "event-jiangshan-tang-698",
+    "title": "粟末靺鞨大祚荣于东牟山立震国，后受唐封渤海郡王建渤海国",
+    "upstreamKey": "tang:698",
+    "headline": "粟末靺鞨大祚荣于东牟山立震国，后受唐封渤海郡王建渤海国",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:698",
+        "headline": "粟末靺鞨大祚荣于东牟山立震国，后受唐封渤海郡王建渤海国",
+        "year": 698,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "粟末靺鞨大祚荣于东牟山立震国，后受唐封渤海郡王建渤海国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-702": {
+    "historyId": "event-jiangshan-tang-702",
+    "title": "武则天于庭州设北庭都护府，统辖天山北路",
+    "upstreamKey": "tang:702",
+    "headline": "武则天于庭州设北庭都护府，统辖天山北路",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:702",
+        "headline": "武则天于庭州设北庭都护府，统辖天山北路",
+        "year": 702,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "武则天于庭州设北庭都护府，统辖天山北路",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-tang-shenlong-coup": {
+    "historyId": "event-tang-shenlong-coup",
+    "title": "神龙政变",
+    "upstreamKey": "tang:705",
+    "headline": "神龙政变：张柬之等拥唐中宗于洛阳复辟，复唐国号",
+    "reason": "正文中的“神龙政变”与上游“神龙政变：张柬之等拥唐中宗于洛阳复辟，复唐国号”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:705",
+        "headline": "神龙政变：张柬之等拥唐中宗于洛阳复辟，复唐国号",
+        "year": 705,
+        "reason": "正文中的“神龙政变”与上游“神龙政变：张柬之等拥唐中宗于洛阳复辟，复唐国号”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "神龙政变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-707": {
+    "historyId": "event-jiangshan-tang-707",
+    "title": "景龙政变",
+    "upstreamKey": "tang:707",
+    "headline": "景龙政变：太子李重俊发羽林兵诛武三思，兵败被杀",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:707",
+        "headline": "景龙政变：太子李重俊发羽林兵诛武三思，兵败被杀",
+        "year": 707,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "景龙政变：太子李重俊发羽林兵诛武三思，兵败被杀",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-710": {
+    "historyId": "event-jiangshan-tang-710",
+    "title": "唐隆政变",
+    "upstreamKey": "tang:710",
+    "headline": "唐隆政变：李隆基联结太平公主诛韦后，奉唐睿宗复位",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:710",
+        "headline": "唐隆政变：李隆基联结太平公主诛韦后，奉唐睿宗复位",
+        "year": 710,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "唐隆政变：李隆基联结太平公主诛韦后，奉唐睿宗复位",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-193": {
+    "historyId": "event-193",
+    "title": "开元盛世",
+    "upstreamKey": "tang:713",
+    "headline": "先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王",
+    "reason": "正文中的“开元盛世”与上游“先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:713",
+        "headline": "先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王",
+        "year": 713,
+        "reason": "正文中的“开元盛世”与上游“先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "开元盛世",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-713-detail": {
+    "historyId": "event-jiangshan-tang-713-detail",
+    "title": "先天政变",
+    "upstreamKey": "tang:713",
+    "headline": "先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:713",
+        "headline": "先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王",
+        "year": 713,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "先天政变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-713-supplement": {
+    "historyId": "event-jiangshan-tang-713-supplement",
+    "title": "唐册封大祚荣为渤海郡王",
+    "upstreamKey": "tang:713",
+    "headline": "先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:713",
+        "headline": "先天政变：唐玄宗诛太平公主党开启开元盛世；封渤海郡王",
+        "year": 713,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "唐册封大祚荣为渤海郡王",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-727": {
+    "historyId": "event-jiangshan-tang-727",
+    "title": "王君㚟、信安王李祎反击吐蕃拔石堡城，固河西防线",
+    "upstreamKey": "tang:727",
+    "headline": "王君㚟、信安王李祎反击吐蕃拔石堡城，固河西防线",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:727",
+        "headline": "王君㚟、信安王李祎反击吐蕃拔石堡城，固河西防线",
+        "year": 727,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王君㚟、信安王李祎反击吐蕃拔石堡城，固河西防线",
+        "status": "reviewed-content-match",
+        "difference": "王君㚟在727年前后对吐蕃作战，信安王李祎夺石堡城通常系729年，标记727—729年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-733": {
+    "historyId": "event-jiangshan-tang-733",
+    "title": "唐玄宗分全国为开元十五道，置采访使定型道州监察制",
+    "upstreamKey": "tang:733",
+    "headline": "唐玄宗分全国为开元十五道，置采访使定型道州监察制",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:733",
+        "headline": "唐玄宗分全国为开元十五道，置采访使定型道州监察制",
+        "year": 733,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "唐玄宗分全国为开元十五道，置采访使定型道州监察制",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-738": {
+    "historyId": "event-jiangshan-tang-738",
+    "title": "唐册封皮逻阁为云南王，六诏合一建南诏迁都太和城",
+    "upstreamKey": "tang:738",
+    "headline": "唐册封皮逻阁为云南王，六诏合一建南诏迁都太和城",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [
+      {
+        "title": "资治通鉴",
+        "volumes": [
+          "卷214"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "upstreamKey": "tang:738",
+        "headline": "唐册封皮逻阁为云南王，六诏合一建南诏迁都太和城",
+        "year": 738,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "唐册封皮逻阁为云南王，六诏合一建南诏迁都太和城",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": [
+          {
+            "title": "资治通鉴",
+            "volumes": [
+              "卷214"
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-742": {
+    "historyId": "event-jiangshan-tang-742",
+    "title": "唐廷改元天宝，沿边常设安西、范阳等十节度使",
+    "upstreamKey": "tang:742",
+    "headline": "唐廷改元天宝，沿边常设安西、范阳等十节度使，外重内轻",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:742",
+        "headline": "唐廷改元天宝，沿边常设安西、范阳等十节度使，外重内轻",
+        "year": 742,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "唐廷改元天宝，沿边常设安西、范阳等十节度使，外重内轻",
+        "status": "reviewed-content-match",
+        "difference": "天宝十节度使体系为逐步形成的边军组织，不能理解为742年同日新设十镇。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-744": {
+    "historyId": "event-jiangshan-tang-744",
+    "title": "骨力裴罗灭后突厥建回鹘汗国，受唐封为怀仁可汗",
+    "upstreamKey": "tang:744",
+    "headline": "骨力裴罗灭后突厥建回鹘汗国，受唐封为怀仁可汗",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:744",
+        "headline": "骨力裴罗灭后突厥建回鹘汗国，受唐封为怀仁可汗",
+        "year": 744,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "骨力裴罗灭后突厥建回鹘汗国，受唐封为怀仁可汗",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-747": {
+    "historyId": "event-jiangshan-tang-747",
+    "title": "高仙芝率军翻越帕米尔远征小勃律，西域震恐归附",
+    "upstreamKey": "tang:747",
+    "headline": "高仙芝率军翻越帕米尔远征小勃律，西域震恐归附",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:747",
+        "headline": "高仙芝率军翻越帕米尔远征小勃律，西域震恐归附",
+        "year": 747,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "高仙芝率军翻越帕米尔远征小勃律，西域震恐归附",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-tang-talas-battle": {
+    "historyId": "event-tang-talas-battle",
+    "title": "怛罗斯之战",
+    "upstreamKey": "tang:751",
+    "headline": "怛罗斯之战，造纸术西传阿拉伯世界",
+    "reason": "正文中的“怛罗斯之战”与上游“怛罗斯之战，造纸术西传阿拉伯世界”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:751",
+        "headline": "怛罗斯之战，造纸术西传阿拉伯世界",
+        "year": 751,
+        "reason": "正文中的“怛罗斯之战”与上游“怛罗斯之战，造纸术西传阿拉伯世界”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "怛罗斯之战",
+        "status": "reviewed-content-match",
+        "difference": "怛罗斯战争确有对应；“造纸术自此西传”的单一路径因果论存在争论，本地保留讨论而不确认为因果边。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-362": {
+    "historyId": "event-362",
+    "title": "鉴真东渡日本",
+    "upstreamKey": "tang:753",
+    "headline": "鉴真第六次东渡自扬州启航，次年抵日本传播律宗与唐文化",
+    "reason": "正文中的“鉴真东渡日本”与上游“鉴真第六次东渡自扬州启航，次年抵日本传播律宗与唐文化”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:753",
+        "headline": "鉴真第六次东渡自扬州启航，次年抵日本传播律宗与唐文化",
+        "year": 753,
+        "reason": "正文中的“鉴真东渡日本”与上游“鉴真第六次东渡自扬州启航，次年抵日本传播律宗与唐文化”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "鉴真东渡日本",
+        "status": "reviewed-content-match",
+        "difference": "第六次东渡在753年启航与抵日（唐历）至754年入奈良跨年，旧笔记754年范围补记753—754年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-113": {
+    "historyId": "event-113",
+    "title": "安史之乱",
+    "upstreamKey": "tang:755",
+    "headline": "安禄山、史思明于范阳起兵，安史之乱爆发",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:755",
+        "headline": "安禄山、史思明于范阳起兵，安史之乱爆发",
+        "year": 755,
+        "reason": "正文中的“安史之乱”与上游“安禄山、史思明于范阳起兵，安史之乱爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "安史之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "tang:756",
+        "headline": "马嵬驿兵变诛杨国忠、赐死杨贵妃；唐肃宗灵武即位",
+        "year": 756,
+        "reason": "正文中的“安史之乱”与上游“马嵬驿兵变诛杨国忠、赐死杨贵妃；唐肃宗灵武即位”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "安史之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "tang:757",
+        "headline": "郭子仪借回纥兵收复长安、洛阳两京，安庆绪退保邺城",
+        "year": 757,
+        "reason": "正文中的“安史之乱”与上游“郭子仪借回纥兵收复长安、洛阳两京，安庆绪退保邺城”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "安史之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "tang:763",
+        "headline": "安史之乱平定，河朔三镇割据肇端；吐蕃一度攻入长安",
+        "year": 763,
+        "reason": "正文中的“安史之乱”与上游“安史之乱平定，河朔三镇割据肇端；吐蕃一度攻入长安”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "安史之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-763-detail": {
+    "historyId": "event-jiangshan-tang-763-detail",
+    "title": "吐蕃攻入长安",
+    "upstreamKey": "tang:763",
+    "headline": "安史之乱平定，河朔三镇割据肇端；吐蕃一度攻入长安",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:763",
+        "headline": "安史之乱平定，河朔三镇割据肇端；吐蕃一度攻入长安",
+        "year": 763,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "吐蕃攻入长安",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-764": {
+    "historyId": "event-jiangshan-tang-764",
+    "title": "凉州陷于吐蕃，河西走廊被截断",
+    "upstreamKey": "tang:764",
+    "headline": "凉州陷于吐蕃，河西走廊被截断，安西北庭孤悬坚守",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:764",
+        "headline": "凉州陷于吐蕃，河西走廊被截断，安西北庭孤悬坚守",
+        "year": 764,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "凉州陷于吐蕃，河西走廊被截断，安西北庭孤悬坚守",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-tang-two-tax-reform": {
+    "historyId": "event-tang-two-tax-reform",
+    "title": "两税法施行",
+    "upstreamKey": "tang:780",
+    "headline": "杨炎推行两税法，赋税制度重大转型",
+    "reason": "正文中的“两税法施行”与上游“杨炎推行两税法，赋税制度重大转型”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:780",
+        "headline": "杨炎推行两税法，赋税制度重大转型",
+        "year": 780,
+        "reason": "正文中的“两税法施行”与上游“杨炎推行两税法，赋税制度重大转型”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "两税法施行",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-783": {
+    "historyId": "event-jiangshan-tang-783",
+    "title": "泾原兵变与奉天之难，唐德宗颁《罪己诏》姑息河朔藩镇",
+    "upstreamKey": "tang:783",
+    "headline": "泾原兵变与奉天之难，唐德宗颁《罪己诏》姑息河朔藩镇",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:783",
+        "headline": "泾原兵变与奉天之难，唐德宗颁《罪己诏》姑息河朔藩镇",
+        "year": 783,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "泾原兵变与奉天之难，唐德宗颁《罪己诏》姑息河朔藩镇",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-786": {
+    "historyId": "event-jiangshan-tang-786",
+    "title": "沙州陷于吐蕃，唐朝陇右、河西州县尽失",
+    "upstreamKey": "tang:786",
+    "headline": "沙州陷于吐蕃，唐朝陇右、河西州县尽失",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:786",
+        "headline": "沙州陷于吐蕃，唐朝陇右、河西州县尽失",
+        "year": 786,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "沙州陷于吐蕃，唐朝陇右、河西州县尽失",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-790": {
+    "historyId": "event-jiangshan-tang-790",
+    "title": "吐蕃联结葛逻禄攻陷北庭都护府，安西四镇孤悬绝域",
+    "upstreamKey": "tang:790",
+    "headline": "吐蕃联结葛逻禄攻陷北庭都护府，安西四镇孤悬绝域，唐廷与西域隔绝",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:790",
+        "headline": "吐蕃联结葛逻禄攻陷北庭都护府，安西四镇孤悬绝域，唐廷与西域隔绝",
+        "year": 790,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吐蕃联结葛逻禄攻陷北庭都护府，安西四镇孤悬绝域，唐廷与西域隔绝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-332": {
+    "historyId": "event-332",
+    "title": "柳宗元参与永贞革新遭贬",
+    "upstreamKey": "tang:805",
+    "headline": "永贞内禅：王叔文、柳宗元革新受挫，俱文珍迫顺宗禅位",
+    "reason": "正文中的“柳宗元参与永贞革新遭贬”与上游“永贞内禅：王叔文、柳宗元革新受挫，俱文珍迫顺宗禅位”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:805",
+        "headline": "永贞内禅：王叔文、柳宗元革新受挫，俱文珍迫顺宗禅位",
+        "year": 805,
+        "reason": "正文中的“柳宗元参与永贞革新遭贬”与上游“永贞内禅：王叔文、柳宗元革新受挫，俱文珍迫顺宗禅位”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "柳宗元参与永贞革新遭贬",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-329": {
+    "historyId": "event-329",
+    "title": "韩愈随裴度平淮西",
+    "upstreamKey": "tang:817",
+    "headline": "李愬雪夜入蔡州平淮西，史称元和中兴",
+    "reason": "正文中的“韩愈随裴度平淮西”与上游“李愬雪夜入蔡州平淮西，史称元和中兴”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:817",
+        "headline": "李愬雪夜入蔡州平淮西，史称元和中兴",
+        "year": 817,
+        "reason": "正文中的“韩愈随裴度平淮西”与上游“李愬雪夜入蔡州平淮西，史称元和中兴”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "韩愈随裴度平淮西",
+        "status": "reviewed-content-match",
+        "difference": "李愬突袭蔡州、裴度统筹和韩愈任行军司马分工不同；本地已有记述覆盖，保留人物职责。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-821": {
+    "historyId": "event-jiangshan-tang-821",
+    "title": "长庆科举覆试案引发牛李党争，朝臣朋党相倾长达四十余年",
+    "upstreamKey": "tang:821",
+    "headline": "长庆科举覆试案引发“牛李党争”，朝臣朋党相倾长达四十余年",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:821",
+        "headline": "长庆科举覆试案引发“牛李党争”，朝臣朋党相倾长达四十余年",
+        "year": 821,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "长庆科举覆试案引发“牛李党争”，朝臣朋党相倾长达四十余年",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-822": {
+    "historyId": "event-jiangshan-tang-822",
+    "title": "唐蕃长庆会盟",
+    "upstreamKey": "tang:822",
+    "headline": "唐蕃长庆会盟：继长安盟誓后再盟于逻些，次年立会盟碑于大昭寺",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:822",
+        "headline": "唐蕃长庆会盟：继长安盟誓后再盟于逻些，次年立会盟碑于大昭寺",
+        "year": 822,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "唐蕃长庆会盟：继长安盟誓后再盟于逻些，次年立会盟碑于大昭寺",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-835": {
+    "historyId": "event-jiangshan-tang-835",
+    "title": "甘露之变",
+    "upstreamKey": "tang:835",
+    "headline": "甘露之变：唐文宗与李训谋诛仇士良事败，晚唐宦官专权",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:835",
+        "headline": "甘露之变：唐文宗与李训谋诛仇士良事败，晚唐宦官专权",
+        "year": 835,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "甘露之变：唐文宗与李训谋诛仇士良事败，晚唐宦官专权",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-840": {
+    "historyId": "event-jiangshan-tang-840",
+    "title": "回鹘汗国崩溃",
+    "upstreamKey": "tang:840",
+    "headline": "回鹘汗国崩溃；唐武宗与李德裕破回鹘、平泽潞（会昌中兴）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:840",
+        "headline": "回鹘汗国崩溃；唐武宗与李德裕破回鹘、平泽潞（会昌中兴）",
+        "year": 840,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "回鹘汗国崩溃；唐武宗与李德裕破回鹘、平泽潞（会昌中兴）",
+        "status": "reviewed-content-match",
+        "difference": "回鹘汗国崩溃系840年，泽潞之战在843—844年，上游会昌中兴合写跨年。振武镇治所通常定位今内蒙古和林格尔一带，不能按上游括注直接认定在大同；本条分列漠北、振武、潞州和长安，不移植原坐标。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-tang-huichang-suppression": {
+    "historyId": "event-tang-huichang-suppression",
+    "title": "会昌灭佛",
+    "upstreamKey": "tang:845",
+    "headline": "唐武宗下诏拆毁天下佛寺四千六百余所、僧尼还俗，史称会昌法难",
+    "reason": "正文中的“会昌灭佛”与上游“唐武宗下诏拆毁天下佛寺四千六百余所、僧尼还俗，史称会昌法难”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:845",
+        "headline": "唐武宗下诏拆毁天下佛寺四千六百余所、僧尼还俗，史称会昌法难",
+        "year": 845,
+        "reason": "正文中的“会昌灭佛”与上游“唐武宗下诏拆毁天下佛寺四千六百余所、僧尼还俗，史称会昌法难”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "会昌灭佛",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-848": {
+    "historyId": "event-jiangshan-tang-848",
+    "title": "张议潮沙州起义，建归义军收复瓜沙甘肃等十一州归唐",
+    "upstreamKey": "tang:848",
+    "headline": "张议潮沙州起义，建归义军收复瓜沙甘肃等十一州归唐",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:848",
+        "headline": "张议潮沙州起义，建归义军收复瓜沙甘肃等十一州归唐",
+        "year": 848,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "张议潮沙州起义，建归义军收复瓜沙甘肃等十一州归唐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-868": {
+    "historyId": "event-jiangshan-tang-868",
+    "title": "赴援安南之桂林戍卒由庞勋率领起义北攻徐州，截断江淮漕运",
+    "upstreamKey": "tang:868",
+    "headline": "赴援安南之桂林戍卒由庞勋率领起义北攻徐州，截断江淮漕运",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:868",
+        "headline": "赴援安南之桂林戍卒由庞勋率领起义北攻徐州，截断江淮漕运",
+        "year": 868,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "赴援安南之桂林戍卒由庞勋率领起义北攻徐州，截断江淮漕运",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-tang-huang-chao-rebellion": {
+    "historyId": "event-tang-huang-chao-rebellion",
+    "title": "黄巢起义",
+    "upstreamKey": "tang:875",
+    "headline": "王仙芝、黄巢于曹州发动唐末大起义",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:875",
+        "headline": "王仙芝、黄巢于曹州发动唐末大起义",
+        "year": 875,
+        "reason": "正文中的“黄巢起义”与上游“王仙芝、黄巢于曹州发动唐末大起义”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "黄巢起义",
+        "status": "reviewed-content-match",
+        "difference": "王仙芝起事常系874年，黄巢起兵常系875年；曹州起兵与后续全国转战分别表达。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "tang:881",
+        "headline": "黄巢破潼关入长安称帝建齐；唐僖宗奔蜀，唐室衰亡",
+        "year": 881,
+        "reason": "正文中的“黄巢起义”与上游“黄巢破潼关入长安称帝建齐；唐僖宗奔蜀，唐室衰亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "黄巢起义",
+        "status": "reviewed-content-match",
+        "difference": "黄巢进长安与称帝跨880—881年历法边界，保留既有辨析，不把881年当唯一进城日。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-885": {
+    "historyId": "event-jiangshan-tang-885",
+    "title": "唐僖宗还京，朱温、李克用等藩镇并立",
+    "upstreamKey": "tang:885",
+    "headline": "唐僖宗还京，朱温、李克用等藩镇并立，唐室政令不出畿辅",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:885",
+        "headline": "唐僖宗还京，朱温、李克用等藩镇并立，唐室政令不出畿辅",
+        "year": 885,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "唐僖宗还京，朱温、李克用等藩镇并立，唐室政令不出畿辅",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-tang-895": {
+    "historyId": "event-jiangshan-tang-895",
+    "title": "李克用入关中讨李茂贞，王建据蜀、杨行密据淮南",
+    "upstreamKey": "tang:895",
+    "headline": "李克用入关中讨李茂贞，王建据蜀、杨行密据淮南，藩镇割据成型",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:895",
+        "headline": "李克用入关中讨李茂贞，王建据蜀、杨行密据淮南，藩镇割据成型",
+        "year": 895,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李克用入关中讨李茂贞，王建据蜀、杨行密据淮南，藩镇割据成型",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-tang-capital-relocation": {
+    "historyId": "event-tang-capital-relocation",
+    "title": "唐迁都洛阳",
+    "upstreamKey": "tang:904",
+    "headline": "朱温劫唐昭宗毁长安东迁洛阳，旋弑昭宗立哀帝（次年白马之祸）",
+    "reason": "正文中的“唐迁都洛阳”与上游“朱温劫唐昭宗毁长安东迁洛阳，旋弑昭宗立哀帝（次年白马之祸）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:904",
+        "headline": "朱温劫唐昭宗毁长安东迁洛阳，旋弑昭宗立哀帝（次年白马之祸）",
+        "year": 904,
+        "reason": "正文中的“唐迁都洛阳”与上游“朱温劫唐昭宗毁长安东迁洛阳，旋弑昭宗立哀帝（次年白马之祸）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "唐迁都洛阳",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-114": {
+    "historyId": "event-114",
+    "title": "朱温废唐",
+    "upstreamKey": "tang:907",
+    "headline": "朱温逼唐哀帝禅位建后梁，唐朝灭亡",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "tang:907",
+        "headline": "朱温逼唐哀帝禅位建后梁，唐朝灭亡",
+        "year": 907,
+        "reason": "正文中的“朱温废唐”与上游“朱温逼唐哀帝禅位建后梁，唐朝灭亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "朱温废唐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "wudai:907",
+        "headline": "朱温代唐建后梁；王建在成都称帝建前蜀，契丹耶律阿保机称汗",
+        "year": 907,
+        "reason": "正文中的“朱温废唐”与上游“朱温代唐建后梁；王建在成都称帝建前蜀，契丹耶律阿保机称汗”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "朱温废唐",
+        "status": "reviewed-content-match",
+        "difference": "朱温后梁、王建前蜀、阿保机称汗分属三政权；契丹称汗与916年称帝建国不同。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-907-detail": {
+    "historyId": "event-jiangshan-wudai-907-detail",
+    "title": "王建建立前蜀",
+    "upstreamKey": "wudai:907",
+    "headline": "朱温代唐建后梁；王建在成都称帝建前蜀，契丹耶律阿保机称汗",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:907",
+        "headline": "朱温代唐建后梁；王建在成都称帝建前蜀，契丹耶律阿保机称汗",
+        "year": 907,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "王建建立前蜀",
+        "status": "reviewed-content-match",
+        "difference": "朱温后梁、王建前蜀、阿保机称汗分属三政权；契丹称汗与916年称帝建国不同。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-907-supplement": {
+    "historyId": "event-jiangshan-wudai-907-supplement",
+    "title": "耶律阿保机称汗",
+    "upstreamKey": "wudai:907",
+    "headline": "朱温代唐建后梁；王建在成都称帝建前蜀，契丹耶律阿保机称汗",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:907",
+        "headline": "朱温代唐建后梁；王建在成都称帝建前蜀，契丹耶律阿保机称汗",
+        "year": 907,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "耶律阿保机称汗",
+        "status": "reviewed-content-match",
+        "difference": "朱温后梁、王建前蜀、阿保机称汗分属三政权；契丹称汗与916年称帝建国不同。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-909": {
+    "historyId": "event-jiangshan-wudai-909",
+    "title": "后梁册封王审知为闽王，定都福州保境安民",
+    "upstreamKey": "wudai:909",
+    "headline": "后梁册封王审知为闽王，定都福州保境安民",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:909",
+        "headline": "后梁册封王审知为闽王，定都福州保境安民",
+        "year": 909,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "后梁册封王审知为闽王，定都福州保境安民",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-910": {
+    "historyId": "event-jiangshan-wudai-910",
+    "title": "吴越王钱镠筑钱塘捍海石塘",
+    "upstreamKey": "wudai:910",
+    "headline": "吴越王钱镠筑钱塘捍海石塘；徐温掌淮南政固杨吴基业",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:910",
+        "headline": "吴越王钱镠筑钱塘捍海石塘；徐温掌淮南政固杨吴基业",
+        "year": 910,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吴越王钱镠筑钱塘捍海石塘；徐温掌淮南政固杨吴基业",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-911": {
+    "historyId": "event-jiangshan-wudai-911",
+    "title": "刘守光在幽州称大燕皇帝，晋王李存勖兴兵讨燕（913年灭桀燕）",
+    "upstreamKey": "wudai:911",
+    "headline": "刘守光在幽州称大燕皇帝，晋王李存勖兴兵讨燕（913年灭桀燕）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:911",
+        "headline": "刘守光在幽州称大燕皇帝，晋王李存勖兴兵讨燕（913年灭桀燕）",
+        "year": 911,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘守光在幽州称大燕皇帝，晋王李存勖兴兵讨燕（913年灭桀燕）",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-363": {
+    "historyId": "event-363",
+    "title": "契丹建国",
+    "upstreamKey": "wudai:916",
+    "headline": "耶律阿保机建契丹国，称帝建元神册",
+    "reason": "正文中的“契丹建国”与上游“耶律阿保机建契丹国，称帝建元神册”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:916",
+        "headline": "耶律阿保机建契丹国，称帝建元神册",
+        "year": 916,
+        "reason": "正文中的“契丹建国”与上游“耶律阿保机建契丹国，称帝建元神册”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "契丹建国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-917": {
+    "historyId": "event-jiangshan-wudai-917",
+    "title": "刘龑在番禺称帝建南汉，定都兴王府",
+    "upstreamKey": "wudai:917",
+    "headline": "刘龑在番禺称帝建南汉，定都兴王府",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:917",
+        "headline": "刘龑在番禺称帝建南汉，定都兴王府",
+        "year": 917,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘龑在番禺称帝建南汉，定都兴王府",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-923": {
+    "historyId": "event-jiangshan-wudai-923",
+    "title": "李存勖于魏州称帝建后唐，旋遣奇兵自郓州渡河袭破汴州",
+    "upstreamKey": "wudai:923",
+    "headline": "李存勖于魏州称帝建后唐，旋遣奇兵自郓州渡河袭破汴州，后梁末帝自尽",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:923",
+        "headline": "李存勖于魏州称帝建后唐，旋遣奇兵自郓州渡河袭破汴州，后梁末帝自尽",
+        "year": 923,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李存勖于魏州称帝建后唐，旋遣奇兵自郓州渡河袭破汴州，后梁末帝自尽",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-925": {
+    "historyId": "event-jiangshan-wudai-925",
+    "title": "后唐庄宗遣军灭前蜀并有巴蜀",
+    "upstreamKey": "wudai:925",
+    "headline": "后唐庄宗遣军灭前蜀并有巴蜀；次年契丹灭渤海国",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:925",
+        "headline": "后唐庄宗遣军灭前蜀并有巴蜀；次年契丹灭渤海国",
+        "year": 925,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "后唐庄宗遣军灭前蜀并有巴蜀；次年契丹灭渤海国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-926": {
+    "historyId": "event-jiangshan-wudai-926",
+    "title": "兴教门之变",
+    "upstreamKey": "wudai:926",
+    "headline": "兴教门之变：郭从谦洛阳兵变弑后唐庄宗，李嗣源即位",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:926",
+        "headline": "兴教门之变：郭从谦洛阳兵变弑后唐庄宗，李嗣源即位",
+        "year": 926,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "兴教门之变：郭从谦洛阳兵变弑后唐庄宗，李嗣源即位",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-927": {
+    "historyId": "event-jiangshan-wudai-927",
+    "title": "后唐册封马殷为楚国王，与荆南高氏分扼湖湘荆襄商道",
+    "upstreamKey": "wudai:927",
+    "headline": "后唐册封马殷为楚国王，与荆南高氏分扼湖湘荆襄商道",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:927",
+        "headline": "后唐册封马殷为楚国王，与荆南高氏分扼湖湘荆襄商道",
+        "year": 927,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "后唐册封马殷为楚国王，与荆南高氏分扼湖湘荆襄商道",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-934": {
+    "historyId": "event-jiangshan-wudai-934",
+    "title": "后唐西川节度使孟知祥兼并东川据有全蜀，趁唐乱于成都称帝建后蜀",
+    "upstreamKey": "wudai:934",
+    "headline": "后唐西川节度使孟知祥兼并东川据有全蜀，趁唐乱于成都称帝建后蜀",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:934",
+        "headline": "后唐西川节度使孟知祥兼并东川据有全蜀，趁唐乱于成都称帝建后蜀",
+        "year": 934,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "后唐西川节度使孟知祥兼并东川据有全蜀，趁唐乱于成都称帝建后蜀",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-187": {
+    "historyId": "event-187",
+    "title": "石敬瑭割让幽云十六州",
+    "upstreamKey": "wudai:936",
+    "headline": "河东节度使石敬瑭反后唐，认契丹主为父帝割燕云十六州，灭唐建后晋",
+    "reason": "正文中的“石敬瑭割让幽云十六州”与上游“河东节度使石敬瑭反后唐，认契丹主为父帝割燕云十六州，灭唐建后晋”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:936",
+        "headline": "河东节度使石敬瑭反后唐，认契丹主为父帝割燕云十六州，灭唐建后晋",
+        "year": 936,
+        "reason": "正文中的“石敬瑭割让幽云十六州”与上游“河东节度使石敬瑭反后唐，认契丹主为父帝割燕云十六州，灭唐建后晋”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "石敬瑭割让幽云十六州",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-937": {
+    "historyId": "event-jiangshan-wudai-937",
+    "title": "徐知诰（李昪）代杨吴建南唐，定都金陵",
+    "upstreamKey": "wudai:937",
+    "headline": "徐知诰（李昪）代杨吴建南唐，定都金陵",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:937",
+        "headline": "徐知诰（李昪）代杨吴建南唐，定都金陵",
+        "year": 937,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "徐知诰（李昪）代杨吴建南唐，定都金陵",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-939": {
+    "historyId": "event-jiangshan-wudai-939",
+    "title": "吴权于白藤江设桩大破南汉水军，于交州称王自立",
+    "upstreamKey": "wudai:939",
+    "headline": "吴权于白藤江设桩大破南汉水军，于交州称王自立，安南脱离中原王朝",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:939",
+        "headline": "吴权于白藤江设桩大破南汉水军，于交州称王自立，安南脱离中原王朝",
+        "year": 939,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吴权于白藤江设桩大破南汉水军，于交州称王自立，安南脱离中原王朝",
+        "status": "reviewed-content-match",
+        "difference": "白藤江战役常系938年，吴权称王系939年，按938—939年记录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-942": {
+    "historyId": "event-jiangshan-wudai-942",
+    "title": "后晋高祖石敬瑭卒，出帝石重贵即位",
+    "upstreamKey": "wudai:942",
+    "headline": "后晋高祖石敬瑭卒，出帝石重贵即位，用景延广议对契丹“称孙不称臣”",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:942",
+        "headline": "后晋高祖石敬瑭卒，出帝石重贵即位，用景延广议对契丹“称孙不称臣”",
+        "year": 942,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "后晋高祖石敬瑭卒，出帝石重贵即位，用景延广议对契丹“称孙不称臣”",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-945": {
+    "historyId": "event-jiangshan-wudai-945",
+    "title": "南唐攻灭闽国，与吴越分其地",
+    "upstreamKey": "wudai:945",
+    "headline": "南唐攻灭闽国，与吴越分其地",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:945",
+        "headline": "南唐攻灭闽国，与吴越分其地",
+        "year": 945,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "南唐攻灭闽国，与吴越分其地",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-947": {
+    "historyId": "event-jiangshan-wudai-947",
+    "title": "契丹南下俘石重贵灭后晋，改国号辽",
+    "upstreamKey": "wudai:947",
+    "headline": "契丹南下俘石重贵灭后晋，改国号辽；河东节度使刘知远于太原建后汉",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:947",
+        "headline": "契丹南下俘石重贵灭后晋，改国号辽；河东节度使刘知远于太原建后汉",
+        "year": 947,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "契丹南下俘石重贵灭后晋，改国号辽；河东节度使刘知远于太原建后汉",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-951": {
+    "historyId": "event-jiangshan-wudai-951",
+    "title": "枢密使郭威遭后汉隐帝猜忌起兵代汉建后周",
+    "upstreamKey": "wudai:951",
+    "headline": "枢密使郭威遭后汉隐帝猜忌起兵代汉建后周；刘崇建北汉，南唐灭马楚",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:951",
+        "headline": "枢密使郭威遭后汉隐帝猜忌起兵代汉建后周；刘崇建北汉，南唐灭马楚",
+        "year": 951,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "枢密使郭威遭后汉隐帝猜忌起兵代汉建后周；刘崇建北汉，南唐灭马楚",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-954": {
+    "historyId": "event-jiangshan-wudai-954",
+    "title": "高平之战",
+    "upstreamKey": "wudai:954",
+    "headline": "高平之战：周世宗柴荣亲征，赵匡胤死战大破北汉与辽联军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:954",
+        "headline": "高平之战：周世宗柴荣亲征，赵匡胤死战大破北汉与辽联军",
+        "year": 954,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "高平之战：周世宗柴荣亲征，赵匡胤死战大破北汉与辽联军",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-188": {
+    "historyId": "event-188",
+    "title": "周世宗改革",
+    "upstreamKey": "wudai:955",
+    "headline": "周世宗西征后蜀收复秦、凤、成、阶四州，同年冬南征淮南",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:955",
+        "headline": "周世宗西征后蜀收复秦、凤、成、阶四州，同年冬南征淮南",
+        "year": 955,
+        "reason": "正文中的“周世宗改革”与上游“周世宗西征后蜀收复秦、凤、成、阶四州，同年冬南征淮南”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "周世宗改革",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "wudai:958",
+        "headline": "周世宗三征南唐功成：李璟去帝号献江北淮南十四州",
+        "year": 958,
+        "reason": "正文中的“周世宗改革”与上游“周世宗三征南唐功成：李璟去帝号献江北淮南十四州”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "周世宗改革",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "wudai:959",
+        "headline": "周世宗北伐辽国，收复瀛、莫、易三州与三关",
+        "year": 959,
+        "reason": "正文中的“周世宗改革”与上游“周世宗北伐辽国，收复瀛、莫、易三州与三关”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "周世宗改革",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-wudai-955-detail": {
+    "historyId": "event-jiangshan-wudai-955-detail",
+    "title": "后周收复秦凤四州并南征",
+    "upstreamKey": "wudai:955",
+    "headline": "周世宗西征后蜀收复秦、凤、成、阶四州，同年冬南征淮南",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:955",
+        "headline": "周世宗西征后蜀收复秦、凤、成、阶四州，同年冬南征淮南",
+        "year": 955,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "后周收复秦凤四州并南征",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-129": {
+    "historyId": "event-129",
+    "title": "陈桥兵变",
+    "upstreamKey": "wudai:960",
+    "headline": "周世宗崩后幼主柴宗训嗣位，殿前都点检赵匡胤陈桥兵变，受禅建宋",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "wudai:960",
+        "headline": "周世宗崩后幼主柴宗训嗣位，殿前都点检赵匡胤陈桥兵变，受禅建宋",
+        "year": 960,
+        "reason": "正文中的“陈桥兵变”与上游“周世宗崩后幼主柴宗训嗣位，殿前都点检赵匡胤陈桥兵变，受禅建宋”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "陈桥兵变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "beisong:960",
+        "headline": "殿前都点检赵匡胤发动陈桥兵变，回师开封受后周恭帝禅位，建立北宋",
+        "year": 960,
+        "reason": "正文中的“陈桥兵变”与上游“殿前都点检赵匡胤发动陈桥兵变，回师开封受后周恭帝禅位，建立北宋”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "陈桥兵变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-release-command": {
+    "historyId": "event-song-release-command",
+    "title": "杯酒释兵权",
+    "upstreamKey": "beisong:961",
+    "headline": "宋太祖“杯酒释兵权”定重文轻武，继设通判、转运使收地方权",
+    "reason": "正文中的“杯酒释兵权”与上游“宋太祖“杯酒释兵权”定重文轻武，继设通判、转运使收地方权”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:961",
+        "headline": "宋太祖“杯酒释兵权”定重文轻武，继设通判、转运使收地方权",
+        "year": 961,
+        "reason": "正文中的“杯酒释兵权”与上游“宋太祖“杯酒释兵权”定重文轻武，继设通判、转运使收地方权”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "杯酒释兵权",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-963": {
+    "historyId": "event-jiangshan-beisong-963",
+    "title": "慕容延钊假道灭虢，北宋平定荆南与湖南",
+    "upstreamKey": "beisong:963",
+    "headline": "慕容延钊假道灭虢，北宋平定荆南与湖南",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:963",
+        "headline": "慕容延钊假道灭虢，北宋平定荆南与湖南",
+        "year": 963,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "慕容延钊假道灭虢，北宋平定荆南与湖南",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-965": {
+    "historyId": "event-jiangshan-beisong-965",
+    "title": "王全斌攻入成都灭后蜀孟昶降，花蕊夫人赋诗叹亡国",
+    "upstreamKey": "beisong:965",
+    "headline": "王全斌攻入成都灭后蜀孟昶降，花蕊夫人赋诗叹亡国",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:965",
+        "headline": "王全斌攻入成都灭后蜀孟昶降，花蕊夫人赋诗叹亡国",
+        "year": 965,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王全斌攻入成都灭后蜀孟昶降，花蕊夫人赋诗叹亡国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-971": {
+    "historyId": "event-jiangshan-beisong-971",
+    "title": "潘美率宋军克广州，刘鋹降",
+    "upstreamKey": "beisong:971",
+    "headline": "潘美率宋军克广州，刘鋹降，南汉亡",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:971",
+        "headline": "潘美率宋军克广州，刘鋹降，南汉亡",
+        "year": 971,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "潘美率宋军克广州，刘鋹降，南汉亡",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-conquest-southern-tang": {
+    "historyId": "event-song-conquest-southern-tang",
+    "title": "宋灭南唐",
+    "upstreamKey": "beisong:975",
+    "headline": "曹彬率宋军攻克金陵，李煜降，南唐亡",
+    "reason": "正文中的“宋灭南唐”与上游“曹彬率宋军攻克金陵，李煜降，南唐亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:975",
+        "headline": "曹彬率宋军攻克金陵，李煜降，南唐亡",
+        "year": 975,
+        "reason": "正文中的“宋灭南唐”与上游“曹彬率宋军攻克金陵，李煜降，南唐亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "宋灭南唐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-976": {
+    "historyId": "event-jiangshan-beisong-976",
+    "title": "斧声烛影",
+    "upstreamKey": "beisong:976",
+    "headline": "斧声烛影：宋太祖万岁殿夜饮暴崩，晋王赵光义即位",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:976",
+        "headline": "斧声烛影：宋太祖万岁殿夜饮暴崩，晋王赵光义即位",
+        "year": 976,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "斧声烛影：宋太祖万岁殿夜饮暴崩，晋王赵光义即位",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-978": {
+    "historyId": "event-jiangshan-beisong-978",
+    "title": "吴越王钱俶纳土归宋，江南和平统一",
+    "upstreamKey": "beisong:978",
+    "headline": "吴越王钱俶纳土归宋，江南和平统一",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:978",
+        "headline": "吴越王钱俶纳土归宋，江南和平统一",
+        "year": 978,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吴越王钱俶纳土归宋，江南和平统一",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-conquest-northern-han": {
+    "historyId": "event-song-conquest-northern-han",
+    "title": "北宋灭北汉",
+    "upstreamKey": "beisong:979",
+    "headline": "宋太宗灭北汉结束十国分裂；高梁河之战北伐失利",
+    "reason": "正文中的“北宋灭北汉”与上游“宋太宗灭北汉结束十国分裂；高梁河之战北伐失利”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:979",
+        "headline": "宋太宗灭北汉结束十国分裂；高梁河之战北伐失利",
+        "year": 979,
+        "reason": "正文中的“北宋灭北汉”与上游“宋太宗灭北汉结束十国分裂；高梁河之战北伐失利”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "北宋灭北汉",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-gaoliang-river": {
+    "historyId": "event-song-gaoliang-river",
+    "title": "高梁河之战",
+    "upstreamKey": "beisong:979",
+    "headline": "宋太宗灭北汉结束十国分裂；高梁河之战北伐失利",
+    "reason": "正文中的“高梁河之战”与上游“宋太宗灭北汉结束十国分裂；高梁河之战北伐失利”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:979",
+        "headline": "宋太宗灭北汉结束十国分裂；高梁河之战北伐失利",
+        "year": 979,
+        "reason": "正文中的“高梁河之战”与上游“宋太宗灭北汉结束十国分裂；高梁河之战北伐失利”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "高梁河之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-yongxi-campaign": {
+    "historyId": "event-song-yongxi-campaign",
+    "title": "雍熙北伐",
+    "upstreamKey": "beisong:986",
+    "headline": "雍熙北伐失利，杨业于陈家谷力战殉国",
+    "reason": "正文中的“雍熙北伐”与上游“雍熙北伐失利，杨业于陈家谷力战殉国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:986",
+        "headline": "雍熙北伐失利，杨业于陈家谷力战殉国",
+        "year": 986,
+        "reason": "正文中的“雍熙北伐”与上游“雍熙北伐失利，杨业于陈家谷力战殉国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "雍熙北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-997": {
+    "historyId": "event-jiangshan-beisong-997",
+    "title": "宋太宗分全国为至道十五路，定型路—州—县体制",
+    "upstreamKey": "beisong:997",
+    "headline": "宋太宗分全国为至道十五路，定型“路—州—县”体制",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:997",
+        "headline": "宋太宗分全国为至道十五路，定型“路—州—县”体制",
+        "year": 997,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宋太宗分全国为至道十五路，定型“路—州—县”体制",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1002": {
+    "historyId": "event-jiangshan-beisong-1002",
+    "title": "李继迁攻陷北宋灵州改西平府，党项尽据河套平原",
+    "upstreamKey": "beisong:1002",
+    "headline": "李继迁攻陷北宋灵州改西平府，党项尽据河套平原",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1002",
+        "headline": "李继迁攻陷北宋灵州改西平府，党项尽据河套平原",
+        "year": 1002,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李继迁攻陷北宋灵州改西平府，党项尽据河套平原",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-130": {
+    "historyId": "event-130",
+    "title": "澶渊之盟",
+    "upstreamKey": "beisong:1004",
+    "headline": "辽萧太后与圣宗统军南下抵澶州，寇准力劝宋真宗亲征，订立澶渊之盟",
+    "reason": "正文中的“澶渊之盟”与上游“辽萧太后与圣宗统军南下抵澶州，寇准力劝宋真宗亲征，订立澶渊之盟”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1004",
+        "headline": "辽萧太后与圣宗统军南下抵澶州，寇准力劝宋真宗亲征，订立澶渊之盟",
+        "year": 1004,
+        "reason": "正文中的“澶渊之盟”与上游“辽萧太后与圣宗统军南下抵澶州，寇准力劝宋真宗亲征，订立澶渊之盟”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "澶渊之盟",
+        "status": "reviewed-content-match",
+        "difference": "战争起于1004年，盟约在景德元年十二月跨公历1005年，本地保留1005年纪年并注明1004—1005年过程。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1007": {
+    "historyId": "event-jiangshan-beisong-1007",
+    "title": "辽圣宗营建中京大定府",
+    "upstreamKey": "beisong:1007",
+    "headline": "辽圣宗营建中京大定府；宋辽沿边广设榷场互市",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1007",
+        "headline": "辽圣宗营建中京大定府；宋辽沿边广设榷场互市",
+        "year": 1007,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "辽圣宗营建中京大定府；宋辽沿边广设榷场互市",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1014": {
+    "historyId": "event-jiangshan-beisong-1014",
+    "title": "宋真宗升宋州应天府为南京陪都",
+    "upstreamKey": "beisong:1014",
+    "headline": "宋真宗升宋州应天府为南京陪都",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1014",
+        "headline": "宋真宗升宋州应天府为南京陪都",
+        "year": 1014,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宋真宗升宋州应天府为南京陪都",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-jiaozi-office": {
+    "historyId": "event-song-jiaozi-office",
+    "title": "交子务设置",
+    "upstreamKey": "beisong:1023",
+    "headline": "成都设益州交子务，发行世界最早官方纸币“交子”",
+    "reason": "正文中的“交子务设置”与上游“成都设益州交子务，发行世界最早官方纸币“交子””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1023",
+        "headline": "成都设益州交子务，发行世界最早官方纸币“交子”",
+        "year": 1023,
+        "reason": "正文中的“交子务设置”与上游“成都设益州交子务，发行世界最早官方纸币“交子””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "交子务设置",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-364": {
+    "historyId": "event-364",
+    "title": "西夏建立",
+    "upstreamKey": "beisong:1038",
+    "headline": "元昊于兴庆府称帝建大夏（西夏）",
+    "reason": "正文中的“西夏建立”与上游“元昊于兴庆府称帝建大夏（西夏）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1038",
+        "headline": "元昊于兴庆府称帝建大夏（西夏）",
+        "year": 1038,
+        "reason": "正文中的“西夏建立”与上游“元昊于兴庆府称帝建大夏（西夏）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "西夏建立",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1041": {
+    "historyId": "event-jiangshan-beisong-1041",
+    "title": "好水川之战",
+    "upstreamKey": "beisong:1041",
+    "headline": "好水川之战：西夏元昊设伏歼灭任福主力，震动宋廷",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1041",
+        "headline": "好水川之战：西夏元昊设伏歼灭任福主力，震动宋廷",
+        "year": 1041,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "好水川之战：西夏元昊设伏歼灭任福主力，震动宋廷",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1042": {
+    "historyId": "event-jiangshan-beisong-1042",
+    "title": "宋辽达成重熙增币",
+    "upstreamKey": "beisong:1042",
+    "headline": "宋辽达成“重熙增币”；宋仁宗建大名府为北京陪都以备御辽",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1042",
+        "headline": "宋辽达成“重熙增币”；宋仁宗建大名府为北京陪都以备御辽",
+        "year": 1042,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宋辽达成“重熙增币”；宋仁宗建大名府为北京陪都以备御辽",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-qingli-reforms": {
+    "historyId": "event-song-qingli-reforms",
+    "title": "庆历新政",
+    "upstreamKey": "beisong:1043",
+    "headline": "范仲淹、富弼主持推行“庆历新政”",
+    "reason": "正文中的“庆历新政”与上游“范仲淹、富弼主持推行“庆历新政””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1043",
+        "headline": "范仲淹、富弼主持推行“庆历新政”",
+        "year": 1043,
+        "reason": "正文中的“庆历新政”与上游“范仲淹、富弼主持推行“庆历新政””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "庆历新政",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-xia-qingli-peace": {
+    "historyId": "event-song-xia-qingli-peace",
+    "title": "宋夏庆历和议",
+    "upstreamKey": "beisong:1044",
+    "headline": "宋夏订立“庆历和议”，元昊称臣、北宋岁赐银绢茶",
+    "reason": "正文中的“宋夏庆历和议”与上游“宋夏订立“庆历和议”，元昊称臣、北宋岁赐银绢茶”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1044",
+        "headline": "宋夏订立“庆历和议”，元昊称臣、北宋岁赐银绢茶",
+        "year": 1044,
+        "reason": "正文中的“宋夏庆历和议”与上游“宋夏订立“庆历和议”，元昊称臣、北宋岁赐银绢茶”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "宋夏庆历和议",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1048": {
+    "historyId": "event-jiangshan-beisong-1048",
+    "title": "黄河于澶州商胡埽决口北流，东汉以来王景故道废弃",
+    "upstreamKey": "beisong:1048",
+    "headline": "黄河于澶州商胡埽决口北流，东汉以来王景故道废弃",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1048",
+        "headline": "黄河于澶州商胡埽决口北流，东汉以来王景故道废弃",
+        "year": 1048,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "黄河于澶州商胡埽决口北流，东汉以来王景故道废弃",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-337": {
+    "historyId": "event-337",
+    "title": "欧阳修主持嘉祐二年贡举",
+    "upstreamKey": "beisong:1057",
+    "headline": "欧阳修主持嘉祐二年贡举，苏轼、苏辙、曾巩、张载、程颢同榜登科",
+    "reason": "正文中的“欧阳修主持嘉祐二年贡举”与上游“欧阳修主持嘉祐二年贡举，苏轼、苏辙、曾巩、张载、程颢同榜登科”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1057",
+        "headline": "欧阳修主持嘉祐二年贡举，苏轼、苏辙、曾巩、张载、程颢同榜登科",
+        "year": 1057,
+        "reason": "正文中的“欧阳修主持嘉祐二年贡举”与上游“欧阳修主持嘉祐二年贡举，苏轼、苏辙、曾巩、张载、程颢同榜登科”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "欧阳修主持嘉祐二年贡举",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-194": {
+    "historyId": "event-194",
+    "title": "王安石变法",
+    "upstreamKey": "beisong:1069",
+    "headline": "宋神宗任用王安石推行熙宁变法",
+    "reason": "正文中的“王安石变法”与上游“宋神宗任用王安石推行熙宁变法”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1069",
+        "headline": "宋神宗任用王安石推行熙宁变法",
+        "year": 1069,
+        "reason": "正文中的“王安石变法”与上游“宋神宗任用王安石推行熙宁变法”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "王安石变法",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1072": {
+    "historyId": "event-jiangshan-beisong-1072",
+    "title": "王韶熙河开边，收复熙、河、洮、岷等六州",
+    "upstreamKey": "beisong:1072",
+    "headline": "王韶熙河开边，收复熙、河、洮、岷等六州，新置熙河路",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1072",
+        "headline": "王韶熙河开边，收复熙、河、洮、岷等六州，新置熙河路",
+        "year": 1072,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王韶熙河开边，收复熙、河、洮、岷等六州，新置熙河路",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-zizhi-tongjian-completion": {
+    "historyId": "event-song-zizhi-tongjian-completion",
+    "title": "资治通鉴成书",
+    "upstreamKey": "beisong:1084",
+    "headline": "司马光历时十九年编成编年体通史巨著《资治通鉴》进呈宋神宗",
+    "reason": "正文中的“资治通鉴成书”与上游“司马光历时十九年编成编年体通史巨著《资治通鉴》进呈宋神宗”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1084",
+        "headline": "司马光历时十九年编成编年体通史巨著《资治通鉴》进呈宋神宗",
+        "year": 1084,
+        "reason": "正文中的“资治通鉴成书”与上游“司马光历时十九年编成编年体通史巨著《资治通鉴》进呈宋神宗”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "资治通鉴成书",
+        "status": "reviewed-content-match",
+        "difference": "资治通鉴在洛阳设局编纂，1084年进呈朝廷；上游开封为进呈中枢，并非全书撰写处。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1085": {
+    "historyId": "event-jiangshan-beisong-1085",
+    "title": "高太后垂帘起用司马光尽废新法（元祐更化），党争激化",
+    "upstreamKey": "beisong:1085",
+    "headline": "高太后垂帘起用司马光尽废新法（元祐更化），党争激化",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1085",
+        "headline": "高太后垂帘起用司马光尽废新法（元祐更化），党争激化",
+        "year": 1085,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "高太后垂帘起用司马光尽废新法（元祐更化），党争激化",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1104": {
+    "historyId": "event-jiangshan-beisong-1104",
+    "title": "王厚、童贯发起河湟开边，收复青唐置西宁州",
+    "upstreamKey": "beisong:1104",
+    "headline": "王厚、童贯发起“河湟开边”，收复青唐置西宁州",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1104",
+        "headline": "王厚、童贯发起“河湟开边”，收复青唐置西宁州",
+        "year": 1104,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王厚、童贯发起“河湟开边”，收复青唐置西宁州",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1105": {
+    "historyId": "event-jiangshan-beisong-1105",
+    "title": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴花石纲劳民伤财",
+    "upstreamKey": "beisong:1105",
+    "headline": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴“花石纲”劳民伤财",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1105",
+        "headline": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴“花石纲”劳民伤财",
+        "year": 1105,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴“花石纲”劳民伤财",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-365": {
+    "historyId": "event-365",
+    "title": "金朝建立",
+    "upstreamKey": "beisong:1115",
+    "headline": "完颜阿骨打在会宁称帝建金，攻取辽东与上京",
+    "reason": "正文中的“金朝建立”与上游“完颜阿骨打在会宁称帝建金，攻取辽东与上京”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1115",
+        "headline": "完颜阿骨打在会宁称帝建金，攻取辽东与上京",
+        "year": 1115,
+        "reason": "正文中的“金朝建立”与上游“完颜阿骨打在会宁称帝建金，攻取辽东与上京”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "金朝建立",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-jin-maritime-alliance": {
+    "historyId": "event-song-jin-maritime-alliance",
+    "title": "海上之盟",
+    "upstreamKey": "beisong:1120",
+    "headline": "北宋遣马政、赵良嗣自登州泛海使金，订立“海上之盟”约夹攻辽朝",
+    "reason": "正文中的“海上之盟”与上游“北宋遣马政、赵良嗣自登州泛海使金，订立“海上之盟”约夹攻辽朝”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1120",
+        "headline": "北宋遣马政、赵良嗣自登州泛海使金，订立“海上之盟”约夹攻辽朝",
+        "year": 1120,
+        "reason": "正文中的“海上之盟”与上游“北宋遣马政、赵良嗣自登州泛海使金，订立“海上之盟”约夹攻辽朝”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "海上之盟",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1121": {
+    "historyId": "event-jiangshan-beisong-1121",
+    "title": "方腊江南起义攻陷杭州震动东南，童贯率北伐军南下讨平",
+    "upstreamKey": "beisong:1121",
+    "headline": "方腊江南起义攻陷杭州震动东南，童贯率北伐军南下讨平",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1121",
+        "headline": "方腊江南起义攻陷杭州震动东南，童贯率北伐军南下讨平",
+        "year": 1121,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "方腊江南起义攻陷杭州震动东南，童贯率北伐军南下讨平",
+        "status": "reviewed-content-match",
+        "difference": "方腊起事在1120年，1121年被平定，事件范围1120—1121年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1123": {
+    "historyId": "event-jiangshan-beisong-1123",
+    "title": "金依海上之盟交割燕京六州空城，北宋置燕山府路",
+    "upstreamKey": "beisong:1123",
+    "headline": "金依海上之盟交割燕京六州空城，北宋置燕山府路",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1123",
+        "headline": "金依海上之盟交割燕京六州空城，北宋置燕山府路",
+        "year": 1123,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "金依海上之盟交割燕京六州空城，北宋置燕山府路",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-beisong-1125": {
+    "historyId": "event-jiangshan-beisong-1125",
+    "title": "完颜娄室俘辽天祚帝，金朝灭辽",
+    "upstreamKey": "beisong:1125",
+    "headline": "完颜娄室俘辽天祚帝，金朝灭辽",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1125",
+        "headline": "完颜娄室俘辽天祚帝，金朝灭辽",
+        "year": 1125,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "完颜娄室俘辽天祚帝，金朝灭辽",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-131": {
+    "historyId": "event-131",
+    "title": "靖康之变",
+    "upstreamKey": "beisong:1127",
+    "headline": "靖康之变：金军二围东京攻陷汴梁，掳宋徽宗、钦宗二帝北去，北宋亡",
+    "reason": "正文中的“靖康之变”与上游“靖康之变：金军二围东京攻陷汴梁，掳宋徽宗、钦宗二帝北去，北宋亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "beisong:1127",
+        "headline": "靖康之变：金军二围东京攻陷汴梁，掳宋徽宗、钦宗二帝北去，北宋亡",
+        "year": 1127,
+        "reason": "正文中的“靖康之变”与上游“靖康之变：金军二围东京攻陷汴梁，掳宋徽宗、钦宗二帝北去，北宋亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "靖康之变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-gaozong-accession": {
+    "historyId": "event-song-gaozong-accession",
+    "title": "宋高宗即位",
+    "upstreamKey": "nansong:1127",
+    "headline": "赵构即位于南京应天府，南宋开始",
+    "reason": "正文中的“宋高宗即位”与上游“赵构即位于南京应天府，南宋开始”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1127",
+        "headline": "赵构即位于南京应天府，南宋开始",
+        "year": 1127,
+        "reason": "正文中的“宋高宗即位”与上游“赵构即位于南京应天府，南宋开始”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "宋高宗即位",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1129": {
+    "historyId": "event-jiangshan-nansong-1129",
+    "title": "苗刘兵变",
+    "upstreamKey": "nansong:1129",
+    "headline": "苗刘兵变：苗傅、刘正彦于杭州逼高宗禅位，韩世忠平叛",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1129",
+        "headline": "苗刘兵变：苗傅、刘正彦于杭州逼高宗禅位，韩世忠平叛",
+        "year": 1129,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "苗刘兵变：苗傅、刘正彦于杭州逼高宗禅位，韩世忠平叛",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1130": {
+    "historyId": "event-jiangshan-nansong-1130",
+    "title": "韩世忠黄天荡阻击金兀术水军",
+    "upstreamKey": "nansong:1130",
+    "headline": "韩世忠黄天荡阻击金兀术水军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1130",
+        "headline": "韩世忠黄天荡阻击金兀术水军",
+        "year": 1130,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "韩世忠黄天荡阻击金兀术水军",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-195": {
+    "historyId": "event-195",
+    "title": "岳飞北伐",
+    "upstreamKey": "nansong:1134",
+    "headline": "岳飞挥师北伐收复襄阳、随、郢、唐、邓、信阳六郡",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1134",
+        "headline": "岳飞挥师北伐收复襄阳、随、郢、唐、邓、信阳六郡",
+        "year": 1134,
+        "reason": "正文中的“岳飞北伐”与上游“岳飞挥师北伐收复襄阳、随、郢、唐、邓、信阳六郡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "岳飞北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "nansong:1140",
+        "headline": "岳飞北伐，郾城、颍昌大捷，进兵朱仙镇",
+        "year": 1140,
+        "reason": "正文中的“岳飞北伐”与上游“岳飞北伐，郾城、颍昌大捷，进兵朱仙镇”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "岳飞北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1138": {
+    "historyId": "event-jiangshan-nansong-1138",
+    "title": "宋高宗赵构结束巡幸，正式以临安府为行在",
+    "upstreamKey": "nansong:1138",
+    "headline": "宋高宗赵构结束巡幸，正式以临安府为行在，秦桧复相主持议和",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1138",
+        "headline": "宋高宗赵构结束巡幸，正式以临安府为行在，秦桧复相主持议和",
+        "year": 1138,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宋高宗赵构结束巡幸，正式以临安府为行在，秦桧复相主持议和",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-196": {
+    "historyId": "event-196",
+    "title": "绍兴和议",
+    "upstreamKey": "nansong:1141",
+    "headline": "秦桧构陷冤杀岳武穆，宋金订立《绍兴和议》，划淮河—大散关为界",
+    "reason": "正文中的“绍兴和议”与上游“秦桧构陷冤杀岳武穆，宋金订立《绍兴和议》，划淮河—大散关为界”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1141",
+        "headline": "秦桧构陷冤杀岳武穆，宋金订立《绍兴和议》，划淮河—大散关为界",
+        "year": 1141,
+        "reason": "正文中的“绍兴和议”与上游“秦桧构陷冤杀岳武穆，宋金订立《绍兴和议》，划淮河—大散关为界”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "绍兴和议",
+        "status": "reviewed-content-match",
+        "difference": "绍兴和议与岳飞之死分为两条；岳飞遇害传统纪年1141年底，公历1142年初，地点为临安，不是淮河边界。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1141-detail": {
+    "historyId": "event-jiangshan-nansong-1141-detail",
+    "title": "岳飞被害",
+    "upstreamKey": "nansong:1141",
+    "headline": "秦桧构陷冤杀岳武穆，宋金订立《绍兴和议》，划淮河—大散关为界",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1141",
+        "headline": "秦桧构陷冤杀岳武穆，宋金订立《绍兴和议》，划淮河—大散关为界",
+        "year": 1141,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "岳飞被害",
+        "status": "reviewed-content-match",
+        "difference": "绍兴和议与岳飞之死分为两条；岳飞遇害传统纪年1141年底，公历1142年初，地点为临安，不是淮河边界。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1153": {
+    "historyId": "event-jiangshan-nansong-1153",
+    "title": "金海陵王完颜亮自上京迁都燕京，改名中都大兴府",
+    "upstreamKey": "nansong:1153",
+    "headline": "金海陵王完颜亮自上京迁都燕京，改名中都大兴府",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1153",
+        "headline": "金海陵王完颜亮自上京迁都燕京，改名中都大兴府",
+        "year": 1153,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "金海陵王完颜亮自上京迁都燕京，改名中都大兴府",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-caishi-battle": {
+    "historyId": "event-song-caishi-battle",
+    "title": "采石之战",
+    "upstreamKey": "nansong:1161",
+    "headline": "金海陵王南侵，虞允文采石矶大捷",
+    "reason": "正文中的“采石之战”与上游“金海陵王南侵，虞允文采石矶大捷”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1161",
+        "headline": "金海陵王南侵，虞允文采石矶大捷",
+        "year": 1161,
+        "reason": "正文中的“采石之战”与上游“金海陵王南侵，虞允文采石矶大捷”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "采石之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-longxing-peace": {
+    "historyId": "event-song-longxing-peace",
+    "title": "隆兴和议",
+    "upstreamKey": "nansong:1163",
+    "headline": "宋孝宗隆兴北伐，次年订立隆兴和议",
+    "reason": "正文中的“隆兴和议”与上游“宋孝宗隆兴北伐，次年订立隆兴和议”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1163",
+        "headline": "宋孝宗隆兴北伐，次年订立隆兴和议",
+        "year": 1163,
+        "reason": "正文中的“隆兴和议”与上游“宋孝宗隆兴北伐，次年订立隆兴和议”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "隆兴和议",
+        "status": "reviewed-content-match",
+        "difference": "1163年北伐失利与1164—1165年隆兴议和分开对应；不能把和议强行前移一年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1163-detail": {
+    "historyId": "event-jiangshan-nansong-1163-detail",
+    "title": "隆兴北伐与符离之败",
+    "upstreamKey": "nansong:1163",
+    "headline": "宋孝宗隆兴北伐，次年订立隆兴和议",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1163",
+        "headline": "宋孝宗隆兴北伐，次年订立隆兴和议",
+        "year": 1163,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "隆兴北伐与符离之败",
+        "status": "reviewed-content-match",
+        "difference": "1163年北伐失利与1164—1165年隆兴议和分开对应；不能把和议强行前移一年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-ehu-meeting": {
+    "historyId": "event-song-ehu-meeting",
+    "title": "鹅湖之会",
+    "upstreamKey": "nansong:1175",
+    "headline": "南宋乾淳之治与金大定之治对峙；朱熹陆九渊鹅湖之会",
+    "reason": "正文中的“鹅湖之会”与上游“南宋乾淳之治与金大定之治对峙；朱熹陆九渊鹅湖之会”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1175",
+        "headline": "南宋乾淳之治与金大定之治对峙；朱熹陆九渊鹅湖之会",
+        "year": 1175,
+        "reason": "正文中的“鹅湖之会”与上游“南宋乾淳之治与金大定之治对峙；朱熹陆九渊鹅湖之会”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "鹅湖之会",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1175-detail": {
+    "historyId": "event-jiangshan-nansong-1175-detail",
+    "title": "乾淳之治与大定之治",
+    "upstreamKey": "nansong:1175",
+    "headline": "南宋乾淳之治与金大定之治对峙；朱熹陆九渊鹅湖之会",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1175",
+        "headline": "南宋乾淳之治与金大定之治对峙；朱熹陆九渊鹅湖之会",
+        "year": 1175,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "乾淳之治与大定之治",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1194": {
+    "historyId": "event-jiangshan-nansong-1194",
+    "title": "绍熙内禅赵汝愚拥立宋宁宗",
+    "upstreamKey": "nansong:1194",
+    "headline": "绍熙内禅赵汝愚拥立宋宁宗；同年黄河阳武决口夺泗入淮",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1194",
+        "headline": "绍熙内禅赵汝愚拥立宋宁宗；同年黄河阳武决口夺泗入淮",
+        "year": 1194,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "绍熙内禅赵汝愚拥立宋宁宗；同年黄河阳武决口夺泗入淮",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1197": {
+    "historyId": "event-jiangshan-nansong-1197",
+    "title": "韩侂胄指斥朱熹理学为伪学并列庆元党籍五十余人，史称庆元党禁",
+    "upstreamKey": "nansong:1197",
+    "headline": "韩侂胄指斥朱熹理学为“伪学”并列庆元党籍五十余人，史称庆元党禁",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1197",
+        "headline": "韩侂胄指斥朱熹理学为“伪学”并列庆元党籍五十余人，史称庆元党禁",
+        "year": 1197,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "韩侂胄指斥朱熹理学为“伪学”并列庆元党籍五十余人，史称庆元党禁",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1206": {
+    "historyId": "event-jiangshan-nansong-1206",
+    "title": "铁木真相继攻灭克烈、乃蛮等部统一漠北草原，于斡难河源称成吉思汗",
+    "upstreamKey": "nansong:1206",
+    "headline": "铁木真相继攻灭克烈、乃蛮等部统一漠北草原，于斡难河源称成吉思汗",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1206",
+        "headline": "铁木真相继攻灭克烈、乃蛮等部统一漠北草原，于斡难河源称成吉思汗",
+        "year": 1206,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "铁木真相继攻灭克烈、乃蛮等部统一漠北草原，于斡难河源称成吉思汗",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-kaixi-campaign": {
+    "historyId": "event-song-kaixi-campaign",
+    "title": "开禧北伐",
+    "upstreamKey": "nansong:1207",
+    "headline": "韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》",
+    "reason": "正文中的“开禧北伐”与上游“韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1207",
+        "headline": "韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》",
+        "year": 1207,
+        "reason": "正文中的“开禧北伐”与上游“韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "开禧北伐",
+        "status": "reviewed-content-match",
+        "difference": "韩侂胄1207年遇害、嘉定和议1208年达成。旧笔记分别覆盖战争和议和阶段，允许跨年明确对应。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-jiading-peace": {
+    "historyId": "event-song-jiading-peace",
+    "title": "嘉定和议",
+    "upstreamKey": "nansong:1207",
+    "headline": "韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》",
+    "reason": "正文中的“嘉定和议”与上游“韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1207",
+        "headline": "韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》",
+        "year": 1207,
+        "reason": "正文中的“嘉定和议”与上游“韩侂胄“开禧北伐”失利被诛，次年宋金订立《嘉定和议》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "嘉定和议",
+        "status": "reviewed-content-match",
+        "difference": "韩侂胄1207年遇害、嘉定和议1208年达成。旧笔记分别覆盖战争和议和阶段，允许跨年明确对应。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1215": {
+    "historyId": "event-jiangshan-nansong-1215",
+    "title": "蒙古攻陷金中都，金迁都汴京",
+    "upstreamKey": "nansong:1215",
+    "headline": "蒙古攻陷金中都，金迁都汴京，黄河以北与辽东被蒙古吞并",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1215",
+        "headline": "蒙古攻陷金中都，金迁都汴京，黄河以北与辽东被蒙古吞并",
+        "year": 1215,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "蒙古攻陷金中都，金迁都汴京，黄河以北与辽东被蒙古吞并",
+        "status": "reviewed-content-match",
+        "difference": "金迁都汴京在1214年，蒙古攻克中都在1215年，采用1214—1215年范围。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1227": {
+    "historyId": "event-jiangshan-nansong-1227",
+    "title": "成吉思汗六盘山病逝，蒙古灭西夏",
+    "upstreamKey": "nansong:1227",
+    "headline": "成吉思汗六盘山病逝，蒙古灭西夏",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1227",
+        "headline": "成吉思汗六盘山病逝，蒙古灭西夏",
+        "year": 1227,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "成吉思汗六盘山病逝，蒙古灭西夏",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-mongol-jin-conquest": {
+    "historyId": "event-song-mongol-jin-conquest",
+    "title": "宋蒙联合灭金",
+    "upstreamKey": "nansong:1234",
+    "headline": "宋蒙联军蔡州灭金；宋军“端平入洛”溃败，宋蒙战争爆发",
+    "reason": "正文中的“宋蒙联合灭金”与上游“宋蒙联军蔡州灭金；宋军“端平入洛”溃败，宋蒙战争爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1234",
+        "headline": "宋蒙联军蔡州灭金；宋军“端平入洛”溃败，宋蒙战争爆发",
+        "year": 1234,
+        "reason": "正文中的“宋蒙联合灭金”与上游“宋蒙联军蔡州灭金；宋军“端平入洛”溃败，宋蒙战争爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "宋蒙联合灭金",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1234-detail": {
+    "historyId": "event-jiangshan-nansong-1234-detail",
+    "title": "端平入洛",
+    "upstreamKey": "nansong:1234",
+    "headline": "宋蒙联军蔡州灭金；宋军“端平入洛”溃败，宋蒙战争爆发",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1234",
+        "headline": "宋蒙联军蔡州灭金；宋军“端平入洛”溃败，宋蒙战争爆发",
+        "year": 1234,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "端平入洛",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1235": {
+    "historyId": "event-jiangshan-nansong-1235",
+    "title": "窝阔台汗分兵三路全面伐宋，川陕、荆襄、江淮战火延烧",
+    "upstreamKey": "nansong:1235",
+    "headline": "窝阔台汗分兵三路全面伐宋，川陕、荆襄、江淮战火延烧",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1235",
+        "headline": "窝阔台汗分兵三路全面伐宋，川陕、荆襄、江淮战火延烧",
+        "year": 1235,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "窝阔台汗分兵三路全面伐宋，川陕、荆襄、江淮战火延烧",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1247": {
+    "historyId": "event-jiangshan-nansong-1247",
+    "title": "凉州会盟",
+    "upstreamKey": "nansong:1247",
+    "headline": "凉州会盟：萨迦班智达与蒙古阔端会谈，吐蕃正式归附",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1247",
+        "headline": "凉州会盟：萨迦班智达与蒙古阔端会谈，吐蕃正式归附",
+        "year": 1247,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "凉州会盟：萨迦班智达与蒙古阔端会谈，吐蕃正式归附",
+        "status": "reviewed-content-match",
+        "difference": "凉州会谈为蒙古与萨迦交涉节点；对吐蕃区域政治关系的概括须结合其后制度变化，非单张现代国界变更证明。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1253": {
+    "historyId": "event-jiangshan-nansong-1253",
+    "title": "忽必烈率蒙军渡金沙江平定大理国",
+    "upstreamKey": "nansong:1253",
+    "headline": "忽必烈率蒙军渡金沙江平定大理国",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1253",
+        "headline": "忽必烈率蒙军渡金沙江平定大理国",
+        "year": 1253,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "忽必烈率蒙军渡金沙江平定大理国",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-diaoyu-fortress-battle": {
+    "historyId": "event-song-diaoyu-fortress-battle",
+    "title": "钓鱼城之战",
+    "upstreamKey": "nansong:1259",
+    "headline": "钓鱼城之战，蒙哥汗战死城下",
+    "reason": "正文中的“钓鱼城之战”与上游“钓鱼城之战，蒙哥汗战死城下”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1259",
+        "headline": "钓鱼城之战，蒙哥汗战死城下",
+        "year": 1259,
+        "reason": "正文中的“钓鱼城之战”与上游“钓鱼城之战，蒙哥汗战死城下”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "钓鱼城之战",
+        "status": "reviewed-content-match",
+        "difference": "蒙哥死于攻宋期间的钓鱼山一带，死因有病亡、负伤等不同记载，不将“战死城下”定为无争议事实。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1263": {
+    "historyId": "event-jiangshan-nansong-1263",
+    "title": "南宋权相贾似道于两浙强行推开公田法抑买民田，东南离心",
+    "upstreamKey": "nansong:1263",
+    "headline": "南宋权相贾似道于两浙强行推开“公田法”抑买民田，东南离心",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1263",
+        "headline": "南宋权相贾似道于两浙强行推开“公田法”抑买民田，东南离心",
+        "year": 1263,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "南宋权相贾似道于两浙强行推开“公田法”抑买民田，东南离心",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1264": {
+    "historyId": "event-jiangshan-nansong-1264",
+    "title": "忽必烈设总制院（后改宣政院），统辖吐蕃政教事务",
+    "upstreamKey": "nansong:1264",
+    "headline": "忽必烈设总制院（后改宣政院），统辖吐蕃政教事务",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1264",
+        "headline": "忽必烈设总制院（后改宣政院），统辖吐蕃政教事务",
+        "year": 1264,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "忽必烈设总制院（后改宣政院），统辖吐蕃政教事务",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-67": {
+    "historyId": "event-67",
+    "title": "忽必烈定国号为大元",
+    "upstreamKey": "nansong:1271",
+    "headline": "忽必烈击败幼弟阿里不哥争位后，采《易经》“大哉乾元”改国号为大元",
+    "reason": "正文中的“忽必烈定国号为大元”与上游“忽必烈击败幼弟阿里不哥争位后，采《易经》“大哉乾元”改国号为大元”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1271",
+        "headline": "忽必烈击败幼弟阿里不哥争位后，采《易经》“大哉乾元”改国号为大元",
+        "year": 1271,
+        "reason": "正文中的“忽必烈定国号为大元”与上游“忽必烈击败幼弟阿里不哥争位后，采《易经》“大哉乾元”改国号为大元”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "忽必烈定国号为大元",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-song-xiangfan-siege": {
+    "historyId": "event-song-xiangfan-siege",
+    "title": "襄樊之战",
+    "upstreamKey": "nansong:1273",
+    "headline": "吕文焕力竭降元，襄阳苦守六年陷落",
+    "reason": "正文中的“襄樊之战”与上游“吕文焕力竭降元，襄阳苦守六年陷落”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1273",
+        "headline": "吕文焕力竭降元，襄阳苦守六年陷落",
+        "year": 1273,
+        "reason": "正文中的“襄樊之战”与上游“吕文焕力竭降元，襄阳苦守六年陷落”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "襄樊之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1275": {
+    "historyId": "event-jiangshan-nansong-1275",
+    "title": "马可·波罗随元廷南返冬都大都，开启旅华十七载见闻",
+    "upstreamKey": "nansong:1275",
+    "headline": "马可·波罗随元廷南返冬都大都，开启旅华十七载见闻",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1275",
+        "headline": "马可·波罗随元廷南返冬都大都，开启旅华十七载见闻",
+        "year": 1275,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "马可·波罗随元廷南返冬都大都，开启旅华十七载见闻",
+        "status": "reviewed-content-match",
+        "difference": "马可波罗到达元廷与旅行细节有研究争议；1275年仅保留为上游旅行记节点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-107": {
+    "historyId": "event-107",
+    "title": "元军进入临安",
+    "upstreamKey": "nansong:1276",
+    "headline": "伯颜率元军入临安，恭帝出降；元置云南行中书省于中庆路",
+    "reason": "正文中的“元军进入临安”与上游“伯颜率元军入临安，恭帝出降；元置云南行中书省于中庆路”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1276",
+        "headline": "伯颜率元军入临安，恭帝出降；元置云南行中书省于中庆路",
+        "year": 1276,
+        "reason": "正文中的“元军进入临安”与上游“伯颜率元军入临安，恭帝出降；元置云南行中书省于中庆路”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "元军进入临安",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1276-detail": {
+    "historyId": "event-jiangshan-nansong-1276-detail",
+    "title": "元设置云南行省",
+    "upstreamKey": "nansong:1276",
+    "headline": "伯颜率元军入临安，恭帝出降；元置云南行中书省于中庆路",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1276",
+        "headline": "伯颜率元军入临安，恭帝出降；元置云南行中书省于中庆路",
+        "year": 1276,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "元设置云南行省",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-nansong-1277": {
+    "historyId": "event-jiangshan-nansong-1277",
+    "title": "元军南下连陷闽广州郡，张世杰、陆秀夫奉宋端宗迁播广东碙洲",
+    "upstreamKey": "nansong:1277",
+    "headline": "元军南下连陷闽广州郡，张世杰、陆秀夫奉宋端宗迁播广东碙洲",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1277",
+        "headline": "元军南下连陷闽广州郡，张世杰、陆秀夫奉宋端宗迁播广东碙洲",
+        "year": 1277,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元军南下连陷闽广州郡，张世杰、陆秀夫奉宋端宗迁播广东碙洲",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-108": {
+    "historyId": "event-108",
+    "title": "崖山之战",
+    "upstreamKey": "nansong:1279",
+    "headline": "陆秀夫等奉宋室退保闽广，崖山海战张世杰覆师，陆秀夫负帝投海宋亡",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "nansong:1279",
+        "headline": "陆秀夫等奉宋室退保闽广，崖山海战张世杰覆师，陆秀夫负帝投海宋亡",
+        "year": 1279,
+        "reason": "正文中的“崖山之战”与上游“陆秀夫等奉宋室退保闽广，崖山海战张世杰覆师，陆秀夫负帝投海宋亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "崖山之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "yuan:1279",
+        "headline": "张弘范于崖山海战灭南宋，元朝统一全国",
+        "year": 1279,
+        "reason": "正文中的“崖山之战”与上游“张弘范于崖山海战灭南宋，元朝统一全国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "崖山之战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1281": {
+    "historyId": "event-jiangshan-yuan-1281",
+    "title": "元廷置澎湖巡检司管辖澎湖与琉球，并第二次东征日本",
+    "upstreamKey": "yuan:1281",
+    "headline": "元廷置澎湖巡检司管辖澎湖与琉球，并第二次东征日本",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1281",
+        "headline": "元廷置澎湖巡检司管辖澎湖与琉球，并第二次东征日本",
+        "year": 1281,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元廷置澎湖巡检司管辖澎湖与琉球，并第二次东征日本",
+        "status": "reviewed-content-match",
+        "difference": "元代澎湖设巡检司的确年与“琉球”地理解释有争议；不以1281年巡检司证明管辖台湾全岛，东征日本另属明确军事行动。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1283": {
+    "historyId": "event-jiangshan-yuan-1283",
+    "title": "元廷采纳朱清、张瑄议开辟江南刘家港至直沽海上漕运航线",
+    "upstreamKey": "yuan:1283",
+    "headline": "元廷采纳朱清、张瑄议开辟江南刘家港至直沽海上漕运航线",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1283",
+        "headline": "元廷采纳朱清、张瑄议开辟江南刘家港至直沽海上漕运航线",
+        "year": 1283,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元廷采纳朱清、张瑄议开辟江南刘家港至直沽海上漕运航线",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1287": {
+    "historyId": "event-jiangshan-yuan-1287",
+    "title": "忽必烈亲征平定辽东乃颜之乱，设辽阳行省",
+    "upstreamKey": "yuan:1287",
+    "headline": "忽必烈亲征平定辽东乃颜之乱，设辽阳行省",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1287",
+        "headline": "忽必烈亲征平定辽东乃颜之乱，设辽阳行省",
+        "year": 1287,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "忽必烈亲征平定辽东乃颜之乱，设辽阳行省",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1288": {
+    "historyId": "event-jiangshan-yuan-1288",
+    "title": "元廷设宣政院掌佛教与吐蕃事务，西藏纳入中央管辖",
+    "upstreamKey": "yuan:1288",
+    "headline": "元廷设宣政院掌佛教与吐蕃事务，西藏纳入中央管辖",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1288",
+        "headline": "元廷设宣政院掌佛教与吐蕃事务，西藏纳入中央管辖",
+        "year": 1288,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元廷设宣政院掌佛教与吐蕃事务，西藏纳入中央管辖",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1293": {
+    "historyId": "event-jiangshan-yuan-1293",
+    "title": "元世祖忽必烈命郭守敬开凿通惠河，京杭大运河全线贯通",
+    "upstreamKey": "yuan:1293",
+    "headline": "元世祖忽必烈命郭守敬开凿通惠河，京杭大运河全线贯通",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1293",
+        "headline": "元世祖忽必烈命郭守敬开凿通惠河，京杭大运河全线贯通",
+        "year": 1293,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元世祖忽必烈命郭守敬开凿通惠河，京杭大运河全线贯通",
+        "status": "reviewed-content-match",
+        "difference": "通惠河开凿地点为大都通州一线，临清为会通河节点，不能以临清点定位通惠河工程。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1295": {
+    "historyId": "event-jiangshan-yuan-1295",
+    "title": "元成宗即位诏尊孔子、停征日本与安南，整饬吏治开启大德守成",
+    "upstreamKey": "yuan:1295",
+    "headline": "元成宗即位诏尊孔子、停征日本与安南，整饬吏治开启大德守成",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1295",
+        "headline": "元成宗即位诏尊孔子、停征日本与安南，整饬吏治开启大德守成",
+        "year": 1295,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元成宗即位诏尊孔子、停征日本与安南，整饬吏治开启大德守成",
+        "status": "reviewed-content-match",
+        "difference": "元成宗即位于1294年，1295年改元元贞；按1294—1295年政治阶段记录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1307": {
+    "historyId": "event-jiangshan-yuan-1307",
+    "title": "元武宗置和林行省（后改岭北行省），中书省与诸行省行政格局定型",
+    "upstreamKey": "yuan:1307",
+    "headline": "元武宗置和林行省（后改岭北行省），中书省与诸行省行政格局定型",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1307",
+        "headline": "元武宗置和林行省（后改岭北行省），中书省与诸行省行政格局定型",
+        "year": 1307,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元武宗置和林行省（后改岭北行省），中书省与诸行省行政格局定型",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1313": {
+    "historyId": "event-jiangshan-yuan-1313",
+    "title": "元仁宗诏复科举，以程朱理学取士",
+    "upstreamKey": "yuan:1313",
+    "headline": "元仁宗诏复科举，以程朱理学取士，延续至清末",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1313",
+        "headline": "元仁宗诏复科举，以程朱理学取士，延续至清末",
+        "year": 1313,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元仁宗诏复科举，以程朱理学取士，延续至清末",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1323": {
+    "historyId": "event-jiangshan-yuan-1323",
+    "title": "南坡之变",
+    "upstreamKey": "yuan:1323",
+    "headline": "南坡之变：铁失于上都南坡行帐弑元英宗与丞相拜住",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1323",
+        "headline": "南坡之变：铁失于上都南坡行帐弑元英宗与丞相拜住",
+        "year": 1323,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "南坡之变：铁失于上都南坡行帐弑元英宗与丞相拜住",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1328": {
+    "historyId": "event-jiangshan-yuan-1328",
+    "title": "两都之战（天历之变）",
+    "upstreamKey": "yuan:1328",
+    "headline": "两都之战（天历之变）：燕铁木儿拥元文宗击败上都天顺帝",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1328",
+        "headline": "两都之战（天历之变）：燕铁木儿拥元文宗击败上都天顺帝",
+        "year": 1328,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "两都之战（天历之变）：燕铁木儿拥元文宗击败上都天顺帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1341": {
+    "historyId": "event-jiangshan-yuan-1341",
+    "title": "元顺帝任脱脱为相改弦更张，恢复科举并诏修宋、辽、金三史",
+    "upstreamKey": "yuan:1341",
+    "headline": "元顺帝任脱脱为相改弦更张，恢复科举并诏修宋、辽、金三史",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1341",
+        "headline": "元顺帝任脱脱为相改弦更张，恢复科举并诏修宋、辽、金三史",
+        "year": 1341,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "元顺帝任脱脱为相改弦更张，恢复科举并诏修宋、辽、金三史",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1344": {
+    "historyId": "event-jiangshan-yuan-1344",
+    "title": "黄河于曹县白茅堤大决口泛滥，元廷命贾鲁治河征发民夫",
+    "upstreamKey": "yuan:1344",
+    "headline": "黄河于曹县白茅堤大决口泛滥，元廷命贾鲁治河征发民夫",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1344",
+        "headline": "黄河于曹县白茅堤大决口泛滥，元廷命贾鲁治河征发民夫",
+        "year": 1344,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "黄河于曹县白茅堤大决口泛滥，元廷命贾鲁治河征发民夫",
+        "status": "reviewed-content-match",
+        "difference": "黄河决口起于1344年前后，贾鲁大规模治河在1351年；不要把治河征夫统一前移至1344年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-109": {
+    "historyId": "event-109",
+    "title": "红巾军起义",
+    "upstreamKey": "yuan:1351",
+    "headline": "韩山童、刘福通于颍州发动红巾军起义，徐寿辉于蕲水称帝建天完",
+    "reason": "正文中的“红巾军起义”与上游“韩山童、刘福通于颍州发动红巾军起义，徐寿辉于蕲水称帝建天完”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1351",
+        "headline": "韩山童、刘福通于颍州发动红巾军起义，徐寿辉于蕲水称帝建天完",
+        "year": 1351,
+        "reason": "正文中的“红巾军起义”与上游“韩山童、刘福通于颍州发动红巾军起义，徐寿辉于蕲水称帝建天完”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "红巾军起义",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1351-supplement": {
+    "historyId": "event-jiangshan-yuan-1351-supplement",
+    "title": "徐寿辉称帝建立天完",
+    "upstreamKey": "yuan:1351",
+    "headline": "韩山童、刘福通于颍州发动红巾军起义，徐寿辉于蕲水称帝建天完",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1351",
+        "headline": "韩山童、刘福通于颍州发动红巾军起义，徐寿辉于蕲水称帝建天完",
+        "year": 1351,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "徐寿辉称帝建立天完",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1354": {
+    "historyId": "event-jiangshan-yuan-1354",
+    "title": "高邮之战",
+    "upstreamKey": "yuan:1354",
+    "headline": "高邮之战：脱脱围张士诚，临阵被罢，元军百万溃散",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1354",
+        "headline": "高邮之战：脱脱围张士诚，临阵被罢，元军百万溃散",
+        "year": 1354,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "高邮之战：脱脱围张士诚，临阵被罢，元军百万溃散",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1355": {
+    "historyId": "event-jiangshan-yuan-1355",
+    "title": "刘福通迎韩林儿于亳州称帝，建国号大宋（改元龙凤）",
+    "upstreamKey": "yuan:1355",
+    "headline": "刘福通迎韩林儿于亳州称帝，建国号大宋（改元龙凤）",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1355",
+        "headline": "刘福通迎韩林儿于亳州称帝，建国号大宋（改元龙凤）",
+        "year": 1355,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘福通迎韩林儿于亳州称帝，建国号大宋（改元龙凤）",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1356": {
+    "historyId": "event-jiangshan-yuan-1356",
+    "title": "朱元璋攻克集庆路改置应天府",
+    "upstreamKey": "yuan:1356",
+    "headline": "朱元璋攻克集庆路改置应天府；张士诚渡江定都平江",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1356",
+        "headline": "朱元璋攻克集庆路改置应天府；张士诚渡江定都平江",
+        "year": 1356,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "朱元璋攻克集庆路改置应天府；张士诚渡江定都平江",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1358": {
+    "historyId": "event-jiangshan-yuan-1358",
+    "title": "红巾军三路北伐，中路关先生攻破上都",
+    "upstreamKey": "yuan:1358",
+    "headline": "红巾军三路北伐，中路关先生攻破上都，焚毁宫阙",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1358",
+        "headline": "红巾军三路北伐，中路关先生攻破上都，焚毁宫阙",
+        "year": 1358,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "红巾军三路北伐，中路关先生攻破上都，焚毁宫阙",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1360": {
+    "historyId": "event-jiangshan-yuan-1360",
+    "title": "陈友谅于采石杀徐寿辉称帝，建国号汉",
+    "upstreamKey": "yuan:1360",
+    "headline": "陈友谅于采石杀徐寿辉称帝，建国号汉，率水师东攻应天败于龙湾",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1360",
+        "headline": "陈友谅于采石杀徐寿辉称帝，建国号汉，率水师东攻应天败于龙湾",
+        "year": 1360,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "陈友谅于采石杀徐寿辉称帝，建国号汉，率水师东攻应天败于龙湾",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1363": {
+    "historyId": "event-jiangshan-yuan-1363",
+    "title": "鄱阳湖水战朱元璋大败陈友谅",
+    "upstreamKey": "yuan:1363",
+    "headline": "鄱阳湖水战朱元璋大败陈友谅；张士诚称吴王、明玉珍于重庆称帝建夏",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1363",
+        "headline": "鄱阳湖水战朱元璋大败陈友谅；张士诚称吴王、明玉珍于重庆称帝建夏",
+        "year": 1363,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "鄱阳湖水战朱元璋大败陈友谅；张士诚称吴王、明玉珍于重庆称帝建夏",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-yuan-1367": {
+    "historyId": "event-jiangshan-yuan-1367",
+    "title": "朱元璋攻灭张士诚统一江南，命徐达、常遇春誓师北伐",
+    "upstreamKey": "yuan:1367",
+    "headline": "朱元璋攻灭张士诚统一江南，命徐达、常遇春誓师北伐",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1367",
+        "headline": "朱元璋攻灭张士诚统一江南，命徐达、常遇春誓师北伐",
+        "year": 1367,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "朱元璋攻灭张士诚统一江南，命徐达、常遇春誓师北伐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-68": {
+    "historyId": "event-68",
+    "title": "明军攻入大都",
+    "upstreamKey": "yuan:1368",
+    "headline": "明大将军徐达、常遇春攻克大都，元顺帝北走上都，元亡",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "yuan:1368",
+        "headline": "明大将军徐达、常遇春攻克大都，元顺帝北走上都，元亡",
+        "year": 1368,
+        "reason": "正文中的“明军攻入大都”与上游“明大将军徐达、常遇春攻克大都，元顺帝北走上都，元亡”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "明军攻入大都",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "ming:1368",
+        "headline": "朱元璋于应天称帝建明；徐达北伐克大都，元廷北迁",
+        "year": 1368,
+        "reason": "正文中的“明军攻入大都”与上游“朱元璋于应天称帝建明；徐达北伐克大都，元廷北迁”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "明军攻入大都",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-141": {
+    "historyId": "event-141",
+    "title": "朱元璋称帝",
+    "upstreamKey": "ming:1368",
+    "headline": "朱元璋于应天称帝建明；徐达北伐克大都，元廷北迁",
+    "reason": "正文中的“朱元璋称帝”与上游“朱元璋于应天称帝建明；徐达北伐克大都，元廷北迁”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1368",
+        "headline": "朱元璋于应天称帝建明；徐达北伐克大都，元廷北迁",
+        "year": 1368,
+        "reason": "正文中的“朱元璋称帝”与上游“朱元璋于应天称帝建明；徐达北伐克大都，元廷北迁”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "朱元璋称帝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1369": {
+    "historyId": "event-jiangshan-ming-1369",
+    "title": "常遇春克元上都，徐达定陕西",
+    "upstreamKey": "ming:1369",
+    "headline": "常遇春克元上都，徐达定陕西，北元退居漠北",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1369",
+        "headline": "常遇春克元上都，徐达定陕西，北元退居漠北",
+        "year": 1369,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "常遇春克元上都，徐达定陕西，北元退居漠北",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1371": {
+    "historyId": "event-jiangshan-ming-1371",
+    "title": "汤和、傅友德分道伐蜀，灭明夏政权平定四川",
+    "upstreamKey": "ming:1371",
+    "headline": "汤和、傅友德分道伐蜀，灭明夏政权平定四川",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1371",
+        "headline": "汤和、傅友德分道伐蜀，灭明夏政权平定四川",
+        "year": 1371,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汤和、傅友德分道伐蜀，灭明夏政权平定四川",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1380": {
+    "historyId": "event-jiangshan-ming-1380",
+    "title": "明太祖兴胡惟庸案诛权臣，罢中书省、永废丞相制",
+    "upstreamKey": "ming:1380",
+    "headline": "明太祖兴胡惟庸案诛权臣，罢中书省、永废丞相制",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1380",
+        "headline": "明太祖兴胡惟庸案诛权臣，罢中书省、永废丞相制",
+        "year": 1380,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "明太祖兴胡惟庸案诛权臣，罢中书省、永废丞相制",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1382": {
+    "historyId": "event-jiangshan-ming-1382",
+    "title": "傅友德、蓝玉、沐英率军平定云南元梁王与大理段氏",
+    "upstreamKey": "ming:1382",
+    "headline": "傅友德、蓝玉、沐英率军平定云南元梁王与大理段氏",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1382",
+        "headline": "傅友德、蓝玉、沐英率军平定云南元梁王与大理段氏",
+        "year": 1382,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "傅友德、蓝玉、沐英率军平定云南元梁王与大理段氏",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1388": {
+    "historyId": "event-jiangshan-ming-1388",
+    "title": "冯胜北征金山降纳哈出（1387年）",
+    "upstreamKey": "ming:1388",
+    "headline": "冯胜北征金山降纳哈出（1387年）；蓝玉捕鱼儿海破北元",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1388",
+        "headline": "冯胜北征金山降纳哈出（1387年）；蓝玉捕鱼儿海破北元",
+        "year": 1388,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "冯胜北征金山降纳哈出（1387年）；蓝玉捕鱼儿海破北元",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1393": {
+    "historyId": "event-jiangshan-ming-1393",
+    "title": "蓝玉案株连一万五千人，明初开国功臣宿将殆尽",
+    "upstreamKey": "ming:1393",
+    "headline": "蓝玉案株连一万五千人，明初开国功臣宿将殆尽",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1393",
+        "headline": "蓝玉案株连一万五千人，明初开国功臣宿将殆尽",
+        "year": 1393,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "蓝玉案株连一万五千人，明初开国功臣宿将殆尽",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-142": {
+    "historyId": "event-142",
+    "title": "靖难之役",
+    "upstreamKey": "ming:1399",
+    "headline": "燕王朱棣于北平起兵发动“靖难之役”",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1399",
+        "headline": "燕王朱棣于北平起兵发动“靖难之役”",
+        "year": 1399,
+        "reason": "正文中的“靖难之役”与上游“燕王朱棣于北平起兵发动“靖难之役””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "靖难之役",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "ming:1402",
+        "headline": "靖难军破南京朱棣即位为明成祖，选解缙等入值文渊阁创内阁制",
+        "year": 1402,
+        "reason": "正文中的“靖难之役”与上游“靖难军破南京朱棣即位为明成祖，选解缙等入值文渊阁创内阁制”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "靖难之役",
+        "status": "reviewed-content-match",
+        "difference": "朱棣称帝与内阁制度初创相关，但内阁职能逐步变化，1402年不能代表成熟内阁制全部形成。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1402-supplement": {
+    "historyId": "event-jiangshan-ming-1402-supplement",
+    "title": "明初文渊阁内阁形成",
+    "upstreamKey": "ming:1402",
+    "headline": "靖难军破南京朱棣即位为明成祖，选解缙等入值文渊阁创内阁制",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1402",
+        "headline": "靖难军破南京朱棣即位为明成祖，选解缙等入值文渊阁创内阁制",
+        "year": 1402,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "明初文渊阁内阁形成",
+        "status": "reviewed-content-match",
+        "difference": "朱棣称帝与内阁制度初创相关，但内阁职能逐步变化，1402年不能代表成熟内阁制全部形成。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-143": {
+    "historyId": "event-143",
+    "title": "郑和七次下西洋",
+    "upstreamKey": "ming:1405",
+    "headline": "郑和率宝船队自刘家港首次下西洋",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1405",
+        "headline": "郑和率宝船队自刘家港首次下西洋",
+        "year": 1405,
+        "reason": "正文中的“郑和七次下西洋”与上游“郑和率宝船队自刘家港首次下西洋”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "郑和七次下西洋",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "ming:1433",
+        "headline": "郑和末次下西洋，此后海禁",
+        "year": 1433,
+        "reason": "正文中的“郑和七次下西洋”与上游“郑和末次下西洋，此后海禁”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "郑和七次下西洋",
+        "status": "reviewed-content-match",
+        "difference": "1433年为郑和远航终结节点；明代海禁前后反复变化，不以“此后海禁”推断海外贸易全部停止。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1407": {
+    "historyId": "event-jiangshan-ming-1407",
+    "title": "明军平安南设交趾布政司",
+    "upstreamKey": "ming:1407",
+    "headline": "明军平安南设交趾布政司；1409年设奴儿干都司",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1407",
+        "headline": "明军平安南设交趾布政司；1409年设奴儿干都司",
+        "year": 1407,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "明军平安南设交趾布政司；1409年设奴儿干都司",
+        "status": "reviewed-content-match",
+        "difference": "交趾布政司系1407年，奴儿干都司系1409年，采用1407—1409年并列两地区行政建制。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1408": {
+    "historyId": "event-jiangshan-ming-1408",
+    "title": "解缙、姚广孝等历时五年编成《永乐大典》二万二千八百余卷",
+    "upstreamKey": "ming:1408",
+    "headline": "解缙、姚广孝等历时五年编成《永乐大典》二万二千八百余卷",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1408",
+        "headline": "解缙、姚广孝等历时五年编成《永乐大典》二万二千八百余卷",
+        "year": 1408,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "解缙、姚广孝等历时五年编成《永乐大典》二万二千八百余卷",
+        "status": "reviewed-content-match",
+        "difference": "永乐大典主体修成常系1407年，1408年为进呈、誊录等阶段，上游年份保留并说明区别。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1413": {
+    "historyId": "event-jiangshan-ming-1413",
+    "title": "明成祖废思州、思南宣慰司，置贵州承宣布政使司定十三行省",
+    "upstreamKey": "ming:1413",
+    "headline": "明成祖废思州、思南宣慰司，置贵州承宣布政使司定十三行省",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1413",
+        "headline": "明成祖废思州、思南宣慰司，置贵州承宣布政使司定十三行省",
+        "year": 1413,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "明成祖废思州、思南宣慰司，置贵州承宣布政使司定十三行省",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1421": {
+    "historyId": "event-jiangshan-ming-1421",
+    "title": "明成祖迁都北京，以南京为留都",
+    "upstreamKey": "ming:1421",
+    "headline": "明成祖迁都北京，以南京为留都；1420年设东厂，与锦衣卫称厂卫",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1421",
+        "headline": "明成祖迁都北京，以南京为留都；1420年设东厂，与锦衣卫称厂卫",
+        "year": 1421,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "明成祖迁都北京，以南京为留都；1420年设东厂，与锦衣卫称厂卫",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1427": {
+    "historyId": "event-jiangshan-ming-1427",
+    "title": "明宣宗罢交趾布政使司撤军弃安南，黎利旋建后黎朝",
+    "upstreamKey": "ming:1427",
+    "headline": "明宣宗罢交趾布政使司撤军弃安南，黎利旋建后黎朝",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1427",
+        "headline": "明宣宗罢交趾布政使司撤军弃安南，黎利旋建后黎朝",
+        "year": 1427,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "明宣宗罢交趾布政使司撤军弃安南，黎利旋建后黎朝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1442": {
+    "historyId": "event-jiangshan-ming-1442",
+    "title": "明廷始筑辽东边墙，防御朵颜三卫与女真",
+    "upstreamKey": "ming:1442",
+    "headline": "明廷始筑辽东边墙，防御朵颜三卫与女真",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1442",
+        "headline": "明廷始筑辽东边墙，防御朵颜三卫与女真",
+        "year": 1442,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "明廷始筑辽东边墙，防御朵颜三卫与女真",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-144": {
+    "historyId": "event-144",
+    "title": "土木堡之变",
+    "upstreamKey": "ming:1449",
+    "headline": "土木堡之变：瓦剌也先大破明军，俘明英宗",
+    "reason": "正文中的“土木堡之变”与上游“土木堡之变：瓦剌也先大破明军，俘明英宗”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1449",
+        "headline": "土木堡之变：瓦剌也先大破明军，俘明英宗",
+        "year": 1449,
+        "reason": "正文中的“土木堡之变”与上游“土木堡之变：瓦剌也先大破明军，俘明英宗”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "土木堡之变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1457": {
+    "historyId": "event-jiangshan-ming-1457",
+    "title": "夺门之变",
+    "upstreamKey": "ming:1457",
+    "headline": "夺门之变：石亨、徐有贞迎明英宗自南宫复辟，于谦遇害",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1457",
+        "headline": "夺门之变：石亨、徐有贞迎明英宗自南宫复辟，于谦遇害",
+        "year": 1457,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "夺门之变：石亨、徐有贞迎明英宗自南宫复辟，于谦遇害",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1474": {
+    "historyId": "event-jiangshan-ming-1474",
+    "title": "余子俊奏筑延绥边墙，明代九边长城防线成型",
+    "upstreamKey": "ming:1474",
+    "headline": "余子俊奏筑延绥边墙，明代九边长城防线成型",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1474",
+        "headline": "余子俊奏筑延绥边墙，明代九边长城防线成型",
+        "year": 1474,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "余子俊奏筑延绥边墙，明代九边长城防线成型",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1479": {
+    "historyId": "event-jiangshan-ming-1479",
+    "title": "汪直、朱永会同朝鲜征建州女真，史称成化犁庭",
+    "upstreamKey": "ming:1479",
+    "headline": "汪直、朱永会同朝鲜征建州女真，史称“成化犁庭”",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1479",
+        "headline": "汪直、朱永会同朝鲜征建州女真，史称“成化犁庭”",
+        "year": 1479,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "汪直、朱永会同朝鲜征建州女真，史称“成化犁庭”",
+        "status": "reviewed-content-match",
+        "difference": "成化年间征建州有1467、1479年等多次行动，汪直与朱永参战本条指1479年，赫图阿拉仅为地区参照。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1494": {
+    "historyId": "event-jiangshan-ming-1494",
+    "title": "刘大夏于黄陵岗塞河筑太行堤，断黄河北流成河夺淮定局",
+    "upstreamKey": "ming:1494",
+    "headline": "刘大夏于黄陵岗塞河筑太行堤，断黄河北流成“河夺淮”定局",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1494",
+        "headline": "刘大夏于黄陵岗塞河筑太行堤，断黄河北流成“河夺淮”定局",
+        "year": 1494,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "刘大夏于黄陵岗塞河筑太行堤，断黄河北流成“河夺淮”定局",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1508": {
+    "historyId": "event-jiangshan-ming-1508",
+    "title": "王守仁贬谪贵州修文龙场悟道，创立知行合一心学",
+    "upstreamKey": "ming:1508",
+    "headline": "王守仁贬谪贵州修文“龙场悟道”，创立知行合一心学",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1508",
+        "headline": "王守仁贬谪贵州修文“龙场悟道”，创立知行合一心学",
+        "year": 1508,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王守仁贬谪贵州修文“龙场悟道”，创立知行合一心学",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1513": {
+    "historyId": "event-jiangshan-ming-1513",
+    "title": "吐鲁番满速儿攻占哈密卫，关西诸卫渐次内迁",
+    "upstreamKey": "ming:1513",
+    "headline": "吐鲁番满速儿攻占哈密卫，关西诸卫渐次内迁",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1513",
+        "headline": "吐鲁番满速儿攻占哈密卫，关西诸卫渐次内迁",
+        "year": 1513,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吐鲁番满速儿攻占哈密卫，关西诸卫渐次内迁",
+        "status": "reviewed-content-match",
+        "difference": "吐鲁番控制哈密卫的过程持续多年，常见关键陷落纪年另有1517年；1513年按上游阶段口径保留。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1519": {
+    "historyId": "event-jiangshan-ming-1519",
+    "title": "王阳明督兵三十五日平定江西南昌宁王朱宸濠之乱",
+    "upstreamKey": "ming:1519",
+    "headline": "王阳明督兵三十五日平定江西南昌宁王朱宸濠之乱",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1519",
+        "headline": "王阳明督兵三十五日平定江西南昌宁王朱宸濠之乱",
+        "year": 1519,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "王阳明督兵三十五日平定江西南昌宁王朱宸濠之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1524": {
+    "historyId": "event-jiangshan-ming-1524",
+    "title": "大礼议之争",
+    "upstreamKey": "ming:1524",
+    "headline": "大礼议之争：嘉靖帝于左顺门廷杖百官，皇权压倒内阁",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1524",
+        "headline": "大礼议之争：嘉靖帝于左顺门廷杖百官，皇权压倒内阁",
+        "year": 1524,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "大礼议之争：嘉靖帝于左顺门廷杖百官，皇权压倒内阁",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1542": {
+    "historyId": "event-jiangshan-ming-1542",
+    "title": "壬寅宫变",
+    "upstreamKey": "ming:1542",
+    "headline": "壬寅宫变：杨金英等宫女谋缢嘉靖帝未遂，帝移居西苑",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1542",
+        "headline": "壬寅宫变：杨金英等宫女谋缢嘉靖帝未遂，帝移居西苑",
+        "year": 1542,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "壬寅宫变：杨金英等宫女谋缢嘉靖帝未遂，帝移居西苑",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1550": {
+    "historyId": "event-jiangshan-ming-1550",
+    "title": "庚戌之变",
+    "upstreamKey": "ming:1550",
+    "headline": "庚戌之变：鞑靼俺答汗因请开贡市遭拒，率骑破古北口兵临北京城下",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1550",
+        "headline": "庚戌之变：鞑靼俺答汗因请开贡市遭拒，率骑破古北口兵临北京城下",
+        "year": 1550,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "庚戌之变：鞑靼俺答汗因请开贡市遭拒，率骑破古北口兵临北京城下",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1561": {
+    "historyId": "event-jiangshan-ming-1561",
+    "title": "戚继光率戚家军九战九捷，平定台州倭患",
+    "upstreamKey": "ming:1561",
+    "headline": "戚继光率戚家军九战九捷，平定台州倭患",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1561",
+        "headline": "戚继光率戚家军九战九捷，平定台州倭患",
+        "year": 1561,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "戚继光率戚家军九战九捷，平定台州倭患",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1567": {
+    "historyId": "event-jiangshan-ming-1567",
+    "title": "明廷实行隆庆开关，于福建漳州月港开放海外贸易",
+    "upstreamKey": "ming:1567",
+    "headline": "明廷实行“隆庆开关”，于福建漳州月港开放海外贸易",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1567",
+        "headline": "明廷实行“隆庆开关”，于福建漳州月港开放海外贸易",
+        "year": 1567,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "明廷实行“隆庆开关”，于福建漳州月港开放海外贸易",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1571": {
+    "historyId": "event-jiangshan-ming-1571",
+    "title": "隆庆和议",
+    "upstreamKey": "ming:1571",
+    "headline": "隆庆和议：明廷封俺答汗为顺义王，于大同得胜堡开互市",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1571",
+        "headline": "隆庆和议：明廷封俺答汗为顺义王，于大同得胜堡开互市",
+        "year": 1571,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "隆庆和议：明廷封俺答汗为顺义王，于大同得胜堡开互市",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-148": {
+    "historyId": "event-148",
+    "title": "晚明白银赋税制度推广",
+    "upstreamKey": "ming:1581",
+    "headline": "张居正清丈全国田亩，推行“一条鞭法”",
+    "reason": "正文中的“晚明白银赋税制度推广”与上游“张居正清丈全国田亩，推行“一条鞭法””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1581",
+        "headline": "张居正清丈全国田亩，推行“一条鞭法”",
+        "year": 1581,
+        "reason": "正文中的“晚明白银赋税制度推广”与上游“张居正清丈全国田亩，推行“一条鞭法””对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "晚明白银赋税制度推广",
+        "status": "reviewed-content-match",
+        "difference": "一条鞭法此前已在多地试行，1581年是全国推广节点，不是此法首次出现。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1592": {
+    "historyId": "event-jiangshan-ming-1592",
+    "title": "万历朝鲜之役",
+    "upstreamKey": "ming:1592",
+    "headline": "万历朝鲜之役：明军入朝抗击丰臣秀吉日军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1592",
+        "headline": "万历朝鲜之役：明军入朝抗击丰臣秀吉日军",
+        "year": 1592,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "万历朝鲜之役：明军入朝抗击丰臣秀吉日军",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1600": {
+    "historyId": "event-jiangshan-ming-1600",
+    "title": "李化龙平定播州杨应龙之乱，改土归流分置遵义、平越二府",
+    "upstreamKey": "ming:1600",
+    "headline": "李化龙平定播州杨应龙之乱，“改土归流”分置遵义、平越二府",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1600",
+        "headline": "李化龙平定播州杨应龙之乱，“改土归流”分置遵义、平越二府",
+        "year": 1600,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李化龙平定播州杨应龙之乱，“改土归流”分置遵义、平越二府",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1616": {
+    "historyId": "event-jiangshan-ming-1616",
+    "title": "努尔哈赤于赫图阿拉称汗，建立后金",
+    "upstreamKey": "ming:1616",
+    "headline": "努尔哈赤于赫图阿拉称汗，建立后金",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1616",
+        "headline": "努尔哈赤于赫图阿拉称汗，建立后金",
+        "year": 1616,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "努尔哈赤于赫图阿拉称汗，建立后金",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1619": {
+    "historyId": "event-jiangshan-ming-1619",
+    "title": "萨尔浒之战",
+    "upstreamKey": "ming:1619",
+    "headline": "萨尔浒之战：努尔哈赤各个击破明军四路大军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1619",
+        "headline": "萨尔浒之战：努尔哈赤各个击破明军四路大军",
+        "year": 1619,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "萨尔浒之战：努尔哈赤各个击破明军四路大军",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1621": {
+    "historyId": "event-jiangshan-ming-1621",
+    "title": "沈辽之战",
+    "upstreamKey": "ming:1621",
+    "headline": "沈辽之战：努尔哈赤连克沈阳、辽阳，后金迁都辽阳",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1621",
+        "headline": "沈辽之战：努尔哈赤连克沈阳、辽阳，后金迁都辽阳",
+        "year": 1621,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "沈辽之战：努尔哈赤连克沈阳、辽阳，后金迁都辽阳",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1624": {
+    "historyId": "event-jiangshan-ming-1624",
+    "title": "杨涟疏参魏忠贤二十四大罪，阉党兴诏狱残害东林党人",
+    "upstreamKey": "ming:1624",
+    "headline": "杨涟疏参魏忠贤二十四大罪，阉党兴诏狱残害东林党人，朝政糜烂",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1624",
+        "headline": "杨涟疏参魏忠贤二十四大罪，阉党兴诏狱残害东林党人，朝政糜烂",
+        "year": 1624,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "杨涟疏参魏忠贤二十四大罪，阉党兴诏狱残害东林党人，朝政糜烂",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1626": {
+    "historyId": "event-jiangshan-ming-1626",
+    "title": "宁远大捷",
+    "upstreamKey": "ming:1626",
+    "headline": "宁远大捷：袁崇焕凭孤城红夷大炮重创后金努尔哈赤",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1626",
+        "headline": "宁远大捷：袁崇焕凭孤城红夷大炮重创后金努尔哈赤",
+        "year": 1626,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "宁远大捷：袁崇焕凭孤城红夷大炮重创后金努尔哈赤",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1627": {
+    "historyId": "event-jiangshan-ming-1627",
+    "title": "澄城王二起事，陕北民变揭开明末农民战争序幕",
+    "upstreamKey": "ming:1627",
+    "headline": "澄城王二起事，陕北民变揭开明末农民战争序幕",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1627",
+        "headline": "澄城王二起事，陕北民变揭开明末农民战争序幕",
+        "year": 1627,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "澄城王二起事，陕北民变揭开明末农民战争序幕",
+        "status": "reviewed-content-match",
+        "difference": "王二起事于澄城，米脂是陕北起义背景参照，地点改用澄城并注明上游错置。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1636": {
+    "historyId": "event-jiangshan-ming-1636",
+    "title": "皇太极在盛京称帝，改国号大清",
+    "upstreamKey": "ming:1636",
+    "headline": "皇太极在盛京称帝，改国号“大清”",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1636",
+        "headline": "皇太极在盛京称帝，改国号“大清”",
+        "year": 1636,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "皇太极在盛京称帝，改国号“大清”",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1642": {
+    "historyId": "event-jiangshan-ming-1642",
+    "title": "松锦大战",
+    "upstreamKey": "ming:1642",
+    "headline": "松锦大战：皇太极围点打援击溃洪承畴十三万明军，关外防线尽失",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1642",
+        "headline": "松锦大战：皇太极围点打援击溃洪承畴十三万明军，关外防线尽失",
+        "year": 1642,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "松锦大战：皇太极围点打援击溃洪承畴十三万明军，关外防线尽失",
+        "status": "reviewed-content-match",
+        "difference": "松锦大战主要过程在1641—1642年，“关外防线尽失”是概括；宁远等仍由明军控制至1644年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-ming-1643": {
+    "historyId": "event-jiangshan-ming-1643",
+    "title": "李自成破潼关入西安，张献忠据武昌称大西王",
+    "upstreamKey": "ming:1643",
+    "headline": "李自成破潼关入西安，张献忠据武昌称大西王",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1643",
+        "headline": "李自成破潼关入西安，张献忠据武昌称大西王",
+        "year": 1643,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "李自成破潼关入西安，张献忠据武昌称大西王",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-145": {
+    "historyId": "event-145",
+    "title": "李自成入北京",
+    "upstreamKey": "ming:1644",
+    "headline": "李自成破北京，明亡；清军入关",
+    "reason": "正文中的“李自成入北京”与上游“李自成破北京，明亡；清军入关”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1644",
+        "headline": "李自成破北京，明亡；清军入关",
+        "year": 1644,
+        "reason": "正文中的“李自成入北京”与上游“李自成破北京，明亡；清军入关”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "李自成入北京",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-156": {
+    "historyId": "event-156",
+    "title": "清军入关",
+    "upstreamKey": "ming:1644",
+    "headline": "李自成破北京，明亡；清军入关",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "ming:1644",
+        "headline": "李自成破北京，明亡；清军入关",
+        "year": 1644,
+        "reason": "正文中的“清军入关”与上游“李自成破北京，明亡；清军入关”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "清军入关",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "qing:1644",
+        "headline": "山海关总兵吴三桂降清开关，多尔衮率清军大败李自成大顺军，定都北京",
+        "year": 1644,
+        "reason": "正文中的“清军入关”与上游“山海关总兵吴三桂降清开关，多尔衮率清军大败李自成大顺军，定都北京”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "清军入关",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1645": {
+    "historyId": "event-jiangshan-qing-1645",
+    "title": "清军破扬州、南京，弘光政权覆灭",
+    "upstreamKey": "qing:1645",
+    "headline": "清军破扬州、南京，弘光政权覆灭；颁剃发令，江南抗清",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1645",
+        "headline": "清军破扬州、南京，弘光政权覆灭；颁剃发令，江南抗清",
+        "year": 1645,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "清军破扬州、南京，弘光政权覆灭；颁剃发令，江南抗清",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-366": {
+    "historyId": "event-366",
+    "title": "郑成功收复台湾",
+    "upstreamKey": "qing:1661",
+    "headline": "郑成功横渡鹿耳门驱逐荷兰殖民者，收复台湾设承天府",
+    "reason": "正文中的“郑成功收复台湾”与上游“郑成功横渡鹿耳门驱逐荷兰殖民者，收复台湾设承天府”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1661",
+        "headline": "郑成功横渡鹿耳门驱逐荷兰殖民者，收复台湾设承天府",
+        "year": 1661,
+        "reason": "正文中的“郑成功收复台湾”与上游“郑成功横渡鹿耳门驱逐荷兰殖民者，收复台湾设承天府”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "郑成功收复台湾",
+        "status": "reviewed-content-match",
+        "difference": "1661年郑成功攻台，1662年荷兰守军投降；旧笔记按1662年结局保留，不用上游1661年替代。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1662": {
+    "historyId": "event-jiangshan-qing-1662",
+    "title": "吴三桂于昆明杀南明永历帝，李定国病逝",
+    "upstreamKey": "qing:1662",
+    "headline": "吴三桂于昆明杀南明永历帝，李定国病逝，南明大陆抗清终结",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1662",
+        "headline": "吴三桂于昆明杀南明永历帝，李定国病逝，南明大陆抗清终结",
+        "year": 1662,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "吴三桂于昆明杀南明永历帝，李定国病逝，南明大陆抗清终结",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1669": {
+    "historyId": "event-jiangshan-qing-1669",
+    "title": "少年康熙帝于武英殿智擒专权辅臣鳌拜，正式亲政",
+    "upstreamKey": "qing:1669",
+    "headline": "少年康熙帝于武英殿智擒专权辅臣鳌拜，正式亲政",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1669",
+        "headline": "少年康熙帝于武英殿智擒专权辅臣鳌拜，正式亲政",
+        "year": 1669,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "少年康熙帝于武英殿智擒专权辅臣鳌拜，正式亲政",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-157": {
+    "historyId": "event-157",
+    "title": "三藩之乱",
+    "upstreamKey": "qing:1673",
+    "headline": "康熙帝下旨撤藩，吴三桂于云南起兵反清，三藩之乱爆发",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1673",
+        "headline": "康熙帝下旨撤藩，吴三桂于云南起兵反清，三藩之乱爆发",
+        "year": 1673,
+        "reason": "正文中的“三藩之乱”与上游“康熙帝下旨撤藩，吴三桂于云南起兵反清，三藩之乱爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "三藩之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "qing:1681",
+        "headline": "清军攻克昆明，康熙帝彻底平定三藩之乱",
+        "year": 1681,
+        "reason": "正文中的“三藩之乱”与上游“清军攻克昆明，康熙帝彻底平定三藩之乱”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "三藩之乱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-158": {
+    "historyId": "event-158",
+    "title": "清军进入台湾",
+    "upstreamKey": "qing:1683",
+    "headline": "康熙帝命施琅于澎湖大破明郑水师，郑克塽出降，清廷设台湾府",
+    "reason": "正文中的“清军进入台湾”与上游“康熙帝命施琅于澎湖大破明郑水师，郑克塽出降，清廷设台湾府”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1683",
+        "headline": "康熙帝命施琅于澎湖大破明郑水师，郑克塽出降，清廷设台湾府",
+        "year": 1683,
+        "reason": "正文中的“清军进入台湾”与上游“康熙帝命施琅于澎湖大破明郑水师，郑克塽出降，清廷设台湾府”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "清军进入台湾",
+        "status": "reviewed-content-match",
+        "difference": "1683年澎湖战役与郑氏投降，1684年设台湾府；旧笔记补明设府后续年份。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-367": {
+    "historyId": "event-367",
+    "title": "雅克萨之战与尼布楚条约",
+    "upstreamKey": "qing:1685",
+    "headline": "康熙命彭春、萨布素发起雅克萨之战，痛击沙俄侵略军",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1685",
+        "headline": "康熙命彭春、萨布素发起雅克萨之战，痛击沙俄侵略军",
+        "year": 1685,
+        "reason": "正文中的“雅克萨之战与尼布楚条约”与上游“康熙命彭春、萨布素发起雅克萨之战，痛击沙俄侵略军”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "雅克萨之战与尼布楚条约",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "qing:1689",
+        "headline": "康熙帝遣索额图与沙俄订立《尼布楚条约》，划定中俄东段边界",
+        "year": 1689,
+        "reason": "正文中的“雅克萨之战与尼布楚条约”与上游“康熙帝遣索额图与沙俄订立《尼布楚条约》，划定中俄东段边界”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "雅克萨之战与尼布楚条约",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1691": {
+    "historyId": "event-jiangshan-qing-1691",
+    "title": "多伦会盟，喀尔喀蒙古内附",
+    "upstreamKey": "qing:1691",
+    "headline": "多伦会盟，喀尔喀蒙古内附",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1691",
+        "headline": "多伦会盟，喀尔喀蒙古内附",
+        "year": 1691,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "多伦会盟，喀尔喀蒙古内附",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1696": {
+    "historyId": "event-jiangshan-qing-1696",
+    "title": "康熙帝三次亲征漠北，昭莫多之战大破准噶尔部噶尔丹主力",
+    "upstreamKey": "qing:1696",
+    "headline": "康熙帝三次亲征漠北，昭莫多之战大破准噶尔部噶尔丹主力",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1696",
+        "headline": "康熙帝三次亲征漠北，昭莫多之战大破准噶尔部噶尔丹主力",
+        "year": 1696,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "康熙帝三次亲征漠北，昭莫多之战大破准噶尔部噶尔丹主力",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1720": {
+    "historyId": "event-jiangshan-qing-1720",
+    "title": "康熙帝遣清军驱逐准噶尔军，护送七世达赖入藏",
+    "upstreamKey": "qing:1720",
+    "headline": "康熙帝遣清军驱逐准噶尔军，护送七世达赖入藏，西藏定局",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1720",
+        "headline": "康熙帝遣清军驱逐准噶尔军，护送七世达赖入藏，西藏定局",
+        "year": 1720,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "康熙帝遣清军驱逐准噶尔军，护送七世达赖入藏，西藏定局",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1722": {
+    "historyId": "event-jiangshan-qing-1722",
+    "title": "康熙帝卒，雍正帝即位",
+    "upstreamKey": "qing:1722",
+    "headline": "康熙帝卒，雍正帝即位，开启摊丁入亩与西南改土归流",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1722",
+        "headline": "康熙帝卒，雍正帝即位，开启摊丁入亩与西南改土归流",
+        "year": 1722,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "康熙帝卒，雍正帝即位，开启摊丁入亩与西南改土归流",
+        "status": "reviewed-content-match",
+        "difference": "摊丁入亩和西南改土归流在雍正朝逐步推进，不是1722年即位当天完成。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1724": {
+    "historyId": "event-jiangshan-qing-1724",
+    "title": "年羹尧平青海罗卜藏丹津",
+    "upstreamKey": "qing:1724",
+    "headline": "年羹尧平青海罗卜藏丹津",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1724",
+        "headline": "年羹尧平青海罗卜藏丹津",
+        "year": 1724,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "年羹尧平青海罗卜藏丹津",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-368": {
+    "historyId": "event-368",
+    "title": "驻藏大臣设置",
+    "upstreamKey": "qing:1727",
+    "headline": "清廷始设驻藏大臣督办藏务；中俄签订《恰克图条约》",
+    "reason": "正文中的“驻藏大臣设置”与上游“清廷始设驻藏大臣督办藏务；中俄签订《恰克图条约》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1727",
+        "headline": "清廷始设驻藏大臣督办藏务；中俄签订《恰克图条约》",
+        "year": 1727,
+        "reason": "正文中的“驻藏大臣设置”与上游“清廷始设驻藏大臣督办藏务；中俄签订《恰克图条约》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "驻藏大臣设置",
+        "status": "reviewed-content-match",
+        "difference": "驻藏大臣与恰克图条约不同地域：前者拉萨，后者恰克图谈判区，另补后者。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1727-detail": {
+    "historyId": "event-jiangshan-qing-1727-detail",
+    "title": "恰克图条约",
+    "upstreamKey": "qing:1727",
+    "headline": "清廷始设驻藏大臣督办藏务；中俄签订《恰克图条约》",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1727",
+        "headline": "清廷始设驻藏大臣督办藏务；中俄签订《恰克图条约》",
+        "year": 1727,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "恰克图条约",
+        "status": "reviewed-content-match",
+        "difference": "驻藏大臣与恰克图条约不同地域：前者拉萨，后者恰克图谈判区，另补后者。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1729": {
+    "historyId": "event-jiangshan-qing-1729",
+    "title": "雍正帝设军机房（后称军机处），皇权空前集中",
+    "upstreamKey": "qing:1729",
+    "headline": "雍正帝设军机房（后称军机处），皇权空前集中",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1729",
+        "headline": "雍正帝设军机房（后称军机处），皇权空前集中",
+        "year": 1729,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "雍正帝设军机房（后称军机处），皇权空前集中",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1735": {
+    "historyId": "event-jiangshan-qing-1735",
+    "title": "乾隆帝即位，设办理苗疆事务、经略西北准部",
+    "upstreamKey": "qing:1735",
+    "headline": "乾隆帝即位，设办理苗疆事务、经略西北准部",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1735",
+        "headline": "乾隆帝即位，设办理苗疆事务、经略西北准部",
+        "year": 1735,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "乾隆帝即位，设办理苗疆事务、经略西北准部",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1755": {
+    "historyId": "event-jiangshan-qing-1755",
+    "title": "乾隆帝命清军两路出师西域直抵伊犁，攻灭准噶尔汗国并俘达瓦齐",
+    "upstreamKey": "qing:1755",
+    "headline": "乾隆帝命清军两路出师西域直抵伊犁，攻灭准噶尔汗国并俘达瓦齐",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1755",
+        "headline": "乾隆帝命清军两路出师西域直抵伊犁，攻灭准噶尔汗国并俘达瓦齐",
+        "year": 1755,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "乾隆帝命清军两路出师西域直抵伊犁，攻灭准噶尔汗国并俘达瓦齐",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-132": {
+    "historyId": "event-132",
+    "title": "广州一口通商",
+    "upstreamKey": "qing:1757",
+    "headline": "乾隆帝限令西洋商船只许广州一口通商，十三行专营",
+    "reason": "正文中的“广州一口通商”与上游“乾隆帝限令西洋商船只许广州一口通商，十三行专营”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1757",
+        "headline": "乾隆帝限令西洋商船只许广州一口通商，十三行专营",
+        "year": 1757,
+        "reason": "正文中的“广州一口通商”与上游“乾隆帝限令西洋商船只许广州一口通商，十三行专营”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "广州一口通商",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1759": {
+    "historyId": "event-jiangshan-qing-1759",
+    "title": "清军平定准噶尔与大小和卓，统合西域并设伊犁将军",
+    "upstreamKey": "qing:1759",
+    "headline": "清军平定准噶尔与大小和卓，统合西域并设伊犁将军",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1759",
+        "headline": "清军平定准噶尔与大小和卓，统合西域并设伊犁将军",
+        "year": 1759,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "清军平定准噶尔与大小和卓，统合西域并设伊犁将军",
+        "status": "reviewed-content-match",
+        "difference": "平大小和卓系1759年，伊犁将军设置在1762年，采用1759—1762年过程。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1771": {
+    "historyId": "event-jiangshan-qing-1771",
+    "title": "渥巴锡率土尔扈特部自伏尔加河万里东归",
+    "upstreamKey": "qing:1771",
+    "headline": "渥巴锡率土尔扈特部自伏尔加河万里东归",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1771",
+        "headline": "渥巴锡率土尔扈特部自伏尔加河万里东归",
+        "year": 1771,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "渥巴锡率土尔扈特部自伏尔加河万里东归",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1773": {
+    "historyId": "event-jiangshan-qing-1773",
+    "title": "乾隆帝开四库全书馆编纂《四库全书》，同时借修书屡兴文字狱",
+    "upstreamKey": "qing:1773",
+    "headline": "乾隆帝开四库全书馆编纂《四库全书》，同时借修书屡兴文字狱",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1773",
+        "headline": "乾隆帝开四库全书馆编纂《四库全书》，同时借修书屡兴文字狱",
+        "year": 1773,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "乾隆帝开四库全书馆编纂《四库全书》，同时借修书屡兴文字狱",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1787": {
+    "historyId": "event-jiangshan-qing-1787",
+    "title": "福康安率军渡海平定台湾林爽文起义，乾隆赐改诸罗县为嘉义",
+    "upstreamKey": "qing:1787",
+    "headline": "福康安率军渡海平定台湾林爽文起义，乾隆赐改诸罗县为“嘉义”",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1787",
+        "headline": "福康安率军渡海平定台湾林爽文起义，乾隆赐改诸罗县为“嘉义”",
+        "year": 1787,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "福康安率军渡海平定台湾林爽文起义，乾隆赐改诸罗县为“嘉义”",
+        "status": "reviewed-content-match",
+        "difference": "林爽文起义自1786年起，1787年福康安入台，1788年平定，采用1786—1788年范围。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1792": {
+    "historyId": "event-jiangshan-qing-1792",
+    "title": "福康安击退廓尔喀，颁《钦定藏内善后章程》与金瓶掣签制",
+    "upstreamKey": "qing:1792",
+    "headline": "福康安击退廓尔喀，颁《钦定藏内善后章程》与金瓶掣签制",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1792",
+        "headline": "福康安击退廓尔喀，颁《钦定藏内善后章程》与金瓶掣签制",
+        "year": 1792,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "福康安击退廓尔喀，颁《钦定藏内善后章程》与金瓶掣签制",
+        "status": "reviewed-content-match",
+        "difference": "反击廓尔喀在1792年，钦定藏内善后章程二十九条与金瓶制度在1793年，采用1792—1793年范围。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-159": {
+    "historyId": "event-159",
+    "title": "马戛尔尼使团到达",
+    "upstreamKey": "qing:1793",
+    "headline": "英使马戛尔尼于承德觐见乾隆帝请开商埠遭拒",
+    "reason": "正文中的“马戛尔尼使团到达”与上游“英使马戛尔尼于承德觐见乾隆帝请开商埠遭拒”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1793",
+        "headline": "英使马戛尔尼于承德觐见乾隆帝请开商埠遭拒",
+        "year": 1793,
+        "reason": "正文中的“马戛尔尼使团到达”与上游“英使马戛尔尼于承德觐见乾隆帝请开商埠遭拒”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "马戛尔尼使团到达",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1796": {
+    "historyId": "event-jiangshan-qing-1796",
+    "title": "太上皇乾隆禅位嘉庆帝",
+    "upstreamKey": "qing:1796",
+    "headline": "太上皇乾隆禅位嘉庆帝；川楚白莲教起义爆发",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1796",
+        "headline": "太上皇乾隆禅位嘉庆帝；川楚白莲教起义爆发",
+        "year": 1796,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "太上皇乾隆禅位嘉庆帝；川楚白莲教起义爆发",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1799": {
+    "historyId": "event-jiangshan-qing-1799",
+    "title": "乾隆崩后嘉庆帝亲政，迅雷赐死贪墨权臣和珅",
+    "upstreamKey": "qing:1799",
+    "headline": "乾隆崩后嘉庆帝亲政，迅雷赐死贪墨权臣和珅，清廷由盛转衰",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1799",
+        "headline": "乾隆崩后嘉庆帝亲政，迅雷赐死贪墨权臣和珅，清廷由盛转衰",
+        "year": 1799,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "乾隆崩后嘉庆帝亲政，迅雷赐死贪墨权臣和珅，清廷由盛转衰",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1813": {
+    "historyId": "event-jiangshan-qing-1813",
+    "title": "癸酉之变",
+    "upstreamKey": "qing:1813",
+    "headline": "癸酉之变：天理教林清攻入紫禁城隆宗门，皇子绵宁御敌",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1813",
+        "headline": "癸酉之变：天理教林清攻入紫禁城隆宗门，皇子绵宁御敌",
+        "year": 1813,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "癸酉之变：天理教林清攻入紫禁城隆宗门，皇子绵宁御敌",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1826": {
+    "historyId": "event-jiangshan-qing-1826",
+    "title": "张格尔之乱攻陷喀什噶尔，长龄率军西征平定",
+    "upstreamKey": "qing:1826",
+    "headline": "张格尔之乱攻陷喀什噶尔，长龄率军西征平定",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1826",
+        "headline": "张格尔之乱攻陷喀什噶尔，长龄率军西征平定",
+        "year": 1826,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "张格尔之乱攻陷喀什噶尔，长龄率军西征平定",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-173": {
+    "historyId": "event-173",
+    "title": "虎门销烟",
+    "upstreamKey": "qing:1839",
+    "headline": "林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟",
+    "reason": "正文中的“虎门销烟”与上游“林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1839",
+        "headline": "林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟",
+        "year": 1839,
+        "reason": "正文中的“虎门销烟”与上游“林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "虎门销烟",
+        "status": "reviewed-content-match",
+        "difference": "收缴鸦片在广州商馆，集中销毁在虎门海滩，分别对应既有两篇；不能全部定位虎门。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-134": {
+    "historyId": "event-134",
+    "title": "林则徐收缴鸦片",
+    "upstreamKey": "qing:1839",
+    "headline": "林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟",
+    "reason": "正文中的“林则徐收缴鸦片”与上游“林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1839",
+        "headline": "林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟",
+        "year": 1839,
+        "reason": "正文中的“林则徐收缴鸦片”与上游“林则徐于广东虎门海滩当众销毁鸦片两万余箱，虎门销烟”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "林则徐收缴鸦片",
+        "status": "reviewed-content-match",
+        "difference": "收缴鸦片在广州商馆，集中销毁在虎门海滩，分别对应既有两篇；不能全部定位虎门。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-174": {
+    "historyId": "event-174",
+    "title": "第一次鸦片战争",
+    "upstreamKey": "qing:1840",
+    "headline": "英军封锁珠江口北犯，第一次鸦片战争爆发",
+    "reason": "正文中的“第一次鸦片战争”与上游“英军封锁珠江口北犯，第一次鸦片战争爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1840",
+        "headline": "英军封锁珠江口北犯，第一次鸦片战争爆发",
+        "year": 1840,
+        "reason": "正文中的“第一次鸦片战争”与上游“英军封锁珠江口北犯，第一次鸦片战争爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "第一次鸦片战争",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-135": {
+    "historyId": "event-135",
+    "title": "南京条约签订",
+    "upstreamKey": "qing:1842",
+    "headline": "《南京条约》签订：割让香港岛，开五口通商",
+    "reason": "正文中的“南京条约签订”与上游“《南京条约》签订：割让香港岛，开五口通商”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1842",
+        "headline": "《南京条约》签订：割让香港岛，开五口通商",
+        "year": 1842,
+        "reason": "正文中的“南京条约签订”与上游“《南京条约》签订：割让香港岛，开五口通商”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "南京条约签订",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-120": {
+    "historyId": "event-120",
+    "title": "金田起义",
+    "upstreamKey": "qing:1851",
+    "headline": "洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）",
+    "reason": "正文中的“金田起义”与上游“洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1851",
+        "headline": "洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）",
+        "year": 1851,
+        "reason": "正文中的“金田起义”与上游“洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "金田起义",
+        "status": "reviewed-content-match",
+        "difference": "金田起义在1851年，定都天京在1853年；同一上游括注对应两篇本地笔记，保留各自纪年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-121": {
+    "historyId": "event-121",
+    "title": "定都南京",
+    "upstreamKey": "qing:1851",
+    "headline": "洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）",
+    "reason": "正文中的“定都南京”与上游“洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1851",
+        "headline": "洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）",
+        "year": 1851,
+        "reason": "正文中的“定都南京”与上游“洪秀全发动太平天国金田起义（1853年定都天京，据长江中下游）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "定都南京",
+        "status": "reviewed-content-match",
+        "difference": "金田起义在1851年，定都天京在1853年；同一上游括注对应两篇本地笔记，保留各自纪年。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1855": {
+    "historyId": "event-jiangshan-qing-1855",
+    "title": "黄河于兰阳铜瓦厢决口夺大清河入渤海，奠定现代走向",
+    "upstreamKey": "qing:1855",
+    "headline": "黄河于兰阳铜瓦厢决口夺大清河入渤海，奠定现代走向",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1855",
+        "headline": "黄河于兰阳铜瓦厢决口夺大清河入渤海，奠定现代走向",
+        "year": 1855,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "黄河于兰阳铜瓦厢决口夺大清河入渤海，奠定现代走向",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-122": {
+    "historyId": "event-122",
+    "title": "天京事变",
+    "upstreamKey": "qing:1856",
+    "headline": "天京事变：杨韦内讧血洗天京，石达开出走，太平天国转衰",
+    "reason": "正文中的“天京事变”与上游“天京事变：杨韦内讧血洗天京，石达开出走，太平天国转衰”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1856",
+        "headline": "天京事变：杨韦内讧血洗天京，石达开出走，太平天国转衰",
+        "year": 1856,
+        "reason": "正文中的“天京事变”与上游“天京事变：杨韦内讧血洗天京，石达开出走，太平天国转衰”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "天京事变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1858": {
+    "historyId": "event-jiangshan-qing-1858",
+    "title": "沙俄迫签《瑷珲条约》，割占黑龙江以北外兴安岭以南",
+    "upstreamKey": "qing:1858",
+    "headline": "沙俄迫签《瑷珲条约》，割占黑龙江以北外兴安岭以南",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1858",
+        "headline": "沙俄迫签《瑷珲条约》，割占黑龙江以北外兴安岭以南",
+        "year": 1858,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "沙俄迫签《瑷珲条约》，割占黑龙江以北外兴安岭以南",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-175": {
+    "historyId": "event-175",
+    "title": "第二次鸦片战争",
+    "upstreamKey": "qing:1860",
+    "headline": "英法联军攻占北京、火烧圆明园；签《北京条约》割外东北",
+    "reason": "正文中的“第二次鸦片战争”与上游“英法联军攻占北京、火烧圆明园；签《北京条约》割外东北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1860",
+        "headline": "英法联军攻占北京、火烧圆明园；签《北京条约》割外东北",
+        "year": 1860,
+        "reason": "正文中的“第二次鸦片战争”与上游“英法联军攻占北京、火烧圆明园；签《北京条约》割外东北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "第二次鸦片战争",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-176": {
+    "historyId": "event-176",
+    "title": "北京条约签订",
+    "upstreamKey": "qing:1860",
+    "headline": "英法联军攻占北京、火烧圆明园；签《北京条约》割外东北",
+    "reason": "正文中的“北京条约签订”与上游“英法联军攻占北京、火烧圆明园；签《北京条约》割外东北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1860",
+        "headline": "英法联军攻占北京、火烧圆明园；签《北京条约》割外东北",
+        "year": 1860,
+        "reason": "正文中的“北京条约签订”与上游“英法联军攻占北京、火烧圆明园；签《北京条约》割外东北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "北京条约签订",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-369": {
+    "historyId": "event-369",
+    "title": "英法联军焚毁圆明园",
+    "upstreamKey": "qing:1860",
+    "headline": "英法联军攻占北京、火烧圆明园；签《北京条约》割外东北",
+    "reason": "正文中的“英法联军焚毁圆明园”与上游“英法联军攻占北京、火烧圆明园；签《北京条约》割外东北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1860",
+        "headline": "英法联军攻占北京、火烧圆明园；签《北京条约》割外东北",
+        "year": 1860,
+        "reason": "正文中的“英法联军焚毁圆明园”与上游“英法联军攻占北京、火烧圆明园；签《北京条约》割外东北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "英法联军焚毁圆明园",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1861": {
+    "historyId": "event-jiangshan-qing-1861",
+    "title": "辛酉政变",
+    "upstreamKey": "qing:1861",
+    "headline": "辛酉政变：慈禧、慈安联结恭亲王奕訢诛肃顺等八大臣垂帘",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1861",
+        "headline": "辛酉政变：慈禧、慈安联结恭亲王奕訢诛肃顺等八大臣垂帘",
+        "year": 1861,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "辛酉政变：慈禧、慈安联结恭亲王奕訢诛肃顺等八大臣垂帘",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-123": {
+    "historyId": "event-123",
+    "title": "天京陷落",
+    "upstreamKey": "qing:1864",
+    "headline": "湘军攻陷天京，太平天国覆灭；沙俄迫签《勘分西北界约记》",
+    "reason": "正文中的“天京陷落”与上游“湘军攻陷天京，太平天国覆灭；沙俄迫签《勘分西北界约记》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1864",
+        "headline": "湘军攻陷天京，太平天国覆灭；沙俄迫签《勘分西北界约记》",
+        "year": 1864,
+        "reason": "正文中的“天京陷落”与上游“湘军攻陷天京，太平天国覆灭；沙俄迫签《勘分西北界约记》”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "天京陷落",
+        "status": "reviewed-content-match",
+        "difference": "天京陷落与塔城勘分西北界约记仅同年并列，后者另建条目且不能沿用南京发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1864-detail": {
+    "historyId": "event-jiangshan-qing-1864-detail",
+    "title": "勘分西北界约记",
+    "upstreamKey": "qing:1864",
+    "headline": "湘军攻陷天京，太平天国覆灭；沙俄迫签《勘分西北界约记》",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1864",
+        "headline": "湘军攻陷天京，太平天国覆灭；沙俄迫签《勘分西北界约记》",
+        "year": 1864,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "勘分西北界约记",
+        "status": "reviewed-content-match",
+        "difference": "天京陷落与塔城勘分西北界约记仅同年并列，后者另建条目且不能沿用南京发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-197": {
+    "historyId": "event-197",
+    "title": "洋务运动",
+    "upstreamKey": "qing:1865",
+    "headline": "曾国藩、李鸿章创办江南制造总局，洋务运动兴起",
+    "reason": "正文中的“洋务运动”与上游“曾国藩、李鸿章创办江南制造总局，洋务运动兴起”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1865",
+        "headline": "曾国藩、李鸿章创办江南制造总局，洋务运动兴起",
+        "year": 1865,
+        "reason": "正文中的“洋务运动”与上游“曾国藩、李鸿章创办江南制造总局，洋务运动兴起”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "洋务运动",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-371": {
+    "historyId": "event-371",
+    "title": "左宗棠收复新疆",
+    "upstreamKey": "qing:1876",
+    "headline": "左宗棠抬棺西征平定阿古柏，收复新疆（1884年建省）",
+    "reason": "正文中的“左宗棠收复新疆”与上游“左宗棠抬棺西征平定阿古柏，收复新疆（1884年建省）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1876",
+        "headline": "左宗棠抬棺西征平定阿古柏，收复新疆（1884年建省）",
+        "year": 1876,
+        "reason": "正文中的“左宗棠收复新疆”与上游“左宗棠抬棺西征平定阿古柏，收复新疆（1884年建省）”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "左宗棠收复新疆",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1881": {
+    "historyId": "event-jiangshan-qing-1881",
+    "title": "曾纪泽使俄订立《中俄伊犁条约》，收复伊犁九城大部",
+    "upstreamKey": "qing:1881",
+    "headline": "曾纪泽使俄订立《中俄伊犁条约》，收复伊犁九城大部",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1881",
+        "headline": "曾纪泽使俄订立《中俄伊犁条约》，收复伊犁九城大部",
+        "year": 1881,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "曾纪泽使俄订立《中俄伊犁条约》，收复伊犁九城大部",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-370": {
+    "historyId": "event-370",
+    "title": "中法战争",
+    "upstreamKey": "qing:1885",
+    "headline": "老将冯子材率军于镇南关大捷重创法军并克谅山，扭转中法战局",
+    "reason": "正文中的“中法战争”与上游“老将冯子材率军于镇南关大捷重创法军并克谅山，扭转中法战局”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1885",
+        "headline": "老将冯子材率军于镇南关大捷重创法军并克谅山，扭转中法战局",
+        "year": 1885,
+        "reason": "正文中的“中法战争”与上游“老将冯子材率军于镇南关大捷重创法军并克谅山，扭转中法战局”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "中法战争",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1887": {
+    "historyId": "event-jiangshan-qing-1887",
+    "title": "台湾正式建省，刘铭传任首任巡抚",
+    "upstreamKey": "qing:1887",
+    "headline": "台湾正式建省，刘铭传任首任巡抚，筑铁路、设电报",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1887",
+        "headline": "台湾正式建省，刘铭传任首任巡抚，筑铁路、设电报",
+        "year": 1887,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "台湾正式建省，刘铭传任首任巡抚，筑铁路、设电报",
+        "status": "reviewed-content-match",
+        "difference": "台湾建省的决定在1885年，正式建置推进到1887年，采用1885—1887年范围。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-198": {
+    "historyId": "event-198",
+    "title": "甲午战争",
+    "upstreamKey": "qing:1894",
+    "headline": "甲午战争爆发；黄海海战邓世昌驾“致远”舰壮烈殉国",
+    "reason": "正文中的“甲午战争”与上游“甲午战争爆发；黄海海战邓世昌驾“致远”舰壮烈殉国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1894",
+        "headline": "甲午战争爆发；黄海海战邓世昌驾“致远”舰壮烈殉国",
+        "year": 1894,
+        "reason": "正文中的“甲午战争”与上游“甲午战争爆发；黄海海战邓世昌驾“致远”舰壮烈殉国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "甲午战争",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-267": {
+    "historyId": "event-267",
+    "title": "马关条约签订",
+    "upstreamKey": "qing:1895",
+    "headline": "清廷甲午战败，遣李鸿章赴日签订《马关条约》，割让台湾、澎湖",
+    "reason": "正文中的“马关条约签订”与上游“清廷甲午战败，遣李鸿章赴日签订《马关条约》，割让台湾、澎湖”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1895",
+        "headline": "清廷甲午战败，遣李鸿章赴日签订《马关条约》，割让台湾、澎湖",
+        "year": 1895,
+        "reason": "正文中的“马关条约签订”与上游“清廷甲午战败，遣李鸿章赴日签订《马关条约》，割让台湾、澎湖”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "马关条约签订",
+        "status": "reviewed-content-match",
+        "difference": "马关条约签订地在日本马关（下关），上游台南为条约影响地区，不作为签约地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-199": {
+    "historyId": "event-199",
+    "title": "戊戌变法",
+    "upstreamKey": "qing:1898",
+    "headline": "百日维新与戊戌政变慈禧囚光绪；列强强租胶州湾、旅大与新界",
+    "reason": "正文中的“戊戌变法”与上游“百日维新与戊戌政变慈禧囚光绪；列强强租胶州湾、旅大与新界”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1898",
+        "headline": "百日维新与戊戌政变慈禧囚光绪；列强强租胶州湾、旅大与新界",
+        "year": 1898,
+        "reason": "正文中的“戊戌变法”与上游“百日维新与戊戌政变慈禧囚光绪；列强强租胶州湾、旅大与新界”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "戊戌变法",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1898-detail": {
+    "historyId": "event-jiangshan-qing-1898-detail",
+    "title": "列强强租胶州湾旅大与新界",
+    "upstreamKey": "qing:1898",
+    "headline": "百日维新与戊戌政变慈禧囚光绪；列强强租胶州湾、旅大与新界",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1898",
+        "headline": "百日维新与戊戌政变慈禧囚光绪；列强强租胶州湾、旅大与新界",
+        "year": 1898,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "列强强租胶州湾旅大与新界",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-269": {
+    "historyId": "event-269",
+    "title": "八国联军侵华",
+    "upstreamKey": "qing:1900",
+    "headline": "八国联军占北京，慈禧挟光绪奔西安；东南督抚行东南互保",
+    "reason": "正文中的“八国联军侵华”与上游“八国联军占北京，慈禧挟光绪奔西安；东南督抚行东南互保”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1900",
+        "headline": "八国联军占北京，慈禧挟光绪奔西安；东南督抚行东南互保",
+        "year": 1900,
+        "reason": "正文中的“八国联军侵华”与上游“八国联军占北京，慈禧挟光绪奔西安；东南督抚行东南互保”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "八国联军侵华",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1900-detail": {
+    "historyId": "event-jiangshan-qing-1900-detail",
+    "title": "东南互保",
+    "upstreamKey": "qing:1900",
+    "headline": "八国联军占北京，慈禧挟光绪奔西安；东南督抚行东南互保",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1900",
+        "headline": "八国联军占北京，慈禧挟光绪奔西安；东南督抚行东南互保",
+        "year": 1900,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "东南互保",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-270": {
+    "historyId": "event-270",
+    "title": "辛丑条约签订",
+    "upstreamKey": "qing:1901",
+    "headline": "清廷命奕劻、李鸿章与十一国签订《辛丑条约》，赔款四亿五千万两",
+    "reason": "正文中的“辛丑条约签订”与上游“清廷命奕劻、李鸿章与十一国签订《辛丑条约》，赔款四亿五千万两”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1901",
+        "headline": "清廷命奕劻、李鸿章与十一国签订《辛丑条约》，赔款四亿五千万两",
+        "year": 1901,
+        "reason": "正文中的“辛丑条约签订”与上游“清廷命奕劻、李鸿章与十一国签订《辛丑条约》，赔款四亿五千万两”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "辛丑条约签订",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-374": {
+    "historyId": "event-374",
+    "title": "科举制度废除",
+    "upstreamKey": "qing:1905",
+    "headline": "清廷废除科举，延续一千三百年的取士制度终结",
+    "reason": "正文中的“科举制度废除”与上游“清廷废除科举，延续一千三百年的取士制度终结”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1905",
+        "headline": "清廷废除科举，延续一千三百年的取士制度终结",
+        "year": 1905,
+        "reason": "正文中的“科举制度废除”与上游“清廷废除科举，延续一千三百年的取士制度终结”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "科举制度废除",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-qing-1908": {
+    "historyId": "event-jiangshan-qing-1908",
+    "title": "清廷颁布《钦定宪法大纲》行预备立宪",
+    "upstreamKey": "qing:1908",
+    "headline": "清廷颁布《钦定宪法大纲》行预备立宪；光绪帝与慈禧太后相继崩逝",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1908",
+        "headline": "清廷颁布《钦定宪法大纲》行预备立宪；光绪帝与慈禧太后相继崩逝",
+        "year": 1908,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "清廷颁布《钦定宪法大纲》行预备立宪；光绪帝与慈禧太后相继崩逝",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-171": {
+    "historyId": "event-171",
+    "title": "武昌起义",
+    "upstreamKey": "qing:1911",
+    "headline": "武昌起义爆发，各省响应开启辛亥革命",
+    "reason": "正文中的“武昌起义”与上游“武昌起义爆发，各省响应开启辛亥革命”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "qing:1911",
+        "headline": "武昌起义爆发，各省响应开启辛亥革命",
+        "year": 1911,
+        "reason": "正文中的“武昌起义”与上游“武昌起义爆发，各省响应开启辛亥革命”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "武昌起义",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-126": {
+    "historyId": "event-126",
+    "title": "孙中山就任临时大总统",
+    "upstreamKey": "roc:1912",
+    "headline": "孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结",
+    "reason": "正文中的“孙中山就任临时大总统”与上游“孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1912",
+        "headline": "孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结",
+        "year": 1912,
+        "reason": "正文中的“孙中山就任临时大总统”与上游“孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "孙中山就任临时大总统",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-172": {
+    "historyId": "event-172",
+    "title": "清帝退位",
+    "upstreamKey": "roc:1912",
+    "headline": "孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结",
+    "reason": "正文中的“清帝退位”与上游“孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1912",
+        "headline": "孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结",
+        "year": 1912,
+        "reason": "正文中的“清帝退位”与上游“孙中山于南京就职建中华民国；清帝溥仪退位，二千年帝制终结”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "清帝退位",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-274": {
+    "historyId": "event-274",
+    "title": "护国运动",
+    "upstreamKey": "roc:1915",
+    "headline": "蔡锷在云南起义，发起讨袁护国战争",
+    "reason": "正文中的“护国运动”与上游“蔡锷在云南起义，发起讨袁护国战争”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1915",
+        "headline": "蔡锷在云南起义，发起讨袁护国战争",
+        "year": 1915,
+        "reason": "正文中的“护国运动”与上游“蔡锷在云南起义，发起讨袁护国战争”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "护国运动",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1916": {
+    "historyId": "event-jiangshan-roc-1916",
+    "title": "袁世凯病逝，北洋集团分裂为皖、直、奉系",
+    "upstreamKey": "roc:1916",
+    "headline": "袁世凯病逝，北洋集团分裂为皖、直、奉系，南北军阀割据",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1916",
+        "headline": "袁世凯病逝，北洋集团分裂为皖、直、奉系，南北军阀割据",
+        "year": 1916,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "袁世凯病逝，北洋集团分裂为皖、直、奉系，南北军阀割据",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-101": {
+    "historyId": "event-101",
+    "title": "巴黎和会山东问题传入北京",
+    "upstreamKey": "roc:1919",
+    "headline": "巴黎和会外交失利，北京爆发五四运动",
+    "reason": "正文中的“巴黎和会山东问题传入北京”与上游“巴黎和会外交失利，北京爆发五四运动”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1919",
+        "headline": "巴黎和会外交失利，北京爆发五四运动",
+        "year": 1919,
+        "reason": "正文中的“巴黎和会山东问题传入北京”与上游“巴黎和会外交失利，北京爆发五四运动”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "巴黎和会山东问题传入北京",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-102": {
+    "historyId": "event-102",
+    "title": "五四学生游行",
+    "upstreamKey": "roc:1919",
+    "headline": "巴黎和会外交失利，北京爆发五四运动",
+    "reason": "正文中的“五四学生游行”与上游“巴黎和会外交失利，北京爆发五四运动”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1919",
+        "headline": "巴黎和会外交失利，北京爆发五四运动",
+        "year": 1919,
+        "reason": "正文中的“五四学生游行”与上游“巴黎和会外交失利，北京爆发五四运动”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "五四学生游行",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-103": {
+    "historyId": "event-103",
+    "title": "五四运动六月罢课罢市",
+    "upstreamKey": "roc:1919",
+    "headline": "巴黎和会外交失利，北京爆发五四运动",
+    "reason": "正文中的“五四运动六月罢课罢市”与上游“巴黎和会外交失利，北京爆发五四运动”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1919",
+        "headline": "巴黎和会外交失利，北京爆发五四运动",
+        "year": 1919,
+        "reason": "正文中的“五四运动六月罢课罢市”与上游“巴黎和会外交失利，北京爆发五四运动”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "五四运动六月罢课罢市",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1920": {
+    "historyId": "event-jiangshan-roc-1920",
+    "title": "直皖战争爆发，曹锟、吴佩孚直系击败段祺瑞皖系控制北京",
+    "upstreamKey": "roc:1920",
+    "headline": "直皖战争爆发，曹锟、吴佩孚直系击败段祺瑞皖系控制北京",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1920",
+        "headline": "直皖战争爆发，曹锟、吴佩孚直系击败段祺瑞皖系控制北京",
+        "year": 1920,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "直皖战争爆发，曹锟、吴佩孚直系击败段祺瑞皖系控制北京",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-275": {
+    "historyId": "event-275",
+    "title": "中国共产党成立",
+    "upstreamKey": "roc:1921",
+    "headline": "中国共产党第一次全国代表大会召开",
+    "reason": "正文中的“中国共产党成立”与上游“中国共产党第一次全国代表大会召开”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1921",
+        "headline": "中国共产党第一次全国代表大会召开",
+        "year": 1921,
+        "reason": "正文中的“中国共产党成立”与上游“中国共产党第一次全国代表大会召开”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "中国共产党成立",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-128": {
+    "historyId": "event-128",
+    "title": "孙中山改组国民党",
+    "upstreamKey": "roc:1924",
+    "headline": "国共第一次合作，黄埔军校在广州创办",
+    "reason": "正文中的“孙中山改组国民党”与上游“国共第一次合作，黄埔军校在广州创办”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1924",
+        "headline": "国共第一次合作，黄埔军校在广州创办",
+        "year": 1924,
+        "reason": "正文中的“孙中山改组国民党”与上游“国共第一次合作，黄埔军校在广州创办”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "孙中山改组国民党",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-276": {
+    "historyId": "event-276",
+    "title": "黄埔军校建立",
+    "upstreamKey": "roc:1924",
+    "headline": "国共第一次合作，黄埔军校在广州创办",
+    "reason": "正文中的“黄埔军校建立”与上游“国共第一次合作，黄埔军校在广州创办”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1924",
+        "headline": "国共第一次合作，黄埔军校在广州创办",
+        "year": 1924,
+        "reason": "正文中的“黄埔军校建立”与上游“国共第一次合作，黄埔军校在广州创办”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "黄埔军校建立",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-200": {
+    "historyId": "event-200",
+    "title": "北伐战争",
+    "upstreamKey": "roc:1926",
+    "headline": "国民革命军自广州誓师北伐，攻克武昌、南昌",
+    "reason": "本地笔记覆盖多个上游时间节点；各条对应的行动范围和纪年、地点差异见逐项说明。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1926",
+        "headline": "国民革命军自广州誓师北伐，攻克武昌、南昌",
+        "year": 1926,
+        "reason": "正文中的“北伐战争”与上游“国民革命军自广州誓师北伐，攻克武昌、南昌”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "北伐战争",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      },
+      {
+        "upstreamKey": "roc:1928",
+        "headline": "国民革命军北伐完成，张学良东北易帜，南京国民政府形式统一",
+        "year": 1928,
+        "reason": "正文中的“北伐战争”与上游“国民革命军北伐完成，张学良东北易帜，南京国民政府形式统一”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "北伐战争",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1928-detail": {
+    "historyId": "event-jiangshan-roc-1928-detail",
+    "title": "东北易帜",
+    "upstreamKey": "roc:1928",
+    "headline": "国民革命军北伐完成，张学良东北易帜，南京国民政府形式统一",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1928",
+        "headline": "国民革命军北伐完成，张学良东北易帜，南京国民政府形式统一",
+        "year": 1928,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "东北易帜",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-280": {
+    "historyId": "event-280",
+    "title": "九一八事变",
+    "upstreamKey": "roc:1931",
+    "headline": "日本关东军袭占沈阳，发动九一八事变",
+    "reason": "正文中的“九一八事变”与上游“日本关东军袭占沈阳，发动九一八事变”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1931",
+        "headline": "日本关东军袭占沈阳，发动九一八事变",
+        "year": 1931,
+        "reason": "正文中的“九一八事变”与上游“日本关东军袭占沈阳，发动九一八事变”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "九一八事变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1932": {
+    "historyId": "event-jiangshan-roc-1932",
+    "title": "日本扶植溥仪在长春建伪满洲国，东北沦陷十四载",
+    "upstreamKey": "roc:1932",
+    "headline": "日本扶植溥仪在长春建伪“满洲国”，东北沦陷十四载",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1932",
+        "headline": "日本扶植溥仪在长春建伪“满洲国”，东北沦陷十四载",
+        "year": 1932,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "日本扶植溥仪在长春建伪“满洲国”，东北沦陷十四载",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-292": {
+    "historyId": "event-292",
+    "title": "遵义会议",
+    "upstreamKey": "roc:1935",
+    "headline": "红军长征途中召开遵义会议，次年会师陕甘",
+    "reason": "正文中的“遵义会议”与上游“红军长征途中召开遵义会议，次年会师陕甘”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1935",
+        "headline": "红军长征途中召开遵义会议，次年会师陕甘",
+        "year": 1935,
+        "reason": "正文中的“遵义会议”与上游“红军长征途中召开遵义会议，次年会师陕甘”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "遵义会议",
+        "status": "reviewed-content-match",
+        "difference": "遵义会议1935年；中央红军1935年到陕北，1936年红军三大主力会师，分别为不同节点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-201": {
+    "historyId": "event-201",
+    "title": "红军长征",
+    "upstreamKey": "roc:1935",
+    "headline": "红军长征途中召开遵义会议，次年会师陕甘",
+    "reason": "正文中的“红军长征”与上游“红军长征途中召开遵义会议，次年会师陕甘”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1935",
+        "headline": "红军长征途中召开遵义会议，次年会师陕甘",
+        "year": 1935,
+        "reason": "正文中的“红军长征”与上游“红军长征途中召开遵义会议，次年会师陕甘”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "红军长征",
+        "status": "reviewed-content-match",
+        "difference": "遵义会议1935年；中央红军1935年到陕北，1936年红军三大主力会师，分别为不同节点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-202": {
+    "historyId": "event-202",
+    "title": "西安事变",
+    "upstreamKey": "roc:1936",
+    "headline": "张学良、杨虎城发动西安事变，促成联共抗日",
+    "reason": "正文中的“西安事变”与上游“张学良、杨虎城发动西安事变，促成联共抗日”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1936",
+        "headline": "张学良、杨虎城发动西安事变，促成联共抗日",
+        "year": 1936,
+        "reason": "正文中的“西安事变”与上游“张学良、杨虎城发动西安事变，促成联共抗日”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "西安事变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-282": {
+    "historyId": "event-282",
+    "title": "卢沟桥事变",
+    "upstreamKey": "roc:1937",
+    "headline": "七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发",
+    "reason": "正文中的“卢沟桥事变”与上游“七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1937",
+        "headline": "七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发",
+        "year": 1937,
+        "reason": "正文中的“卢沟桥事变”与上游“七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "卢沟桥事变",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-40": {
+    "historyId": "event-40",
+    "title": "全面抗战爆发",
+    "upstreamKey": "roc:1937",
+    "headline": "七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发",
+    "reason": "正文中的“全面抗战爆发”与上游“七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1937",
+        "headline": "七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发",
+        "year": 1937,
+        "reason": "正文中的“全面抗战爆发”与上游“七七事变：日军炮轰宛平城与卢沟桥，中国守军奋起抵抗，全面抗战爆发”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "全面抗战爆发",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-296": {
+    "historyId": "event-296",
+    "title": "台儿庄战役",
+    "upstreamKey": "roc:1938",
+    "headline": "台儿庄大捷与武汉会战，抗战进入相持阶段",
+    "reason": "正文中的“台儿庄战役”与上游“台儿庄大捷与武汉会战，抗战进入相持阶段”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1938",
+        "headline": "台儿庄大捷与武汉会战，抗战进入相持阶段",
+        "year": 1938,
+        "reason": "正文中的“台儿庄战役”与上游“台儿庄大捷与武汉会战，抗战进入相持阶段”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "台儿庄战役",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1938-detail": {
+    "historyId": "event-jiangshan-roc-1938-detail",
+    "title": "武汉会战",
+    "upstreamKey": "roc:1938",
+    "headline": "台儿庄大捷与武汉会战，抗战进入相持阶段",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1938",
+        "headline": "台儿庄大捷与武汉会战，抗战进入相持阶段",
+        "year": 1938,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "武汉会战",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-284": {
+    "historyId": "event-284",
+    "title": "日本宣布无条件投降",
+    "upstreamKey": "roc:1945",
+    "headline": "抗日战争胜利，中国正式收回台湾全岛与澎湖列岛",
+    "reason": "正文中的“日本宣布无条件投降”与上游“抗日战争胜利，中国正式收回台湾全岛与澎湖列岛”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1945",
+        "headline": "抗日战争胜利，中国正式收回台湾全岛与澎湖列岛",
+        "year": 1945,
+        "reason": "正文中的“日本宣布无条件投降”与上游“抗日战争胜利，中国正式收回台湾全岛与澎湖列岛”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "日本宣布无条件投降",
+        "status": "reviewed-content-match",
+        "difference": "日本8月宣布投降、9月正式签署降书、10月台湾受降接收分属不同地点，本地分别记录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1945-detail": {
+    "historyId": "event-jiangshan-roc-1945-detail",
+    "title": "1945年台湾受降与接收",
+    "upstreamKey": "roc:1945",
+    "headline": "抗日战争胜利，中国正式收回台湾全岛与澎湖列岛",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1945",
+        "headline": "抗日战争胜利，中国正式收回台湾全岛与澎湖列岛",
+        "year": 1945,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "1945年台湾受降与接收",
+        "status": "reviewed-content-match",
+        "difference": "日本8月宣布投降、9月正式签署降书、10月台湾受降接收分属不同地点，本地分别记录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1946": {
+    "historyId": "event-jiangshan-roc-1946",
+    "title": "国民政府承认外蒙古独立公投结果，外蒙古脱离中国版图",
+    "upstreamKey": "roc:1946",
+    "headline": "国民政府承认外蒙古独立公投结果，外蒙古脱离中国版图",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1946",
+        "headline": "国民政府承认外蒙古独立公投结果，外蒙古脱离中国版图",
+        "year": 1946,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "国民政府承认外蒙古独立公投结果，外蒙古脱离中国版图",
+        "status": "reviewed-content-match",
+        "difference": "外蒙古1945年公投与1946年中华民国承认是两个节点；不把上游1946年视为蒙古独立过程唯一起点。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-203": {
+    "historyId": "event-203",
+    "title": "三大战役",
+    "upstreamKey": "roc:1948",
+    "headline": "辽沈、淮海、平津三大战役展开",
+    "reason": "正文中的“三大战役”与上游“辽沈、淮海、平津三大战役展开”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1948",
+        "headline": "辽沈、淮海、平津三大战役展开",
+        "year": 1948,
+        "reason": "正文中的“三大战役”与上游“辽沈、淮海、平津三大战役展开”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "三大战役",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-286": {
+    "historyId": "event-286",
+    "title": "渡江战役",
+    "upstreamKey": "roc:1949",
+    "headline": "解放军发起渡江战役攻克南京，国民政府退往台北",
+    "reason": "正文中的“渡江战役”与上游“解放军发起渡江战役攻克南京，国民政府退往台北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1949",
+        "headline": "解放军发起渡江战役攻克南京，国民政府退往台北",
+        "year": 1949,
+        "reason": "正文中的“渡江战役”与上游“解放军发起渡江战役攻克南京，国民政府退往台北”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "渡江战役",
+        "status": "reviewed-content-match",
+        "difference": "渡江与攻占南京在4月，国民政府迁台在年底；同一条并列的后续迁台另补记录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-roc-1949-supplement": {
+    "historyId": "event-jiangshan-roc-1949-supplement",
+    "title": "国民政府迁台",
+    "upstreamKey": "roc:1949",
+    "headline": "解放军发起渡江战役攻克南京，国民政府退往台北",
+    "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "roc:1949",
+        "headline": "解放军发起渡江战役攻克南京，国民政府退往台北",
+        "year": 1949,
+        "reason": "具名子事件与现有主体不同，单独补录以保留合写条目的独立内容。",
+        "scope": "国民政府迁台",
+        "status": "reviewed-content-match",
+        "difference": "渡江与攻占南京在4月，国民政府迁台在年底；同一条并列的后续迁台另补记录。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-96": {
+    "historyId": "event-96",
+    "title": "中华人民共和国开国大典",
+    "upstreamKey": "prc:1949",
+    "headline": "毛泽东于天安门宣告中华人民共和国成立",
+    "reason": "正文中的“中华人民共和国开国大典”与上游“毛泽东于天安门宣告中华人民共和国成立”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1949",
+        "headline": "毛泽东于天安门宣告中华人民共和国成立",
+        "year": 1949,
+        "reason": "正文中的“中华人民共和国开国大典”与上游“毛泽东于天安门宣告中华人民共和国成立”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "中华人民共和国开国大典",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-prc-1951": {
+    "historyId": "event-jiangshan-prc-1951",
+    "title": "中央政府与西藏地方签订《十七条协议》，西藏和平解放",
+    "upstreamKey": "prc:1951",
+    "headline": "中央政府与西藏地方签订《十七条协议》，西藏和平解放",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1951",
+        "headline": "中央政府与西藏地方签订《十七条协议》，西藏和平解放",
+        "year": 1951,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "中央政府与西藏地方签订《十七条协议》，西藏和平解放",
+        "status": "reviewed-content-match",
+        "difference": "十七条协议签订于北京，人民解放军进驻拉萨在其后；本地分别列北京签约与拉萨进驻范围，不把签约写成发生在拉萨。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-206": {
+    "historyId": "event-206",
+    "title": "两弹一星",
+    "upstreamKey": "prc:1964",
+    "headline": "中国第一颗原子弹在罗布泊成功爆炸",
+    "reason": "正文中的“两弹一星”与上游“中国第一颗原子弹在罗布泊成功爆炸”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1964",
+        "headline": "中国第一颗原子弹在罗布泊成功爆炸",
+        "year": 1964,
+        "reason": "正文中的“两弹一星”与上游“中国第一颗原子弹在罗布泊成功爆炸”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "两弹一星",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-207": {
+    "historyId": "event-207",
+    "title": "恢复联合国席位",
+    "upstreamKey": "prc:1971",
+    "headline": "第26届联大通过第2758号决议，中华人民共和国恢复合法席位",
+    "reason": "正文中的“恢复联合国席位”与上游“第26届联大通过第2758号决议，中华人民共和国恢复合法席位”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1971",
+        "headline": "第26届联大通过第2758号决议，中华人民共和国恢复合法席位",
+        "year": 1971,
+        "reason": "正文中的“恢复联合国席位”与上游“第26届联大通过第2758号决议，中华人民共和国恢复合法席位”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "恢复联合国席位",
+        "status": "reviewed-content-match",
+        "difference": "联大第2758号决议通过地在纽约联合国总部；上游北京是代表国家首都，不是会议发生地。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-100": {
+    "historyId": "event-100",
+    "title": "十一届三中全会",
+    "upstreamKey": "prc:1978",
+    "headline": "中共十一届三中全会召开，开启改革开放",
+    "reason": "正文中的“十一届三中全会”与上游“中共十一届三中全会召开，开启改革开放”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1978",
+        "headline": "中共十一届三中全会召开，开启改革开放",
+        "year": 1978,
+        "reason": "正文中的“十一届三中全会”与上游“中共十一届三中全会召开，开启改革开放”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "十一届三中全会",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-139": {
+    "historyId": "event-139",
+    "title": "中国设立经济特区",
+    "upstreamKey": "prc:1980",
+    "headline": "中央决定设立深圳、珠海、汕头、厦门四大经济特区",
+    "reason": "正文中的“中国设立经济特区”与上游“中央决定设立深圳、珠海、汕头、厦门四大经济特区”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1980",
+        "headline": "中央决定设立深圳、珠海、汕头、厦门四大经济特区",
+        "year": 1980,
+        "reason": "正文中的“中国设立经济特区”与上游“中央决定设立深圳、珠海、汕头、厦门四大经济特区”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "中国设立经济特区",
+        "status": "reviewed-content-match",
+        "difference": "四个特区为深圳、珠海、汕头、厦门，不以深圳单点替代四地；中央批准为北京的政策行动。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-390": {
+    "historyId": "event-390",
+    "title": "浦东开发开放",
+    "upstreamKey": "prc:1990",
+    "headline": "中央宣布开发开放上海浦东新区",
+    "reason": "正文中的“浦东开发开放”与上游“中央宣布开发开放上海浦东新区”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1990",
+        "headline": "中央宣布开发开放上海浦东新区",
+        "year": 1990,
+        "reason": "正文中的“浦东开发开放”与上游“中央宣布开发开放上海浦东新区”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "浦东开发开放",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-208": {
+    "historyId": "event-208",
+    "title": "香港回归",
+    "upstreamKey": "prc:1997",
+    "headline": "中国对香港恢复行使主权，香港回归祖国",
+    "reason": "正文中的“香港回归”与上游“中国对香港恢复行使主权，香港回归祖国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1997",
+        "headline": "中国对香港恢复行使主权，香港回归祖国",
+        "year": 1997,
+        "reason": "正文中的“香港回归”与上游“中国对香港恢复行使主权，香港回归祖国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "香港回归",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-209": {
+    "historyId": "event-209",
+    "title": "澳门回归",
+    "upstreamKey": "prc:1999",
+    "headline": "中国对澳门恢复行使主权，澳门回归祖国",
+    "reason": "正文中的“澳门回归”与上游“中国对澳门恢复行使主权，澳门回归祖国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:1999",
+        "headline": "中国对澳门恢复行使主权，澳门回归祖国",
+        "year": 1999,
+        "reason": "正文中的“澳门回归”与上游“中国对澳门恢复行使主权，澳门回归祖国”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "澳门回归",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-8": {
+    "historyId": "event-8",
+    "title": "中国加入世界贸易组织",
+    "upstreamKey": "prc:2001",
+    "headline": "中国正式加入世界贸易组织（WTO）；青藏铁路开工",
+    "reason": "正文中的“中国加入世界贸易组织”与上游“中国正式加入世界贸易组织（WTO）；青藏铁路开工”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:2001",
+        "headline": "中国正式加入世界贸易组织（WTO）；青藏铁路开工",
+        "year": 2001,
+        "reason": "正文中的“中国加入世界贸易组织”与上游“中国正式加入世界贸易组织（WTO）；青藏铁路开工”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "中国加入世界贸易组织",
+        "status": "reviewed-content-match",
+        "difference": "WTO加入决定在多哈部长会议通过，成员资格12月生效；上游北京是国家首都参照。青藏铁路另补格尔木—拉萨建设事件。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-prc-2001-detail": {
+    "historyId": "event-jiangshan-prc-2001-detail",
+    "title": "青藏铁路格拉段开工",
+    "upstreamKey": "prc:2001",
+    "headline": "中国正式加入世界贸易组织（WTO）；青藏铁路开工",
+    "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:2001",
+        "headline": "中国正式加入世界贸易组织（WTO）；青藏铁路开工",
+        "year": 2001,
+        "reason": "将上游合写条目中未被既有笔记完整覆盖的独立行动展开。",
+        "scope": "青藏铁路格拉段开工",
+        "status": "reviewed-content-match",
+        "difference": "WTO加入决定在多哈部长会议通过，成员资格12月生效；上游北京是国家首都参照。青藏铁路另补格尔木—拉萨建设事件。",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-319": {
+    "historyId": "event-319",
+    "title": "北京奥运会",
+    "upstreamKey": "prc:2008",
+    "headline": "第29届夏季奥林匹克运动会于北京举行",
+    "reason": "正文中的“北京奥运会”与上游“第29届夏季奥林匹克运动会于北京举行”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:2008",
+        "headline": "第29届夏季奥林匹克运动会于北京举行",
+        "year": 2008,
+        "reason": "正文中的“北京奥运会”与上游“第29届夏季奥林匹克运动会于北京举行”对应；对应范围为该具名行动/制度阶段，非单凭同年匹配。",
+        "scope": "北京奥运会",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
+      }
+    ],
+    "status": "upstream-reference"
+  },
+  "event-jiangshan-prc-2010": {
+    "historyId": "event-jiangshan-prc-2010",
+    "title": "中国2010年上海世界博览会盛大举行",
+    "upstreamKey": "prc:2010",
+    "headline": "中国2010年上海世界博览会盛大举行",
+    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "books": [],
+    "matches": [
+      {
+        "upstreamKey": "prc:2010",
+        "headline": "中国2010年上海世界博览会盛大举行",
+        "year": 2010,
+        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+        "scope": "中国2010年上海世界博览会盛大举行",
+        "status": "reviewed-content-match",
+        "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
+        "books": []
       }
     ],
     "status": "upstream-reference"

@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import { parseHistoryTime } from "../.vitepress/vault/history-time.mjs";
 import { auditHistoryMetadata, createHistorySearchIndex, filterHistoryEvents, historyDateOrder, historyYearRange } from "../.vitepress/vault/history.mjs";
 import { readVault } from "../.vitepress/vault/build.mjs";
@@ -67,7 +68,8 @@ test("location searches include direct place aliases and modern names but never 
 test("all real event metadata is consistent and manual month refinement is retained", () => {
   const { notes } = readVault(process.cwd());
   assert.deepEqual(auditHistoryMetadata(notes), []);
-  assert.equal(notes.filter(n => n.historyId).length, 484);
+  const alignment = JSON.parse(fs.readFileSync(".vitepress/reports/jiangshan-audit.json", "utf8"));
+  assert.equal(notes.filter(n => n.historyId).length, 484 + alignment.addedEventIds.length);
   const event = notes.find(n => n.historyId === "event-394");
   assert.deepEqual(years(event.historyDate), [-1800, -1701]);
   assert.equal(event.historyOrder, -18000000);

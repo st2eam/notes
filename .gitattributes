@@ -1,0 +1,8 @@
+# Fixed-source checksums and generated map assets must survive Windows checkout.
+public/history/**/*.geojson text eol=lf
+public/history/**/*.json text eol=lf
+public/history/sources/jiangshan/** text eol=lf
+.vitepress/vault/jiangshan-catalog.mjs text eol=lf
+.vitepress/vault/history-references.mjs text eol=lf
+.vitepress/reports/jiangshan*.json text eol=lf
+.vitepress/reports/history-content-*.json text eol=lf
