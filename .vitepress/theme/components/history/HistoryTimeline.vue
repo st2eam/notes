@@ -1,130 +1,286 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, nextTick, ref, watch } from "vue";
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from "vue";
 import { useRouter, withBase } from "vitepress";
 import { data as vault } from "../../../vault/vault.data";
 import { createHistorySearchIndex, eventTime, filterHistoryEvents, historyYearRange } from "../../../vault/history.mjs";
+import { validHistoryYear } from "../../../vault/history-time.mjs";
+import { clampHistoryYear, formatHistoryYear, historyEventsAtYear, historyExplorerDomain, historyIndexYear, historyTimelinePosition, historyTimelineStops, historyTimelineTicks, historyYearIndex } from "../../../vault/history-timeline.mjs";
+import { selectJiangshanPhase } from "../../../vault/jiangshan-map.mjs";
 import { embedHref } from "../../../vault/embed.mjs";
 import { useEmbedMode } from "../../composables/useEmbedMode";
 import type { VaultNote } from "../../../vault/types";
-import HistoryReferences from "./HistoryReferences.vue";
+import type { MapViewState } from "../../composables/useMapWorkspace";
 const VaultNoteMap = defineAsyncComponent(() => import("../vault/VaultNoteMap.vue"));
 const props = defineProps<{ scope: "中国史" | "世界史" }>();
 const router = useRouter();
 const { isEmbedded } = useEmbedMode();
+const allNotes = vault.notes as VaultNote[];
 const group = ref("");
 const search = ref("");
 const direction = ref("asc");
+const filtersOpen = ref(false);
 const start = ref("");
 const end = ref("");
-const selectedId = ref("");
-const mapPanel = ref<HTMLElement>();
-let mapTrigger: HTMLElement | undefined;
-const allNotes = vault.notes as VaultNote[];
-watch(() => props.scope, () => { reset(); selectedId.value = ""; });
-const notes = computed(() => allNotes.filter(n => n.historyId && n.id.startsWith(`历史/${props.scope}/`)));
+const fullRange = ref(false);
+const cursorYear = ref(-400);
+const yearDraft = ref("-400");
+const yearError = ref("");
+const activeId = ref("");
+const mapFocusRequest = ref(0);
+const mapFocusYear = ref(-400);
+const eventList = ref<HTMLElement>();
+const mapSettings = ref({ showRegions: true, showSettlements: true, variants: {} as Record<string, string> });
+let scrollFrame = 0;
+const notes = computed(() => allNotes.filter(note => note.historyId && note.id.startsWith(`历史/${props.scope}/`)));
+const overview = computed(() => allNotes.find(note => note.id === `历史/${props.scope}/index.md`)!);
+const eventTimes = computed(() => new Map(notes.value.map(note => [note.id, eventTime(note)])));
+const cachedTime = (note: VaultNote) => eventTimes.value.get(note.id);
 const searchIndex = computed(() => createHistorySearchIndex(notes.value, allNotes));
-const groups = computed(() => {
-  const keys = [...new Set(notes.value.map(n => n.historyGroup || ""))];
-  return keys.sort((a, b) => props.scope === "中国史"
-    ? Math.min(...notes.value.filter(n => n.historyGroup === a).map(n => n.historyOrder!)) - Math.min(...notes.value.filter(n => n.historyGroup === b).map(n => n.historyOrder!))
-    : a.localeCompare(b, "zh-CN"));
-});
-const filtered = computed(() => filterHistoryEvents(notes.value, {
-  group: group.value, search: search.value, start: start.value, end: end.value,
-  descending: direction.value === "desc",
-}, searchIndex.value) as VaultNote[]);
+const groups = computed(() => [...new Set(notes.value.map(note => note.historyGroup || ""))].sort((a, b) => props.scope === "中国史"
+  ? Math.min(...notes.value.filter(note => note.historyGroup === a).map(note => note.historyOrder!)) - Math.min(...notes.value.filter(note => note.historyGroup === b).map(note => note.historyOrder!))
+  : a.localeCompare(b, "zh-CN")));
+const filtered = computed(() => filterHistoryEvents(notes.value, { group: group.value, search: search.value,
+  start: start.value, end: end.value, descending: direction.value === "desc" }, searchIndex.value) as VaultNote[]);
 const invalidRange = computed(() => !historyYearRange(start.value, end.value).valid);
-const unknownTimes = computed(() => notes.value.filter(note => !eventTime(note)).length);
-const selected = computed(() => filtered.value.find(note => note.id === selectedId.value));
-watch(filtered, () => { if (!selected.value) selectedId.value = ""; });
+const domain = computed(() => {
+  const preset = historyExplorerDomain(notes.value, fullRange.value);
+  const range = historyYearRange(start.value, end.value);
+  if (!range.valid) return preset;
+  const from = range.from ?? Math.min(preset.from, range.to ?? preset.from);
+  return { from, to: range.to ?? Math.max(preset.to, from) };
+});
+const stops = computed(() => historyTimelineStops(filtered.value.filter(note => {
+  const time = eventTime(note);
+  return time && time.from >= domain.value.from && time.from <= domain.value.to;
+}), domain.value));
+const ticks = computed(() => historyTimelineTicks(domain.value));
+const matching = computed(() => historyEventsAtYear(filtered.value, cursorYear.value, cachedTime) as VaultNote[]);
+const matchingIds = computed(() => new Set(matching.value.map(note => note.id)));
+const active = computed(() => filtered.value.find(note => note.id === activeId.value));
+const mapNote = computed(() => active.value || overview.value);
+const mapView = computed<MapViewState>(() => ({ year: cursorYear.value, ...mapSettings.value }));
+const phase = computed(() => props.scope === "中国史" ? selectJiangshanPhase(cursorYear.value) : null);
+const previousYear = computed(() => [...stops.value].reverse().find(stop => stop.year < cursorYear.value)?.year);
+const nextYear = computed(() => stops.value.find(stop => stop.year > cursorYear.value)?.year);
+const position = computed(() => historyTimelinePosition(cursorYear.value, domain.value));
+const noteHref = (note: VaultNote) => withBase(isEmbedded.value && typeof window !== "undefined"
+  ? embedHref(note.route, window.location.search) : note.route);
+
+watch(() => props.scope, () => {
+  reset(); fullRange.value = false; cursorYear.value = -400; activeId.value = "";
+});
+watch([filtered, domain], () => setYear(clampHistoryYear(cursorYear.value, domain.value)), { immediate: true });
 function reset() { group.value = ""; search.value = ""; start.value = ""; end.value = ""; }
-async function showMap(note: VaultNote, event: MouseEvent) {
-  mapTrigger = event.currentTarget as HTMLElement;
-  selectedId.value = note.id;
-  await nextTick();
-  mapPanel.value?.focus({ preventScroll: true });
-  mapPanel.value?.scrollIntoView({ block: "start" });
+function scrollToEvent(id: string) {
+  if (typeof window === "undefined") return;
+  cancelAnimationFrame(scrollFrame);
+  scrollFrame = requestAnimationFrame(() => {
+    scrollFrame = 0;
+    const list = eventList.value;
+    const row = list && Array.from(list.querySelectorAll<HTMLElement>("[data-event-id]"))
+      .find(element => element.dataset.eventId === id);
+    if (!list || !row) return;
+    list.scrollTo({ top: Math.max(0, row.getBoundingClientRect().top - list.getBoundingClientRect().top + list.scrollTop - 8), behavior: "auto" });
+  });
 }
-async function closeMap() {
-  selectedId.value = "";
-  await nextTick();
-  if (mapTrigger?.isConnected) mapTrigger.focus();
+function setYear(year: number) {
+  if (!validHistoryYear(year)) return;
+  cursorYear.value = clampHistoryYear(year, domain.value);
+  yearDraft.value = String(cursorYear.value);
+  yearError.value = "";
+  if (!matchingIds.value.has(activeId.value)) activeId.value = matching.value[0]?.id || "";
+  const nearest = stops.value.reduce<{ year: number; count: number } | undefined>((best, stop) => !best ||
+    Math.abs(historyYearIndex(stop.year) - historyYearIndex(cursorYear.value)) < Math.abs(historyYearIndex(best.year) - historyYearIndex(cursorYear.value)) ? stop : best, undefined);
+  const target = activeId.value || (nearest && filtered.value.find(note => cachedTime(note)?.from === nearest.year)?.id);
+  if (target) void nextTick(() => scrollToEvent(target));
+}
+function moveCursor(event: Event) {
+  setYear(historyIndexYear(Number((event.target as HTMLInputElement).value)));
+}
+function jumpToYear() {
+  const year = Number(yearDraft.value);
+  if (!validHistoryYear(year)) { yearError.value = "请输入非零整数年份；公元前年份用负数。"; return; }
+  if (year < domain.value.from || year > domain.value.to) {
+    yearError.value = `当前范围为 ${domain.value.from} 至 ${domain.value.to} 年；可切换全部年代或调整范围。`;
+    return;
+  }
+  setYear(year);
+}
+function selectEvent(note: VaultNote) {
+  mapFocusRequest.value++;
+  const time = cachedTime(note);
+  if (time && time.from < domain.value.from && !start.value) fullRange.value = true;
+  activeId.value = note.id;
+  if (time) setYear(time.from);
+  mapFocusYear.value = cursorYear.value;
+  activeId.value = note.id;
+}
+function updateMapView(view: MapViewState) {
+  mapSettings.value = { showRegions: view.showRegions, showSettlements: view.showSettlements, variants: view.variants };
+  if (view.year != null && view.year !== cursorYear.value) setYear(view.year);
 }
 function openPlace(note: VaultNote, event: MouseEvent) {
-  const href = withBase(isEmbedded.value ? embedHref(note.route, window.location.search) : note.route);
+  const href = noteHref(note);
   if (event.metaKey || event.ctrlKey || event.shiftKey) window.open(href, "_blank", "noopener");
   else void router.go(href);
 }
+onBeforeUnmount(() => { if (scrollFrame) cancelAnimationFrame(scrollFrame); });
 </script>
+
 <template>
-  <section class="history-browser" :aria-label="`${scope}事件时间线`">
-    <div class="history-intro"><span class="history-kicker">历史 · 时间索引</span><p>沿时间阅读，在{{ scope === '中国史' ? '朝代' : '国家与地区' }}之间探索。</p></div>
-    <div class="history-toolbar">
-      <label class="history-search"><span>查找事件</span><input v-model="search" type="search" placeholder="事件、地点或年代" /></label>
-      <label><span>{{ scope === '中国史' ? '朝代与时期' : '国家与地区' }}</span><select v-model="group"><option value="">全部{{ scope === '中国史' ? '朝代' : '地区' }}</option><option v-for="g in groups" :key="g" :value="g">{{ g.replaceAll('/', ' / ') }}</option></select></label>
-      <label><span>时间顺序</span><select v-model="direction"><option value="asc">从古至今 ↑</option><option value="desc">从今至古 ↓</option></select></label>
+  <section class="history-browser" :aria-label="`${scope}地图时间轴`">
+    <header class="history-header">
+      <h1>{{ scope }}地图</h1>
+      <label class="history-search"><span class="history-sr-only">查找事件</span><input v-model="search" type="search" placeholder="搜索事件、地点或年代" /></label>
+      <button type="button" :aria-expanded="filtersOpen" :aria-controls="'history-filters-' + scope" @click="filtersOpen = !filtersOpen">{{ filtersOpen ? '收起筛选' : '筛选' }}</button>
+    </header>
+    <div v-if="filtersOpen" :id="'history-filters-' + scope" class="history-toolbar">
+      <label><span>{{ scope === '中国史' ? '朝代与时期' : '国家与地区' }}</span><select v-model="group"><option value="">全部</option><option v-for="g in groups" :key="g" :value="g">{{ g.replaceAll('/', ' / ') }}</option></select></label>
+      <label><span>排序</span><select v-model="direction"><option value="asc">从古至今</option><option value="desc">从今至古</option></select></label>
+      <label><span>起始年份</span><input v-model="start" type="number" step="1" placeholder="如 -400" /></label>
+      <label><span>结束年份</span><input v-model="end" type="number" step="1" placeholder="至今" /></label>
+      <button type="button" @click="reset">清除筛选</button>
     </div>
-    <div class="history-dates"><span>年份范围</span><input v-model="start" type="number" step="1" aria-label="起始年份" placeholder="起始年份" /><span aria-hidden="true">—</span><input v-model="end" type="number" step="1" aria-label="结束年份" placeholder="结束年份" /><small>公元前年份用负数，如 -221；无零年</small><button v-if="group || search || start || end" @click="reset">清除筛选</button></div>
-    <div class="history-result" aria-live="polite"><span>{{ filtered.length }} 个事件<span v-if="filtered.length !== notes.length"> / 共 {{ notes.length }} 个</span></span><span>{{ group ? group.replaceAll('/', ' / ') : '完整时间线' }}</span></div>
-    <p v-if="unknownTimes" class="history-footnote">{{ unknownTimes }} 个事件年代未确定，有年份筛选时不计入结果。</p>
-    <p v-if="invalidRange" class="history-empty">请输入非零整数年份，且起始年份不晚于结束年份。</p>
-    <p v-else-if="!filtered.length" class="history-empty">没有符合条件的事件。试试其他关键词或年份。</p>
-    <section v-if="selected" ref="mapPanel" class="history-map-panel" tabindex="-1" :aria-label="selected.title + '的事件地图'" @keydown.esc.stop.prevent="closeMap">
-      <div class="history-map-heading"><div><span>事件地图</span><h3>{{ selected.title }}</h3><a :href="withBase(selected.route)">阅读事件笔记 ↗</a></div><button type="button" class="history-map-close" aria-label="关闭事件地图" @click="closeMap">关闭</button></div>
-      <ClientOnly><VaultNoteMap :note="selected" :notes="allNotes" :enabled="true" @open="openPlace" /></ClientOnly>
-      <HistoryReferences :history-id="selected.historyId" />
-      <p v-if="!selected.geoReferences?.length && !selected.geo?.place && !eventTime(selected)" class="history-footnote">此事件暂无可定位的年代或地点资料，仍可阅读原笔记。</p>
-    </section>
-    <ol v-if="!invalidRange && filtered.length" class="history-events">
-      <li v-for="note in filtered" :key="note.id" :class="{ 'history-selected': selectedId === note.id }">
-        <div class="history-event-row">
-          <a :href="withBase(note.route)" class="history-event">
-            <time>{{ note.historyDate }}</time>
-            <div><span class="history-event-group">{{ note.historyGroup?.replaceAll('/', ' / ') }}</span><strong>{{ note.title }}</strong></div>
-            <span class="history-arrow" aria-hidden="true">↗</span>
-          </a>
-          <button type="button" class="history-show-map" :aria-label="'查看' + note.title + '的地图'" :aria-pressed="selectedId === note.id" @click="showMap(note, $event)">查看地图</button>
+    <div class="history-stage">
+      <main class="history-map" aria-label="历史疆域与事件地图">
+        <ClientOnly><VaultNoteMap :note="mapNote" :notes="allNotes" :enabled="true" expanded explorer :view="mapView" :focus-request="mapFocusRequest" :focus-year="mapFocusYear" @view-change="updateMapView" @open="openPlace" /><template #fallback><div class="history-map-placeholder">正在载入历史地图…</div></template></ClientOnly>
+        <div class="history-map-era" aria-live="polite"><strong>{{ formatHistoryYear(cursorYear) }}</strong><span>{{ phase ? phase.period + ' · ' + phase.title : cursorYear >= 1949 ? '现代地理参照 · 非当年疆域复原' : '地理参照 · 该年代暂无疆域资料' }}</span></div>
+      </main>
+      <aside class="history-event-rail" aria-label="年代事件侧栏">
+        <div class="history-rail-heading"><strong>年代事件</strong><span>{{ filtered.length }} 条</span></div>
+        <div class="history-year-context" role="status" aria-live="polite"><span>{{ formatHistoryYear(cursorYear) }}</span><strong>{{ matching.length ? matching.length + ' 个相关事件' : '该年暂无已收录事件' }}</strong><p v-if="!matching.length">列表已定位至邻近年代，点击事件可在地图查看。</p></div>
+        <p v-if="invalidRange" class="history-empty" role="alert">请输入非零整数年份，且起始年份不晚于结束年份。</p>
+        <p v-else-if="!filtered.length" class="history-empty">没有符合条件的事件，请调整筛选。</p>
+        <div v-else ref="eventList" class="history-event-scroll" tabindex="0" role="region" aria-label="历史事件列表，可滚动浏览">
+          <ol class="history-events"><li v-for="note in filtered" :key="note.id" v-memo="[note, activeId === note.id, matchingIds.has(note.id)]" :data-event-id="note.id" :class="{ 'history-selected': activeId === note.id, 'history-in-year': matchingIds.has(note.id) }">
+            <button type="button" class="history-event" :aria-pressed="activeId === note.id" @click="selectEvent(note)"><time>{{ note.historyDate || '年代未确定' }}</time><strong>{{ note.title }}</strong><span>{{ note.historyGroup?.replaceAll('/', ' / ') }}<span v-if="activeId === note.id"> · 已在地图选中</span><span v-else-if="matchingIds.has(note.id)"> · 涉及当前年份</span></span></button>
+            <div v-if="activeId === note.id" class="history-event-detail"><p v-if="note.excerpt">{{ note.excerpt }}</p><a :href="noteHref(note)" :aria-label="'阅读' + note.title + '的笔记'">阅读事件笔记</a></div>
+          </li></ol>
         </div>
-      </li>
-    </ol>
-    <p class="history-footnote">事件按起始日期排列，保留有依据的月日细化排序；年份筛选按年代区间相交。“约”、世纪及“年起”保留原意，结束年代未详的条目不推定终止年。</p>
+      </aside>
+    </div>
+    <section class="history-navigator" aria-label="交互时间轴">
+      <div class="history-time-controls">
+        <output class="history-cursor-year" aria-live="off">{{ formatHistoryYear(cursorYear) }}</output>
+        <div class="history-range-presets" aria-label="时间轴显示范围"><button type="button" :aria-pressed="!fullRange" @click="fullRange = false; start = ''; end = ''">前 400 年至今</button><button type="button" :aria-pressed="fullRange" @click="fullRange = true; start = ''; end = ''">全部年代</button></div>
+        <form class="history-year-jump" novalidate @submit.prevent="jumpToYear"><input v-model="yearDraft" type="number" step="1" aria-label="定位年份" :aria-invalid="Boolean(yearError)" @input="yearError = ''" /><button type="submit">跳转</button></form>
+        <div class="history-step"><button type="button" :disabled="previousYear == null" @click="previousYear != null && setYear(previousYear)">上一事件年</button><button type="button" :disabled="nextYear == null" @click="nextYear != null && setYear(nextYear)">下一事件年</button></div>
+      </div>
+      <p v-if="yearError" class="history-year-error" role="alert">{{ yearError }}</p>
+      <div class="history-ruler"><div class="history-distribution" aria-hidden="true"><span v-for="stop in stops" :key="stop.year" v-memo="[stop, domain]" :style="{ left: historyTimelinePosition(stop.year, domain) + '%', height: Math.min(22, 4 + stop.count * 3) + 'px' }"></span><i :style="{ left: position + '%' }"></i></div><label><span class="history-sr-only">拖动指针选择年份</span><input class="history-slider" type="range" :min="historyYearIndex(domain.from)" :max="Math.max(historyYearIndex(domain.from) + 1, historyYearIndex(domain.to))" :value="historyYearIndex(cursorYear)" :disabled="domain.from === domain.to" step="1" :aria-valuetext="formatHistoryYear(cursorYear)" @input="moveCursor" /></label><div class="history-ticks" aria-hidden="true"><span v-for="(year, i) in ticks" :key="year" :class="{ 'history-tick-secondary': i % 2 === 1 }" :style="{ left: historyTimelinePosition(year, domain) + '%' }">{{ formatHistoryYear(year) }}</span></div></div>
+      <p class="history-timeline-help">拖动年份切换疆域与事件。短线表示事件起始年份；疆域按已有阶段展示，非逐年复原。</p>
+    </section>
   </section>
 </template>
+
 <style scoped>
-.history-browser { --history-accent: #9b4c2c; color: var(--vp-c-text-1); }
-.history-kicker { font-size: 11px; letter-spacing: .12em; color: var(--history-accent); }
-.history-intro p { margin: 8px 0 28px; color: var(--vp-c-text-2); font-family: "Songti SC", "Noto Serif CJK SC", serif; font-size: 20px; }
-.history-toolbar { display: grid; grid-template-columns: minmax(160px, 1.4fr) 1fr 150px; gap: 16px; padding: 20px 0; border-top: 1px solid var(--vp-c-divider); }
-.history-toolbar label { display: flex; flex-direction: column; gap: 8px; }
-.history-toolbar label > span, .history-dates > span:first-child { font-size: 11px; color: var(--vp-c-text-2); }
-.history-browser input, .history-browser select { border: 1px solid var(--vp-c-divider); border-radius: 4px; padding: 9px 12px; font-size: 13px; width: 100%; background: var(--vp-c-bg); color: var(--vp-c-text-1); }
+.history-browser { --history-accent: #9b4c2c; --history-track: #777; --history-muted: #656565; display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; height: 100%; min-height: 0; color: var(--vp-c-text-1); background: var(--vp-c-bg); font-size: 13px; line-height: 1.5; }
+:global(.dark .history-browser) { --history-accent: #c47e50; --history-track: #999; --history-muted: #ababab; }
+:global(.vault-reading:has(.history-browser)) { overflow: hidden; }
+:global(.vault-note-content:has(.history-browser)) { max-width: none; padding: 0; height: 100%; }
+:global(.vault-note-content:has(.history-browser) > div) { height: 100%; }
+:global(.vault-note-content div:has(.history-browser)) { height: 100%; }
+:global(.vault-note-content div:has(> .history-browser) > :not(.history-browser)) { display: none; }
+:global(.vault-shell:has(.history-browser) .vault-right), :global(.vault-shell:has(.history-browser) .vault-resizer[aria-label="调整辅助侧栏宽度"]) { display: none !important; }
+.history-header { grid-row: 1; display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 10px 20px; border-bottom: 1px solid var(--vp-c-divider); }
+.history-browser .history-header h1 { margin: 0 auto 0 0; font-size: 18px; font-weight: 600; white-space: nowrap; }
+.history-search { width: min(260px, 36%); }
+.history-browser input, .history-browser select { min-width: 0; width: 100%; padding: 8px 10px; border: 1px solid var(--vp-c-divider); border-radius: 4px; color: var(--vp-c-text-1); background: var(--vp-c-bg); font-size: 12px; caret-color: var(--history-accent); }
+.history-browser input::placeholder { color: var(--history-muted); }
 .history-browser select { appearance: auto; }
-.history-browser input:focus-visible, .history-browser select:focus-visible, .history-event:focus-visible, .history-show-map:focus-visible, .history-map-close:focus-visible { outline: 2px solid var(--history-accent); outline-offset: 3px; }
-.history-dates { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; padding-bottom: 20px; }
-.history-dates input { width: 112px; }
-.history-dates small { color: var(--vp-c-text-3); font-size: 11px; }
-.history-dates button { color: var(--history-accent); font-size: 12px; margin-left: auto; text-decoration: underline; text-underline-offset: 3px; }
-.history-result { display: flex; justify-content: space-between; gap: 12px; color: var(--vp-c-text-2); font-size: 11px; padding: 12px 0; border-top: 1px solid var(--vp-c-divider); }
+.history-browser button { min-height: 36px; padding: 7px 10px; border: 1px solid var(--vp-c-divider); border-radius: 4px; font-size: 12px; }
+.history-browser button:hover:not(:disabled) { background: var(--vp-c-bg-soft); }
+.history-browser button:disabled { opacity: .5; cursor: default; }
+.history-browser :is(input, button, select, a, [tabindex]):focus-visible { outline: 2px solid var(--history-accent); outline-offset: -2px; box-shadow: none; }
+.history-browser ::selection { background: var(--history-accent); color: var(--vp-c-bg); }
+.history-toolbar { grid-row: 2; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; padding: 12px 20px; border-bottom: 1px solid var(--vp-c-divider); }
+.history-toolbar label { flex: 1; min-width: 100px; }
+.history-toolbar label > span { display: block; margin-bottom: 5px; font-size: 11px; color: var(--history-muted); }
+.history-stage { grid-row: 3; display: grid; grid-template-columns: minmax(0, 1fr) 300px; min-height: 0; }
+.history-map { position: relative; min-height: 0; min-width: 0; overflow: hidden; contain: layout style paint; }
+.history-map :deep(.note-map-section) { height: 100%; }
+.history-map-era { position: absolute; top: 14px; left: 14px; z-index: 2; max-width: calc(100% - 185px); padding: 10px 12px; background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 4px; pointer-events: none; }
+.history-map-era strong, .history-map-era span { display: block; }
+.history-map-era strong { font-size: 17px; }
+.history-map-era span { margin-top: 4px; font-size: 11px; color: var(--history-muted); }
+.history-map-placeholder { display: grid; place-items: center; height: 100%; background: var(--vp-c-bg-soft); color: var(--history-muted); }
+.history-event-rail { display: flex; flex-direction: column; min-height: 0; border-left: 1px solid var(--vp-c-divider); }
+.history-rail-heading { display: flex; justify-content: space-between; padding: 15px 16px 12px; }
+.history-rail-heading span { color: var(--history-muted); font-size: 11px; }
+.history-year-context { padding: 0 16px 12px; border-bottom: 1px solid var(--vp-c-divider); }
+.history-year-context > span { display: block; font-size: 12px; color: var(--history-muted); }
+.history-year-context > strong { display: block; margin-top: 4px; font-size: 13px; font-weight: 500; }
+.history-browser .history-year-context > p { margin: 6px 0 0; font-size: 11px; color: var(--history-muted); }
+.history-event-scroll { flex: 1; min-height: 0; contain: layout style paint; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; scrollbar-color: var(--history-track) var(--vp-c-bg); }
 .history-events { list-style: none !important; margin: 0 !important; padding: 0 !important; }
-.history-events li { margin: 0 !important; border-top: 1px solid var(--vp-c-divider); }
-.history-event-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px; }
-.history-selected { background: var(--vp-c-bg-soft); }
-.history-event { display: grid; grid-template-columns: 165px minmax(0, 1fr) 18px; gap: 24px; align-items: center; padding: 19px 0; color: inherit !important; text-decoration: none !important; transition: color .15s, background .15s; }
-.history-event:hover { background: var(--vp-c-bg-soft); }
-.history-event time { color: var(--history-accent); font-size: 12px; font-variant-numeric: tabular-nums; line-height: 1.6; }
-.history-event-group { display: block; color: var(--vp-c-text-3); font-size: 10px; margin-bottom: 4px; }
-.history-event strong { display: block; font-family: "Songti SC", "Noto Serif CJK SC", serif; font-weight: 600; font-size: 18px; line-height: 1.5; }
-.history-arrow { color: var(--vp-c-text-3); font-size: 16px; }
-.history-event:hover strong, .history-event:hover .history-arrow { color: var(--history-accent); }
-.history-show-map, .history-map-close { padding: 8px 10px; border: 1px solid var(--vp-c-divider); border-radius: 4px; font-size: 12px; white-space: nowrap; min-height: 36px; }
-.history-show-map:hover, .history-map-close:hover { background: var(--vp-c-bg-soft); }
-.history-map-panel { margin: 12px 0 24px; border: 1px solid var(--vp-c-divider); padding: 20px; border-radius: 6px; scroll-margin: 20px; }
-.history-map-panel:focus-visible { outline: 2px solid var(--history-accent); outline-offset: 3px; }
-.history-map-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-.history-map-heading span, .history-map-heading a { font-size: 12px; color: var(--vp-c-text-2); }
-.history-map-heading h3 { margin: 6px 0; padding: 0; border: 0; font-size: 20px; }
-.history-map-panel :deep(.note-map-frame) { height: 340px; }
-.history-empty { padding: 40px 0; color: var(--vp-c-text-2); }
-.history-footnote { margin-top: 24px; font-size: 11px; color: var(--vp-c-text-3); }
-@media (max-width: 640px) { .history-toolbar { grid-template-columns: 1fr 1fr; gap: 12px; } .history-search { grid-column: 1 / -1; } .history-event { grid-template-columns: 82px minmax(0, 1fr); gap: 10px; } .history-arrow { display: none; } .history-event-row { gap: 8px; } .history-event strong { font-size: 16px; } .history-show-map { padding: 8px 6px; font-size: 11px; } .history-dates small { flex-basis: 100%; } .history-map-panel { padding: 12px; } .history-map-panel :deep(.note-map-frame) { height: 280px; } }
+.history-events li { margin: 0 !important; border-bottom: 1px solid var(--vp-c-divider); }
+.history-in-year { background: var(--vp-c-bg-soft); }
+.history-selected { outline: 1px solid var(--history-accent); outline-offset: -1px; }
+.history-browser .history-event { display: block; width: 100%; padding: 14px 16px; text-align: left; border: 0; border-radius: 0; }
+.history-event time, .history-event > span { display: block; color: var(--history-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.history-event strong { display: block; margin: 5px 0 7px; font-family: "Songti SC", "Noto Serif CJK SC", serif; font-size: 17px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+.history-event-detail { padding: 0 16px 14px; }
+.history-browser .history-event-detail p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; margin: 0 0 8px; font-size: 12px; color: var(--history-muted); }
+.history-event-detail a { font-size: 12px; text-underline-offset: 3px; }
+.history-empty { padding: 16px; color: var(--history-muted); }
+.history-navigator { grid-row: 4; min-width: 0; padding: 12px 20px 10px; border-top: 1px solid var(--vp-c-divider); background: var(--vp-c-bg); }
+.history-time-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; }
+.history-cursor-year { min-width: 145px; font-size: 20px; font-weight: 600; }
+.history-range-presets, .history-year-jump, .history-step { display: flex; gap: 5px; }
+.history-browser .history-range-presets button { border-color: transparent; }
+.history-range-presets button[aria-pressed="true"] { background: var(--vp-c-bg-soft); text-decoration: underline; text-underline-offset: 4px; }
+.history-year-jump { margin-left: auto; }
+.history-year-jump input { width: 82px; }
+.history-ruler { position: relative; margin: 10px 0 0; padding-top: 22px; }
+.history-distribution { position: absolute; inset: 0 10px auto; height: 25px; pointer-events: none; }
+.history-distribution > span { position: absolute; bottom: 0; width: 2px; transform: translateX(-50%); background: var(--history-track); opacity: .6; }
+.history-distribution i { position: absolute; top: 0; width: 1px; height: 44px; background: var(--history-accent); }
+.history-browser .history-slider { --slider-track-size: 2px; --slider-thumb-size: 20px; display: block; appearance: none; width: 100%; height: 44px; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; cursor: ew-resize; box-shadow: none; }
+.history-slider::-webkit-slider-runnable-track { height: var(--slider-track-size); background: var(--history-track); border: 0; }
+.history-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: var(--slider-thumb-size); height: var(--slider-thumb-size); margin-top: calc((var(--slider-track-size) - var(--slider-thumb-size)) / 2); border: 3px solid var(--vp-c-bg); border-radius: 50%; background: var(--history-accent); box-shadow: 0 0 0 1px var(--history-accent); }
+.history-slider::-moz-range-track { height: var(--slider-track-size); background: var(--history-track); border: 0; }
+.history-slider::-moz-range-thumb { box-sizing: border-box; width: var(--slider-thumb-size); height: var(--slider-thumb-size); border: 3px solid var(--vp-c-bg); border-radius: 50%; background: var(--history-accent); box-shadow: 0 0 0 1px var(--history-accent); }
+.history-ticks { position: relative; height: 20px; margin-inline: 10px; }
+.history-ticks span { position: absolute; white-space: nowrap; transform: translateX(-50%); color: var(--history-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.history-ticks span:first-child { transform: none; }
+.history-ticks span:last-child:not(:first-child) { transform: translateX(-100%); }
+.history-browser .history-timeline-help { margin: 6px 0 0; font-size: 11px; color: var(--history-muted); }
+.history-year-error { margin: 6px 0; font-size: 12px; }
+.history-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 1100px) { .history-stage { grid-template-columns: minmax(0, 1fr) 260px; } .history-step { display: none; } }
+@media (max-width: 640px) {
+  .history-header { padding: 8px 12px; min-height: 48px; gap: 8px; }
+  .history-browser .history-header h1 { font-size: 16px; }
+  .history-search { width: 45%; }
+  .history-stage { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(150px, 1.2fr) minmax(100px, 1fr); }
+  .history-event-rail { border-left: 0; border-top: 1px solid var(--vp-c-divider); }
+  .history-rail-heading { padding: 8px 12px; }
+  .history-year-context { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; padding: 0 12px 8px; }
+  .history-year-context > strong { margin: 0; font-size: 12px; }
+  .history-browser .history-year-context > p { display: none; }
+  .history-browser .history-event { padding: 10px 12px; }
+  .history-event strong { font-size: 16px; }
+  .history-map-era { top: 8px; left: 8px; padding: 7px 9px; max-width: calc(100% - 100px); }
+  .history-map-era strong { font-size: 14px; }
+  .history-map-era span { font-size: 10px; }
+  .history-navigator { padding: 10px 12px 8px; }
+  .history-time-controls { gap: 8px; }
+  .history-cursor-year { min-width: 0; margin-right: auto; font-size: 17px; }
+  .history-range-presets { order: 3; width: 100%; }
+  .history-year-jump { margin-left: 0; }
+  .history-browser .history-range-presets button { padding-block: 3px; min-height: 30px; }
+  .history-ruler { margin-top: 6px; padding-top: 16px; }
+  .history-distribution { height: 19px; }
+  .history-distribution i { height: 38px; }
+  .history-ticks .history-tick-secondary:not(:first-child):not(:last-child) { display: none; }
+  .history-browser .history-timeline-help { display: none; }
+  .history-toolbar { padding: 8px 12px; gap: 8px; max-height: 160px; overflow-y: auto; }
+}
+@media (forced-colors: active) {
+  .history-slider::-webkit-slider-thumb { background: Highlight; border-color: Canvas; box-shadow: 0 0 0 1px CanvasText; }
+  .history-slider::-moz-range-thumb { background: Highlight; border-color: Canvas; box-shadow: 0 0 0 1px CanvasText; }
+  .history-slider::-webkit-slider-runnable-track { background: CanvasText; }
+  .history-slider::-moz-range-track { background: CanvasText; }
+  .history-selected { outline-color: Highlight; }
+}
 </style>
