@@ -37,3 +37,7 @@
 
 - 当前仅已落地文字规范，没有创建 Hook 脚本或项目级 `settings.json`，没有改动已有本地权限设置。
 - 自动审批要求对创建持久 Git 自动化 Hook 另行明确授权。在授权并完成配置、验证之前，不得宣称自动同步或提交身份 Hook 已生效。
+
+## 界面设计
+Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
+避免不必要的辅助标签与说明。让布局本身发挥解形作用。
