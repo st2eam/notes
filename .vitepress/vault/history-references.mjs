@@ -9606,19 +9606,20 @@ export const historyReferences = {
   },
   "event-jiangshan-beisong-1105": {
     "historyId": "event-jiangshan-beisong-1105",
-    "title": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴花石纲劳民伤财",
+    "title": "宋徽宗兴花石纲，朱勔在苏州领应奉局",
     "upstreamKey": "beisong:1105",
     "headline": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴“花石纲”劳民伤财",
-    "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
+    "reason": "两篇都记述徽宗朝经由设局采办花石及征运对百姓的影响。",
     "books": [],
     "matches": [
       {
         "upstreamKey": "beisong:1105",
         "headline": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴“花石纲”劳民伤财",
         "year": 1105,
-        "reason": "逐句读取上游叙述后补入缺失里程碑，正文保留具名人物、行动和地点范围。",
-        "scope": "宋徽宗任蔡京设应奉局与苏杭造作局，大兴“花石纲”劳民伤财",
+        "reason": "两篇都记述徽宗朝经由设局采办花石及征运对百姓的影响。",
+        "scope": "苏州应奉局采办花石及其征运负担",
         "status": "reviewed-content-match",
+        "difference": "上游将应奉局与苏杭造作局合写于1105年；本站据《宋史纪事本末》区分1102年童贯在苏杭设造作局和1105年朱勔在苏州主管应奉局。",
         "sourceUrl": "https://github.com/DeanChensj/jiangshan-map/blob/897b9ad4e987fcface8728ffdfbe33e801a3dbae/js/map_data.js",
         "books": []
       }
