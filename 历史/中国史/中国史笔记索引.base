@@ -1,0 +1,55 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - 'file.inFolder("历史/中国史")'
+    - 'file.basename != "index"'
+properties:
+  file.name:
+    displayName: 笔记
+  note.primaryCategory:
+    displayName: 主分类
+  note.historyGroup:
+    displayName: 朝代或时期
+  note.historyDate:
+    displayName: 历史时间
+  note.tags:
+    displayName: 标签
+views:
+  - type: table
+    name: 分朝代事件
+    filters: 'note.historyId.isTruthy()'
+    groupBy:
+      property: note.historyGroup
+      direction: ASC
+    sort:
+      - property: note.historyOrder
+        direction: ASC
+    order:
+      - file.name
+      - note.historyDate
+      - note.tags
+  - type: table
+    name: 专题与概念
+    filters:
+      or:
+        - 'note.primaryCategory == "历史/中国史/专题"'
+        - 'note.primaryCategory == "历史/中国史/概念"'
+    groupBy:
+      property: note.primaryCategory
+      direction: ASC
+    order:
+      - file.name
+      - note.tags
+  - type: table
+    name: 太平天国相关
+    filters:
+      or:
+        - 'file.hasTag("太平天国")'
+        - 'file("历史/中国史/专题/太平天国的制度主张与兴亡.md").hasLink(file.path)'
+    groupBy:
+      property: note.primaryCategory
+      direction: ASC
+    order:
+      - file.name
+      - note.historyDate
+      - note.tags
