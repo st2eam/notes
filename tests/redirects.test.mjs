@@ -46,6 +46,20 @@ test("flow theory replaces the immersion note while preserving its URL and saved
   assert.equal(listedExactly(target), true);
 });
 
+test("game theory moves to economics while the book guide stays in reading notes", () => {
+  const oldSection = "/读书笔记/博弈论";
+  const newSection = "/经济学/博弈论";
+  assert.equal(redirectTarget(`${oldSection}/`), `${newSection}/index`);
+  for (const [oldPath, newPath] of [
+    [`${oldSection}/策略式博弈和纳什均衡`, `${newSection}/策略式博弈和纳什均衡`],
+    ["/经济学/零和博弈与最小最大定理", `${newSection}/零和博弈与最小最大定理`],
+    [`${oldSection}/博弈论全书导读`, "/读书笔记/博弈论全书导读"],
+  ]) {
+    assert.equal(redirectTarget(encodeURI(`/notes${oldPath}.html`)), newPath);
+    assert.equal(migrateNoteId(`${oldPath.slice(1)}.md`), `${newPath.slice(1)}.md`);
+  }
+});
+
 test("every old note path redirects to exactly one existing page", () => {
   const targets = new Set();
   for (const [from, to] of Object.entries(redirects)) {
