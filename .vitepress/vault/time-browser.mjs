@@ -6,7 +6,7 @@ const formatter = new Intl.DateTimeFormat("zh-CN", {
   hour: "2-digit", minute: "2-digit", hourCycle: "h23",
 });
 
-export function sortTimeNotes(notes, field = "updatedAt", direction = "desc") {
+export function sortTimeNotes(notes, field = "createdAt", direction = "desc") {
   const key = field === "createdAt" ? "createdAt" : "updatedAt";
   const sign = direction === "asc" ? 1 : -1;
   return notes.filter((note) => note.id !== "index.md" &&

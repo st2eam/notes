@@ -116,9 +116,13 @@ const leftWidth = ref(250),
   rightWidth = ref(280);
 const expanded = ref<string[]>([]);
 const pane = ref("files");
-const timeField = ref<"createdAt" | "updatedAt">("updatedAt");
+const timeField = ref<"createdAt" | "updatedAt">("createdAt");
 const timeDirection = ref<"asc" | "desc">("desc");
 const timeNotes = computed(() => sortTimeNotes(notes, timeField.value, timeDirection.value));
+const timeResults = ref<HTMLElement>();
+watch([timeField, timeDirection], () => {
+  if (timeResults.value) timeResults.value.scrollTop = 0;
+}, { flush: "post" });
 const query = ref("");
 const documents = ref<{ id: string; text: string }[]>([]);
 const searchReady = ref(false);
@@ -1216,29 +1220,45 @@ onBeforeUnmount(() => {
       </div>
       <div v-else-if="pane === 'time'" class="vault-time-browser">
         <div class="time-sort-controls">
-          <select v-model="timeField" aria-label="笔记排序时间">
-            <option value="updatedAt">更新时间</option>
-            <option value="createdAt">创建时间</option>
-          </select>
-          <select v-model="timeDirection" aria-label="时间排序方向">
-            <option value="desc">从新到旧</option>
-            <option value="asc">从旧到新</option>
-          </select>
+          <div class="time-field-switch" role="group" aria-label="笔记排序时间">
+            <button
+              type="button"
+              :aria-pressed="timeField === 'createdAt'"
+              @click="timeField = 'createdAt'"
+            >创建时间</button>
+            <button
+              type="button"
+              :aria-pressed="timeField === 'updatedAt'"
+              @click="timeField = 'updatedAt'"
+            >更新时间</button>
+          </div>
+          <button
+            type="button"
+            class="time-order-toggle"
+            :aria-label="timeDirection === 'desc' ? '改为从旧到新排序' : '改为从新到旧排序'"
+            :title="timeDirection === 'desc' ? '改为从旧到新排序' : '改为从新到旧排序'"
+            @click="timeDirection = timeDirection === 'desc' ? 'asc' : 'desc'"
+          >
+            <Icon :name="timeDirection === 'desc' ? 'sort-desc' : 'sort-asc'" :size="14" />
+            <span>{{ timeDirection === 'desc' ? '从新到旧' : '从旧到新' }}</span>
+          </button>
         </div>
-        <div class="time-results">
+        <div ref="timeResults" class="time-results">
           <button
             v-for="note in timeNotes"
             :key="note.id"
-            :class="{ active: current?.id === note.id }"
+            :class="['time-note', { active: current?.id === note.id }]"
             :aria-current="current?.id === note.id ? 'page' : undefined"
             @click="openNote(note, $event)"
           >
             <strong>{{ note.title }}</strong>
-            <small v-if="note.folder">{{ note.folder }}</small>
-            <time v-if="noteTimeISO(note[timeField])" :datetime="noteTimeISO(note[timeField])">
-              {{ formatNoteTime(note[timeField]) }}
-            </time>
-            <span v-else class="time-unknown">时间未知</span>
+            <span class="time-note-meta">
+              <time v-if="noteTimeISO(note[timeField])" :datetime="noteTimeISO(note[timeField])">
+                {{ formatNoteTime(note[timeField]) }}
+              </time>
+              <span v-else>时间未知</span>
+              <small v-if="note.folder" :title="note.folder">{{ note.folder }}</small>
+            </span>
           </button>
           <p v-if="!timeNotes.length" class="empty-hint">暂无笔记</p>
         </div>

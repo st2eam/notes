@@ -7,6 +7,8 @@ const paths: Record<string, string> = {
   notebook: "M6 3h13a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm3 0v18M3 7h4m-4 5h4m-4 5h4m5-9h5m-5 4h5",
   search: "m21 21-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0",
   clock: "M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM12 7v5l3 2",
+  "sort-desc": "M6 4v16m-3-3 3 3 3-3M13 5h8m-8 7h5m-5 7h2",
+  "sort-asc": "M6 20V4m-3 3 3-3 3 3M13 5h2m-2 7h5m-5 7h8",
   graph:
     "M9 5 5 17m4-12 10 10M5 17l14-2M12 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm14-3a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
   left: "M3 3h18v18H3V3Zm5 0v18m8-12-3 3 3 3",

@@ -790,14 +790,12 @@ body,
   color: var(--vault-muted);
   margin: 10px 5px;
 }
-.search-results,
-.time-results {
+.search-results {
   flex: 1;
   overflow: auto;
   scrollbar-width: thin;
 }
-.search-results > button,
-.time-results > button {
+.search-results > button {
   display: block;
   text-align: left;
   padding: 12px 8px;
@@ -805,18 +803,15 @@ body,
   width: 100%;
   border-radius: 0;
 }
-.search-results > button:hover,
-.time-results > button:hover {
+.search-results > button:hover {
   background: var(--vault-hover);
 }
-.search-results strong,
-.time-results strong {
+.search-results strong {
   display: block;
   font-weight: 500;
   font-size: 14px;
 }
-.search-results small,
-.time-results small {
+.search-results small {
   display: block;
   color: var(--vault-faint);
   font-size: 10px;
@@ -828,38 +823,117 @@ body,
   color: var(--vault-muted);
   margin: 6px 0 0;
 }
+.vault-time-browser {
+  --time-meta: color-mix(in srgb, var(--vault-text) 25%, var(--vault-muted));
+  min-height: 0;
+  padding-top: 8px;
+}
 .time-sort-controls {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--vault-border);
 }
-.time-sort-controls select {
+.time-field-switch {
+  display: flex;
   flex: 1;
-  width: 0;
-  min-height: 36px;
-  padding: 6px 4px;
+  padding: 2px;
+  border: 1px solid var(--vault-border);
+  border-radius: 6px;
+  background: var(--vault-tab);
+}
+.vault-shell .time-field-switch button {
+  flex: 1;
+  min-height: 30px;
+  padding: 4px 6px;
+  color: var(--time-meta);
   font-size: 12px;
+  white-space: nowrap;
+}
+.vault-shell .time-field-switch button:hover {
+  color: var(--vault-text);
+}
+.vault-shell .time-field-switch button[aria-pressed="true"] {
+  background: var(--vault-bg);
+  color: var(--vault-text);
+  font-weight: 600;
+}
+.vault-shell .time-order-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 36px;
+  margin-inline-start: auto;
+  padding: 4px;
+  color: var(--time-meta);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.vault-shell .time-order-toggle:hover {
+  background: var(--vault-hover);
+  color: var(--vault-text);
 }
 .time-results {
+  flex: 1;
   min-height: 0;
+  padding-top: 6px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--vault-selected) transparent;
 }
-.time-results strong,
-.time-results small {
+.vault-shell .time-note {
+  display: block;
+  width: 100%;
+  margin-bottom: 2px;
+  padding: 10px 8px;
+  border-inline-start: 1px solid transparent;
+  border-radius: 4px;
+  text-align: start;
+}
+.vault-shell .time-note:hover {
+  background: var(--vault-hover);
+}
+.time-note strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
   overflow-wrap: anywhere;
 }
-.time-results time,
-.time-unknown {
-  display: block;
-  margin-top: 6px;
-  color: var(--vault-muted);
+.time-note-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+  color: var(--time-meta);
   font-size: 11px;
+}
+.time-note-meta time {
   font-variant-numeric: tabular-nums;
 }
-.vault-shell .time-results > button.active {
+.time-note-meta small {
+  overflow: hidden;
+  font-size: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.vault-shell .time-note.active {
+  border-inline-start-color: var(--vault-accent);
   background: var(--vault-accent-bg);
 }
-.time-results > button.active strong {
-  color: var(--vault-accent);
+.time-note.active strong {
+  color: color-mix(in srgb, var(--vault-accent) 85%, var(--vault-text));
+}
+.time-note.active .time-note-meta {
+  color: color-mix(in srgb, var(--vault-text) 80%, var(--vault-accent));
+}
+.vault-time-browser ::selection {
+  color: var(--vault-text);
+  background: var(--vault-accent-bg);
 }
 mark.search-hit {
   background: var(--search-hit-bg);
@@ -1432,7 +1506,8 @@ mark.search-hit {
   .relation-evidence summary {
     min-height: 44px;
   }
-  .time-sort-controls select {
+  .vault-shell .time-field-switch button,
+  .vault-shell .time-order-toggle {
     min-height: 44px;
   }
   .vault-reading,
