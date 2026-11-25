@@ -6,6 +6,7 @@ import math from "markdown-it-mathjax3";
 import { slugify, resolveLink, noteRoute, normalizePath } from "./model.mjs";
 import { redirectTarget } from "../redirects.mjs";
 import { normalizeGeo, resolveGeoReferences } from "./geo.mjs";
+import { readNoteTimes } from "./note-times.mjs";
 const md = new MarkdownIt({ html: true }).use(math);
 export function wikiPlugin(md, resolve) {
   md.inline.ruler.before("link", "vault-wiki", (state, silent) => {
@@ -180,6 +181,8 @@ export function parseNote(id, raw) {
       tags,
       folder: id.split("/").slice(0, -1).join("/"),
       excerpt,
+      createdAt: null,
+      updatedAt: null,
       headings,
       originalPath: data.originalPath,
       primaryCategory: data.primaryCategory || null,
@@ -200,7 +203,11 @@ export function parseNote(id, raw) {
   };
 }
 export function buildVault(entries, root) {
-  const parsed = entries.map(({ id, raw }) => parseNote(id, raw));
+  const parsed = entries.map(({ id, raw, createdAt = null, updatedAt = null }) => {
+    const parsed = parseNote(id, raw);
+    Object.assign(parsed.note, { createdAt, updatedAt });
+    return parsed;
+  });
   const notes = parsed.map((p) => p.note);
   for (const p of parsed) {
     const references = resolveGeoReferences(notes, p.note, p.references);
@@ -376,11 +383,14 @@ export function buildVault(entries, root) {
     search: parsed.map((p) => ({ id: p.note.id, text: p.text })),
   };
 }
-export const readVault = (root) =>
-  buildVault(
-    scanFiles(root).map((f) => ({
-      id: path.relative(root, f).replace(/\\/g, "/"),
-      raw: fs.readFileSync(f, "utf8"),
-    })),
+export const readVault = (root) => {
+  const files = scanFiles(root);
+  const times = readNoteTimes(root, files);
+  return buildVault(
+    files.map((file) => {
+      const id = path.relative(root, file).replace(/\\/g, "/");
+      return { id, raw: fs.readFileSync(file, "utf8"), ...times.get(id) };
+    }),
     root,
   );
+};

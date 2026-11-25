@@ -774,7 +774,8 @@ body,
 .local-list-toggle:hover {
   background: var(--vault-hover);
 }
-.vault-search {
+.vault-search,
+.vault-time-browser {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -789,12 +790,14 @@ body,
   color: var(--vault-muted);
   margin: 10px 5px;
 }
-.search-results {
+.search-results,
+.time-results {
   flex: 1;
   overflow: auto;
   scrollbar-width: thin;
 }
-.search-results > button {
+.search-results > button,
+.time-results > button {
   display: block;
   text-align: left;
   padding: 12px 8px;
@@ -802,15 +805,18 @@ body,
   width: 100%;
   border-radius: 0;
 }
-.search-results > button:hover {
+.search-results > button:hover,
+.time-results > button:hover {
   background: var(--vault-hover);
 }
-.search-results strong {
+.search-results strong,
+.time-results strong {
   display: block;
   font-weight: 500;
   font-size: 14px;
 }
-.search-results small {
+.search-results small,
+.time-results small {
   display: block;
   color: var(--vault-faint);
   font-size: 10px;
@@ -821,6 +827,39 @@ body,
   line-height: 1.55;
   color: var(--vault-muted);
   margin: 6px 0 0;
+}
+.time-sort-controls {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.time-sort-controls select {
+  flex: 1;
+  width: 0;
+  min-height: 36px;
+  padding: 6px 4px;
+  font-size: 12px;
+}
+.time-results {
+  min-height: 0;
+}
+.time-results strong,
+.time-results small {
+  overflow-wrap: anywhere;
+}
+.time-results time,
+.time-unknown {
+  display: block;
+  margin-top: 6px;
+  color: var(--vault-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.vault-shell .time-results > button.active {
+  background: var(--vault-accent-bg);
+}
+.time-results > button.active strong {
+  color: var(--vault-accent);
 }
 mark.search-hit {
   background: var(--search-hit-bg);
@@ -1393,10 +1432,14 @@ mark.search-hit {
   .relation-evidence summary {
     min-height: 44px;
   }
+  .time-sort-controls select {
+    min-height: 44px;
+  }
   .vault-reading,
   .file-tree-scroll,
   .vault-right-scroll,
-  .search-results {
+  .search-results,
+  .time-results {
     min-height: 0;
     -webkit-overflow-scrolling: touch;
   }

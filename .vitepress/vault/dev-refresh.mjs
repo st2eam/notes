@@ -1,5 +1,6 @@
 import path from "node:path";
 import { redirectTarget } from "../redirects.mjs";
+import { watchGitTimes } from "./note-times.mjs";
 
 export function vaultDevRefresh(refresh) {
   return {
@@ -7,11 +8,7 @@ export function vaultDevRefresh(refresh) {
     configureServer(server) {
       let timer;
       const root = server.config.root;
-      const changed = (file) => {
-        const relative = path.relative(root, file).replaceAll("\\", "/");
-        if (!relative.endsWith(".md") || relative.startsWith("../") ||
-          relative.split("/").some((part) => part.startsWith(".") ||
-            ["node_modules", "docs", "public", "tests", "cache", "temp"].includes(part))) return;
+      const scheduleRefresh = () => {
         clearTimeout(timer);
         timer = setTimeout(() => {
           try {
@@ -24,8 +21,17 @@ export function vaultDevRefresh(refresh) {
           }
         }, 300);
       };
+      const changed = (file) => {
+        const relative = path.relative(root, file).replaceAll("\\", "/");
+        if (!relative.endsWith(".md") || relative.startsWith("../") ||
+          relative.split("/").some((part) => part.startsWith(".") ||
+            ["node_modules", "docs", "public", "tests", "cache", "temp"].includes(part))) return;
+        scheduleRefresh();
+      };
+      const stopGitWatch = watchGitTimes(root, scheduleRefresh);
       server.watcher.on("add", changed).on("unlink", changed).on("change", changed);
       server.httpServer?.once("close", () => {
+        stopGitWatch();
         clearTimeout(timer);
         for (const event of ["add", "unlink", "change"]) server.watcher.off(event, changed);
       });

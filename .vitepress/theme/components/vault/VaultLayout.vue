@@ -30,6 +30,7 @@ import {
 import { embedHref } from "../../../vault/embed.mjs";
 import { searchNotes, searchTerms } from "../../../vault/search.mjs";
 import { sortHistoryTree } from "../../../vault/history.mjs";
+import { sortTimeNotes, formatNoteTime, noteTimeISO } from "../../../vault/time-browser.mjs";
 import { noteGeoTime } from "../../../vault/geo.mjs";
 import type { VaultNote, VaultLink } from "../../../vault/types";
 import { useEmbedMode } from "../../composables/useEmbedMode";
@@ -115,6 +116,9 @@ const leftWidth = ref(250),
   rightWidth = ref(280);
 const expanded = ref<string[]>([]);
 const pane = ref("files");
+const timeField = ref<"createdAt" | "updatedAt">("updatedAt");
+const timeDirection = ref<"asc" | "desc">("desc");
+const timeNotes = computed(() => sortTimeNotes(notes, timeField.value, timeDirection.value));
 const query = ref("");
 const documents = ref<{ id: string; text: string }[]>([]);
 const searchReady = ref(false);
@@ -597,6 +601,11 @@ async function loadSearch() {
       searchReady.value = true;
     });
   await loadSearchPromise;
+}
+function showTimeBrowser() {
+  pane.value = "time";
+  leftOpen.value = true;
+  if (drawerViewport()) rightOpen.value = false;
 }
 async function showSearch() {
   pane.value = "search";
@@ -1082,6 +1091,16 @@ onBeforeUnmount(() => {
         <Icon name="notebook" /><span class="ribbon-label">笔记</span>
       </button>
       <button
+        :class="['icon-button', { selected: leftOpen && pane === 'time' }]"
+        aria-label="按时间浏览笔记"
+        :aria-pressed="leftOpen && pane === 'time'"
+        aria-controls="vault-note-browser"
+        title="按时间浏览笔记"
+        @click="showTimeBrowser"
+      >
+        <Icon name="clock" /><span class="ribbon-label">时间</span>
+      </button>
+      <button
         :class="['icon-button', { selected: leftOpen && pane === 'search' }]"
         aria-label="全文搜索"
         title="全文搜索"
@@ -1128,10 +1147,10 @@ onBeforeUnmount(() => {
       id="vault-note-browser"
       v-show="leftOpen"
       class="vault-left"
-      aria-label="文件与搜索"
+      aria-label="笔记浏览"
     >
       <div class="file-actions">
-        <span>{{ pane === 'files' ? '文件' : pane === 'search' ? '搜索' : '分类' }}</span>
+        <span>{{ pane === 'files' ? '文件' : pane === 'search' ? '搜索' : pane === 'time' ? '时间' : '分类' }}</span>
         <button
           v-if="pane === 'files'"
           class="icon-button"
@@ -1194,6 +1213,35 @@ onBeforeUnmount(() => {
           @open="openNote"
           @context="showContextMenu"
         />
+      </div>
+      <div v-else-if="pane === 'time'" class="vault-time-browser">
+        <div class="time-sort-controls">
+          <select v-model="timeField" aria-label="笔记排序时间">
+            <option value="updatedAt">更新时间</option>
+            <option value="createdAt">创建时间</option>
+          </select>
+          <select v-model="timeDirection" aria-label="时间排序方向">
+            <option value="desc">从新到旧</option>
+            <option value="asc">从旧到新</option>
+          </select>
+        </div>
+        <div class="time-results">
+          <button
+            v-for="note in timeNotes"
+            :key="note.id"
+            :class="{ active: current?.id === note.id }"
+            :aria-current="current?.id === note.id ? 'page' : undefined"
+            @click="openNote(note, $event)"
+          >
+            <strong>{{ note.title }}</strong>
+            <small v-if="note.folder">{{ note.folder }}</small>
+            <time v-if="noteTimeISO(note[timeField])" :datetime="noteTimeISO(note[timeField])">
+              {{ formatNoteTime(note[timeField]) }}
+            </time>
+            <span v-else class="time-unknown">时间未知</span>
+          </button>
+          <p v-if="!timeNotes.length" class="empty-hint">暂无笔记</p>
+        </div>
       </div>
       <div v-else class="vault-search">
         <input

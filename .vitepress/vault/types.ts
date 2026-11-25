@@ -42,6 +42,8 @@ export interface VaultNote {
   tags: string[];
   folder: string;
   excerpt: string;
+  createdAt: number | null;
+  updatedAt: number | null;
   headings: VaultHeading[];
   originalPath?: string;
   primaryCategory: string | null;

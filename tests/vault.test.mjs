@@ -36,6 +36,17 @@ const fixture = buildVault([
   { id: "世界/同名.md", raw: "---\naliases: [重复别名]\n---\n# 同名" },
   { id: "孤立.md", raw: "# 孤立" },
 ]);
+test("note times are supplied by the file index without interpreting historical or frontmatter dates", () => {
+  const vault = buildVault([{
+    id: "时间.md", raw: "---\ndate: 1800-01-01\nhistoryDate: 1800年\n---\n# 时间",
+    createdAt: 1000, updatedAt: 2000,
+  }, { id: "内存笔记.md", raw: "# 内存笔记" }]);
+  assert.equal(vault.notes[0].createdAt, 1000);
+  assert.equal(vault.notes[0].updatedAt, 2000);
+  assert.equal(vault.notes[0].historyDate, "1800年");
+  assert.equal(vault.notes[1].createdAt, null);
+  assert.equal(vault.notes[1].updatedAt, null);
+});
 test("Chinese and space paths, Markdown and wikilinks resolve to the same identity and anchor", () => {
   const selected = fixture.links.filter(
     (l) => l.target === "中国/笔记 空格.md",
